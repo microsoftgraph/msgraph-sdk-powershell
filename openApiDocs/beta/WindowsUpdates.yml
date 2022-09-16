@@ -17,6 +17,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -24,6 +25,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -55,6 +57,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -308,6 +311,7 @@ paths:
       tags:
         - admin.windows
       summary: Get windows from admin
+      description: A container for all Windows Update for Business deployment service functionality. Read-only.
       operationId: admin_GetWindows
       parameters:
         - name: $select
@@ -376,6 +380,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -389,6 +394,7 @@ paths:
       tags:
         - admin.windows
       summary: Get updates from admin
+      description: Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
       operationId: admin.windows_GetUpdates
       parameters:
         - name: $select
@@ -469,6 +475,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -482,6 +489,7 @@ paths:
       tags:
         - admin.windows
       summary: Get catalog from admin
+      description: Catalog of content that can be approved for deployment by the deployment service. Read-only.
       operationId: admin.windows.updates_GetCatalog
       parameters:
         - name: $select
@@ -550,6 +558,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -563,6 +572,7 @@ paths:
       tags:
         - admin.windows
       summary: Get entries from admin
+      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_ListEntries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -652,12 +662,14 @@ paths:
       tags:
         - admin.windows
       summary: Get entries from admin
+      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_GetEntries
       parameters:
         - name: catalogEntry-id
           in: path
           description: 'key: id of catalogEntry'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: catalogEntry
@@ -708,6 +720,7 @@ paths:
           in: path
           description: 'key: id of catalogEntry'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: catalogEntry
@@ -734,12 +747,14 @@ paths:
           in: path
           description: 'key: id of catalogEntry'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: catalogEntry
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -753,6 +768,7 @@ paths:
       tags:
         - admin.windows
       summary: Get deployments from admin
+      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_ListDeployments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -850,12 +866,14 @@ paths:
       tags:
         - admin.windows
       summary: Get deployments from admin
+      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_GetDeployments
       parameters:
         - name: deployment-id
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -915,6 +933,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -941,12 +960,14 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -960,12 +981,14 @@ paths:
       tags:
         - admin.windows
       summary: Get audience from admin
+      description: Specifies the audience to which content is deployed.
       operationId: admin.windows.updates.deployments_GetAudience
       parameters:
         - name: deployment-id
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1030,6 +1053,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1056,12 +1080,14 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1075,12 +1101,14 @@ paths:
       tags:
         - admin.windows
       summary: Get exclusions from admin
+      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_ListExclusions
       parameters:
         - name: deployment-id
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1145,6 +1173,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1170,12 +1199,14 @@ paths:
       tags:
         - admin.windows
       summary: Get exclusions from admin
+      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_GetExclusions
       parameters:
         - name: deployment-id
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1183,6 +1214,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1239,6 +1271,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1246,6 +1279,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1272,6 +1306,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1279,12 +1314,14 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1304,6 +1341,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1311,6 +1349,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1345,6 +1384,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1352,6 +1392,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1390,6 +1431,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1397,6 +1439,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1431,6 +1474,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1438,6 +1482,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1476,6 +1521,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1512,6 +1558,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1552,6 +1599,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1588,6 +1636,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1622,12 +1671,14 @@ paths:
       tags:
         - admin.windows
       summary: Get members from admin
+      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_ListMembers
       parameters:
         - name: deployment-id
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1692,6 +1743,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1717,12 +1769,14 @@ paths:
       tags:
         - admin.windows
       summary: Get members from admin
+      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_GetMembers
       parameters:
         - name: deployment-id
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1730,6 +1784,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1786,6 +1841,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1793,6 +1849,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1819,6 +1876,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1826,12 +1884,14 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1851,6 +1911,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1858,6 +1919,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1892,6 +1954,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1899,6 +1962,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1937,6 +2001,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1944,6 +2009,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -1978,6 +2044,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -1985,6 +2052,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -2023,6 +2091,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -2059,6 +2128,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -2099,6 +2169,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -2135,6 +2206,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -2175,6 +2247,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -2221,6 +2294,7 @@ paths:
           in: path
           description: 'key: id of deployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deployment
@@ -2268,6 +2342,7 @@ paths:
       tags:
         - admin.windows
       summary: Get resourceConnections from admin
+      description: Service connections to external resources such as analytics workspaces.
       operationId: admin.windows.updates_ListResourceConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2351,12 +2426,14 @@ paths:
       tags:
         - admin.windows
       summary: Get resourceConnections from admin
+      description: Service connections to external resources such as analytics workspaces.
       operationId: admin.windows.updates_GetResourceConnections
       parameters:
         - name: resourceConnection-id
           in: path
           description: 'key: id of resourceConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: resourceConnection
@@ -2405,6 +2482,7 @@ paths:
           in: path
           description: 'key: id of resourceConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: resourceConnection
@@ -2431,12 +2509,14 @@ paths:
           in: path
           description: 'key: id of resourceConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: resourceConnection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2450,6 +2530,7 @@ paths:
       tags:
         - admin.windows
       summary: Get updatableAssets from admin
+      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_ListUpdatableAssets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2530,12 +2611,14 @@ paths:
       tags:
         - admin.windows
       summary: Get updatableAssets from admin
+      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_GetUpdatableAssets
       parameters:
         - name: updatableAsset-id
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -2592,6 +2675,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -2618,12 +2702,14 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2643,6 +2729,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -2677,6 +2764,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -2715,6 +2803,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -2749,6 +2838,7 @@ paths:
           in: path
           description: 'key: id of updatableAsset'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: updatableAsset
@@ -3348,6 +3438,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -3356,6 +3448,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -3363,18 +3457,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

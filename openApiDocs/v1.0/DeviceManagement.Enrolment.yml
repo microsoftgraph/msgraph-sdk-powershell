@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Get conditionalAccessSettings from deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
       operationId: deviceManagement_GetConditionalAccessSettings
       parameters:
         - name: $select
@@ -78,6 +79,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -91,6 +93,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
       operationId: deviceManagement_ListDeviceEnrollmentConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -191,12 +194,14 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
       operationId: deviceManagement_GetDeviceEnrollmentConfigurations
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -261,6 +266,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -287,12 +293,14 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -306,12 +314,14 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfigurations_ListAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -379,6 +389,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -404,12 +415,14 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfigurations_GetAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -417,6 +430,7 @@ paths:
           in: path
           description: 'key: id of enrollmentConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentConfigurationAssignment
@@ -465,6 +479,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -472,6 +487,7 @@ paths:
           in: path
           description: 'key: id of enrollmentConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentConfigurationAssignment
@@ -498,6 +514,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -505,12 +522,14 @@ paths:
           in: path
           description: 'key: id of enrollmentConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentConfigurationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -524,6 +543,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -625,12 +645,14 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentities
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of importedWindowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
@@ -685,6 +707,7 @@ paths:
           in: path
           description: 'key: id of importedWindowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
@@ -711,12 +734,14 @@ paths:
           in: path
           description: 'key: id of importedWindowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -730,6 +755,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_ListWindowsAutopilotDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -858,12 +884,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_GetWindowsAutopilotDeviceIdentities
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -934,6 +962,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -960,12 +989,14 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1142,6 +1173,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1155,6 +1187,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1258,12 +1291,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_GetRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -1341,6 +1376,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -1367,12 +1403,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1386,12 +1424,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -1441,6 +1481,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -1467,12 +1508,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1486,12 +1529,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -1535,12 +1580,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -1584,12 +1631,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.directory.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -1647,6 +1696,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1767,12 +1817,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.directory_GetRoleAssignmentScheduleInstances
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -1861,6 +1913,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -1887,12 +1940,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1906,12 +1961,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.directory.roleAssignmentScheduleInstances_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -1993,6 +2050,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleInstanceFilterByCurrentUserOptions'
       responses:
@@ -2018,6 +2076,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2158,12 +2217,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.directory_GetRoleAssignmentScheduleRequests
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -2266,6 +2327,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -2292,12 +2354,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2311,12 +2375,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it''s null. Supports $expand.'
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -2394,12 +2460,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -2444,12 +2512,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -2499,6 +2569,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -2513,12 +2584,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role assignment through the request. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -2562,12 +2635,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -2625,12 +2700,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -2721,6 +2798,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleRequestFilterByCurrentUserOptions'
       responses:
@@ -2746,6 +2824,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.directory_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2869,12 +2948,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.directory_GetRoleAssignmentSchedules
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -2964,6 +3045,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -2990,12 +3072,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3009,12 +3093,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.directory.roleAssignmentSchedules_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -3098,6 +3184,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleFilterByCurrentUserOptions'
       responses:
@@ -3123,6 +3210,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3229,12 +3317,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_GetRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -3297,6 +3387,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -3323,12 +3414,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3342,12 +3435,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -3438,6 +3533,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -3463,12 +3559,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -3476,6 +3574,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -3539,6 +3638,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -3546,6 +3646,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -3572,6 +3673,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -3579,12 +3681,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3598,6 +3702,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3710,12 +3815,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.directory_GetRoleEligibilityScheduleInstances
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
@@ -3796,6 +3903,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
@@ -3822,12 +3930,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3847,6 +3957,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleInstanceFilterByCurrentUserOptions'
       responses:
@@ -3872,6 +3983,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4010,12 +4122,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.directory_GetRoleEligibilityScheduleRequests
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -4112,6 +4226,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -4138,12 +4253,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4157,12 +4274,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -4207,12 +4326,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -4262,6 +4383,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -4276,12 +4398,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role eligibility through the request. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -4325,12 +4449,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -4388,12 +4514,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -4477,6 +4605,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleRequestFilterByCurrentUserOptions'
       responses:
@@ -4502,6 +4631,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.directory_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4620,12 +4750,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.directory_GetRoleEligibilitySchedules
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
@@ -4708,6 +4840,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
@@ -4734,12 +4867,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4759,6 +4894,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleFilterByCurrentUserOptions'
       responses:
@@ -4784,6 +4920,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get entitlementManagement from roleManagement
+      description: Container for roles and assignments for entitlement management resources.
       operationId: roleManagement_GetEntitlementManagement
       parameters:
         - name: $select
@@ -4880,6 +5017,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4893,6 +5031,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4996,12 +5135,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_GetRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -5079,6 +5220,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -5105,12 +5247,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5124,12 +5268,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -5179,6 +5325,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -5205,12 +5352,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5224,12 +5373,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -5273,12 +5424,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -5322,12 +5475,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -5385,6 +5540,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5505,12 +5661,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentScheduleInstances
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -5599,6 +5757,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -5625,12 +5784,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5644,12 +5805,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -5731,6 +5894,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleInstanceFilterByCurrentUserOptions'
       responses:
@@ -5756,6 +5920,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5896,12 +6061,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentScheduleRequests
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -6004,6 +6171,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -6030,12 +6198,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6049,12 +6219,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it''s null. Supports $expand.'
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -6132,12 +6304,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -6182,12 +6356,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -6237,6 +6413,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -6251,12 +6428,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role assignment through the request. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -6300,12 +6479,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -6363,12 +6544,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -6459,6 +6642,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleRequestFilterByCurrentUserOptions'
       responses:
@@ -6484,6 +6668,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6607,12 +6792,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentSchedules
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -6702,6 +6889,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -6728,12 +6916,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6747,12 +6937,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -6836,6 +7028,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleFilterByCurrentUserOptions'
       responses:
@@ -6861,6 +7054,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6967,12 +7161,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_GetRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7035,6 +7231,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7061,12 +7258,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7080,12 +7279,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7176,6 +7377,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7201,12 +7403,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7214,6 +7418,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7277,6 +7482,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7284,6 +7490,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7310,6 +7517,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7317,12 +7525,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7336,6 +7546,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7448,12 +7659,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilityScheduleInstances
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
@@ -7534,6 +7747,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
@@ -7560,12 +7774,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7585,6 +7801,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleInstanceFilterByCurrentUserOptions'
       responses:
@@ -7610,6 +7827,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7748,12 +7966,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilityScheduleRequests
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -7850,6 +8070,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -7876,12 +8097,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7895,12 +8118,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -7945,12 +8170,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -8000,6 +8227,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -8014,12 +8242,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role eligibility through the request. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -8063,12 +8293,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -8126,12 +8358,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -8215,6 +8449,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleRequestFilterByCurrentUserOptions'
       responses:
@@ -8240,6 +8475,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8358,12 +8594,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilitySchedules
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
@@ -8446,6 +8684,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
@@ -8472,12 +8711,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8497,6 +8738,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleFilterByCurrentUserOptions'
       responses:
@@ -8777,22 +9019,22 @@ components:
           properties:
             appScopeId:
               type: string
-              description: 'Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.  For the entitlement management provider, use app scopes to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997.'
+              description: 'Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).'
               nullable: true
             condition:
               type: string
               nullable: true
             directoryScopeId:
               type: string
-              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+              description: 'Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).'
               nullable: true
             principalId:
               type: string
-              description: Identifier of the principal to which the assignment is granted. Supports $filter (eq operator only).
+              description: 'Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).'
               nullable: true
             roleDefinitionId:
               type: string
-              description: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq operator only).
+              description: 'Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).'
               nullable: true
             appScope:
               $ref: '#/components/schemas/microsoft.graph.appScope'
@@ -8812,11 +9054,11 @@ components:
           properties:
             displayName:
               type: string
-              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.'
+              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.'
               nullable: true
             type:
               type: string
-              description: 'Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.'
+              description: 'Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -8846,21 +9088,21 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+              description: 'The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).'
               nullable: true
             isBuiltIn:
               type: boolean
-              description: Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+              description: 'Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).'
               nullable: true
             isEnabled:
               type: boolean
-              description: Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+              description: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
               nullable: true
             resourceScopes:
               type: array
               items:
                 type: string
-              description: List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
+              description: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
             rolePermissions:
               type: array
               items:
@@ -8868,17 +9110,17 @@ components:
               description: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
             templateId:
               type: string
-              description: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
+              description: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
               nullable: true
             version:
               type: string
-              description: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+              description: Indicates version of the role definition. Read-only when isBuiltIn is true.
               nullable: true
             inheritsPermissionsFrom:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+              description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleAssignmentScheduleInstance:
@@ -8903,11 +9145,11 @@ components:
               nullable: true
             roleAssignmentOriginId:
               type: string
-              description: The identifier of the role assignment in Azure AD.
+              description: 'The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).'
               nullable: true
             roleAssignmentScheduleId:
               type: string
-              description: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
+              description: 'The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8928,21 +9170,21 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the roleEligibilityScheduleInstance will expire.
+              description: The end date of the schedule instance.
               format: date-time
               nullable: true
             memberType:
               type: string
-              description: 'Membership type of the assignment. It can either be Inherited, Direct, or Group.'
+              description: 'How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             roleEligibilityScheduleId:
               type: string
-              description: Identifier of the parent roleEligibilitySchedule for this instance.
+              description: 'The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).'
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the roleEligibilityScheduleInstance will start.
+              description: When this instance starts.
               format: date-time
               nullable: true
           additionalProperties:
@@ -8979,7 +9221,7 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).'
+              description: 'Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports $filter (eq, ne).'
               nullable: true
             roleDefinitionId:
               type: string
@@ -9015,7 +9257,7 @@ components:
           properties:
             memberType:
               type: string
-              description: 'Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).'
+              description: 'How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
@@ -9087,7 +9329,7 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).'
+              description: 'Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals.Supports $filter (eq, ne).'
               nullable: true
             roleDefinitionId:
               type: string
@@ -9199,7 +9441,7 @@ components:
           type: array
           items:
             type: string
-          description: Set of tasks that can be performed on a resource.
+          description: Set of tasks that can be performed on a resource. Required.
         condition:
           type: string
           description: Optional constraints that must be met for the permission to be effective.
@@ -9302,7 +9544,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.'
+          description: When the  eligible or active assignment becomes active.
           format: date-time
           nullable: true
       additionalProperties:
@@ -9845,6 +10087,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -9853,6 +10097,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -9860,18 +10106,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

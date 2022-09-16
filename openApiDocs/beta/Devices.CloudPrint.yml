@@ -103,6 +103,7 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
+      description: The list of available print connectors.
       operationId: print_ListConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -207,12 +208,14 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
+      description: The list of available print connectors.
       operationId: print_GetConnectors
       parameters:
         - name: printConnector-id
           in: path
           description: 'key: id of printConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printConnector
@@ -268,6 +271,7 @@ paths:
           in: path
           description: 'key: id of printConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printConnector
@@ -294,12 +298,14 @@ paths:
           in: path
           description: 'key: id of printConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printConnector
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -405,6 +411,7 @@ paths:
           in: path
           description: 'key: id of printOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printOperation
@@ -454,6 +461,7 @@ paths:
           in: path
           description: 'key: id of printOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printOperation
@@ -480,12 +488,14 @@ paths:
           in: path
           description: 'key: id of printOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -499,6 +509,7 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
+      description: The list of printers registered in the tenant.
       operationId: print_ListPrinters
       parameters:
         - $ref: '#/components/parameters/top'
@@ -631,12 +642,14 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
+      description: The list of printers registered in the tenant.
       operationId: print_GetPrinters
       parameters:
         - name: printer-id
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -735,6 +748,7 @@ paths:
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -761,12 +775,14 @@ paths:
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -780,12 +796,14 @@ paths:
       tags:
         - print.printer
       summary: Get connectors from print
+      description: The connectors that are associated with the printer.
       operationId: print.printers_ListConnectors
       parameters:
         - name: printer-id
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -869,12 +887,14 @@ paths:
       tags:
         - print.printer
       summary: Get connectors from print
+      description: The connectors that are associated with the printer.
       operationId: print.printers_GetConnectors
       parameters:
         - name: printer-id
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -882,6 +902,7 @@ paths:
           in: path
           description: 'key: id of printConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printConnector
@@ -938,6 +959,7 @@ paths:
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -962,6 +984,7 @@ paths:
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -982,6 +1005,7 @@ paths:
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1002,6 +1026,7 @@ paths:
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1081,12 +1106,14 @@ paths:
       tags:
         - print.printer
       summary: Get shares from print
+      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_ListShares
       parameters:
         - name: printer-id
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1190,12 +1217,14 @@ paths:
       tags:
         - print.printer
       summary: Get shares from print
+      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_GetShares
       parameters:
         - name: printer-id
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1203,6 +1232,7 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -1286,12 +1316,14 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_ListTaskTriggers
       parameters:
         - name: printer-id
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1361,6 +1393,7 @@ paths:
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1386,12 +1419,14 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_GetTaskTriggers
       parameters:
         - name: printer-id
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1399,6 +1434,7 @@ paths:
           in: path
           description: 'key: id of printTaskTrigger'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskTrigger
@@ -1455,6 +1491,7 @@ paths:
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1462,6 +1499,7 @@ paths:
           in: path
           description: 'key: id of printTaskTrigger'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskTrigger
@@ -1488,6 +1526,7 @@ paths:
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1495,12 +1534,14 @@ paths:
           in: path
           description: 'key: id of printTaskTrigger'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskTrigger
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1514,12 +1555,14 @@ paths:
       tags:
         - print.printer
       summary: Get definition from print
+      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printers.taskTriggers_GetDefinition
       parameters:
         - name: printer-id
           in: path
           description: 'key: id of printer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printer
@@ -1527,6 +1570,7 @@ paths:
           in: path
           description: 'key: id of printTaskTrigger'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskTrigger
@@ -1749,6 +1793,7 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -1833,6 +1878,7 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -1859,12 +1905,14 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1878,12 +1926,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.printerShares_ListAllowedGroups
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -2158,6 +2208,7 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -2165,17 +2216,21 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -2189,12 +2244,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.printerShares_ListAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -2337,18 +2394,12 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -2360,12 +2411,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.printerShares_ListAllowedUsers
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -2426,6 +2479,8 @@ paths:
                 - employeeHireDate desc
                 - employeeId
                 - employeeId desc
+                - employeeLeaveDateTime
+                - employeeLeaveDateTime desc
                 - employeeOrgData
                 - employeeOrgData desc
                 - employeeType
@@ -2578,6 +2633,7 @@ paths:
                 - displayName
                 - employeeHireDate
                 - employeeId
+                - employeeLeaveDateTime
                 - employeeOrgData
                 - employeeType
                 - externalUserState
@@ -2801,6 +2857,7 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -2808,17 +2865,21 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -2832,12 +2893,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.printerShares_ListAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -2898,6 +2961,8 @@ paths:
                 - employeeHireDate desc
                 - employeeId
                 - employeeId desc
+                - employeeLeaveDateTime
+                - employeeLeaveDateTime desc
                 - employeeOrgData
                 - employeeOrgData desc
                 - employeeType
@@ -3038,18 +3103,12 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -3061,12 +3120,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get printer from print
+      description: The printer that this printer share is related to.
       operationId: print.printerShares_GetPrinter
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -3252,12 +3313,6 @@ paths:
               operationId: print.reports.getAttackSimulationTrainingUserCoverage
             getAzureADApplicationSignInSummary:
               operationId: print.reports.getAzureADApplicationSignInSummary
-            getAzureADFeatureUsage:
-              operationId: print.reports.getAzureADFeatureUsage
-            getAzureADLicenseUsage:
-              operationId: print.reports.getAzureADLicenseUsage
-            getAzureADUserFeatureUsage:
-              operationId: print.reports.getAzureADUserFeatureUsage
             getBrowserDistributionUserCounts:
               operationId: print.reports.getBrowserDistributionUserCounts
             getBrowserUserCounts:
@@ -3478,6 +3533,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3491,6 +3547,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get applicationSignInDetailedSummary from print
+      description: Represents a detailed summary of an application sign-in.
       operationId: print.reports_ListApplicationSignInDetailedSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3586,12 +3643,14 @@ paths:
       tags:
         - print.reportRoot
       summary: Get applicationSignInDetailedSummary from print
+      description: Represents a detailed summary of an application sign-in.
       operationId: print.reports_GetApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
           in: path
           description: 'key: id of applicationSignInDetailedSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: applicationSignInDetailedSummary
@@ -3644,6 +3703,7 @@ paths:
           in: path
           description: 'key: id of applicationSignInDetailedSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: applicationSignInDetailedSummary
@@ -3670,12 +3730,14 @@ paths:
           in: path
           description: 'key: id of applicationSignInDetailedSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: applicationSignInDetailedSummary
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3689,6 +3751,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get authenticationMethods from print
+      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: print.reports_GetAuthenticationMethods
       parameters:
         - name: $select
@@ -3761,6 +3824,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3796,12 +3860,14 @@ paths:
           in: path
           description: 'Usage: includedUserTypes=''{includedUserTypes}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
         - name: includedUserRoles
           in: path
           description: 'Usage: includedUserRoles=''{includedUserRoles}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
       responses:
@@ -3841,12 +3907,14 @@ paths:
           in: path
           description: 'Usage: includedUserTypes=''{includedUserTypes}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
         - name: includedUserRoles
           in: path
           description: 'Usage: includedUserRoles=''{includedUserRoles}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
       responses:
@@ -3864,6 +3932,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get userRegistrationDetails from print
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: print.reports.authenticationMethods_ListUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3980,12 +4049,14 @@ paths:
       tags:
         - print.reportRoot
       summary: Get userRegistrationDetails from print
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: print.reports.authenticationMethods_GetUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
           in: path
           description: 'key: id of userRegistrationDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userRegistrationDetails
@@ -4045,6 +4116,7 @@ paths:
           in: path
           description: 'key: id of userRegistrationDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userRegistrationDetails
@@ -4071,12 +4143,14 @@ paths:
           in: path
           description: 'key: id of userRegistrationDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userRegistrationDetails
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4090,6 +4164,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get credentialUserRegistrationDetails from print
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: print.reports_ListCredentialUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4191,12 +4266,14 @@ paths:
       tags:
         - print.reportRoot
       summary: Get credentialUserRegistrationDetails from print
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: print.reports_GetCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
           in: path
           description: 'key: id of credentialUserRegistrationDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: credentialUserRegistrationDetails
@@ -4251,6 +4328,7 @@ paths:
           in: path
           description: 'key: id of credentialUserRegistrationDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: credentialUserRegistrationDetails
@@ -4277,12 +4355,14 @@ paths:
           in: path
           description: 'key: id of credentialUserRegistrationDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: credentialUserRegistrationDetails
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4397,6 +4477,7 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
@@ -4449,6 +4530,7 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
@@ -4475,12 +4557,14 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4595,6 +4679,7 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
@@ -4647,6 +4732,7 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
@@ -4673,12 +4759,14 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4793,6 +4881,7 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
@@ -4845,6 +4934,7 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
@@ -4871,12 +4961,14 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4991,6 +5083,7 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
@@ -5043,6 +5136,7 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
@@ -5069,12 +5163,14 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5088,6 +5184,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
+      description: Metadata for the device configuration device activity report
       operationId: print.reports_deviceConfigurationDeviceActivity
       responses:
         '200':
@@ -5104,6 +5201,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function deviceConfigurationUserActivity
+      description: Metadata for the device configuration user activity report
       operationId: print.reports_deviceConfigurationUserActivity
       responses:
         '200':
@@ -5140,8 +5238,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-20T00:00:00.0000000+00:00'
-        date: '2022-05-24T00:00:00.0000000+00:00'
+        removalDate: '2022-08-20T00:00:00.0000000-07:00'
+        date: '2022-05-24T00:00:00.0000000-07:00'
         version: 2022-05/Tasks_And_Plans
         description: 'This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.'
       x-ms-docs-operation-type: function
@@ -5170,8 +5268,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-20T00:00:00.0000000+00:00'
-        date: '2022-05-24T00:00:00.0000000+00:00'
+        removalDate: '2022-08-20T00:00:00.0000000-07:00'
+        date: '2022-05-24T00:00:00.0000000-07:00'
         version: 2022-05/Tasks_And_Plans
         description: 'This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.'
       x-ms-docs-operation-type: function
@@ -5200,8 +5298,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-20T00:00:00.0000000+00:00'
-        date: '2022-05-24T00:00:00.0000000+00:00'
+        removalDate: '2022-08-20T00:00:00.0000000-07:00'
+        date: '2022-05-24T00:00:00.0000000-07:00'
         version: 2022-05/Tasks_And_Plans
         description: 'This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.'
       x-ms-docs-operation-type: function
@@ -5216,6 +5314,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5236,92 +5335,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/print/reports/microsoft.graph.getAzureADFeatureUsage(period=''{period}'')':
-    get:
-      tags:
-        - print.Functions
-      summary: Invoke function getAzureADFeatureUsage
-      operationId: print.reports_getAzureADFeatureUsage
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of reportRoot
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.azureADFeatureUsage'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/print/reports/microsoft.graph.getAzureADLicenseUsage(period=''{period}'')':
-    get:
-      tags:
-        - print.Functions
-      summary: Invoke function getAzureADLicenseUsage
-      operationId: print.reports_getAzureADLicenseUsage
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of reportRoot
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.azureADLicenseUsage'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  /print/reports/microsoft.graph.getAzureADUserFeatureUsage():
-    get:
-      tags:
-        - print.Functions
-      summary: Invoke function getAzureADUserFeatureUsage
-      operationId: print.reports_getAzureADUserFeatureUsage
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of reportRoot
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.azureADUserFeatureUsage'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/print/reports/microsoft.graph.getBrowserDistributionUserCounts(period=''{period}'')':
     get:
       tags:
@@ -5333,6 +5346,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5362,6 +5376,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5391,6 +5406,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5420,6 +5436,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5475,6 +5492,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5504,6 +5522,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5533,6 +5552,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -5564,6 +5584,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5593,6 +5614,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5622,6 +5644,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5651,6 +5674,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -5682,6 +5706,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5711,6 +5736,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5740,6 +5766,7 @@ paths:
           in: path
           description: 'Usage: groupId=''{groupId}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -5747,6 +5774,7 @@ paths:
           in: path
           description: 'Usage: startDateTime=''{startDateTime}'''
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
             type: string
@@ -5756,6 +5784,7 @@ paths:
           in: path
           description: 'Usage: endDateTime=''{endDateTime}'''
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
             type: string
@@ -5790,6 +5819,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5819,6 +5849,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5848,6 +5879,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -5879,6 +5911,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5908,6 +5941,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5937,6 +5971,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5966,6 +6001,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -5995,6 +6031,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6090,6 +6127,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6121,6 +6159,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -6154,6 +6193,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6185,6 +6225,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6216,6 +6257,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -6249,6 +6291,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6280,6 +6323,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6311,6 +6355,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6342,6 +6387,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6373,6 +6419,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6404,6 +6451,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6433,6 +6481,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6462,6 +6511,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -6493,6 +6543,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6522,6 +6573,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6551,6 +6603,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -6582,6 +6635,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6611,6 +6665,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6640,6 +6695,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6669,6 +6725,7 @@ paths:
           in: path
           description: 'Usage: printerId=''{printerId}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -6676,6 +6733,7 @@ paths:
           in: path
           description: 'Usage: startDateTime=''{startDateTime}'''
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
             type: string
@@ -6685,6 +6743,7 @@ paths:
           in: path
           description: 'Usage: endDateTime=''{endDateTime}'''
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
             type: string
@@ -6719,6 +6778,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6750,6 +6810,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6779,6 +6840,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6808,6 +6870,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6837,6 +6900,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -6868,6 +6932,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6897,6 +6962,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -6928,6 +6994,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6957,6 +7024,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -6986,6 +7054,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7015,6 +7084,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7044,6 +7114,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7073,6 +7144,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7102,6 +7174,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7131,6 +7204,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -7162,6 +7236,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7191,6 +7266,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7220,6 +7296,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7249,6 +7326,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -7280,6 +7358,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7309,6 +7388,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7338,6 +7418,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7367,6 +7448,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7396,6 +7478,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7425,6 +7508,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7454,6 +7538,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7483,6 +7568,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7512,6 +7598,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7541,6 +7628,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7570,6 +7658,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7599,6 +7688,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7628,6 +7718,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7657,6 +7748,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7686,6 +7778,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -7717,6 +7810,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7746,6 +7840,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7775,6 +7870,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -7806,6 +7902,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7835,6 +7932,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7864,6 +7962,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7893,6 +7992,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7922,6 +8022,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7951,6 +8052,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -7980,6 +8082,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8009,6 +8112,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8038,6 +8142,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8067,6 +8172,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -8098,6 +8204,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8127,6 +8234,7 @@ paths:
           in: path
           description: 'Usage: userId=''{userId}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -8134,6 +8242,7 @@ paths:
           in: path
           description: 'Usage: startDateTime=''{startDateTime}'''
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
             type: string
@@ -8143,6 +8252,7 @@ paths:
           in: path
           description: 'Usage: endDateTime=''{endDateTime}'''
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
             type: string
@@ -8177,6 +8287,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8206,6 +8317,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8235,6 +8347,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -8266,6 +8379,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8295,6 +8409,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8324,6 +8439,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8353,6 +8469,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -8384,6 +8501,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8413,6 +8531,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8442,6 +8561,7 @@ paths:
           in: path
           description: 'Usage: date={date}'
           required: true
+          style: simple
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
@@ -8473,6 +8593,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8502,6 +8623,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
       responses:
@@ -8525,12 +8647,14 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentDetails
+      description: Metadata for Enrollment abandonment details report
       operationId: print.reports_managedDeviceEnrollmentAbandonmentDetails
       parameters:
         - name: skip
           in: path
           description: 'Usage: skip={skip}'
           required: true
+          style: simple
           schema:
             maximum: 2147483647
             minimum: -2147483648
@@ -8541,6 +8665,7 @@ paths:
           in: path
           description: 'Usage: top={top}'
           required: true
+          style: simple
           schema:
             maximum: 2147483647
             minimum: -2147483648
@@ -8551,6 +8676,7 @@ paths:
           in: path
           description: 'Usage: filter=''{filter}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -8558,6 +8684,7 @@ paths:
           in: path
           description: 'Usage: skipToken=''{skipToken}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -8576,12 +8703,14 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentSummary
+      description: Metadata for Enrollment abandonment summary report
       operationId: print.reports_managedDeviceEnrollmentAbandonmentSummary
       parameters:
         - name: skip
           in: path
           description: 'Usage: skip={skip}'
           required: true
+          style: simple
           schema:
             maximum: 2147483647
             minimum: -2147483648
@@ -8592,6 +8721,7 @@ paths:
           in: path
           description: 'Usage: top={top}'
           required: true
+          style: simple
           schema:
             maximum: 2147483647
             minimum: -2147483648
@@ -8602,6 +8732,7 @@ paths:
           in: path
           description: 'Usage: filter=''{filter}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -8609,6 +8740,7 @@ paths:
           in: path
           description: 'Usage: skipToken=''{skipToken}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -8649,6 +8781,7 @@ paths:
           in: path
           description: 'Usage: skip={skip}'
           required: true
+          style: simple
           schema:
             maximum: 2147483647
             minimum: -2147483648
@@ -8659,6 +8792,7 @@ paths:
           in: path
           description: 'Usage: top={top}'
           required: true
+          style: simple
           schema:
             maximum: 2147483647
             minimum: -2147483648
@@ -8669,6 +8803,7 @@ paths:
           in: path
           description: 'Usage: filter=''{filter}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -8676,6 +8811,7 @@ paths:
           in: path
           description: 'Usage: skipToken=''{skipToken}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -8694,6 +8830,7 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function managedDeviceEnrollmentFailureTrends
+      description: Metadata for the enrollment failure trends report
       operationId: print.reports_managedDeviceEnrollmentFailureTrends
       responses:
         '200':
@@ -8732,6 +8869,7 @@ paths:
           in: path
           description: 'Usage: period=''{period}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
@@ -8851,6 +8989,7 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
@@ -8903,6 +9042,7 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
@@ -8929,12 +9069,14 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9049,6 +9191,7 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
@@ -9101,6 +9244,7 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
@@ -9127,12 +9271,14 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9247,6 +9393,7 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
@@ -9299,6 +9446,7 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
@@ -9325,12 +9473,14 @@ paths:
           in: path
           description: 'key: id of printUsageByPrinter'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9445,6 +9595,7 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
@@ -9497,6 +9648,7 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
@@ -9523,12 +9675,14 @@ paths:
           in: path
           description: 'key: id of printUsageByUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9542,6 +9696,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get security from print
+      description: Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
       operationId: print.reports_GetSecurity
       parameters:
         - name: $select
@@ -9612,6 +9767,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9697,6 +9853,7 @@ paths:
       tags:
         - print.reportRoot
       summary: Get userCredentialUsageDetails from print
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: print.reports_ListUserCredentialUsageDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9798,12 +9955,14 @@ paths:
       tags:
         - print.reportRoot
       summary: Get userCredentialUsageDetails from print
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: print.reports_GetUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
           in: path
           description: 'key: id of userCredentialUsageDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userCredentialUsageDetails
@@ -9858,6 +10017,7 @@ paths:
           in: path
           description: 'key: id of userCredentialUsageDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userCredentialUsageDetails
@@ -9884,12 +10044,14 @@ paths:
           in: path
           description: 'key: id of userCredentialUsageDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userCredentialUsageDetails
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9903,6 +10065,7 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
+      description: The list of available Universal Print service endpoints.
       operationId: print_ListServices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9985,12 +10148,14 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
+      description: The list of available Universal Print service endpoints.
       operationId: print_GetServices
       parameters:
         - name: printService-id
           in: path
           description: 'key: id of printService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printService
@@ -10045,6 +10210,7 @@ paths:
           in: path
           description: 'key: id of printService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printService
@@ -10071,12 +10237,14 @@ paths:
           in: path
           description: 'key: id of printService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printService
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10090,12 +10258,14 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_ListEndpoints
       parameters:
         - name: printService-id
           in: path
           description: 'key: id of printService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printService
@@ -10166,6 +10336,7 @@ paths:
           in: path
           description: 'key: id of printService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printService
@@ -10191,12 +10362,14 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_GetEndpoints
       parameters:
         - name: printService-id
           in: path
           description: 'key: id of printService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printService
@@ -10204,6 +10377,7 @@ paths:
           in: path
           description: 'key: id of printServiceEndpoint'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printServiceEndpoint
@@ -10253,6 +10427,7 @@ paths:
           in: path
           description: 'key: id of printService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printService
@@ -10260,6 +10435,7 @@ paths:
           in: path
           description: 'key: id of printServiceEndpoint'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printServiceEndpoint
@@ -10286,6 +10462,7 @@ paths:
           in: path
           description: 'key: id of printService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printService
@@ -10293,12 +10470,14 @@ paths:
           in: path
           description: 'key: id of printServiceEndpoint'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printServiceEndpoint
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10312,6 +10491,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
+      description: The list of printer shares registered in the tenant.
       operationId: print_ListShares
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10436,12 +10616,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
+      description: The list of printer shares registered in the tenant.
       operationId: print_GetShares
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -10526,6 +10708,7 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -10552,12 +10735,14 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10571,12 +10756,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListAllowedGroups
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -10851,6 +11038,7 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -10858,17 +11046,21 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -10882,12 +11074,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -11030,18 +11224,12 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -11053,12 +11241,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.shares_ListAllowedUsers
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -11119,6 +11309,8 @@ paths:
                 - employeeHireDate desc
                 - employeeId
                 - employeeId desc
+                - employeeLeaveDateTime
+                - employeeLeaveDateTime desc
                 - employeeOrgData
                 - employeeOrgData desc
                 - employeeType
@@ -11271,6 +11463,7 @@ paths:
                 - displayName
                 - employeeHireDate
                 - employeeId
+                - employeeLeaveDateTime
                 - employeeOrgData
                 - employeeType
                 - externalUserState
@@ -11494,6 +11687,7 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -11501,17 +11695,21 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -11525,12 +11723,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.shares_ListAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -11591,6 +11791,8 @@ paths:
                 - employeeHireDate desc
                 - employeeId
                 - employeeId desc
+                - employeeLeaveDateTime
+                - employeeLeaveDateTime desc
                 - employeeOrgData
                 - employeeOrgData desc
                 - employeeType
@@ -11731,18 +11933,12 @@ paths:
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -11754,12 +11950,14 @@ paths:
       tags:
         - print.printerShare
       summary: Get printer from print
+      description: The printer that this printer share is related to.
       operationId: print.shares_GetPrinter
       parameters:
         - name: printerShare-id
           in: path
           description: 'key: id of printerShare'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printerShare
@@ -11941,6 +12139,7 @@ paths:
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
@@ -11997,6 +12196,7 @@ paths:
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
@@ -12023,12 +12223,14 @@ paths:
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12042,12 +12244,14 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_ListTasks
       parameters:
         - name: printTaskDefinition-id
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
@@ -12122,6 +12326,7 @@ paths:
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
@@ -12147,12 +12352,14 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_GetTasks
       parameters:
         - name: printTaskDefinition-id
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
@@ -12160,6 +12367,7 @@ paths:
           in: path
           description: 'key: id of printTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTask
@@ -12224,6 +12432,7 @@ paths:
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
@@ -12231,6 +12440,7 @@ paths:
           in: path
           description: 'key: id of printTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTask
@@ -12257,6 +12467,7 @@ paths:
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
@@ -12264,12 +12475,14 @@ paths:
           in: path
           description: 'key: id of printTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12283,12 +12496,14 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get definition from print
+      description: The printTaskDefinition that was used to create this task. Read-only.
       operationId: print.taskDefinitions.tasks_GetDefinition
       parameters:
         - name: printTaskDefinition-id
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
@@ -12296,6 +12511,7 @@ paths:
           in: path
           description: 'key: id of printTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTask
@@ -12348,12 +12564,14 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get trigger from print
+      description: The printTaskTrigger that triggered this task's execution. Read-only.
       operationId: print.taskDefinitions.tasks_GetTrigger
       parameters:
         - name: printTaskDefinition-id
           in: path
           description: 'key: id of printTaskDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTaskDefinition
@@ -12361,6 +12579,7 @@ paths:
           in: path
           description: 'key: id of printTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: printTask
@@ -12424,7 +12643,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printOperation'
-          description: The list of print long running operations.
         printers:
           type: array
           items:
@@ -12450,7 +12668,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-          description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       additionalProperties:
         type: object
     microsoft.graph.printConnector:
@@ -13183,70 +13400,6 @@ components:
               type: number
               description: Percentage of successful sign-ins made by the application.
               format: double
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.azureADFeatureUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: azureADFeatureUsage
-          type: object
-          properties:
-            featureName:
-              type: string
-            snapshotDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            usage:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.azureADLicenseUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: azureADLicenseUsage
-          type: object
-          properties:
-            licenseInfoDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.licenseInfoDetail'
-            snapshotDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-          additionalProperties:
-            type: object
-    microsoft.graph.azureADUserFeatureUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: azureADUserFeatureUsage
-          type: object
-          properties:
-            featureUsageDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.featureUsageDetail'
-            lastUpdatedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            licenseAssigned:
-              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-            licenseRecommended:
-              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-            userDisplayName:
-              type: string
-              nullable: true
-            userId:
-              type: string
-            userPrincipalName:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -14164,21 +14317,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
-              description: The name of the printer/printerShare.
               nullable: true
             isAcceptingJobs:
               type: boolean
-              description: Whether the printer/printerShare is currently accepting new print jobs.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             manufacturer:
               type: string
-              description: The manufacturer of the printer/printerShare.
               nullable: true
             model:
               type: string
-              description: The model name of the printer/printerShare.
               nullable: true
             name:
               type: string
@@ -14189,7 +14338,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
-              description: The list of jobs that are queued for printing by the printer/printerShare.
           additionalProperties:
             type: object
     microsoft.graph.printColorMode:
@@ -14784,6 +14932,12 @@ components:
               type: string
               description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
               nullable: true
+            employeeLeaveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).'
+              format: date-time
+              nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
             employeeType:
@@ -15080,7 +15234,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
-              description: A collection of this user's license details. Read-only.
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -15272,7 +15425,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
-              description: The user's activities across devices. Read-only. Nullable.
             devices:
               type: array
               items:
@@ -15471,65 +15623,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.trainingStatus'
       additionalProperties:
         type: object
-    microsoft.graph.licenseInfoDetail:
-      title: licenseInfoDetail
-      type: object
-      properties:
-        licenseType:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-        totalAssignedCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        totalLicenseCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        totalUsageCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.featureUsageDetail:
-      title: featureUsageDetail
-      type: object
-      properties:
-        featureName:
-          type: string
-          nullable: true
-        lastConfiguredDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        lastUsedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        licenseAssigned:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-        licenseRequired:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-      additionalProperties:
-        type: object
-    microsoft.graph.azureADLicenseType:
-      title: azureADLicenseType
-      enum:
-        - none
-        - free
-        - basic
-        - premiumP1
-        - premiumP2
-        - unknownFutureValue
-      type: string
     microsoft.graph.usageAuthMethod:
       title: usageAuthMethod
       enum:
@@ -15622,6 +15715,13 @@ components:
           description: A human-readable description of the current processing state of the printTask.
         state:
           $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
+      additionalProperties:
+        type: object
+    ReferenceCreate:
+      type: object
+      properties:
+        '@odata.id':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -16914,6 +17014,8 @@ components:
               description: The tags associated with the team.
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
+            templateDefinition:
+              $ref: '#/components/schemas/microsoft.graph.teamTemplateDefinition'
             schedule:
               $ref: '#/components/schemas/microsoft.graph.schedule'
           additionalProperties:
@@ -16979,6 +17081,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
     microsoft.graph.customSecurityAttributeValue:
@@ -17247,6 +17350,8 @@ components:
               nullable: true
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            diskEncryptionState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -17516,6 +17621,8 @@ components:
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
               nullable: true
+            verifiedPublisher:
+              $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
             appManagementPolicies:
               type: array
               items:
@@ -17555,7 +17662,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-              description: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -18254,7 +18360,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
-              description: A list of pending user consent requests.
+              description: A list of pending user consent requests. Supports $filter (eq).
           additionalProperties:
             type: object
     microsoft.graph.approval:
@@ -19061,7 +19167,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             recentPlans:
               type: array
               items:
@@ -19218,50 +19323,40 @@ components:
           properties:
             activationUrl:
               type: string
-              description: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
             activitySourceHost:
               type: string
-              description: 'Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.'
             appActivityId:
               type: string
-              description: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
             appDisplayName:
               type: string
-              description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
               $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
-              description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object expired on the server.
               format: date-time
               nullable: true
             fallbackUrl:
               type: string
-              description: 'Optional. URL used to launch the activity in a web-based app, if available.'
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             visualElements:
               $ref: '#/components/schemas/microsoft.graph.visualInfo'
@@ -19269,7 +19364,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
           additionalProperties:
             type: object
     microsoft.graph.device:
@@ -19835,11 +19929,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -21008,10 +21102,8 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The categories associated with the item
             changeKey:
               type: string
-              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -21301,7 +21393,6 @@ components:
               format: date-time
             description:
               type: string
-              description: Provides a user-visible description of the item. Optional.
               nullable: true
             eTag:
               type: string
@@ -21562,12 +21653,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of field definitions for this list.
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
-              description: The collection of content types present in this list.
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             items:
@@ -22108,12 +22197,10 @@ components:
           properties:
             content:
               type: string
-              description: The content stream
               format: base64url
               nullable: true
             contentUrl:
               type: string
-              description: The URL for downloading the content
               nullable: true
           additionalProperties:
             type: object
@@ -22499,6 +22586,51 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.teamTemplateDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamTemplateDefinition
+          type: object
+          properties:
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.teamTemplateAudience'
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            iconUrl:
+              type: string
+              nullable: true
+            languageTag:
+              type: string
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            parentTemplateId:
+              type: string
+              nullable: true
+            publisherName:
+              type: string
+              nullable: true
+            shortDescription:
+              type: string
+              nullable: true
+            teamDefinition:
+              $ref: '#/components/schemas/microsoft.graph.team'
+          additionalProperties:
+            type: object
     microsoft.graph.schedule:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22735,14 +22867,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+          description: 'A list of failed health check items. If the status property is available, this property will be empty.'
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDiskEncryptionState:
+      title: cloudPcDiskEncryptionState
+      enum:
+        - notAvailable
+        - notEncryped
+        - encryptedUsingPlatformManagedKey
+        - encryptedUsingCustomerManagedKey
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -23212,6 +23355,26 @@ components:
         relayState:
           type: string
           description: The relative URI the service provider would redirect to after completion of the single sign-on flow.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.verifiedPublisher:
+      title: verifiedPublisher
+      type: object
+      properties:
+        addedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the verified publisher was first added or most recently updated.
+          format: date-time
+          nullable: true
+        displayName:
+          type: string
+          description: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
+          nullable: true
+        verifiedPublisherId:
+          type: string
+          description: The ID of the verified publisher from the app publisher's Partner Center account.
           nullable: true
       additionalProperties:
         type: object
@@ -23816,7 +23979,7 @@ components:
           properties:
             query:
               type: string
-              description: The query specifying who will be the reviewer. See table for examples.
+              description: The query specifying who will be the reviewer.
               nullable: true
             queryRoot:
               type: string
@@ -24295,6 +24458,10 @@ components:
         clientIdentifier:
           type: string
           description: Configuration Manager Client Id from SCCM
+          nullable: true
+        clientVersion:
+          type: string
+          description: Configuration Manager Client version from SCCM
           nullable: true
         isBlocked:
           type: boolean
@@ -25460,6 +25627,12 @@ components:
             displayName:
               type: string
               description: Name of the discovered application. Read-only
+              nullable: true
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.detectedAppPlatformType'
+            publisher:
+              type: string
+              description: 'Indicates the publisher of the discovered application. For example: ''Microsoft''.  The default value is an empty string.'
               nullable: true
             sizeInByte:
               type: integer
@@ -26679,43 +26852,36 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
@@ -27222,12 +27388,12 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             password:
@@ -28326,7 +28492,6 @@ components:
       properties:
         type:
           type: string
-          description: 'A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.'
           nullable: true
       additionalProperties:
         type: object
@@ -28568,7 +28733,6 @@ components:
           nullable: true
         frameRate:
           type: number
-          description: Frame rate of the video.
           format: double
           nullable: true
         height:
@@ -29388,14 +29552,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             displayName:
               type: string
-              description: The name of the notebook.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -29463,7 +29625,6 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -29486,7 +29647,6 @@ components:
           properties:
             self:
               type: string
-              description: The endpoint where you can get details about the page. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -29589,7 +29749,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
               type: string
-              description: Verbose description of the application.
               nullable: true
             displayName:
               type: string
@@ -29681,6 +29840,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamTemplateAudience:
+      title: teamTemplateAudience
+      enum:
+        - organization
+        - user
+        - public
+        - unknownFutureValue
+      type: string
     microsoft.graph.operationStatus:
       title: operationStatus
       enum:
@@ -29951,12 +30118,15 @@ components:
       properties:
         additionalDetails:
           type: string
+          description: Additional message for this health check.
           nullable: true
         displayName:
           type: string
+          description: The connectivity health check item name.
         lastHealthCheckDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         result:
@@ -30173,11 +30343,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -31421,6 +31591,59 @@ components:
           additionalProperties:
             type: object
           description: The security baseline compliance state of a setting for a device
+    microsoft.graph.detectedAppPlatformType:
+      title: detectedAppPlatformType
+      enum:
+        - unknown
+        - windows
+        - windowsMobile
+        - windowsHolographic
+        - ios
+        - macOS
+        - chromeOS
+        - androidOSP
+        - androidDeviceAdministrator
+        - androidWorkProfile
+        - androidDedicatedAndFullyManaged
+      type: string
+      description: 'Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).'
+      x-ms-enum:
+        name: detectedAppPlatformType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown when platform cannot be determined.
+            name: unknown
+          - value: windows
+            description: Indicates that the platform of the detected application is Windows.
+            name: windows
+          - value: windowsMobile
+            description: Indicates that the platform of the detected application is Windows Mobile.
+            name: windowsMobile
+          - value: windowsHolographic
+            description: Indicates that the platform of the detected application is Windows Holographic.
+            name: windowsHolographic
+          - value: ios
+            description: Indicates that the platform of the detected application is iOS.
+            name: ios
+          - value: macOS
+            description: Indicates that the platform of the detected application is macOS.
+            name: macOS
+          - value: chromeOS
+            description: Indicates that the platform of the detected application is ChromeOS.
+            name: chromeOS
+          - value: androidOSP
+            description: Indicates that the platform of the detected application is Android open source project.
+            name: androidOSP
+          - value: androidDeviceAdministrator
+            description: Indicates that the platform of the detected application is Android device administrator.
+            name: androidDeviceAdministrator
+          - value: androidWorkProfile
+            description: Indicates that the platform of the detected application is Android work profile.
+            name: androidWorkProfile
+          - value: androidDedicatedAndFullyManaged
+            description: Indicates that the platform of the detected application is Android dedicated and fully managed.
+            name: androidDedicatedAndFullyManaged
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -33367,7 +33590,6 @@ components:
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Details about when the activity took place. Read-only.
               format: date-time
               nullable: true
             actor:
@@ -34056,7 +34278,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The interval between synchronization iterations.
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
@@ -35206,7 +35428,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookSortField'
-              description: Represents the current conditions used to last sort the table. Read-only.
             matchCase:
               type: boolean
               description: Represents whether the casing impacted the last sort of the table. Read-only.
@@ -36618,6 +36839,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -36626,6 +36849,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -36633,20 +36858,34 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
+  requestBodies:
+    refPostBody:
+      description: New navigation property ref value
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReferenceCreate'
+      required: true
   securitySchemes:
     azureaadv2:
       type: oauth2

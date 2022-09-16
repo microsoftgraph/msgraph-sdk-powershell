@@ -217,18 +217,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
-    "/print/reports/microsoft.graph.getAzureADFeatureUsage(period='{period}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getAzureADLicenseUsage(period='{period}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getAzureADUserFeatureUsage()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
     "/print/reports/microsoft.graph.getBrowserDistributionUserCounts(period='{period}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"

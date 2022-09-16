@@ -11,6 +11,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: List subscriptions
+      description: 'Retrieve the properties and relationships of webhook subscriptions, based on the app ID, the user, and the user''s role with a tenant. The content of the response depends on the context in which the app is calling; for details, see the scenarios in the Permissions section.'
       operationId: subscriptions.subscription_ListSubscription
       parameters:
         - $ref: '#/components/parameters/search'
@@ -53,6 +54,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Create subscription
+      description: 'Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. See the table in the Permissions section for the list of resources that support subscribing to change notifications.  Some resources support the option to include encrypted resource data in change notifications. These resources include chatMessage, contact, event, message, and presence. For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.'
       operationId: subscriptions.subscription_CreateSubscription
       requestBody:
         description: New entity
@@ -76,12 +78,14 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Get subscription
+      description: Retrieve the properties and relationships of a subscription. See the table in the Permissions section for the list of resources that support subscribing to change notifications.
       operationId: subscriptions.subscription_GetSubscription
       parameters:
         - name: subscription-id
           in: path
           description: 'key: id of subscription'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subscription
@@ -128,12 +132,14 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Update subscription
+      description: 'Renew a subscription by extending its expiry time. The table in the Permissions section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See subscription for maximum length of a subscription for each resource type.'
       operationId: subscriptions.subscription_UpdateSubscription
       parameters:
         - name: subscription-id
           in: path
           description: 'key: id of subscription'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subscription
@@ -154,18 +160,21 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Delete subscription
+      description: 'Delete a subscription. For the list of resources that support subscribing to change notifications, see the table in the Permissions section.'
       operationId: subscriptions.subscription_DeleteSubscription
       parameters:
         - name: subscription-id
           in: path
           description: 'key: id of subscription'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subscription
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -185,6 +194,7 @@ paths:
           in: path
           description: 'key: id of subscription'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subscription
@@ -211,11 +221,11 @@ components:
               description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
             clientState:
               type: string
-              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
-              description: 'Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.'
+              description: 'Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
               nullable: true
             encryptionCertificate:
               type: string
@@ -223,7 +233,7 @@ components:
               nullable: true
             encryptionCertificateId:
               type: string
-              description: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Required when includeResourceData is true.
+              description: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -244,18 +254,18 @@ components:
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.'
+              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.'
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
               nullable: true
             resource:
               type: string
-              description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
+              description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -346,6 +356,8 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
   securitySchemes:

@@ -11,6 +11,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncement from admin
+      description: A container for service communications resources. Read-only.
       operationId: admin_GetServiceAnnouncement
       parameters:
         - name: $select
@@ -87,6 +88,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -100,6 +102,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
+      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListHealthOverviews
       parameters:
         - $ref: '#/components/parameters/top'
@@ -188,12 +191,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
+      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetHealthOverviews
       parameters:
         - name: serviceHealth-id
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -250,6 +255,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -276,12 +282,14 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -295,12 +303,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_ListIssues
       parameters:
         - name: serviceHealth-id
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -407,6 +417,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -432,12 +443,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_GetIssues
       parameters:
         - name: serviceHealth-id
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -445,6 +458,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -509,6 +523,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -516,6 +531,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -542,6 +558,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -549,12 +566,14 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -574,6 +593,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -581,6 +601,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -606,6 +627,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListIssues
       parameters:
         - $ref: '#/components/parameters/top'
@@ -728,12 +750,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetIssues
       parameters:
         - name: serviceHealthIssue-id
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -798,6 +822,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -824,12 +849,14 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -849,6 +876,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -874,6 +902,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get messages from admin
+      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListMessages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1001,12 +1030,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get messages from admin
+      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetMessages
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1076,6 +1107,7 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1102,12 +1134,14 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1121,12 +1155,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
+      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_ListAttachments
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1206,6 +1242,7 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1231,12 +1268,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
+      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_GetAttachments
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1244,6 +1283,7 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
@@ -1296,6 +1336,7 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1303,6 +1344,7 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
@@ -1329,6 +1371,7 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1336,12 +1379,14 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1355,12 +1400,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get content for the navigation property attachments from admin
+      description: The attachment content.
       operationId: admin.serviceAnnouncement.messages_GetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1368,6 +1415,7 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
@@ -1386,12 +1434,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update content for the navigation property attachments in admin
+      description: The attachment content.
       operationId: admin.serviceAnnouncement.messages_SetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1399,6 +1449,7 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
@@ -1421,12 +1472,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachmentsArchive for the navigation property messages from admin
+      description: The zip file that contains all attachments for a message.
       operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1445,12 +1498,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update attachmentsArchive for the navigation property messages in admin
+      description: The zip file that contains all attachments for a message.
       operationId: admin.serviceAnnouncement_SetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1789,7 +1844,7 @@ components:
               nullable: true
             attachmentsArchive:
               type: string
-              description: The zip file of all attachments for a message.
+              description: The zip file that contains all attachments for a message.
               format: base64url
               nullable: true
             body:
@@ -2154,6 +2209,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -2162,6 +2219,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -2169,18 +2228,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:
