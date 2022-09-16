@@ -1,4 +1,4 @@
-### Example 1: Get a list of all access package catalogs
+### Example 1: {{ Add title here }}
 ```powershell
 PS C:\> {{ Add code here }}
 
