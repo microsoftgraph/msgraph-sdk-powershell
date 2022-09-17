@@ -75,7 +75,6 @@ function GraphUri_TokenizeIds {
             $TokenizedUri += $Uri.Segments[$i]
         }
     }
-    Write-host $TokenizedUri
     return $TokenizedUri.TrimEnd("/")
 }
 
