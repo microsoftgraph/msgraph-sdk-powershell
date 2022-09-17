@@ -17,6 +17,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -72,6 +73,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -98,12 +100,14 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -117,12 +121,14 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_ListActivityStatistics
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -202,6 +208,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -227,12 +234,14 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_GetActivityStatistics
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -240,6 +249,7 @@ paths:
           in: path
           description: 'key: id of activityStatistics'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityStatistics
@@ -292,6 +302,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -299,6 +310,7 @@ paths:
           in: path
           description: 'key: id of activityStatistics'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityStatistics
@@ -325,6 +337,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -332,12 +345,14 @@ paths:
           in: path
           description: 'key: id of activityStatistics'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityStatistics
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -351,12 +366,14 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_ListPeople
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -469,6 +486,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -494,12 +512,14 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_GetPeople
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -507,6 +527,7 @@ paths:
           in: path
           description: 'key: id of person'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: person
@@ -562,6 +583,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -569,6 +591,7 @@ paths:
           in: path
           description: 'key: id of person'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: person
@@ -595,6 +618,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -602,12 +626,14 @@ paths:
           in: path
           description: 'key: id of person'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: person
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -621,12 +647,14 @@ paths:
       tags:
         - users.profile
       summary: Get profile from users
+      description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_GetProfile
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -789,6 +817,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -815,12 +844,14 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -840,6 +871,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -940,6 +972,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -971,6 +1004,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -978,6 +1012,7 @@ paths:
           in: path
           description: 'key: id of userAccountInformation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userAccountInformation
@@ -1037,6 +1072,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1044,6 +1080,7 @@ paths:
           in: path
           description: 'key: id of userAccountInformation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userAccountInformation
@@ -1070,6 +1107,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1077,12 +1115,14 @@ paths:
           in: path
           description: 'key: id of userAccountInformation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userAccountInformation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1096,12 +1136,14 @@ paths:
       tags:
         - users.profile
       summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_ListAddresses
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1199,6 +1241,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1224,12 +1267,14 @@ paths:
       tags:
         - users.profile
       summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_GetAddresses
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1237,6 +1282,7 @@ paths:
           in: path
           description: 'key: id of itemAddress'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemAddress
@@ -1295,6 +1341,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1302,6 +1349,7 @@ paths:
           in: path
           description: 'key: id of itemAddress'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemAddress
@@ -1328,6 +1376,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1335,12 +1384,14 @@ paths:
           in: path
           description: 'key: id of itemAddress'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemAddress
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1354,12 +1405,14 @@ paths:
       tags:
         - users.profile
       summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_ListAnniversaries
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1457,6 +1510,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1482,12 +1536,14 @@ paths:
       tags:
         - users.profile
       summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_GetAnniversaries
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1495,6 +1551,7 @@ paths:
           in: path
           description: 'key: id of personAnnualEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnualEvent
@@ -1553,6 +1610,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1560,6 +1618,7 @@ paths:
           in: path
           description: 'key: id of personAnnualEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnualEvent
@@ -1586,6 +1645,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1593,12 +1653,14 @@ paths:
           in: path
           description: 'key: id of personAnnualEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnualEvent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1612,12 +1674,14 @@ paths:
       tags:
         - users.profile
       summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_ListAwards
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1724,6 +1788,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1749,12 +1814,14 @@ paths:
       tags:
         - users.profile
       summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_GetAwards
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1762,6 +1829,7 @@ paths:
           in: path
           description: 'key: id of personAward'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAward
@@ -1823,6 +1891,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1830,6 +1899,7 @@ paths:
           in: path
           description: 'key: id of personAward'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAward
@@ -1856,6 +1926,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1863,12 +1934,14 @@ paths:
           in: path
           description: 'key: id of personAward'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAward
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1882,12 +1955,14 @@ paths:
       tags:
         - users.profile
       summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_ListCertifications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2006,6 +2081,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2031,12 +2107,14 @@ paths:
       tags:
         - users.profile
       summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_GetCertifications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2044,6 +2122,7 @@ paths:
           in: path
           description: 'key: id of personCertification'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personCertification
@@ -2109,6 +2188,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2116,6 +2196,7 @@ paths:
           in: path
           description: 'key: id of personCertification'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personCertification
@@ -2142,6 +2223,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2149,12 +2231,14 @@ paths:
           in: path
           description: 'key: id of personCertification'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personCertification
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2168,12 +2252,14 @@ paths:
       tags:
         - users.profile
       summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_ListEducationalActivities
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2277,6 +2363,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2302,12 +2389,14 @@ paths:
       tags:
         - users.profile
       summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_GetEducationalActivities
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2315,6 +2404,7 @@ paths:
           in: path
           description: 'key: id of educationalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationalActivity
@@ -2375,6 +2465,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2382,6 +2473,7 @@ paths:
           in: path
           description: 'key: id of educationalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationalActivity
@@ -2408,6 +2500,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2415,12 +2508,14 @@ paths:
           in: path
           description: 'key: id of educationalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationalActivity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2434,12 +2529,14 @@ paths:
       tags:
         - users.profile
       summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_ListEmails
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2537,6 +2634,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2562,12 +2660,14 @@ paths:
       tags:
         - users.profile
       summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_GetEmails
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2575,6 +2675,7 @@ paths:
           in: path
           description: 'key: id of itemEmail'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemEmail
@@ -2633,6 +2734,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2640,6 +2742,7 @@ paths:
           in: path
           description: 'key: id of itemEmail'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemEmail
@@ -2666,6 +2769,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2673,12 +2777,14 @@ paths:
           in: path
           description: 'key: id of itemEmail'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemEmail
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2692,12 +2798,14 @@ paths:
       tags:
         - users.profile
       summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_ListInterests
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2804,6 +2912,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2829,12 +2938,14 @@ paths:
       tags:
         - users.profile
       summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_GetInterests
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2842,6 +2953,7 @@ paths:
           in: path
           description: 'key: id of personInterest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personInterest
@@ -2903,6 +3015,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2910,6 +3023,7 @@ paths:
           in: path
           description: 'key: id of personInterest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personInterest
@@ -2936,6 +3050,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2943,12 +3058,14 @@ paths:
           in: path
           description: 'key: id of personInterest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personInterest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2962,12 +3079,14 @@ paths:
       tags:
         - users.profile
       summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_ListLanguages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3077,6 +3196,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3102,12 +3222,14 @@ paths:
       tags:
         - users.profile
       summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_GetLanguages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3115,6 +3237,7 @@ paths:
           in: path
           description: 'key: id of languageProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: languageProficiency
@@ -3177,6 +3300,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3184,6 +3308,7 @@ paths:
           in: path
           description: 'key: id of languageProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: languageProficiency
@@ -3210,6 +3335,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3217,12 +3343,14 @@ paths:
           in: path
           description: 'key: id of languageProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: languageProficiency
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3236,12 +3364,14 @@ paths:
       tags:
         - users.profile
       summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_ListNames
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3363,6 +3493,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3388,12 +3519,14 @@ paths:
       tags:
         - users.profile
       summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_GetNames
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3401,6 +3534,7 @@ paths:
           in: path
           description: 'key: id of personName'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personName
@@ -3467,6 +3601,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3474,6 +3609,7 @@ paths:
           in: path
           description: 'key: id of personName'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personName
@@ -3500,6 +3636,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3507,12 +3644,14 @@ paths:
           in: path
           description: 'key: id of personName'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personName
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3526,12 +3665,14 @@ paths:
       tags:
         - users.profile
       summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_ListNotes
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3629,6 +3770,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3654,12 +3796,14 @@ paths:
       tags:
         - users.profile
       summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_GetNotes
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3667,6 +3811,7 @@ paths:
           in: path
           description: 'key: id of personAnnotation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnotation
@@ -3725,6 +3870,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3732,6 +3878,7 @@ paths:
           in: path
           description: 'key: id of personAnnotation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnotation
@@ -3758,6 +3905,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3765,12 +3913,14 @@ paths:
           in: path
           description: 'key: id of personAnnotation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnotation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3784,12 +3934,14 @@ paths:
       tags:
         - users.profile
       summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_ListPatents
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3899,6 +4051,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3924,12 +4077,14 @@ paths:
       tags:
         - users.profile
       summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_GetPatents
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3937,6 +4092,7 @@ paths:
           in: path
           description: 'key: id of itemPatent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPatent
@@ -3999,6 +4155,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4006,6 +4163,7 @@ paths:
           in: path
           description: 'key: id of itemPatent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPatent
@@ -4032,6 +4190,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4039,12 +4198,14 @@ paths:
           in: path
           description: 'key: id of itemPatent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPatent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4058,12 +4219,14 @@ paths:
       tags:
         - users.profile
       summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_ListPhones
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4161,6 +4324,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4186,12 +4350,14 @@ paths:
       tags:
         - users.profile
       summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_GetPhones
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4199,6 +4365,7 @@ paths:
           in: path
           description: 'key: id of itemPhone'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPhone
@@ -4257,6 +4424,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4264,6 +4432,7 @@ paths:
           in: path
           description: 'key: id of itemPhone'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPhone
@@ -4290,6 +4459,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4297,12 +4467,14 @@ paths:
           in: path
           description: 'key: id of itemPhone'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPhone
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4316,12 +4488,14 @@ paths:
       tags:
         - users.profile
       summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_ListPositions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4425,6 +4599,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4450,12 +4625,14 @@ paths:
       tags:
         - users.profile
       summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_GetPositions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4463,6 +4640,7 @@ paths:
           in: path
           description: 'key: id of workPosition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: workPosition
@@ -4523,6 +4701,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4530,6 +4709,7 @@ paths:
           in: path
           description: 'key: id of workPosition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: workPosition
@@ -4556,6 +4736,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4563,12 +4744,14 @@ paths:
           in: path
           description: 'key: id of workPosition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: workPosition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4582,12 +4765,14 @@ paths:
       tags:
         - users.profile
       summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_ListProjects
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4700,6 +4885,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4725,12 +4911,14 @@ paths:
       tags:
         - users.profile
       summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_GetProjects
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4738,6 +4926,7 @@ paths:
           in: path
           description: 'key: id of projectParticipation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: projectParticipation
@@ -4801,6 +4990,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4808,6 +4998,7 @@ paths:
           in: path
           description: 'key: id of projectParticipation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: projectParticipation
@@ -4834,6 +5025,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4841,12 +5033,14 @@ paths:
           in: path
           description: 'key: id of projectParticipation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: projectParticipation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4860,12 +5054,14 @@ paths:
       tags:
         - users.profile
       summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_ListPublications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4972,6 +5168,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4997,12 +5194,14 @@ paths:
       tags:
         - users.profile
       summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_GetPublications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5010,6 +5209,7 @@ paths:
           in: path
           description: 'key: id of itemPublication'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPublication
@@ -5071,6 +5271,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5078,6 +5279,7 @@ paths:
           in: path
           description: 'key: id of itemPublication'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPublication
@@ -5104,6 +5306,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5111,12 +5314,14 @@ paths:
           in: path
           description: 'key: id of itemPublication'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPublication
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5130,12 +5335,14 @@ paths:
       tags:
         - users.profile
       summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_ListSkills
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5242,6 +5449,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5267,12 +5475,14 @@ paths:
       tags:
         - users.profile
       summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_GetSkills
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5280,6 +5490,7 @@ paths:
           in: path
           description: 'key: id of skillProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: skillProficiency
@@ -5341,6 +5552,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5348,6 +5560,7 @@ paths:
           in: path
           description: 'key: id of skillProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: skillProficiency
@@ -5374,6 +5587,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5381,12 +5595,14 @@ paths:
           in: path
           description: 'key: id of skillProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: skillProficiency
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5400,12 +5616,14 @@ paths:
       tags:
         - users.profile
       summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_ListWebAccounts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5512,6 +5730,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5537,12 +5756,14 @@ paths:
       tags:
         - users.profile
       summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_GetWebAccounts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5550,6 +5771,7 @@ paths:
           in: path
           description: 'key: id of webAccount'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: webAccount
@@ -5611,6 +5833,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5618,6 +5841,7 @@ paths:
           in: path
           description: 'key: id of webAccount'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: webAccount
@@ -5644,6 +5868,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5651,12 +5876,14 @@ paths:
           in: path
           description: 'key: id of webAccount'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: webAccount
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5670,12 +5897,14 @@ paths:
       tags:
         - users.profile
       summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_ListWebsites
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5779,6 +6008,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5804,12 +6034,14 @@ paths:
       tags:
         - users.profile
       summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_GetWebsites
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5817,6 +6049,7 @@ paths:
           in: path
           description: 'key: id of personWebsite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personWebsite
@@ -5877,6 +6110,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5884,6 +6118,7 @@ paths:
           in: path
           description: 'key: id of personWebsite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personWebsite
@@ -5910,6 +6145,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5917,12 +6153,14 @@ paths:
           in: path
           description: 'key: id of personWebsite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personWebsite
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7617,11 +7855,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -7783,6 +8021,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -7791,6 +8031,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -7798,18 +8040,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

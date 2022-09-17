@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Get androidDeviceOwnerEnrollmentProfiles from deviceManagement
+      description: Android device owner enrollment profile entities.
       operationId: deviceManagement_ListAndroidDeviceOwnerEnrollmentProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -32,6 +33,8 @@ paths:
                 - id desc
                 - accountId
                 - accountId desc
+                - configureWifi
+                - configureWifi desc
                 - createdDateTime
                 - createdDateTime desc
                 - description
@@ -81,6 +84,7 @@ paths:
               enum:
                 - id
                 - accountId
+                - configureWifi
                 - createdDateTime
                 - description
                 - displayName
@@ -148,12 +152,14 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Get androidDeviceOwnerEnrollmentProfiles from deviceManagement
+      description: Android device owner enrollment profile entities.
       operationId: deviceManagement_GetAndroidDeviceOwnerEnrollmentProfiles
       parameters:
         - name: androidDeviceOwnerEnrollmentProfile-id
           in: path
           description: 'key: id of androidDeviceOwnerEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
@@ -169,6 +175,7 @@ paths:
               enum:
                 - id
                 - accountId
+                - configureWifi
                 - createdDateTime
                 - description
                 - displayName
@@ -225,6 +232,7 @@ paths:
           in: path
           description: 'key: id of androidDeviceOwnerEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
@@ -251,12 +259,14 @@ paths:
           in: path
           description: 'key: id of androidDeviceOwnerEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -270,6 +280,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Get androidForWorkEnrollmentProfiles from deviceManagement
+      description: Android for Work enrollment profile entities.
       operationId: deviceManagement_ListAndroidGraphFPreWorkEnrollmentProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -380,12 +391,14 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Get androidForWorkEnrollmentProfiles from deviceManagement
+      description: Android for Work enrollment profile entities.
       operationId: deviceManagement_GetAndroidGraphFPreWorkEnrollmentProfiles
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
           description: 'key: id of androidForWorkEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidForWorkEnrollmentProfile
@@ -448,6 +461,7 @@ paths:
           in: path
           description: 'key: id of androidForWorkEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidForWorkEnrollmentProfile
@@ -474,12 +488,14 @@ paths:
           in: path
           description: 'key: id of androidForWorkEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidForWorkEnrollmentProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -493,6 +509,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get appleUserInitiatedEnrollmentProfiles from deviceManagement
+      description: Apple user initiated enrollment profiles
       operationId: deviceManagement_ListAppleUserInitiatedEnrollmentProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -599,12 +616,14 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get appleUserInitiatedEnrollmentProfiles from deviceManagement
+      description: Apple user initiated enrollment profiles
       operationId: deviceManagement_GetAppleUserInitiatedEnrollmentProfiles
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
           description: 'key: id of appleUserInitiatedEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
@@ -669,6 +688,7 @@ paths:
           in: path
           description: 'key: id of appleUserInitiatedEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
@@ -695,12 +715,14 @@ paths:
           in: path
           description: 'key: id of appleUserInitiatedEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -714,12 +736,14 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this profile.
       operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_ListAssignments
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
           description: 'key: id of appleUserInitiatedEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
@@ -787,6 +811,7 @@ paths:
           in: path
           description: 'key: id of appleUserInitiatedEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
@@ -812,12 +837,14 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this profile.
       operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_GetAssignments
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
           description: 'key: id of appleUserInitiatedEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
@@ -825,6 +852,7 @@ paths:
           in: path
           description: 'key: id of appleEnrollmentProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleEnrollmentProfileAssignment
@@ -873,6 +901,7 @@ paths:
           in: path
           description: 'key: id of appleUserInitiatedEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
@@ -880,6 +909,7 @@ paths:
           in: path
           description: 'key: id of appleEnrollmentProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleEnrollmentProfileAssignment
@@ -906,6 +936,7 @@ paths:
           in: path
           description: 'key: id of appleUserInitiatedEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
@@ -913,12 +944,14 @@ paths:
           in: path
           description: 'key: id of appleEnrollmentProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleEnrollmentProfileAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -932,6 +965,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get autopilotEvents from deviceManagement
+      description: The list of autopilot events for the tenant.
       operationId: deviceManagement_ListAutopilotEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1092,12 +1126,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get autopilotEvents from deviceManagement
+      description: The list of autopilot events for the tenant.
       operationId: deviceManagement_GetAutopilotEvents
       parameters:
         - name: deviceManagementAutopilotEvent-id
           in: path
           description: 'key: id of deviceManagementAutopilotEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotEvent
@@ -1178,6 +1214,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementAutopilotEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotEvent
@@ -1204,12 +1241,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementAutopilotEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotEvent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1223,12 +1262,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get policyStatusDetails from deviceManagement
+      description: Policy and application status details for this device.
       operationId: deviceManagement.autopilotEvents_ListPolicyStatusDetails
       parameters:
         - name: deviceManagementAutopilotEvent-id
           in: path
           description: 'key: id of deviceManagementAutopilotEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotEvent
@@ -1311,6 +1352,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementAutopilotEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotEvent
@@ -1336,12 +1378,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get policyStatusDetails from deviceManagement
+      description: Policy and application status details for this device.
       operationId: deviceManagement.autopilotEvents_GetPolicyStatusDetails
       parameters:
         - name: deviceManagementAutopilotEvent-id
           in: path
           description: 'key: id of deviceManagementAutopilotEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotEvent
@@ -1349,6 +1393,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementAutopilotPolicyStatusDetail'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotPolicyStatusDetail
@@ -1402,6 +1447,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementAutopilotEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotEvent
@@ -1409,6 +1455,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementAutopilotPolicyStatusDetail'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotPolicyStatusDetail
@@ -1435,6 +1482,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementAutopilotEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotEvent
@@ -1442,12 +1490,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementAutopilotPolicyStatusDetail'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementAutopilotPolicyStatusDetail
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1461,6 +1511,7 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Get conditionalAccessSettings from deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
       operationId: deviceManagement_GetConditionalAccessSettings
       parameters:
         - name: $select
@@ -1528,6 +1579,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1541,6 +1593,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get depOnboardingSettings from deviceManagement
+      description: This collections of multiple DEP tokens per-tenant.
       operationId: deviceManagement_ListDepOnboardingSettings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1665,12 +1718,14 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get depOnboardingSettings from deviceManagement
+      description: This collections of multiple DEP tokens per-tenant.
       operationId: deviceManagement_GetDepOnboardingSettings
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -1767,6 +1822,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -1793,12 +1849,14 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1812,12 +1870,14 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultIosEnrollmentProfile from deviceManagement
+      description: Default iOS Enrollment Profile
       operationId: deviceManagement.depOnboardingSettings_GetDefaultIosEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -1914,12 +1974,14 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultMacOsEnrollmentProfile from deviceManagement
+      description: Default MacOs Enrollment Profile
       operationId: deviceManagement.depOnboardingSettings_GetDefaultMacOsEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -1962,11 +2024,25 @@ paths:
                 - accessibilityScreenDisabled
                 - autoUnlockWithWatchDisabled
                 - chooseYourLockScreenDisabled
+                - dontAutoPopulatePrimaryAccountInfo
+                - enableRestrictEditing
                 - fileVaultDisabled
                 - iCloudDiagnosticsDisabled
                 - iCloudStorageDisabled
+                - isLocalPrimaryAccount
+                - isPrimaryUser
+                - lockPrimaryAccountInfo
+                - managedLocalUserShortName
                 - passCodeDisabled
+                - prefillAccountInfo
+                - primaryAccountFullName
+                - primaryAccountUserName
+                - primaryUser
+                - primaryUserFullName
                 - registrationDisabled
+                - requestRequiresNetworkTether
+                - setPrimarySetupAccountAsRegularUser
+                - skipPrimarySetupAccountCreation
                 - zoomDisabled
               type: string
         - name: $expand
@@ -1996,12 +2072,14 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get enrollmentProfiles from deviceManagement
+      description: The enrollment profiles.
       operationId: deviceManagement.depOnboardingSettings_ListEnrollmentProfiles
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2084,6 +2162,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2109,12 +2188,14 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get enrollmentProfiles from deviceManagement
+      description: The enrollment profiles.
       operationId: deviceManagement.depOnboardingSettings_GetEnrollmentProfiles
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2122,6 +2203,7 @@ paths:
           in: path
           description: 'key: id of enrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentProfile
@@ -2182,6 +2264,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2189,6 +2272,7 @@ paths:
           in: path
           description: 'key: id of enrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentProfile
@@ -2215,6 +2299,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2222,12 +2307,14 @@ paths:
           in: path
           description: 'key: id of enrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2241,12 +2328,14 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get importedAppleDeviceIdentities from deviceManagement
+      description: The imported Apple device identities.
       operationId: deviceManagement.depOnboardingSettings_ListImportedAppleDeviceIdentities
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2344,6 +2433,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2369,12 +2459,14 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get importedAppleDeviceIdentities from deviceManagement
+      description: The imported Apple device identities.
       operationId: deviceManagement.depOnboardingSettings_GetImportedAppleDeviceIdentities
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2382,6 +2474,7 @@ paths:
           in: path
           description: 'key: id of importedAppleDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedAppleDeviceIdentity
@@ -2440,6 +2533,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2447,6 +2541,7 @@ paths:
           in: path
           description: 'key: id of importedAppleDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedAppleDeviceIdentity
@@ -2473,6 +2568,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2480,12 +2576,14 @@ paths:
           in: path
           description: 'key: id of importedAppleDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedAppleDeviceIdentity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2499,6 +2597,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
       operationId: deviceManagement_ListDeviceEnrollmentConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2605,12 +2704,14 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
       operationId: deviceManagement_GetDeviceEnrollmentConfigurations
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -2677,6 +2778,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -2703,12 +2805,14 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2722,12 +2826,14 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfigurations_ListAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -2801,6 +2907,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -2826,12 +2933,14 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfigurations_GetAssignments
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -2839,6 +2948,7 @@ paths:
           in: path
           description: 'key: id of enrollmentConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentConfigurationAssignment
@@ -2889,6 +2999,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -2896,6 +3007,7 @@ paths:
           in: path
           description: 'key: id of enrollmentConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentConfigurationAssignment
@@ -2922,6 +3034,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -2929,12 +3042,14 @@ paths:
           in: path
           description: 'key: id of enrollmentConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentConfigurationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2948,6 +3063,7 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Get importedDeviceIdentities from deviceManagement
+      description: The imported device identities.
       operationId: deviceManagement_ListImportedDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3052,12 +3168,14 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Get importedDeviceIdentities from deviceManagement
+      description: The imported device identities.
       operationId: deviceManagement_GetImportedDeviceIdentities
       parameters:
         - name: importedDeviceIdentity-id
           in: path
           description: 'key: id of importedDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedDeviceIdentity
@@ -3113,6 +3231,7 @@ paths:
           in: path
           description: 'key: id of importedDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedDeviceIdentity
@@ -3139,12 +3258,14 @@ paths:
           in: path
           description: 'key: id of importedDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedDeviceIdentity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3158,6 +3279,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3259,12 +3381,14 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentities
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of importedWindowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
@@ -3319,6 +3443,7 @@ paths:
           in: path
           description: 'key: id of importedWindowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
@@ -3345,12 +3470,14 @@ paths:
           in: path
           description: 'key: id of importedWindowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3364,6 +3491,7 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
+      description: User experience analytics devices not Windows Autopilot ready.
       operationId: deviceManagement_ListUserExperienceAnalyticsNotAutopilotReadyDevice
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3471,12 +3599,14 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
+      description: User experience analytics devices not Windows Autopilot ready.
       operationId: deviceManagement_GetUserExperienceAnalyticsNotAutopilotReadyDevice
       parameters:
         - name: userExperienceAnalyticsNotAutopilotReadyDevice-id
           in: path
           description: 'key: id of userExperienceAnalyticsNotAutopilotReadyDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userExperienceAnalyticsNotAutopilotReadyDevice
@@ -3533,6 +3663,7 @@ paths:
           in: path
           description: 'key: id of userExperienceAnalyticsNotAutopilotReadyDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userExperienceAnalyticsNotAutopilotReadyDevice
@@ -3559,12 +3690,14 @@ paths:
           in: path
           description: 'key: id of userExperienceAnalyticsNotAutopilotReadyDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userExperienceAnalyticsNotAutopilotReadyDevice
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3578,6 +3711,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get windowsAutopilotDeploymentProfiles from deviceManagement
+      description: Windows auto pilot deployment profiles
       operationId: deviceManagement_ListWindowsAutopilotDeploymentProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3701,12 +3835,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get windowsAutopilotDeploymentProfiles from deviceManagement
+      description: Windows auto pilot deployment profiles
       operationId: deviceManagement_GetWindowsAutopilotDeploymentProfiles
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -3782,6 +3918,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -3808,12 +3945,14 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3827,12 +3966,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignedDevices from deviceManagement
+      description: The list of assigned devices for the profile.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles_ListAssignedDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -3976,6 +4117,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4001,12 +4143,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignedDevices from deviceManagement
+      description: The list of assigned devices for the profile.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles_GetAssignedDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4014,6 +4158,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -4111,6 +4256,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4118,6 +4264,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -4144,6 +4291,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4151,12 +4299,14 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4170,12 +4320,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get deploymentProfile from deviceManagement
+      description: Deployment profile currently assigned to the Windows autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4183,6 +4335,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -4253,12 +4406,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get intendedDeploymentProfile from deviceManagement
+      description: Deployment profile intended to be assigned to the Windows autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4266,6 +4421,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -4336,12 +4492,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the profile.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles_ListAssignments
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4415,6 +4573,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4440,12 +4599,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the profile.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles_GetAssignments
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4453,6 +4614,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfileAssignment
@@ -4503,6 +4665,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4510,6 +4673,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfileAssignment
@@ -4536,6 +4700,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -4543,12 +4708,14 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfileAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4562,6 +4729,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_ListWindowsAutopilotDeviceIdentities
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4721,12 +4889,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_GetWindowsAutopilotDeviceIdentities
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -4822,6 +4992,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -4848,12 +5019,14 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4867,12 +5040,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get deploymentProfile from deviceManagement
+      description: Deployment profile currently assigned to the Windows autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -4941,12 +5116,14 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get intendedDeploymentProfile from deviceManagement
+      description: Deployment profile intended to be assigned to the Windows autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -5015,6 +5192,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotSettings
       summary: Get windowsAutopilotSettings from deviceManagement
+      description: The Windows autopilot account settings.
       operationId: deviceManagement_GetWindowsAutopilotSettings
       parameters:
         - name: $select
@@ -5084,6 +5262,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5097,6 +5276,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get windowsFeatureUpdateProfiles from deviceManagement
+      description: A collection of windows feature update profiles
       operationId: deviceManagement_ListWindowsFeatureUpdateProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5206,12 +5386,14 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get windowsFeatureUpdateProfiles from deviceManagement
+      description: A collection of windows feature update profiles
       operationId: deviceManagement_GetWindowsFeatureUpdateProfiles
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
           description: 'key: id of windowsFeatureUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfile
@@ -5277,6 +5459,7 @@ paths:
           in: path
           description: 'key: id of windowsFeatureUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfile
@@ -5303,12 +5486,14 @@ paths:
           in: path
           description: 'key: id of windowsFeatureUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5322,12 +5507,14 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get assignments from deviceManagement
+      description: The list of group assignments of the profile.
       operationId: deviceManagement.windowsFeatureUpdateProfiles_ListAssignments
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
           description: 'key: id of windowsFeatureUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfile
@@ -5395,6 +5582,7 @@ paths:
           in: path
           description: 'key: id of windowsFeatureUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfile
@@ -5420,12 +5608,14 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get assignments from deviceManagement
+      description: The list of group assignments of the profile.
       operationId: deviceManagement.windowsFeatureUpdateProfiles_GetAssignments
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
           description: 'key: id of windowsFeatureUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfile
@@ -5433,6 +5623,7 @@ paths:
           in: path
           description: 'key: id of windowsFeatureUpdateProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfileAssignment
@@ -5481,6 +5672,7 @@ paths:
           in: path
           description: 'key: id of windowsFeatureUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfile
@@ -5488,6 +5680,7 @@ paths:
           in: path
           description: 'key: id of windowsFeatureUpdateProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfileAssignment
@@ -5514,6 +5707,7 @@ paths:
           in: path
           description: 'key: id of windowsFeatureUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfile
@@ -5521,12 +5715,14 @@ paths:
           in: path
           description: 'key: id of windowsFeatureUpdateProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfileAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5691,6 +5887,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5795,6 +5992,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -5852,6 +6050,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -5878,12 +6077,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5903,6 +6104,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -5938,12 +6140,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -6022,6 +6226,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -6047,12 +6252,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -6060,6 +6267,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -6119,6 +6327,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -6126,6 +6335,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -6152,6 +6362,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -6159,12 +6370,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6184,6 +6397,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -6191,6 +6405,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -6241,6 +6456,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -6248,6 +6464,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -6274,6 +6491,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -6281,12 +6499,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6415,6 +6635,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6494,6 +6715,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6520,12 +6742,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6539,12 +6763,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
+      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
       operationId: roleManagement.cloudPC.roleAssignments_ListAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6615,6 +6841,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6640,12 +6867,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
+      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
       operationId: roleManagement.cloudPC.roleAssignments_GetAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6653,6 +6882,7 @@ paths:
           in: path
           description: 'key: id of appScope'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appScope
@@ -6702,6 +6932,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6709,6 +6940,7 @@ paths:
           in: path
           description: 'key: id of appScope'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appScope
@@ -6735,6 +6967,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6742,12 +6975,14 @@ paths:
           in: path
           description: 'key: id of appScope'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appScope
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6761,12 +6996,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
+      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignments_ListDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6829,12 +7066,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
+      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignments_GetDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6842,6 +7081,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -6885,12 +7125,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
+      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignments_ListPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6953,12 +7195,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
+      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignments_GetPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -6966,6 +7210,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -7009,12 +7254,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
+      description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
       operationId: roleManagement.cloudPC.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -7184,6 +7431,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7248,6 +7496,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7274,12 +7523,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7293,12 +7544,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.cloudPC.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7389,6 +7642,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7414,12 +7668,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.cloudPC.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7427,6 +7683,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7492,6 +7749,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7499,6 +7757,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7525,6 +7784,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7532,12 +7792,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7557,6 +7819,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -7564,23 +7827,30 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
           description: 'Usage: transitive={transitive}'
+          style: form
+          explode: false
           schema:
             type: boolean
             default: false
         - name: directoryScopeType
           in: query
           description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          style: form
+          explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -7612,23 +7882,30 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
           description: 'Usage: transitive={transitive}'
+          style: form
+          explode: false
           schema:
             type: boolean
             default: false
         - name: directoryScopeType
           in: query
           description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          style: form
+          explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -7654,6 +7931,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get deviceManagement from roleManagement
+      description: The RbacApplication for Device Management
       operationId: roleManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -7730,6 +8008,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7834,6 +8113,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -7891,6 +8171,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -7917,12 +8198,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7942,6 +8225,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -7977,12 +8261,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -8061,6 +8347,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -8086,12 +8373,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -8099,6 +8388,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -8158,6 +8448,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -8165,6 +8456,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -8191,6 +8483,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -8198,12 +8491,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8223,6 +8518,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -8230,6 +8526,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -8280,6 +8577,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -8287,6 +8585,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -8313,6 +8612,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -8320,12 +8620,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8454,6 +8756,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8533,6 +8836,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8559,12 +8863,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8578,12 +8884,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
+      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
       operationId: roleManagement.deviceManagement.roleAssignments_ListAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8654,6 +8962,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8679,12 +8988,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
+      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
       operationId: roleManagement.deviceManagement.roleAssignments_GetAppScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8692,6 +9003,7 @@ paths:
           in: path
           description: 'key: id of appScope'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appScope
@@ -8741,6 +9053,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8748,6 +9061,7 @@ paths:
           in: path
           description: 'key: id of appScope'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appScope
@@ -8774,6 +9088,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8781,12 +9096,14 @@ paths:
           in: path
           description: 'key: id of appScope'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appScope
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8800,12 +9117,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
+      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignments_ListDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8868,12 +9187,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
+      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignments_GetDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8881,6 +9202,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -8924,12 +9246,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
+      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignments_ListPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -8992,12 +9316,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
+      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignments_GetPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -9005,6 +9331,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -9048,12 +9375,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
+      description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
       operationId: roleManagement.deviceManagement.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
           description: 'key: id of unifiedRoleAssignmentMultiple'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentMultiple
@@ -9223,6 +9552,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9287,6 +9617,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9313,12 +9644,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9332,12 +9665,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.deviceManagement.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9428,6 +9763,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9453,12 +9789,14 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.deviceManagement.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9466,6 +9804,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9531,6 +9870,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9538,6 +9878,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9564,6 +9905,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9571,12 +9913,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9596,6 +9940,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -9603,23 +9948,30 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
           description: 'Usage: transitive={transitive}'
+          style: form
+          explode: false
           schema:
             type: boolean
             default: false
         - name: directoryScopeType
           in: query
           description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          style: form
+          explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -9651,23 +10003,30 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
           description: 'Usage: transitive={transitive}'
+          style: form
+          explode: false
           schema:
             type: boolean
             default: false
         - name: directoryScopeType
           in: query
           description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          style: form
+          explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -9805,6 +10164,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9823,24 +10183,32 @@ paths:
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: appScopeId
           in: query
           description: 'Usage: appScopeId=''{appScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: principalId
           in: query
           description: 'Usage: principalId=''{principalId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: roleDefinitionId
           in: query
           description: 'Usage: roleDefinitionId=''{roleDefinitionId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
@@ -9872,24 +10240,32 @@ paths:
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: appScopeId
           in: query
           description: 'Usage: appScopeId=''{appScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: principalId
           in: query
           description: 'Usage: principalId=''{principalId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: roleDefinitionId
           in: query
           description: 'Usage: roleDefinitionId=''{roleDefinitionId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
@@ -10007,6 +10383,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10064,6 +10441,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10090,12 +10468,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10115,6 +10495,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10150,12 +10531,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10234,6 +10617,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10259,12 +10643,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10272,6 +10658,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -10331,6 +10718,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10338,6 +10726,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -10364,6 +10753,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10371,12 +10761,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10396,6 +10788,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10403,6 +10796,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -10453,6 +10847,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10460,6 +10855,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -10486,6 +10882,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -10493,12 +10890,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10600,6 +10999,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -10654,6 +11054,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -10680,12 +11081,14 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10705,6 +11108,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -10790,6 +11194,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -10821,6 +11226,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -10828,6 +11234,7 @@ paths:
           in: path
           description: 'key: id of approvalStep'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStep
@@ -10882,6 +11289,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -10889,6 +11297,7 @@ paths:
           in: path
           description: 'key: id of approvalStep'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStep
@@ -10915,6 +11324,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -10922,12 +11332,14 @@ paths:
           in: path
           description: 'key: id of approvalStep'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStep
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10947,6 +11359,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.approvalFilterByCurrentUserOptions'
       responses:
@@ -11087,6 +11500,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -11166,6 +11580,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -11192,12 +11607,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11211,12 +11628,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.directory.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -11266,6 +11685,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -11292,12 +11712,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11311,12 +11733,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -11360,12 +11784,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -11409,12 +11835,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -11598,6 +12026,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -11686,6 +12115,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -11712,12 +12142,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11731,12 +12163,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.directory.roleAssignmentScheduleInstances_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -11818,6 +12252,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleInstanceFilterByCurrentUserOptions'
       responses:
@@ -11989,6 +12424,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -12091,6 +12527,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -12117,12 +12554,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12136,12 +12575,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it''s null. Supports $expand.'
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -12219,12 +12660,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -12269,12 +12712,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -12324,6 +12769,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -12338,12 +12784,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role assignment through the request. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -12387,12 +12835,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -12450,12 +12900,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -12546,6 +12998,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleRequestFilterByCurrentUserOptions'
       responses:
@@ -12700,6 +13153,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -12789,6 +13243,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -12815,12 +13270,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12834,12 +13291,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.directory.roleAssignmentSchedules_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -12923,6 +13382,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleFilterByCurrentUserOptions'
       responses:
@@ -13060,6 +13520,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13124,6 +13585,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13150,12 +13612,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13169,12 +13633,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.directory.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13265,6 +13731,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13290,12 +13757,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.directory.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13303,6 +13772,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13368,6 +13838,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13375,6 +13846,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13401,6 +13873,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13408,12 +13881,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13433,6 +13908,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -13440,23 +13916,30 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
           description: 'Usage: transitive={transitive}'
+          style: form
+          explode: false
           schema:
             type: boolean
             default: false
         - name: directoryScopeType
           in: query
           description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          style: form
+          explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -13488,23 +13971,30 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
           description: 'Usage: transitive={transitive}'
+          style: form
+          explode: false
           schema:
             type: boolean
             default: false
         - name: directoryScopeType
           in: query
           description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          style: form
+          explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -13648,6 +14138,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
@@ -13728,6 +14219,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
@@ -13754,12 +14246,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13779,6 +14273,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleInstanceFilterByCurrentUserOptions'
       responses:
@@ -13948,6 +14443,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -14044,6 +14540,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -14070,12 +14567,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14089,12 +14588,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -14139,12 +14640,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -14194,6 +14697,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -14208,12 +14712,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role eligibility through the request. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -14257,12 +14763,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -14320,12 +14828,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -14409,6 +14919,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleRequestFilterByCurrentUserOptions'
       responses:
@@ -14558,6 +15069,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
@@ -14640,6 +15152,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
@@ -14666,12 +15179,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14691,6 +15206,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleFilterByCurrentUserOptions'
       responses:
@@ -14831,6 +15347,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -14910,6 +15427,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -14936,12 +15454,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14955,12 +15475,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.directory.transitiveRoleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -15010,6 +15532,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -15036,12 +15559,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15055,12 +15580,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.transitiveRoleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -15104,12 +15631,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.transitiveRoleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -15153,12 +15682,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
       operationId: roleManagement.directory.transitiveRoleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -15216,6 +15747,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get entitlementManagement from roleManagement
+      description: The RbacApplication for Entitlement Management
       operationId: roleManagement_GetEntitlementManagement
       parameters:
         - name: $select
@@ -15328,6 +15860,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15346,24 +15879,32 @@ paths:
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: appScopeId
           in: query
           description: 'Usage: appScopeId=''{appScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: principalId
           in: query
           description: 'Usage: principalId=''{principalId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: roleDefinitionId
           in: query
           description: 'Usage: roleDefinitionId=''{roleDefinitionId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
@@ -15395,24 +15936,32 @@ paths:
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: appScopeId
           in: query
           description: 'Usage: appScopeId=''{appScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: principalId
           in: query
           description: 'Usage: principalId=''{principalId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
         - name: roleDefinitionId
           in: query
           description: 'Usage: roleDefinitionId=''{roleDefinitionId}'''
+          style: form
+          explode: false
           schema:
             type: string
             nullable: true
@@ -15530,6 +16079,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15587,6 +16137,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15613,12 +16164,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15638,6 +16191,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15673,12 +16227,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15757,6 +16313,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15782,12 +16339,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15795,6 +16354,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -15854,6 +16414,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15861,6 +16422,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -15887,6 +16449,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15894,12 +16457,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15919,6 +16484,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15926,6 +16492,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -15976,6 +16543,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -15983,6 +16551,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
@@ -16009,6 +16578,7 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceNamespace'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceNamespace
@@ -16016,12 +16586,14 @@ paths:
           in: path
           description: 'key: id of unifiedRbacResourceAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRbacResourceAction
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -16123,6 +16695,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -16177,6 +16750,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -16203,12 +16777,14 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -16228,6 +16804,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -16313,6 +16890,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -16344,6 +16922,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -16351,6 +16930,7 @@ paths:
           in: path
           description: 'key: id of approvalStep'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStep
@@ -16405,6 +16985,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -16412,6 +16993,7 @@ paths:
           in: path
           description: 'key: id of approvalStep'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStep
@@ -16438,6 +17020,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -16445,12 +17028,14 @@ paths:
           in: path
           description: 'key: id of approvalStep'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStep
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -16470,6 +17055,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.approvalFilterByCurrentUserOptions'
       responses:
@@ -16610,6 +17196,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -16689,6 +17276,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -16715,12 +17303,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -16734,12 +17324,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -16789,6 +17381,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -16815,12 +17408,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -16834,12 +17429,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -16883,12 +17480,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -16932,12 +17531,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -17121,6 +17722,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -17209,6 +17811,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -17235,12 +17838,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -17254,12 +17859,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleInstance
@@ -17341,6 +17948,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleInstanceFilterByCurrentUserOptions'
       responses:
@@ -17512,6 +18120,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -17614,6 +18223,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -17640,12 +18250,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -17659,12 +18271,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it''s null. Supports $expand.'
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -17742,12 +18356,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -17792,12 +18408,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -17847,6 +18465,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -17861,12 +18480,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role assignment through the request. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -17910,12 +18531,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -17973,12 +18596,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleAssignmentScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentScheduleRequest
@@ -18069,6 +18694,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleRequestFilterByCurrentUserOptions'
       responses:
@@ -18223,6 +18849,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -18312,6 +18939,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -18338,12 +18966,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -18357,12 +18987,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get activatedUsing from roleManagement
+      description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.'
       operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_GetActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
           description: 'key: id of unifiedRoleAssignmentSchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignmentSchedule
@@ -18446,6 +19078,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleFilterByCurrentUserOptions'
       responses:
@@ -18583,6 +19216,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18647,6 +19281,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18673,12 +19308,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -18692,12 +19329,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.entitlementManagement.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18788,6 +19427,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18813,12 +19453,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
       operationId: roleManagement.entitlementManagement.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18826,6 +19468,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18891,6 +19534,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18898,6 +19542,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18924,6 +19569,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18931,12 +19577,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -18956,6 +19604,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
@@ -18963,23 +19612,30 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
           description: 'Usage: transitive={transitive}'
+          style: form
+          explode: false
           schema:
             type: boolean
             default: false
         - name: directoryScopeType
           in: query
           description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          style: form
+          explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -19011,23 +19667,30 @@ paths:
           in: path
           description: 'key: id of unifiedRoleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
           description: 'Usage: transitive={transitive}'
+          style: form
+          explode: false
           schema:
             type: boolean
             default: false
         - name: directoryScopeType
           in: query
           description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          style: form
+          explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
           description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -19171,6 +19834,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
@@ -19251,6 +19915,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
@@ -19277,12 +19942,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -19302,6 +19969,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleInstanceFilterByCurrentUserOptions'
       responses:
@@ -19471,6 +20139,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -19567,6 +20236,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -19593,12 +20263,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -19612,12 +20284,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -19662,12 +20336,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -19717,6 +20393,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -19731,12 +20408,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The principal that's getting a role eligibility through the request. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -19780,12 +20459,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -19843,12 +20524,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
           description: 'key: id of unifiedRoleEligibilityScheduleRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilityScheduleRequest
@@ -19932,6 +20615,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleRequestFilterByCurrentUserOptions'
       responses:
@@ -20081,6 +20765,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
@@ -20163,6 +20848,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
@@ -20189,12 +20875,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleEligibilitySchedule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleEligibilitySchedule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -20214,6 +20902,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleFilterByCurrentUserOptions'
       responses:
@@ -20354,6 +21043,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -20433,6 +21123,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -20459,12 +21150,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -20478,12 +21171,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
+      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
       operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -20533,6 +21228,7 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -20559,12 +21255,14 @@ paths:
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -20578,12 +21276,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -20627,12 +21327,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
+      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -20676,12 +21378,14 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
       operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
           description: 'key: id of unifiedRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedRoleAssignment
@@ -20746,6 +21450,9 @@ components:
               type: string
               description: Tenant GUID the enrollment profile belongs to.
               nullable: true
+            configureWifi:
+              type: boolean
+              description: 'Boolean that indicates that the Wi-Fi network should be configured during device provisioning. When set to TRUE, device provisioning will use Wi-Fi related properties to automatically connect to Wi-Fi networks. When set to FALSE or undefined, other Wi-Fi related properties will be ignored. Default value is TRUE. Returned by default.'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21318,6 +22025,12 @@ components:
             chooseYourLockScreenDisabled:
               type: boolean
               description: Indicates if iCloud Documents and Desktop screen is disabled
+            dontAutoPopulatePrimaryAccountInfo:
+              type: boolean
+              description: Indicates whether Setup Assistant will auto populate the primary account information
+            enableRestrictEditing:
+              type: boolean
+              description: Indicates whether the user will enable blockediting
             fileVaultDisabled:
               type: boolean
               description: Indicates if file vault is disabled
@@ -21327,12 +22040,52 @@ components:
             iCloudStorageDisabled:
               type: boolean
               description: Indicates if iCloud Documents and Desktop screen is disabled
+            isLocalPrimaryAccount:
+              type: boolean
+              description: Indicates whether the profile is a local account
+            isPrimaryUser:
+              type: boolean
+              description: Indicates whether the profile is a primary user
+            lockPrimaryAccountInfo:
+              type: boolean
+              description: Indicates whether the primary account information will be locked
+            managedLocalUserShortName:
+              type: boolean
+              description: Indicates whether or not this is the short name of the local account to manage
             passCodeDisabled:
               type: boolean
               description: Indicates if Passcode setup pane is disabled
+            prefillAccountInfo:
+              type: boolean
+              description: Indicates whether the user will prefill their account info
+            primaryAccountFullName:
+              type: string
+              description: Indicates what the full name for the primary account is
+              nullable: true
+            primaryAccountUserName:
+              type: string
+              description: Indicates what the account name for the primary account is
+              nullable: true
+            primaryUser:
+              type: string
+              description: Indicates who the primary user of the profile is
+              nullable: true
+            primaryUserFullName:
+              type: string
+              description: Indicates who the primary user of the profile is
+              nullable: true
             registrationDisabled:
               type: boolean
               description: Indicates if registration is disabled
+            requestRequiresNetworkTether:
+              type: boolean
+              description: Indicates if the device is network-tethered to run the command
+            setPrimarySetupAccountAsRegularUser:
+              type: boolean
+              description: Indicates whether Setup Assistant will set the account as a regular user
+            skipPrimarySetupAccountCreation:
+              type: boolean
+              description: Indicates whether Setup Assistant will skip the user interface for primary account setup
             zoomDisabled:
               type: boolean
               description: Indicates if zoom setup pane is disabled
@@ -22120,12 +22873,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
-              description: Resource to grant access to users or groups.
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
             transitiveRoleAssignments:
               type: array
               items:
@@ -22138,32 +22889,26 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
-              description: Instances for active role assignments.
             roleAssignmentScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
-              description: Requests for active role assignments to principals through PIM.
             roleAssignmentSchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
-              description: Schedules for active role assignment operations.
             roleEligibilityScheduleInstances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
-              description: Instances for role eligibility requests.
             roleEligibilityScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
-              description: Requests for role eligibilities for principals through PIM.
             roleEligibilitySchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-              description: Schedules for role eligibility operations.
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleScheduleInstanceBase:
@@ -22448,7 +23193,7 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).'
+              description: 'Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports $filter (eq, ne).'
               nullable: true
             roleDefinitionId:
               type: string
@@ -22558,7 +23303,7 @@ components:
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).'
+              description: 'Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals. Supports $filter (eq, ne).'
               nullable: true
             roleDefinitionId:
               type: string
@@ -23398,7 +24143,6 @@ components:
           items:
             type: string
             nullable: true
-          description: Set of tasks that may not be performed on a resource. Not yet supported.
       additionalProperties:
         type: object
     microsoft.graph.identity:
@@ -23407,11 +24151,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -24396,6 +25140,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -24404,6 +25150,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -24411,18 +25159,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

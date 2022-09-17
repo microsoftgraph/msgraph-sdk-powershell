@@ -162,6 +162,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
+      description: Notifications for suspicious or potential security issues in a customer’s tenant.
       operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
@@ -354,186 +355,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/security/alerts/{alert-id}':
-    get:
-      tags:
-        - security.alert
-      summary: Get alerts from security
-      operationId: security_GetAlerts
-      parameters:
-        - name: alert-id
-          in: path
-          description: 'key: id of alert'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: alert
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - activityGroupName
-                - alertDetections
-                - assignedTo
-                - azureSubscriptionId
-                - azureTenantId
-                - category
-                - closedDateTime
-                - cloudAppStates
-                - comments
-                - confidence
-                - createdDateTime
-                - description
-                - detectionIds
-                - eventDateTime
-                - feedback
-                - fileStates
-                - historyStates
-                - hostStates
-                - incidentIds
-                - investigationSecurityStates
-                - lastEventDateTime
-                - lastModifiedDateTime
-                - malwareStates
-                - messageSecurityStates
-                - networkConnections
-                - processes
-                - recommendedActions
-                - registryKeyStates
-                - securityResources
-                - severity
-                - sourceMaterials
-                - status
-                - tags
-                - title
-                - triggers
-                - uriClickSecurityStates
-                - userStates
-                - vendorInformation
-                - vulnerabilityStates
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.alert'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - security.alert
-      summary: Update the navigation property alerts in security
-      operationId: security_UpdateAlerts
-      parameters:
-        - name: alert-id
-          in: path
-          description: 'key: id of alert'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: alert
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.alert'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - security.alert
-      summary: Delete navigation property alerts for security
-      operationId: security_DeleteAlerts
-      parameters:
-        - name: alert-id
-          in: path
-          description: 'key: id of alert'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: alert
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /security/alerts/microsoft.graph.updateAlerts:
-    post:
-      tags:
-        - security.Actions
-      summary: Invoke action updateAlerts
-      operationId: security.alerts_updateAlerts
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                value:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.alert'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of alert
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.alert'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /security/alerts_v2:
     get:
       tags:
         - security.alert
       summary: Get alerts_v2 from security
+      description: A collection of alerts in Microsoft 365 Defender.
       operationId: security_ListAlerts_v2
       parameters:
         - $ref: '#/components/parameters/top'
@@ -698,12 +525,14 @@ paths:
       tags:
         - security.alert
       summary: Get alerts_v2 from security
+      description: A collection of alerts in Microsoft 365 Defender.
       operationId: security_GetAlerts_v2
       parameters:
         - name: alert-id
           in: path
           description: 'key: id of alert'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: alert
@@ -779,6 +608,7 @@ paths:
           in: path
           description: 'key: id of alert'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: alert
@@ -805,12 +635,14 @@ paths:
           in: path
           description: 'key: id of alert'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: alert
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -819,11 +651,192 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/alerts/{alert-id}':
+    get:
+      tags:
+        - security.alert
+      summary: Get alerts from security
+      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      operationId: security_GetAlerts
+      parameters:
+        - name: alert-id
+          in: path
+          description: 'key: id of alert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityGroupName
+                - alertDetections
+                - assignedTo
+                - azureSubscriptionId
+                - azureTenantId
+                - category
+                - closedDateTime
+                - cloudAppStates
+                - comments
+                - confidence
+                - createdDateTime
+                - description
+                - detectionIds
+                - eventDateTime
+                - feedback
+                - fileStates
+                - historyStates
+                - hostStates
+                - incidentIds
+                - investigationSecurityStates
+                - lastEventDateTime
+                - lastModifiedDateTime
+                - malwareStates
+                - messageSecurityStates
+                - networkConnections
+                - processes
+                - recommendedActions
+                - registryKeyStates
+                - securityResources
+                - severity
+                - sourceMaterials
+                - status
+                - tags
+                - title
+                - triggers
+                - uriClickSecurityStates
+                - userStates
+                - vendorInformation
+                - vulnerabilityStates
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.alert'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.alert
+      summary: Update the navigation property alerts in security
+      operationId: security_UpdateAlerts
+      parameters:
+        - name: alert-id
+          in: path
+          description: 'key: id of alert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.alert'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.alert
+      summary: Delete navigation property alerts for security
+      operationId: security_DeleteAlerts
+      parameters:
+        - name: alert-id
+          in: path
+          description: 'key: id of alert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/alerts/microsoft.graph.updateAlerts:
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action updateAlerts
+      operationId: security.alerts_updateAlerts
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.alert'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of alert
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.alert'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/attackSimulation:
     get:
       tags:
         - security.attackSimulationRoot
       summary: Get attackSimulation from security
+      description: Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
       operationId: security_GetAttackSimulation
       parameters:
         - name: $select
@@ -896,6 +909,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -909,6 +923,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get simulationAutomations from security
+      description: Represents simulation automations created to run on a tenant.
       operationId: security.attackSimulation_ListSimulationAutomations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1018,12 +1033,14 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get simulationAutomations from security
+      description: Represents simulation automations created to run on a tenant.
       operationId: security.attackSimulation_GetSimulationAutomations
       parameters:
         - name: simulationAutomation-id
           in: path
           description: 'key: id of simulationAutomation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomation
@@ -1087,6 +1104,7 @@ paths:
           in: path
           description: 'key: id of simulationAutomation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomation
@@ -1113,12 +1131,14 @@ paths:
           in: path
           description: 'key: id of simulationAutomation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1132,12 +1152,14 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get runs from security
+      description: A collection of simulation automation runs.
       operationId: security.attackSimulation.simulationAutomations_ListRuns
       parameters:
         - name: simulationAutomation-id
           in: path
           description: 'key: id of simulationAutomation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomation
@@ -1214,6 +1236,7 @@ paths:
           in: path
           description: 'key: id of simulationAutomation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomation
@@ -1239,12 +1262,14 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get runs from security
+      description: A collection of simulation automation runs.
       operationId: security.attackSimulation.simulationAutomations_GetRuns
       parameters:
         - name: simulationAutomation-id
           in: path
           description: 'key: id of simulationAutomation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomation
@@ -1252,6 +1277,7 @@ paths:
           in: path
           description: 'key: id of simulationAutomationRun'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomationRun
@@ -1303,6 +1329,7 @@ paths:
           in: path
           description: 'key: id of simulationAutomation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomation
@@ -1310,6 +1337,7 @@ paths:
           in: path
           description: 'key: id of simulationAutomationRun'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomationRun
@@ -1336,6 +1364,7 @@ paths:
           in: path
           description: 'key: id of simulationAutomation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomation
@@ -1343,12 +1372,14 @@ paths:
           in: path
           description: 'key: id of simulationAutomationRun'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulationAutomationRun
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1362,6 +1393,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get simulations from security
+      description: Represents an attack simulation training campaign in a tenant.
       operationId: security.attackSimulation_ListSimulations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1487,12 +1519,14 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get simulations from security
+      description: Represents an attack simulation training campaign in a tenant.
       operationId: security.attackSimulation_GetSimulations
       parameters:
         - name: simulation-id
           in: path
           description: 'key: id of simulation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulation
@@ -1555,6 +1589,7 @@ paths:
           in: path
           description: 'key: id of simulation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulation
@@ -1581,12 +1616,14 @@ paths:
           in: path
           description: 'key: id of simulation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: simulation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1668,6 +1705,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1810,6 +1848,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -1919,6 +1958,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -1945,12 +1985,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1964,12 +2006,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get custodians from security
+      description: Returns a list of case ediscoveryCustodian objects for this case.
       operationId: security.cases.ediscoveryCases_ListCustodians
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2066,6 +2110,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2091,12 +2136,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get custodians from security
+      description: Returns a list of case ediscoveryCustodian objects for this case.
       operationId: security.cases.ediscoveryCases_GetCustodians
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2104,6 +2151,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2198,6 +2246,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2205,6 +2254,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2231,6 +2281,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2238,12 +2289,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2257,12 +2310,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get lastIndexOperation from security
+      description: Operation entity that represents the latest indexing for the custodian.
       operationId: security.cases.ediscoveryCases.custodians_GetLastIndexOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2270,6 +2325,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2325,6 +2381,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2332,6 +2389,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2352,6 +2410,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2359,6 +2418,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2379,6 +2439,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2386,6 +2447,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2406,6 +2468,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2413,6 +2476,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2433,6 +2497,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2440,6 +2505,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2454,12 +2520,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get siteSources from security
+      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: security.cases.ediscoveryCases.custodians_ListSiteSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2467,6 +2535,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2545,6 +2614,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2552,6 +2622,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2577,12 +2648,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get siteSources from security
+      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: security.cases.ediscoveryCases.custodians_GetSiteSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2590,6 +2663,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2597,6 +2671,7 @@ paths:
           in: path
           description: 'key: id of siteSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: siteSource
@@ -2657,6 +2732,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2664,6 +2740,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2671,6 +2748,7 @@ paths:
           in: path
           description: 'key: id of siteSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: siteSource
@@ -2697,6 +2775,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2704,6 +2783,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2711,12 +2791,14 @@ paths:
           in: path
           description: 'key: id of siteSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: siteSource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2730,12 +2812,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get site from security
+      description: The SharePoint site associated with the siteSource.
       operationId: security.cases.ediscoveryCases.custodians.siteSources_GetSite
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2743,6 +2827,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -2750,6 +2835,7 @@ paths:
           in: path
           description: 'key: id of siteSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: siteSource
@@ -2936,12 +3022,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get unifiedGroupSources from security
+      description: Data source entity for groups associated with the custodian.
       operationId: security.cases.ediscoveryCases.custodians_ListUnifiedGroupSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -2949,6 +3037,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3030,6 +3119,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3037,6 +3127,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3062,12 +3153,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get unifiedGroupSources from security
+      description: Data source entity for groups associated with the custodian.
       operationId: security.cases.ediscoveryCases.custodians_GetUnifiedGroupSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3075,6 +3168,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3082,6 +3176,7 @@ paths:
           in: path
           description: 'key: id of unifiedGroupSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedGroupSource
@@ -3143,6 +3238,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3150,6 +3246,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3157,6 +3254,7 @@ paths:
           in: path
           description: 'key: id of unifiedGroupSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedGroupSource
@@ -3183,6 +3281,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3190,6 +3289,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3197,12 +3297,14 @@ paths:
           in: path
           description: 'key: id of unifiedGroupSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedGroupSource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3216,12 +3318,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get group from security
+      description: Represents a group.
       operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources_GetGroup
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3229,6 +3333,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3236,6 +3341,7 @@ paths:
           in: path
           description: 'key: id of unifiedGroupSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unifiedGroupSource
@@ -3554,12 +3660,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get userSources from security
+      description: Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: security.cases.ediscoveryCases.custodians_ListUserSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3567,6 +3675,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3652,6 +3761,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3659,6 +3769,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3684,12 +3795,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get userSources from security
+      description: Data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: security.cases.ediscoveryCases.custodians_GetUserSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3697,6 +3810,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3704,6 +3818,7 @@ paths:
           in: path
           description: 'key: id of userSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userSource
@@ -3758,6 +3873,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3765,6 +3881,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3772,6 +3889,7 @@ paths:
           in: path
           description: 'key: id of userSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userSource
@@ -3798,6 +3916,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3805,6 +3924,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCustodian'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
@@ -3812,12 +3932,14 @@ paths:
           in: path
           description: 'key: id of userSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userSource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3837,6 +3959,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3872,6 +3995,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -3901,12 +4025,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get legalHolds from security
+      description: Returns a list of case eDiscoveryHoldPolicy objects for this case.
       operationId: security.cases.ediscoveryCases_ListLegalHolds
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4005,6 +4131,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4030,12 +4157,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get legalHolds from security
+      description: Returns a list of case eDiscoveryHoldPolicy objects for this case.
       operationId: security.cases.ediscoveryCases_GetLegalHolds
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4043,6 +4172,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4115,6 +4245,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4122,6 +4253,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4148,6 +4280,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4155,12 +4288,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4174,12 +4309,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get siteSources from security
+      description: Data sources that represent SharePoint sites.
       operationId: security.cases.ediscoveryCases.legalHolds_ListSiteSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4187,6 +4324,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4265,6 +4403,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4272,6 +4411,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4297,12 +4437,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get siteSources from security
+      description: Data sources that represent SharePoint sites.
       operationId: security.cases.ediscoveryCases.legalHolds_GetSiteSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4310,6 +4452,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4317,6 +4460,7 @@ paths:
           in: path
           description: 'key: id of siteSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: siteSource
@@ -4377,6 +4521,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4384,6 +4529,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4391,6 +4537,7 @@ paths:
           in: path
           description: 'key: id of siteSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: siteSource
@@ -4417,6 +4564,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4424,6 +4572,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4431,12 +4580,14 @@ paths:
           in: path
           description: 'key: id of siteSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: siteSource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4450,12 +4601,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get site from security
+      description: The SharePoint site associated with the siteSource.
       operationId: security.cases.ediscoveryCases.legalHolds.siteSources_GetSite
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4463,6 +4616,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4470,6 +4624,7 @@ paths:
           in: path
           description: 'key: id of siteSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: siteSource
@@ -4656,12 +4811,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get userSources from security
+      description: Data sources that represent Exchange mailboxes.
       operationId: security.cases.ediscoveryCases.legalHolds_ListUserSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4669,6 +4826,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4754,6 +4912,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4761,6 +4920,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4786,12 +4946,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get userSources from security
+      description: Data sources that represent Exchange mailboxes.
       operationId: security.cases.ediscoveryCases.legalHolds_GetUserSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4799,6 +4961,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4806,6 +4969,7 @@ paths:
           in: path
           description: 'key: id of userSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userSource
@@ -4860,6 +5024,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4867,6 +5032,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4874,6 +5040,7 @@ paths:
           in: path
           description: 'key: id of userSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userSource
@@ -4900,6 +5067,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4907,6 +5075,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryHoldPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryHoldPolicy
@@ -4914,12 +5083,14 @@ paths:
           in: path
           description: 'key: id of userSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userSource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4939,6 +5110,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4959,6 +5131,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -4973,12 +5146,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get noncustodialDataSources from security
+      description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
       operationId: security.cases.ediscoveryCases_ListNoncustodialDataSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5065,6 +5240,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5090,12 +5266,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get noncustodialDataSources from security
+      description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
       operationId: security.cases.ediscoveryCases_GetNoncustodialDataSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5103,6 +5281,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -5179,6 +5358,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5186,6 +5366,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -5212,6 +5393,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5219,12 +5401,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5238,12 +5422,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get dataSource from security
+      description: User source or SharePoint site data source as non-custodial data source.
       operationId: security.cases.ediscoveryCases.noncustodialDataSources_GetDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5251,6 +5437,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -5302,6 +5489,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5309,6 +5497,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -5335,6 +5524,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5342,12 +5532,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5361,12 +5553,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get lastIndexOperation from security
+      description: Operation entity that represents the latest indexing for the non-custodial data source.
       operationId: security.cases.ediscoveryCases.noncustodialDataSources_GetLastIndexOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5374,6 +5568,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -5429,6 +5624,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5436,6 +5632,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -5456,6 +5653,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5463,6 +5661,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -5483,6 +5682,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5490,6 +5690,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -5510,6 +5711,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5517,6 +5719,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -5537,6 +5740,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5572,6 +5776,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5601,12 +5806,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get operations from security
+      description: Returns a list of case caseOperation objects for this case.
       operationId: security.cases.ediscoveryCases_ListOperations
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5692,6 +5899,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5717,12 +5925,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get operations from security
+      description: Returns a list of case caseOperation objects for this case.
       operationId: security.cases.ediscoveryCases_GetOperations
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5730,6 +5940,7 @@ paths:
           in: path
           description: 'key: id of caseOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: caseOperation
@@ -5784,6 +5995,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5791,6 +6003,7 @@ paths:
           in: path
           description: 'key: id of caseOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: caseOperation
@@ -5817,6 +6030,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5824,12 +6038,14 @@ paths:
           in: path
           description: 'key: id of caseOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: caseOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5843,12 +6059,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get reviewSets from security
+      description: Returns a list of eDiscoveryReviewSet objects in the case.
       operationId: security.cases.ediscoveryCases_ListReviewSets
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5926,6 +6144,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5951,12 +6170,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get reviewSets from security
+      description: Returns a list of eDiscoveryReviewSet objects in the case.
       operationId: security.cases.ediscoveryCases_GetReviewSets
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -5964,6 +6185,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6033,6 +6255,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6040,6 +6263,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6066,6 +6290,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6073,12 +6298,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6092,12 +6319,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get files from security
+      description: Represents files within the review set.
       operationId: security.cases.ediscoveryCases.reviewSets_ListFiles
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6105,6 +6334,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6209,6 +6439,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6216,6 +6447,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6241,12 +6473,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get files from security
+      description: Represents files within the review set.
       operationId: security.cases.ediscoveryCases.reviewSets_GetFiles
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6254,6 +6488,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6261,6 +6496,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
@@ -6337,6 +6573,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6344,6 +6581,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6351,6 +6589,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
@@ -6377,6 +6616,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6384,6 +6624,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6391,12 +6632,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6416,6 +6659,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6423,6 +6667,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6430,6 +6675,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
@@ -6454,6 +6700,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6461,6 +6708,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6468,6 +6716,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
@@ -6490,12 +6739,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get custodian from security
+      description: Custodians associated with the file.
       operationId: security.cases.ediscoveryCases.reviewSets.files_GetCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6503,6 +6754,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6510,6 +6762,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
@@ -6599,6 +6852,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6606,6 +6860,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6613,6 +6868,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
@@ -6637,6 +6893,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6644,6 +6901,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6651,6 +6909,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
@@ -6673,12 +6932,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get tags from security
+      description: Tags associated with the file.
       operationId: security.cases.ediscoveryCases.reviewSets.files_ListTags
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6686,6 +6947,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6693,6 +6955,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
@@ -6771,12 +7034,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get tags from security
+      description: Tags associated with the file.
       operationId: security.cases.ediscoveryCases.reviewSets.files_GetTags
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6784,6 +7049,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6791,6 +7057,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryFile
@@ -6798,6 +7065,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewTag
@@ -6870,6 +7138,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6877,6 +7146,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6911,6 +7181,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6918,6 +7189,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -6958,12 +7230,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get queries from security
+      description: Represents queries within the review set.
       operationId: security.cases.ediscoveryCases.reviewSets_ListQueries
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -6971,6 +7245,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -7056,6 +7331,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7063,6 +7339,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -7088,12 +7365,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get queries from security
+      description: Represents queries within the review set.
       operationId: security.cases.ediscoveryCases.reviewSets_GetQueries
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7101,6 +7380,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -7108,6 +7388,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSetQuery'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSetQuery
@@ -7169,6 +7450,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7176,6 +7458,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -7183,6 +7466,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSetQuery'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSetQuery
@@ -7209,6 +7493,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7216,6 +7501,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -7223,12 +7509,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSetQuery'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSetQuery
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7248,6 +7536,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7255,6 +7544,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -7262,6 +7552,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSetQuery'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSetQuery
@@ -7300,6 +7591,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7307,6 +7599,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -7314,6 +7607,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSetQuery'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSetQuery
@@ -7360,6 +7654,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7367,6 +7662,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSet'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSet
@@ -7374,6 +7670,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewSetQuery'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewSetQuery
@@ -7400,12 +7697,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get searches from security
+      description: Returns a list of eDiscoverySearch objects associated with this case.
       operationId: security.cases.ediscoveryCases_ListSearches
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7504,6 +7803,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7529,12 +7829,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get searches from security
+      description: Returns a list of eDiscoverySearch objects associated with this case.
       operationId: security.cases.ediscoveryCases_GetSearches
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7542,6 +7844,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -7637,6 +7940,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7644,6 +7948,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -7670,6 +7975,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7677,12 +7983,14 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7696,12 +8004,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get additionalSources from security
+      description: Adds an additional source to the eDiscovery search.
       operationId: security.cases.ediscoveryCases.searches_ListAdditionalSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7709,6 +8019,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -7785,6 +8096,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7792,6 +8104,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -7817,12 +8130,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get additionalSources from security
+      description: Adds an additional source to the eDiscovery search.
       operationId: security.cases.ediscoveryCases.searches_GetAdditionalSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7830,6 +8145,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -7837,6 +8153,7 @@ paths:
           in: path
           description: 'key: id of dataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: dataSource
@@ -7888,6 +8205,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7895,6 +8213,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -7902,6 +8221,7 @@ paths:
           in: path
           description: 'key: id of dataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: dataSource
@@ -7928,6 +8248,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7935,6 +8256,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -7942,12 +8264,14 @@ paths:
           in: path
           description: 'key: id of dataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: dataSource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7961,12 +8285,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get addToReviewSetOperation from security
+      description: Adds the results of the eDiscovery search to the specified reviewSet.
       operationId: security.cases.ediscoveryCases.searches_GetAddToReviewSetOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -7974,6 +8300,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -8038,12 +8365,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get custodianSources from security
+      description: Custodian sources that are included in the eDiscovery search.
       operationId: security.cases.ediscoveryCases.searches_ListCustodianSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8051,6 +8380,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -8122,12 +8452,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get custodianSources from security
+      description: Custodian sources that are included in the eDiscovery search.
       operationId: security.cases.ediscoveryCases.searches_GetCustodianSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8135,6 +8467,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -8142,6 +8475,7 @@ paths:
           in: path
           description: 'key: id of dataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: dataSource
@@ -8188,12 +8522,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get lastEstimateStatisticsOperation from security
+      description: The last estimate operation associated with the eDiscovery search.
       operationId: security.cases.ediscoveryCases.searches_GetLastEstimateStatisticsOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8201,6 +8537,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -8270,6 +8607,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8277,6 +8615,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -8297,6 +8636,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8304,6 +8644,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -8318,12 +8659,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get noncustodialSources from security
+      description: noncustodialDataSource sources that are included in the eDiscovery search
       operationId: security.cases.ediscoveryCases.searches_ListNoncustodialSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8331,6 +8674,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -8412,12 +8756,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get noncustodialSources from security
+      description: noncustodialDataSource sources that are included in the eDiscovery search
       operationId: security.cases.ediscoveryCases.searches_GetNoncustodialSources
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8425,6 +8771,7 @@ paths:
           in: path
           description: 'key: id of ediscoverySearch'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
@@ -8432,6 +8779,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryNoncustodialDataSource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
@@ -8497,12 +8845,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get settings from security
+      description: Returns a list of eDIscoverySettings objects in the case.
       operationId: security.cases.ediscoveryCases_GetSettings
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8556,6 +8906,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8582,12 +8933,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8607,6 +8960,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8621,12 +8975,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get tags from security
+      description: Returns a list of ediscoveryReviewTag objects associated to this case.
       operationId: security.cases.ediscoveryCases_ListTags
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8710,6 +9066,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8735,12 +9092,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get tags from security
+      description: Returns a list of ediscoveryReviewTag objects associated to this case.
       operationId: security.cases.ediscoveryCases_GetTags
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8748,6 +9107,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewTag
@@ -8815,6 +9175,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8822,6 +9183,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewTag
@@ -8848,6 +9210,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8855,12 +9218,14 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewTag
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8874,12 +9239,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get childTags from security
+      description: Returns the tags that are a child of a tag.
       operationId: security.cases.ediscoveryCases.tags_ListChildTags
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8887,6 +9254,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewTag
@@ -8965,12 +9333,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get childTags from security
+      description: Returns the tags that are a child of a tag.
       operationId: security.cases.ediscoveryCases.tags_GetChildTags
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -8978,6 +9348,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewTag
@@ -8985,6 +9356,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewTag
@@ -9049,12 +9421,14 @@ paths:
       tags:
         - security.casesRoot
       summary: Get parent from security
+      description: Returns the parent tag of the specified tag.
       operationId: security.cases.ediscoveryCases.tags_GetParent
       parameters:
         - name: ediscoveryCase-id
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -9062,6 +9436,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryReviewTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryReviewTag
@@ -9130,6 +9505,7 @@ paths:
           in: path
           description: 'key: id of ediscoveryCase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ediscoveryCase
@@ -9293,6 +9669,7 @@ paths:
           in: path
           description: 'key: id of cloudAppSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudAppSecurityProfile
@@ -9357,6 +9734,7 @@ paths:
           in: path
           description: 'key: id of cloudAppSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudAppSecurityProfile
@@ -9383,12 +9761,14 @@ paths:
           in: path
           description: 'key: id of cloudAppSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudAppSecurityProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9530,6 +9910,7 @@ paths:
           in: path
           description: 'key: id of domainSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: domainSecurityProfile
@@ -9591,6 +9972,7 @@ paths:
           in: path
           description: 'key: id of domainSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: domainSecurityProfile
@@ -9617,12 +9999,14 @@ paths:
           in: path
           description: 'key: id of domainSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: domainSecurityProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9770,6 +10154,7 @@ paths:
           in: path
           description: 'key: id of fileSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: fileSecurityProfile
@@ -9833,6 +10218,7 @@ paths:
           in: path
           description: 'key: id of fileSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: fileSecurityProfile
@@ -9859,12 +10245,14 @@ paths:
           in: path
           description: 'key: id of fileSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: fileSecurityProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10018,6 +10406,7 @@ paths:
           in: path
           description: 'key: id of hostSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: hostSecurityProfile
@@ -10083,6 +10472,7 @@ paths:
           in: path
           description: 'key: id of hostSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: hostSecurityProfile
@@ -10109,12 +10499,14 @@ paths:
           in: path
           description: 'key: id of hostSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: hostSecurityProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10128,6 +10520,7 @@ paths:
       tags:
         - security.incident
       summary: Get incidents from security
+      description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
       operationId: security_ListIncidents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10249,12 +10642,14 @@ paths:
       tags:
         - security.incident
       summary: Get incidents from security
+      description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
       operationId: security_GetIncidents
       parameters:
         - name: incident-id
           in: path
           description: 'key: id of incident'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: incident
@@ -10322,6 +10717,7 @@ paths:
           in: path
           description: 'key: id of incident'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: incident
@@ -10348,12 +10744,14 @@ paths:
           in: path
           description: 'key: id of incident'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: incident
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10367,12 +10765,14 @@ paths:
       tags:
         - security.incident
       summary: Get alerts from security
+      description: The list of related alerts. Supports $expand.
       operationId: security.incidents_ListAlerts
       parameters:
         - name: incident-id
           in: path
           description: 'key: id of incident'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: incident
@@ -10516,12 +10916,14 @@ paths:
       tags:
         - security.incident
       summary: Get alerts from security
+      description: The list of related alerts. Supports $expand.
       operationId: security.incidents_GetAlerts
       parameters:
         - name: incident-id
           in: path
           description: 'key: id of incident'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: incident
@@ -10529,6 +10931,7 @@ paths:
           in: path
           description: 'key: id of alert'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: alert
@@ -10671,6 +11074,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10684,6 +11088,7 @@ paths:
       tags:
         - security.informationProtection
       summary: Get labelPolicySettings from security
+      description: Read the Microsoft Purview Information Protection policy settings for the user or organization.
       operationId: security.informationProtection_GetLabelPolicySettings
       parameters:
         - name: $select
@@ -10751,6 +11156,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10764,6 +11170,7 @@ paths:
       tags:
         - security.informationProtection
       summary: Get sensitivityLabels from security
+      description: Read the Microsoft Purview Information Protection labels for the user or organization.
       operationId: security.informationProtection_ListSensitivityLabels
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10873,12 +11280,14 @@ paths:
       tags:
         - security.informationProtection
       summary: Get sensitivityLabels from security
+      description: Read the Microsoft Purview Information Protection labels for the user or organization.
       operationId: security.informationProtection_GetSensitivityLabels
       parameters:
         - name: sensitivityLabel-id
           in: path
           description: 'key: id of sensitivityLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sensitivityLabel
@@ -10942,6 +11351,7 @@ paths:
           in: path
           description: 'key: id of sensitivityLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sensitivityLabel
@@ -10968,12 +11378,14 @@ paths:
           in: path
           description: 'key: id of sensitivityLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sensitivityLabel
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10987,12 +11399,14 @@ paths:
       tags:
         - security.informationProtection
       summary: Get parent from security
+      description: The parent label associated with a child label. Null if the label has no parent.
       operationId: security.informationProtection.sensitivityLabels_GetParent
       parameters:
         - name: sensitivityLabel-id
           in: path
           description: 'key: id of sensitivityLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sensitivityLabel
@@ -11056,6 +11470,7 @@ paths:
           in: path
           description: 'key: id of sensitivityLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sensitivityLabel
@@ -11082,12 +11497,14 @@ paths:
           in: path
           description: 'key: id of sensitivityLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sensitivityLabel
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11370,6 +11787,7 @@ paths:
           in: path
           description: 'key: id of ipSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ipSecurityProfile
@@ -11430,6 +11848,7 @@ paths:
           in: path
           description: 'key: id of ipSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ipSecurityProfile
@@ -11456,12 +11875,14 @@ paths:
           in: path
           description: 'key: id of ipSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ipSecurityProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11543,6 +11964,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11688,6 +12110,7 @@ paths:
           in: path
           description: 'key: id of retentionLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionLabel
@@ -11762,6 +12185,7 @@ paths:
           in: path
           description: 'key: id of retentionLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionLabel
@@ -11788,12 +12212,14 @@ paths:
           in: path
           description: 'key: id of retentionLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionLabel
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11807,12 +12233,14 @@ paths:
       tags:
         - security.labelsRoot
       summary: Get dispositionReviewStages from security
+      description: Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
       operationId: security.labels.retentionLabels_ListDispositionReviewStages
       parameters:
         - name: retentionLabel-id
           in: path
           description: 'key: id of retentionLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionLabel
@@ -11886,6 +12314,7 @@ paths:
           in: path
           description: 'key: id of retentionLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionLabel
@@ -11911,12 +12340,14 @@ paths:
       tags:
         - security.labelsRoot
       summary: Get dispositionReviewStages from security
+      description: Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
       operationId: security.labels.retentionLabels_GetDispositionReviewStages
       parameters:
         - name: retentionLabel-id
           in: path
           description: 'key: id of retentionLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionLabel
@@ -11924,6 +12355,7 @@ paths:
           in: path
           description: 'key: id of dispositionReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: dispositionReviewStage
@@ -11974,6 +12406,7 @@ paths:
           in: path
           description: 'key: id of retentionLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionLabel
@@ -11981,6 +12414,7 @@ paths:
           in: path
           description: 'key: id of dispositionReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: dispositionReviewStage
@@ -12007,6 +12441,7 @@ paths:
           in: path
           description: 'key: id of retentionLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionLabel
@@ -12014,12 +12449,14 @@ paths:
           in: path
           description: 'key: id of dispositionReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: dispositionReviewStage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12039,6 +12476,7 @@ paths:
           in: path
           description: 'key: id of retentionLabel'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionLabel
@@ -12217,6 +12655,7 @@ paths:
           in: path
           description: 'key: id of providerTenantSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: providerTenantSetting
@@ -12269,6 +12708,7 @@ paths:
           in: path
           description: 'key: id of providerTenantSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: providerTenantSetting
@@ -12295,12 +12735,14 @@ paths:
           in: path
           description: 'key: id of providerTenantSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: providerTenantSetting
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12457,6 +12899,7 @@ paths:
           in: path
           description: 'key: id of secureScoreControlProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: secureScoreControlProfile
@@ -12523,6 +12966,7 @@ paths:
           in: path
           description: 'key: id of secureScoreControlProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: secureScoreControlProfile
@@ -12549,12 +12993,14 @@ paths:
           in: path
           description: 'key: id of secureScoreControlProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: secureScoreControlProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12568,6 +13014,7 @@ paths:
       tags:
         - security.secureScore
       summary: Get secureScores from security
+      description: Measurements of tenants’ security posture to help protect them from threats.
       operationId: security_ListSecureScores
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12678,12 +13125,14 @@ paths:
       tags:
         - security.secureScore
       summary: Get secureScores from security
+      description: Measurements of tenants’ security posture to help protect them from threats.
       operationId: security_GetSecureScores
       parameters:
         - name: secureScore-id
           in: path
           description: 'key: id of secureScore'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: secureScore
@@ -12741,6 +13190,7 @@ paths:
           in: path
           description: 'key: id of secureScore'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: secureScore
@@ -12767,12 +13217,14 @@ paths:
           in: path
           description: 'key: id of secureScore'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: secureScore
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12914,6 +13366,7 @@ paths:
           in: path
           description: 'key: id of securityAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: securityAction
@@ -12978,6 +13431,7 @@ paths:
           in: path
           description: 'key: id of securityAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: securityAction
@@ -13004,12 +13458,14 @@ paths:
           in: path
           description: 'key: id of securityAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: securityAction
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13029,6 +13485,7 @@ paths:
           in: path
           description: 'key: id of securityAction'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: securityAction
@@ -13205,6 +13662,7 @@ paths:
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13293,6 +13751,7 @@ paths:
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13319,12 +13778,14 @@ paths:
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13344,6 +13805,7 @@ paths:
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13375,6 +13837,7 @@ paths:
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13400,12 +13863,14 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get notes from security
+      description: List of notes associated with the request.
       operationId: security.subjectRightsRequests_ListNotes
       parameters:
         - name: subjectRightsRequest-id
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13479,6 +13944,7 @@ paths:
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13504,12 +13970,14 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get notes from security
+      description: List of notes associated with the request.
       operationId: security.subjectRightsRequests_GetNotes
       parameters:
         - name: subjectRightsRequest-id
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13517,6 +13985,7 @@ paths:
           in: path
           description: 'key: id of authoredNote'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: authoredNote
@@ -13567,6 +14036,7 @@ paths:
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13574,6 +14044,7 @@ paths:
           in: path
           description: 'key: id of authoredNote'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: authoredNote
@@ -13600,6 +14071,7 @@ paths:
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13607,12 +14079,14 @@ paths:
           in: path
           description: 'key: id of authoredNote'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: authoredNote
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13626,12 +14100,14 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get team from security
+      description: Information about the Microsoft Teams team that was created for the request.
       operationId: security.subjectRightsRequests_GetTeam
       parameters:
         - name: subjectRightsRequest-id
           in: path
           description: 'key: id of subjectRightsRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: subjectRightsRequest
@@ -13676,6 +14152,7 @@ paths:
                 - primaryChannel
                 - tags
                 - template
+                - templateDefinition
                 - schedule
               type: string
         - name: $expand
@@ -13702,6 +14179,7 @@ paths:
                 - primaryChannel
                 - tags
                 - template
+                - templateDefinition
                 - schedule
               type: string
       responses:
@@ -13764,6 +14242,10 @@ paths:
               operationId: security.subjectRightsRequests.Team.GetTemplate
               parameters:
                 subjectRightsRequest-id: $request.path.subjectRightsRequest-id
+            templateDefinition:
+              operationId: security.subjectRightsRequests.Team.GetTemplateDefinition
+              parameters:
+                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
             schedule:
               operationId: security.subjectRightsRequests.Team.GetSchedule
               parameters:
@@ -13776,6 +14258,7 @@ paths:
       tags:
         - security.threatSubmissionRoot
       summary: Get threatSubmission from security
+      description: 'A threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.'
       operationId: security_GetThreatSubmission
       parameters:
         - name: $select
@@ -13856,6 +14339,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14012,6 +14496,7 @@ paths:
           in: path
           description: 'key: id of emailThreatSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: emailThreatSubmission
@@ -14078,6 +14563,7 @@ paths:
           in: path
           description: 'key: id of emailThreatSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: emailThreatSubmission
@@ -14104,12 +14590,14 @@ paths:
           in: path
           description: 'key: id of emailThreatSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: emailThreatSubmission
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14248,6 +14736,7 @@ paths:
           in: path
           description: 'key: id of emailThreatSubmissionPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: emailThreatSubmissionPolicy
@@ -14308,6 +14797,7 @@ paths:
           in: path
           description: 'key: id of emailThreatSubmissionPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: emailThreatSubmissionPolicy
@@ -14334,12 +14824,14 @@ paths:
           in: path
           description: 'key: id of emailThreatSubmissionPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: emailThreatSubmissionPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14472,6 +14964,7 @@ paths:
           in: path
           description: 'key: id of fileThreatSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: fileThreatSubmission
@@ -14530,6 +15023,7 @@ paths:
           in: path
           description: 'key: id of fileThreatSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: fileThreatSubmission
@@ -14556,12 +15050,14 @@ paths:
           in: path
           description: 'key: id of fileThreatSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: fileThreatSubmission
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14694,6 +15190,7 @@ paths:
           in: path
           description: 'key: id of urlThreatSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: urlThreatSubmission
@@ -14752,6 +15249,7 @@ paths:
           in: path
           description: 'key: id of urlThreatSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: urlThreatSubmission
@@ -14778,12 +15276,14 @@ paths:
           in: path
           description: 'key: id of urlThreatSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: urlThreatSubmission
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15057,6 +15557,7 @@ paths:
           in: path
           description: 'key: id of tiIndicator'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: tiIndicator
@@ -15162,6 +15663,7 @@ paths:
           in: path
           description: 'key: id of tiIndicator'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: tiIndicator
@@ -15188,12 +15690,14 @@ paths:
           in: path
           description: 'key: id of tiIndicator'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: tiIndicator
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15429,6 +15933,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15563,6 +16068,7 @@ paths:
           in: path
           description: 'key: id of retentionEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionEvent
@@ -15628,6 +16134,7 @@ paths:
           in: path
           description: 'key: id of retentionEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionEvent
@@ -15654,12 +16161,14 @@ paths:
           in: path
           description: 'key: id of retentionEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionEvent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15673,12 +16182,14 @@ paths:
       tags:
         - security.triggersRoot
       summary: Get retentionEventType from security
+      description: Specifies the event that will start the retention period for labels that use this event type when an event is created.
       operationId: security.triggers.retentionEvents_GetRetentionEventType
       parameters:
         - name: retentionEvent-id
           in: path
           description: 'key: id of retentionEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionEvent
@@ -15795,6 +16306,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15912,6 +16424,7 @@ paths:
           in: path
           description: 'key: id of retentionEventType'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionEventType
@@ -15965,6 +16478,7 @@ paths:
           in: path
           description: 'key: id of retentionEventType'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionEventType
@@ -15991,12 +16505,14 @@ paths:
           in: path
           description: 'key: id of retentionEventType'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: retentionEventType
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -16126,6 +16642,7 @@ paths:
           in: path
           description: 'key: id of userSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userSecurityProfile
@@ -16183,6 +16700,7 @@ paths:
           in: path
           description: 'key: id of userSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userSecurityProfile
@@ -16209,12 +16727,14 @@ paths:
           in: path
           description: 'key: id of userSecurityProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userSecurityProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -16247,10 +16767,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alert'
+              description: A collection of alerts in Microsoft 365 Defender.
             incidents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.incident'
+              description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
             attackSimulation:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
             labels:
@@ -16298,6 +16820,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.secureScore'
+              description: Measurements of tenants’ security posture to help protect them from threats.
             securityActions:
               type: array
               items:
@@ -16511,15 +17034,19 @@ components:
           properties:
             actorDisplayName:
               type: string
+              description: The adversary or activity group that is associated with this alert.
               nullable: true
             alertWebUrl:
               type: string
+              description: URL for the alert page in the Microsoft 365 Defender portal.
               nullable: true
             assignedTo:
               type: string
+              description: 'Owner of the alert, or null if no owner is assigned.'
               nullable: true
             category:
               type: string
+              description: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
               nullable: true
             classification:
               $ref: '#/components/schemas/microsoft.graph.security.alertClassification'
@@ -16527,18 +17054,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alertComment'
+              description: Array of comments created by the Security Operations (SecOps) team during the alert management process.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when Microsoft 365 Defender created the alert.
               format: date-time
               nullable: true
             description:
               type: string
+              description: String value describing each alert.
               nullable: true
             detectionSource:
               $ref: '#/components/schemas/microsoft.graph.security.detectionSource'
             detectorId:
               type: string
+              description: The ID of the detector that triggered the alert.
               nullable: true
             determination:
               $ref: '#/components/schemas/microsoft.graph.security.alertDetermination'
@@ -16546,25 +17077,31 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alertEvidence'
+              description: Collection of evidence related to the alert.
             firstActivityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The earliest activity associated with the alert.
               format: date-time
               nullable: true
             incidentId:
               type: string
+              description: Unique identifier to represent the incident this alert resource is associated with.
               nullable: true
             incidentWebUrl:
               type: string
+              description: URL for the incident page in the Microsoft 365 Defender portal.
               nullable: true
             lastActivityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The oldest activity associated with the alert.
               format: date-time
               nullable: true
             lastUpdateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the alert was last updated at Microsoft 365 Defender.
               format: date-time
               nullable: true
             mitreTechniques:
@@ -16572,15 +17109,19 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'The attack techniques, as aligned with the MITRE ATT&CK framework.'
             providerAlertId:
               type: string
+              description: The ID of the alert as it appears in the security provider product that generated the alert.
               nullable: true
             recommendedActions:
               type: string
+              description: Recommended response and remediation actions to take in the event this alert was generated.
               nullable: true
             resolvedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the alert was resolved.
               format: date-time
               nullable: true
             serviceSource:
@@ -16591,15 +17132,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.alertStatus'
             tenantId:
               type: string
+              description: The Azure Active Directory tenant the alert was created in.
               nullable: true
             threatDisplayName:
               type: string
+              description: The threat associated with this alert.
               nullable: true
             threatFamilyName:
               type: string
+              description: Threat family associated with this alert.
               nullable: true
             title:
               type: string
+              description: Brief identifying string value describing the alert.
               nullable: true
           additionalProperties:
             type: object
@@ -17888,6 +18433,7 @@ components:
           properties:
             assignedTo:
               type: string
+              description: 'Owner of the incident, or null if no owner is assigned. Free editable text.'
               nullable: true
             classification:
               $ref: '#/components/schemas/microsoft.graph.security.alertClassification'
@@ -17895,24 +18441,30 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alertComment'
+              description: Array of comments created by the Security Operations (SecOps) team when the incident is managed.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the incident was first created.
               format: date-time
             determination:
               $ref: '#/components/schemas/microsoft.graph.security.alertDetermination'
             displayName:
               type: string
+              description: The incident name.
               nullable: true
             incidentWebUrl:
               type: string
+              description: The URL for the incident page in the Microsoft 365 Defender portal.
               nullable: true
             lastUpdateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the incident was last updated.
               format: date-time
             redirectIncidentId:
               type: string
+              description: 'Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.'
               nullable: true
             severity:
               $ref: '#/components/schemas/microsoft.graph.security.alertSeverity'
@@ -17923,13 +18475,16 @@ components:
               items:
                 type: string
                 nullable: true
+              description: Array of custom tags associated with an incident.
             tenantId:
               type: string
+              description: The Azure Active Directory tenant in which the alert was created.
               nullable: true
             alerts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.alert'
+              description: The list of related alerts. Supports $expand.
           additionalProperties:
             type: object
     microsoft.graph.security.informationProtection:
@@ -18380,7 +18935,6 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time at which the control profile entity was last modified. The Timestamp type represents date and time
               format: date-time
               nullable: true
             maxScore:
@@ -18787,6 +19341,8 @@ components:
               description: The tags associated with the team.
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
+            templateDefinition:
+              $ref: '#/components/schemas/microsoft.graph.teamTemplateDefinition'
             schedule:
               $ref: '#/components/schemas/microsoft.graph.schedule'
           additionalProperties:
@@ -19915,13 +20471,16 @@ components:
       properties:
         comment:
           type: string
+          description: The comment text.
           nullable: true
         createdByDisplayName:
           type: string
+          description: The person or app name that submitted the comment.
           nullable: true
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time when the comment was submitted.
           format: date-time
       additionalProperties:
         type: object
@@ -19974,21 +20533,25 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time the evidence was created and added to the alert.
           format: date-time
         remediationStatus:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceRemediationStatus'
         remediationStatusDetails:
           type: string
+          description: Details about the remediation status.
           nullable: true
         roles:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.evidenceRole'
+          description: 'The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role ''Attacker''.'
         tags:
           type: array
           items:
             type: string
             nullable: true
+          description: 'Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.'
         verdict:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceVerdict'
       additionalProperties:
@@ -20202,7 +20765,6 @@ components:
               format: date-time
             description:
               type: string
-              description: Provides a user-visible description of the item. Optional.
               nullable: true
             eTag:
               type: string
@@ -20578,12 +21140,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of field definitions for this list.
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
-              description: The collection of content types present in this list.
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             items:
@@ -21769,7 +22329,7 @@ components:
       properties:
         description:
           type: string
-          description: 'Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#/>, etc.).'
+          description: 'Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).'
           nullable: true
         ipV4Address:
           type: string
@@ -21928,10 +22488,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.certificationControl'
-          description: Collection of the certification controls associated with certification
         certificationName:
           type: string
-          description: 'Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)'
           nullable: true
       additionalProperties:
         type: object
@@ -21941,24 +22499,19 @@ components:
       properties:
         assignedTo:
           type: string
-          description: Assigns the control to the user who will take the action.
           nullable: true
         comment:
           type: string
-          description: Provides optional comment about the control.
           nullable: true
         state:
           type: string
-          description: 'State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).'
           nullable: true
         updatedBy:
           type: string
-          description: ID of the user who updated tenant state.
           nullable: true
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time at which the control state was updated.
           format: date-time
           nullable: true
       additionalProperties:
@@ -21969,12 +22522,10 @@ components:
       properties:
         averageScore:
           type: number
-          description: Average score within specified basis.
           format: double
           nullable: true
         basis:
           type: string
-          description: 'Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.'
           nullable: true
       additionalProperties:
         type: object
@@ -21984,19 +22535,15 @@ components:
       properties:
         controlCategory:
           type: string
-          description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
           nullable: true
         controlName:
           type: string
-          description: Control unique name.
           nullable: true
         description:
           type: string
-          description: Description of the control.
           nullable: true
         score:
           type: number
-          description: Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
           format: double
           nullable: true
       additionalProperties:
@@ -22050,11 +22597,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -22573,6 +23120,12 @@ components:
               type: string
               description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
               nullable: true
+            employeeLeaveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).'
+              format: date-time
+              nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
             employeeType:
@@ -22869,7 +23422,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
-              description: A collection of this user's license details. Read-only.
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -23061,7 +23613,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
-              description: The user's activities across devices. Read-only. Nullable.
             devices:
               type: array
               items:
@@ -23130,6 +23681,51 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: teamsTemplate
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.teamTemplateDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamTemplateDefinition
+          type: object
+          properties:
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.teamTemplateAudience'
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            iconUrl:
+              type: string
+              nullable: true
+            languageTag:
+              type: string
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            parentTemplateId:
+              type: string
+              nullable: true
+            publisherName:
+              type: string
+              nullable: true
+            shortDescription:
+              type: string
+              nullable: true
+            teamDefinition:
+              $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
             type: object
     microsoft.graph.schedule:
@@ -25270,12 +25866,10 @@ components:
           properties:
             content:
               type: string
-              description: The content stream
               format: base64url
               nullable: true
             contentUrl:
               type: string
-              description: The URL for downloading the content
               nullable: true
           additionalProperties:
             type: object
@@ -25468,10 +26062,8 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The categories associated with the item
             changeKey:
               type: string
-              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25814,11 +26406,9 @@ components:
       properties:
         name:
           type: string
-          description: Certification control name
           nullable: true
         url:
           type: string
-          description: URL for the Microsoft Service Trust Portal
           nullable: true
       additionalProperties:
         type: object
@@ -26067,7 +26657,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
               type: string
-              description: Verbose description of the application.
               nullable: true
             displayName:
               type: string
@@ -26197,6 +26786,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
     microsoft.graph.customSecurityAttributeValue:
@@ -26465,6 +27055,8 @@ components:
               nullable: true
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            diskEncryptionState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -26734,6 +27326,8 @@ components:
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
               nullable: true
+            verifiedPublisher:
+              $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
             appManagementPolicies:
               type: array
               items:
@@ -26773,7 +27367,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-              description: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -27472,7 +28065,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
-              description: A list of pending user consent requests.
+              description: A list of pending user consent requests. Supports $filter (eq).
           additionalProperties:
             type: object
     microsoft.graph.approval:
@@ -28279,7 +28872,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             recentPlans:
               type: array
               items:
@@ -28436,50 +29028,40 @@ components:
           properties:
             activationUrl:
               type: string
-              description: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
             activitySourceHost:
               type: string
-              description: 'Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.'
             appActivityId:
               type: string
-              description: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
             appDisplayName:
               type: string
-              description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
               $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
-              description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object expired on the server.
               format: date-time
               nullable: true
             fallbackUrl:
               type: string
-              description: 'Optional. URL used to launch the activity in a web-based app, if available.'
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             visualElements:
               $ref: '#/components/schemas/microsoft.graph.visualInfo'
@@ -28487,7 +29069,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
           additionalProperties:
             type: object
     microsoft.graph.device:
@@ -29042,6 +29623,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamTemplateAudience:
+      title: teamTemplateAudience
+      enum:
+        - organization
+        - user
+        - public
+        - unknownFutureValue
+      type: string
     microsoft.graph.timeClockSettings:
       title: timeClockSettings
       type: object
@@ -29591,7 +30180,6 @@ components:
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Details about when the activity took place. Read-only.
               format: date-time
               nullable: true
             actor:
@@ -29945,7 +30533,6 @@ components:
       properties:
         type:
           type: string
-          description: 'A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.'
           nullable: true
       additionalProperties:
         type: object
@@ -30173,7 +30760,6 @@ components:
           nullable: true
         frameRate:
           type: number
-          description: Frame rate of the video.
           format: double
           nullable: true
         height:
@@ -30401,11 +30987,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -30435,14 +31021,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             displayName:
               type: string
-              description: The name of the notebook.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -30510,7 +31094,6 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -30533,7 +31116,6 @@ components:
           properties:
             self:
               type: string
-              description: The endpoint where you can get details about the page. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -31379,14 +31961,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+          description: 'A list of failed health check items. If the status property is available, this property will be empty.'
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDiskEncryptionState:
+      title: cloudPcDiskEncryptionState
+      enum:
+        - notAvailable
+        - notEncryped
+        - encryptedUsingPlatformManagedKey
+        - encryptedUsingCustomerManagedKey
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -31856,6 +32449,26 @@ components:
         relayState:
           type: string
           description: The relative URI the service provider would redirect to after completion of the single sign-on flow.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.verifiedPublisher:
+      title: verifiedPublisher
+      type: object
+      properties:
+        addedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the verified publisher was first added or most recently updated.
+          format: date-time
+          nullable: true
+        displayName:
+          type: string
+          description: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
+          nullable: true
+        verifiedPublisherId:
+          type: string
+          description: The ID of the verified publisher from the app publisher's Partner Center account.
           nullable: true
       additionalProperties:
         type: object
@@ -32376,7 +32989,7 @@ components:
           properties:
             query:
               type: string
-              description: The query specifying who will be the reviewer. See table for examples.
+              description: The query specifying who will be the reviewer.
               nullable: true
             queryRoot:
               type: string
@@ -32840,6 +33453,10 @@ components:
         clientIdentifier:
           type: string
           description: Configuration Manager Client Id from SCCM
+          nullable: true
+        clientVersion:
+          type: string
+          description: Configuration Manager Client version from SCCM
           nullable: true
         isBlocked:
           type: boolean
@@ -34006,6 +34623,12 @@ components:
               type: string
               description: Name of the discovered application. Read-only
               nullable: true
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.detectedAppPlatformType'
+            publisher:
+              type: string
+              description: 'Indicates the publisher of the discovered application. For example: ''Microsoft''.  The default value is an empty string.'
+              nullable: true
             sizeInByte:
               type: integer
               description: Discovered application size in bytes. Read-only
@@ -35103,43 +35726,36 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
@@ -35620,12 +36236,12 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             password:
@@ -37229,21 +37845,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
-              description: The name of the printer/printerShare.
               nullable: true
             isAcceptingJobs:
               type: boolean
-              description: Whether the printer/printerShare is currently accepting new print jobs.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             manufacturer:
               type: string
-              description: The manufacturer of the printer/printerShare.
               nullable: true
             model:
               type: string
-              description: The model name of the printer/printerShare.
               nullable: true
             name:
               type: string
@@ -37254,7 +37866,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
-              description: The list of jobs that are queued for printing by the printer/printerShare.
           additionalProperties:
             type: object
     microsoft.graph.printerShareViewpoint:
@@ -37328,12 +37939,15 @@ components:
       properties:
         additionalDetails:
           type: string
+          description: Additional message for this health check.
           nullable: true
         displayName:
           type: string
+          description: The connectivity health check item name.
         lastHealthCheckDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         result:
@@ -38710,6 +39324,59 @@ components:
           additionalProperties:
             type: object
           description: The security baseline compliance state of a setting for a device
+    microsoft.graph.detectedAppPlatformType:
+      title: detectedAppPlatformType
+      enum:
+        - unknown
+        - windows
+        - windowsMobile
+        - windowsHolographic
+        - ios
+        - macOS
+        - chromeOS
+        - androidOSP
+        - androidDeviceAdministrator
+        - androidWorkProfile
+        - androidDedicatedAndFullyManaged
+      type: string
+      description: 'Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).'
+      x-ms-enum:
+        name: detectedAppPlatformType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown when platform cannot be determined.
+            name: unknown
+          - value: windows
+            description: Indicates that the platform of the detected application is Windows.
+            name: windows
+          - value: windowsMobile
+            description: Indicates that the platform of the detected application is Windows Mobile.
+            name: windowsMobile
+          - value: windowsHolographic
+            description: Indicates that the platform of the detected application is Windows Holographic.
+            name: windowsHolographic
+          - value: ios
+            description: Indicates that the platform of the detected application is iOS.
+            name: ios
+          - value: macOS
+            description: Indicates that the platform of the detected application is macOS.
+            name: macOS
+          - value: chromeOS
+            description: Indicates that the platform of the detected application is ChromeOS.
+            name: chromeOS
+          - value: androidOSP
+            description: Indicates that the platform of the detected application is Android open source project.
+            name: androidOSP
+          - value: androidDeviceAdministrator
+            description: Indicates that the platform of the detected application is Android device administrator.
+            name: androidDeviceAdministrator
+          - value: androidWorkProfile
+            description: Indicates that the platform of the detected application is Android work profile.
+            name: androidWorkProfile
+          - value: androidDedicatedAndFullyManaged
+            description: Indicates that the platform of the detected application is Android dedicated and fully managed.
+            name: androidDedicatedAndFullyManaged
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -39981,7 +40648,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookSortField'
-              description: Represents the current conditions used to last sort the table. Read-only.
             matchCase:
               type: boolean
               description: Represents whether the casing impacted the last sort of the table. Read-only.
@@ -40788,7 +41454,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The interval between synchronization iterations.
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
@@ -44430,6 +45096,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -44438,6 +45106,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -44445,18 +45115,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

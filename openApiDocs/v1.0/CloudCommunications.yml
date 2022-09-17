@@ -204,6 +204,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -267,6 +268,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -293,12 +295,14 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -312,12 +316,14 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -402,6 +408,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -427,12 +434,14 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_GetSessions
       parameters:
         - name: callRecord-id
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -440,6 +449,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -501,6 +511,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -508,6 +519,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -534,6 +546,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -541,12 +554,14 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -560,12 +575,14 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_ListSegments
       parameters:
         - name: callRecord-id
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -573,6 +590,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -655,6 +673,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -662,6 +681,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -687,12 +707,14 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_GetSegments
       parameters:
         - name: callRecord-id
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -700,6 +722,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -707,6 +730,7 @@ paths:
           in: path
           description: 'key: id of segment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: segment
@@ -760,6 +784,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -767,6 +792,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -774,6 +800,7 @@ paths:
           in: path
           description: 'key: id of segment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: segment
@@ -800,6 +827,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -807,6 +835,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -814,12 +843,14 @@ paths:
           in: path
           description: 'key: id of segment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: segment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -985,6 +1016,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1097,6 +1129,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1123,12 +1156,14 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1148,6 +1183,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1221,6 +1257,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1252,6 +1289,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1259,6 +1297,7 @@ paths:
           in: path
           description: 'key: id of audioRoutingGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: audioRoutingGroup
@@ -1309,6 +1348,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1316,6 +1356,7 @@ paths:
           in: path
           description: 'key: id of audioRoutingGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: audioRoutingGroup
@@ -1342,6 +1383,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1349,12 +1391,14 @@ paths:
           in: path
           description: 'key: id of audioRoutingGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: audioRoutingGroup
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1374,6 +1418,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1420,6 +1465,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1457,6 +1503,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1489,6 +1536,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1509,6 +1557,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1546,6 +1595,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1587,6 +1637,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1659,6 +1710,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1702,6 +1754,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1737,6 +1790,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1774,6 +1828,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1808,6 +1863,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1845,6 +1901,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1884,6 +1941,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1957,6 +2015,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1988,6 +2047,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1995,6 +2055,7 @@ paths:
           in: path
           description: 'key: id of commsOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: commsOperation
@@ -2045,6 +2106,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2052,6 +2114,7 @@ paths:
           in: path
           description: 'key: id of commsOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: commsOperation
@@ -2078,6 +2141,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2085,12 +2149,14 @@ paths:
           in: path
           description: 'key: id of commsOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: commsOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2110,6 +2176,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2192,6 +2259,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2223,6 +2291,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2230,6 +2299,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2290,6 +2360,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2297,6 +2368,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2323,6 +2395,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2330,12 +2403,14 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2355,6 +2430,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2362,6 +2438,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2399,6 +2476,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2406,6 +2484,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2445,6 +2524,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2452,6 +2532,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2489,6 +2570,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2740,6 +2822,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2816,6 +2899,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2842,12 +2926,14 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2861,12 +2947,14 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
+      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_ListAttendanceReports
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2942,6 +3030,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2967,12 +3056,14 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
+      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_GetAttendanceReports
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2980,6 +3071,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3038,6 +3130,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3045,6 +3138,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3071,6 +3165,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3078,12 +3173,14 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3097,12 +3194,14 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3110,6 +3209,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3189,6 +3289,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3196,6 +3297,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3221,12 +3323,14 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3234,6 +3338,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3241,6 +3346,7 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
@@ -3293,6 +3399,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3300,6 +3407,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3307,6 +3415,7 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
@@ -3333,6 +3442,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3340,6 +3450,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3347,12 +3458,14 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3366,12 +3479,14 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: communications_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3390,12 +3505,14 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3555,6 +3672,7 @@ paths:
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
@@ -3594,8 +3712,12 @@ paths:
           links:
             clearPresence:
               operationId: communications.presences.presence.clearPresence
+            clearUserPreferredPresence:
+              operationId: communications.presences.presence.clearUserPreferredPresence
             setPresence:
               operationId: communications.presences.presence.setPresence
+            setUserPreferredPresence:
+              operationId: communications.presences.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3609,6 +3731,7 @@ paths:
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
@@ -3635,12 +3758,14 @@ paths:
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3660,6 +3785,7 @@ paths:
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
@@ -3682,6 +3808,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.clearUserPreferredPresence':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action clearUserPreferredPresence
+      operationId: communications.presences_clearUserPreferredPresence
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/communications/presences/{presence-id}/microsoft.graph.setPresence':
     post:
       tags:
@@ -3693,6 +3840,7 @@ paths:
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
@@ -3724,6 +3872,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.setUserPreferredPresence':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action setUserPreferredPresence
+      operationId: communications.presences_setUserPreferredPresence
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                availability:
+                  type: string
+                activity:
+                  type: string
+                expirationDuration:
+                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                  type: string
+                  format: duration
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onlineMeetings':
     get:
       tags:
@@ -3735,6 +3923,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3867,6 +4056,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3898,6 +4088,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3905,6 +4096,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3982,6 +4174,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3989,6 +4182,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4015,6 +4209,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4022,12 +4217,14 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4041,12 +4238,14 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
+      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_ListAttendanceReports
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4054,6 +4253,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4129,6 +4329,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4136,6 +4337,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4161,12 +4363,14 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
+      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_GetAttendanceReports
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4174,6 +4378,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4181,6 +4386,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4240,6 +4446,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4247,6 +4454,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4254,6 +4462,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4280,6 +4489,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4287,6 +4497,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4294,12 +4505,14 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4313,12 +4526,14 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4326,6 +4541,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4333,6 +4549,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4412,6 +4629,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4419,6 +4637,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4426,6 +4645,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4451,12 +4671,14 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4464,6 +4686,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4471,6 +4694,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4478,6 +4702,7 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
@@ -4530,6 +4755,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4537,6 +4763,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4544,6 +4771,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4551,6 +4779,7 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
@@ -4577,6 +4806,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4584,6 +4814,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4591,6 +4822,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4598,12 +4830,14 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4617,12 +4851,14 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: users_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4630,6 +4866,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4648,12 +4885,14 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in users
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4661,6 +4900,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4689,6 +4929,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4728,8 +4969,12 @@ paths:
           links:
             clearPresence:
               operationId: users.user.presence.clearPresence
+            clearUserPreferredPresence:
+              operationId: users.user.presence.clearUserPreferredPresence
             setPresence:
               operationId: users.user.presence.setPresence
+            setUserPreferredPresence:
+              operationId: users.user.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4743,6 +4988,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4769,12 +5015,14 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4844,13 +5092,13 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             type:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callType'
             version:
               type: integer
-              description: Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+              description: Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
               format: int64
             sessions:
               type: array
@@ -4884,7 +5132,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             segments:
               type: array
@@ -5006,7 +5254,6 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of receiving participant ids.
             routingMode:
               $ref: '#/components/schemas/microsoft.graph.routingMode'
             sources:
@@ -5014,7 +5261,6 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of source participant ids.
           additionalProperties:
             type: object
     microsoft.graph.mediaConfig:
@@ -5145,7 +5391,7 @@ components:
           nullable: true
         region:
           type: string
-          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location, unlike countryCode. Read-only.'
+          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location. Read-only.'
           nullable: true
       additionalProperties:
         type: object
@@ -5298,7 +5544,7 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
@@ -5326,11 +5572,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowTeamworkReactions:
               type: boolean
-              description: Indicates if Teams reactions are enabled for the meeting.
+              description: Indicates whether Teams reactions are enabled for the meeting.
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a Teams live event. Read-only.
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -5353,11 +5599,10 @@ components:
               nullable: true
             externalId:
               type: string
-              description: The external ID. A custom ID. Optional.
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates whether this is a Teams live event.
+              description: Indicates if this is a Teams live event.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -5466,7 +5711,7 @@ components:
       properties:
         messageId:
           type: string
-          description: The unique identifier for a message in a Microsoft Teams channel.
+          description: The unique identifier of a message in a Microsoft Teams channel.
           nullable: true
         replyChainMessageId:
           type: string
@@ -5486,7 +5731,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: Information of the meeting attendees.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
@@ -5605,13 +5849,13 @@ components:
       properties:
         observedParticipantId:
           type: string
-          description: The id of the participant that is under observation. Read-only.
+          description: The ID of the participant that is under observation. Read-only.
           nullable: true
         onBehalfOf:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         sourceParticipantId:
           type: string
-          description: The id of the participant that triggered the incoming call. Read-only.
+          description: The ID of the participant that triggered the incoming call. Read-only.
           nullable: true
         transferor:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -5730,7 +5974,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.modality'
         serverMuted:
           type: boolean
-          description: Indicates whether the media is muted by the server.
+          description: If the media is muted by the server.
         sourceId:
           type: string
           description: The source ID.
@@ -6692,7 +6936,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The network path count of this hop that was used to compute the round-trip time.
+          description: The network path count of this hop that was used to compute the RTT.
           format: int32
           nullable: true
         ipAddress:
@@ -6875,6 +7119,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -6883,6 +7129,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -6890,18 +7138,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

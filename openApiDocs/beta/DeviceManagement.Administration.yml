@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.applePushNotificationCertificate
       summary: Get applePushNotificationCertificate from deviceManagement
+      description: Apple push notification certificate.
       operationId: deviceManagement_GetApplePushNotificationCertificate
       parameters:
         - name: $select
@@ -87,6 +88,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -100,6 +102,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
+      description: The Audit Events
       operationId: deviceManagement_ListAuditEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -213,12 +216,14 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
+      description: The Audit Events
       operationId: deviceManagement_GetAuditEvents
       parameters:
         - name: auditEvent-id
           in: path
           description: 'key: id of auditEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: auditEvent
@@ -277,6 +282,7 @@ paths:
           in: path
           description: 'key: id of auditEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: auditEvent
@@ -303,12 +309,14 @@ paths:
           in: path
           description: 'key: id of auditEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: auditEvent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -322,6 +330,7 @@ paths:
       tags:
         - deviceManagement.cartToClassAssociation
       summary: Get cartToClassAssociations from deviceManagement
+      description: The Cart To Class Associations.
       operationId: deviceManagement_ListCartToClassAssociations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -423,12 +432,14 @@ paths:
       tags:
         - deviceManagement.cartToClassAssociation
       summary: Get cartToClassAssociations from deviceManagement
+      description: The Cart To Class Associations.
       operationId: deviceManagement_GetCartToClassAssociations
       parameters:
         - name: cartToClassAssociation-id
           in: path
           description: 'key: id of cartToClassAssociation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cartToClassAssociation
@@ -483,6 +494,7 @@ paths:
           in: path
           description: 'key: id of cartToClassAssociation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cartToClassAssociation
@@ -509,12 +521,14 @@ paths:
           in: path
           description: 'key: id of cartToClassAssociation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cartToClassAssociation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -528,6 +542,7 @@ paths:
       tags:
         - deviceManagement.comanagementEligibleDevice
       summary: Get comanagementEligibleDevices from deviceManagement
+      description: The list of co-management eligible devices report
       operationId: deviceManagement_ListComanagementEligibleDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -665,12 +680,14 @@ paths:
       tags:
         - deviceManagement.comanagementEligibleDevice
       summary: Get comanagementEligibleDevices from deviceManagement
+      description: The list of co-management eligible devices report
       operationId: deviceManagement_GetComanagementEligibleDevices
       parameters:
         - name: comanagementEligibleDevice-id
           in: path
           description: 'key: id of comanagementEligibleDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: comanagementEligibleDevice
@@ -737,6 +754,7 @@ paths:
           in: path
           description: 'key: id of comanagementEligibleDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: comanagementEligibleDevice
@@ -763,12 +781,14 @@ paths:
           in: path
           description: 'key: id of comanagementEligibleDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: comanagementEligibleDevice
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -782,6 +802,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
+      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_ListComplianceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -895,12 +916,14 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
+      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_GetComplianceManagementPartners
       parameters:
         - name: complianceManagementPartner-id
           in: path
           description: 'key: id of complianceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: complianceManagementPartner
@@ -959,6 +982,7 @@ paths:
           in: path
           description: 'key: id of complianceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: complianceManagementPartner
@@ -985,12 +1009,14 @@ paths:
           in: path
           description: 'key: id of complianceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: complianceManagementPartner
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1004,6 +1030,7 @@ paths:
       tags:
         - deviceManagement.restrictedAppsViolation
       summary: Get deviceConfigurationRestrictedAppsViolations from deviceManagement
+      description: Restricted apps violations for this account.
       operationId: deviceManagement_ListDeviceConfigurationRestrictedAppsViolations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1111,12 +1138,14 @@ paths:
       tags:
         - deviceManagement.restrictedAppsViolation
       summary: Get deviceConfigurationRestrictedAppsViolations from deviceManagement
+      description: Restricted apps violations for this account.
       operationId: deviceManagement_GetDeviceConfigurationRestrictedAppsViolations
       parameters:
         - name: restrictedAppsViolation-id
           in: path
           description: 'key: id of restrictedAppsViolation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: restrictedAppsViolation
@@ -1173,6 +1202,7 @@ paths:
           in: path
           description: 'key: id of restrictedAppsViolation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: restrictedAppsViolation
@@ -1199,12 +1229,14 @@ paths:
           in: path
           description: 'key: id of restrictedAppsViolation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: restrictedAppsViolation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1218,6 +1250,7 @@ paths:
       tags:
         - deviceManagement.managedAllDeviceCertificateState
       summary: Get deviceConfigurationsAllManagedDeviceCertificateStates from deviceManagement
+      description: Summary of all certificates for all devices.
       operationId: deviceManagement_ListDeviceConfigurationsAllManagedDeviceCertificateStates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1334,12 +1367,14 @@ paths:
       tags:
         - deviceManagement.managedAllDeviceCertificateState
       summary: Get deviceConfigurationsAllManagedDeviceCertificateStates from deviceManagement
+      description: Summary of all certificates for all devices.
       operationId: deviceManagement_GetDeviceConfigurationsAllManagedDeviceCertificateStates
       parameters:
         - name: managedAllDeviceCertificateState-id
           in: path
           description: 'key: id of managedAllDeviceCertificateState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAllDeviceCertificateState
@@ -1399,6 +1434,7 @@ paths:
           in: path
           description: 'key: id of managedAllDeviceCertificateState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAllDeviceCertificateState
@@ -1425,12 +1461,14 @@ paths:
           in: path
           description: 'key: id of managedAllDeviceCertificateState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAllDeviceCertificateState
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1444,6 +1482,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
+      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_ListDeviceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1557,12 +1596,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
+      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_GetDeviceManagementPartners
       parameters:
         - name: deviceManagementPartner-id
           in: path
           description: 'key: id of deviceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementPartner
@@ -1621,6 +1662,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementPartner
@@ -1647,12 +1689,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementPartner
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1666,6 +1710,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementDomainJoinConnector
       summary: Get domainJoinConnectors from deviceManagement
+      description: A list of connector objects.
       operationId: deviceManagement_ListDomainJoinConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1758,12 +1803,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementDomainJoinConnector
       summary: Get domainJoinConnectors from deviceManagement
+      description: A list of connector objects.
       operationId: deviceManagement_GetDomainJoinConnectors
       parameters:
         - name: deviceManagementDomainJoinConnector-id
           in: path
           description: 'key: id of deviceManagementDomainJoinConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementDomainJoinConnector
@@ -1815,6 +1862,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementDomainJoinConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementDomainJoinConnector
@@ -1841,12 +1889,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementDomainJoinConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementDomainJoinConnector
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1860,6 +1910,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
+      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_ListExchangeConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1967,12 +2018,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
+      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_GetExchangeConnectors
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
           description: 'key: id of deviceManagementExchangeConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeConnector
@@ -2032,6 +2085,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeConnector
@@ -2058,12 +2112,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeConnector
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2077,6 +2133,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get exchangeOnPremisesPolicies from deviceManagement
+      description: The list of Exchange On Premisis policies configured by the tenant.
       operationId: deviceManagement_ListExchangeOnPremisesPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2171,12 +2228,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get exchangeOnPremisesPolicies from deviceManagement
+      description: The list of Exchange On Premisis policies configured by the tenant.
       operationId: deviceManagement_GetExchangeOnPremisesPolicies
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
           description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeOnPremisesPolicy
@@ -2235,6 +2294,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeOnPremisesPolicy
@@ -2261,12 +2321,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeOnPremisesPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2280,12 +2342,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get conditionalAccessSettings from deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
       operationId: deviceManagement.exchangeOnPremisesPolicies_GetConditionalAccessSettings
       parameters:
         - name: deviceManagementExchangeOnPremisesPolicy-id
           in: path
           description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeOnPremisesPolicy
@@ -2337,6 +2401,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeOnPremisesPolicy
@@ -2363,12 +2428,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeOnPremisesPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeOnPremisesPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2382,6 +2449,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get exchangeOnPremisesPolicy from deviceManagement
+      description: The policy which controls mobile device access to Exchange On Premises
       operationId: deviceManagement_GetExchangeOnPremisesPolicy
       parameters:
         - name: $select
@@ -2454,6 +2522,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2467,6 +2536,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeOnPremisesPolicy
       summary: Get conditionalAccessSettings from deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
       operationId: deviceManagement.exchangeOnPremisesPolicy_GetConditionalAccessSettings
       parameters:
         - name: $select
@@ -2534,6 +2604,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2547,6 +2618,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get groupPolicyCategories from deviceManagement
+      description: The available group policy categories for this account.
       operationId: deviceManagement_ListGroupPolicyCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2647,12 +2719,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get groupPolicyCategories from deviceManagement
+      description: The available group policy categories for this account.
       operationId: deviceManagement_GetGroupPolicyCategories
       parameters:
         - name: groupPolicyCategory-id
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
@@ -2729,6 +2803,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
@@ -2755,12 +2830,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2774,12 +2851,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get children from deviceManagement
+      description: The children categories
       operationId: deviceManagement.groupPolicyCategories_ListChildren
       parameters:
         - name: groupPolicyCategory-id
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
@@ -2859,12 +2938,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get children from deviceManagement
+      description: The children categories
       operationId: deviceManagement.groupPolicyCategories_GetChildren
       parameters:
         - name: groupPolicyCategory-id
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
@@ -2872,6 +2953,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
@@ -2947,12 +3029,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get definitionFile from deviceManagement
+      description: The id of the definition file the category came from
       operationId: deviceManagement.groupPolicyCategories_GetDefinitionFile
       parameters:
         - name: groupPolicyCategory-id
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
@@ -3011,12 +3095,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get definitions from deviceManagement
+      description: The immediate GroupPolicyDefinition children of the category
       operationId: deviceManagement.groupPolicyCategories_ListDefinitions
       parameters:
         - name: groupPolicyCategory-id
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
@@ -3122,12 +3208,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get definitions from deviceManagement
+      description: The immediate GroupPolicyDefinition children of the category
       operationId: deviceManagement.groupPolicyCategories_GetDefinitions
       parameters:
         - name: groupPolicyCategory-id
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
@@ -3135,6 +3223,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -3225,12 +3314,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyCategory
       summary: Get parent from deviceManagement
+      description: The parent category
       operationId: deviceManagement.groupPolicyCategories_GetParent
       parameters:
         - name: groupPolicyCategory-id
           in: path
           description: 'key: id of groupPolicyCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyCategory
@@ -3302,6 +3393,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get groupPolicyDefinitionFiles from deviceManagement
+      description: The available group policy definition files for this account.
       operationId: deviceManagement_ListGroupPolicyDefinitionFiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3411,12 +3503,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get groupPolicyDefinitionFiles from deviceManagement
+      description: The available group policy definition files for this account.
       operationId: deviceManagement_GetGroupPolicyDefinitionFiles
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
           description: 'key: id of groupPolicyDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinitionFile
@@ -3480,6 +3574,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinitionFile
@@ -3506,12 +3601,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinitionFile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3525,12 +3622,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get definitions from deviceManagement
+      description: The group policy definitions associated with the file.
       operationId: deviceManagement.groupPolicyDefinitionFiles_ListDefinitions
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
           description: 'key: id of groupPolicyDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinitionFile
@@ -3636,12 +3735,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get definitions from deviceManagement
+      description: The group policy definitions associated with the file.
       operationId: deviceManagement.groupPolicyDefinitionFiles_GetDefinitions
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
           description: 'key: id of groupPolicyDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinitionFile
@@ -3649,6 +3750,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -3739,6 +3841,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get groupPolicyDefinitions from deviceManagement
+      description: The available group policy definitions for this account.
       operationId: deviceManagement_ListGroupPolicyDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3865,12 +3968,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get groupPolicyDefinitions from deviceManagement
+      description: The available group policy definitions for this account.
       operationId: deviceManagement_GetGroupPolicyDefinitions
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -3961,6 +4066,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -3987,12 +4093,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4006,12 +4114,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4083,12 +4193,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4147,12 +4259,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get nextVersionDefinition from deviceManagement
+      description: Definition of the next version of this definition
       operationId: deviceManagement.groupPolicyDefinitions_GetNextVersionDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4243,6 +4357,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4269,12 +4384,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4288,12 +4405,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4365,12 +4484,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4429,12 +4550,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4507,6 +4630,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4532,12 +4656,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4545,6 +4671,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -4602,6 +4729,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4609,6 +4737,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -4635,6 +4764,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4642,12 +4772,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4661,12 +4793,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4674,6 +4808,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -4764,12 +4899,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get previousVersionDefinition from deviceManagement
+      description: Definition of the previous version of this definition
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition_GetPreviousVersionDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4860,6 +4997,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4886,12 +5024,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4905,12 +5045,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -4982,12 +5124,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5046,12 +5190,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5124,6 +5270,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5149,12 +5296,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5162,6 +5311,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -5219,6 +5369,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5226,6 +5377,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -5252,6 +5404,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5259,12 +5412,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5278,12 +5433,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5291,6 +5448,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -5381,12 +5539,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5459,6 +5619,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5484,12 +5645,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5497,6 +5660,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -5554,6 +5718,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5561,6 +5726,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -5587,6 +5753,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5594,12 +5761,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5613,12 +5782,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5626,6 +5797,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -5716,12 +5888,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get previousVersionDefinition from deviceManagement
+      description: Definition of the previous version of this definition
       operationId: deviceManagement.groupPolicyDefinitions_GetPreviousVersionDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5812,6 +5986,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5838,12 +6013,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5857,12 +6034,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5934,12 +6113,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -5998,12 +6179,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get nextVersionDefinition from deviceManagement
+      description: Definition of the next version of this definition
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_GetNextVersionDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6094,6 +6277,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6120,12 +6304,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6139,12 +6325,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get category from deviceManagement
+      description: The group policy category associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition_GetCategory
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6216,12 +6404,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definitionFile from deviceManagement
+      description: The group policy file associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition_GetDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6280,12 +6470,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6358,6 +6550,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6383,12 +6576,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6396,6 +6591,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -6453,6 +6649,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6460,6 +6657,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -6486,6 +6684,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6493,12 +6692,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6512,12 +6713,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6525,6 +6728,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -6615,12 +6819,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_ListPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6693,6 +6899,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6718,12 +6925,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get presentations from deviceManagement
+      description: The group policy presentations associated with the definition.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition_GetPresentations
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6731,6 +6940,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -6788,6 +6998,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6795,6 +7006,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -6821,6 +7033,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6828,12 +7041,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6847,12 +7062,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyDefinition
       summary: Get definition from deviceManagement
+      description: The group policy definition associated with the presentation.
       operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.presentations_GetDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
           description: 'key: id of groupPolicyDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyDefinition
@@ -6860,6 +7077,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyPresentation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
@@ -6950,6 +7168,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicyMigrationReports from deviceManagement
+      description: A list of Group Policy migration reports.
       operationId: deviceManagement_ListGroupPolicyMigrationReports
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7070,12 +7289,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicyMigrationReports from deviceManagement
+      description: A list of Group Policy migration reports.
       operationId: deviceManagement_GetGroupPolicyMigrationReports
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7148,6 +7369,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7174,12 +7396,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7193,12 +7417,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicySettingMappings from deviceManagement
+      description: A list of group policy settings to MDM/Intune mappings.
       operationId: deviceManagement.groupPolicyMigrationReports_ListGroupPolicySettingMappings
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7323,6 +7549,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7348,12 +7575,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get groupPolicySettingMappings from deviceManagement
+      description: A list of group policy settings to MDM/Intune mappings.
       operationId: deviceManagement.groupPolicyMigrationReports_GetGroupPolicySettingMappings
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7361,6 +7590,7 @@ paths:
           in: path
           description: 'key: id of groupPolicySettingMapping'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicySettingMapping
@@ -7428,6 +7658,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7435,6 +7666,7 @@ paths:
           in: path
           description: 'key: id of groupPolicySettingMapping'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicySettingMapping
@@ -7461,6 +7693,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7468,12 +7701,14 @@ paths:
           in: path
           description: 'key: id of groupPolicySettingMapping'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicySettingMapping
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7487,12 +7722,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get unsupportedGroupPolicyExtensions from deviceManagement
+      description: A list of unsupported group policy extensions inside the Group Policy Object.
       operationId: deviceManagement.groupPolicyMigrationReports_ListUnsupportedGroupPolicyExtensions
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7569,6 +7806,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7594,12 +7832,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyMigrationReport
       summary: Get unsupportedGroupPolicyExtensions from deviceManagement
+      description: A list of unsupported group policy extensions inside the Group Policy Object.
       operationId: deviceManagement.groupPolicyMigrationReports_GetUnsupportedGroupPolicyExtensions
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7607,6 +7847,7 @@ paths:
           in: path
           description: 'key: id of unsupportedGroupPolicyExtension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unsupportedGroupPolicyExtension
@@ -7658,6 +7899,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7665,6 +7907,7 @@ paths:
           in: path
           description: 'key: id of unsupportedGroupPolicyExtension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unsupportedGroupPolicyExtension
@@ -7691,6 +7934,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyMigrationReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyMigrationReport
@@ -7698,12 +7942,14 @@ paths:
           in: path
           description: 'key: id of unsupportedGroupPolicyExtension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: unsupportedGroupPolicyExtension
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7717,6 +7963,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyObjectFile
       summary: Get groupPolicyObjectFiles from deviceManagement
+      description: A list of Group Policy Object files uploaded.
       operationId: deviceManagement_ListGroupPolicyObjectFiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7812,12 +8059,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyObjectFile
       summary: Get groupPolicyObjectFiles from deviceManagement
+      description: A list of Group Policy Object files uploaded.
       operationId: deviceManagement_GetGroupPolicyObjectFiles
       parameters:
         - name: groupPolicyObjectFile-id
           in: path
           description: 'key: id of groupPolicyObjectFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyObjectFile
@@ -7870,6 +8119,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyObjectFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyObjectFile
@@ -7896,12 +8146,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyObjectFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyObjectFile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7915,6 +8167,7 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyUploadedDefinitionFiles from deviceManagement
+      description: The available group policy uploaded definition files for this account.
       operationId: deviceManagement_ListGroupPolicyUploadedDefinitionFiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8041,12 +8294,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyUploadedDefinitionFiles from deviceManagement
+      description: The available group policy uploaded definition files for this account.
       operationId: deviceManagement_GetGroupPolicyUploadedDefinitionFiles
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -8131,6 +8386,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -8157,12 +8413,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8176,12 +8434,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyOperations from deviceManagement
+      description: The list of operations on the uploaded ADMX file.
       operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_ListGroupPolicyOperations
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -8258,6 +8518,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -8283,12 +8544,14 @@ paths:
       tags:
         - deviceManagement.groupPolicyUploadedDefinitionFile
       summary: Get groupPolicyOperations from deviceManagement
+      description: The list of operations on the uploaded ADMX file.
       operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_GetGroupPolicyOperations
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -8296,6 +8559,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyOperation
@@ -8347,6 +8611,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -8354,6 +8619,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyOperation
@@ -8380,6 +8646,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -8387,12 +8654,14 @@ paths:
           in: path
           description: 'key: id of groupPolicyOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8406,6 +8675,7 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Get intuneBrandingProfiles from deviceManagement
+      description: Intune branding profiles targeted to AAD groups
       operationId: deviceManagement_ListIntuneBrandingProfiles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8581,12 +8851,14 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Get intuneBrandingProfiles from deviceManagement
+      description: Intune branding profiles targeted to AAD groups
       operationId: deviceManagement_GetIntuneBrandingProfiles
       parameters:
         - name: intuneBrandingProfile-id
           in: path
           description: 'key: id of intuneBrandingProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfile
@@ -8674,6 +8946,7 @@ paths:
           in: path
           description: 'key: id of intuneBrandingProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfile
@@ -8700,12 +8973,14 @@ paths:
           in: path
           description: 'key: id of intuneBrandingProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8719,12 +8994,14 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the branding profile
       operationId: deviceManagement.intuneBrandingProfiles_ListAssignments
       parameters:
         - name: intuneBrandingProfile-id
           in: path
           description: 'key: id of intuneBrandingProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfile
@@ -8792,6 +9069,7 @@ paths:
           in: path
           description: 'key: id of intuneBrandingProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfile
@@ -8817,12 +9095,14 @@ paths:
       tags:
         - deviceManagement.intuneBrandingProfile
       summary: Get assignments from deviceManagement
+      description: The list of group assignments for the branding profile
       operationId: deviceManagement.intuneBrandingProfiles_GetAssignments
       parameters:
         - name: intuneBrandingProfile-id
           in: path
           description: 'key: id of intuneBrandingProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfile
@@ -8830,6 +9110,7 @@ paths:
           in: path
           description: 'key: id of intuneBrandingProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfileAssignment
@@ -8878,6 +9159,7 @@ paths:
           in: path
           description: 'key: id of intuneBrandingProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfile
@@ -8885,6 +9167,7 @@ paths:
           in: path
           description: 'key: id of intuneBrandingProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfileAssignment
@@ -8911,6 +9194,7 @@ paths:
           in: path
           description: 'key: id of intuneBrandingProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfile
@@ -8918,12 +9202,14 @@ paths:
           in: path
           description: 'key: id of intuneBrandingProfileAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfileAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8937,6 +9223,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
+      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_ListIosUpdateStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9053,12 +9340,14 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
+      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_GetIosUpdateStatuses
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
           description: 'key: id of iosUpdateDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosUpdateDeviceStatus
@@ -9118,6 +9407,7 @@ paths:
           in: path
           description: 'key: id of iosUpdateDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosUpdateDeviceStatus
@@ -9144,12 +9434,14 @@ paths:
           in: path
           description: 'key: id of iosUpdateDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosUpdateDeviceStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9163,6 +9455,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
+      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_ListMobileThreatDefenseConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9216,6 +9509,8 @@ paths:
                 - windowsDeviceBlockedOnMissingPartnerData desc
                 - windowsEnabled
                 - windowsEnabled desc
+                - windowsMobileApplicationManagementEnabled
+                - windowsMobileApplicationManagementEnabled desc
               type: string
         - name: $select
           in: query
@@ -9245,6 +9540,7 @@ paths:
                 - partnerUnsupportedOsVersionBlocked
                 - windowsDeviceBlockedOnMissingPartnerData
                 - windowsEnabled
+                - windowsMobileApplicationManagementEnabled
               type: string
         - name: $expand
           in: query
@@ -9294,12 +9590,14 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
+      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_GetMobileThreatDefenseConnectors
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
           description: 'key: id of mobileThreatDefenseConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileThreatDefenseConnector
@@ -9331,6 +9629,7 @@ paths:
                 - partnerUnsupportedOsVersionBlocked
                 - windowsDeviceBlockedOnMissingPartnerData
                 - windowsEnabled
+                - windowsMobileApplicationManagementEnabled
               type: string
         - name: $expand
           in: query
@@ -9364,6 +9663,7 @@ paths:
           in: path
           description: 'key: id of mobileThreatDefenseConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileThreatDefenseConnector
@@ -9390,12 +9690,14 @@ paths:
           in: path
           description: 'key: id of mobileThreatDefenseConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileThreatDefenseConnector
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9409,6 +9711,7 @@ paths:
       tags:
         - deviceManagement.ndesConnector
       summary: Get ndesConnectors from deviceManagement
+      description: The collection of Ndes connectors for this account.
       operationId: deviceManagement_ListNdesConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9510,12 +9813,14 @@ paths:
       tags:
         - deviceManagement.ndesConnector
       summary: Get ndesConnectors from deviceManagement
+      description: The collection of Ndes connectors for this account.
       operationId: deviceManagement_GetNdesConnectors
       parameters:
         - name: ndesConnector-id
           in: path
           description: 'key: id of ndesConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ndesConnector
@@ -9570,6 +9875,7 @@ paths:
           in: path
           description: 'key: id of ndesConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ndesConnector
@@ -9596,12 +9902,14 @@ paths:
           in: path
           description: 'key: id of ndesConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: ndesConnector
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9615,6 +9923,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
+      description: The remote assist partners.
       operationId: deviceManagement_ListRemoteAssistancePartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9710,12 +10019,14 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
+      description: The remote assist partners.
       operationId: deviceManagement_GetRemoteAssistancePartners
       parameters:
         - name: remoteAssistancePartner-id
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
@@ -9773,6 +10084,7 @@ paths:
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
@@ -9799,12 +10111,14 @@ paths:
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9818,6 +10132,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
+      description: The Resource Operations.
       operationId: deviceManagement_ListResourceOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9913,12 +10228,14 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
+      description: The Resource Operations.
       operationId: deviceManagement_GetResourceOperations
       parameters:
         - name: resourceOperation-id
           in: path
           description: 'key: id of resourceOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: resourceOperation
@@ -9974,6 +10291,7 @@ paths:
           in: path
           description: 'key: id of resourceOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: resourceOperation
@@ -10000,12 +10318,14 @@ paths:
           in: path
           description: 'key: id of resourceOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: resourceOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10019,6 +10339,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
+      description: The Role Assignments.
       operationId: deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10121,12 +10442,14 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
+      description: The Role Assignments.
       operationId: deviceManagement_GetRoleAssignments
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
           description: 'key: id of deviceAndAppManagementRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
@@ -10193,6 +10516,7 @@ paths:
           in: path
           description: 'key: id of deviceAndAppManagementRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
@@ -10219,12 +10543,14 @@ paths:
           in: path
           description: 'key: id of deviceAndAppManagementRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10238,12 +10564,14 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleScopeTags from deviceManagement
+      description: The set of Role Scope Tags defined on the Role Assignment.
       operationId: deviceManagement.roleAssignments_ListRoleScopeTags
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
           description: 'key: id of deviceAndAppManagementRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
@@ -10314,12 +10642,14 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleScopeTags from deviceManagement
+      description: The set of Role Scope Tags defined on the Role Assignment.
       operationId: deviceManagement.roleAssignments_GetRoleScopeTags
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
           description: 'key: id of deviceAndAppManagementRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
@@ -10327,6 +10657,7 @@ paths:
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
@@ -10380,6 +10711,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
+      description: The Role Definitions.
       operationId: deviceManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10483,12 +10815,14 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
+      description: The Role Definitions.
       operationId: deviceManagement_GetRoleDefinitions
       parameters:
         - name: roleDefinition-id
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -10550,6 +10884,7 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -10576,12 +10911,14 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10595,12 +10932,14 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
+      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_ListRoleAssignments
       parameters:
         - name: roleDefinition-id
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -10682,6 +11021,7 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -10707,12 +11047,14 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
+      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_GetRoleAssignments
       parameters:
         - name: roleDefinition-id
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -10720,6 +11062,7 @@ paths:
           in: path
           description: 'key: id of roleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleAssignment
@@ -10780,6 +11123,7 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -10787,6 +11131,7 @@ paths:
           in: path
           description: 'key: id of roleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleAssignment
@@ -10813,6 +11158,7 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -10820,12 +11166,14 @@ paths:
           in: path
           description: 'key: id of roleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10839,12 +11187,14 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinition from deviceManagement
+      description: Role definition this assignment is part of.
       operationId: deviceManagement.roleDefinitions.roleAssignments_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -10852,6 +11202,7 @@ paths:
           in: path
           description: 'key: id of roleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleAssignment
@@ -10909,6 +11260,7 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Get roleScopeTags from deviceManagement
+      description: The Role Scope Tags.
       operationId: deviceManagement_ListRoleScopeTags
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11000,12 +11352,14 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Get roleScopeTags from deviceManagement
+      description: The Role Scope Tags.
       operationId: deviceManagement_GetRoleScopeTags
       parameters:
         - name: roleScopeTag-id
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
@@ -11065,6 +11419,7 @@ paths:
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
@@ -11091,12 +11446,14 @@ paths:
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11110,12 +11467,14 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this Role Scope Tag.
       operationId: deviceManagement.roleScopeTags_ListAssignments
       parameters:
         - name: roleScopeTag-id
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
@@ -11183,6 +11542,7 @@ paths:
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
@@ -11208,12 +11568,14 @@ paths:
       tags:
         - deviceManagement.roleScopeTag
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this Role Scope Tag.
       operationId: deviceManagement.roleScopeTags_GetAssignments
       parameters:
         - name: roleScopeTag-id
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
@@ -11221,6 +11583,7 @@ paths:
           in: path
           description: 'key: id of roleScopeTagAutoAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTagAutoAssignment
@@ -11269,6 +11632,7 @@ paths:
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
@@ -11276,6 +11640,7 @@ paths:
           in: path
           description: 'key: id of roleScopeTagAutoAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTagAutoAssignment
@@ -11302,6 +11667,7 @@ paths:
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
@@ -11309,12 +11675,14 @@ paths:
           in: path
           description: 'key: id of roleScopeTagAutoAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTagAutoAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11328,6 +11696,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
+      description: The telecom expense management partners.
       operationId: deviceManagement_ListTelecomExpenseManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11423,12 +11792,14 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
+      description: The telecom expense management partners.
       operationId: deviceManagement_GetTelecomExpenseManagementPartners
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
           description: 'key: id of telecomExpenseManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: telecomExpenseManagementPartner
@@ -11481,6 +11852,7 @@ paths:
           in: path
           description: 'key: id of telecomExpenseManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: telecomExpenseManagementPartner
@@ -11507,12 +11879,14 @@ paths:
           in: path
           description: 'key: id of telecomExpenseManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: telecomExpenseManagementPartner
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11526,6 +11900,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_ListTermsAndConditions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11642,12 +12017,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -11724,6 +12101,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -11750,12 +12128,14 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11769,12 +12149,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
+      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -11853,6 +12235,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -11878,12 +12261,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
+      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -11891,6 +12276,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAcceptanceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
@@ -11950,6 +12336,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -11957,6 +12344,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAcceptanceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
@@ -11983,6 +12371,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -11990,12 +12379,14 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAcceptanceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12009,12 +12400,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: Navigation link to the terms and conditions that are assigned.
       operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12022,6 +12415,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAcceptanceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
@@ -12096,12 +12490,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAssignments
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12169,6 +12565,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12194,12 +12591,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAssignments
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12207,6 +12606,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAssignment
@@ -12255,6 +12655,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12262,6 +12663,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAssignment
@@ -12288,6 +12690,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12295,12 +12698,14 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12314,12 +12719,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get groupAssignments from deviceManagement
+      description: The list of group assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListGroupAssignments
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12389,6 +12796,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12414,12 +12822,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get groupAssignments from deviceManagement
+      description: The list of group assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetGroupAssignments
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12427,6 +12837,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsGroupAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsGroupAssignment
@@ -12483,6 +12894,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12490,6 +12902,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsGroupAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsGroupAssignment
@@ -12516,6 +12929,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12523,12 +12937,14 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsGroupAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsGroupAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12542,12 +12958,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: Navigation link to the terms and conditions that are assigned.
       operationId: deviceManagement.termsAndConditions.groupAssignments_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -12555,6 +12973,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsGroupAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsGroupAssignment
@@ -12629,6 +13048,7 @@ paths:
       tags:
         - deviceManagement.userPFXCertificate
       summary: Get userPfxCertificates from deviceManagement
+      description: Collection of PFX certificates associated with a user.
       operationId: deviceManagement_ListUserPfxCertificates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12745,12 +13165,14 @@ paths:
       tags:
         - deviceManagement.userPFXCertificate
       summary: Get userPfxCertificates from deviceManagement
+      description: Collection of PFX certificates associated with a user.
       operationId: deviceManagement_GetUserPfxCertificates
       parameters:
         - name: userPFXCertificate-id
           in: path
           description: 'key: id of userPFXCertificate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userPFXCertificate
@@ -12810,6 +13232,7 @@ paths:
           in: path
           description: 'key: id of userPFXCertificate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userPFXCertificate
@@ -12836,12 +13259,14 @@ paths:
           in: path
           description: 'key: id of userPFXCertificate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userPFXCertificate
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12969,6 +13394,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12982,6 +13408,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get auditEvents from deviceManagement
+      description: Cloud PC audit event.
       operationId: deviceManagement.virtualEndpoint_ListAuditEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13095,12 +13522,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get auditEvents from deviceManagement
+      description: Cloud PC audit event.
       operationId: deviceManagement.virtualEndpoint_GetAuditEvents
       parameters:
         - name: cloudPcAuditEvent-id
           in: path
           description: 'key: id of cloudPcAuditEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcAuditEvent
@@ -13159,6 +13588,7 @@ paths:
           in: path
           description: 'key: id of cloudPcAuditEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcAuditEvent
@@ -13185,12 +13615,14 @@ paths:
           in: path
           description: 'key: id of cloudPcAuditEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcAuditEvent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13204,6 +13636,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPCs from deviceManagement
+      description: Cloud managed virtual desktops.
       operationId: deviceManagement.virtualEndpoint_ListCloudPCs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13227,6 +13660,8 @@ paths:
                 - aadDeviceId desc
                 - connectivityResult
                 - connectivityResult desc
+                - diskEncryptionState
+                - diskEncryptionState desc
                 - displayName
                 - displayName desc
                 - gracePeriodEndDateTime
@@ -13279,6 +13714,7 @@ paths:
                 - id
                 - aadDeviceId
                 - connectivityResult
+                - diskEncryptionState
                 - displayName
                 - gracePeriodEndDateTime
                 - imageDisplayName
@@ -13347,12 +13783,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPCs from deviceManagement
+      description: Cloud managed virtual desktops.
       operationId: deviceManagement.virtualEndpoint_GetCloudPCs
       parameters:
         - name: cloudPC-id
           in: path
           description: 'key: id of cloudPC'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
@@ -13369,6 +13807,7 @@ paths:
                 - id
                 - aadDeviceId
                 - connectivityResult
+                - diskEncryptionState
                 - displayName
                 - gracePeriodEndDateTime
                 - imageDisplayName
@@ -13423,6 +13862,8 @@ paths:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.rename
             reprovision:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.reprovision
+            restore:
+              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.restore
             troubleshoot:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.troubleshoot
         default:
@@ -13438,6 +13879,7 @@ paths:
           in: path
           description: 'key: id of cloudPC'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
@@ -13464,12 +13906,14 @@ paths:
           in: path
           description: 'key: id of cloudPC'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13483,6 +13927,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get deviceImages from deviceManagement
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListDeviceImages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13593,12 +14038,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get deviceImages from deviceManagement
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetDeviceImages
       parameters:
         - name: cloudPcDeviceImage-id
           in: path
           description: 'key: id of cloudPcDeviceImage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcDeviceImage
@@ -13659,6 +14106,7 @@ paths:
           in: path
           description: 'key: id of cloudPcDeviceImage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcDeviceImage
@@ -13685,12 +14133,14 @@ paths:
           in: path
           description: 'key: id of cloudPcDeviceImage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcDeviceImage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13704,6 +14154,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get externalPartnerSettings from deviceManagement
+      description: The external partner settings on a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSettings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13799,12 +14250,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get externalPartnerSettings from deviceManagement
+      description: The external partner settings on a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetExternalPartnerSettings
       parameters:
         - name: cloudPcExternalPartnerSetting-id
           in: path
           description: 'key: id of cloudPcExternalPartnerSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcExternalPartnerSetting
@@ -13857,6 +14310,7 @@ paths:
           in: path
           description: 'key: id of cloudPcExternalPartnerSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcExternalPartnerSetting
@@ -13883,12 +14337,14 @@ paths:
           in: path
           description: 'key: id of cloudPcExternalPartnerSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcExternalPartnerSetting
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13902,6 +14358,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListGalleryImages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14018,12 +14475,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetGalleryImages
       parameters:
         - name: cloudPcGalleryImage-id
           in: path
           description: 'key: id of cloudPcGalleryImage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcGalleryImage
@@ -14083,6 +14542,7 @@ paths:
           in: path
           description: 'key: id of cloudPcGalleryImage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcGalleryImage
@@ -14109,12 +14569,14 @@ paths:
           in: path
           description: 'key: id of cloudPcGalleryImage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcGalleryImage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14128,6 +14590,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get onPremisesConnections from deviceManagement
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14256,12 +14719,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get onPremisesConnections from deviceManagement
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_GetOnPremisesConnections
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
           description: 'key: id of cloudPcOnPremisesConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcOnPremisesConnection
@@ -14330,6 +14795,7 @@ paths:
           in: path
           description: 'key: id of cloudPcOnPremisesConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcOnPremisesConnection
@@ -14356,12 +14822,14 @@ paths:
           in: path
           description: 'key: id of cloudPcOnPremisesConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcOnPremisesConnection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14375,6 +14843,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get organizationSettings from deviceManagement
+      description: The Cloud PC organization settings for a tenant.
       operationId: deviceManagement.virtualEndpoint_GetOrganizationSettings
       parameters:
         - name: $select
@@ -14388,6 +14857,7 @@ paths:
             items:
               enum:
                 - id
+                - enableMEMAutoEnroll
                 - osVersion
                 - userAccountType
                 - windowsSettings
@@ -14441,6 +14911,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14454,6 +14925,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get provisioningPolicies from deviceManagement
+      description: Cloud PC provisioning policy.
       operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14578,12 +15050,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get provisioningPolicies from deviceManagement
+      description: Cloud PC provisioning policy.
       operationId: deviceManagement.virtualEndpoint_GetProvisioningPolicies
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
           description: 'key: id of cloudPcProvisioningPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicy
@@ -14654,6 +15128,7 @@ paths:
           in: path
           description: 'key: id of cloudPcProvisioningPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicy
@@ -14680,12 +15155,14 @@ paths:
           in: path
           description: 'key: id of cloudPcProvisioningPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14699,12 +15176,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
+      description: A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
       operationId: deviceManagement.virtualEndpoint.provisioningPolicies_ListAssignments
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
           description: 'key: id of cloudPcProvisioningPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicy
@@ -14772,6 +15251,7 @@ paths:
           in: path
           description: 'key: id of cloudPcProvisioningPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicy
@@ -14797,12 +15277,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
+      description: A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
       operationId: deviceManagement.virtualEndpoint.provisioningPolicies_GetAssignments
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
           description: 'key: id of cloudPcProvisioningPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicy
@@ -14810,6 +15292,7 @@ paths:
           in: path
           description: 'key: id of cloudPcProvisioningPolicyAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicyAssignment
@@ -14858,6 +15341,7 @@ paths:
           in: path
           description: 'key: id of cloudPcProvisioningPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicy
@@ -14865,6 +15349,7 @@ paths:
           in: path
           description: 'key: id of cloudPcProvisioningPolicyAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicyAssignment
@@ -14891,6 +15376,7 @@ paths:
           in: path
           description: 'key: id of cloudPcProvisioningPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicy
@@ -14898,12 +15384,14 @@ paths:
           in: path
           description: 'key: id of cloudPcProvisioningPolicyAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicyAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -14917,6 +15405,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_ListServicePlans
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15015,12 +15504,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_GetServicePlans
       parameters:
         - name: cloudPcServicePlan-id
           in: path
           description: 'key: id of cloudPcServicePlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcServicePlan
@@ -15074,6 +15565,7 @@ paths:
           in: path
           description: 'key: id of cloudPcServicePlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcServicePlan
@@ -15100,12 +15592,14 @@ paths:
           in: path
           description: 'key: id of cloudPcServicePlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcServicePlan
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15119,6 +15613,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_ListSnapshots
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15211,12 +15706,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_GetSnapshots
       parameters:
         - name: cloudPcSnapshot-id
           in: path
           description: 'key: id of cloudPcSnapshot'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcSnapshot
@@ -15268,6 +15765,7 @@ paths:
           in: path
           description: 'key: id of cloudPcSnapshot'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcSnapshot
@@ -15294,12 +15792,14 @@ paths:
           in: path
           description: 'key: id of cloudPcSnapshot'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcSnapshot
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15313,6 +15813,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get supportedRegions from deviceManagement
+      description: Cloud PC supported regions.
       operationId: deviceManagement.virtualEndpoint_ListSupportedRegions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15336,6 +15837,8 @@ paths:
                 - displayName desc
                 - regionStatus
                 - regionStatus desc
+                - supportedSolution
+                - supportedSolution desc
               type: string
         - name: $select
           in: query
@@ -15350,6 +15853,7 @@ paths:
                 - id
                 - displayName
                 - regionStatus
+                - supportedSolution
               type: string
         - name: $expand
           in: query
@@ -15399,12 +15903,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get supportedRegions from deviceManagement
+      description: Cloud PC supported regions.
       operationId: deviceManagement.virtualEndpoint_GetSupportedRegions
       parameters:
         - name: cloudPcSupportedRegion-id
           in: path
           description: 'key: id of cloudPcSupportedRegion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcSupportedRegion
@@ -15421,6 +15927,7 @@ paths:
                 - id
                 - displayName
                 - regionStatus
+                - supportedSolution
               type: string
         - name: $expand
           in: query
@@ -15454,6 +15961,7 @@ paths:
           in: path
           description: 'key: id of cloudPcSupportedRegion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcSupportedRegion
@@ -15480,12 +15988,14 @@ paths:
           in: path
           description: 'key: id of cloudPcSupportedRegion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcSupportedRegion
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15499,6 +16009,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get userSettings from deviceManagement
+      description: Cloud PC user settings.
       operationId: deviceManagement.virtualEndpoint_ListUserSettings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15599,12 +16110,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get userSettings from deviceManagement
+      description: Cloud PC user settings.
       operationId: deviceManagement.virtualEndpoint_GetUserSettings
       parameters:
         - name: cloudPcUserSetting-id
           in: path
           description: 'key: id of cloudPcUserSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSetting
@@ -15667,6 +16180,7 @@ paths:
           in: path
           description: 'key: id of cloudPcUserSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSetting
@@ -15693,12 +16207,14 @@ paths:
           in: path
           description: 'key: id of cloudPcUserSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSetting
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -15712,12 +16228,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
+      description: 'Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
       operationId: deviceManagement.virtualEndpoint.userSettings_ListAssignments
       parameters:
         - name: cloudPcUserSetting-id
           in: path
           description: 'key: id of cloudPcUserSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSetting
@@ -15788,6 +16306,7 @@ paths:
           in: path
           description: 'key: id of cloudPcUserSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSetting
@@ -15813,12 +16332,14 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
+      description: 'Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
       operationId: deviceManagement.virtualEndpoint.userSettings_GetAssignments
       parameters:
         - name: cloudPcUserSetting-id
           in: path
           description: 'key: id of cloudPcUserSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSetting
@@ -15826,6 +16347,7 @@ paths:
           in: path
           description: 'key: id of cloudPcUserSettingAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSettingAssignment
@@ -15875,6 +16397,7 @@ paths:
           in: path
           description: 'key: id of cloudPcUserSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSetting
@@ -15882,6 +16405,7 @@ paths:
           in: path
           description: 'key: id of cloudPcUserSettingAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSettingAssignment
@@ -15908,6 +16432,7 @@ paths:
           in: path
           description: 'key: id of cloudPcUserSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSetting
@@ -15915,12 +16440,14 @@ paths:
           in: path
           description: 'key: id of cloudPcUserSettingAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSettingAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -17179,6 +17706,9 @@ components:
             windowsEnabled:
               type: boolean
               description: 'For Windows, get or set whether data from the data sync partner should be used during compliance evaluations'
+            windowsMobileApplicationManagementEnabled:
+              type: boolean
+              description: 'When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.'
           additionalProperties:
             type: object
           description: Entity which represents a connection to Mobile threat defense partner.
@@ -17742,6 +18272,8 @@ components:
               nullable: true
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            diskEncryptionState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -18009,6 +18541,10 @@ components:
         - title: cloudPcOrganizationSettings
           type: object
           properties:
+            enableMEMAutoEnroll:
+              type: boolean
+              description: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+              nullable: true
             osVersion:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
             userAccountType:
@@ -18162,6 +18698,8 @@ components:
               description: The name for the supported region. Read-only.
             regionStatus:
               $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegionStatus'
+            supportedSolution:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcUserSetting:
@@ -18239,6 +18777,10 @@ components:
           type: string
           description: AAD Application Id.
           nullable: true
+        auditActorType:
+          type: string
+          description: Actor Type.
+          nullable: true
         ipAddress:
           type: string
           description: IPAddress.
@@ -18285,6 +18827,10 @@ components:
       title: auditResource
       type: object
       properties:
+        auditResourceType:
+          type: string
+          description: Audit resource's type.
+          nullable: true
         displayName:
           type: string
           description: Display name.
@@ -18611,7 +19157,15 @@ components:
         - eligibleButNotAzureAdJoined
         - needsOsUpdate
         - ineligible
+        - scheduledForEnrollment
       type: string
+      x-ms-enum:
+        name: comanagementEligibleType
+        modelAsString: false
+        values:
+          - value: scheduledForEnrollment
+            description: Devices scheduled for Co-Management enrollment
+            name: scheduledForEnrollment
     microsoft.graph.complianceManagementPartnerAssignment:
       title: complianceManagementPartnerAssignment
       type: object
@@ -19691,14 +20245,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+          description: 'A list of failed health check items. If the status property is available, this property will be empty.'
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDiskEncryptionState:
+      title: cloudPcDiskEncryptionState
+      enum:
+        - notAvailable
+        - notEncryped
+        - encryptedUsingPlatformManagedKey
+        - encryptedUsingCustomerManagedKey
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -20790,12 +21355,15 @@ components:
       properties:
         additionalDetails:
           type: string
+          description: Additional message for this health check.
           nullable: true
         displayName:
           type: string
+          description: The connectivity health check item name.
         lastHealthCheckDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         result:
@@ -20931,6 +21499,8 @@ components:
         - endpointConnectivityCheckCloudPcUrlNotAllowListed
         - endpointConnectivityCheckWVDUrlNotAllowListed
         - endpointConnectivityCheckIntuneUrlNotAllowListed
+        - endpointConnectivityCheckAzureADUrlNotAllowListed
+        - endpointConnectivityCheckLocaleUrlNotAllowListed
         - endpointConnectivityCheckUnknownError
         - azureAdDeviceSyncCheckDeviceNotFound
         - azureAdDeviceSyncCheckLongSyncCircle
@@ -21311,6 +21881,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -21319,6 +21891,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -21326,18 +21900,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:
