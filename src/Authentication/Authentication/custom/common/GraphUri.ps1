@@ -54,7 +54,7 @@ function GraphUri_TokenizeIds {
         # Segment contains an integer/id and is not API version.
         if ($Uri.Segments[$i] -match "[^v1.0|beta]\d") {
             #For Uris whose last segments match the regex '(?<={)(.*?)(?=})', all characters from the first '(' are substituted with '.*' 
-            if ($i -eq $Uri.Segments.length - 1) {
+            if ($i -eq $LastSegmentIndex) {
                 if ($UnescapedUri -match '(.*?)') {
                     try {
                         $UpdatedLastSegment = $LastSegment.Substring(0, $LastSegment.IndexOf("("))
