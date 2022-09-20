@@ -99,9 +99,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = 'Microsoft', 'Office365', 'Graph', 'PowerShell', 'Teams', 'Outlook', 
-               'OneDrive', 'AzureAD', 'GraphAPI', 'Productivity', 'SharePoint', 'Intune', 
-               'SDK'
+        Tags = 'Microsoft','Office365','Graph','PowerShell','Teams','Outlook','OneDrive','AzureAD','GraphAPI','Productivity','SharePoint','Intune','SDK'
 
         # A URL to the license for this module.
         LicenseUri = 'https://aka.ms/devservicesagreement'
@@ -126,8 +124,7 @@ PrivateData = @{
 
     } # End of PSData hashtable
 
-
-} # End of PrivateData hashtable
+ } # End of PrivateData hashtable
 
 # HelpInfo URI of this module
 # HelpInfoURI = ''

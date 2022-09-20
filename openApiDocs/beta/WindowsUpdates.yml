@@ -83,6 +83,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action archive
+      description: Archive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_archive
       requestBody:
         description: Action parameters
@@ -121,6 +125,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action favorite
+      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_favorite
       requestBody:
         description: Action parameters
@@ -159,6 +167,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markRead
+      description: Mark a list of serviceUpdateMessages as **read** for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_markRead
       requestBody:
         description: Action parameters
@@ -197,6 +209,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markUnread
+      description: Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_markUnread
       requestBody:
         description: Action parameters
@@ -235,6 +251,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unarchive
+      description: Unarchive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_unarchive
       requestBody:
         description: Action parameters
@@ -273,6 +293,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unfavorite
+      description: Remove the favorite status of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_unfavorite
       requestBody:
         description: Action parameters
@@ -571,8 +595,11 @@ paths:
     get:
       tags:
         - admin.windows
-      summary: Get entries from admin
-      description: Lists the content that you can approve for deployment. Read-only.
+      summary: List entries
+      description: 'Get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from **catalogEntry**. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-catalog-list-entries?view=graph-rest-1.0
       operationId: admin.windows.updates.catalog_ListEntries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -767,8 +794,11 @@ paths:
     get:
       tags:
         - admin.windows
-      summary: Get deployments from admin
-      description: Deployments created using the deployment service. Read-only.
+      summary: List deployments
+      description: Get a list of deployment objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-list-deployments?view=graph-rest-1.0
       operationId: admin.windows.updates_ListDeployments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -842,7 +872,11 @@ paths:
     post:
       tags:
         - admin.windows
-      summary: Create new navigation property to deployments for admin
+      summary: Create deployment
+      description: Create a new deployment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-post-deployments?view=graph-rest-1.0
       operationId: admin.windows.updates_CreateDeployments
       requestBody:
         description: New navigation property
@@ -1100,8 +1134,11 @@ paths:
     get:
       tags:
         - admin.windows
-      summary: Get exclusions from admin
-      description: Specifies the assets to exclude from the audience.
+      summary: List deployment audience exclusions
+      description: List the updatableAsset resources that are excluded from a deploymentAudience.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-exclusions?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience_ListExclusions
       parameters:
         - name: deployment-id
@@ -1335,6 +1372,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members. Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist. You can also use the method addMembersById to add members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience.exclusions_addMembers
       parameters:
         - name: deployment-id
@@ -1378,6 +1419,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience.exclusions_addMembersGraphBPreId
       parameters:
         - name: deployment-id
@@ -1425,6 +1470,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience.exclusions_removeMembers
       parameters:
         - name: deployment-id
@@ -1468,6 +1517,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience.exclusions_removeMembersGraphBPreId
       parameters:
         - name: deployment-id
@@ -1670,8 +1723,11 @@ paths:
     get:
       tags:
         - admin.windows
-      summary: Get members from admin
-      description: Specifies the assets to include in the audience.
+      summary: List deployment audience members
+      description: List the updatableAsset resources that are members of a deploymentAudience.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-members?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience_ListMembers
       parameters:
         - name: deployment-id
@@ -1905,6 +1961,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members. Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist. You can also use the method addMembersById to add members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience.members_addMembers
       parameters:
         - name: deployment-id
@@ -1948,6 +2008,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience.members_addMembersGraphBPreId
       parameters:
         - name: deployment-id
@@ -1995,6 +2059,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience.members_removeMembers
       parameters:
         - name: deployment-id
@@ -2038,6 +2106,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience.members_removeMembersGraphBPreId
       parameters:
         - name: deployment-id
@@ -2241,6 +2313,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object, if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. If all **updatableAsset** objects are the same type, you can also use the method updateAudienceById to update the **deploymentAudience**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience_updateAudience
       parameters:
         - name: deployment-id
@@ -2288,6 +2364,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudienceById
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. You can also use the method updateAudience to update the **deploymentAudience**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
       operationId: admin.windows.updates.deployments.audience_updateAudienceGraphBPreId
       parameters:
         - name: deployment-id
@@ -2341,8 +2421,11 @@ paths:
     get:
       tags:
         - admin.windows
-      summary: Get resourceConnections from admin
-      description: Service connections to external resources such as analytics workspaces.
+      summary: List resourceConnections
+      description: Get a list of the resourceConnection objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-list-resourceconnections?view=graph-rest-1.0
       operationId: admin.windows.updates_ListResourceConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2402,7 +2485,11 @@ paths:
     post:
       tags:
         - admin.windows
-      summary: Create new navigation property to resourceConnections for admin
+      summary: Create operationalInsightsConnection
+      description: Create a new operationalInsightsConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-1.0
       operationId: admin.windows.updates_CreateResourceConnections
       requestBody:
         description: New navigation property
@@ -2529,8 +2616,11 @@ paths:
     get:
       tags:
         - admin.windows
-      summary: Get updatableAssets from admin
-      description: Assets registered with the deployment service that can receive updates. Read-only.
+      summary: List updatableAssets
+      description: 'Get a list of updatableAsset objects and their properties. Listing updatable assets returns **updatableAsset** resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-list-updatableassets?view=graph-rest-1.0
       operationId: admin.windows.updates_ListUpdatableAssets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2587,7 +2677,11 @@ paths:
     post:
       tags:
         - admin.windows
-      summary: Create new navigation property to updatableAssets for admin
+      summary: Create updatableAssetGroup
+      description: Create a new updatableAssetGroup object. The **updatableAssetGroup** resource inherits from updatableAsset.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updates-post-updatableassets-updatableassetgroup?view=graph-rest-1.0
       operationId: admin.windows.updates_CreateUpdatableAssets
       requestBody:
         description: New navigation property
@@ -2723,6 +2817,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members. Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist. You can also use the method addMembersById to add members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
       operationId: admin.windows.updates.updatableAssets_addMembers
       parameters:
         - name: updatableAsset-id
@@ -2758,6 +2856,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
       operationId: admin.windows.updates.updatableAssets_addMembersGraphBPreId
       parameters:
         - name: updatableAsset-id
@@ -2797,6 +2899,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
       operationId: admin.windows.updates.updatableAssets_removeMembers
       parameters:
         - name: updatableAsset-id
@@ -2832,6 +2938,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
       operationId: admin.windows.updates.updatableAssets_removeMembersGraphBPreId
       parameters:
         - name: updatableAsset-id
@@ -3011,16 +3121,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
               description: Deployments created using the deployment service. Read-only.
+              x-ms-navigationProperty: true
             resourceConnections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
               description: Service connections to external resources such as analytics workspaces.
+              x-ms-navigationProperty: true
             updatableAssets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
               description: Assets registered with the deployment service that can receive updates. Read-only.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.catalog:
@@ -3034,6 +3147,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
               description: Lists the content that you can approve for deployment. Read-only.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.catalogEntry:
@@ -3096,11 +3210,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
               description: Specifies the assets to exclude from the audience.
+              x-ms-navigationProperty: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
               description: Specifies the assets to include in the audience.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.updatableAsset:
@@ -3187,49 +3303,61 @@ components:
     microsoft.graph.windowsUpdates.catalogEntryCollectionResponse:
       title: Collection of catalogEntry
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.deploymentCollectionResponse:
       title: Collection of deployment
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.updatableAssetCollectionResponse:
       title: Collection of updatableAsset
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse:
       title: Collection of resourceConnection
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.monitoringSettings:
@@ -3326,6 +3454,15 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    BaseCollectionPaginationCountResponse:
+      title: Base collection pagination and count responses
+      type: object
+      properties:
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.monitoringRule:
