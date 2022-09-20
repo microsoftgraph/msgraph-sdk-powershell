@@ -10,8 +10,11 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: Get contactFolders from users
-      description: The user's contacts folders. Read-only. Nullable.
+      summary: List contactFolders
+      description: Get all the contact folders in the signed-in user's mailbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
       operationId: users_ListContactFolders
       parameters:
         - name: user-id
@@ -76,7 +79,11 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create new navigation property to contactFolders for users
+      summary: Create ContactFolder
+      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
       operationId: users_CreateContactFolders
       parameters:
         - name: user-id
@@ -251,8 +258,11 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: Get childFolders from users
-      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+      summary: List childFolders
+      description: Get a collection of child folders under the specified contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
       operationId: users.contactFolders_ListChildFolders
       parameters:
         - name: user-id
@@ -341,7 +351,11 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create new navigation property to childFolders for users
+      summary: Create ContactFolder
+      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
       operationId: users.contactFolders_CreateChildFolders
       parameters:
         - name: user-id
@@ -568,8 +582,11 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: Get contacts from users
-      description: The contacts in the folder. Navigation property. Read-only. Nullable.
+      summary: List contacts
+      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
       operationId: users.contactFolders.childFolders_ListContacts
       parameters:
         - name: user-id
@@ -768,7 +785,11 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create new navigation property to contacts for users
+      summary: Create Contact
+      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
       operationId: users.contactFolders.childFolders_CreateContacts
       parameters:
         - name: user-id
@@ -1869,56 +1890,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.contactFolder
-      summary: Delete navigation property photo for users
-      operationId: users.contactFolders.childFolders.contacts_DeletePhoto
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contactFolder-id1
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/photo/$value':
     get:
       tags:
@@ -2992,8 +2963,11 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: Get contacts from users
-      description: The contacts in the folder. Navigation property. Read-only. Nullable.
+      summary: List contacts
+      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
       operationId: users.contactFolders_ListContacts
       parameters:
         - name: user-id
@@ -3184,7 +3158,11 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create new navigation property to contacts for users
+      summary: Create Contact
+      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
       operationId: users.contactFolders_CreateContacts
       parameters:
         - name: user-id
@@ -4153,48 +4131,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.contactFolder
-      summary: Delete navigation property photo for users
-      operationId: users.contactFolders.contacts_DeletePhoto
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo/$value':
     get:
       tags:
@@ -5132,8 +5068,11 @@ paths:
     get:
       tags:
         - users.contact
-      summary: Get contacts from users
-      description: The user's contacts. Read-only. Nullable.
+      summary: List contacts
+      description: 'Get contacts in the user''s mailbox. There are two scenarios where an app can get contacts in another user''s contact folder:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
       operationId: users_ListContacts
       parameters:
         - name: user-id
@@ -5301,7 +5240,11 @@ paths:
     post:
       tags:
         - users.contact
-      summary: Create new navigation property to contacts for users
+      summary: Create contact
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
       operationId: users_CreateContacts
       parameters:
         - name: user-id
@@ -6122,40 +6065,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.contact
-      summary: Delete navigation property photo for users
-      operationId: users.contacts_DeletePhoto
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/photo/$value':
     get:
       tags:
@@ -6520,21 +6429,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
               description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+              x-ms-navigationProperty: true
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
               description: The contacts in the folder. Navigation property. Read-only. Nullable.
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.contact:
@@ -6669,11 +6582,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the contact. Nullable.
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+              x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             singleValueExtendedProperties:
@@ -6681,6 +6596,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -6865,13 +6781,16 @@ components:
     microsoft.graph.contactFolderCollectionResponse:
       title: Collection of contactFolder
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.contactFolder'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contactFolder'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -6886,49 +6805,61 @@ components:
     microsoft.graph.contactCollectionResponse:
       title: Collection of contact
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.contact'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contact'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.extensionCollectionResponse:
       title: Collection of extension
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.extension'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
       title: Collection of multiValueLegacyExtendedProperty
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
       title: Collection of singleValueLegacyExtendedProperty
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.emailAddress:
@@ -7005,6 +6936,15 @@ components:
         - blog
         - profile
       type: string
+    BaseCollectionPaginationCountResponse:
+      title: Base collection pagination and count responses
+      type: object
+      properties:
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code

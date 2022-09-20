@@ -751,6 +751,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
               description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activityHistoryItem:
@@ -851,13 +852,16 @@ components:
     microsoft.graph.userActivityCollectionResponse:
       title: Collection of userActivity
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.userActivity'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userActivity'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -872,13 +876,16 @@ components:
     microsoft.graph.activityHistoryItemCollectionResponse:
       title: Collection of activityHistoryItem
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.imageInfo:
@@ -899,6 +906,15 @@ components:
         iconUrl:
           type: string
           description: Optional; URI that points to an icon which represents the application used to generate the activity
+          nullable: true
+      additionalProperties:
+        type: object
+    BaseCollectionPaginationCountResponse:
+      title: Base collection pagination and count responses
+      type: object
+      properties:
+        '@odata.nextLink':
+          type: string
           nullable: true
       additionalProperties:
         type: object

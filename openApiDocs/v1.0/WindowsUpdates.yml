@@ -83,6 +83,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action archive
+      description: Archive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_archive
       requestBody:
         description: Action parameters
@@ -121,6 +125,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action favorite
+      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_favorite
       requestBody:
         description: Action parameters
@@ -159,6 +167,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markRead
+      description: Mark a list of serviceUpdateMessages as **read** for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_markRead
       requestBody:
         description: Action parameters
@@ -197,6 +209,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markUnread
+      description: Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_markUnread
       requestBody:
         description: Action parameters
@@ -235,6 +251,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unarchive
+      description: Unarchive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_unarchive
       requestBody:
         description: Action parameters
@@ -273,6 +293,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unfavorite
+      description: Remove the favorite status of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_unfavorite
       requestBody:
         description: Action parameters
