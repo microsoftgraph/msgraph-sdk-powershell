@@ -45,6 +45,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
+    "/communications/calls/{call-id}/contentSharingSessions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/communications/calls/{call-id}/contentSharingSessions/{contentSharingSession-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
     "/communications/calls/{call-id}/microsoft.graph.answer": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
@@ -181,7 +189,15 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
+    "/communications/presences/{presence-id}/microsoft.graph.clearUserPreferredPresence": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
     "/communications/presences/{presence-id}/microsoft.graph.setPresence": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/communications/presences/{presence-id}/microsoft.graph.setUserPreferredPresence": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },

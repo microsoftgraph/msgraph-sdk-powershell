@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgEntitlementManagementAccessPackageResourceEnvironment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgEntitlementManagementAccessPackageResourceEnvironment -AccessPackageResourceEnvironmentId $accessPackageResourceEnvironmentId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgEntitlementManagementAccessPackageResourceEnvironment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgEntitlementManagementAccessPackageResourceEnvironment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgEntitlementManagementAccessPackageResourceEnvironment -Filter "originSystem eq 'SharePointOnline'" 
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgEntitlementManagementAccessPackageResourceEnvironment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

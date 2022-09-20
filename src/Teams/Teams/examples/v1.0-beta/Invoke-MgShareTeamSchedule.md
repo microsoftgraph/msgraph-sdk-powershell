@@ -1,18 +1,12 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Invoke-MgShareTeamSchedule Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	NotifyTeam = $true
+	StartDateTime = [System.DateTime]::Parse("2018-10-08T00:00:00.000Z")
+	EndDateTime = [System.DateTime]::Parse("2018-10-15T00:00:00.000Z")
+}
+Invoke-MgShareTeamSchedule -TeamId $teamId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Invoke-MgShareTeamSchedule Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

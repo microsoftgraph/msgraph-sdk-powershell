@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgTeamScheduleTimeCard Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamScheduleTimeCard -TeamId $teamId -TimeCardId $timeCardId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgTeamScheduleTimeCard Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgTeamScheduleTimeCard Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamScheduleTimeCard -TeamId $teamId -Top 2 -Filter "state eq 'clockedOut'" 
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgTeamScheduleTimeCard Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

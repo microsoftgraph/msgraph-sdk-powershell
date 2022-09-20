@@ -1,18 +1,25 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgOrganization Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	MarketingNotificationEmails = @(
+		"marketing@contoso.com"
+	)
+	PrivacyProfile = @{
+		ContactEmail = "alice@contoso.com"
+		StatementUrl = "https://contoso.com/privacyStatement"
+	}
+	SecurityComplianceNotificationMails = @(
+		"security@contoso.com"
+	)
+	SecurityComplianceNotificationPhones = @(
+		"(123) 456-7890"
+	)
+	TechnicalNotificationMails = @(
+		"tech@contoso.com"
+	)
+}
+Update-MgOrganization -OrganizationId $organizationId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgOrganization Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

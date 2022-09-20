@@ -1,18 +1,30 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	ContentTypeId = "String"
+}
+Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	ContentTypeId = "String"
+}
+Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	ContentTypeId = "0x0101"
+}
+Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
+```
+This example shows how to use the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

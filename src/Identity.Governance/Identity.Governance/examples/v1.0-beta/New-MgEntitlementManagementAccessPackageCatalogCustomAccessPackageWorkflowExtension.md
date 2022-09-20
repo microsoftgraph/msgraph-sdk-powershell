@@ -1,18 +1,21 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	DisplayName = "test_action_0124"
+	Description = "this is for graph testing only"
+	EndpointConfiguration = @{
+		"@odata.type" = "#microsoft.graph.logicAppTriggerEndpointConfiguration"
+		SubscriptionId = "38ab2ccc-3747-4567-b36b-9478f5602f0d"
+		ResourceGroupName = "EMLogicApp"
+		LogicAppWorkflowName = "customextension_test"
+	}
+	AuthenticationConfiguration = @{
+		"@odata.type" = "#microsoft.graph.azureAdTokenAuthentication"
+		ResourceId = "f604bd15-f785-4309-ad7c-6fad18ddb6cb"
+	}
+}
+New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension -AccessPackageCatalogId $accessPackageCatalogId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,18 +1,15 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	NewAssignmentOrder = @{
+		Order = @(
+			"City"
+			"extension_GUID_ShoeSize"
+		)
+	}
+}
+Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder -B2xIdentityUserFlowId $b2xIdentityUserFlowId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

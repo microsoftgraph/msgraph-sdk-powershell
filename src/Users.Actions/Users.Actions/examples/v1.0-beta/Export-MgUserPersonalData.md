@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Export-MgUserPersonalData Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	StorageLocation = "storageLocation-value"
+}
+Export-MgUserPersonalData -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Export-MgUserPersonalData Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

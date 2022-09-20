@@ -1,18 +1,20 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Create a permission grant policy include 
 
-{{ Add output here }}
+```powershell
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant,Policy.ReadWrite.PermissionGrant"  
+New-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId "testtenant-sampleapp-permissions" -PermissionType "application" -ResourceApplication "00000000-0000-0000-0000-000000000000" -Permissions "00000000-0000-0000-0000-000000000000"  | fl
+
+ClientApplicationIds                        : {all}
+ClientApplicationPublisherIds               : {all}
+ClientApplicationTenantIds                  : {all}
+ClientApplicationsFromVerifiedPublisherOnly : False
+Id                                          : 084b9abc-cf56-4d84-bdb0-5ad8f3a51038
+PermissionClassification                    : all
+PermissionType                              : application
+Permissions                                 : {00000000-0000-0000-0000-000000000000}
+ResourceApplication                         : 00000000-0000-0000-0000-000000000000
+AdditionalProperties                        : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#policies/permissionGrantPolicies('testtenant-sampleapp-permissions')/includes/$entity]}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This command creates a new permission grant policy include configuration for the specified permission grant policy in Azure AD.
 

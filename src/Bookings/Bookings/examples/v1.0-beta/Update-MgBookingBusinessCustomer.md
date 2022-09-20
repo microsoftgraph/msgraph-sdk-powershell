@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgBookingBusinessCustomer Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Bookings
+$params = @{
+	DisplayName = "Adele"
+	EmailAddress = "adele@relecloud.com"
+}
+Update-MgBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BookingCustomerId $bookingCustomerId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgBookingBusinessCustomer Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Invoke-MgSelfPrivilegedRoleDeactivate Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+Invoke-MgSelfPrivilegedRoleDeactivate -PrivilegedRoleId $privilegedRoleId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Invoke-MgSelfPrivilegedRoleDeactivate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
