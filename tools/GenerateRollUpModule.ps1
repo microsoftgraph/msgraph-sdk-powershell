@@ -82,10 +82,10 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     Write-Host "Adding dependency: $($ExistingAuthModule.Name) $($ExistingAuthModule.Version)" -ForegroundColor Green
     if ($ExistingAuthModule.Version -like '*preview*' ) {
         $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
-        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
+        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; RequiredVersion = $version }
     }
     else {
-        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; RequiredVersion = $ExistingAuthModule.Version }
     }
 
     foreach ($RequiredModule in $ModuleMapping.Keys) {

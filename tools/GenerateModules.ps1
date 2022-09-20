@@ -93,10 +93,10 @@ if (!(Get-Module -Name $ExistingAuthModule.Name -ListAvailable)) {
 if ($ExistingAuthModule.Version -like '*preview*' ) {
     $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
     Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
-    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
+    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; RequiredVersion = $version }
 }
 else {
-    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; RequiredVersion = $ExistingAuthModule.Version }
 }
 
 if ($UpdateAutoRest) {

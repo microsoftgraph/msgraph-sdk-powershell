@@ -58,10 +58,11 @@ function Set-NuSpecValuesFromManifest(
 function Set-ElementValue(
     [System.Xml.XmlDocument] $XmlDocument,
     [System.Xml.XmlElement] $MetadataElement,
-    [string] $ElementName, [string] $ElementValue) {
+    [string] $ElementName,
+    [string] $ElementValue) {
     if(-not $MetadataElement[$ElementName]){
         $NewElement = $XmlDocument.CreateElement($ElementName, $XmlDocument.DocumentElement.NamespaceURI)
-        $MetadataElement.AppendChild($NewElement)
+        $MetadataElement.AppendChild($NewElement) | Out-Null
     }
     $MetadataElement[$ElementName].InnerText = $ElementValue
 }
@@ -72,7 +73,7 @@ function Set-Dependencies(
     [hashtable[]] $Dependencies) {
     if(-not $MetadataElement["dependencies"]){
         $NewDependenciesElement = $XmlDocument.CreateElement("dependencies", $XmlDocument.DocumentElement.NamespaceURI)
-        $MetadataElement.AppendChild($NewDependenciesElement)
+        $MetadataElement.AppendChild($NewDependenciesElement) | Out-Null
     } else {
         $MetadataElement["dependencies"].RemoveAll()   
     }
@@ -80,9 +81,9 @@ function Set-Dependencies(
     foreach($Dependency in $Dependencies){
         $NewDependencyElement = $XmlDocument.CreateElement("dependency", $XmlDocument.DocumentElement.NamespaceURI)
         $NewDependencyElement.SetAttribute("id", $Dependency.ModuleName)
-        $NewDependencyElement.SetAttribute("version", $Dependency.ModuleVersion ?? $Dependency.RequiredVersion)
+        $NewDependencyElement.SetAttribute("version", $Dependency.ModuleVersion ?? "[$($Dependency.RequiredVersion)]")
 
-        $MetadataElement["dependencies"].AppendChild($NewDependencyElement)
+        $MetadataElement["dependencies"].AppendChild($NewDependencyElement) | Out-Null
     }
 }
 
