@@ -17,3 +17,4 @@ AdditionalProperties                        : {[@odata.context, https://graph.mi
 ```
 
 This command creates a new permission grant policy exclude configuration for the specified permission grant policy in Azure AD.
+

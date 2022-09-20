@@ -30,3 +30,4 @@ AdditionalProperties                        : {[scopeSensitivityLabels, System.C
 ```
 
 This command retrieves a specified permission grant policy exclude configuration in Azure AD.
+

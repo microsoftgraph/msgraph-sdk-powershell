@@ -1,18 +1,28 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgRoleManagementDirectoryRoleAssignment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Get-MgRoleManagementDirectoryRoleAssignment -Filter "roleDefinitionId eq '62e90394-69f5-4237-9190-012177145e10'" -ExpandProperty "principal" 
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgRoleManagementDirectoryRoleAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgRoleManagementDirectoryRoleAssignment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Get-MgRoleManagementDirectoryRoleAssignment -Filter  " principalId eq 'f1847572-48aa-47aa-96a3-2ec61904f41f'" 
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgRoleManagementDirectoryRoleAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgRoleManagementDirectoryRoleAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Get-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId $unifiedRoleAssignmentId
+```
+This example shows how to use the Get-MgRoleManagementDirectoryRoleAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Get-MgRoleManagementDirectoryRoleAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Get-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId $unifiedRoleAssignmentId -ExpandProperty "roleDefinition" 
+```
+This example shows how to use the Get-MgRoleManagementDirectoryRoleAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

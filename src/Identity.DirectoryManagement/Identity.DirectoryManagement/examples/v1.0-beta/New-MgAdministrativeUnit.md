@@ -1,12 +1,14 @@
-### Example 1: {{ Add title here }}
-
+### Example 1: Using the New-MgAdministrativeUnit Cmdlet
 ```powershell
-New-MgDirectoryAdministrativeUnit -DisplayName 'Test Unit'
-
-DeletedDateTime Id                                   Description DisplayName Visibility
---------------- --                                   ----------- ----------- ----------
-                416f19a5-2e01-4d15-a78c-d9028fee1ebb             Test Unit
-
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	DisplayName = "Seattle District Technical Schools"
+	Description = "Seattle district technical schools administration"
+	MembershipType = "Dynamic"
+	MembershipRule = "(user.country -eq "United States")"
+	MembershipRuleProcessingState = "On"
+}
+New-MgAdministrativeUnit -BodyParameter $params
 ```
-
-This example creates a new administrative unit.
+This example shows how to use the New-MgAdministrativeUnit Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -6,3 +6,4 @@ Update-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId "testtenant-sample
 ```
 
 This command replaces the existing values with the provided new values for the specified properties in the specified permission grant policy in Azure AD.
+

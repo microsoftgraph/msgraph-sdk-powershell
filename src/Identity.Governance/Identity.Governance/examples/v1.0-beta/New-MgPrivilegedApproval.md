@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgPrivilegedApproval Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	UserId = "userId-value"
+	RoleId = "roleId-value"
+	ApprovalType = "approvalType-value"
+	ApprovalState = "approvalState-value"
+	ApprovalDuration = "datetime-value"
+}
+New-MgPrivilegedApproval -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgPrivilegedApproval Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

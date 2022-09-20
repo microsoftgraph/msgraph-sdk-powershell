@@ -1,18 +1,38 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Education
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationFeedbackOutcome"
+}
+Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Education
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationRubricOutcome"
+	RubricQualityFeedback = @(
+	)
+	RubricQualitySelectedLevels = @(
+	)
+}
+Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationPointsOutcome"
+	Points = @{
+		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGrade"
+		Points = 
+	}
+}
+Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+```
+This example shows how to use the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

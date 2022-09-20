@@ -1,18 +1,16 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgUserProfileName Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.People
+$params = @{
+	DisplayName = "Innocenty Popov"
+	First = "Innocenty"
+	Initials = "IP"
+	Last = "Popov"
+	LanguageTag = "en-US"
+	Maiden = $null
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfileName -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgUserProfileName Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

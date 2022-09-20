@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Initialize-MgOrganizationService Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	SkuId = "6fd2c87f-b296-42f0-b197-1e91e994b900"
+	ServicePlanId = "a23b959c-7ce8-4e57-9140-b90eb88a9e97"
+}
+Initialize-MgOrganizationService -OrganizationId $organizationId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Initialize-MgOrganizationService Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

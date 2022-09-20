@@ -1,18 +1,61 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgUserMessageAttachment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	"@odata.type" = "#Microsoft.OutlookServices.FileAttachment"
+	Name = "name-value"
+	ContentType = "contentType-value"
+	IsInline = $false
+	ContentLocation = "contentLocation-value"
+	ContentBytes = "contentBytes-value"
+}
+# A UPN can also be used as -UserId.
+New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the New-MgUserMessageAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the New-MgUserMessageAttachment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	"@odata.type" = "#microsoft.graph.fileAttachment"
+	Name = "smile"
+	ContentBytes = "a0b1c76de9f7="
+}
+# A UPN can also be used as -UserId.
+New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgUserMessageAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the New-MgUserMessageAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	"@odata.type" = "#microsoft.graph.itemAttachment"
+	Name = "Holiday event"
+	Item = @{
+		"@odata.type" = "microsoft.graph.event"
+		Subject = "Discuss gifts for children"
+	}
+}
+# A UPN can also be used as -UserId.
+New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
+```
+This example shows how to use the New-MgUserMessageAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the New-MgUserMessageAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	"@odata.type" = "#microsoft.graph.referenceAttachment"
+	Name = "Personal pictures"
+	SourceUrl = "https://contoso.com/personal/mario_contoso_net/Documents/Pics"
+	ProviderType = "oneDriveConsumer"
+	Permission = "Edit"
+	IsFolder = "True"
+}
+# A UPN can also be used as -UserId.
+New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
+```
+This example shows how to use the New-MgUserMessageAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

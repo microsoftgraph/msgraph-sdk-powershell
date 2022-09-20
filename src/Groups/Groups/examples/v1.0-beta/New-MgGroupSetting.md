@@ -1,18 +1,16 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgGroupSetting Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	TemplateId = "08d542b9-071f-4e16-94b0-74abb372e3d9"
+	Values = @(
+		@{
+			Name = "AllowToAddGuests"
+			Value = "false"
+		}
+	)
+}
+New-MgGroupSetting -GroupId $groupId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgGroupSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

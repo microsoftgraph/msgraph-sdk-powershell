@@ -1,18 +1,19 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgRoleManagementCloudPcRoleDefinition Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+$params = @{
+	Description = "Update basic properties and permission of application registrations"
+	DisplayName = "ExampleCustomRole"
+	RolePermissions = @(
+		@{
+			AllowedResourceActions = @(
+				"Microsoft.CloudPC/CloudPCs/Read"
+				"Microsoft.CloudPC/CloudPCs/Reprovision"
+			)
+		}
+	)
+}
+Update-MgRoleManagementCloudPcRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgRoleManagementCloudPcRoleDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

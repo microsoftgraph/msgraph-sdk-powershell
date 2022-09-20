@@ -1,18 +1,24 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Security
+$params = @{
+	Site = @{
+		WebUrl = "https://m365x809305.sharepoint.com/sites/Retail"
+	}
+}
+New-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryHoldPolicyId $ediscoveryHoldPolicyId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the New-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the New-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Security
+$params = @{
+	Site = @{
+		WebUrl = "https://m365x809305.sharepoint.com/sites/Retail"
+	}
+}
+New-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryHoldPolicyId $ediscoveryHoldPolicyId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,18 +1,28 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgAuditLogSignIn Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Reports
+Get-MgAuditLogSignIn -SignInId $signInId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgAuditLogSignIn Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgAuditLogSignIn Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Reports
+Get-MgAuditLogSignIn
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgAuditLogSignIn Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgAuditLogSignIn Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Reports
+Get-MgAuditLogSignIn -Filter "startsWith(appDisplayName,'Azure')" -Top 10 
+```
+This example shows how to use the Get-MgAuditLogSignIn Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Get-MgAuditLogSignIn Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Reports
+Get-MgAuditLogSignIn -Filter "(signInEventTypes/any(t: t ne 'interactiveUser'))" -Sort "createdDateTime DESC" -Top 10 
+```
+This example shows how to use the Get-MgAuditLogSignIn Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
