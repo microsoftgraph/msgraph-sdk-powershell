@@ -40,10 +40,9 @@ subject-prefix: ''
 directive:
   - remove-path-by-operation: ^tenantRelationships_.*ManagedTenants$
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 1.11.1
+module-version: 1.11.2
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

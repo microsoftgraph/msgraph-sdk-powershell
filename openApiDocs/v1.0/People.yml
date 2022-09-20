@@ -815,8 +815,11 @@ paths:
     get:
       tags:
         - users.officeGraphInsights
-      summary: Get used from users
-      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
+      summary: List used
+      description: "Calculate and list the documents that a user has viewed or modified.  For the signed-in user:\n- This method includes documents that the user has modified; see example 1. \n- Using an `$orderby` query parameter on the **lastAccessedDateTime** property returns the most recently viewed documents that the user might or might not not have modified; see example 2. For other users, this method includes only documents that the user has modified."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/insights-list-used?view=graph-rest-1.0
       operationId: users.insights_ListUsed
       parameters:
         - name: user-id
@@ -1120,8 +1123,11 @@ paths:
     get:
       tags:
         - users.person
-      summary: Get people from users
-      description: People that are relevant to the user. Read-only. Nullable.
+      summary: List people
+      description: 'Retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user''s communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Get relevant information about people.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -1228,37 +1234,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.person
-      summary: Create new navigation property to people for users
-      operationId: users_CreatePeople
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.person'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.person'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/people/{person-id}':
     get:
       tags:
@@ -1324,75 +1299,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.person
-      summary: Update the navigation property people in users
-      operationId: users_UpdatePeople
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: person-id
-          in: path
-          description: 'key: id of person'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: person
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.person'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.person
-      summary: Delete navigation property people for users
-      operationId: users_DeletePeople
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: person-id
-          in: path
-          description: 'key: id of person'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: person
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.officeGraphInsights:
@@ -1406,16 +1312,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
               description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+              x-ms-navigationProperty: true
             trending:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
               description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+              x-ms-navigationProperty: true
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
               description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.sharedInsight:
@@ -1653,6 +1562,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.usageDetails:
       title: usageDetails
       type: object
@@ -1781,49 +1695,61 @@ components:
     microsoft.graph.sharedInsightCollectionResponse:
       title: Collection of sharedInsight
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.trendingCollectionResponse:
       title: Collection of trending
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.trending'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.trending'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.usedInsightCollectionResponse:
       title: Collection of usedInsight
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.usedInsight'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.usedInsight'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.personCollectionResponse:
       title: Collection of person
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.person'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.person'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.insightIdentity:
@@ -1972,6 +1898,15 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    BaseCollectionPaginationCountResponse:
+      title: Base collection pagination and count responses
+      type: object
+      properties:
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ErrorDetails:

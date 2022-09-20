@@ -7312,11 +7312,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
               description: The terms and conditions associated with device management of the company.
+              x-ms-navigationProperty: true
             deviceCompliancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
               description: The device compliance policies.
+              x-ms-navigationProperty: true
             deviceCompliancePolicyDeviceStateSummary:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyDeviceStateSummary'
             deviceCompliancePolicySettingStateSummaries:
@@ -7324,6 +7326,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
               description: The summary states of compliance policy settings for this account.
+              x-ms-navigationProperty: true
             deviceConfigurationDeviceStateSummaries:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStateSummary'
             deviceConfigurations:
@@ -7331,11 +7334,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
               description: The device configurations.
+              x-ms-navigationProperty: true
             iosUpdateStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
               description: The IOS software update installation statuses for this account.
+              x-ms-navigationProperty: true
             softwareUpdateStatusSummary:
               $ref: '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
             complianceManagementPartners:
@@ -7343,6 +7348,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
               description: The list of Compliance Management Partners configured by the tenant.
+              x-ms-navigationProperty: true
             conditionalAccessSettings:
               $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
             deviceCategories:
@@ -7350,26 +7356,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCategory'
               description: The list of device categories with the tenant.
+              x-ms-navigationProperty: true
             deviceEnrollmentConfigurations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
               description: The list of device enrollment configurations
+              x-ms-navigationProperty: true
             deviceManagementPartners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
               description: The list of Device Management Partners configured by the tenant.
+              x-ms-navigationProperty: true
             exchangeConnectors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
               description: The list of Exchange Connectors configured by the tenant.
+              x-ms-navigationProperty: true
             mobileThreatDefenseConnectors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
               description: The list of Mobile threat Defense connectors configured by the tenant.
+              x-ms-navigationProperty: true
             applePushNotificationCertificate:
               $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
             detectedApps:
@@ -7377,6 +7388,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.detectedApp'
               description: The list of detected apps associated with a device.
+              x-ms-navigationProperty: true
             managedDeviceOverview:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceOverview'
             managedDevices:
@@ -7384,41 +7396,49 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
               description: The list of managed devices.
+              x-ms-navigationProperty: true
             importedWindowsAutopilotDeviceIdentities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
               description: Collection of imported Windows autopilot devices.
+              x-ms-navigationProperty: true
             windowsAutopilotDeviceIdentities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
               description: The Windows autopilot device identities contained collection.
+              x-ms-navigationProperty: true
             notificationMessageTemplates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
               description: The Notification Message Templates.
+              x-ms-navigationProperty: true
             resourceOperations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceOperation'
               description: The Resource Operations.
+              x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
               description: The Role Assignments.
+              x-ms-navigationProperty: true
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleDefinition'
               description: The Role Definitions.
+              x-ms-navigationProperty: true
             remoteAssistancePartners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
               description: The remote assist partners.
+              x-ms-navigationProperty: true
             reports:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReports'
             telecomExpenseManagementPartners:
@@ -7426,21 +7446,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
               description: The telecom expense management partners.
+              x-ms-navigationProperty: true
             troubleshootingEvents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
               description: The list of troubleshooting events for the tenant.
+              x-ms-navigationProperty: true
             windowsInformationProtectionAppLearningSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
               description: The windows information protection app learning summaries.
+              x-ms-navigationProperty: true
             windowsInformationProtectionNetworkLearningSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
               description: The windows information protection network learning summaries.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Singleton entity that acts as a container for all device management functionality.
@@ -7479,6 +7503,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
               description: The devices that have the discovered application installed
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: A managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.
@@ -7492,23 +7517,28 @@ components:
               type: string
               description: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
               nullable: true
+              readOnly: true
             androidSecurityPatchLevel:
               type: string
               description: Android security patch level. This property is read-only.
               nullable: true
+              readOnly: true
             azureADDeviceId:
               type: string
               description: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
               nullable: true
+              readOnly: true
             azureADRegistered:
               type: boolean
               description: Whether the device is Azure Active Directory registered. This property is read-only.
               nullable: true
+              readOnly: true
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The DateTime when device compliance grace period expires. This property is read-only.
               format: date-time
+              readOnly: true
             complianceState:
               $ref: '#/components/schemas/microsoft.graph.complianceState'
             configurationManagerClientEnabledFeatures:
@@ -7518,10 +7548,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceActionResult'
               description: List of ComplexType deviceActionResult objects. This property is read-only.
+              readOnly: true
             deviceCategoryDisplayName:
               type: string
               description: Device category display name. This property is read-only.
               nullable: true
+              readOnly: true
             deviceEnrollmentType:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentType'
             deviceHealthAttestationState:
@@ -7530,33 +7562,40 @@ components:
               type: string
               description: Name of the device. This property is read-only.
               nullable: true
+              readOnly: true
             deviceRegistrationState:
               $ref: '#/components/schemas/microsoft.graph.deviceRegistrationState'
             easActivated:
               type: boolean
               description: Whether the device is Exchange ActiveSync activated. This property is read-only.
+              readOnly: true
             easActivationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: Exchange ActivationSync activation time of the device. This property is read-only.
               format: date-time
+              readOnly: true
             easDeviceId:
               type: string
               description: Exchange ActiveSync Id of the device. This property is read-only.
               nullable: true
+              readOnly: true
             emailAddress:
               type: string
               description: Email(s) for the user associated with the device. This property is read-only.
               nullable: true
+              readOnly: true
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+              readOnly: true
             ethernetMacAddress:
               type: string
               description: Ethernet MAC. This property is read-only.
               nullable: true
+              readOnly: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -7566,33 +7605,41 @@ components:
               type: string
               description: Last time the device contacted Exchange. This property is read-only.
               format: date-time
+              readOnly: true
             freeStorageSpaceInBytes:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+              readOnly: true
             iccid:
               type: string
               description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
               nullable: true
+              readOnly: true
             imei:
               type: string
               description: IMEI. This property is read-only.
               nullable: true
+              readOnly: true
             isEncrypted:
               type: boolean
               description: Device encryption status. This property is read-only.
+              readOnly: true
             isSupervised:
               type: boolean
               description: Device supervised status. This property is read-only.
+              readOnly: true
             jailBroken:
               type: string
               description: whether the device is jail broken or rooted. This property is read-only.
               nullable: true
+              readOnly: true
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
               format: date-time
+              readOnly: true
             managedDeviceName:
               type: string
               description: Automatically generated name to identify a device. Can be overwritten to a user friendly name.
@@ -7605,14 +7652,17 @@ components:
               type: string
               description: Manufacturer of the device. This property is read-only.
               nullable: true
+              readOnly: true
             meid:
               type: string
               description: MEID. This property is read-only.
               nullable: true
+              readOnly: true
             model:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+              readOnly: true
             notes:
               type: string
               description: Notes on the device created by IT Admin
@@ -7621,70 +7671,86 @@ components:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
               nullable: true
+              readOnly: true
             osVersion:
               type: string
               description: Operating system version of the device. This property is read-only.
               nullable: true
+              readOnly: true
             partnerReportedThreatState:
               $ref: '#/components/schemas/microsoft.graph.managedDevicePartnerReportedHealthState'
             phoneNumber:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+              readOnly: true
             physicalMemoryInBytes:
               type: integer
               description: Total Memory in Bytes. This property is read-only.
               format: int64
+              readOnly: true
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
               nullable: true
+              readOnly: true
             remoteAssistanceSessionUrl:
               type: string
               description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
               nullable: true
+              readOnly: true
             serialNumber:
               type: string
               description: SerialNumber. This property is read-only.
               nullable: true
+              readOnly: true
             subscriberCarrier:
               type: string
               description: Subscriber Carrier. This property is read-only.
               nullable: true
+              readOnly: true
             totalStorageSpaceInBytes:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+              readOnly: true
             udid:
               type: string
               description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
               nullable: true
+              readOnly: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
               nullable: true
+              readOnly: true
             userId:
               type: string
               description: Unique Identifier for the user associated with the device. This property is read-only.
               nullable: true
+              readOnly: true
             userPrincipalName:
               type: string
               description: Device user principal name. This property is read-only.
               nullable: true
+              readOnly: true
             wiFiMacAddress:
               type: string
               description: Wi-Fi MAC. This property is read-only.
               nullable: true
+              readOnly: true
             deviceCompliancePolicyStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
               description: Device compliance policy states for this device.
+              x-ms-navigationProperty: true
             deviceConfigurationStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
               description: Device configuration states for this device.
+              x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
           additionalProperties:
@@ -7741,16 +7807,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
               description: The collection of assignments for this compliance policy.
+              x-ms-navigationProperty: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
               description: Compliance Setting State Device Summary
+              x-ms-navigationProperty: true
             deviceStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
               description: List of DeviceComplianceDeviceStatus.
+              x-ms-navigationProperty: true
             deviceStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceOverview'
             scheduledActionsForRule:
@@ -7758,11 +7827,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
               description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+              x-ms-navigationProperty: true
             userStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
               description: List of DeviceComplianceUserStatus.
+              x-ms-navigationProperty: true
             userStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserOverview'
           additionalProperties:
@@ -7938,6 +8009,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -8171,6 +8243,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
               description: Not yet documented
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Device Compilance Policy Setting State summary across the account.
@@ -8310,16 +8383,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
               description: The list of assignments for the device configuration profile.
+              x-ms-navigationProperty: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
               description: Device Configuration Setting State Device Summary
+              x-ms-navigationProperty: true
             deviceStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
               description: Device configuration installation status by device.
+              x-ms-navigationProperty: true
             deviceStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceOverview'
             userStatuses:
@@ -8327,6 +8403,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
               description: Device configuration installation status by user.
+              x-ms-navigationProperty: true
             userStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserOverview'
           additionalProperties:
@@ -8628,6 +8705,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
               description: The list of localized messages for this Notification Message Template.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Notification messages are messages that are sent to end users who are determined to be not-compliant with the compliance policies defined by the administrator. Administrators choose notifications and configure them in the Intune Admin Console using the compliance policy creation page under the “Actions for non-compliance” section. Use the notificationMessageTemplate object to create your own custom notifications for administrators to choose while configuring actions for non-compliance.
@@ -8974,11 +9052,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
               description: The list of acceptance statuses for this T&C policy.
+              x-ms-navigationProperty: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
               description: The list of assignments for this T&C policy.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
@@ -9146,6 +9226,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
               description: The list of group assignments for the device configuration profile
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -9287,6 +9368,7 @@ components:
               type: string
               description: Certificate serial number. This property is read-only.
               nullable: true
+              readOnly: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -9475,6 +9557,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleAssignment'
               description: List of Role assignments for this role definition.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: 'The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.'
@@ -9513,6 +9596,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
               description: Entity representing a job to export a report
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Singleton entity that acts as a container for all reports functionality.
@@ -10490,277 +10574,346 @@ components:
     microsoft.graph.detectedAppCollectionResponse:
       title: Collection of detectedApp
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.detectedApp'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.detectedApp'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedDeviceCollectionResponse:
       title: Collection of managedDevice
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedDevice'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedDevice'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceCategoryCollectionResponse:
       title: Collection of deviceCategory
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceCategory'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceCompliancePolicyCollectionResponse:
       title: Collection of deviceCompliancePolicy
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceCompliancePolicyAssignmentCollectionResponse:
       title: Collection of deviceCompliancePolicyAssignment
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.settingStateDeviceSummaryCollectionResponse:
       title: Collection of settingStateDeviceSummary
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceDeviceStatusCollectionResponse:
       title: Collection of deviceComplianceDeviceStatus
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceScheduledActionForRuleCollectionResponse:
       title: Collection of deviceComplianceScheduledActionForRule
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceActionItemCollectionResponse:
       title: Collection of deviceComplianceActionItem
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceUserStatusCollectionResponse:
       title: Collection of deviceComplianceUserStatus
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceCompliancePolicySettingStateSummaryCollectionResponse:
       title: Collection of deviceCompliancePolicySettingStateSummary
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceSettingStateCollectionResponse:
       title: Collection of deviceComplianceSettingState
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationCollectionResponse:
       title: Collection of deviceConfiguration
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationAssignmentCollectionResponse:
       title: Collection of deviceConfigurationAssignment
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationDeviceStatusCollectionResponse:
       title: Collection of deviceConfigurationDeviceStatus
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationUserStatusCollectionResponse:
       title: Collection of deviceConfigurationUserStatus
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceCompliancePolicyStateCollectionResponse:
       title: Collection of deviceCompliancePolicyState
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationStateCollectionResponse:
       title: Collection of deviceConfigurationState
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.notificationMessageTemplateCollectionResponse:
       title: Collection of notificationMessageTemplate
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.localizedNotificationMessageCollectionResponse:
       title: Collection of localizedNotificationMessage
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementTroubleshootingEventCollectionResponse:
       title: Collection of deviceManagementTroubleshootingEvent
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.windowsInformationProtectionAppLearningSummaryCollectionResponse:
       title: Collection of windowsInformationProtectionAppLearningSummary
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.windowsInformationProtectionNetworkLearningSummaryCollectionResponse:
       title: Collection of windowsInformationProtectionNetworkLearningSummary
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.mimeContent:
@@ -11236,6 +11389,15 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    BaseCollectionPaginationCountResponse:
+      title: Base collection pagination and count responses
+      type: object
+      properties:
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
