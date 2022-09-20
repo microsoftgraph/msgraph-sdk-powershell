@@ -16,6 +16,7 @@ paths:
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
           schema:
             type: string
           examples:
@@ -103,12 +104,14 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get directoryObject
+      description: Retrieve the properties and relationships of a directoryObject object.
       operationId: directoryObjects.directoryObject_GetDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -168,6 +171,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -188,18 +192,21 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Delete directoryObject
+      description: 'Delete a directory object, for example, a group, user, application, or service principal.'
       operationId: directoryObjects.directoryObject_DeleteDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -219,6 +226,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -265,6 +273,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -311,6 +320,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -357,6 +367,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -403,6 +414,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -664,6 +676,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -672,6 +686,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -679,18 +695,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

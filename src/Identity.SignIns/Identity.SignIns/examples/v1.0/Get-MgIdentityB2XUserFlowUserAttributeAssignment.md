@@ -1,18 +1,28 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId -ExpandProperty "userAttribute" 
+```
+This example shows how to use the Get-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Get-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId -ExpandProperty "userAttribute" 
+```
+This example shows how to use the Get-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

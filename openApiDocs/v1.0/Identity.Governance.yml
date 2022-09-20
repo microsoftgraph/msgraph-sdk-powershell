@@ -76,6 +76,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -132,6 +133,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -158,12 +160,14 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -177,12 +181,14 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_ListAcceptances
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -286,6 +292,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -311,12 +318,14 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_GetAcceptances
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -324,6 +333,7 @@ paths:
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
@@ -384,6 +394,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -391,6 +402,7 @@ paths:
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
@@ -417,6 +429,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -424,12 +437,14 @@ paths:
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -443,12 +458,14 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get file from agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_GetFile
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -510,6 +527,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -536,12 +554,14 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -555,12 +575,14 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get localizations from agreements
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_ListLocalizations
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -648,6 +670,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -673,12 +696,14 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get localizations from agreements
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_GetLocalizations
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -686,6 +711,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -748,6 +774,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -755,6 +782,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -781,6 +809,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -788,12 +817,14 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -807,12 +838,14 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_ListVersions
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -820,6 +853,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -905,6 +939,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -912,6 +947,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -937,12 +973,14 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_GetVersions
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -950,6 +988,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -957,6 +996,7 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
@@ -1011,6 +1051,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1018,6 +1059,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -1025,6 +1067,7 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
@@ -1051,6 +1094,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1058,6 +1102,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -1065,12 +1110,14 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1084,12 +1131,14 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
+      description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
       operationId: agreements_ListFiles
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1177,6 +1226,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1202,12 +1252,14 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
+      description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
       operationId: agreements_GetFiles
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1215,6 +1267,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -1277,6 +1330,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1284,6 +1338,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -1310,6 +1365,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1317,12 +1373,14 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1336,12 +1394,14 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_ListVersions
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1349,6 +1409,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -1434,6 +1495,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1441,6 +1503,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -1466,12 +1529,14 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_GetVersions
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1479,6 +1544,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -1486,6 +1552,7 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
@@ -1540,6 +1607,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1547,6 +1615,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -1554,6 +1623,7 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
@@ -1580,6 +1650,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -1587,6 +1658,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -1594,12 +1666,14 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1760,6 +1834,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1773,6 +1848,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get definitions from identityGovernance
+      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_ListDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1897,12 +1973,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get definitions from identityGovernance
+      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_GetDefinitions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -1973,6 +2051,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -1999,12 +2078,14 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2018,12 +2099,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
+      description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_ListInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2112,6 +2195,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2137,12 +2221,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
+      description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_GetInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2150,6 +2236,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2237,6 +2324,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2244,6 +2332,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2270,6 +2359,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2277,12 +2367,14 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2296,12 +2388,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get contactedReviewers from identityGovernance
+      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
       operationId: identityGovernance.accessReviews.definitions.instances_ListContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2309,6 +2403,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2382,6 +2477,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2389,6 +2485,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2414,12 +2511,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get contactedReviewers from identityGovernance
+      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
       operationId: identityGovernance.accessReviews.definitions.instances_GetContactedReviewers
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2427,6 +2526,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2434,6 +2534,7 @@ paths:
           in: path
           description: 'key: id of accessReviewReviewer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewReviewer
@@ -2484,6 +2585,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2491,6 +2593,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2498,6 +2601,7 @@ paths:
           in: path
           description: 'key: id of accessReviewReviewer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewReviewer
@@ -2524,6 +2628,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2531,6 +2636,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2538,12 +2644,14 @@ paths:
           in: path
           description: 'key: id of accessReviewReviewer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewReviewer
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2557,12 +2665,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_ListDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2570,6 +2680,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2673,6 +2784,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2680,6 +2792,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2705,12 +2818,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_GetDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2718,6 +2833,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2725,6 +2841,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstanceDecisionItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstanceDecisionItem
@@ -2785,6 +2902,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2792,6 +2910,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2799,6 +2918,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstanceDecisionItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstanceDecisionItem
@@ -2825,6 +2945,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2832,6 +2953,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2839,12 +2961,14 @@ paths:
           in: path
           description: 'key: id of accessReviewInstanceDecisionItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstanceDecisionItem
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2864,6 +2988,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2871,6 +2996,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2878,6 +3004,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions'
       responses:
@@ -2909,6 +3036,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2916,6 +3044,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2936,6 +3065,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2943,6 +3073,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -2963,6 +3094,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -2970,6 +3102,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3012,6 +3145,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3019,6 +3153,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3039,6 +3174,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3046,6 +3182,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3066,6 +3203,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3073,6 +3211,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3087,12 +3226,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get stages from identityGovernance
+      description: 'If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.'
       operationId: identityGovernance.accessReviews.definitions.instances_ListStages
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3100,6 +3241,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3181,6 +3323,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3188,6 +3331,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3213,12 +3357,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get stages from identityGovernance
+      description: 'If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.'
       operationId: identityGovernance.accessReviews.definitions.instances_GetStages
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3226,6 +3372,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3233,6 +3380,7 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
@@ -3296,6 +3444,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3303,6 +3452,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3310,6 +3460,7 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
@@ -3336,6 +3487,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3343,6 +3495,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3350,12 +3503,14 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3369,12 +3524,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances.stages_ListDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3382,6 +3539,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3389,6 +3547,7 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
@@ -3492,6 +3651,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3499,6 +3659,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3506,6 +3667,7 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
@@ -3531,12 +3693,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances.stages_GetDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3544,6 +3708,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3551,6 +3716,7 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
@@ -3558,6 +3724,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstanceDecisionItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstanceDecisionItem
@@ -3618,6 +3785,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3625,6 +3793,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3632,6 +3801,7 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
@@ -3639,6 +3809,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstanceDecisionItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstanceDecisionItem
@@ -3665,6 +3836,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3672,6 +3844,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3679,6 +3852,7 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
@@ -3686,12 +3860,14 @@ paths:
           in: path
           description: 'key: id of accessReviewInstanceDecisionItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstanceDecisionItem
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3711,6 +3887,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3718,6 +3895,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3725,6 +3903,7 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
@@ -3732,6 +3911,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions'
       responses:
@@ -3763,6 +3943,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3770,6 +3951,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3777,6 +3959,7 @@ paths:
           in: path
           description: 'key: id of accessReviewStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewStage
@@ -3797,6 +3980,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3804,6 +3988,7 @@ paths:
           in: path
           description: 'key: id of accessReviewInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
@@ -3811,6 +3996,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessReviewStageFilterByCurrentUserOptions'
       responses:
@@ -3842,6 +4028,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3849,6 +4036,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceFilterByCurrentUserOptions'
       responses:
@@ -3880,6 +4068,7 @@ paths:
           in: path
           description: 'key: id of accessReviewScheduleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewScheduleDefinition
@@ -3900,6 +4089,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinitionFilterByCurrentUserOptions'
       responses:
@@ -3925,6 +4115,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get historyDefinitions from identityGovernance
+      description: Represents a collection of access review history data and the scopes used to collect that data.
       operationId: identityGovernance.accessReviews_ListHistoryDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4034,12 +4225,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get historyDefinitions from identityGovernance
+      description: Represents a collection of access review history data and the scopes used to collect that data.
       operationId: identityGovernance.accessReviews_GetHistoryDefinitions
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
           description: 'key: id of accessReviewHistoryDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryDefinition
@@ -4103,6 +4296,7 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryDefinition
@@ -4129,12 +4323,14 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4148,12 +4344,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
+      description: 'If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.'
       operationId: identityGovernance.accessReviews.historyDefinitions_ListInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
           description: 'key: id of accessReviewHistoryDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryDefinition
@@ -4239,6 +4437,7 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryDefinition
@@ -4264,12 +4463,14 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
+      description: 'If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.'
       operationId: identityGovernance.accessReviews.historyDefinitions_GetInstances
       parameters:
         - name: accessReviewHistoryDefinition-id
           in: path
           description: 'key: id of accessReviewHistoryDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryDefinition
@@ -4277,6 +4478,7 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryInstance
@@ -4334,6 +4536,7 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryDefinition
@@ -4341,6 +4544,7 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryInstance
@@ -4367,6 +4571,7 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryDefinition
@@ -4374,12 +4579,14 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryInstance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4399,6 +4606,7 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryDefinition
@@ -4406,6 +4614,7 @@ paths:
           in: path
           description: 'key: id of accessReviewHistoryInstance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessReviewHistoryInstance
@@ -4492,6 +4701,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4505,6 +4715,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get appConsentRequests from identityGovernance
+      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_ListAppConsentRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4596,12 +4807,14 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get appConsentRequests from identityGovernance
+      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_GetAppConsentRequests
       parameters:
         - name: appConsentRequest-id
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -4659,6 +4872,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -4685,12 +4899,14 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4704,12 +4920,14 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get userConsentRequests from identityGovernance
+      description: A list of pending user consent requests. Supports $filter (eq).
       operationId: identityGovernance.appConsent.appConsentRequests_ListUserConsentRequests
       parameters:
         - name: appConsentRequest-id
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -4797,6 +5015,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -4822,12 +5041,14 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get userConsentRequests from identityGovernance
+      description: A list of pending user consent requests. Supports $filter (eq).
       operationId: identityGovernance.appConsent.appConsentRequests_GetUserConsentRequests
       parameters:
         - name: appConsentRequest-id
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -4835,6 +5056,7 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
@@ -4897,6 +5119,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -4904,6 +5127,7 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
@@ -4930,6 +5154,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -4937,12 +5162,14 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4956,12 +5183,14 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get approval from identityGovernance
+      description: Approval decisions associated with a request.
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_GetApproval
       parameters:
         - name: appConsentRequest-id
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -4969,6 +5198,7 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
@@ -5024,6 +5254,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -5031,6 +5262,7 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
@@ -5057,6 +5289,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -5064,12 +5297,14 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5083,12 +5318,14 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_ListStages
       parameters:
         - name: appConsentRequest-id
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -5096,6 +5333,7 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
@@ -5181,6 +5419,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -5188,6 +5427,7 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
@@ -5213,12 +5453,14 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_GetStages
       parameters:
         - name: appConsentRequest-id
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -5226,6 +5468,7 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
@@ -5233,6 +5476,7 @@ paths:
           in: path
           description: 'key: id of approvalStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStage
@@ -5287,6 +5531,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -5294,6 +5539,7 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
@@ -5301,6 +5547,7 @@ paths:
           in: path
           description: 'key: id of approvalStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStage
@@ -5327,6 +5574,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -5334,6 +5582,7 @@ paths:
           in: path
           description: 'key: id of userConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userConsentRequest
@@ -5341,12 +5590,14 @@ paths:
           in: path
           description: 'key: id of approvalStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5366,6 +5617,7 @@ paths:
           in: path
           description: 'key: id of appConsentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appConsentRequest
@@ -5373,6 +5625,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.consentRequestFilterByCurrentUserOptions'
       responses:
@@ -5404,6 +5657,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.consentRequestFilterByCurrentUserOptions'
       responses:
@@ -5525,6 +5779,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5538,6 +5793,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentApprovals from identityGovernance
+      description: Approval stages for decisions associated with access package assignment requests.
       operationId: identityGovernance.entitlementManagement_ListAccessPackageAssignmentApprovals
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5620,12 +5876,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentApprovals from identityGovernance
+      description: Approval stages for decisions associated with access package assignment requests.
       operationId: identityGovernance.entitlementManagement_GetAccessPackageAssignmentApprovals
       parameters:
         - name: approval-id
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -5680,6 +5938,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -5706,12 +5965,14 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5725,12 +5986,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_ListStages
       parameters:
         - name: approval-id
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -5816,6 +6079,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -5841,12 +6105,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_GetStages
       parameters:
         - name: approval-id
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -5854,6 +6120,7 @@ paths:
           in: path
           description: 'key: id of approvalStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStage
@@ -5908,6 +6175,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -5915,6 +6183,7 @@ paths:
           in: path
           description: 'key: id of approvalStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStage
@@ -5941,6 +6210,7 @@ paths:
           in: path
           description: 'key: id of approval'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approval
@@ -5948,12 +6218,14 @@ paths:
           in: path
           description: 'key: id of approvalStage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: approvalStage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5973,6 +6245,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.approvalFilterByCurrentUserOptions'
       responses:
@@ -5998,6 +6271,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
+      description: Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
       operationId: identityGovernance.entitlementManagement_ListAccessPackages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6097,12 +6371,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
+      description: Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
       operationId: identityGovernance.entitlementManagement_GetAccessPackages
       parameters:
         - name: accessPackage-id
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6170,6 +6446,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6196,12 +6473,14 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6221,6 +6500,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6322,6 +6602,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6353,6 +6634,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6360,6 +6642,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -6433,6 +6716,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6440,6 +6724,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -6466,6 +6751,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6473,12 +6759,14 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6492,12 +6780,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
+      description: Access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetAccessPackage
       parameters:
         - name: accessPackage-id
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6505,6 +6795,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -6567,12 +6858,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
+      description: Catalog of the access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies_GetCatalog
       parameters:
         - name: accessPackage-id
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6580,6 +6873,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -6643,6 +6937,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6705,6 +7000,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -6737,6 +7033,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessPackageFilterByCurrentUserOptions'
       responses:
@@ -6762,6 +7059,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
+      description: Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
       operationId: identityGovernance.entitlementManagement_ListAssignmentPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6879,12 +7177,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicies from identityGovernance
+      description: Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
       operationId: identityGovernance.entitlementManagement_GetAssignmentPolicies
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -6956,6 +7256,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -6982,12 +7283,14 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7001,12 +7304,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
+      description: Access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetAccessPackage
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -7067,12 +7372,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
+      description: Catalog of the access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.assignmentPolicies_GetCatalog
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -7129,6 +7436,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
+      description: Access package assignment requests created by or on behalf of a subject.
       operationId: identityGovernance.entitlementManagement_ListAssignmentRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7233,12 +7541,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
+      description: Access package assignment requests created by or on behalf of a subject.
       operationId: identityGovernance.entitlementManagement_GetAssignmentRequests
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
           description: 'key: id of accessPackageAssignmentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentRequest
@@ -7315,6 +7625,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentRequest
@@ -7341,12 +7652,14 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentRequest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7360,12 +7673,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
+      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
           description: 'key: id of accessPackageAssignmentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentRequest
@@ -7426,12 +7741,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignment from identityGovernance
+      description: 'For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
           description: 'key: id of accessPackageAssignmentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentRequest
@@ -7503,6 +7820,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentRequest
@@ -7523,6 +7841,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentRequest
@@ -7537,12 +7856,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get requestor from identityGovernance
+      description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetRequestor
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
           description: 'key: id of accessPackageAssignmentRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentRequest
@@ -7604,6 +7925,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequestFilterByCurrentUserOptions'
       responses:
@@ -7629,6 +7951,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
+      description: The assignment of an access package to a subject for a period of time.
       operationId: identityGovernance.entitlementManagement_ListAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7727,12 +8050,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
+      description: The assignment of an access package to a subject for a period of time.
       operationId: identityGovernance.entitlementManagement_GetAssignments
       parameters:
         - name: accessPackageAssignment-id
           in: path
           description: 'key: id of accessPackageAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignment
@@ -7805,6 +8130,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignment
@@ -7831,12 +8157,14 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7850,12 +8178,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
+      description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_GetAccessPackage
       parameters:
         - name: accessPackageAssignment-id
           in: path
           description: 'key: id of accessPackageAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignment
@@ -7916,12 +8246,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentPolicy from identityGovernance
+      description: Read-only. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_GetAssignmentPolicy
       parameters:
         - name: accessPackageAssignment-id
           in: path
           description: 'key: id of accessPackageAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignment
@@ -7994,6 +8326,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignment
@@ -8008,12 +8341,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get target from identityGovernance
+      description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
       operationId: identityGovernance.entitlementManagement.assignments_GetTarget
       parameters:
         - name: accessPackageAssignment-id
           in: path
           description: 'key: id of accessPackageAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignment
@@ -8075,6 +8410,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentFilterByCurrentUserOptions'
       responses:
@@ -8100,6 +8436,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
+      description: A container for access packages.
       operationId: identityGovernance.entitlementManagement_ListCatalogs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8203,12 +8540,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
+      description: A container for access packages.
       operationId: identityGovernance.entitlementManagement_GetCatalogs
       parameters:
         - name: accessPackageCatalog-id
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8270,6 +8609,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8296,12 +8636,14 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8315,12 +8657,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
+      description: The access packages in this catalog. Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs_ListAccessPackages
       parameters:
         - name: accessPackageCatalog-id
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8404,6 +8748,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8429,12 +8774,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
+      description: The access packages in this catalog. Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs_GetAccessPackages
       parameters:
         - name: accessPackageCatalog-id
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8442,6 +8789,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -8511,6 +8859,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8518,6 +8867,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -8544,6 +8894,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8551,12 +8902,14 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8576,6 +8929,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8583,6 +8937,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -8684,6 +9039,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8691,6 +9047,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -8722,6 +9079,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8729,6 +9087,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -8736,6 +9095,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -8811,6 +9171,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8818,6 +9179,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -8825,6 +9187,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -8851,6 +9214,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8858,6 +9222,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -8865,12 +9230,14 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8884,12 +9251,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
+      description: Access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetAccessPackage
       parameters:
         - name: accessPackageCatalog-id
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8897,6 +9266,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -8904,6 +9274,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -8968,12 +9339,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
+      description: Catalog of the access package containing this policy. Read-only.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -8981,6 +9354,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -8988,6 +9362,7 @@ paths:
           in: path
           description: 'key: id of accessPackageAssignmentPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageAssignmentPolicy
@@ -9052,6 +9427,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -9059,6 +9435,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -9122,6 +9499,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -9129,6 +9507,7 @@ paths:
           in: path
           description: 'key: id of accessPackage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackage
@@ -9161,6 +9540,7 @@ paths:
           in: path
           description: 'key: id of accessPackageCatalog'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: accessPackageCatalog
@@ -9168,6 +9548,7 @@ paths:
           in: path
           description: 'Usage: on=''{on}'''
           required: true
+          style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessPackageFilterByCurrentUserOptions'
       responses:
@@ -9193,6 +9574,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
+      description: References to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_ListConnectedOrganizations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9295,12 +9677,14 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
+      description: References to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_GetConnectedOrganizations
       parameters:
         - name: connectedOrganization-id
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9367,6 +9751,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9393,12 +9778,14 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9418,6 +9805,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9485,6 +9873,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9516,6 +9905,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9523,17 +9913,21 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -9553,6 +9947,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9595,18 +9990,12 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -9624,6 +10013,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9670,6 +10060,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9721,6 +10112,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9765,6 +10157,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9832,6 +10225,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9863,6 +10257,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9870,17 +10265,21 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -9900,6 +10299,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -9942,18 +10342,12 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -9971,6 +10365,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -10017,6 +10412,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -10068,6 +10464,7 @@ paths:
           in: path
           description: 'key: id of connectedOrganization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectedOrganization
@@ -10106,6 +10503,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get settings from identityGovernance
+      description: The settings that control the behavior of Azure AD entitlement management.
       operationId: identityGovernance.entitlementManagement_GetSettings
       parameters:
         - name: $select
@@ -10171,6 +10569,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10256,6 +10655,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10269,6 +10669,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
+      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsGraphOPreUse_ListAgreementAcceptances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10388,12 +10789,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
+      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsGraphOPreUse_GetAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
@@ -10454,6 +10857,7 @@ paths:
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
@@ -10480,12 +10884,14 @@ paths:
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10499,6 +10905,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
+      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsGraphOPreUse_ListAgreements
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10600,12 +11007,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
+      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsGraphOPreUse_GetAgreements
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -10677,6 +11086,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -10703,12 +11113,14 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10722,12 +11134,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get acceptances from identityGovernance
+      description: Read-only. Information about acceptances of this agreement.
       operationId: identityGovernance.termsGraphOPreUse.agreements_ListAcceptances
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -10831,6 +11245,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -10856,12 +11271,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get acceptances from identityGovernance
+      description: Read-only. Information about acceptances of this agreement.
       operationId: identityGovernance.termsGraphOPreUse.agreements_GetAcceptances
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -10869,6 +11286,7 @@ paths:
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
@@ -10929,6 +11347,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -10936,6 +11355,7 @@ paths:
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
@@ -10962,6 +11382,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -10969,12 +11390,14 @@ paths:
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10988,12 +11411,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get file from identityGovernance
+      description: Default PDF linked to this agreement.
       operationId: identityGovernance.termsGraphOPreUse.agreements_GetFile
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11055,6 +11480,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11081,12 +11507,14 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11100,12 +11528,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: identityGovernance.termsGraphOPreUse.agreements.file_ListLocalizations
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11193,6 +11623,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11218,12 +11649,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get localizations from identityGovernance
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: identityGovernance.termsGraphOPreUse.agreements.file_GetLocalizations
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11231,6 +11664,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11293,6 +11727,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11300,6 +11735,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11326,6 +11762,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11333,12 +11770,14 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11352,12 +11791,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_ListVersions
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11365,6 +11806,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11450,6 +11892,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11457,6 +11900,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11482,12 +11926,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsGraphOPreUse.agreements.file.localizations_GetVersions
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11495,6 +11941,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11502,6 +11949,7 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
@@ -11556,6 +12004,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11563,6 +12012,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11570,6 +12020,7 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
@@ -11596,6 +12047,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11603,6 +12055,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11610,12 +12063,14 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11629,12 +12084,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
+      description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
       operationId: identityGovernance.termsGraphOPreUse.agreements_ListFiles
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11722,6 +12179,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11747,12 +12205,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get files from identityGovernance
+      description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
       operationId: identityGovernance.termsGraphOPreUse.agreements_GetFiles
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11760,6 +12220,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11822,6 +12283,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11829,6 +12291,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11855,6 +12318,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11862,12 +12326,14 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11881,12 +12347,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsGraphOPreUse.agreements.files_ListVersions
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11894,6 +12362,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -11979,6 +12448,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -11986,6 +12456,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -12011,12 +12482,14 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: identityGovernance.termsGraphOPreUse.agreements.files_GetVersions
       parameters:
         - name: agreement-id
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -12024,6 +12497,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -12031,6 +12505,7 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
@@ -12085,6 +12560,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -12092,6 +12568,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -12099,6 +12576,7 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
@@ -12125,6 +12603,7 @@ paths:
           in: path
           description: 'key: id of agreement'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreement
@@ -12132,6 +12611,7 @@ paths:
           in: path
           description: 'key: id of agreementFileLocalization'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileLocalization
@@ -12139,12 +12619,14 @@ paths:
           in: path
           description: 'key: id of agreementFileVersion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementFileVersion
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12158,12 +12640,14 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_ListAgreementAcceptances
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -12262,12 +12746,14 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_GetAgreementAcceptances
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -12275,6 +12761,7 @@ paths:
           in: path
           description: 'key: id of agreementAcceptance'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: agreementAcceptance
@@ -12339,7 +12826,7 @@ components:
               nullable: true
             isPerDeviceAcceptanceRequired:
               type: boolean
-              description: 'This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven''t already done so. Supports $filter (eq).'
+              description: 'Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven''t already done so. Supports $filter (eq).'
               nullable: true
             isViewingBeforeAcceptanceRequired:
               type: boolean
@@ -12350,7 +12837,7 @@ components:
             userReacceptRequiredFrequency:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
+              description: The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
               format: duration
               nullable: true
             acceptances:
@@ -12364,7 +12851,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
-              description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
+              description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptance:
@@ -12375,11 +12862,11 @@ components:
           properties:
             agreementFileId:
               type: string
-              description: ID of the agreement file accepted by the user.
+              description: The identifier of the agreement file accepted by the user.
               nullable: true
             agreementId:
               type: string
-              description: ID of the agreement.
+              description: The identifier of the agreement.
               nullable: true
             deviceDisplayName:
               type: string
@@ -12391,22 +12878,22 @@ components:
               nullable: true
             deviceOSType:
               type: string
-              description: The operating system used for accepting the agreement.
+              description: The operating system used to accept the agreement.
               nullable: true
             deviceOSVersion:
               type: string
-              description: The operating system version of the device used for accepting the agreement.
+              description: The operating system version of the device used to accept the agreement.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             state:
@@ -12421,7 +12908,7 @@ components:
               nullable: true
             userId:
               type: string
-              description: ID of the user who accepted the agreement.
+              description: The identifier of the user who accepted the agreement.
               nullable: true
             userPrincipalName:
               type: string
@@ -12560,7 +13047,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+              description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewInstance:
@@ -12632,7 +13119,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: User principal name of the user.
+              description: User principal name of the reviewer.
               nullable: true
           additionalProperties:
             type: object
@@ -12650,7 +13137,7 @@ components:
             appliedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.'
+              description: 'The timestamp when the approval decision was applied.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn''t applied the decision or it was automatically applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.'
               format: date-time
               nullable: true
             applyResult:
@@ -12669,7 +13156,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identity'
             principalLink:
               type: string
-              description: 'Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
+              description: 'A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
               nullable: true
             recommendation:
               type: string
@@ -12706,7 +13193,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.'
+              description: The date and time in ISO 8601 format and UTC time when the review stage is scheduled to end. This property is the cumulative total of the durationInDays for all stages. Read-only.
               format: date-time
               nullable: true
             fallbackReviewers:
@@ -12722,7 +13209,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: The date and time in ISO 8601 format and UTC time when the review stage is scheduled to start. Read-only.
               format: date-time
               nullable: true
             status:
@@ -12873,12 +13360,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appConsentRequestScope'
-              description: A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
+              description: A list of pending scopes waiting for approval. Required.
             userConsentRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
-              description: A list of pending user consent requests.
+              description: A list of pending user consent requests. Supports $filter (eq).
           additionalProperties:
             type: object
     microsoft.graph.userConsentRequest:
@@ -12905,7 +13392,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStage'
-              description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
+              description: A collection of stages in the approval decision.
           additionalProperties:
             type: object
     microsoft.graph.approvalStage:
@@ -12965,7 +13452,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-              description: Represents access package objects.
+              description: Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
             assignmentPolicies:
               type: array
               items:
@@ -12990,7 +13477,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
-              description: Represents references to a directory or domain of another organization whose users can request access.
+              description: References to a directory or domain of another organization whose users can request access.
             settings:
               $ref: '#/components/schemas/microsoft.graph.entitlementManagementSettings'
           additionalProperties:
@@ -13054,7 +13541,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             description:
@@ -13063,14 +13550,14 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name of the policy. Supports $filter (eq).
+              description: The display name of the policy.
               nullable: true
             expiration:
               $ref: '#/components/schemas/microsoft.graph.expirationPattern'
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             requestApprovalSettings:
@@ -13110,7 +13597,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name of the access package catalog. Supports $filter (eq, contains).'
+              description: The display name of the access package catalog.
               nullable: true
             isExternallyVisible:
               type: boolean
@@ -13128,7 +13615,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-              description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+              description: The access packages in this catalog. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.accessPackageAssignmentRequestRequirements:
@@ -13184,7 +13671,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter.'
               format: date-time
               nullable: true
             requestType:
@@ -13214,7 +13701,7 @@ components:
             expiredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             schedule:
@@ -13304,7 +13791,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySource'
-              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq ''bcfdfff4-cbc3-43f2-9000-ba7b7515054f'').'
+              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.'
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -13475,7 +13962,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.accessReviewNotificationRecipientScope'
         notificationTemplateType:
           type: string
-          description: Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
+          description: 'Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.'
           nullable: true
       additionalProperties:
         type: object
@@ -13501,7 +13988,7 @@ components:
       properties:
         query:
           type: string
-          description: The query specifying who will be the reviewer. See table for examples.
+          description: The query specifying who will be the reviewer.
           nullable: true
         queryRoot:
           type: string
@@ -13545,7 +14032,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'Duration of each recurrence of review (accessReviewInstance) in number of days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.'
+          description: 'Duration of an access review instance in days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.'
           format: int32
         justificationRequiredOnApproval:
           type: boolean
@@ -13599,7 +14086,7 @@ components:
           description: 'Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.'
         stageId:
           type: string
-          description: Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
+          description: Unique identifier of the accessReviewStageSettings object. The stageId will be used by the dependsOn property to indicate the order of the stages. Required.
       additionalProperties:
         type: object
     microsoft.graph.identity:
@@ -13626,7 +14113,7 @@ components:
           nullable: true
         id:
           type: string
-          description: Resource ID
+          description: Identifier of the resource
           nullable: true
         type:
           type: string
@@ -13735,6 +14222,7 @@ components:
           nullable: true
         requestAccessForAllowedTargets:
           type: boolean
+          description: 'If set to true, automatic assignments will be created for targets in the allowed target scope.'
           nullable: true
       additionalProperties:
         type: object
@@ -13956,6 +14444,13 @@ components:
         - blockSignInAndDelete
         - unknownFutureValue
       type: string
+    ReferenceCreate:
+      type: object
+      properties:
+        '@odata.id':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.agreementCollectionResponse:
       title: Collection of agreement
       type: object
@@ -14247,7 +14742,7 @@ components:
       properties:
         data:
           type: string
-          description: 'Data that represents the terms of use PDF document. Read-only. Note: You can use the .NET Convert.ToBase64String method to convert your file to binary data for uploading using the Create agreements API. A sample syntax using this method in PowerShell is [convert]::ToBase64String((Get-Content -path ''your_file_path'' -Encoding byte)).'
+          description: Data that represents the terms of use PDF document. Read-only.
           format: base64url
           nullable: true
       additionalProperties:
@@ -14639,12 +15134,16 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     top:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -14653,6 +15152,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -14660,14 +15161,26 @@ components:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
+  requestBodies:
+    refPostBody:
+      description: New navigation property ref value
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReferenceCreate'
+      required: true
   securitySchemes:
     azureaadv2:
       type: oauth2

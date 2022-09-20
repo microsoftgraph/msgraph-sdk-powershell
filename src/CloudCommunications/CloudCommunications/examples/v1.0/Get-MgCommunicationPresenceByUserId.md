@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgCommunicationPresenceByUserId Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	Ids = @(
+		"fa8bf3dc-eca7-46b7-bad1-db199b62afc3"
+		"66825e03-7ef5-42da-9069-724602c31f6b"
+	)
+}
+Get-MgCommunicationPresenceByUserId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgCommunicationPresenceByUserId Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

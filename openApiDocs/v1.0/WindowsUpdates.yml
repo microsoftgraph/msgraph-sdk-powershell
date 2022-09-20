@@ -17,6 +17,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -24,6 +25,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -55,6 +57,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue

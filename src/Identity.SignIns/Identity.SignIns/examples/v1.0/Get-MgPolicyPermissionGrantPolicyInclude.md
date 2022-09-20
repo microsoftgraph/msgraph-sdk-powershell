@@ -18,3 +18,4 @@ AdditionalProperties                        : {[scopeSensitivityLabels, System.C
 ```
 
 This command retrieves a specified permission grant policy include configuration in Azure AD.
+

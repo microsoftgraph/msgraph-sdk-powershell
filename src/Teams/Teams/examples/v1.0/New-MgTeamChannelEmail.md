@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgTeamChannelEmail Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+New-MgTeamChannelEmail -TeamId $teamId -ChannelId $channelId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgTeamChannelEmail Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -133,6 +133,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get androidManagedAppProtections from deviceAppManagement
+      description: Android managed app policies.
       operationId: deviceAppManagement_ListAndroidManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -342,12 +343,14 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get androidManagedAppProtections from deviceAppManagement
+      description: Android managed app policies.
       operationId: deviceAppManagement_GetAndroidManagedAppProtections
       parameters:
         - name: androidManagedAppProtection-id
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
@@ -455,6 +458,7 @@ paths:
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
@@ -481,12 +485,14 @@ paths:
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -500,12 +506,14 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_ListApps
       parameters:
         - name: androidManagedAppProtection-id
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
@@ -576,6 +584,7 @@ paths:
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
@@ -601,12 +610,14 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_GetApps
       parameters:
         - name: androidManagedAppProtection-id
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
@@ -614,6 +625,7 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
@@ -663,6 +675,7 @@ paths:
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
@@ -670,6 +683,7 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
@@ -696,6 +710,7 @@ paths:
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
@@ -703,12 +718,14 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -722,12 +739,14 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.androidManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: androidManagedAppProtection-id
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
@@ -780,6 +799,7 @@ paths:
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
@@ -806,12 +826,14 @@ paths:
           in: path
           description: 'key: id of androidManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -825,6 +847,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get defaultManagedAppProtections from deviceAppManagement
+      description: Default managed app policies.
       operationId: deviceAppManagement_ListDefaultManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1035,12 +1058,14 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get defaultManagedAppProtections from deviceAppManagement
+      description: Default managed app policies.
       operationId: deviceAppManagement_GetDefaultManagedAppProtections
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
@@ -1143,6 +1168,7 @@ paths:
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
@@ -1169,12 +1195,14 @@ paths:
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1188,12 +1216,14 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_ListApps
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
@@ -1264,6 +1294,7 @@ paths:
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
@@ -1289,12 +1320,14 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_GetApps
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
@@ -1302,6 +1335,7 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
@@ -1351,6 +1385,7 @@ paths:
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
@@ -1358,6 +1393,7 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
@@ -1384,6 +1420,7 @@ paths:
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
@@ -1391,12 +1428,14 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1410,12 +1449,14 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.defaultManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
@@ -1468,6 +1509,7 @@ paths:
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
@@ -1494,12 +1536,14 @@ paths:
           in: path
           description: 'key: id of defaultManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1513,6 +1557,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get iosManagedAppProtections from deviceAppManagement
+      description: iOS managed app policies.
       operationId: deviceAppManagement_ListIosManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1713,12 +1758,14 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get iosManagedAppProtections from deviceAppManagement
+      description: iOS managed app policies.
       operationId: deviceAppManagement_GetIosManagedAppProtections
       parameters:
         - name: iosManagedAppProtection-id
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
@@ -1823,6 +1870,7 @@ paths:
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
@@ -1849,12 +1897,14 @@ paths:
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1868,12 +1918,14 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_ListApps
       parameters:
         - name: iosManagedAppProtection-id
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
@@ -1944,6 +1996,7 @@ paths:
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
@@ -1969,12 +2022,14 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_GetApps
       parameters:
         - name: iosManagedAppProtection-id
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
@@ -1982,6 +2037,7 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
@@ -2031,6 +2087,7 @@ paths:
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
@@ -2038,6 +2095,7 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
@@ -2064,6 +2122,7 @@ paths:
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
@@ -2071,12 +2130,14 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2090,12 +2151,14 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.iosManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
@@ -2148,6 +2211,7 @@ paths:
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
@@ -2174,12 +2238,14 @@ paths:
           in: path
           description: 'key: id of iosManagedAppProtection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2193,6 +2259,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Get managedAppPolicies from deviceAppManagement
+      description: Managed app policies.
       operationId: deviceAppManagement_ListManagedAppPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2288,12 +2355,14 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Get managedAppPolicies from deviceAppManagement
+      description: Managed app policies.
       operationId: deviceAppManagement_GetManagedAppPolicies
       parameters:
         - name: managedAppPolicy-id
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
@@ -2349,6 +2418,7 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
@@ -2375,12 +2445,14 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2400,6 +2472,7 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
@@ -2428,6 +2501,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get managedAppRegistrations from deviceAppManagement
+      description: The managed app registrations.
       operationId: deviceAppManagement_ListManagedAppRegistrations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2550,12 +2624,14 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get managedAppRegistrations from deviceAppManagement
+      description: The managed app registrations.
       operationId: deviceAppManagement_GetManagedAppRegistrations
       parameters:
         - name: managedAppRegistration-id
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -2634,6 +2710,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -2660,12 +2737,14 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2679,12 +2758,14 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
+      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_ListAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -2764,6 +2845,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -2789,12 +2871,14 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
+      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_GetAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -2802,6 +2886,7 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
@@ -2857,6 +2942,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -2864,6 +2950,7 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
@@ -2890,6 +2977,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -2897,12 +2985,14 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2922,6 +3012,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -2929,6 +3020,7 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
@@ -2957,12 +3049,14 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
+      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_ListIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3042,6 +3136,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3067,12 +3162,14 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
+      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_GetIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3080,6 +3177,7 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
@@ -3135,6 +3233,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3142,6 +3241,7 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
@@ -3168,6 +3268,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3175,12 +3276,14 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3200,6 +3303,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3207,6 +3311,7 @@ paths:
           in: path
           description: 'key: id of managedAppPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppPolicy
@@ -3235,12 +3340,14 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
+      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_ListOperations
       parameters:
         - name: managedAppRegistration-id
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3317,6 +3424,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3342,12 +3450,14 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
+      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_GetOperations
       parameters:
         - name: managedAppRegistration-id
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3355,6 +3465,7 @@ paths:
           in: path
           description: 'key: id of managedAppOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppOperation
@@ -3406,6 +3517,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3413,6 +3525,7 @@ paths:
           in: path
           description: 'key: id of managedAppOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppOperation
@@ -3439,6 +3552,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -3446,12 +3560,14 @@ paths:
           in: path
           description: 'key: id of managedAppOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3490,6 +3606,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Get managedAppStatuses from deviceAppManagement
+      description: The managed app statuses.
       operationId: deviceAppManagement_ListManagedAppStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3576,12 +3693,14 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Get managedAppStatuses from deviceAppManagement
+      description: The managed app statuses.
       operationId: deviceAppManagement_GetManagedAppStatuses
       parameters:
         - name: managedAppStatus-id
           in: path
           description: 'key: id of managedAppStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppStatus
@@ -3631,6 +3750,7 @@ paths:
           in: path
           description: 'key: id of managedAppStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppStatus
@@ -3657,12 +3777,14 @@ paths:
           in: path
           description: 'key: id of managedAppStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3676,6 +3798,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get managedEBooks from deviceAppManagement
+      description: The Managed eBook.
       operationId: deviceAppManagement_ListManagedEBooks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3791,12 +3914,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get managedEBooks from deviceAppManagement
+      description: The Managed eBook.
       operationId: deviceAppManagement_GetManagedEBooks
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -3880,6 +4005,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -3906,12 +4032,14 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3925,12 +4053,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
+      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListAssignments
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4001,6 +4131,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4026,12 +4157,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
+      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetAssignments
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4039,6 +4172,7 @@ paths:
           in: path
           description: 'key: id of managedEBookAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBookAssignment
@@ -4088,6 +4222,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4095,6 +4230,7 @@ paths:
           in: path
           description: 'key: id of managedEBookAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBookAssignment
@@ -4121,6 +4257,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4128,12 +4265,14 @@ paths:
           in: path
           description: 'key: id of managedEBookAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBookAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4147,12 +4286,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4241,6 +4382,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4266,12 +4408,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4279,6 +4423,7 @@ paths:
           in: path
           description: 'key: id of deviceInstallState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceInstallState
@@ -4334,6 +4479,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4341,6 +4487,7 @@ paths:
           in: path
           description: 'key: id of deviceInstallState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceInstallState
@@ -4367,6 +4514,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4374,12 +4522,14 @@ paths:
           in: path
           description: 'key: id of deviceInstallState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceInstallState
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4393,12 +4543,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get installSummary from deviceAppManagement
+      description: Mobile App Install Summary.
       operationId: deviceAppManagement.managedEBooks_GetInstallSummary
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4452,6 +4604,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4478,12 +4631,14 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4503,6 +4658,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4531,12 +4687,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListUserStateSummary
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4615,6 +4773,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4640,12 +4799,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetUserStateSummary
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4653,6 +4814,7 @@ paths:
           in: path
           description: 'key: id of userInstallStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
@@ -4712,6 +4874,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4719,6 +4882,7 @@ paths:
           in: path
           description: 'key: id of userInstallStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
@@ -4745,6 +4909,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4752,12 +4917,14 @@ paths:
           in: path
           description: 'key: id of userInstallStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4771,12 +4938,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_ListDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4784,6 +4953,7 @@ paths:
           in: path
           description: 'key: id of userInstallStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
@@ -4872,6 +5042,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4879,6 +5050,7 @@ paths:
           in: path
           description: 'key: id of userInstallStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
@@ -4904,12 +5076,14 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_GetDeviceStates
       parameters:
         - name: managedEBook-id
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4917,6 +5091,7 @@ paths:
           in: path
           description: 'key: id of userInstallStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
@@ -4924,6 +5099,7 @@ paths:
           in: path
           description: 'key: id of deviceInstallState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceInstallState
@@ -4979,6 +5155,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -4986,6 +5163,7 @@ paths:
           in: path
           description: 'key: id of userInstallStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
@@ -4993,6 +5171,7 @@ paths:
           in: path
           description: 'key: id of deviceInstallState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceInstallState
@@ -5019,6 +5198,7 @@ paths:
           in: path
           description: 'key: id of managedEBook'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
@@ -5026,6 +5206,7 @@ paths:
           in: path
           description: 'key: id of userInstallStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
@@ -5033,12 +5214,14 @@ paths:
           in: path
           description: 'key: id of deviceInstallState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceInstallState
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5052,6 +5235,7 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_ListMdmWindowsInformationProtectionPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5219,12 +5403,14 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_GetMdmWindowsInformationProtectionPolicies
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
           in: path
           description: 'key: id of mdmWindowsInformationProtectionPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mdmWindowsInformationProtectionPolicy
@@ -5318,6 +5504,7 @@ paths:
           in: path
           description: 'key: id of mdmWindowsInformationProtectionPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mdmWindowsInformationProtectionPolicy
@@ -5344,12 +5531,14 @@ paths:
           in: path
           description: 'key: id of mdmWindowsInformationProtectionPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mdmWindowsInformationProtectionPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5363,6 +5552,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncMicrosoftStoreForBusinessApps
+      description: Syncs Intune account with Microsoft Store For Business
       operationId: deviceAppManagement_syncMicrosoftStoreGraphFPreBusinessApps
       responses:
         '204':
@@ -5375,6 +5565,7 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Get mobileAppCategories from deviceAppManagement
+      description: The mobile app categories.
       operationId: deviceAppManagement_ListMobileAppCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5461,12 +5652,14 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Get mobileAppCategories from deviceAppManagement
+      description: The mobile app categories.
       operationId: deviceAppManagement_GetMobileAppCategories
       parameters:
         - name: mobileAppCategory-id
           in: path
           description: 'key: id of mobileAppCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileAppCategory
@@ -5516,6 +5709,7 @@ paths:
           in: path
           description: 'key: id of mobileAppCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileAppCategory
@@ -5542,12 +5736,14 @@ paths:
           in: path
           description: 'key: id of mobileAppCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileAppCategory
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5561,6 +5757,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get mobileAppConfigurations from deviceAppManagement
+      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_ListMobileAppConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5669,12 +5866,14 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get mobileAppConfigurations from deviceAppManagement
+      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_GetMobileAppConfigurations
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -5761,6 +5960,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -5787,12 +5987,14 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5806,12 +6008,14 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_ListAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -5879,6 +6083,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -5904,12 +6109,14 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_GetAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -5917,6 +6124,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfigurationAssignment
@@ -5965,6 +6173,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -5972,6 +6181,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfigurationAssignment
@@ -5998,6 +6208,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6005,12 +6216,14 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfigurationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6024,12 +6237,14 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_ListDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6115,6 +6330,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6140,12 +6356,14 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6153,6 +6371,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfigurationDeviceStatus
@@ -6207,6 +6426,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6214,6 +6434,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfigurationDeviceStatus
@@ -6240,6 +6461,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6247,12 +6469,14 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfigurationDeviceStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6266,12 +6490,14 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatusSummary from deviceAppManagement
+      description: App configuration device status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6326,6 +6552,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6352,12 +6579,14 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6377,6 +6606,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6405,12 +6635,14 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_ListUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6490,6 +6722,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6515,12 +6748,14 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6528,6 +6763,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfigurationUserStatus
@@ -6580,6 +6816,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6587,6 +6824,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfigurationUserStatus
@@ -6613,6 +6851,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6620,12 +6859,14 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfigurationUserStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6639,12 +6880,14 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatusSummary from deviceAppManagement
+      description: App configuration user status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6699,6 +6942,7 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
@@ -6725,12 +6969,14 @@ paths:
           in: path
           description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6744,6 +6990,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get mobileApps from deviceAppManagement
+      description: The mobile apps.
       operationId: deviceAppManagement_ListMobileApps
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6867,12 +7114,14 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get mobileApps from deviceAppManagement
+      description: The mobile apps.
       operationId: deviceAppManagement_GetMobileApps
       parameters:
         - name: mobileApp-id
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -6948,6 +7197,7 @@ paths:
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -6974,12 +7224,14 @@ paths:
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6993,12 +7245,14 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListAssignments
       parameters:
         - name: mobileApp-id
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -7072,6 +7326,7 @@ paths:
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -7097,12 +7352,14 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetAssignments
       parameters:
         - name: mobileApp-id
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -7110,6 +7367,7 @@ paths:
           in: path
           description: 'key: id of mobileAppAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileAppAssignment
@@ -7160,6 +7418,7 @@ paths:
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -7167,6 +7426,7 @@ paths:
           in: path
           description: 'key: id of mobileAppAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileAppAssignment
@@ -7193,6 +7453,7 @@ paths:
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -7200,12 +7461,14 @@ paths:
           in: path
           description: 'key: id of mobileAppAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileAppAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7219,12 +7482,14 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get categories from deviceAppManagement
+      description: The list of categories for this app.
       operationId: deviceAppManagement.mobileApps_ListCategories
       parameters:
         - name: mobileApp-id
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -7290,12 +7555,14 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get categories from deviceAppManagement
+      description: The list of categories for this app.
       operationId: deviceAppManagement.mobileApps_GetCategories
       parameters:
         - name: mobileApp-id
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -7303,6 +7570,7 @@ paths:
           in: path
           description: 'key: id of mobileAppCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileAppCategory
@@ -7353,6 +7621,7 @@ paths:
           in: path
           description: 'key: id of mobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
@@ -7381,6 +7650,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get targetedManagedAppConfigurations from deviceAppManagement
+      description: Targeted managed app configurations.
       operationId: deviceAppManagement_ListTargetedManagedAppConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7491,12 +7761,14 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get targetedManagedAppConfigurations from deviceAppManagement
+      description: Targeted managed app configurations.
       operationId: deviceAppManagement_GetTargetedManagedAppConfigurations
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7575,6 +7847,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7601,12 +7874,14 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7620,12 +7895,14 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_ListApps
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7696,6 +7973,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7721,12 +7999,14 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetApps
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7734,6 +8014,7 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
@@ -7783,6 +8064,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7790,6 +8072,7 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
@@ -7816,6 +8099,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7823,12 +8107,14 @@ paths:
           in: path
           description: 'key: id of managedMobileApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedMobileApp
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7842,12 +8128,14 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_ListAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7915,6 +8203,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7940,12 +8229,14 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -7953,6 +8244,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppPolicyAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppPolicyAssignment
@@ -8001,6 +8293,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -8008,6 +8301,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppPolicyAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppPolicyAssignment
@@ -8034,6 +8328,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -8041,12 +8336,14 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppPolicyAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppPolicyAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8060,12 +8357,14 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetDeploymentSummary
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -8118,6 +8417,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -8144,12 +8444,14 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8169,6 +8471,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -8203,6 +8506,7 @@ paths:
           in: path
           description: 'key: id of targetedManagedAppConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
@@ -8233,6 +8537,7 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Get vppTokens from deviceAppManagement
+      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_ListVppTokens
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8346,12 +8651,14 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Get vppTokens from deviceAppManagement
+      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_GetVppTokens
       parameters:
         - name: vppToken-id
           in: path
           description: 'key: id of vppToken'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: vppToken
@@ -8413,6 +8720,7 @@ paths:
           in: path
           description: 'key: id of vppToken'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: vppToken
@@ -8439,12 +8747,14 @@ paths:
           in: path
           description: 'key: id of vppToken'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: vppToken
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8458,12 +8768,14 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncLicenses
+      description: Syncs licenses associated with a specific appleVolumePurchaseProgramToken
       operationId: deviceAppManagement.vppTokens_syncLicenses
       parameters:
         - name: vppToken-id
           in: path
           description: 'key: id of vppToken'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: vppToken
@@ -8482,6 +8794,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Get windowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_ListWindowsInformationProtectionPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8685,12 +8998,14 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Get windowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_GetWindowsInformationProtectionPolicies
       parameters:
         - name: windowsInformationProtectionPolicy-id
           in: path
           description: 'key: id of windowsInformationProtectionPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionPolicy
@@ -8796,6 +9111,7 @@ paths:
           in: path
           description: 'key: id of windowsInformationProtectionPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionPolicy
@@ -8822,12 +9138,14 @@ paths:
           in: path
           description: 'key: id of windowsInformationProtectionPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionPolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8841,12 +9159,14 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
+      description: The list of troubleshooting events for this user.
       operationId: users_ListDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8917,6 +9237,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8942,12 +9263,14 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
+      description: The list of troubleshooting events for this user.
       operationId: users_GetDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8955,6 +9278,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementTroubleshootingEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTroubleshootingEvent
@@ -9004,6 +9328,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9011,6 +9336,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementTroubleshootingEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTroubleshootingEvent
@@ -9037,6 +9363,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9044,12 +9371,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementTroubleshootingEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTroubleshootingEvent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9063,12 +9392,14 @@ paths:
       tags:
         - users.managedAppRegistration
       summary: Get managedAppRegistrations from users
+      description: Zero or more managed app registrations that belong to the user.
       operationId: users_ListManagedAppRegistrations
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9170,12 +9501,14 @@ paths:
       tags:
         - users.managedAppRegistration
       summary: Get managedAppRegistrations from users
+      description: Zero or more managed app registrations that belong to the user.
       operationId: users_GetManagedAppRegistrations
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9183,6 +9516,7 @@ paths:
           in: path
           description: 'key: id of managedAppRegistration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
@@ -9259,12 +9593,14 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDevices from users
+      description: The managed devices associated with the user.
       operationId: users_ListManagedDevices
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9488,6 +9824,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9513,12 +9850,14 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDevices from users
+      description: The managed devices associated with the user.
       operationId: users_GetManagedDevices
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9526,6 +9865,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -9682,6 +10022,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9689,6 +10030,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -9715,6 +10057,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9722,12 +10065,14 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9741,12 +10086,14 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCategory from users
+      description: Device category
       operationId: users.managedDevices_GetDeviceCategory
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9754,6 +10101,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -9803,6 +10151,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9810,6 +10159,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -9836,6 +10186,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9843,12 +10194,14 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9862,12 +10215,14 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
+      description: Device compliance policy states for this device.
       operationId: users.managedDevices_ListDeviceCompliancePolicyStates
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9875,6 +10230,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -9957,6 +10313,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9964,6 +10321,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -9989,12 +10347,14 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
+      description: Device compliance policy states for this device.
       operationId: users.managedDevices_GetDeviceCompliancePolicyStates
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10002,6 +10362,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -10009,6 +10370,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicyState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicyState
@@ -10062,6 +10424,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10069,6 +10432,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -10076,6 +10440,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicyState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicyState
@@ -10102,6 +10467,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10109,6 +10475,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -10116,12 +10483,14 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicyState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicyState
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10135,12 +10504,14 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
+      description: Device configuration states for this device.
       operationId: users.managedDevices_ListDeviceConfigurationStates
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10148,6 +10519,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -10230,6 +10602,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10237,6 +10610,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -10262,12 +10636,14 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
+      description: Device configuration states for this device.
       operationId: users.managedDevices_GetDeviceConfigurationStates
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10275,6 +10651,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -10282,6 +10659,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationState
@@ -10335,6 +10713,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10342,6 +10721,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -10349,6 +10729,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationState
@@ -10375,6 +10756,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10382,6 +10764,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -10389,12 +10772,14 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationState
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10509,11 +10894,11 @@ components:
           properties:
             customBrowserDisplayName:
               type: string
-              description: Friendly name of the preferred custom browser to open weblink on Android.
+              description: 'Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             customBrowserPackageId:
               type: string
-              description: Unique identifier of a custom browser to open weblink on Android.
+              description: 'Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             deployedAppCount:
               maximum: 2147483647
@@ -10659,7 +11044,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppDataEncryptionType'
             customBrowserProtocol:
               type: string
-              description: A custom browser protocol to open weblink on iOS.
+              description: 'A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             deployedAppCount:
               maximum: 2147483647
@@ -13994,6 +14379,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -14002,6 +14389,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -14009,18 +14398,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

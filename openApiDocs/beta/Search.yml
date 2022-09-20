@@ -200,6 +200,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -288,6 +289,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -314,12 +316,14 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -339,6 +343,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -411,6 +416,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -442,6 +448,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -449,6 +456,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -506,6 +514,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -513,6 +522,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -539,6 +549,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -546,12 +557,14 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -565,12 +578,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_ListMembers
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -578,6 +593,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -645,6 +661,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -652,6 +669,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -677,12 +695,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_GetMembers
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -690,6 +710,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -697,6 +718,7 @@ paths:
           in: path
           description: 'key: id of identity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: identity
@@ -745,6 +767,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -752,6 +775,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -759,6 +783,7 @@ paths:
           in: path
           description: 'key: id of identity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: identity
@@ -785,6 +810,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -792,6 +818,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -799,12 +826,14 @@ paths:
           in: path
           description: 'key: id of identity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: identity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -824,6 +853,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -899,6 +929,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -930,6 +961,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -937,6 +969,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -997,6 +1030,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1004,6 +1038,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1030,6 +1065,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1037,12 +1073,14 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1056,12 +1094,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
+      description: Write-only property. Returns results.
       operationId: external.connections.items_ListActivities
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1069,6 +1109,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1141,6 +1182,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1148,6 +1190,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1173,12 +1216,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
+      description: Write-only property. Returns results.
       operationId: external.connections.items_GetActivities
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1186,6 +1231,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1193,6 +1239,7 @@ paths:
           in: path
           description: 'key: id of externalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalActivity
@@ -1251,6 +1298,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1258,6 +1306,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1265,6 +1314,7 @@ paths:
           in: path
           description: 'key: id of externalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalActivity
@@ -1291,6 +1341,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1298,6 +1349,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1305,12 +1357,14 @@ paths:
           in: path
           description: 'key: id of externalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalActivity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1324,12 +1378,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get performedBy from external
+      description: Represents an identity used to identify who is responsible for the activity.
       operationId: external.connections.items.activities_GetPerformedGraphBPre
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1337,6 +1393,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1344,6 +1401,7 @@ paths:
           in: path
           description: 'key: id of externalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalActivity
@@ -1393,6 +1451,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1400,6 +1459,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1446,6 +1506,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1516,6 +1577,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1547,6 +1609,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1554,6 +1617,7 @@ paths:
           in: path
           description: 'key: id of connectionOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectionOperation
@@ -1603,6 +1667,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1610,6 +1675,7 @@ paths:
           in: path
           description: 'key: id of connectionOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectionOperation
@@ -1636,6 +1702,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1643,12 +1710,14 @@ paths:
           in: path
           description: 'key: id of connectionOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectionOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1668,6 +1737,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1706,6 +1776,59 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.externalConnection
+      summary: Update the navigation property quota in external
+      operationId: external.connections_UpdateQuota
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.externalConnection
+      summary: Delete navigation property quota for external
+      operationId: external.connections_DeleteQuota
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/external/connections/{externalConnection-id}/schema':
     get:
       tags:
@@ -1717,6 +1840,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1766,6 +1890,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1792,12 +1917,14 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1885,6 +2012,7 @@ paths:
       tags:
         - search.acronym
       summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
       operationId: search_ListAcronyms
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1986,12 +2114,14 @@ paths:
       tags:
         - search.acronym
       summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
       operationId: search_GetAcronyms
       parameters:
         - name: acronym-id
           in: path
           description: 'key: id of acronym'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: acronym
@@ -2046,6 +2176,7 @@ paths:
           in: path
           description: 'key: id of acronym'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: acronym
@@ -2072,12 +2203,14 @@ paths:
           in: path
           description: 'key: id of acronym'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: acronym
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2091,6 +2224,7 @@ paths:
       tags:
         - search.bookmark
       summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_ListBookmarks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2219,12 +2353,14 @@ paths:
       tags:
         - search.bookmark
       summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_GetBookmarks
       parameters:
         - name: bookmark-id
           in: path
           description: 'key: id of bookmark'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookmark
@@ -2288,6 +2424,7 @@ paths:
           in: path
           description: 'key: id of bookmark'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookmark
@@ -2314,12 +2451,14 @@ paths:
           in: path
           description: 'key: id of bookmark'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookmark
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2371,6 +2510,7 @@ paths:
       tags:
         - search.qna
       summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
       operationId: search_ListQnas
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2493,12 +2633,14 @@ paths:
       tags:
         - search.qna
       summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
       operationId: search_GetQnas
       parameters:
         - name: qna-id
           in: path
           description: 'key: id of qna'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: qna
@@ -2560,6 +2702,7 @@ paths:
           in: path
           description: 'key: id of qna'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: qna
@@ -2586,12 +2729,14 @@ paths:
           in: path
           description: 'key: id of qna'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: qna
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4103,6 +4248,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -4111,6 +4258,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -4118,18 +4267,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

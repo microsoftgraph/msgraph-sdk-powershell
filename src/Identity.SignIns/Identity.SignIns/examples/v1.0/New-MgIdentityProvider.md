@@ -1,18 +1,29 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgIdentityProvider Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "microsoft.graph.appleManagedIdentityProvider"
+	DisplayName = "Sign in with Apple"
+	DeveloperId = "UBF8T346G9"
+	ServiceId = "com.microsoft.rts.b2c.test.client"
+	KeyId = "99P6D879C4"
+	CertificateData = "******"
+}
+New-MgIdentityProvider -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the New-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the New-MgIdentityProvider Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "microsoft.graph.socialIdentityProvider"
+	DisplayName = "Login with Amazon"
+	IdentityProviderType = "Amazon"
+	ClientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
+	ClientSecret = "000000000000"
+}
+New-MgIdentityProvider -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

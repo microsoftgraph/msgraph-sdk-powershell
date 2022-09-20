@@ -1,18 +1,25 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgUserEvent Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	OriginalStartTimeZone = "originalStartTimeZone-value"
+	OriginalEndTimeZone = "originalEndTimeZone-value"
+	ResponseStatus = @{
+		Response = ""
+		Time = [System.DateTime]::Parse("datetime-value")
+	}
+	Recurrence = $null
+	ReminderMinutesBeforeStart = 99
+	IsOnlineMeeting = $true
+	OnlineMeetingProvider = "teamsForBusiness"
+	IsReminderOn = $true
+	HideAttendees = $false
+	Categories = @(
+		"Red category"
+	)
+}
+# A UPN can also be used as -UserId.
+Update-MgUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

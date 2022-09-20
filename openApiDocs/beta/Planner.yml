@@ -11,12 +11,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get planner from groups
+      description: Selective Planner services available to the group. Read-only. Nullable.
       operationId: groups_GetPlanner
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -71,6 +73,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -97,12 +100,14 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -116,12 +121,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plans from groups
+      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       operationId: groups.planner_ListPlans
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -210,6 +217,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -235,12 +243,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plans from groups
+      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       operationId: groups.planner_GetPlans
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -248,6 +258,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -323,6 +334,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -330,6 +342,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -356,6 +369,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -363,12 +377,14 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -382,12 +398,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get buckets from groups
+      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_ListBuckets
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -395,6 +413,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -470,6 +489,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -477,6 +497,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -502,12 +523,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get buckets from groups
+      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_GetBuckets
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -515,6 +538,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -522,6 +546,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -581,6 +606,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -588,6 +614,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -595,6 +622,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -621,6 +649,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -628,6 +657,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -635,12 +665,14 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -654,12 +686,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: groups.planner.plans.buckets_ListTasks
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -667,6 +701,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -674,6 +709,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -812,6 +848,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -819,6 +856,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -826,6 +864,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -851,12 +890,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: groups.planner.plans.buckets_GetTasks
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -864,6 +905,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -871,6 +913,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -878,6 +921,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -984,6 +1028,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -991,6 +1036,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -998,6 +1044,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1005,6 +1052,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -1031,6 +1079,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1038,6 +1087,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1045,6 +1095,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1052,12 +1103,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1071,12 +1124,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get assignedToTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1084,6 +1139,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1091,6 +1147,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1098,6 +1155,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -1147,6 +1205,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1154,6 +1213,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1161,6 +1221,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1168,6 +1229,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -1194,6 +1256,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1201,6 +1264,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1208,6 +1272,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1215,12 +1280,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1234,12 +1301,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get bucketTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1247,6 +1316,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1254,6 +1324,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1261,6 +1332,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -1309,6 +1381,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1316,6 +1389,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1323,6 +1397,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1330,6 +1405,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -1356,6 +1432,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1363,6 +1440,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1370,6 +1448,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1377,12 +1456,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1396,12 +1477,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
+      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.buckets.tasks_GetDetails
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1409,6 +1492,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1416,6 +1500,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1423,6 +1508,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -1474,6 +1560,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1481,6 +1568,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1488,6 +1576,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1495,6 +1584,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -1521,6 +1611,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1528,6 +1619,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1535,6 +1627,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1542,12 +1635,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1561,12 +1656,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get progressTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1574,6 +1671,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1581,6 +1679,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1588,6 +1687,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -1636,6 +1736,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1643,6 +1744,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1650,6 +1752,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1657,6 +1760,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -1683,6 +1787,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1690,6 +1795,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1697,6 +1803,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -1704,12 +1811,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1723,12 +1832,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
+      description: Additional details about the plan. Read-only. Nullable.
       operationId: groups.planner.plans_GetDetails
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1736,6 +1847,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1786,6 +1898,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1793,6 +1906,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1819,6 +1933,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1826,12 +1941,14 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1845,12 +1962,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
+      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_ListTasks
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -1858,6 +1977,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -1996,6 +2116,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2003,6 +2124,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2028,12 +2150,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
+      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: groups.planner.plans_GetTasks
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2041,6 +2165,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2048,6 +2173,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2150,6 +2276,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2157,6 +2284,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2164,6 +2292,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2190,6 +2319,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2197,6 +2327,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2204,12 +2335,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2223,12 +2356,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get assignedToTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: groups.planner.plans.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2236,6 +2371,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2243,6 +2379,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2292,6 +2429,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2299,6 +2437,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2306,6 +2445,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2332,6 +2472,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2339,6 +2480,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2346,12 +2488,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2365,12 +2509,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get bucketTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: groups.planner.plans.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2378,6 +2524,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2385,6 +2532,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2433,6 +2581,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2440,6 +2589,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2447,6 +2597,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2473,6 +2624,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2480,6 +2632,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2487,12 +2640,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2506,12 +2661,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
+      description: Read-only. Nullable. Additional details about the task.
       operationId: groups.planner.plans.tasks_GetDetails
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2519,6 +2676,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2526,6 +2684,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2577,6 +2736,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2584,6 +2744,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2591,6 +2752,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2617,6 +2779,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2624,6 +2787,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2631,12 +2795,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2650,12 +2816,14 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get progressTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: groups.planner.plans.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: group-id
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2663,6 +2831,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2670,6 +2839,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2718,6 +2888,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2725,6 +2896,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2732,6 +2904,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -2758,6 +2931,7 @@ paths:
           in: path
           description: 'key: id of group'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: group
@@ -2765,6 +2939,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -2772,12 +2947,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2867,6 +3044,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get buckets from planner
+      description: Read-only. Nullable. Returns a collection of the specified buckets
       operationId: planner_ListBuckets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2958,12 +3136,14 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get buckets from planner
+      description: Read-only. Nullable. Returns a collection of the specified buckets
       operationId: planner_GetBuckets
       parameters:
         - name: plannerBucket-id
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3021,6 +3201,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3047,12 +3228,14 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3066,12 +3249,14 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.buckets_ListTasks
       parameters:
         - name: plannerBucket-id
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3210,6 +3395,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3235,12 +3421,14 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.buckets_GetTasks
       parameters:
         - name: plannerBucket-id
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3248,6 +3436,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3346,6 +3535,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3353,6 +3543,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3379,6 +3570,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3386,12 +3578,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3405,12 +3599,14 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3418,6 +3614,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3467,6 +3664,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3474,6 +3672,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3500,6 +3699,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3507,12 +3707,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3526,12 +3728,14 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3539,6 +3743,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3587,6 +3792,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3594,6 +3800,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3620,6 +3827,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3627,12 +3835,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3646,12 +3856,14 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.buckets.tasks_GetDetails
       parameters:
         - name: plannerBucket-id
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3659,6 +3871,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3710,6 +3923,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3717,6 +3931,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3743,6 +3958,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3750,12 +3966,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3769,12 +3987,14 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3782,6 +4002,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3830,6 +4051,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3837,6 +4059,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -3863,6 +4086,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -3870,12 +4094,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3889,6 +4115,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plans from planner
+      description: Read-only. Nullable. Returns a collection of the specified plans
       operationId: planner_ListPlans
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3993,12 +4220,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plans from planner
+      description: Read-only. Nullable. Returns a collection of the specified plans
       operationId: planner_GetPlans
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4071,6 +4300,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4097,12 +4327,14 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4116,12 +4348,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get buckets from planner
+      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: planner.plans_ListBuckets
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4197,6 +4431,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4222,12 +4457,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get buckets from planner
+      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: planner.plans_GetBuckets
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4235,6 +4472,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4293,6 +4531,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4300,6 +4539,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4326,6 +4566,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4333,12 +4574,14 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4352,12 +4595,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.plans.buckets_ListTasks
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4365,6 +4610,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4503,6 +4749,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4510,6 +4757,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4535,12 +4783,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: planner.plans.buckets_GetTasks
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4548,6 +4798,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4555,6 +4806,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -4657,6 +4909,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4664,6 +4917,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4671,6 +4925,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -4697,6 +4952,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4704,6 +4960,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4711,12 +4968,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4730,12 +4989,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4743,6 +5004,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4750,6 +5012,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -4799,6 +5062,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4806,6 +5070,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4813,6 +5078,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -4839,6 +5105,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4846,6 +5113,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4853,12 +5121,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4872,12 +5142,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4885,6 +5157,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4892,6 +5165,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -4940,6 +5214,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4947,6 +5222,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4954,6 +5230,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -4980,6 +5257,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -4987,6 +5265,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -4994,12 +5273,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5013,12 +5294,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.buckets.tasks_GetDetails
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5026,6 +5309,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -5033,6 +5317,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5084,6 +5369,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5091,6 +5377,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -5098,6 +5385,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5124,6 +5412,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5131,6 +5420,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -5138,12 +5428,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5157,12 +5449,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5170,6 +5464,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -5177,6 +5472,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5225,6 +5521,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5232,6 +5529,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -5239,6 +5537,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5265,6 +5564,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5272,6 +5572,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -5279,12 +5580,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5298,12 +5601,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
+      description: Additional details about the plan. Read-only. Nullable.
       operationId: planner.plans_GetDetails
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5354,6 +5659,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5380,12 +5686,14 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5399,12 +5707,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
+      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: planner.plans_ListTasks
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5543,6 +5853,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5568,12 +5879,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
+      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: planner.plans_GetTasks
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5581,6 +5894,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5679,6 +5993,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5686,6 +6001,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5712,6 +6028,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5719,12 +6036,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5738,12 +6057,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.plans.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5751,6 +6072,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5800,6 +6122,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5807,6 +6130,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5833,6 +6157,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5840,12 +6165,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5859,12 +6186,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.plans.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5872,6 +6201,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5920,6 +6250,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5927,6 +6258,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -5953,6 +6285,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5960,12 +6293,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5979,12 +6314,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.plans.tasks_GetDetails
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -5992,6 +6329,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -6043,6 +6381,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -6050,6 +6389,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -6076,6 +6416,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -6083,12 +6424,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6102,12 +6445,14 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.plans.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -6115,6 +6460,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -6163,6 +6509,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -6170,6 +6517,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -6196,6 +6544,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -6203,12 +6552,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6222,6 +6573,7 @@ paths:
       tags:
         - planner.plannerRoster
       summary: Get rosters from planner
+      description: Read-only. Nullable. Returns a collection of the specified rosters
       operationId: planner_ListRosters
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6306,12 +6658,14 @@ paths:
       tags:
         - planner.plannerRoster
       summary: Get rosters from planner
+      description: Read-only. Nullable. Returns a collection of the specified rosters
       operationId: planner_GetRosters
       parameters:
         - name: plannerRoster-id
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
@@ -6372,6 +6726,7 @@ paths:
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
@@ -6398,12 +6753,14 @@ paths:
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6417,12 +6774,14 @@ paths:
       tags:
         - planner.plannerRoster
       summary: Get members from planner
+      description: Retrieves the members of the plannerRoster.
       operationId: planner.rosters_ListMembers
       parameters:
         - name: plannerRoster-id
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
@@ -6496,6 +6855,7 @@ paths:
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
@@ -6521,12 +6881,14 @@ paths:
       tags:
         - planner.plannerRoster
       summary: Get members from planner
+      description: Retrieves the members of the plannerRoster.
       operationId: planner.rosters_GetMembers
       parameters:
         - name: plannerRoster-id
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
@@ -6534,6 +6896,7 @@ paths:
           in: path
           description: 'key: id of plannerRosterMember'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRosterMember
@@ -6584,6 +6947,7 @@ paths:
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
@@ -6591,6 +6955,7 @@ paths:
           in: path
           description: 'key: id of plannerRosterMember'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRosterMember
@@ -6617,6 +6982,7 @@ paths:
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
@@ -6624,12 +6990,14 @@ paths:
           in: path
           description: 'key: id of plannerRosterMember'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRosterMember
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6643,12 +7011,14 @@ paths:
       tags:
         - planner.plannerRoster
       summary: Get plans from planner
+      description: Retrieves the plans contained by the plannerRoster.
       operationId: planner.rosters_ListPlans
       parameters:
         - name: plannerRoster-id
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
@@ -6732,12 +7102,14 @@ paths:
       tags:
         - planner.plannerRoster
       summary: Get plans from planner
+      description: Retrieves the plans contained by the plannerRoster.
       operationId: planner.rosters_GetPlans
       parameters:
         - name: plannerRoster-id
           in: path
           description: 'key: id of plannerRoster'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerRoster
@@ -6745,6 +7117,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -6815,6 +7188,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get tasks from planner
+      description: Read-only. Nullable. Returns a collection of the specified tasks
       operationId: planner_ListTasks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6969,12 +7343,14 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get tasks from planner
+      description: Read-only. Nullable. Returns a collection of the specified tasks
       operationId: planner_GetTasks
       parameters:
         - name: plannerTask-id
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7069,6 +7445,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7095,12 +7472,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7114,12 +7493,14 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: planner.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7169,6 +7550,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7195,12 +7577,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7214,12 +7598,14 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: planner.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7268,6 +7654,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7294,12 +7681,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7313,12 +7702,14 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
       operationId: planner.tasks_GetDetails
       parameters:
         - name: plannerTask-id
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7370,6 +7761,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7396,12 +7788,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7415,12 +7809,14 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: planner.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7469,6 +7865,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -7495,12 +7892,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7514,12 +7913,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get planner from users
+      description: Selective Planner services available to the user. Read-only. Nullable.
       operationId: users_GetPlanner
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7606,6 +8007,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7632,12 +8034,14 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7657,6 +8061,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7721,6 +8126,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7752,6 +8158,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7759,6 +8166,7 @@ paths:
           in: path
           description: 'key: id of plannerDelta'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerDelta
@@ -7806,6 +8214,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7813,6 +8222,7 @@ paths:
           in: path
           description: 'key: id of plannerDelta'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerDelta
@@ -7839,6 +8249,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7846,12 +8257,14 @@ paths:
           in: path
           description: 'key: id of plannerDelta'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerDelta
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7865,12 +8278,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get favoritePlans from users
+      description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
       operationId: users.planner_ListFavoritePlans
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7954,12 +8369,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get favoritePlans from users
+      description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
       operationId: users.planner_GetFavoritePlans
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7967,6 +8384,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8043,6 +8461,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8131,6 +8550,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8162,6 +8582,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8169,6 +8590,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8244,6 +8666,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8251,6 +8674,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8277,6 +8701,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8284,12 +8709,14 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8303,12 +8730,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get buckets from users
+      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: users.planner.plans_ListBuckets
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8316,6 +8745,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8391,6 +8821,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8398,6 +8829,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8423,12 +8855,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get buckets from users
+      description: Collection of buckets in the plan. Read-only. Nullable.
       operationId: users.planner.plans_GetBuckets
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8436,6 +8870,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8443,6 +8878,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -8502,6 +8938,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8509,6 +8946,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8516,6 +8954,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -8542,6 +8981,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8549,6 +8989,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8556,12 +8997,14 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8575,12 +9018,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: users.planner.plans.buckets_ListTasks
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8588,6 +9033,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8595,6 +9041,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -8733,6 +9180,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8740,6 +9188,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8747,6 +9196,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -8772,12 +9222,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. The collection of tasks in the bucket.
       operationId: users.planner.plans.buckets_GetTasks
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8785,6 +9237,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8792,6 +9245,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -8799,6 +9253,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -8905,6 +9360,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8912,6 +9368,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8919,6 +9376,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -8926,6 +9384,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -8952,6 +9411,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -8959,6 +9419,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -8966,6 +9427,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -8973,12 +9435,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8992,12 +9456,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9005,6 +9471,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9012,6 +9479,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9019,6 +9487,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -9068,6 +9537,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9075,6 +9545,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9082,6 +9553,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9089,6 +9561,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -9115,6 +9588,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9122,6 +9596,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9129,6 +9604,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9136,12 +9612,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9155,12 +9633,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.buckets.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9168,6 +9648,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9175,6 +9656,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9182,6 +9664,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -9230,6 +9713,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9237,6 +9721,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9244,6 +9729,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9251,6 +9737,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -9277,6 +9764,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9284,6 +9772,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9291,6 +9780,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9298,12 +9788,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9317,12 +9809,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
+      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.buckets.tasks_GetDetails
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9330,6 +9824,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9337,6 +9832,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9344,6 +9840,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -9395,6 +9892,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9402,6 +9900,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9409,6 +9908,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9416,6 +9916,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -9442,6 +9943,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9449,6 +9951,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9456,6 +9959,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9463,12 +9967,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9482,12 +9988,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.buckets.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9495,6 +10003,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9502,6 +10011,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9509,6 +10019,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -9557,6 +10068,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9564,6 +10076,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9571,6 +10084,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9578,6 +10092,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -9604,6 +10119,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9611,6 +10127,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9618,6 +10135,7 @@ paths:
           in: path
           description: 'key: id of plannerBucket'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
@@ -9625,12 +10143,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9644,12 +10164,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
+      description: Additional details about the plan. Read-only. Nullable.
       operationId: users.planner.plans_GetDetails
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9657,6 +10179,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9707,6 +10230,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9714,6 +10238,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9740,6 +10265,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9747,12 +10273,14 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9766,12 +10294,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: users.planner.plans_ListTasks
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9779,6 +10309,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9917,6 +10448,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9924,6 +10456,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9949,12 +10482,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Collection of tasks in the plan. Read-only. Nullable.
       operationId: users.planner.plans_GetTasks
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -9962,6 +10497,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -9969,6 +10505,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10071,6 +10608,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10078,6 +10616,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10085,6 +10624,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10111,6 +10651,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10118,6 +10659,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10125,12 +10667,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10144,12 +10688,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.plans.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10157,6 +10703,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10164,6 +10711,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10213,6 +10761,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10220,6 +10769,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10227,6 +10777,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10253,6 +10804,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10260,6 +10812,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10267,12 +10820,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10286,12 +10841,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.plans.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10299,6 +10856,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10306,6 +10864,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10354,6 +10913,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10361,6 +10921,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10368,6 +10929,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10394,6 +10956,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10401,6 +10964,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10408,12 +10972,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10427,12 +10993,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
+      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.plans.tasks_GetDetails
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10440,6 +11008,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10447,6 +11016,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10498,6 +11068,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10505,6 +11076,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10512,6 +11084,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10538,6 +11111,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10545,6 +11119,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10552,12 +11127,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10571,12 +11148,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.plans.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10584,6 +11163,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10591,6 +11171,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10639,6 +11220,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10646,6 +11228,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10653,6 +11236,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -10679,6 +11263,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10686,6 +11271,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10693,12 +11279,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10712,12 +11300,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get recentPlans from users
+      description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
       operationId: users.planner_ListRecentPlans
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10801,12 +11391,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get recentPlans from users
+      description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
       operationId: users.planner_GetRecentPlans
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10814,6 +11406,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -10884,12 +11477,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get rosterPlans from users
+      description: Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
       operationId: users.planner_ListRosterPlans
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10973,12 +11568,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get rosterPlans from users
+      description: Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
       operationId: users.planner_GetRosterPlans
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -10986,6 +11583,7 @@ paths:
           in: path
           description: 'key: id of plannerPlan'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
@@ -11056,12 +11654,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_ListTasks
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11200,6 +11800,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11225,12 +11826,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
+      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
       operationId: users.planner_GetTasks
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11238,6 +11841,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11336,6 +11940,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11343,6 +11948,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11369,6 +11975,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11376,12 +11983,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11395,12 +12004,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: users.planner.tasks_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11408,6 +12019,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11457,6 +12069,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11464,6 +12077,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11490,6 +12104,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11497,12 +12112,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11516,12 +12133,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: users.planner.tasks_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11529,6 +12148,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11577,6 +12197,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11584,6 +12205,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11610,6 +12232,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11617,12 +12240,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11636,12 +12261,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
+      description: Read-only. Nullable. Additional details about the task.
       operationId: users.planner.tasks_GetDetails
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11649,6 +12276,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11700,6 +12328,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11707,6 +12336,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11733,6 +12363,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11740,12 +12371,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11759,12 +12392,14 @@ paths:
       tags:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: users.planner.tasks_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11772,6 +12407,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11820,6 +12456,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11827,6 +12464,7 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
@@ -11853,6 +12491,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -11860,12 +12499,14 @@ paths:
           in: path
           description: 'key: id of plannerTask'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: plannerTask
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12226,7 +12867,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             recentPlans:
               type: array
               items:
@@ -12552,11 +13192,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -12677,6 +13317,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -12685,6 +13327,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -12692,18 +13336,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

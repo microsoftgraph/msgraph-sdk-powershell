@@ -44,3 +44,4 @@ AdditionalProperties : {[@odata.context, https://graph.microsoft.com/beta/$metad
 ```
 
 This command retrieves a specified permission grant policy in Azure AD.
+
