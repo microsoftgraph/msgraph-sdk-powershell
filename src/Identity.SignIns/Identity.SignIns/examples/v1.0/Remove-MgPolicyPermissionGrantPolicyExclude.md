@@ -6,3 +6,4 @@ Remove-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId "60ba
 ```
 
 This command deletes the specified exclude configuration from the specific permission grant policy in Azure AD.
+

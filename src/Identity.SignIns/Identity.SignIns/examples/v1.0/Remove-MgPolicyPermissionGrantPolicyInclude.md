@@ -6,3 +6,4 @@ Remove-MgPolicyPermissionGrantPolicyInclude -PermissionGrantConditionSetId "084b
 ```
 
 This command deletes the specified include configuration from the specific permission grant policy in Azure AD. 
+

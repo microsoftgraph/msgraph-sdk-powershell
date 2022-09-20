@@ -1,18 +1,21 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgIdentityGovernanceTermOfUseAgreement Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	DisplayName = "Contoso ToU for guest users"
+	IsViewingBeforeAcceptanceRequired = $true
+	Files = @(
+		@{
+			FileName = "TOU.pdf"
+			Language = "en"
+			IsDefault = $true
+			FileData = @{
+				Data = [System.Text.Encoding]::ASCII.GetBytes("SGVsbG8gd29ybGQ=//truncated-binary")
+			}
+		}
+	)
+}
+New-MgIdentityGovernanceTermOfUseAgreement -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

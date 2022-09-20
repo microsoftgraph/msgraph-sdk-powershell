@@ -1,18 +1,42 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgSiteList Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteList -SiteId $siteId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgSiteList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgSiteList Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteList -SiteId $siteId -ListId $listId
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgSiteList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgSiteList Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteList -SiteId $siteId -ListId $listId
+```
+This example shows how to use the Get-MgSiteList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Get-MgSiteList Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteList -SiteId $siteId -ListId $listId -Property "id,name,lastModifiedDateTime" -ExpandProperty "columns(select=name,description),items)" 
+```
+This example shows how to use the Get-MgSiteList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 5: Using the Get-MgSiteList Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteList -SiteId $siteId -ListId $listId
+```
+This example shows how to use the Get-MgSiteList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 6: Using the Get-MgSiteList Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteList -SiteId $siteId -ListId $listId
+```
+This example shows how to use the Get-MgSiteList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
