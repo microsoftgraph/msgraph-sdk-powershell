@@ -46,6 +46,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Command | Should -Be "Get-MgEntitlementManagementAccessPackageAssignmentResourceRole"
             } | Should -Not -Throw
         }
+
         It 'Should find command using URI with query parameters' {
             {
                 $Uri = "beta/users?`$select=displayName&`$filter=identities/any(c:c/issuerAssignedId eq 'j.smith@yahoo.com')"
@@ -159,6 +160,20 @@ Describe "Find-MgGraphCommand Command" {
             It 'Should throw error when command name is invalid' {
                 $ExpectedErrorMessage = "*'New-MgInvalid' is not a valid Microsoft Graph PowerShell command.*"
                 { Find-MgGraphCommand -Command "New-MgInvalid" -ErrorAction Stop | Out-Null } | Should -Throw -ExpectedMessage $ExpectedErrorMessage }
+            
+            It 'Should find command using actual id in key segments inside parenthesis' {
+                {
+                    $ExpectedResourceUri =  @("/reports/getSharePointActivityUserCounts(period='{period}')", "/reports/getSharePointActivityUserCounts(period='{period}')")
+                    $Uri = "/reports/getSharePointActivityUserCounts(period='D3')"
+                    $MgCommand = Find-MgGraphCommand -Uri $Uri 
+                    $MgCommand | Should -HaveCount 2
+                    $MgCommand.Method | Should -Be @("GET", "GET")
+                    $MgCommand.APIVersion | Should -BeIn @("v1.0", "beta")
+                    $MgCommand.Variants | Should -Contain "Get"
+                    $MgCommand.URI | Should -Be $ExpectedResourceUri
+                    $MgCommand.Command | Should -Be @("Get-MgReportSharePointActivityUserCount", "Get-MgReportSharePointActivityUserCount")
+                } | Should -Not -Throw    
+            }
         }
     }
 }

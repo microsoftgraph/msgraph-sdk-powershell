@@ -17,6 +17,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -83,6 +84,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -109,12 +111,14 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -128,12 +132,14 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_ListShared
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -214,6 +220,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -239,12 +246,14 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_GetShared
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -252,6 +261,7 @@ paths:
           in: path
           description: 'key: id of sharedInsight'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sharedInsight
@@ -318,6 +328,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -325,6 +336,7 @@ paths:
           in: path
           description: 'key: id of sharedInsight'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sharedInsight
@@ -351,6 +363,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -358,12 +371,14 @@ paths:
           in: path
           description: 'key: id of sharedInsight'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sharedInsight
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -383,6 +398,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -390,6 +406,7 @@ paths:
           in: path
           description: 'key: id of sharedInsight'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sharedInsight
@@ -432,12 +449,14 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
+      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
       operationId: users.insights.shared_GetResource
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -445,6 +464,7 @@ paths:
           in: path
           description: 'key: id of sharedInsight'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: sharedInsight
@@ -487,12 +507,14 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_ListTrending
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -571,6 +593,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -596,12 +619,14 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_GetTrending
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -609,6 +634,7 @@ paths:
           in: path
           description: 'key: id of trending'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: trending
@@ -668,6 +694,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -675,6 +702,7 @@ paths:
           in: path
           description: 'key: id of trending'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: trending
@@ -701,6 +729,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -708,12 +737,14 @@ paths:
           in: path
           description: 'key: id of trending'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: trending
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -727,12 +758,14 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
+      description: Used for navigating to the trending document.
       operationId: users.insights.trending_GetResource
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -740,6 +773,7 @@ paths:
           in: path
           description: 'key: id of trending'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: trending
@@ -782,12 +816,14 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_ListUsed
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -863,6 +899,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -888,12 +925,14 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_GetUsed
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -901,6 +940,7 @@ paths:
           in: path
           description: 'key: id of usedInsight'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: usedInsight
@@ -959,6 +999,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -966,6 +1007,7 @@ paths:
           in: path
           description: 'key: id of usedInsight'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: usedInsight
@@ -992,6 +1034,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -999,12 +1042,14 @@ paths:
           in: path
           description: 'key: id of usedInsight'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: usedInsight
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1018,12 +1063,14 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
+      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
       operationId: users.insights.used_GetResource
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1031,6 +1078,7 @@ paths:
           in: path
           description: 'key: id of usedInsight'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: usedInsight
@@ -1073,12 +1121,14 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_ListPeople
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1188,6 +1238,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1213,12 +1264,14 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_GetPeople
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1226,6 +1279,7 @@ paths:
           in: path
           description: 'key: id of person'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: person
@@ -1280,6 +1334,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1287,6 +1342,7 @@ paths:
           in: path
           description: 'key: id of person'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: person
@@ -1313,6 +1369,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1320,12 +1377,14 @@ paths:
           in: path
           description: 'key: id of person'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: person
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1346,17 +1405,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
             trending:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
           additionalProperties:
             type: object
     microsoft.graph.sharedInsight:
@@ -1607,7 +1666,7 @@ components:
         lastModifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time.For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -1971,6 +2030,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -1979,6 +2040,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -1986,18 +2049,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

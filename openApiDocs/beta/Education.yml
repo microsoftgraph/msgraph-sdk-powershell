@@ -228,6 +228,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -336,6 +337,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -362,12 +364,14 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -381,12 +385,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignmentCategories from education
+      description: All categories associated with this class. Nullable.
       operationId: education.classes_ListAssignmentCategories
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -454,6 +460,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -479,12 +486,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignmentCategories from education
+      description: All categories associated with this class. Nullable.
       operationId: education.classes_GetAssignmentCategories
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -492,6 +501,7 @@ paths:
           in: path
           description: 'key: id of educationCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationCategory
@@ -540,6 +550,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -547,6 +558,7 @@ paths:
           in: path
           description: 'key: id of educationCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationCategory
@@ -573,6 +585,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -580,12 +593,14 @@ paths:
           in: path
           description: 'key: id of educationCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationCategory
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -605,6 +620,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -631,12 +647,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignmentDefaults from education
+      description: Specifies class-level defaults respected by new assignments created in the class.
       operationId: education.classes_GetAssignmentDefaults
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -688,6 +706,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -714,12 +733,14 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -733,12 +754,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignments from education
+      description: All assignments associated with this class. Nullable.
       operationId: education.classes_ListAssignments
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -877,6 +900,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -902,12 +926,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignments from education
+      description: All assignments associated with this class. Nullable.
       operationId: education.classes_GetAssignments
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -915,6 +941,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1019,6 +1046,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1026,6 +1054,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1052,6 +1081,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1059,12 +1089,14 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1078,12 +1110,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.classes.assignments_ListCategories
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1091,6 +1125,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1158,6 +1193,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1165,6 +1201,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1196,6 +1233,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1203,6 +1241,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1210,17 +1249,21 @@ paths:
           in: path
           description: 'key: id of educationCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationCategory
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -1234,12 +1277,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.classes.assignments_ListCategoriesGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1247,6 +1292,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1289,6 +1335,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1296,18 +1343,12 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -1325,6 +1366,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1332,6 +1374,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1364,6 +1407,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1371,6 +1415,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1395,6 +1440,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1402,6 +1448,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1426,6 +1473,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1433,6 +1481,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1451,12 +1500,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.classes.assignments_ListResources
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1464,6 +1515,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1534,6 +1586,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1541,6 +1594,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1566,12 +1620,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.classes.assignments_GetResources
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1579,6 +1635,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1586,6 +1643,7 @@ paths:
           in: path
           description: 'key: id of educationAssignmentResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignmentResource
@@ -1635,6 +1693,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1642,6 +1701,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1649,6 +1709,7 @@ paths:
           in: path
           description: 'key: id of educationAssignmentResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignmentResource
@@ -1675,6 +1736,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1682,6 +1744,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1689,12 +1752,14 @@ paths:
           in: path
           description: 'key: id of educationAssignmentResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignmentResource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1708,12 +1773,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.classes.assignments_GetRubric
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1721,6 +1788,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1777,6 +1845,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1784,6 +1853,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1810,6 +1880,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1817,12 +1888,14 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1836,12 +1909,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.classes.assignments_GetRubricGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1849,6 +1924,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -1872,6 +1948,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1879,18 +1956,12 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPutBody'
       responses:
         '204':
           description: Success
@@ -1907,6 +1978,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1914,12 +1986,14 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1933,12 +2007,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.classes.assignments_ListSubmissions
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -1946,6 +2022,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2049,6 +2126,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2056,6 +2134,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2081,12 +2160,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.classes.assignments_GetSubmissions
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2094,6 +2175,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2101,6 +2183,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2194,6 +2277,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2201,6 +2285,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2208,6 +2293,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2234,6 +2320,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2241,6 +2328,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2248,12 +2336,14 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2273,6 +2363,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2280,6 +2371,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2287,6 +2379,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2311,6 +2404,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2318,6 +2412,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2325,6 +2420,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2349,6 +2445,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2356,6 +2453,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2363,6 +2461,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2387,6 +2486,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2394,6 +2494,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2401,6 +2502,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2425,6 +2527,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2432,6 +2535,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2439,6 +2543,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2463,6 +2568,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2470,6 +2576,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2477,6 +2584,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2547,6 +2655,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2554,6 +2663,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2561,6 +2671,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2592,6 +2703,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2599,6 +2711,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2606,6 +2719,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2613,6 +2727,7 @@ paths:
           in: path
           description: 'key: id of educationOutcome'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationOutcome
@@ -2662,6 +2777,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2669,6 +2785,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2676,6 +2793,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2683,6 +2801,7 @@ paths:
           in: path
           description: 'key: id of educationOutcome'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationOutcome
@@ -2709,6 +2828,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2716,6 +2836,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2723,6 +2844,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2730,12 +2852,14 @@ paths:
           in: path
           description: 'key: id of educationOutcome'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationOutcome
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2755,6 +2879,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2762,6 +2887,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2769,6 +2895,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2839,6 +2966,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2846,6 +2974,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2853,6 +2982,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2884,6 +3014,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2891,6 +3022,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2898,6 +3030,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2905,6 +3038,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -2954,6 +3088,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -2961,6 +3096,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -2968,6 +3104,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -2975,6 +3112,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -3001,6 +3139,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3008,6 +3147,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -3015,6 +3155,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -3022,12 +3163,14 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3047,6 +3190,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3054,6 +3198,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -3061,6 +3206,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -3131,6 +3277,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3138,6 +3285,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -3145,6 +3293,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -3176,6 +3325,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3183,6 +3333,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -3190,6 +3341,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -3197,6 +3349,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -3246,6 +3399,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3253,6 +3407,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -3260,6 +3415,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -3267,6 +3423,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -3293,6 +3450,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3300,6 +3458,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -3307,6 +3466,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -3314,12 +3474,14 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3339,6 +3501,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3365,12 +3528,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignmentSettings from education
+      description: Specifies class-level assignments settings.
       operationId: education.classes_GetAssignmentSettings
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3419,6 +3584,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3445,12 +3611,14 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3470,6 +3638,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3732,12 +3901,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get members from education
+      description: All users in the class. Nullable.
       operationId: education.classes_ListMembers
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3911,6 +4082,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -3918,17 +4090,21 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -3942,12 +4118,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of members from education
+      description: All users in the class. Nullable.
       operationId: education.classes_ListMembersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -4052,18 +4230,12 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -4075,12 +4247,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get schools from education
+      description: All schools that this class is associated with. Nullable.
       operationId: education.classes_ListSchools
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -4191,12 +4365,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get schools from education
+      description: All schools that this class is associated with. Nullable.
       operationId: education.classes_GetSchools
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -4204,6 +4380,7 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -4283,12 +4460,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get teachers from education
+      description: All teachers in the class. Nullable.
       operationId: education.classes_ListTeachers
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -4462,6 +4641,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -4469,17 +4649,21 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -4493,12 +4677,14 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of teachers from education
+      description: All teachers in the class. Nullable.
       operationId: education.classes_ListTeachersGraphBPreRef
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -4603,18 +4789,12 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -4770,6 +4950,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4783,6 +4964,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.me_ListAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4937,12 +5119,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.me_GetAssignments
       parameters:
         - name: educationAssignment-id
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5043,6 +5227,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5069,12 +5254,14 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5088,12 +5275,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignments_ListCategories
       parameters:
         - name: educationAssignment-id
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5161,6 +5350,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5192,6 +5382,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5199,17 +5390,21 @@ paths:
           in: path
           description: 'key: id of educationCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationCategory
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -5223,12 +5418,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignments_ListCategoriesGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5271,18 +5468,12 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -5300,6 +5491,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5332,6 +5524,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5356,6 +5549,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5380,6 +5574,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5398,12 +5593,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignments_ListResources
       parameters:
         - name: educationAssignment-id
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5474,6 +5671,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5499,12 +5697,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignments_GetResources
       parameters:
         - name: educationAssignment-id
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5512,6 +5712,7 @@ paths:
           in: path
           description: 'key: id of educationAssignmentResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignmentResource
@@ -5561,6 +5762,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5568,6 +5770,7 @@ paths:
           in: path
           description: 'key: id of educationAssignmentResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignmentResource
@@ -5594,6 +5797,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5601,12 +5805,14 @@ paths:
           in: path
           description: 'key: id of educationAssignmentResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignmentResource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5620,12 +5826,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.me.assignments_GetRubric
       parameters:
         - name: educationAssignment-id
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5682,6 +5890,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5708,12 +5917,14 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5727,12 +5938,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.me.assignments_GetRubricGraphBPreRef
       parameters:
         - name: educationAssignment-id
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5756,18 +5969,12 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPutBody'
       responses:
         '204':
           description: Success
@@ -5784,12 +5991,14 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5803,12 +6012,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignments_ListSubmissions
       parameters:
         - name: educationAssignment-id
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5912,6 +6123,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5937,12 +6149,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignments_GetSubmissions
       parameters:
         - name: educationAssignment-id
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -5950,6 +6164,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6040,6 +6255,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6047,6 +6263,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6073,6 +6290,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6080,12 +6298,14 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6105,6 +6325,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6112,6 +6333,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6136,6 +6358,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6143,6 +6366,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6167,6 +6391,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6174,6 +6399,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6198,6 +6424,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6205,6 +6432,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6229,6 +6457,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6236,6 +6465,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6260,6 +6490,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6267,6 +6498,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6337,6 +6569,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6344,6 +6577,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6375,6 +6609,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6382,6 +6617,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6389,6 +6625,7 @@ paths:
           in: path
           description: 'key: id of educationOutcome'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationOutcome
@@ -6438,6 +6675,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6445,6 +6683,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6452,6 +6691,7 @@ paths:
           in: path
           description: 'key: id of educationOutcome'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationOutcome
@@ -6478,6 +6718,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6485,6 +6726,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6492,12 +6734,14 @@ paths:
           in: path
           description: 'key: id of educationOutcome'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationOutcome
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6517,6 +6761,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6524,6 +6769,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6594,6 +6840,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6601,6 +6848,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6632,6 +6880,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6639,6 +6888,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6646,6 +6896,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -6695,6 +6946,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6702,6 +6954,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6709,6 +6962,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -6735,6 +6989,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6742,6 +6997,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6749,12 +7005,14 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6774,6 +7032,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6781,6 +7040,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6851,6 +7111,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6858,6 +7119,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6889,6 +7151,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6896,6 +7159,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6903,6 +7167,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -6952,6 +7217,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6959,6 +7225,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -6966,6 +7233,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -6992,6 +7260,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -6999,6 +7268,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -7006,12 +7276,14 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7049,6 +7321,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.me_ListClasses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7159,12 +7432,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.me_GetClasses
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -7268,6 +7543,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubrics from education
+      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.me_ListRubrics
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7375,12 +7651,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubrics from education
+      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.me_GetRubrics
       parameters:
         - name: educationRubric-id
           in: path
           description: 'key: id of educationRubric'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationRubric
@@ -7437,6 +7715,7 @@ paths:
           in: path
           description: 'key: id of educationRubric'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationRubric
@@ -7463,12 +7742,14 @@ paths:
           in: path
           description: 'key: id of educationRubric'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationRubric
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7482,6 +7763,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.me_ListSchools
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7591,12 +7873,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.me_GetSchools
       parameters:
         - name: educationSchool-id
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -7673,6 +7957,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
+      description: Classes for which the user is a teacher.
       operationId: education.me_ListTaughtClasses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7783,12 +8068,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
+      description: Classes for which the user is a teacher.
       operationId: education.me_GetTaughtClasses
       parameters:
         - name: educationClass-id
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -7925,6 +8212,7 @@ paths:
                 - displayName
                 - employeeHireDate
                 - employeeId
+                - employeeLeaveDateTime
                 - employeeOrgData
                 - employeeType
                 - externalUserState
@@ -8411,6 +8699,7 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -8492,6 +8781,7 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -8518,12 +8808,14 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -8543,6 +8835,7 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -8609,12 +8902,14 @@ paths:
       tags:
         - education.educationSchool
       summary: Get classes from education
+      description: Classes taught at the school. Nullable.
       operationId: education.schools_ListClasses
       parameters:
         - name: educationSchool-id
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -8732,6 +9027,7 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -8739,17 +9035,21 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -8763,12 +9063,14 @@ paths:
       tags:
         - education.educationSchool
       summary: Get ref of classes from education
+      description: Classes taught at the school. Nullable.
       operationId: education.schools_ListClassesGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -8833,18 +9135,12 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -8856,12 +9152,14 @@ paths:
       tags:
         - education.educationSchool
       summary: Get users from education
+      description: Users in the school. Nullable.
       operationId: education.schools_ListUsers
       parameters:
         - name: educationSchool-id
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -9035,6 +9333,7 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -9042,17 +9341,21 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -9066,12 +9369,14 @@ paths:
       tags:
         - education.educationSchool
       summary: Get ref of users from education
+      description: Users in the school. Nullable.
       operationId: education.schools_ListUsersGraphBPreRef
       parameters:
         - name: educationSchool-id
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -9176,18 +9481,12 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -9334,6 +9633,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9411,6 +9711,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9437,12 +9738,14 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9456,12 +9759,14 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get errors from education
+      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfiles_ListErrors
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9544,6 +9849,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9569,12 +9875,14 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get errors from education
+      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfiles_GetErrors
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9582,6 +9890,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationError'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationError
@@ -9635,6 +9944,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9642,6 +9952,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationError'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationError
@@ -9668,6 +9979,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9675,12 +9987,14 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationError'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationError
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -9700,6 +10014,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9720,6 +10035,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9740,6 +10056,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9760,6 +10077,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9792,6 +10110,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9816,12 +10135,14 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get profileStatus from education
+      description: The synchronization status.
       operationId: education.synchronizationProfiles_GetProfileStatus
       parameters:
         - name: educationSynchronizationProfile-id
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9874,6 +10195,7 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
@@ -9900,12 +10222,14 @@ paths:
           in: path
           description: 'key: id of educationSynchronizationProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10113,6 +10437,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10229,6 +10554,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10255,12 +10581,14 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10274,12 +10602,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.users_ListAssignments
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10418,6 +10748,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10443,12 +10774,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.users_GetAssignments
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10456,6 +10789,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10560,6 +10894,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10567,6 +10902,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10593,6 +10929,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10600,12 +10937,14 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -10619,12 +10958,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.users.assignments_ListCategories
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10632,6 +10973,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10699,6 +11041,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10706,6 +11049,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10737,6 +11081,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10744,6 +11089,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10751,17 +11097,21 @@ paths:
           in: path
           description: 'key: id of educationCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationCategory
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
         - name: '@id'
           in: query
           description: Delete Uri
+          style: form
+          explode: false
           schema:
             type: string
       responses:
@@ -10775,12 +11125,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.users.assignments_ListCategoriesGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10788,6 +11140,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10830,6 +11183,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10837,18 +11191,12 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPostBody'
       responses:
         '204':
           description: Success
@@ -10866,6 +11214,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10873,6 +11222,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10905,6 +11255,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10912,6 +11263,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10936,6 +11288,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10943,6 +11296,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10967,6 +11321,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -10974,6 +11329,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -10992,12 +11348,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.users.assignments_ListResources
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11005,6 +11363,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11075,6 +11434,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11082,6 +11442,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11107,12 +11468,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.users.assignments_GetResources
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11120,6 +11483,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11127,6 +11491,7 @@ paths:
           in: path
           description: 'key: id of educationAssignmentResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignmentResource
@@ -11176,6 +11541,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11183,6 +11549,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11190,6 +11557,7 @@ paths:
           in: path
           description: 'key: id of educationAssignmentResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignmentResource
@@ -11216,6 +11584,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11223,6 +11592,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11230,12 +11600,14 @@ paths:
           in: path
           description: 'key: id of educationAssignmentResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignmentResource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11249,12 +11621,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.users.assignments_GetRubric
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11262,6 +11636,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11318,6 +11693,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11325,6 +11701,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11351,6 +11728,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11358,12 +11736,14 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11377,12 +11757,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.users.assignments_GetRubricGraphBPreRef
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11390,6 +11772,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11413,6 +11796,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11420,18 +11804,12 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
       requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
+        $ref: '#/components/requestBodies/refPutBody'
       responses:
         '204':
           description: Success
@@ -11448,6 +11826,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11455,12 +11834,14 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11474,12 +11855,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.users.assignments_ListSubmissions
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11487,6 +11870,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11590,6 +11974,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11597,6 +11982,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11622,12 +12008,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.users.assignments_GetSubmissions
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11635,6 +12023,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11642,6 +12031,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -11735,6 +12125,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11742,6 +12133,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11749,6 +12141,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -11775,6 +12168,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11782,6 +12176,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11789,12 +12184,14 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -11814,6 +12211,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11821,6 +12219,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11828,6 +12227,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -11852,6 +12252,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11859,6 +12260,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11866,6 +12268,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -11890,6 +12293,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11897,6 +12301,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11904,6 +12309,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -11928,6 +12334,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11935,6 +12342,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11942,6 +12350,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -11966,6 +12375,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -11973,6 +12383,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -11980,6 +12391,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12004,6 +12416,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12011,6 +12424,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12018,6 +12432,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12088,6 +12503,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12095,6 +12511,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12102,6 +12519,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12133,6 +12551,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12140,6 +12559,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12147,6 +12567,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12154,6 +12575,7 @@ paths:
           in: path
           description: 'key: id of educationOutcome'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationOutcome
@@ -12203,6 +12625,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12210,6 +12633,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12217,6 +12641,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12224,6 +12649,7 @@ paths:
           in: path
           description: 'key: id of educationOutcome'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationOutcome
@@ -12250,6 +12676,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12257,6 +12684,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12264,6 +12692,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12271,12 +12700,14 @@ paths:
           in: path
           description: 'key: id of educationOutcome'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationOutcome
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12296,6 +12727,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12303,6 +12735,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12310,6 +12743,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12380,6 +12814,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12387,6 +12822,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12394,6 +12830,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12425,6 +12862,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12432,6 +12870,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12439,6 +12878,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12446,6 +12886,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -12495,6 +12936,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12502,6 +12944,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12509,6 +12952,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12516,6 +12960,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -12542,6 +12987,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12549,6 +12995,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12556,6 +13003,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12563,12 +13011,14 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12588,6 +13038,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12595,6 +13046,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12602,6 +13054,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12672,6 +13125,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12679,6 +13133,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12686,6 +13141,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12717,6 +13173,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12724,6 +13181,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12731,6 +13189,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12738,6 +13197,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -12787,6 +13247,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12794,6 +13255,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12801,6 +13263,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12808,6 +13271,7 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
@@ -12834,6 +13298,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12841,6 +13306,7 @@ paths:
           in: path
           description: 'key: id of educationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationAssignment
@@ -12848,6 +13314,7 @@ paths:
           in: path
           description: 'key: id of educationSubmission'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmission
@@ -12855,12 +13322,14 @@ paths:
           in: path
           description: 'key: id of educationSubmissionResource'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSubmissionResource
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -12880,6 +13349,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -12906,12 +13376,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.users_ListClasses
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13023,12 +13495,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.users_GetClasses
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13036,6 +13510,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -13147,12 +13622,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubrics from education
+      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.users_ListRubrics
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13244,6 +13721,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13269,12 +13747,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubrics from education
+      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.users_GetRubrics
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13282,6 +13762,7 @@ paths:
           in: path
           description: 'key: id of educationRubric'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationRubric
@@ -13338,6 +13819,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13345,6 +13827,7 @@ paths:
           in: path
           description: 'key: id of educationRubric'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationRubric
@@ -13371,6 +13854,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13378,12 +13862,14 @@ paths:
           in: path
           description: 'key: id of educationRubric'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationRubric
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -13397,12 +13883,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.users_ListSchools
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13513,12 +14001,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.users_GetSchools
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13526,6 +14016,7 @@ paths:
           in: path
           description: 'key: id of educationSchool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationSchool
@@ -13605,12 +14096,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
+      description: Classes for which the user is a teacher.
       operationId: education.users_ListTaughtClasses
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13722,12 +14215,14 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
+      description: Classes for which the user is a teacher.
       operationId: education.users_GetTaughtClasses
       parameters:
         - name: educationUser-id
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13735,6 +14230,7 @@ paths:
           in: path
           description: 'key: id of educationClass'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationClass
@@ -13852,6 +14348,7 @@ paths:
           in: path
           description: 'key: id of educationUser'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationUser
@@ -13886,6 +14383,7 @@ paths:
                 - displayName
                 - employeeHireDate
                 - employeeId
+                - employeeLeaveDateTime
                 - employeeOrgData
                 - employeeType
                 - externalUserState
@@ -15287,7 +15785,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             showInAddressList:
               type: boolean
-              description: 'True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.'
               nullable: true
             student:
               $ref: '#/components/schemas/microsoft.graph.educationStudent'
@@ -15420,6 +15917,12 @@ components:
             employeeId:
               type: string
               description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
+              nullable: true
+            employeeLeaveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).'
+              format: date-time
               nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
@@ -15717,7 +16220,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
-              description: A collection of this user's license details. Read-only.
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -15909,7 +16411,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
-              description: The user's activities across devices. Read-only. Nullable.
             devices:
               type: array
               items:
@@ -17210,6 +17711,8 @@ components:
               description: The tags associated with the team.
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
+            templateDefinition:
+              $ref: '#/components/schemas/microsoft.graph.teamTemplateDefinition'
             schedule:
               $ref: '#/components/schemas/microsoft.graph.schedule'
           additionalProperties:
@@ -17231,7 +17734,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.educationExternalSource'
             externalSourceDetail:
               type: string
-              description: The name of the external source this resources was generated from.
               nullable: true
           additionalProperties:
             type: object
@@ -17453,6 +17955,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
     microsoft.graph.customSecurityAttributeValue:
@@ -17685,6 +18188,8 @@ components:
               nullable: true
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            diskEncryptionState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
               type: string
               description: The display name of the Cloud PC.
@@ -17954,6 +18459,8 @@ components:
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
               nullable: true
+            verifiedPublisher:
+              $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
             appManagementPolicies:
               type: array
               items:
@@ -17993,7 +18500,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-              description: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -18692,7 +19198,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
-              description: A list of pending user consent requests.
+              description: A list of pending user consent requests. Supports $filter (eq).
           additionalProperties:
             type: object
     microsoft.graph.approval:
@@ -19499,7 +20005,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             recentPlans:
               type: array
               items:
@@ -19656,50 +20161,40 @@ components:
           properties:
             activationUrl:
               type: string
-              description: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
             activitySourceHost:
               type: string
-              description: 'Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.'
             appActivityId:
               type: string
-              description: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
             appDisplayName:
               type: string
-              description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
               $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
-              description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object expired on the server.
               format: date-time
               nullable: true
             fallbackUrl:
               type: string
-              description: 'Optional. URL used to launch the activity in a web-based app, if available.'
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             visualElements:
               $ref: '#/components/schemas/microsoft.graph.visualInfo'
@@ -19707,7 +20202,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
           additionalProperties:
             type: object
     microsoft.graph.device:
@@ -20286,6 +20780,23 @@ components:
         - extracting
         - validating
       type: string
+    ReferenceCreate:
+      type: object
+      properties:
+        '@odata.id':
+          type: string
+      additionalProperties:
+        type: object
+    ReferenceUpdate:
+      type: object
+      properties:
+        '@odata.id':
+          type: string
+        '@odata.type':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -20457,11 +20968,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -20611,10 +21122,8 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The categories associated with the item
             changeKey:
               type: string
-              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -20904,7 +21413,6 @@ components:
               format: date-time
             description:
               type: string
-              description: Provides a user-visible description of the item. Optional.
               nullable: true
             eTag:
               type: string
@@ -21153,12 +21661,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of field definitions for this list.
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
-              description: The collection of content types present in this list.
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             items:
@@ -21699,12 +22205,10 @@ components:
           properties:
             content:
               type: string
-              description: The content stream
               format: base64url
               nullable: true
             contentUrl:
               type: string
-              description: The URL for downloading the content
               nullable: true
           additionalProperties:
             type: object
@@ -22090,6 +22594,51 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.teamTemplateDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamTemplateDefinition
+          type: object
+          properties:
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.teamTemplateAudience'
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            iconUrl:
+              type: string
+              nullable: true
+            languageTag:
+              type: string
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            parentTemplateId:
+              type: string
+              nullable: true
+            publisherName:
+              type: string
+              nullable: true
+            shortDescription:
+              type: string
+              nullable: true
+            teamDefinition:
+              $ref: '#/components/schemas/microsoft.graph.team'
+          additionalProperties:
+            type: object
     microsoft.graph.schedule:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22384,14 +22933,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
+          description: 'A list of failed health check items. If the status property is available, this property will be empty.'
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDiskEncryptionState:
+      title: cloudPcDiskEncryptionState
+      enum:
+        - notAvailable
+        - notEncryped
+        - encryptedUsingPlatformManagedKey
+        - encryptedUsingCustomerManagedKey
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -22861,6 +23421,26 @@ components:
         relayState:
           type: string
           description: The relative URI the service provider would redirect to after completion of the single sign-on flow.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.verifiedPublisher:
+      title: verifiedPublisher
+      type: object
+      properties:
+        addedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the verified publisher was first added or most recently updated.
+          format: date-time
+          nullable: true
+        displayName:
+          type: string
+          description: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
+          nullable: true
+        verifiedPublisherId:
+          type: string
+          description: The ID of the verified publisher from the app publisher's Partner Center account.
           nullable: true
       additionalProperties:
         type: object
@@ -23433,7 +24013,7 @@ components:
           properties:
             query:
               type: string
-              description: The query specifying who will be the reviewer. See table for examples.
+              description: The query specifying who will be the reviewer.
               nullable: true
             queryRoot:
               type: string
@@ -23912,6 +24492,10 @@ components:
         clientIdentifier:
           type: string
           description: Configuration Manager Client Id from SCCM
+          nullable: true
+        clientVersion:
+          type: string
+          description: Configuration Manager Client version from SCCM
           nullable: true
         isBlocked:
           type: boolean
@@ -25077,6 +25661,12 @@ components:
             displayName:
               type: string
               description: Name of the discovered application. Read-only
+              nullable: true
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.detectedAppPlatformType'
+            publisher:
+              type: string
+              description: 'Indicates the publisher of the discovered application. For example: ''Microsoft''.  The default value is an empty string.'
               nullable: true
             sizeInByte:
               type: integer
@@ -26309,43 +26899,36 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
-              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
@@ -26852,12 +27435,12 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             password:
@@ -27837,7 +28420,6 @@ components:
       properties:
         type:
           type: string
-          description: 'A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.'
           nullable: true
       additionalProperties:
         type: object
@@ -28079,7 +28661,6 @@ components:
           nullable: true
         frameRate:
           type: number
-          description: Frame rate of the video.
           format: double
           nullable: true
         height:
@@ -28899,14 +29480,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             displayName:
               type: string
-              description: The name of the notebook.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -28974,7 +29553,6 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -28997,7 +29575,6 @@ components:
           properties:
             self:
               type: string
-              description: The endpoint where you can get details about the page. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -29100,7 +29677,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
               type: string
-              description: Verbose description of the application.
               nullable: true
             displayName:
               type: string
@@ -29192,6 +29768,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamTemplateAudience:
+      title: teamTemplateAudience
+      enum:
+        - organization
+        - user
+        - public
+        - unknownFutureValue
+      type: string
     microsoft.graph.operationStatus:
       title: operationStatus
       enum:
@@ -29459,21 +30043,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
-              description: The name of the printer/printerShare.
               nullable: true
             isAcceptingJobs:
               type: boolean
-              description: Whether the printer/printerShare is currently accepting new print jobs.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             manufacturer:
               type: string
-              description: The manufacturer of the printer/printerShare.
               nullable: true
             model:
               type: string
-              description: The model name of the printer/printerShare.
               nullable: true
             name:
               type: string
@@ -29484,7 +30064,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
-              description: The list of jobs that are queued for printing by the printer/printerShare.
           additionalProperties:
             type: object
     microsoft.graph.printerShareViewpoint:
@@ -29558,12 +30137,15 @@ components:
       properties:
         additionalDetails:
           type: string
+          description: Additional message for this health check.
           nullable: true
         displayName:
           type: string
+          description: The connectivity health check item name.
         lastHealthCheckDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         result:
@@ -29780,11 +30362,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -31036,6 +31618,59 @@ components:
           additionalProperties:
             type: object
           description: The security baseline compliance state of a setting for a device
+    microsoft.graph.detectedAppPlatformType:
+      title: detectedAppPlatformType
+      enum:
+        - unknown
+        - windows
+        - windowsMobile
+        - windowsHolographic
+        - ios
+        - macOS
+        - chromeOS
+        - androidOSP
+        - androidDeviceAdministrator
+        - androidWorkProfile
+        - androidDedicatedAndFullyManaged
+      type: string
+      description: 'Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).'
+      x-ms-enum:
+        name: detectedAppPlatformType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown when platform cannot be determined.
+            name: unknown
+          - value: windows
+            description: Indicates that the platform of the detected application is Windows.
+            name: windows
+          - value: windowsMobile
+            description: Indicates that the platform of the detected application is Windows Mobile.
+            name: windowsMobile
+          - value: windowsHolographic
+            description: Indicates that the platform of the detected application is Windows Holographic.
+            name: windowsHolographic
+          - value: ios
+            description: Indicates that the platform of the detected application is iOS.
+            name: ios
+          - value: macOS
+            description: Indicates that the platform of the detected application is macOS.
+            name: macOS
+          - value: chromeOS
+            description: Indicates that the platform of the detected application is ChromeOS.
+            name: chromeOS
+          - value: androidOSP
+            description: Indicates that the platform of the detected application is Android open source project.
+            name: androidOSP
+          - value: androidDeviceAdministrator
+            description: Indicates that the platform of the detected application is Android device administrator.
+            name: androidDeviceAdministrator
+          - value: androidWorkProfile
+            description: Indicates that the platform of the detected application is Android work profile.
+            name: androidWorkProfile
+          - value: androidDedicatedAndFullyManaged
+            description: Indicates that the platform of the detected application is Android dedicated and fully managed.
+            name: androidDedicatedAndFullyManaged
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -33002,7 +33637,6 @@ components:
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Details about when the activity took place. Read-only.
               format: date-time
               nullable: true
             actor:
@@ -34197,7 +34831,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The interval between synchronization iterations.
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
@@ -35347,7 +35981,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookSortField'
-              description: Represents the current conditions used to last sort the table. Read-only.
             matchCase:
               type: boolean
               description: Represents whether the casing impacted the last sort of the table. Read-only.
@@ -38109,6 +38742,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -38117,6 +38752,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -38124,20 +38761,41 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
+  requestBodies:
+    refPostBody:
+      description: New navigation property ref value
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReferenceCreate'
+      required: true
+    refPutBody:
+      description: New navigation property ref values
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReferenceUpdate'
+      required: true
   securitySchemes:
     azureaadv2:
       type: oauth2
