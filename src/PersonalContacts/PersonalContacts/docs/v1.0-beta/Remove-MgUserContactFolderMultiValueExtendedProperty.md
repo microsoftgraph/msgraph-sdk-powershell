@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgUserContactFolderMultiValueExtendedProperty
 
 ## SYNOPSIS
-The collection of multi-value extended properties defined for the contactFolder.
-Read-only.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ## SYNTAX
 
@@ -28,9 +26,7 @@ Remove-MgUserContactFolderMultiValueExtendedProperty -InputObject <IPersonalCont
 ```
 
 ## DESCRIPTION
-The collection of multi-value extended properties defined for the contactFolder.
-Read-only.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ## EXAMPLES
 

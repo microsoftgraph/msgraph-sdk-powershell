@@ -1,44 +1,88 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/remove-mgusercontactfoldercontactphoto
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/new-mgusercontactfolderchildfoldersinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# Remove-MgUserContactFolderContactPhoto
+# New-MgUserContactFolderChildFolderSingleValueExtendedProperty
 
 ## SYNOPSIS
-Optional contact picture.
-You can get or set a photo for a contact.
+Create new navigation property to singleValueExtendedProperties for users
 
 ## SYNTAX
 
-### Delete1 (Default)
+### CreateExpanded1 (Default)
 ```
-Remove-MgUserContactFolderContactPhoto -ContactFolderId <String> -ContactId <String> -UserId <String>
- [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserContactFolderChildFolderSingleValueExtendedProperty -ContactFolderId <String>
+ -ContactFolderId1 <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### Create1
 ```
-Remove-MgUserContactFolderContactPhoto -InputObject <IPersonalContactsIdentity> [-IfMatch <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserContactFolderChildFolderSingleValueExtendedProperty -ContactFolderId <String>
+ -ContactFolderId1 <String> -UserId <String> -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentity1
+```
+New-MgUserContactFolderChildFolderSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
+ -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded1
+```
+New-MgUserContactFolderChildFolderSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Optional contact picture.
-You can get or set a photo for a contact.
+Create new navigation property to singleValueExtendedProperties for users
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+singleValueLegacyExtendedProperty
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Parameter Sets: Create1, CreateViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -ContactFolderId
 key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -48,12 +92,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ContactId
-key: id of contact
+### -ContactFolderId1
+key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -63,12 +107,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IfMatch
-ETag
+### -Id
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -84,7 +128,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -94,30 +138,30 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -UserId
+key: id of user
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserId
-key: id of user
+### -Value
+A property value.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -160,11 +204,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+
 ### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
 
 ## NOTES
 
@@ -174,6 +220,11 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IMicrosoftGraphSingleValueLegacyExtendedProperty>: singleValueLegacyExtendedProperty
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: 
+  - `[Value <String>]`: A property value.
 
 INPUTOBJECT <IPersonalContactsIdentity>: Identity Parameter
   - `[ContactFolderId <String>]`: key: id of contactFolder

@@ -14,20 +14,20 @@ Nullable.
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgUserContactFolderContactExtension -ContactFolderId <String> -ContactId <String> -UserId <String>
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgUserContactFolderContactExtension -ContactFolderId <String> -ContactId <String> -ExtensionId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgUserContactFolderContactExtension -InputObject <IPersonalContactsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -42,27 +42,12 @@ Nullable.
 
 ## PARAMETERS
 
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ContactFolderId
 key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -77,7 +62,7 @@ key: id of contact
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -87,14 +72,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases: CV
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
 
 Required: False
 Position: Named
@@ -123,7 +107,7 @@ key: id of extension
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -138,7 +122,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -154,28 +138,13 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -199,7 +168,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -214,7 +183,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -229,7 +198,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -244,7 +213,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True

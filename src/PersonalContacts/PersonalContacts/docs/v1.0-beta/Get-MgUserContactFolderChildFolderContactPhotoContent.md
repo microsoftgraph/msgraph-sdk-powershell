@@ -1,44 +1,42 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/remove-mgusercontactphoto
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/get-mgusercontactfolderchildfoldercontactphotocontent
 schema: 2.0.0
 ---
 
-# Remove-MgUserContactPhoto
+# Get-MgUserContactFolderChildFolderContactPhotoContent
 
 ## SYNOPSIS
-Optional contact picture.
-You can get or set a photo for a contact.
+Get media content for the navigation property photo from users
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Get1 (Default)
 ```
-Remove-MgUserContactPhoto -ContactId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Get-MgUserContactFolderChildFolderContactPhotoContent -ContactFolderId <String> -ContactFolderId1 <String>
+ -ContactId <String> -UserId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### GetViaIdentity1
 ```
-Remove-MgUserContactPhoto -InputObject <IPersonalContactsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Get-MgUserContactFolderChildFolderContactPhotoContent -InputObject <IPersonalContactsIdentity>
+ -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Optional contact picture.
-You can get or set a photo for a contact.
+Get media content for the navigation property photo from users
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -ContactId
-key: id of contact
+### -ContactFolderId
+key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -48,15 +46,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IfMatch
-ETag
+### -ContactFolderId1
+key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get1
 Aliases:
 
-Required: False
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ContactId
+key: id of contact
+
+```yaml
+Type: System.String
+Parameter Sets: Get1
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -69,13 +82,28 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -OutFile
+Path to write output file to
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -99,41 +127,10 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Get1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

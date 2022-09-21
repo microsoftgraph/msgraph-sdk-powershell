@@ -1,44 +1,73 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/remove-mgusercontactphoto
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/remove-mgusercontactfolderchildfoldercontact
 schema: 2.0.0
 ---
 
-# Remove-MgUserContactPhoto
+# Remove-MgUserContactFolderChildFolderContact
 
 ## SYNOPSIS
-Optional contact picture.
-You can get or set a photo for a contact.
+Delete navigation property contacts for users
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
-Remove-MgUserContactPhoto -ContactId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
+ -ContactId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
-Remove-MgUserContactPhoto -InputObject <IPersonalContactsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity> [-IfMatch <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Optional contact picture.
-You can get or set a photo for a contact.
+Delete navigation property contacts for users
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -ContactFolderId
+key: id of contactFolder
+
+```yaml
+Type: System.String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ContactFolderId1
+key: id of contactFolder
+
+```yaml
+Type: System.String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -ContactId
 key: id of contact
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -69,7 +98,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -99,7 +128,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

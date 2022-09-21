@@ -8,30 +8,36 @@ schema: 2.0.0
 # Remove-MgUserContactFolder
 
 ## SYNOPSIS
-The user's contacts folders.
-Read-only.
-Nullable.
+Delete navigation property contactFolders for users
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgUserContactFolder -ContactFolderId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgUserContactFolder -InputObject <IPersonalContactsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user's contacts folders.
-Read-only.
-Nullable.
+Delete navigation property contactFolders for users
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgUserContactFolder Cmdlet
+```powershell
+Import-Module Microsoft.Graph.PersonalContacts
+# A UPN can also be used as -UserId.
+Remove-MgUserContactFolder -UserId $userId -ContactFolderId $contactFolderId
+```
+
+This example shows how to use the Remove-MgUserContactFolder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -40,7 +46,7 @@ key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -71,7 +77,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -101,7 +107,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
