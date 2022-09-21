@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportManagedDeviceEnrollmentAbandonmentSummary
 
 ## SYNOPSIS
-Invoke function managedDeviceEnrollmentAbandonmentSummary
+Metadata for Enrollment abandonment summary report
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgReportManagedDeviceEnrollmentAbandonmentSummary -InputObject <IReportsIden
 ```
 
 ## DESCRIPTION
-Invoke function managedDeviceEnrollmentAbandonmentSummary
+Metadata for Enrollment abandonment summary report
 
 ## EXAMPLES
 
@@ -174,7 +174,6 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
   - `[PrinterId <String>]`: Usage: printerId='{printerId}'
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
-  - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[SkipToken <String>]`: Usage: skipToken='{skipToken}'
