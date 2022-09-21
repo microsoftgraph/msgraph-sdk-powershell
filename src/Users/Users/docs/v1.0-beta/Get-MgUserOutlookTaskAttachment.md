@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgUserOutlookTaskAttachment
 
 ## SYNOPSIS
-Get attachments from users
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
+ [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get
@@ -32,26 +34,22 @@ Get-MgUserOutlookTaskAttachment -InputObject <IUsersIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get attachments from users
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
-## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+### Example 1: Using the Get-MgUserOutlookTaskAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+Get-MgUserOutlookTaskAttachment -UserId $userId -OutlookTaskId $outlookTaskId
 ```
+
+This example shows how to use the Get-MgUserOutlookTaskAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+## PARAMETERS
 
 ### -AttachmentId
 key: id of attachment
@@ -68,14 +66,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -139,21 +136,6 @@ Parameter Sets: Get, List
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

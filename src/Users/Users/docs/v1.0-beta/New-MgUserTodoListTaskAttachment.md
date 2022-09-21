@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserTodoListTaskAttachment
 
 ## SYNOPSIS
-Create new navigation property to attachments for users
+Add a new taskFileAttachment object to a todoTask.
+This operation limits the size of the attachment you can add to under 3 MB.
+If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 
 ## SYNTAX
 
@@ -39,9 +41,27 @@ New-MgUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Create new navigation property to attachments for users
+Add a new taskFileAttachment object to a todoTask.
+This operation limits the size of the attachment you can add to under 3 MB.
+If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserTodoListTaskAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+$params = @{
+	"@odata.type" = "#microsoft.graph.taskFileAttachment"
+	Name = "smile"
+	ContentBytes = "a0b1c76de9f7="
+	ContentType = "image/gif"
+}
+# A UPN can also be used as -UserId.
+New-MgUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserTodoListTaskAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -77,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentType
-The MIME type.
+.
 
 ```yaml
 Type: System.String
@@ -123,8 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -139,8 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The display name of the attachment.
-This does not need to be the actual file name.
+.
 
 ```yaml
 Type: System.String
@@ -155,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -Size
-The length of the attachment in bytes.
+.
 
 ```yaml
 Type: System.Int32
@@ -270,10 +288,10 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAttachmentBase>: attachmentBase
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[ContentType <String>]`: The MIME type.
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
-  - `[Size <Int32?>]`: The length of the attachment in bytes.
+  - `[ContentType <String>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Name <String>]`: 
+  - `[Size <Int32?>]`: 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentBaseId <String>]`: key: id of attachmentBase

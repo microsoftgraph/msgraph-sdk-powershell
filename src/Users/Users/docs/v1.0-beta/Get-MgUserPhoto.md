@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserPhoto
 
 ## SYNOPSIS
-Get photo from users
+The user's profile photo.
+Read-only.
 
 ## SYNTAX
 
@@ -34,12 +35,13 @@ Get-MgUserPhoto -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonPar
 
 ### List
 ```
-Get-MgUserPhoto -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserPhoto -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get photo from users
+The user's profile photo.
+Read-only.
 
 ## EXAMPLES
 
@@ -56,29 +58,13 @@ This example retrieves the profile photo properties for the specified user.
 
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
 
 Required: False
 Position: Named
@@ -115,21 +101,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

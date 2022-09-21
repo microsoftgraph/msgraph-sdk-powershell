@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOutlookTaskGroup
 
 ## SYNOPSIS
-Create new navigation property to taskGroups for users
+Create an Outlook task group in the user's mailbox.
 
 ## SYNTAX
 
@@ -39,9 +39,22 @@ New-MgUserOutlookTaskGroup -InputObject <IUsersIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Create new navigation property to taskGroups for users
+Create an Outlook task group in the user's mailbox.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserOutlookTaskGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+$params = @{
+	Name = "Leisure tasks"
+}
+# A UPN can also be used as -UserId.
+New-MgUserOutlookTaskGroup -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserOutlookTaskGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -284,7 +297,7 @@ BODYPARAMETER <IMicrosoftGraphOutlookTaskGroup>: outlookTaskGroup
         - `[ContentType <String>]`: The MIME type.
         - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
         - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+        - `[Name <String>]`: The attachment's file name.
         - `[Size <Int32?>]`: The length of the attachment in bytes.
       - `[Body <IMicrosoftGraphItemBody>]`: itemBody
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -292,8 +305,8 @@ BODYPARAMETER <IMicrosoftGraphOutlookTaskGroup>: outlookTaskGroup
         - `[ContentType <String>]`: bodyType
       - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
       - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[HasAttachments <Boolean?>]`: Set to true if the task has attachments.
       - `[Importance <String>]`: importance
@@ -372,7 +385,7 @@ TASKFOLDERS <IMicrosoftGraphOutlookTaskFolder[]>: The collection of task folders
       - `[ContentType <String>]`: The MIME type.
       - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
       - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-      - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+      - `[Name <String>]`: The attachment's file name.
       - `[Size <Int32?>]`: The length of the attachment in bytes.
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -380,8 +393,8 @@ TASKFOLDERS <IMicrosoftGraphOutlookTaskFolder[]>: The collection of task folders
       - `[ContentType <String>]`: bodyType
     - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[HasAttachments <Boolean?>]`: Set to true if the task has attachments.
     - `[Importance <String>]`: importance

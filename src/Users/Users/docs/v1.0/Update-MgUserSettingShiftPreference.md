@@ -8,16 +8,15 @@ schema: 2.0.0
 # Update-MgUserSettingShiftPreference
 
 ## SYNOPSIS
-Update the navigation property shiftPreferences in users
+Update the properties and relationships of a shiftPreferences object.
 
 ## SYNTAX
 
 ### UpdateExpanded1 (Default)
 ```
 Update-MgUserSettingShiftPreference -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Availability <IMicrosoftGraphShiftAvailability[]>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Availability <IMicrosoftGraphShiftAvailability[]>] [-Id <String>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
@@ -35,15 +34,47 @@ Update-MgUserSettingShiftPreference -InputObject <IUsersIdentity>
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgUserSettingShiftPreference -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
- [-Availability <IMicrosoftGraphShiftAvailability[]>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Availability <IMicrosoftGraphShiftAvailability[]>] [-Id <String>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property shiftPreferences in users
+Update the properties and relationships of a shiftPreferences object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgUserSettingShiftPreference Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+$params = @{
+	Id = "SHPR_eeab4fb1-20e5-48ca-ad9b-98119d94bee7"
+	"@odata.etag" = "1a371e53-f0a6-4327-a1ee-e3c56e4b38aa"
+	Availability = @(
+		@{
+			Recurrence = @{
+				Pattern = @{
+					Type = "Weekly"
+					DaysOfWeek = @(
+						"Monday"
+						"Wednesday"
+						"Friday"
+					)
+					Interval = 1
+				}
+				Range = @{
+					Type = "noEnd"
+				}
+			}
+			TimeZone = "Pacific Standard Time"
+			TimeSlots = $null
+		}
+	)
+}
+Update-MgUserSettingShiftPreference -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgUserSettingShiftPreference Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -94,22 +125,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -CreatedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -147,22 +162,6 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -282,7 +281,6 @@ AVAILABILITY <IMicrosoftGraphShiftAvailability[]>: Availability of the user to b
 
 BODYPARAMETER <IMicrosoftGraphShiftPreferences1>: shiftPreferences
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -291,7 +289,6 @@ BODYPARAMETER <IMicrosoftGraphShiftPreferences1>: shiftPreferences
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: 
   - `[Availability <IMicrosoftGraphShiftAvailability[]>]`: Availability of the user to be scheduled for work and its recurrence pattern.
     - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
