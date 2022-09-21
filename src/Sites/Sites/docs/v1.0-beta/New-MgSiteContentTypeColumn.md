@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSiteContentTypeColumn
 
 ## SYNOPSIS
-Create new navigation property to columns for sites
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ## SYNTAX
 
@@ -59,9 +59,21 @@ New-MgSiteContentTypeColumn -InputObject <ISitesIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Create new navigation property to columns for sites
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgSiteContentTypeColumn Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	"SourceColumn@odata.bind" = "https://graph.microsoft.com/beta/sites/root/columns/99ddcf45-e2f7-4f17-82b0-6fba34445103"
+}
+New-MgSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+```
+
+This example shows how to use the New-MgSiteContentTypeColumn Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -793,8 +805,8 @@ BODYPARAMETER <IMicrosoftGraphColumnDefinition>: columnDefinition
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-        - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
       - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: 
         - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
@@ -840,7 +852,7 @@ BODYPARAMETER <IMicrosoftGraphColumnDefinition>: columnDefinition
     - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
       - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
       - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
 
 CALCULATED <IMicrosoftGraphCalculatedColumn>: calculatedColumn
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1016,8 +1028,8 @@ SOURCECOLUMN <IMicrosoftGraphColumnDefinition>: columnDefinition
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-        - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
       - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: 
         - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
@@ -1063,7 +1075,7 @@ SOURCECOLUMN <IMicrosoftGraphColumnDefinition>: columnDefinition
     - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
       - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
       - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
 
 SOURCECONTENTTYPE <IMicrosoftGraphContentTypeInfo>: contentTypeInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1087,8 +1099,8 @@ TERM <IMicrosoftGraphTermColumn>: termColumn
       - `[Name <String>]`: The name of the label.
     - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-      - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
     - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
       - `[Id <String>]`: 
       - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
@@ -1133,7 +1145,7 @@ VALIDATION <IMicrosoftGraphColumnValidation>: columnValidation
   - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
     - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
     - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-  - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+  - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
 
 ## RELATED LINKS
 

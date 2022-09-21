@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStoreSetRelationToTerm
 
 ## SYNOPSIS
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgGroupSiteTermStoreSetRelationToTerm -InputObject <ISitesIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ## EXAMPLES
 

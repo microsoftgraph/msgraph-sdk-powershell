@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteTermStoreSetParentGroup
 
 ## SYNOPSIS
-Get parentGroup from sites
+The parent [group] that contains the set.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSiteTermStoreSetParentGroup -InputObject <ISitesIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get parentGroup from sites
+The parent [group] that contains the set.
 
 ## EXAMPLES
 

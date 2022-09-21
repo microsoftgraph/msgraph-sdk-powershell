@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgSiteTermStoreSetParentGroupSetChildRelationFromTerm
 
 ## SYNOPSIS
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ## SYNTAX
 
@@ -39,7 +41,9 @@ Get-MgSiteTermStoreSetParentGroupSetChildRelationFromTerm -InputObject <ISitesId
 ```
 
 ## DESCRIPTION
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ## EXAMPLES
 

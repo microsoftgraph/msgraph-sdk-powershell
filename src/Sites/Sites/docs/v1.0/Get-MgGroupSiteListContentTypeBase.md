@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListContentTypeBase
 
 ## SYNOPSIS
-Get base from groups
+Parent contentType from which this content type is derived.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupSiteListContentTypeBase -InputObject <ISitesIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get base from groups
+Parent contentType from which this content type is derived.
 
 ## EXAMPLES
 

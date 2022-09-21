@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgGroupSiteListItemField
 
 ## SYNOPSIS
-Update the navigation property fields in groups
+Update the properties on a **[listItem][]**.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgGroupSiteListItemField -InputObject <ISitesIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Update the navigation property fields in groups
+Update the properties on a **[listItem][]**.
 
 ## EXAMPLES
 

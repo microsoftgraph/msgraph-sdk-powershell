@@ -8,7 +8,8 @@ schema: 2.0.0
 # Copy-MgSiteOnenotePageToSection
 
 ## SYNOPSIS
-Invoke action copyToSection
+Copy a page to a specific section.
+For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Copy-MgSiteOnenotePageToSection -InputObject <ISitesIdentity> [-SiteId <String>]
 ```
 
 ## DESCRIPTION
-Invoke action copyToSection
+Copy a page to a specific section.
+For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ## EXAMPLES
 

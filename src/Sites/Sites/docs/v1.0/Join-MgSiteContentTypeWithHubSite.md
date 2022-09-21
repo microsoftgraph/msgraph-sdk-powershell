@@ -8,7 +8,7 @@ schema: 2.0.0
 # Join-MgSiteContentTypeWithHubSite
 
 ## SYNOPSIS
-Invoke action associateWithHubSites
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ## SYNTAX
 
@@ -39,9 +39,24 @@ Join-MgSiteContentTypeWithHubSite -InputObject <ISitesIdentity> [-AdditionalProp
 ```
 
 ## DESCRIPTION
-Invoke action associateWithHubSites
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ## EXAMPLES
+
+### Example 1: Using the Join-MgSiteContentTypeWithHubSite Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	HubSiteUrls = @(
+		"https://graph.microsoft.com/v1.0/sites/{site-id}"
+	)
+	PropagateToExistingLists = $false
+}
+Join-MgSiteContentTypeWithHubSite -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+```
+
+This example shows how to use the Join-MgSiteContentTypeWithHubSite Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

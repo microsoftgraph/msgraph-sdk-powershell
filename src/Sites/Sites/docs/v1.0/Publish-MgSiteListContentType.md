@@ -8,7 +8,7 @@ schema: 2.0.0
 # Publish-MgSiteListContentType
 
 ## SYNOPSIS
-Invoke action publish
+Publishes a [contentType][] present in the content type hub site.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Publish-MgSiteListContentType -InputObject <ISitesIdentity> [-PassThru] [-Confir
 ```
 
 ## DESCRIPTION
-Invoke action publish
+Publishes a [contentType][] present in the content type hub site.
 
 ## EXAMPLES
 

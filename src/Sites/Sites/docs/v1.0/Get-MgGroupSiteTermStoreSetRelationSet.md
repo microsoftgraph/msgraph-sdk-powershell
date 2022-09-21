@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStoreSetRelationSet
 
 ## SYNOPSIS
-Get set from groups
+The [set] in which the relation is relevant.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupSiteTermStoreSetRelationSet -InputObject <ISitesIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Get set from groups
+The [set] in which the relation is relevant.
 
 ## EXAMPLES
 

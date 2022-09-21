@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupSitePermission
 
 ## SYNOPSIS
-Create new navigation property to permissions for groups
+Create a new permission object on a site.
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ New-MgGroupSitePermission -InputObject <ISitesIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Create new navigation property to permissions for groups
+Create a new permission object on a site.
 
 ## EXAMPLES
 

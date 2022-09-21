@@ -170,6 +170,7 @@ Accept wildcard characters: False
 
 ### -Sets
 Collection of all sets available in the term store.
+This relationship can only be used to load a specific term set.
 To construct, please use Get-Help -Online and see NOTES section for SETS properties and create a hash table.
 
 ```yaml
@@ -278,8 +279,8 @@ BODYPARAMETER <IMicrosoftGraphTermStore1>: store
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
         - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: 
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -288,7 +289,7 @@ BODYPARAMETER <IMicrosoftGraphTermStore1>: store
           - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[Set <IMicrosoftGraphTermStoreSet>]`: set
       - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-      - `[Description <String>]`: Description giving details on the term usage.
+      - `[Description <String>]`: Description that gives details on the term usage.
       - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
         - `[LanguageTag <String>]`: The language tag for the label.
         - `[Name <String>]`: The name in the localized language.
@@ -297,7 +298,7 @@ BODYPARAMETER <IMicrosoftGraphTermStore1>: store
       - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
       - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
   - `[LanguageTags <String[]>]`: List of languages for the term store.
-  - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
+  - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
 
 GROUPS <IMicrosoftGraphTermStoreGroup1[]>: Collection of all groups available in the term store.
   - `[Id <String>]`: 
@@ -321,8 +322,8 @@ GROUPS <IMicrosoftGraphTermStoreGroup1[]>: Collection of all groups available in
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-        - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
       - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: 
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -331,7 +332,7 @@ GROUPS <IMicrosoftGraphTermStoreGroup1[]>: Collection of all groups available in
         - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
       - `[Set <IMicrosoftGraphTermStoreSet>]`: set
     - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-    - `[Description <String>]`: Description giving details on the term usage.
+    - `[Description <String>]`: Description that gives details on the term usage.
     - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
       - `[LanguageTag <String>]`: The language tag for the label.
       - `[Name <String>]`: The name in the localized language.
@@ -377,7 +378,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
 
-SETS <IMicrosoftGraphTermStoreSet[]>: Collection of all sets available in the term store.
+SETS <IMicrosoftGraphTermStoreSet[]>: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
   - `[Id <String>]`: 
   - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
     - `[Id <String>]`: 
@@ -392,8 +393,8 @@ SETS <IMicrosoftGraphTermStoreSet[]>: Collection of all sets available in the te
       - `[Name <String>]`: The name of the label.
     - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-      - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
     - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
       - `[Id <String>]`: 
       - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -402,7 +403,7 @@ SETS <IMicrosoftGraphTermStoreSet[]>: Collection of all sets available in the te
       - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
     - `[Set <IMicrosoftGraphTermStoreSet>]`: set
   - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-  - `[Description <String>]`: Description giving details on the term usage.
+  - `[Description <String>]`: Description that gives details on the term usage.
   - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
     - `[LanguageTag <String>]`: The language tag for the label.
     - `[Name <String>]`: The name in the localized language.
