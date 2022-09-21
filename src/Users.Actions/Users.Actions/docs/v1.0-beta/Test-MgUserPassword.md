@@ -8,7 +8,8 @@ schema: 2.0.0
 # Test-MgUserPassword
 
 ## SYNOPSIS
-Invoke action validatePassword
+Check a user's password against the organization's password validation policy and report whether the password is valid.
+Use this action to provide real-time feedback on password strength while the user types their password.
 
 ## SYNTAX
 
@@ -26,9 +27,22 @@ Test-MgUserPassword
 ```
 
 ## DESCRIPTION
-Invoke action validatePassword
+Check a user's password against the organization's password validation policy and report whether the password is valid.
+Use this action to provide real-time feedback on password strength while the user types their password.
 
 ## EXAMPLES
+
+### Example 1: Using the Test-MgUserPassword Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	Password = "1234567890"
+}
+Test-MgUserPassword -BodyParameter $params
+```
+
+This example shows how to use the Test-MgUserPassword Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

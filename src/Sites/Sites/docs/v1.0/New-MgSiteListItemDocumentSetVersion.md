@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSiteListItemDocumentSetVersion
 
 ## SYNOPSIS
-Create new navigation property to documentSetVersions for sites
+Create a new version of a document set item in a list.
 
 ## SYNTAX
 
@@ -45,9 +45,22 @@ New-MgSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Create new navigation property to documentSetVersions for sites
+Create a new version of a document set item in a list.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgSiteListItemDocumentSetVersion Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	Comment = "v1"
+	ShouldCaptureMinorVersion = $false
+}
+New-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -BodyParameter $params
+```
+
+This example shows how to use the New-MgSiteListItemDocumentSetVersion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

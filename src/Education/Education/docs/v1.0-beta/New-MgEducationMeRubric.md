@@ -8,16 +8,15 @@ schema: 2.0.0
 # New-MgEducationMeRubric
 
 ## SYNOPSIS
-Create new navigation property to rubrics for education
+Create a new educationRubric object.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgEducationMeRubric [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedDateTime <DateTime>] [-Description <IMicrosoftGraphEducationItemBody>] [-DisplayName <String>]
- [-Grading <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Levels <IMicrosoftGraphRubricLevel[]>]
+ [-Description <IMicrosoftGraphEducationItemBody>] [-DisplayName <String>] [-Grading <Hashtable>]
+ [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Levels <IMicrosoftGraphRubricLevel[]>]
  [-Qualities <IMicrosoftGraphRubricQuality[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -28,9 +27,170 @@ New-MgEducationMeRubric -BodyParameter <IMicrosoftGraphEducationRubric> [-Confir
 ```
 
 ## DESCRIPTION
-Create new navigation property to rubrics for education
+Create a new educationRubric object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgEducationMeRubric Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DisplayName = "Example Credit Rubric"
+	Description = @{
+		Content = "This is an example of a credit rubric (no points)"
+		ContentType = "text"
+	}
+	Levels = @(
+		@{
+			DisplayName = "Good"
+			Description = @{
+				Content = ""
+				ContentType = "text"
+			}
+		}
+		@{
+			DisplayName = "Poor"
+			Description = @{
+				Content = ""
+				ContentType = "text"
+			}
+		}
+	)
+	Qualities = @(
+		@{
+			Description = @{
+				Content = "Argument"
+				ContentType = "text"
+			}
+			Criteria = @(
+				@{
+					Description = @{
+						Content = "The essay's argument is persuasive."
+						ContentType = "text"
+					}
+				}
+				@{
+					Description = @{
+						Content = "The essay's argument does not make sense."
+						ContentType = "text"
+					}
+				}
+			)
+		}
+		@{
+			Description = @{
+				Content = "Spelling and Grammar"
+				ContentType = "text"
+			}
+			Criteria = @(
+				@{
+					Description = @{
+						Content = "The essay uses proper spelling and grammar with few or no errors."
+						ContentType = "text"
+					}
+				}
+				@{
+					Description = @{
+						Content = "The essay has numerous errors in spelling and/or grammar."
+						ContentType = "text"
+					}
+				}
+			)
+		}
+	)
+}
+New-MgEducationMeRubric -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationMeRubric Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgEducationMeRubric Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DisplayName = "Example Points Rubric"
+	Description = @{
+		Content = "This is an example of a rubric with points"
+		ContentType = "text"
+	}
+	Levels = @(
+		@{
+			DisplayName = "Good"
+			Description = @{
+				Content = ""
+				ContentType = "text"
+			}
+			Grading = @{
+				"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
+				MaxPoints = 
+			}
+		}
+		@{
+			DisplayName = "Poor"
+			Description = @{
+				Content = ""
+				ContentType = "text"
+			}
+			Grading = @{
+				"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
+				MaxPoints = 
+			}
+		}
+	)
+	Qualities = @(
+		@{
+			Description = @{
+				Content = "Argument"
+				ContentType = "text"
+			}
+			Criteria = @(
+				@{
+					Description = @{
+						Content = "The essay's argument is persuasive."
+						ContentType = "text"
+					}
+				}
+				@{
+					Description = @{
+						Content = "The essay's argument does not make sense."
+						ContentType = "text"
+					}
+				}
+			)
+			Weight = 50.0
+		}
+		@{
+			Description = @{
+				Content = "Spelling and Grammar"
+				ContentType = "text"
+			}
+			Criteria = @(
+				@{
+					Description = @{
+						Content = "The essay uses proper spelling and grammar with few or no errors."
+						ContentType = "text"
+					}
+				}
+				@{
+					Description = @{
+						Content = "The essay has numerous errors in spelling and/or grammar."
+						ContentType = "text"
+					}
+				}
+			)
+			Weight = 50.0
+		}
+	)
+	Grading = @{
+		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
+	}
+}
+New-MgEducationMeRubric -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationMeRubric Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -71,22 +231,6 @@ To construct, please use Get-Help -Online and see NOTES section for CREATEDBY pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CreatedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -164,23 +308,6 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-Moment in time when the resource was last modified.
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -285,7 +412,6 @@ BODYPARAMETER <IMicrosoftGraphEducationRubric>: educationRubric
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: 
@@ -294,7 +420,6 @@ BODYPARAMETER <IMicrosoftGraphEducationRubric>: educationRubric
   - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Levels <IMicrosoftGraphRubricLevel[]>]`: The collection of levels making up this rubric.
     - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
     - `[DisplayName <String>]`: The name of this rubric level.

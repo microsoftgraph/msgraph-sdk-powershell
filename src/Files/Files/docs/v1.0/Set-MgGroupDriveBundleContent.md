@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGroupDriveBundleContent
 
 ## SYNOPSIS
-Update content for the navigation property bundles in groups
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgGroupDriveBundleContent -InputObject <IFilesIdentity> -InFile <String> [-B
 ```
 
 ## DESCRIPTION
-Update content for the navigation property bundles in groups
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

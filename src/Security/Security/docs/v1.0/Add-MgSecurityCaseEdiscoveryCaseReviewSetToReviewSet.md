@@ -8,7 +8,9 @@ schema: 2.0.0
 # Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet
 
 ## SYNOPSIS
-Invoke action addToReviewSet
+Start the process of adding a collection from Microsoft 365 services to a review set.
+After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return a Add to review set operation.
 
 ## SYNTAX
 
@@ -42,9 +44,26 @@ Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet -InputObject <ISecurityIden
 ```
 
 ## DESCRIPTION
-Invoke action addToReviewSet
+Start the process of adding a collection from Microsoft 365 services to a review set.
+After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return a Add to review set operation.
 
 ## EXAMPLES
+
+### Example 1: Using the Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+$params = @{
+	Search = @{
+		Id = "c17e91d6-6bc0-4ecb-b388-269ea3d4ffb7"
+	}
+	AdditionalDataOptions = "linkedFiles"
+}
+Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

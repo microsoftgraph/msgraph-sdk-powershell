@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserOnlineMeetingAttendanceReport
 
 ## SYNOPSIS
-Get attendanceReports from users
+The attendance reports of an online meeting.
+Read-only.
 
 ## SYNTAX
 
@@ -38,41 +39,46 @@ Get-MgUserOnlineMeetingAttendanceReport -InputObject <ICloudCommunicationsIdenti
 
 ### List
 ```
-Get-MgUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String>
+Get-MgUserOnlineMeetingAttendanceReport -OnlineMeetingId <String> -UserId <String> [-Count]
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get attendanceReports from users
+The attendance reports of an online meeting.
+Read-only.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgUserOnlineMeetingAttendanceReport Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeetingAttendanceReport -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingAttendanceReportId $meetingAttendanceReportId -ExpandProperty "attendanceRecords" 
+```
+
+This example shows how to use the Get-MgUserOnlineMeetingAttendanceReport Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserOnlineMeetingAttendanceReport Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeetingAttendanceReport -UserId $userId -OnlineMeetingId $onlineMeetingId
+```
+
+This example shows how to use the Get-MgUserOnlineMeetingAttendanceReport Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
 
 Required: False
 Position: Named
@@ -151,21 +157,6 @@ Parameter Sets: Get, Get1, List
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

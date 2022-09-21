@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamChannelFileFolder
 
 ## SYNOPSIS
-Get filesFolder from teams
+Get the metadata for the location where the files of a channel are stored.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgTeamChannelFileFolder -InputObject <ITeamsIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get filesFolder from teams
+Get the metadata for the location where the files of a channel are stored.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgTeamChannelFileFolder Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannelFileFolder -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the Get-MgTeamChannelFileFolder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

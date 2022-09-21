@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgCleanUserManagedDeviceWindowDevice
 
 ## SYNOPSIS
-Invoke action cleanWindowsDevice
+Clean Windows device
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgCleanUserManagedDeviceWindowDevice -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action cleanWindowsDevice
+Clean Windows device
 
 ## EXAMPLES
 

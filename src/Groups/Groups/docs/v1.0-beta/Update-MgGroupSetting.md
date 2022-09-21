@@ -259,7 +259,7 @@ BODYPARAMETER <IMicrosoftGraphDirectorySetting>: directorySetting
   - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
   - `[TemplateId <String>]`: Unique identifier for the template used to create this group of settings. Read-only.
   - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
-    - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
+    - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
     - `[Value <String>]`: Value of the setting.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
@@ -306,7 +306,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 VALUES <IMicrosoftGraphSettingValue[]>: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
-  - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
+  - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
   - `[Value <String>]`: Value of the setting.
 
 ## RELATED LINKS

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgFinancialCompanyPictureContent
 
 ## SYNOPSIS
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgFinancialCompanyPictureContent -InputObject <IFinancialsIdentity> -InFile 
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ## EXAMPLES
 

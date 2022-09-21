@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgOfficeClientConfigurationUserPreferencePayload
 
 ## SYNOPSIS
-Get userPreferencePayload for the navigation property clientConfigurations from officeConfiguration
+Preference settings JSON string in binary format, these values can be overridden by the user.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgOfficeClientConfigurationUserPreferencePayload -InputObject <IDevicesCorpo
 ```
 
 ## DESCRIPTION
-Get userPreferencePayload for the navigation property clientConfigurations from officeConfiguration
+Preference settings JSON string in binary format, these values can be overridden by the user.
 
 ## EXAMPLES
 

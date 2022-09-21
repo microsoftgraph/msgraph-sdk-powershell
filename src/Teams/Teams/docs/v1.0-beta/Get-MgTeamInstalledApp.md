@@ -8,15 +8,15 @@ schema: 2.0.0
 # Get-MgTeamInstalledApp
 
 ## SYNOPSIS
-Get installedApps from teams
+The apps installed in this team.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgTeamInstalledApp -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgTeamInstalledApp -TeamId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,35 +32,64 @@ Get-MgTeamInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get installedApps from teams
+The apps installed in this team.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgTeamInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId -TeamsAppInstallationId $teamsAppInstallationId -ExpandProperty "teamsAppDefinition" 
+```
+
+This example shows how to use the Get-MgTeamInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgTeamInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId -TeamsAppInstallationId $teamsAppInstallationId
+```
+
+This example shows how to use the Get-MgTeamInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgTeamInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'" 
+```
+
+This example shows how to use the Get-MgTeamInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgTeamInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId
+```
+
+This example shows how to use the Get-MgTeamInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Using the Get-MgTeamInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamInstalledApp -TeamId $teamId -ExpandProperty "teamsAppDefinition(`$expand=bot)" 
+```
+
+This example shows how to use the Get-MgTeamInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases: CV
 
 Required: False
 Position: Named
@@ -112,21 +141,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

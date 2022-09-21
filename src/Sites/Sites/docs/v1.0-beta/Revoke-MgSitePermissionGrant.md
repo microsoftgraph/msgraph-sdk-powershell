@@ -8,7 +8,7 @@ schema: 2.0.0
 # Revoke-MgSitePermissionGrant
 
 ## SYNOPSIS
-Invoke action revokeGrants
+Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Revoke-MgSitePermissionGrant -InputObject <ISitesIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Invoke action revokeGrants
+Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
 ## EXAMPLES
 

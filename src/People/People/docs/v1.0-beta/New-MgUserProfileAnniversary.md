@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileAnniversary
 
 ## SYNOPSIS
-Create new navigation property to anniversaries for users
+Use this API to create a new personAnniversary object in a user's profile.
 
 ## SYNTAX
 
@@ -43,9 +43,23 @@ New-MgUserProfileAnniversary -InputObject <IPeopleIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Create new navigation property to anniversaries for users
+Use this API to create a new personAnniversary object in a user's profile.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserProfileAnniversary Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+$params = @{
+	Type = "birthday"
+	Date = "1980-01-08"
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfileAnniversary -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserProfileAnniversary Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

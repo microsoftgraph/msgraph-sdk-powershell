@@ -8,7 +8,7 @@ schema: 2.0.0
 # Request-MgUserManagedDeviceRemoteAssistance
 
 ## SYNOPSIS
-Invoke action requestRemoteAssistance
+Request remote assistance
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Request-MgUserManagedDeviceRemoteAssistance -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action requestRemoteAssistance
+Request remote assistance
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecuritySubjectRightsRequestNote
 
 ## SYNOPSIS
-Create new navigation property to notes for security
+Create a new authoredNote object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgSecuritySubjectRightsRequestNote -InputObject <ISecurityIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Create new navigation property to notes for security
+Create a new authoredNote object.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgParseApplicationSynchronizationTemplateSchemaExpression
 
 ## SYNOPSIS
-Invoke action parseExpression
+Parse a given string expression into an attributeMappingSource object.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
 
 ## SYNTAX
 
@@ -44,7 +45,8 @@ Invoke-MgParseApplicationSynchronizationTemplateSchemaExpression -InputObject <I
 ```
 
 ## DESCRIPTION
-Invoke action parseExpression
+Parse a given string expression into an attributeMappingSource object.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
 
 ## EXAMPLES
 

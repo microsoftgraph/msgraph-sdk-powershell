@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserDriveListItemDocumentSetVersion
 
 ## SYNOPSIS
-Create new navigation property to documentSetVersions for users
+Create a new version of a document set item in a list.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserDriveListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Create new navigation property to documentSetVersions for users
+Create a new version of a document set item in a list.
 
 ## EXAMPLES
 

@@ -366,6 +366,7 @@ ACTOR <IMicrosoftGraphAuditActor>: A class containing the properties for Audit A
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ApplicationDisplayName <String>]`: Name of the Application.
   - `[ApplicationId <String>]`: AAD Application Id.
+  - `[AuditActorType <String>]`: Actor Type.
   - `[IPAddress <String>]`: IPAddress.
   - `[RemoteTenantId <String>]`: Remote Tenant Id
   - `[RemoteUserId <String>]`: Remote User Id
@@ -390,6 +391,7 @@ BODYPARAMETER <IMicrosoftGraphAuditEvent>: A class containing the properties for
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ApplicationDisplayName <String>]`: Name of the Application.
     - `[ApplicationId <String>]`: AAD Application Id.
+    - `[AuditActorType <String>]`: Actor Type.
     - `[IPAddress <String>]`: IPAddress.
     - `[RemoteTenantId <String>]`: Remote Tenant Id
     - `[RemoteUserId <String>]`: Remote User Id
@@ -406,6 +408,7 @@ BODYPARAMETER <IMicrosoftGraphAuditEvent>: A class containing the properties for
   - `[CorrelationId <String>]`: The client request Id that is used to correlate activity within the system.
   - `[DisplayName <String>]`: Event display name.
   - `[Resources <IMicrosoftGraphAuditResource[]>]`: Resources being modified.
+    - `[AuditResourceType <String>]`: Audit resource's type.
     - `[DisplayName <String>]`: Display name.
     - `[ModifiedProperties <IMicrosoftGraphAuditProperty[]>]`: List of modified properties.
       - `[DisplayName <String>]`: Display name.
@@ -469,6 +472,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[UserPfxCertificateId <String>]`: key: id of userPFXCertificate
 
 RESOURCES <IMicrosoftGraphAuditResource[]>: Resources being modified.
+  - `[AuditResourceType <String>]`: Audit resource's type.
   - `[DisplayName <String>]`: Display name.
   - `[ModifiedProperties <IMicrosoftGraphAuditProperty[]>]`: List of modified properties.
     - `[DisplayName <String>]`: Display name.

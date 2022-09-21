@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerRoster
 
 ## SYNOPSIS
-Create new navigation property to rosters for planner
+Create a new plannerRoster object.
 
 ## SYNTAX
 
@@ -25,9 +25,21 @@ New-MgPlannerRoster -BodyParameter <IMicrosoftGraphPlannerRoster> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Create new navigation property to rosters for planner
+Create a new plannerRoster object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgPlannerRoster Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	"@odata.type" = "#microsoft.graph.plannerRoster"
+}
+New-MgPlannerRoster -BodyParameter $params
+```
+
+This example shows how to use the New-MgPlannerRoster Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

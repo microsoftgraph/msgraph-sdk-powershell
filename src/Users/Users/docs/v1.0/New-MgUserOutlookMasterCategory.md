@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOutlookMasterCategory
 
 ## SYNOPSIS
-Create new navigation property to masterCategories for users
+Create an outlookCategory object in the user's master list of categories.
 
 ## SYNTAX
 
@@ -37,9 +37,23 @@ New-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Create new navigation property to masterCategories for users
+Create an outlookCategory object in the user's master list of categories.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserOutlookMasterCategory Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+$params = @{
+	DisplayName = "Project expenses"
+	Color = "preset9"
+}
+# A UPN can also be used as -UserId.
+New-MgUserOutlookMasterCategory -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserOutlookMasterCategory Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

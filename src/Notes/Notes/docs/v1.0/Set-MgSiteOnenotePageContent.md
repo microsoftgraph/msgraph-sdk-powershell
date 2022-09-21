@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgSiteOnenotePageContent
 
 ## SYNOPSIS
-Update content for the navigation property pages in sites
+The page's HTML content.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgSiteOnenotePageContent -InputObject <INotesIdentity> -InFile <String> [-Bo
 ```
 
 ## DESCRIPTION
-Update content for the navigation property pages in sites
+The page's HTML content.
 
 ## EXAMPLES
 

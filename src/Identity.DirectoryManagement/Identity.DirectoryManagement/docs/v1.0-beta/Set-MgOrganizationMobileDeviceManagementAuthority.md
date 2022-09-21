@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgOrganizationMobileDeviceManagementAuthority
 
 ## SYNOPSIS
-Invoke action setMobileDeviceManagementAuthority
+Set mobile device management authority
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgOrganizationMobileDeviceManagementAuthority -InputObject <IIdentityDirecto
 ```
 
 ## DESCRIPTION
-Invoke action setMobileDeviceManagementAuthority
+Set mobile device management authority
 
 ## EXAMPLES
 

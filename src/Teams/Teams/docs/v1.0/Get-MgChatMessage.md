@@ -8,13 +8,15 @@ schema: 2.0.0
 # Get-MgChatMessage
 
 ## SYNOPSIS
-Get messages from chats
+A collection of all the messages in the chat.
+Nullable.
 
 ## SYNTAX
 
 ### Get3 (Default)
 ```
-Get-MgChatMessage [<CommonParameters>]
+Get-MgChatMessage [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get2
@@ -31,32 +33,36 @@ Get-MgChatMessage -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-P
 
 ### List1
 ```
-Get-MgChatMessage -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgChatMessage -ChatId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get messages from chats
+A collection of all the messages in the chat.
+Nullable.
 
 ## EXAMPLES
 
-## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+### Example 1: Using the Get-MgChatMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatMessage -ChatId $chatId -Top 2 
 ```
+
+This example shows how to use the Get-MgChatMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgChatMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatMessage -ChatId $chatId -ChatMessageId $chatMessageId
+```
+
+This example shows how to use the Get-MgChatMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+## PARAMETERS
 
 ### -ChatId
 key: id of chat
@@ -88,14 +94,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases: CV
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Get3, List1
+Aliases:
 
 Required: False
 Position: Named
@@ -124,7 +129,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: Get3, List1
 Aliases:
 
 Required: False
@@ -150,27 +155,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Property
 Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get2, GetViaIdentity1, List1
+Parameter Sets: (All)
 Aliases: Select
 
 Required: False
@@ -185,7 +175,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: Get3, List1
 Aliases:
 
 Required: False
@@ -200,7 +190,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: Get3, List1
 Aliases:
 
 Required: False
@@ -215,7 +205,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: Get3, List1
 Aliases: OrderBy
 
 Required: False
@@ -230,7 +220,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: Get3, List1
 Aliases: Limit
 
 Required: False

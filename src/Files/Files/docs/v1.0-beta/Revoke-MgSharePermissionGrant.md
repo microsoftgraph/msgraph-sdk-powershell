@@ -8,7 +8,7 @@ schema: 2.0.0
 # Revoke-MgSharePermissionGrant
 
 ## SYNOPSIS
-Invoke action revokeGrants
+Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Revoke-MgSharePermissionGrant -InputObject <IFilesIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Invoke action revokeGrants
+Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
 ## EXAMPLES
 

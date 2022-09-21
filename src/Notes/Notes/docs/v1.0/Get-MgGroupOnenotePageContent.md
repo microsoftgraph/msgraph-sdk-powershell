@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupOnenotePageContent
 
 ## SYNOPSIS
-Get content for the navigation property pages from groups
+The page's HTML content.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgGroupOnenotePageContent -InputObject <INotesIdentity> -OutFile <String> [-
 ```
 
 ## DESCRIPTION
-Get content for the navigation property pages from groups
+The page's HTML content.
 
 ## EXAMPLES
 

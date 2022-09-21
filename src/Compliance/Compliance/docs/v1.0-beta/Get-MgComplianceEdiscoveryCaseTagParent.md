@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseTagParent
 
 ## SYNOPSIS
-Get parent from compliance
+Returns the parent tag of the specified tag.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgComplianceEdiscoveryCaseTagParent -InputObject <IComplianceIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get parent from compliance
+Returns the parent tag of the specified tag.
 
 ## EXAMPLES
 

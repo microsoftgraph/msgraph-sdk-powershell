@@ -8,7 +8,7 @@ schema: 2.0.0
 # Revoke-MgUserManagedDeviceAppleVppLicense
 
 ## SYNOPSIS
-Invoke action revokeAppleVppLicenses
+Revoke all Apple Vpp licenses for a device
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Revoke-MgUserManagedDeviceAppleVppLicense -InputObject <IUsersActionsIdentity> [
 ```
 
 ## DESCRIPTION
-Invoke action revokeAppleVppLicenses
+Revoke all Apple Vpp licenses for a device
 
 ## EXAMPLES
 

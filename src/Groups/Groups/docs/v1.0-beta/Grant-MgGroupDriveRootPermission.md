@@ -8,7 +8,7 @@ schema: 2.0.0
 # Grant-MgGroupDriveRootPermission
 
 ## SYNOPSIS
-Invoke action grant
+Grant users access to a link represented by a [permission][].
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Grant-MgGroupDriveRootPermission -InputObject <IGroupsIdentity> [-AdditionalProp
 ```
 
 ## DESCRIPTION
-Invoke action grant
+Grant users access to a link represented by a [permission][].
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeviceActivity
 
 ## SYNOPSIS
-Get activity from teamwork
+Get the activity status of a Microsoft Teams-enabled device.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgTeamworkDeviceActivity -InputObject <ITeamsIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get activity from teamwork
+Get the activity status of a Microsoft Teams-enabled device.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgTeamworkDeviceActivity Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamworkDeviceActivity -TeamworkDeviceId $teamworkDeviceId
+```
+
+This example shows how to use the Get-MgTeamworkDeviceActivity Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

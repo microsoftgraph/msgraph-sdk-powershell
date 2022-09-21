@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListContentTypeBase
 
 ## SYNOPSIS
-Get base from shares
+Parent contentType from which this content type is derived.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgShareListContentTypeBase -InputObject <IFilesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get base from shares
+Parent contentType from which this content type is derived.
 
 ## EXAMPLES
 

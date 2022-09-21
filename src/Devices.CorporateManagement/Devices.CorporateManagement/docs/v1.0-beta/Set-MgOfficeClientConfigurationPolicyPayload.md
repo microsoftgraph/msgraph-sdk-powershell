@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgOfficeClientConfigurationPolicyPayload
 
 ## SYNOPSIS
-Update policyPayload for the navigation property clientConfigurations in officeConfiguration
+Policy settings JSON string in binary format, these values cannot be changed by the user.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgOfficeClientConfigurationPolicyPayload -InputObject <IDevicesCorporateMana
 ```
 
 ## DESCRIPTION
-Update policyPayload for the navigation property clientConfigurations in officeConfiguration
+Policy settings JSON string in binary format, these values cannot be changed by the user.
 
 ## EXAMPLES
 

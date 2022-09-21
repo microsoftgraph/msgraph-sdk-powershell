@@ -8,46 +8,39 @@ schema: 2.0.0
 # Get-MgPolicyMobileDeviceManagementPolicyIncludedGroup
 
 ## SYNOPSIS
-Get includedGroups from policies
+Get the list of groups that are included in a mobile app management policy.
 
 ## SYNTAX
 
 ```
-Get-MgPolicyMobileDeviceManagementPolicyIncludedGroup -MobilityManagementPolicyId <String>
+Get-MgPolicyMobileDeviceManagementPolicyIncludedGroup -MobilityManagementPolicyId <String> [-Count]
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get includedGroups from policies
+Get the list of groups that are included in a mobile app management policy.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgPolicyMobileDeviceManagementPolicyIncludedGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyMobileDeviceManagementPolicyIncludedGroup -MobilityManagementPolicyId $mobilityManagementPolicyId
+```
+
+This example shows how to use the Get-MgPolicyMobileDeviceManagementPolicyIncludedGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: CV
 
 Required: False
 Position: Named
@@ -95,21 +88,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

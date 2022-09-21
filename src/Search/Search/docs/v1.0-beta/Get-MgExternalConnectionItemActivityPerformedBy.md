@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgExternalConnectionItemActivityPerformedBy
 
 ## SYNOPSIS
-Get performedBy from external
+Represents an identity used to identify who is responsible for the activity.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgExternalConnectionItemActivityPerformedBy -InputObject <ISearchIdentity> [
 ```
 
 ## DESCRIPTION
-Get performedBy from external
+Represents an identity used to identify who is responsible for the activity.
 
 ## EXAMPLES
 

@@ -8,14 +8,14 @@ schema: 2.0.0
 # Get-MgSubscription
 
 ## SYNOPSIS
-Get entity from subscriptions by key
+Retrieve the properties and relationships of a subscription.
+See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgSubscription [-Property <String[]>] [-Search <String>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgSubscription [-Property <String[]>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### Get
@@ -29,42 +29,30 @@ Get-MgSubscription -InputObject <IChangeNotificationsIdentity> [-Property <Strin
 ```
 
 ## DESCRIPTION
-Get entity from subscriptions by key
+Retrieve the properties and relationships of a subscription.
+See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgSubscription Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ChangeNotifications
+Get-MgSubscription -SubscriptionId $subscriptionId
+```
+
+This example shows how to use the Get-MgSubscription Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSubscription Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ChangeNotifications
+Get-MgSubscription
+```
+
+This example shows how to use the Get-MgSubscription Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -79,21 +67,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -151,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
 
 ## NOTES
 

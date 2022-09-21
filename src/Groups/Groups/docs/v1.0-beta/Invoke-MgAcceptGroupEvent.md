@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgAcceptGroupEvent
 
 ## SYNOPSIS
-Invoke action accept
+Accept the specified event in a user calendar.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgAcceptGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Invoke action accept
+Accept the specified event in a user calendar.
 
 ## EXAMPLES
 

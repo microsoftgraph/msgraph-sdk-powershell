@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-MgUserTodoListTaskAttachmentUploadSession
 
 ## SYNOPSIS
-Invoke action createUploadSession
+Create an upload session to iteratively upload ranges of a file as an attachment to a todoTask.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
+The request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+This allows the transfer to be resumed, in case the network connection is dropped during the upload.
+The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.
 
 ## SYNTAX
 
@@ -41,9 +45,30 @@ New-MgUserTodoListTaskAttachmentUploadSession -InputObject <IUsersActionsIdentit
 ```
 
 ## DESCRIPTION
-Invoke action createUploadSession
+Create an upload session to iteratively upload ranges of a file as an attachment to a todoTask.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
+The request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+This allows the transfer to be resumed, in case the network connection is dropped during the upload.
+The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserTodoListTaskAttachmentUploadSession Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	AttachmentInfo = @{
+		AttachmentType = "file"
+		Name = "flower"
+		Size = 3483322
+	}
+}
+# A UPN can also be used as -UserId.
+New-MgUserTodoListTaskAttachmentUploadSession -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserTodoListTaskAttachmentUploadSession Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -211,18 +236,18 @@ To create the parameters described below, construct a hash table containing the 
 ATTACHMENTINFO <IMicrosoftGraphAttachmentInfo>: attachmentInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AttachmentType <String>]`: attachmentType
-  - `[ContentType <String>]`: The nature of the data in the attachment. Optional.
-  - `[Name <String>]`: The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
-  - `[Size <Int64?>]`: The length of the attachment in bytes. Required.
+  - `[ContentType <String>]`: 
+  - `[Name <String>]`: 
+  - `[Size <Int64?>]`: 
 
 BODYPARAMETER <IPaths4768B9UsersUserIdTodoListsTodotasklistIdTasksTodotaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AttachmentInfo <IMicrosoftGraphAttachmentInfo>]`: attachmentInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AttachmentType <String>]`: attachmentType
-    - `[ContentType <String>]`: The nature of the data in the attachment. Optional.
-    - `[Name <String>]`: The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
-    - `[Size <Int64?>]`: The length of the attachment in bytes. Required.
+    - `[ContentType <String>]`: 
+    - `[Name <String>]`: 
+    - `[Size <Int64?>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance

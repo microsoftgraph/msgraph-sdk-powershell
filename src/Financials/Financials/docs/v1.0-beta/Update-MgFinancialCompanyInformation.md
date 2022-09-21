@@ -204,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -402,7 +402,7 @@ ADDRESS <IMicrosoftGraphPostalAddressType>: postalAddressType
 
 BODYPARAMETER <IMicrosoftGraphCompanyInformation1>: companyInformation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: 

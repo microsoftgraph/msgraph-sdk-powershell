@@ -8,13 +8,17 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelMessage
 
 ## SYNOPSIS
-Get messages from teamwork
+A collection of all the messages in the channel.
+A navigation property.
+Nullable.
 
 ## SYNTAX
 
 ### Get1 (Default)
 ```
-Get-MgTeamworkDeletedTeamChannelMessage -DeletedTeamId <String> [<CommonParameters>]
+Get-MgTeamworkDeletedTeamChannelMessage -DeletedTeamId <String> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get
@@ -31,37 +35,26 @@ Get-MgTeamworkDeletedTeamChannelMessage -InputObject <ITeamsIdentity> [-ExpandPr
 
 ### GetViaIdentity1
 ```
-Get-MgTeamworkDeletedTeamChannelMessage -InputObject <ITeamsIdentity> [<CommonParameters>]
+Get-MgTeamworkDeletedTeamChannelMessage -InputObject <ITeamsIdentity> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgTeamworkDeletedTeamChannelMessage -ChannelId <String> -DeletedTeamId <String>
+Get-MgTeamworkDeletedTeamChannelMessage -ChannelId <String> -DeletedTeamId <String> [-Count]
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get messages from teamwork
+A collection of all the messages in the channel.
+A navigation property.
+Nullable.
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -ChannelId
 key: id of channel
@@ -93,14 +86,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Get1, GetViaIdentity1, List
+Aliases:
 
 Required: False
 Position: Named
@@ -144,7 +136,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases:
 
 Required: False
@@ -170,27 +162,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Property
 Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, GetViaIdentity, List
+Parameter Sets: (All)
 Aliases: Select
 
 Required: False
@@ -205,7 +182,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases:
 
 Required: False
@@ -220,7 +197,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases:
 
 Required: False
@@ -235,7 +212,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases: OrderBy
 
 Required: False
@@ -250,7 +227,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases: Limit
 
 Required: False

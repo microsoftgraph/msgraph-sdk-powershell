@@ -8,7 +8,8 @@ schema: 2.0.0
 # Add-MgTeamworkDeletedTeamChannelMember
 
 ## SYNOPSIS
-Invoke action add
+Add multiple members in a single request to a team.
+The response provides details about which memberships could and couldn't be created.
 
 ## SYNTAX
 
@@ -40,7 +41,8 @@ Add-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Invoke action add
+Add multiple members in a single request to a team.
+The response provides details about which memberships could and couldn't be created.
 
 ## EXAMPLES
 

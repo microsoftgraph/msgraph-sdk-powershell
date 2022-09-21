@@ -8,15 +8,15 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtManagedEBookCategory
 
 ## SYNOPSIS
-Get managedEBookCategories from deviceAppManagement
+The mobile eBook categories.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgDeviceAppMgtManagedEBookCategory [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgDeviceAppMgtManagedEBookCategory [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get
@@ -45,41 +45,25 @@ Get-MgDeviceAppMgtManagedEBookCategory -InputObject <IDevicesCorporateManagement
 
 ### List1
 ```
-Get-MgDeviceAppMgtManagedEBookCategory -ManagedEBookId <String> [-ExpandProperty <String[]>]
+Get-MgDeviceAppMgtManagedEBookCategory -ManagedEBookId <String> [-Count] [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get managedEBookCategories from deviceAppManagement
+The mobile eBook categories.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List, List1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List, List1
-Aliases: CV
 
 Required: False
 Position: Named
@@ -158,21 +142,6 @@ Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List, List1
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

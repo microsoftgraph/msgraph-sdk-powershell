@@ -51,6 +51,18 @@ Update the navigation property userAttributeAssignments in identity
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgIdentityB2CUserFlowUserAttributeAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	UserInputType = "textBox"
+}
+Update-MgIdentityB2CUserFlowUserAttributeAssignment -B2cIdentityUserFlowId $b2cIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgIdentityB2CUserFlowUserAttributeAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -323,18 +335,22 @@ BODYPARAMETER <IMicrosoftGraphIdentityUserFlowAttributeAssignment>: identityUser
     - `[DisplayName <String>]`: The display name of the user flow attribute.
     - `[UserFlowAttributeType <String>]`: identityUserFlowAttributeType
   - `[UserAttributeValues <IMicrosoftGraphUserAttributeValuesItem[]>]`: The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-    - `[IsDefault <Boolean?>]`: Used to set the value as the default.
-    - `[Name <String>]`: The display name of the property displayed to the end user in the user flow.
+    - `[IsDefault <Boolean?>]`: Determines whether the value is set as the default.
+    - `[Name <String>]`: The display name of the property displayed to the user in the user flow.
     - `[Value <String>]`: The value that is set when this item is selected.
   - `[UserInputType <String>]`: identityUserFlowAttributeInputType
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -409,8 +425,8 @@ USERATTRIBUTE <IMicrosoftGraphIdentityUserFlowAttribute>: identityUserFlowAttrib
   - `[UserFlowAttributeType <String>]`: identityUserFlowAttributeType
 
 USERATTRIBUTEVALUES <IMicrosoftGraphUserAttributeValuesItem[]>: The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-  - `[IsDefault <Boolean?>]`: Used to set the value as the default.
-  - `[Name <String>]`: The display name of the property displayed to the end user in the user flow.
+  - `[IsDefault <Boolean?>]`: Determines whether the value is set as the default.
+  - `[Name <String>]`: The display name of the property displayed to the user in the user flow.
   - `[Value <String>]`: The value that is set when this item is selected.
 
 ## RELATED LINKS

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileSkill
 
 ## SYNOPSIS
-Create new navigation property to skills for users
+Use this API to create a new skillProficiency object in a user's profile.
 
 ## SYNTAX
 
@@ -46,9 +46,30 @@ New-MgUserProfileSkill -InputObject <IPeopleIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Create new navigation property to skills for users
+Use this API to create a new skillProficiency object in a user's profile.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserProfileSkill Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+$params = @{
+	Categories = @(
+		"Professional"
+	)
+	AllowedAudiences = "organization"
+	DisplayName = "API Design"
+	Proficiency = "generalProfessional"
+	CollaborationTags = @(
+		"ableToMentor"
+	)
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfileSkill -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserProfileSkill Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

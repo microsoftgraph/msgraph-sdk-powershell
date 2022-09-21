@@ -8,7 +8,7 @@ schema: 2.0.0
 # Lock-MgUserManagedDeviceRemote
 
 ## SYNOPSIS
-Invoke action remoteLock
+Remote lock
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Lock-MgUserManagedDeviceRemote -InputObject <IUsersActionsIdentity> [-PassThru] 
 ```
 
 ## DESCRIPTION
-Invoke action remoteLock
+Remote lock
 
 ## EXAMPLES
 

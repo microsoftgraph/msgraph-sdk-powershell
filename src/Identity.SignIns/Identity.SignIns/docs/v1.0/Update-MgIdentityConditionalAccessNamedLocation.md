@@ -43,6 +43,29 @@ Update the navigation property namedLocations in identity
 
 ## EXAMPLES
 
+### Example 1: Update a country named location by adding to the list of countries
+```powershell
+Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+
+$params = @{
+"@odata.type" = "#microsoft.graph.countryNamedLocation"
+DisplayName = "Named location with unknown countries and regions"
+CountriesAndRegions = @(
+    "US"
+    "XK"
+    "ID"
+    "CA"
+)
+IncludeUnknownCountriesAndRegions = $true
+}
+
+Update-MgIdentityConditionalAccessNamedLocation -NamedLocationId '1f0fd623-bf8f-4003-9627-32a68c3cdcc1' -BodyParameter $params
+```
+
+This example updates the details of an existing named location.
+Supply the values of the relevant fields that should be updated.
+In this example, `ID` and `CA` are added in the list of countries.
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -249,10 +272,14 @@ BODYPARAMETER <IMicrosoftGraphNamedLocation>: namedLocation
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow

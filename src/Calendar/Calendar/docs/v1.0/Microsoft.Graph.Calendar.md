@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Calendar
-Module Guid: eab810ab-349d-4277-ba00-5f28bfd9b804
+Module Guid: 7da240ca-50a5-46d9-94dd-99b4ddcd6323
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,148 +12,227 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Calendar Cmdlets
 ### [Get-MgGroupCalendar](Get-MgGroupCalendar.md)
-Get calendar from groups
+The group's calendar.
+Read-only.
 
 ### [Get-MgGroupCalendarMultiValueExtendedProperty](Get-MgGroupCalendarMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupCalendarPermission](Get-MgGroupCalendarPermission.md)
-Get calendarPermissions from groups
+The permissions of the users with whom the calendar is shared.
 
 ### [Get-MgGroupCalendarSingleValueExtendedProperty](Get-MgGroupCalendarSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupCalendarView](Get-MgGroupCalendarView.md)
-Get calendarView from groups
+The calendar view for the calendar.
+Navigation property.
+Read-only.
 
 ### [Get-MgGroupEvent](Get-MgGroupEvent.md)
-Get events from groups
+The group's calendar events.
 
 ### [Get-MgGroupEventAttachment](Get-MgGroupEventAttachment.md)
-Get attachments from groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupEventCalendar](Get-MgGroupEventCalendar.md)
-Get calendar from groups
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ### [Get-MgGroupEventExtension](Get-MgGroupEventExtension.md)
-Get extensions from groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Get-MgGroupEventInstance](Get-MgGroupEventInstance.md)
-Get instances from groups
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupEventInstanceAttachment](Get-MgGroupEventInstanceAttachment.md)
-Get attachments from groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupEventInstanceCalendar](Get-MgGroupEventInstanceCalendar.md)
-Get calendar from groups
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ### [Get-MgGroupEventInstanceExtension](Get-MgGroupEventInstanceExtension.md)
-Get extensions from groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Get-MgGroupEventInstanceMultiValueExtendedProperty](Get-MgGroupEventInstanceMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupEventInstanceSingleValueExtendedProperty](Get-MgGroupEventInstanceSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupEventMultiValueExtendedProperty](Get-MgGroupEventMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupEventSingleValueExtendedProperty](Get-MgGroupEventSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgPlace](Get-MgPlace.md)
-Get place
+Get the properties and relationships of a place object specified by either its ID or email address.
+The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.
 
 ### [Get-MgUserCalendar](Get-MgUserCalendar.md)
-Get calendars from users
+The user's calendars.
+Read-only.
+Nullable.
 
 ### [Get-MgUserCalendarEvent](Get-MgUserCalendarEvent.md)
-Get events from users
+Retrieve a list of events in a calendar.
+The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
+The list of events contains single instance meetings and series masters.
+To get expanded event instances, you can get the calendar view, or \nget the instances of an event.
 
 ### [Get-MgUserCalendarGroup](Get-MgUserCalendarGroup.md)
-Get calendarGroups from users
+The user's calendar groups.
+Read-only.
+Nullable.
 
 ### [Get-MgUserCalendarGroupCalendar](Get-MgUserCalendarGroupCalendar.md)
-Get calendars from users
+Retrieve a list of calendars belonging to a calendar group.
 
 ### [Get-MgUserCalendarMultiValueExtendedProperty](Get-MgUserCalendarMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgUserCalendarPermission](Get-MgUserCalendarPermission.md)
-Get calendarPermissions from users
+The permissions of the users with whom the calendar is shared.
 
 ### [Get-MgUserCalendarSingleValueExtendedProperty](Get-MgUserCalendarSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgUserCalendarView](Get-MgUserCalendarView.md)
-Get calendarView from users
+The calendar view for the calendar.
+Navigation property.
+Read-only.
 
 ### [Get-MgUserDefaultCalendar](Get-MgUserDefaultCalendar.md)
-Get calendar from users
+Get the properties and relationships of a calendar object.
+The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group.
+There are two scenarios where an app can get another user's calendar:
 
 ### [Get-MgUserEvent](Get-MgUserEvent.md)
-Get events from users
+The user's events.
+Default is to show Events under the Default Calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventAttachment](Get-MgUserEventAttachment.md)
-Get attachments from users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventCalendar](Get-MgUserEventCalendar.md)
-Get calendar from users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ### [Get-MgUserEventExtension](Get-MgUserEventExtension.md)
-Get extensions from users
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Get-MgUserEventInstance](Get-MgUserEventInstance.md)
-Get instances from users
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventInstanceAttachment](Get-MgUserEventInstanceAttachment.md)
-Get attachments from users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventInstanceCalendar](Get-MgUserEventInstanceCalendar.md)
-Get calendar from users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ### [Get-MgUserEventInstanceExtension](Get-MgUserEventInstanceExtension.md)
-Get extensions from users
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Get-MgUserEventInstanceMultiValueExtendedProperty](Get-MgUserEventInstanceMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventInstanceSingleValueExtendedProperty](Get-MgUserEventInstanceSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventMultiValueExtendedProperty](Get-MgUserEventMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventSingleValueExtendedProperty](Get-MgUserEventSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [New-MgGroupCalendarMultiValueExtendedProperty](New-MgGroupCalendarMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
 
 ### [New-MgGroupCalendarPermission](New-MgGroupCalendarPermission.md)
-Create new navigation property to calendarPermissions for groups
+Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
 
 ### [New-MgGroupCalendarSingleValueExtendedProperty](New-MgGroupCalendarSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for groups
 
 ### [New-MgGroupEvent](New-MgGroupEvent.md)
-Create new navigation property to events for groups
+Use this API to create a new event.
 
 ### [New-MgGroupEventAttachment](New-MgGroupEventAttachment.md)
-Create new navigation property to attachments for groups
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [New-MgGroupEventExtension](New-MgGroupEventExtension.md)
-Create new navigation property to extensions for groups
-
-### [New-MgGroupEventInstance](New-MgGroupEventInstance.md)
-Create new navigation property to instances for groups
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgGroupEventInstanceAttachment](New-MgGroupEventInstanceAttachment.md)
-Create new navigation property to attachments for groups
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [New-MgGroupEventInstanceExtension](New-MgGroupEventInstanceExtension.md)
-Create new navigation property to extensions for groups
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgGroupEventInstanceMultiValueExtendedProperty](New-MgGroupEventInstanceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for groups
@@ -171,43 +250,61 @@ Create new navigation property to singleValueExtendedProperties for groups
 Add new entity to places
 
 ### [New-MgUserCalendar](New-MgUserCalendar.md)
-Create new navigation property to calendars for users
+Create a new calendar for a user.
 
 ### [New-MgUserCalendarEvent](New-MgUserCalendarEvent.md)
-Create new navigation property to events for users
+Use this API to create a new event in a calendar.
+The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 
 ### [New-MgUserCalendarGroup](New-MgUserCalendarGroup.md)
-Create new navigation property to calendarGroups for users
+Use this API to create a new CalendarGroup.
 
 ### [New-MgUserCalendarGroupCalendar](New-MgUserCalendarGroupCalendar.md)
-Create new navigation property to calendars for users
+Use this API to create a new calendar in a calendar group for a user.
 
 ### [New-MgUserCalendarMultiValueExtendedProperty](New-MgUserCalendarMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
 ### [New-MgUserCalendarPermission](New-MgUserCalendarPermission.md)
-Create new navigation property to calendarPermissions for users
+Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
 
 ### [New-MgUserCalendarSingleValueExtendedProperty](New-MgUserCalendarSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserEvent](New-MgUserEvent.md)
-Create new navigation property to events for users
+Create an event in the user's default calendar or specified calendar.
+By default, the **allowNewTimeProposals** property is set to true when an event is created, which means invitees can propose a different date/time for the event.
+See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal.
+You can specify the time zone for each of the start and end times of the event as part of their values, because the \n**start** and **end** properties are of dateTimeTimeZone type.
+First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server.
+When an event is sent, the server sends invitations to all the attendees.
+**Setting the location in an event** An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipment \nlike a projector.
+Users can then invite the resource as an attendee to a meeting.
+On behalf of the resource, the server accepts or rejects \nthe meeting request based on the free/busy schedule of the resource.
+\nIf the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar.
+If the meeting is rescheduled, \nthe server automatically updates the event in the resource's calendar.
+Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room.
+If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:
 
 ### [New-MgUserEventAttachment](New-MgUserEventAttachment.md)
-Create new navigation property to attachments for users
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [New-MgUserEventExtension](New-MgUserEventExtension.md)
-Create new navigation property to extensions for users
-
-### [New-MgUserEventInstance](New-MgUserEventInstance.md)
-Create new navigation property to instances for users
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgUserEventInstanceAttachment](New-MgUserEventInstanceAttachment.md)
-Create new navigation property to attachments for users
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [New-MgUserEventInstanceExtension](New-MgUserEventInstanceExtension.md)
-Create new navigation property to extensions for users
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgUserEventInstanceMultiValueExtendedProperty](New-MgUserEventInstanceMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
@@ -238,9 +335,6 @@ Delete navigation property attachments for groups
 
 ### [Remove-MgGroupEventExtension](Remove-MgGroupEventExtension.md)
 Delete navigation property extensions for groups
-
-### [Remove-MgGroupEventInstance](Remove-MgGroupEventInstance.md)
-Delete navigation property instances for groups
 
 ### [Remove-MgGroupEventInstanceAttachment](Remove-MgGroupEventInstanceAttachment.md)
 Delete navigation property attachments for groups
@@ -287,9 +381,6 @@ Delete navigation property attachments for users
 ### [Remove-MgUserEventExtension](Remove-MgUserEventExtension.md)
 Delete navigation property extensions for users
 
-### [Remove-MgUserEventInstance](Remove-MgUserEventInstance.md)
-Delete navigation property instances for users
-
 ### [Remove-MgUserEventInstanceAttachment](Remove-MgUserEventInstanceAttachment.md)
 Delete navigation property attachments for users
 
@@ -320,17 +411,8 @@ Update the navigation property singleValueExtendedProperties in groups
 ### [Update-MgGroupEvent](Update-MgGroupEvent.md)
 Update the navigation property events in groups
 
-### [Update-MgGroupEventAttachment](Update-MgGroupEventAttachment.md)
-Update the navigation property attachments in groups
-
 ### [Update-MgGroupEventExtension](Update-MgGroupEventExtension.md)
 Update the navigation property extensions in groups
-
-### [Update-MgGroupEventInstance](Update-MgGroupEventInstance.md)
-Update the navigation property instances in groups
-
-### [Update-MgGroupEventInstanceAttachment](Update-MgGroupEventInstanceAttachment.md)
-Update the navigation property attachments in groups
 
 ### [Update-MgGroupEventInstanceExtension](Update-MgGroupEventInstanceExtension.md)
 Update the navigation property extensions in groups
@@ -348,7 +430,8 @@ Update the navigation property multiValueExtendedProperties in groups
 Update the navigation property singleValueExtendedProperties in groups
 
 ### [Update-MgPlace](Update-MgPlace.md)
-Update place
+Update the properties of place object, which can be a room or roomList.
+You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
 
 ### [Update-MgUserCalendar](Update-MgUserCalendar.md)
 Update the navigation property calendars in users
@@ -368,17 +451,8 @@ Update the navigation property singleValueExtendedProperties in users
 ### [Update-MgUserEvent](Update-MgUserEvent.md)
 Update the navigation property events in users
 
-### [Update-MgUserEventAttachment](Update-MgUserEventAttachment.md)
-Update the navigation property attachments in users
-
 ### [Update-MgUserEventExtension](Update-MgUserEventExtension.md)
 Update the navigation property extensions in users
-
-### [Update-MgUserEventInstance](Update-MgUserEventInstance.md)
-Update the navigation property instances in users
-
-### [Update-MgUserEventInstanceAttachment](Update-MgUserEventInstanceAttachment.md)
-Update the navigation property attachments in users
 
 ### [Update-MgUserEventInstanceExtension](Update-MgUserEventInstanceExtension.md)
 Update the navigation property extensions in users

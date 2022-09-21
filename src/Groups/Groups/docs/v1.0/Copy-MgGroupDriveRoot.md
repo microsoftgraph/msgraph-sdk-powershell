@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgGroupDriveRoot
 
 ## SYNOPSIS
-Invoke action copy
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Copy-MgGroupDriveRoot -InputObject <IGroupsIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Invoke action copy
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ## EXAMPLES
 

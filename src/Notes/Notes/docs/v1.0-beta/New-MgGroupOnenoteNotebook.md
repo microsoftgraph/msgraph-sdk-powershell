@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupOnenoteNotebook
 
 ## SYNOPSIS
-Create new navigation property to notebooks for groups
+Create a new OneNote notebook.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgGroupOnenoteNotebook -InputObject <INotesIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Create new navigation property to notebooks for groups
+Create a new OneNote notebook.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgPlayUserManagedDeviceLostModeSound
 
 ## SYNOPSIS
-Invoke action playLostModeSound
+Play lost mode sound
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Invoke-MgPlayUserManagedDeviceLostModeSound -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action playLostModeSound
+Play lost mode sound
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityB2XUserFlow
 
 ## SYNOPSIS
-Create new navigation property to b2xUserFlows for identity
+Create a new b2xIdentityUserFlow object.
 
 ## SYNTAX
 
@@ -30,9 +30,66 @@ New-MgIdentityB2XUserFlow -BodyParameter <IMicrosoftGraphB2XIdentityUserFlow> [-
 ```
 
 ## DESCRIPTION
-Create new navigation property to b2xUserFlows for identity
+Create a new b2xIdentityUserFlow object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgIdentityB2XUserFlow Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "UserFlowWithAPIConnector"
+	UserFlowType = "signUpOrSignIn"
+	UserFlowTypeVersion = 1
+	ApiConnectorConfiguration = @{
+		PostFederationSignup = @{
+			"@odata.id" = "https://graph.microsoft.com/v1/identity/apiConnectors/{id}"
+		}
+		PostAttributeCollection = @{
+			"@odata.id" = "https://graph.microsoft.com/v1/identity/apiConnectors/{id}"
+		}
+	}
+}
+New-MgIdentityB2XUserFlow -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityB2XUserFlow Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgIdentityB2XUserFlow Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "Partner"
+	UserFlowType = "signUpOrSignIn"
+	UserFlowTypeVersion = 1
+	IdentityProviders = @(
+		@{
+			Id = "Facebook-OAuth"
+			Type = "Facebook"
+			Name = "Facebook"
+		}
+	)
+}
+New-MgIdentityB2XUserFlow -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityB2XUserFlow Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgIdentityB2XUserFlow Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "Partner"
+	UserFlowType = "signUpOrSignIn"
+	UserFlowTypeVersion = 1
+}
+New-MgIdentityB2XUserFlow -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityB2XUserFlow Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -116,8 +173,8 @@ Accept wildcard characters: False
 
 ### -Languages
 The languages supported for customization within the user flow.
-Language customization is enabled by default in self-service sign up user flow.
-You cannot create custom languages in self-service sign up user flows.
+Language customization is enabled by default in self-service sign-up user flow.
+You cannot create custom languages in self-service sign-up user flows.
 To construct, please use Get-Help -Online and see NOTES section for LANGUAGES properties and create a hash table.
 
 ```yaml
@@ -273,11 +330,11 @@ BODYPARAMETER <IMicrosoftGraphB2XIdentityUserFlow>: b2xIdentityUserFlow
     - `[PostFederationSignup <IMicrosoftGraphIdentityApiConnector>]`: identityApiConnector
   - `[IdentityProviders <IMicrosoftGraphIdentityProvider[]>]`: The identity providers included in the user flow.
     - `[Id <String>]`: 
-    - `[ClientId <String>]`: The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
-    - `[ClientSecret <String>]`: The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
+    - `[ClientId <String>]`: The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
+    - `[ClientSecret <String>]`: The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
     - `[Name <String>]`: The display name of the identity provider. Not nullable.
-    - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
-  - `[Languages <IMicrosoftGraphUserFlowLanguageConfiguration[]>]`: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+    - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
+  - `[Languages <IMicrosoftGraphUserFlowLanguageConfiguration[]>]`: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
     - `[Id <String>]`: 
     - `[DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
       - `[Id <String>]`: 
@@ -297,8 +354,8 @@ BODYPARAMETER <IMicrosoftGraphB2XIdentityUserFlow>: b2xIdentityUserFlow
       - `[DisplayName <String>]`: The display name of the user flow attribute.
       - `[UserFlowAttributeType <String>]`: identityUserFlowAttributeType
     - `[UserAttributeValues <IMicrosoftGraphUserAttributeValuesItem[]>]`: The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-      - `[IsDefault <Boolean?>]`: Used to set the value as the default.
-      - `[Name <String>]`: The display name of the property displayed to the end user in the user flow.
+      - `[IsDefault <Boolean?>]`: Determines whether the value is set as the default.
+      - `[Name <String>]`: The display name of the property displayed to the user in the user flow.
       - `[Value <String>]`: The value that is set when this item is selected.
     - `[UserInputType <String>]`: identityUserFlowAttributeInputType
   - `[UserFlowIdentityProviders <IMicrosoftGraphIdentityProviderBase[]>]`: 
@@ -307,12 +364,12 @@ BODYPARAMETER <IMicrosoftGraphB2XIdentityUserFlow>: b2xIdentityUserFlow
 
 IDENTITYPROVIDERS <IMicrosoftGraphIdentityProvider[]>: The identity providers included in the user flow.
   - `[Id <String>]`: 
-  - `[ClientId <String>]`: The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
-  - `[ClientSecret <String>]`: The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
+  - `[ClientId <String>]`: The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
+  - `[ClientSecret <String>]`: The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
   - `[Name <String>]`: The display name of the identity provider. Not nullable.
-  - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
+  - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
 
-LANGUAGES <IMicrosoftGraphUserFlowLanguageConfiguration[]>: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+LANGUAGES <IMicrosoftGraphUserFlowLanguageConfiguration[]>: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
   - `[Id <String>]`: 
   - `[DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
     - `[Id <String>]`: 
@@ -333,8 +390,8 @@ USERATTRIBUTEASSIGNMENTS <IMicrosoftGraphIdentityUserFlowAttributeAssignment[]>:
     - `[DisplayName <String>]`: The display name of the user flow attribute.
     - `[UserFlowAttributeType <String>]`: identityUserFlowAttributeType
   - `[UserAttributeValues <IMicrosoftGraphUserAttributeValuesItem[]>]`: The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-    - `[IsDefault <Boolean?>]`: Used to set the value as the default.
-    - `[Name <String>]`: The display name of the property displayed to the end user in the user flow.
+    - `[IsDefault <Boolean?>]`: Determines whether the value is set as the default.
+    - `[Name <String>]`: The display name of the property displayed to the user in the user flow.
     - `[Value <String>]`: The value that is set when this item is selected.
   - `[UserInputType <String>]`: identityUserFlowAttributeInputType
 

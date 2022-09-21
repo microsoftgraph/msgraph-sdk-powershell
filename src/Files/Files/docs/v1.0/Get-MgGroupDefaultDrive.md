@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupDefaultDrive
 
 ## SYNOPSIS
-Get drive from groups
+Retrieve the properties and relationships of a Drive resource.
+A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
 ## SYNTAX
 
@@ -25,9 +26,19 @@ Get-MgGroupDefaultDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get drive from groups
+Retrieve the properties and relationships of a Drive resource.
+A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupDefaultDrive Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Files
+Get-MgGroupDefaultDrive -GroupId $groupId
+```
+
+This example shows how to use the Get-MgGroupDefaultDrive Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

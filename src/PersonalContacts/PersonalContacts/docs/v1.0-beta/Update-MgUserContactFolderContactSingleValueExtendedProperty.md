@@ -8,9 +8,7 @@ schema: 2.0.0
 # Update-MgUserContactFolderContactSingleValueExtendedProperty
 
 ## SYNOPSIS
-The collection of single-value extended properties defined for the contact.
-Read-only.
-Nullable.
+Update the navigation property singleValueExtendedProperties in users
 
 ## SYNTAX
 
@@ -44,9 +42,7 @@ Update-MgUserContactFolderContactSingleValueExtendedProperty -InputObject <IPers
 ```
 
 ## DESCRIPTION
-The collection of single-value extended properties defined for the contact.
-Read-only.
-Nullable.
+Update the navigation property singleValueExtendedProperties in users
 
 ## EXAMPLES
 
@@ -114,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -259,7 +255,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSingleValueLegacyExtendedProperty>: singleValueLegacyExtendedProperty
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Value <String>]`: A property value.
 
 INPUTOBJECT <IPersonalContactsIdentity>: Identity Parameter

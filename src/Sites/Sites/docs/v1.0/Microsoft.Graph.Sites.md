@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 129f6254-0a69-4a57-aead-7ed2bcb49ed4
+Module Guid: ba4e8a38-d63b-473d-afbc-9da8e8e7a1bb
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,355 +12,406 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Sites Cmdlets
 ### [Add-MgSiteContentTypeCopy](Add-MgSiteContentTypeCopy.md)
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgSiteContentTypeCopyFromContentTypeHub](Add-MgSiteContentTypeCopyFromContentTypeHub.md)
-Invoke action addCopyFromContentTypeHub
+Add or sync a copy of a published content type from the content type hub to a target site or a list.
+This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
+The method allows users to pull content types directly from the content type hub to a site or list.
+For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
 ### [Add-MgSiteListContentTypeCopy](Add-MgSiteListContentTypeCopy.md)
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgSiteListContentTypeCopyFromContentTypeHub](Add-MgSiteListContentTypeCopyFromContentTypeHub.md)
-Invoke action addCopyFromContentTypeHub
+Add or sync a copy of a published content type from the content type hub to a target site or a list.
+This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
+The method allows users to pull content types directly from the content type hub to a site or list.
+For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
 ### [Copy-MgSiteContentTypeToDefaultContentLocation](Copy-MgSiteContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ### [Copy-MgSiteListContentTypeToDefaultContentLocation](Copy-MgSiteListContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ### [Copy-MgSiteOnenoteNotebook](Copy-MgSiteOnenoteNotebook.md)
-Invoke action copyNotebook
+For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ### [Copy-MgSiteOnenotePageToSection](Copy-MgSiteOnenotePageToSection.md)
-Invoke action copyToSection
+Copy a page to a specific section.
+For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ### [Copy-MgSiteOnenoteSectionToNotebook](Copy-MgSiteOnenoteSectionToNotebook.md)
-Invoke action copyToNotebook
+For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ### [Copy-MgSiteOnenoteSectionToSectionGroup](Copy-MgSiteOnenoteSectionToSectionGroup.md)
-Invoke action copyToSectionGroup
+For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ### [Get-MgGroupSite](Get-MgGroupSite.md)
-Get sites from groups
+The list of SharePoint sites in this group.
+Access the default site with /sites/root.
 
 ### [Get-MgGroupSiteAnalytic](Get-MgGroupSiteAnalytic.md)
-Get analytics from groups
+Analytics about the view activities that took place in this site.
 
 ### [Get-MgGroupSiteColumn](Get-MgGroupSiteColumn.md)
-Get columns from groups
+The collection of column definitions reusable across lists under this site.
 
 ### [Get-MgGroupSiteContentType](Get-MgGroupSiteContentType.md)
-Get contentTypes from groups
+The collection of content types defined for this site.
 
 ### [Get-MgGroupSiteContentTypeColumn](Get-MgGroupSiteContentTypeColumn.md)
-Get columns from groups
+The collection of column definitions for this contentType.
 
 ### [Get-MgGroupSiteContentTypeColumnLink](Get-MgGroupSiteContentTypeColumnLink.md)
-Get columnLinks from groups
+The collection of columns that are required by this content type.
 
 ### [Get-MgGroupSiteDrive](Get-MgGroupSiteDrive.md)
-Get drive from groups
+Retrieve the properties and relationships of a Drive resource.
+A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
 ### [Get-MgGroupSiteExternalColumn](Get-MgGroupSiteExternalColumn.md)
 Get externalColumns from groups
 
 ### [Get-MgGroupSiteItem](Get-MgGroupSiteItem.md)
-Get items from groups
+Used to address any item contained in this site.
+This collection can't be enumerated.
 
 ### [Get-MgGroupSiteList](Get-MgGroupSiteList.md)
-Get lists from groups
+The collection of lists under this site.
 
 ### [Get-MgGroupSiteListColumn](Get-MgGroupSiteListColumn.md)
-Get columns from groups
+The collection of field definitions for this list.
 
 ### [Get-MgGroupSiteListContentType](Get-MgGroupSiteListContentType.md)
-Get contentTypes from groups
+The collection of content types present in this list.
 
 ### [Get-MgGroupSiteListContentTypeBase](Get-MgGroupSiteListContentTypeBase.md)
-Get base from groups
+Parent contentType from which this content type is derived.
 
 ### [Get-MgGroupSiteListContentTypeBaseType](Get-MgGroupSiteListContentTypeBaseType.md)
-Get baseTypes from groups
+The collection of content types that are ancestors of this content type.
 
 ### [Get-MgGroupSiteListContentTypeColumn](Get-MgGroupSiteListContentTypeColumn.md)
-Get columns from groups
+The collection of column definitions for this contentType.
 
 ### [Get-MgGroupSiteListContentTypeColumnLink](Get-MgGroupSiteListContentTypeColumnLink.md)
-Get columnLinks from groups
+The collection of columns that are required by this content type.
 
 ### [Get-MgGroupSiteListContentTypeColumnPosition](Get-MgGroupSiteListContentTypeColumnPosition.md)
-Get columnPositions from groups
+Column order information in a content type.
 
 ### [Get-MgGroupSiteListDrive](Get-MgGroupSiteListDrive.md)
-Get drive from groups
+Only present on document libraries.
+Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgGroupSiteListItem](Get-MgGroupSiteListItem.md)
-Get items from groups
+All items contained in the list.
 
 ### [Get-MgGroupSiteListItemAnalytic](Get-MgGroupSiteListItemAnalytic.md)
-Get analytics from groups
+Analytics about the view activities that took place on this item.
 
 ### [Get-MgGroupSiteListItemDocumentSetVersion](Get-MgGroupSiteListItemDocumentSetVersion.md)
-Get documentSetVersions from groups
+Version information for a document set version created by a user.
 
 ### [Get-MgGroupSiteListItemDriveItem](Get-MgGroupSiteListItemDriveItem.md)
-Get driveItem from groups
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgGroupSiteListItemDriveItemContent](Get-MgGroupSiteListItemDriveItemContent.md)
-Get content for the navigation property driveItem from groups
+The content stream, if the item represents a file.
 
 ### [Get-MgGroupSiteListItemField](Get-MgGroupSiteListItemField.md)
-Get fields from groups
+The values of the columns set on this list item.
 
 ### [Get-MgGroupSiteListItemVersion](Get-MgGroupSiteListItemVersion.md)
-Get versions from groups
+The list of previous versions of the list item.
 
 ### [Get-MgGroupSiteListItemVersionField](Get-MgGroupSiteListItemVersionField.md)
-Get fields from groups
+A collection of the fields and values for this version of the list item.
 
 ### [Get-MgGroupSiteListOperation](Get-MgGroupSiteListOperation.md)
-Get operations from groups
+The collection of long-running operations on the list.
 
 ### [Get-MgGroupSiteListSubscription](Get-MgGroupSiteListSubscription.md)
-Get subscriptions from groups
+The set of subscriptions on the list.
 
 ### [Get-MgGroupSiteOperation](Get-MgGroupSiteOperation.md)
-Get operations from groups
+The collection of long-running operations on the site.
 
 ### [Get-MgGroupSitePermission](Get-MgGroupSitePermission.md)
-Get permissions from groups
+The permissions associated with the site.
+Nullable.
 
 ### [Get-MgGroupSiteTermStore](Get-MgGroupSiteTermStore.md)
-Get termStore from groups
+Read the properties and relationships of a store object.
 
 ### [Get-MgGroupSiteTermStoreGroup](Get-MgGroupSiteTermStoreGroup.md)
-Get groups from groups
+Collection of all groups available in the term store.
 
 ### [Get-MgGroupSiteTermStoreGroupSet](Get-MgGroupSiteTermStoreGroupSet.md)
-Get sets from groups
+All sets under the group in a term [store].
 
 ### [Get-MgGroupSiteTermStoreGroupSetChild](Get-MgGroupSiteTermStoreGroupSetChild.md)
-Get children from groups
+Children terms of set in term [store].
 
 ### [Get-MgGroupSiteTermStoreGroupSetChildRelation](Get-MgGroupSiteTermStoreGroupSetChildRelation.md)
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSiteTermStoreGroupSetChildRelationFromTerm](Get-MgGroupSiteTermStoreGroupSetChildRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreGroupSetChildRelationSet](Get-MgGroupSiteTermStoreGroupSetChildRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreGroupSetChildRelationToTerm](Get-MgGroupSiteTermStoreGroupSetChildRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreGroupSetChildSet](Get-MgGroupSiteTermStoreGroupSetChildSet.md)
-Get set from groups
+The [set] in which the term is created.
 
 ### [Get-MgGroupSiteTermStoreGroupSetParentGroup](Get-MgGroupSiteTermStoreGroupSetParentGroup.md)
-Get parentGroup from groups
+The parent [group] that contains the set.
 
 ### [Get-MgGroupSiteTermStoreGroupSetRelation](Get-MgGroupSiteTermStoreGroupSetRelation.md)
-Get relations from groups
+Indicates which terms have been pinned or reused directly under the set.
 
 ### [Get-MgGroupSiteTermStoreGroupSetRelationFromTerm](Get-MgGroupSiteTermStoreGroupSetRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreGroupSetRelationSet](Get-MgGroupSiteTermStoreGroupSetRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreGroupSetRelationToTerm](Get-MgGroupSiteTermStoreGroupSetRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTerm](Get-MgGroupSiteTermStoreGroupSetTerm.md)
-Get terms from groups
+All the terms under the set.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermChild](Get-MgGroupSiteTermStoreGroupSetTermChild.md)
-Get children from groups
+Children of current term.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermChildRelation](Get-MgGroupSiteTermStoreGroupSetTermChildRelation.md)
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermChildRelationFromTerm](Get-MgGroupSiteTermStoreGroupSetTermChildRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermChildRelationSet](Get-MgGroupSiteTermStoreGroupSetTermChildRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermChildRelationToTerm](Get-MgGroupSiteTermStoreGroupSetTermChildRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermChildSet](Get-MgGroupSiteTermStoreGroupSetTermChildSet.md)
-Get set from groups
+The [set] in which the term is created.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermRelation](Get-MgGroupSiteTermStoreGroupSetTermRelation.md)
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermRelationFromTerm](Get-MgGroupSiteTermStoreGroupSetTermRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermRelationSet](Get-MgGroupSiteTermStoreGroupSetTermRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermRelationToTerm](Get-MgGroupSiteTermStoreGroupSetTermRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermSet](Get-MgGroupSiteTermStoreGroupSetTermSet.md)
-Get set from groups
+The [set] in which the term is created.
 
 ### [Get-MgGroupSiteTermStoreSet](Get-MgGroupSiteTermStoreSet.md)
-Get sets from groups
+Collection of all sets available in the term store.
+This relationship can only be used to load a specific term set.
 
 ### [Get-MgGroupSiteTermStoreSetChild](Get-MgGroupSiteTermStoreSetChild.md)
-Get children from groups
+Children terms of set in term [store].
 
 ### [Get-MgGroupSiteTermStoreSetChildRelation](Get-MgGroupSiteTermStoreSetChildRelation.md)
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSiteTermStoreSetChildRelationFromTerm](Get-MgGroupSiteTermStoreSetChildRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreSetChildRelationSet](Get-MgGroupSiteTermStoreSetChildRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreSetChildRelationToTerm](Get-MgGroupSiteTermStoreSetChildRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetChildSet](Get-MgGroupSiteTermStoreSetChildSet.md)
-Get set from groups
+The [set] in which the term is created.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroup](Get-MgGroupSiteTermStoreSetParentGroup.md)
-Get parentGroup from groups
+The parent [group] that contains the set.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSet](Get-MgGroupSiteTermStoreSetParentGroupSet.md)
-Get sets from groups
+All sets under the group in a term [store].
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetChild](Get-MgGroupSiteTermStoreSetParentGroupSetChild.md)
-Get children from groups
+Children terms of set in term [store].
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetChildRelation](Get-MgGroupSiteTermStoreSetParentGroupSetChildRelation.md)
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationFromTerm](Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationSet](Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationToTerm](Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetChildSet](Get-MgGroupSiteTermStoreSetParentGroupSetChildSet.md)
-Get set from groups
+The [set] in which the term is created.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetRelation](Get-MgGroupSiteTermStoreSetParentGroupSetRelation.md)
-Get relations from groups
+Indicates which terms have been pinned or reused directly under the set.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetRelationFromTerm](Get-MgGroupSiteTermStoreSetParentGroupSetRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetRelationSet](Get-MgGroupSiteTermStoreSetParentGroupSetRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetRelationToTerm](Get-MgGroupSiteTermStoreSetParentGroupSetRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTerm](Get-MgGroupSiteTermStoreSetParentGroupSetTerm.md)
-Get terms from groups
+All the terms under the set.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermChild](Get-MgGroupSiteTermStoreSetParentGroupSetTermChild.md)
-Get children from groups
+Children of current term.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermChildRelation](Get-MgGroupSiteTermStoreSetParentGroupSetTermChildRelation.md)
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermChildRelationFromTerm](Get-MgGroupSiteTermStoreSetParentGroupSetTermChildRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermChildRelationSet](Get-MgGroupSiteTermStoreSetParentGroupSetTermChildRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermChildRelationToTerm](Get-MgGroupSiteTermStoreSetParentGroupSetTermChildRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermChildSet](Get-MgGroupSiteTermStoreSetParentGroupSetTermChildSet.md)
-Get set from groups
+The [set] in which the term is created.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermRelation](Get-MgGroupSiteTermStoreSetParentGroupSetTermRelation.md)
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermRelationFromTerm](Get-MgGroupSiteTermStoreSetParentGroupSetTermRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermRelationSet](Get-MgGroupSiteTermStoreSetParentGroupSetTermRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermRelationToTerm](Get-MgGroupSiteTermStoreSetParentGroupSetTermRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermSet](Get-MgGroupSiteTermStoreSetParentGroupSetTermSet.md)
-Get set from groups
+The [set] in which the term is created.
 
 ### [Get-MgGroupSiteTermStoreSetRelation](Get-MgGroupSiteTermStoreSetRelation.md)
-Get relations from groups
+Indicates which terms have been pinned or reused directly under the set.
 
 ### [Get-MgGroupSiteTermStoreSetRelationFromTerm](Get-MgGroupSiteTermStoreSetRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreSetRelationSet](Get-MgGroupSiteTermStoreSetRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreSetRelationToTerm](Get-MgGroupSiteTermStoreSetRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetTerm](Get-MgGroupSiteTermStoreSetTerm.md)
-Get terms from groups
+All the terms under the set.
 
 ### [Get-MgGroupSiteTermStoreSetTermChild](Get-MgGroupSiteTermStoreSetTermChild.md)
-Get children from groups
+Children of current term.
 
 ### [Get-MgGroupSiteTermStoreSetTermChildRelation](Get-MgGroupSiteTermStoreSetTermChildRelation.md)
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSiteTermStoreSetTermChildRelationFromTerm](Get-MgGroupSiteTermStoreSetTermChildRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreSetTermChildRelationSet](Get-MgGroupSiteTermStoreSetTermChildRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreSetTermChildRelationToTerm](Get-MgGroupSiteTermStoreSetTermChildRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetTermChildSet](Get-MgGroupSiteTermStoreSetTermChildSet.md)
-Get set from groups
+The [set] in which the term is created.
 
 ### [Get-MgGroupSiteTermStoreSetTermRelation](Get-MgGroupSiteTermStoreSetTermRelation.md)
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgGroupSiteTermStoreSetTermRelationFromTerm](Get-MgGroupSiteTermStoreSetTermRelationFromTerm.md)
-Get fromTerm from groups
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgGroupSiteTermStoreSetTermRelationSet](Get-MgGroupSiteTermStoreSetTermRelationSet.md)
-Get set from groups
+The [set] in which the relation is relevant.
 
 ### [Get-MgGroupSiteTermStoreSetTermRelationToTerm](Get-MgGroupSiteTermStoreSetTermRelationToTerm.md)
-Get toTerm from groups
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetTermSet](Get-MgGroupSiteTermStoreSetTermSet.md)
-Get set from groups
+The [set] in which the term is created.
 
 ### [Get-MgGroupSubSite](Get-MgGroupSubSite.md)
-Get sites from groups
+The collection of the sub-sites under this site.
 
 ### [Get-MgSite](Get-MgSite.md)
-Get a site resource
+Retrieve properties and relationships for a [site][] resource.\nA **site** resource represents a team site in SharePoint.
 
 ### [Get-MgSiteActivityByInterval](Get-MgSiteActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
 ### [Get-MgSiteAnalytic](Get-MgSiteAnalytic.md)
-Get analytics from sites
+Analytics about the view activities that took place in this site.
 
 ### [Get-MgSiteApplicableContentTypeForList](Get-MgSiteApplicableContentTypeForList.md)
 Invoke function getApplicableContentTypesForList
@@ -369,328 +420,369 @@ Invoke function getApplicableContentTypesForList
 Invoke function getByPath
 
 ### [Get-MgSiteColumn](Get-MgSiteColumn.md)
-Get columns from sites
+The collection of column definitions reusable across lists under this site.
 
 ### [Get-MgSiteContentType](Get-MgSiteContentType.md)
-Get contentTypes from sites
+The collection of content types defined for this site.
 
 ### [Get-MgSiteContentTypeColumn](Get-MgSiteContentTypeColumn.md)
-Get columns from sites
+The collection of column definitions for this contentType.
 
 ### [Get-MgSiteContentTypeColumnLink](Get-MgSiteContentTypeColumnLink.md)
-Get columnLinks from sites
+The collection of columns that are required by this content type.
 
 ### [Get-MgSiteContentTypeCompatibleHubContentType](Get-MgSiteContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
 ### [Get-MgSiteDefaultDrive](Get-MgSiteDefaultDrive.md)
-Get drive from sites
+Retrieve the properties and relationships of a Drive resource.
+A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
 ### [Get-MgSiteDrive](Get-MgSiteDrive.md)
-Get drives from sites
+The collection of drives (document libraries) under this site.
 
 ### [Get-MgSiteExternalColumn](Get-MgSiteExternalColumn.md)
 Get externalColumns from sites
 
 ### [Get-MgSiteList](Get-MgSiteList.md)
-Get lists from sites
+The collection of lists under this site.
 
 ### [Get-MgSiteListColumn](Get-MgSiteListColumn.md)
-Get columns from sites
+The collection of field definitions for this list.
 
 ### [Get-MgSiteListContentType](Get-MgSiteListContentType.md)
-Get contentTypes from sites
+The collection of content types present in this list.
 
 ### [Get-MgSiteListContentTypeBase](Get-MgSiteListContentTypeBase.md)
-Get base from sites
+Parent contentType from which this content type is derived.
 
 ### [Get-MgSiteListContentTypeBaseType](Get-MgSiteListContentTypeBaseType.md)
-Get baseTypes from sites
+The collection of content types that are ancestors of this content type.
 
 ### [Get-MgSiteListContentTypeColumn](Get-MgSiteListContentTypeColumn.md)
-Get columns from sites
+The collection of column definitions for this contentType.
 
 ### [Get-MgSiteListContentTypeColumnLink](Get-MgSiteListContentTypeColumnLink.md)
-Get columnLinks from sites
+The collection of columns that are required by this content type.
 
 ### [Get-MgSiteListContentTypeColumnPosition](Get-MgSiteListContentTypeColumnPosition.md)
-Get columnPositions from sites
+Column order information in a content type.
 
 ### [Get-MgSiteListContentTypeCompatibleHubContentType](Get-MgSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
 ### [Get-MgSiteListDrive](Get-MgSiteListDrive.md)
-Get drive from sites
+Only present on document libraries.
+Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgSiteListItem](Get-MgSiteListItem.md)
-Get items from sites
+All items contained in the list.
 
 ### [Get-MgSiteListItemActivityByInterval](Get-MgSiteListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
 
 ### [Get-MgSiteListItemAnalytic](Get-MgSiteListItemAnalytic.md)
-Get analytics from sites
+Analytics about the view activities that took place on this item.
 
 ### [Get-MgSiteListItemDocumentSetVersion](Get-MgSiteListItemDocumentSetVersion.md)
-Get documentSetVersions from sites
+Version information for a document set version created by a user.
 
 ### [Get-MgSiteListItemDriveItem](Get-MgSiteListItemDriveItem.md)
-Get driveItem from sites
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgSiteListItemDriveItemContent](Get-MgSiteListItemDriveItemContent.md)
-Get content for the navigation property driveItem from sites
+The content stream, if the item represents a file.
 
 ### [Get-MgSiteListItemField](Get-MgSiteListItemField.md)
-Get fields from sites
+The values of the columns set on this list item.
 
 ### [Get-MgSiteListItemVersion](Get-MgSiteListItemVersion.md)
-Get versions from sites
+The list of previous versions of the list item.
 
 ### [Get-MgSiteListItemVersionField](Get-MgSiteListItemVersionField.md)
-Get fields from sites
+A collection of the fields and values for this version of the list item.
 
 ### [Get-MgSiteListOperation](Get-MgSiteListOperation.md)
-Get operations from sites
+The collection of long-running operations on the list.
 
 ### [Get-MgSiteListSubscription](Get-MgSiteListSubscription.md)
-Get subscriptions from sites
+The set of subscriptions on the list.
 
 ### [Get-MgSiteOnenoteNotebookFromWebUrl](Get-MgSiteOnenoteNotebookFromWebUrl.md)
-Invoke action getNotebookFromWebUrl
+Retrieve the properties and relationships of a notebook object by using its URL path.
+The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 
 ### [Get-MgSitePermission](Get-MgSitePermission.md)
-Get permissions from sites
+The permissions associated with the site.
+Nullable.
 
 ### [Get-MgSiteRecentNotebook](Get-MgSiteRecentNotebook.md)
 Invoke function getRecentNotebooks
 
 ### [Get-MgSiteTermStore](Get-MgSiteTermStore.md)
-Get termStores from sites
+The collection of termStores under this site.
 
 ### [Get-MgSiteTermStoreGroup](Get-MgSiteTermStoreGroup.md)
-Get groups from sites
+Collection of all groups available in the term store.
 
 ### [Get-MgSiteTermStoreGroupSet](Get-MgSiteTermStoreGroupSet.md)
-Get sets from sites
+All sets under the group in a term [store].
 
 ### [Get-MgSiteTermStoreGroupSetChild](Get-MgSiteTermStoreGroupSetChild.md)
-Get children from sites
+Children terms of set in term [store].
 
 ### [Get-MgSiteTermStoreGroupSetChildRelation](Get-MgSiteTermStoreGroupSetChildRelation.md)
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgSiteTermStoreGroupSetChildRelationFromTerm](Get-MgSiteTermStoreGroupSetChildRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreGroupSetChildRelationSet](Get-MgSiteTermStoreGroupSetChildRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreGroupSetChildRelationToTerm](Get-MgSiteTermStoreGroupSetChildRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreGroupSetChildSet](Get-MgSiteTermStoreGroupSetChildSet.md)
-Get set from sites
+The [set] in which the term is created.
 
 ### [Get-MgSiteTermStoreGroupSetParentGroup](Get-MgSiteTermStoreGroupSetParentGroup.md)
-Get parentGroup from sites
+The parent [group] that contains the set.
 
 ### [Get-MgSiteTermStoreGroupSetRelation](Get-MgSiteTermStoreGroupSetRelation.md)
-Get relations from sites
+Indicates which terms have been pinned or reused directly under the set.
 
 ### [Get-MgSiteTermStoreGroupSetRelationFromTerm](Get-MgSiteTermStoreGroupSetRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreGroupSetRelationSet](Get-MgSiteTermStoreGroupSetRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreGroupSetRelationToTerm](Get-MgSiteTermStoreGroupSetRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreGroupSetTerm](Get-MgSiteTermStoreGroupSetTerm.md)
-Get terms from sites
+All the terms under the set.
 
 ### [Get-MgSiteTermStoreGroupSetTermChild](Get-MgSiteTermStoreGroupSetTermChild.md)
-Get children from sites
+Children of current term.
 
 ### [Get-MgSiteTermStoreGroupSetTermChildRelation](Get-MgSiteTermStoreGroupSetTermChildRelation.md)
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgSiteTermStoreGroupSetTermChildRelationFromTerm](Get-MgSiteTermStoreGroupSetTermChildRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreGroupSetTermChildRelationSet](Get-MgSiteTermStoreGroupSetTermChildRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreGroupSetTermChildRelationToTerm](Get-MgSiteTermStoreGroupSetTermChildRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreGroupSetTermChildSet](Get-MgSiteTermStoreGroupSetTermChildSet.md)
-Get set from sites
+The [set] in which the term is created.
 
 ### [Get-MgSiteTermStoreGroupSetTermRelation](Get-MgSiteTermStoreGroupSetTermRelation.md)
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgSiteTermStoreGroupSetTermRelationFromTerm](Get-MgSiteTermStoreGroupSetTermRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreGroupSetTermRelationSet](Get-MgSiteTermStoreGroupSetTermRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreGroupSetTermRelationToTerm](Get-MgSiteTermStoreGroupSetTermRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreGroupSetTermSet](Get-MgSiteTermStoreGroupSetTermSet.md)
-Get set from sites
+The [set] in which the term is created.
 
 ### [Get-MgSiteTermStoreSet](Get-MgSiteTermStoreSet.md)
-Get sets from sites
+Collection of all sets available in the term store.
+This relationship can only be used to load a specific term set.
 
 ### [Get-MgSiteTermStoreSetChild](Get-MgSiteTermStoreSetChild.md)
-Get children from sites
+Children terms of set in term [store].
 
 ### [Get-MgSiteTermStoreSetChildRelation](Get-MgSiteTermStoreSetChildRelation.md)
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgSiteTermStoreSetChildRelationFromTerm](Get-MgSiteTermStoreSetChildRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreSetChildRelationSet](Get-MgSiteTermStoreSetChildRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreSetChildRelationToTerm](Get-MgSiteTermStoreSetChildRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetChildSet](Get-MgSiteTermStoreSetChildSet.md)
-Get set from sites
+The [set] in which the term is created.
 
 ### [Get-MgSiteTermStoreSetParentGroup](Get-MgSiteTermStoreSetParentGroup.md)
-Get parentGroup from sites
+The parent [group] that contains the set.
 
 ### [Get-MgSiteTermStoreSetParentGroupSet](Get-MgSiteTermStoreSetParentGroupSet.md)
-Get sets from sites
+All sets under the group in a term [store].
 
 ### [Get-MgSiteTermStoreSetParentGroupSetChild](Get-MgSiteTermStoreSetParentGroupSetChild.md)
-Get children from sites
+Children terms of set in term [store].
 
 ### [Get-MgSiteTermStoreSetParentGroupSetChildRelation](Get-MgSiteTermStoreSetParentGroupSetChildRelation.md)
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetChildRelationFromTerm](Get-MgSiteTermStoreSetParentGroupSetChildRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreSetParentGroupSetChildRelationSet](Get-MgSiteTermStoreSetParentGroupSetChildRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetChildRelationToTerm](Get-MgSiteTermStoreSetParentGroupSetChildRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetChildSet](Get-MgSiteTermStoreSetParentGroupSetChildSet.md)
-Get set from sites
+The [set] in which the term is created.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetRelation](Get-MgSiteTermStoreSetParentGroupSetRelation.md)
-Get relations from sites
+Indicates which terms have been pinned or reused directly under the set.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetRelationFromTerm](Get-MgSiteTermStoreSetParentGroupSetRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreSetParentGroupSetRelationSet](Get-MgSiteTermStoreSetParentGroupSetRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetRelationToTerm](Get-MgSiteTermStoreSetParentGroupSetRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTerm](Get-MgSiteTermStoreSetParentGroupSetTerm.md)
-Get terms from sites
+All the terms under the set.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermChild](Get-MgSiteTermStoreSetParentGroupSetTermChild.md)
-Get children from sites
+Children of current term.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermChildRelation](Get-MgSiteTermStoreSetParentGroupSetTermChildRelation.md)
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermChildRelationFromTerm](Get-MgSiteTermStoreSetParentGroupSetTermChildRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermChildRelationSet](Get-MgSiteTermStoreSetParentGroupSetTermChildRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermChildRelationToTerm](Get-MgSiteTermStoreSetParentGroupSetTermChildRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermChildSet](Get-MgSiteTermStoreSetParentGroupSetTermChildSet.md)
-Get set from sites
+The [set] in which the term is created.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermRelation](Get-MgSiteTermStoreSetParentGroupSetTermRelation.md)
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermRelationFromTerm](Get-MgSiteTermStoreSetParentGroupSetTermRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermRelationSet](Get-MgSiteTermStoreSetParentGroupSetTermRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermRelationToTerm](Get-MgSiteTermStoreSetParentGroupSetTermRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermSet](Get-MgSiteTermStoreSetParentGroupSetTermSet.md)
-Get set from sites
+The [set] in which the term is created.
 
 ### [Get-MgSiteTermStoreSetRelation](Get-MgSiteTermStoreSetRelation.md)
-Get relations from sites
+Indicates which terms have been pinned or reused directly under the set.
 
 ### [Get-MgSiteTermStoreSetRelationFromTerm](Get-MgSiteTermStoreSetRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreSetRelationSet](Get-MgSiteTermStoreSetRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreSetRelationToTerm](Get-MgSiteTermStoreSetRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetTerm](Get-MgSiteTermStoreSetTerm.md)
-Get terms from sites
+All the terms under the set.
 
 ### [Get-MgSiteTermStoreSetTermChild](Get-MgSiteTermStoreSetTermChild.md)
-Get children from sites
+Children of current term.
 
 ### [Get-MgSiteTermStoreSetTermChildRelation](Get-MgSiteTermStoreSetTermChildRelation.md)
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgSiteTermStoreSetTermChildRelationFromTerm](Get-MgSiteTermStoreSetTermChildRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreSetTermChildRelationSet](Get-MgSiteTermStoreSetTermChildRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreSetTermChildRelationToTerm](Get-MgSiteTermStoreSetTermChildRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetTermChildSet](Get-MgSiteTermStoreSetTermChildSet.md)
-Get set from sites
+The [set] in which the term is created.
 
 ### [Get-MgSiteTermStoreSetTermRelation](Get-MgSiteTermStoreSetTermRelation.md)
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ### [Get-MgSiteTermStoreSetTermRelationFromTerm](Get-MgSiteTermStoreSetTermRelationFromTerm.md)
-Get fromTerm from sites
+The from [term] of the relation.
+The term from which the relationship is defined.
+A null value would indicate the relation is directly with the [set].
 
 ### [Get-MgSiteTermStoreSetTermRelationSet](Get-MgSiteTermStoreSetTermRelationSet.md)
-Get set from sites
+The [set] in which the relation is relevant.
 
 ### [Get-MgSiteTermStoreSetTermRelationToTerm](Get-MgSiteTermStoreSetTermRelationToTerm.md)
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetTermSet](Get-MgSiteTermStoreSetTermSet.md)
-Get set from sites
+The [set] in which the term is created.
 
 ### [Get-MgSubSite](Get-MgSubSite.md)
-Get sites from sites
+The collection of the sub-sites under this site.
 
 ### [Get-MgUserFollowedSite](Get-MgUserFollowedSite.md)
 Get followedSites from users
 
 ### [Grant-MgSitePermission](Grant-MgSitePermission.md)
-Invoke action grant
+Grant users access to a link represented by a [permission][].
 
 ### [Invoke-MgPreviewSiteOnenotePage](Invoke-MgPreviewSiteOnenotePage.md)
 Invoke function preview
@@ -699,46 +791,43 @@ Invoke function preview
 Invoke action reauthorize
 
 ### [Join-MgSiteContentTypeWithHubSite](Join-MgSiteContentTypeWithHubSite.md)
-Invoke action associateWithHubSites
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ### [Join-MgSiteListContentTypeWithHubSite](Join-MgSiteListContentTypeWithHubSite.md)
-Invoke action associateWithHubSites
-
-### [New-MgGroupSite](New-MgGroupSite.md)
-Create new navigation property to sites for groups
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ### [New-MgGroupSiteColumn](New-MgGroupSiteColumn.md)
-Create new navigation property to columns for groups
+Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupSiteContentType](New-MgGroupSiteContentType.md)
-Create new navigation property to contentTypes for groups
+Create a new [contentType][] in a [site][].
 
 ### [New-MgGroupSiteContentTypeColumn](New-MgGroupSiteContentTypeColumn.md)
-Create new navigation property to columns for groups
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupSiteContentTypeColumnLink](New-MgGroupSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgGroupSiteList](New-MgGroupSiteList.md)
-Create new navigation property to lists for groups
+Create a new [list][] in a [site][].
 
 ### [New-MgGroupSiteListColumn](New-MgGroupSiteListColumn.md)
-Create new navigation property to columns for groups
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupSiteListContentType](New-MgGroupSiteListContentType.md)
 Create new navigation property to contentTypes for groups
 
 ### [New-MgGroupSiteListContentTypeColumn](New-MgGroupSiteListContentTypeColumn.md)
-Create new navigation property to columns for groups
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupSiteListContentTypeColumnLink](New-MgGroupSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgGroupSiteListItem](New-MgGroupSiteListItem.md)
-Create new navigation property to items for groups
+Create a new [listItem][] in a [list][].
 
 ### [New-MgGroupSiteListItemDocumentSetVersion](New-MgGroupSiteListItemDocumentSetVersion.md)
-Create new navigation property to documentSetVersions for groups
+Create a new version of a document set item in a list.
 
 ### [New-MgGroupSiteListItemVersion](New-MgGroupSiteListItemVersion.md)
 Create new navigation property to versions for groups
@@ -753,19 +842,19 @@ Create new navigation property to subscriptions for groups
 Create new navigation property to operations for groups
 
 ### [New-MgGroupSitePermission](New-MgGroupSitePermission.md)
-Create new navigation property to permissions for groups
+Create a new permission object on a site.
 
 ### [New-MgGroupSiteTermStore](New-MgGroupSiteTermStore.md)
 Create new navigation property to termStores for groups
 
 ### [New-MgGroupSiteTermStoreGroup](New-MgGroupSiteTermStoreGroup.md)
-Create new navigation property to groups for groups
+Create a new group object in a term store.
 
 ### [New-MgGroupSiteTermStoreGroupSet](New-MgGroupSiteTermStoreGroupSet.md)
 Create new navigation property to sets for groups
 
 ### [New-MgGroupSiteTermStoreGroupSetChild](New-MgGroupSiteTermStoreGroupSetChild.md)
-Create new navigation property to children for groups
+Create a new term object.
 
 ### [New-MgGroupSiteTermStoreGroupSetChildRelation](New-MgGroupSiteTermStoreGroupSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -789,7 +878,7 @@ Create new navigation property to relations for groups
 Create new navigation property to sets for groups
 
 ### [New-MgGroupSiteTermStoreSetChild](New-MgGroupSiteTermStoreSetChild.md)
-Create new navigation property to children for groups
+Create a new term object.
 
 ### [New-MgGroupSiteTermStoreSetChildRelation](New-MgGroupSiteTermStoreSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -798,7 +887,7 @@ Create new navigation property to relations for groups
 Create new navigation property to sets for groups
 
 ### [New-MgGroupSiteTermStoreSetParentGroupSetChild](New-MgGroupSiteTermStoreSetParentGroupSetChild.md)
-Create new navigation property to children for groups
+Create a new term object.
 
 ### [New-MgGroupSiteTermStoreSetParentGroupSetChildRelation](New-MgGroupSiteTermStoreSetParentGroupSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -834,37 +923,37 @@ Create new navigation property to relations for groups
 Create new navigation property to relations for groups
 
 ### [New-MgSiteColumn](New-MgSiteColumn.md)
-Create new navigation property to columns for sites
+Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgSiteContentType](New-MgSiteContentType.md)
-Create new navigation property to contentTypes for sites
+Create a new [contentType][] in a [site][].
 
 ### [New-MgSiteContentTypeColumn](New-MgSiteContentTypeColumn.md)
-Create new navigation property to columns for sites
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgSiteContentTypeColumnLink](New-MgSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
 ### [New-MgSiteList](New-MgSiteList.md)
-Create new navigation property to lists for sites
+Create a new [list][] in a [site][].
 
 ### [New-MgSiteListColumn](New-MgSiteListColumn.md)
-Create new navigation property to columns for sites
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgSiteListContentType](New-MgSiteListContentType.md)
 Create new navigation property to contentTypes for sites
 
 ### [New-MgSiteListContentTypeColumn](New-MgSiteListContentTypeColumn.md)
-Create new navigation property to columns for sites
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgSiteListContentTypeColumnLink](New-MgSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
 ### [New-MgSiteListItem](New-MgSiteListItem.md)
-Create new navigation property to items for sites
+Create a new [listItem][] in a [list][].
 
 ### [New-MgSiteListItemDocumentSetVersion](New-MgSiteListItemDocumentSetVersion.md)
-Create new navigation property to documentSetVersions for sites
+Create a new version of a document set item in a list.
 
 ### [New-MgSiteListItemVersion](New-MgSiteListItemVersion.md)
 Create new navigation property to versions for sites
@@ -876,19 +965,19 @@ Create new navigation property to operations for sites
 Create new navigation property to subscriptions for sites
 
 ### [New-MgSitePermission](New-MgSitePermission.md)
-Create new navigation property to permissions for sites
+Create a new permission object on a site.
 
 ### [New-MgSiteTermStore](New-MgSiteTermStore.md)
 Create new navigation property to termStores for sites
 
 ### [New-MgSiteTermStoreGroup](New-MgSiteTermStoreGroup.md)
-Create new navigation property to groups for sites
+Create a new group object in a term store.
 
 ### [New-MgSiteTermStoreGroupSet](New-MgSiteTermStoreGroupSet.md)
 Create new navigation property to sets for sites
 
 ### [New-MgSiteTermStoreGroupSetChild](New-MgSiteTermStoreGroupSetChild.md)
-Create new navigation property to children for sites
+Create a new term object.
 
 ### [New-MgSiteTermStoreGroupSetChildRelation](New-MgSiteTermStoreGroupSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -912,7 +1001,7 @@ Create new navigation property to relations for sites
 Create new navigation property to sets for sites
 
 ### [New-MgSiteTermStoreSetChild](New-MgSiteTermStoreSetChild.md)
-Create new navigation property to children for sites
+Create a new term object.
 
 ### [New-MgSiteTermStoreSetChildRelation](New-MgSiteTermStoreSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -921,7 +1010,7 @@ Create new navigation property to relations for sites
 Create new navigation property to sets for sites
 
 ### [New-MgSiteTermStoreSetParentGroupSetChild](New-MgSiteTermStoreSetParentGroupSetChild.md)
-Create new navigation property to children for sites
+Create a new term object.
 
 ### [New-MgSiteTermStoreSetParentGroupSetChildRelation](New-MgSiteTermStoreSetParentGroupSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -957,10 +1046,10 @@ Create new navigation property to relations for sites
 Create new navigation property to relations for sites
 
 ### [Publish-MgSiteContentType](Publish-MgSiteContentType.md)
-Invoke action publish
+Publishes a [contentType][] present in the content type hub site.
 
 ### [Publish-MgSiteListContentType](Publish-MgSiteListContentType.md)
-Invoke action publish
+Publishes a [contentType][] present in the content type hub site.
 
 ### [Remove-MgGroupSiteColumn](Remove-MgGroupSiteColumn.md)
 Delete navigation property columns for groups
@@ -1236,16 +1325,17 @@ Delete navigation property relations for sites
 Delete navigation property relations for sites
 
 ### [Restore-MgSiteListItemDocumentSetVersion](Restore-MgSiteListItemDocumentSetVersion.md)
-Invoke action restore
+Restore a document set version.
 
 ### [Restore-MgSiteListItemVersion](Restore-MgSiteListItemVersion.md)
-Invoke action restoreVersion
+Restore a previous version of a ListItem to be the current version.
+This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
 
 ### [Set-MgGroupSiteListItemDriveItemContent](Set-MgGroupSiteListItemDriveItemContent.md)
-Update content for the navigation property driveItem in groups
+The content stream, if the item represents a file.
 
 ### [Set-MgSiteListItemDriveItemContent](Set-MgSiteListItemDriveItemContent.md)
-Update content for the navigation property driveItem in sites
+The content stream, if the item represents a file.
 
 ### [Test-MgSiteContentTypePublished](Test-MgSiteContentTypePublished.md)
 Invoke function isPublished
@@ -1254,10 +1344,10 @@ Invoke function isPublished
 Invoke function isPublished
 
 ### [Unpublish-MgSiteContentType](Unpublish-MgSiteContentType.md)
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Unpublish-MgSiteListContentType](Unpublish-MgSiteListContentType.md)
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgGroupSite](Update-MgGroupSite.md)
 Update the navigation property sites in groups
@@ -1296,7 +1386,7 @@ Update the navigation property items in groups
 Update the navigation property documentSetVersions in groups
 
 ### [Update-MgGroupSiteListItemField](Update-MgGroupSiteListItemField.md)
-Update the navigation property fields in groups
+Update the properties on a **[listItem][]**.
 
 ### [Update-MgGroupSiteListItemVersion](Update-MgGroupSiteListItemVersion.md)
 Update the navigation property versions in groups
@@ -1317,7 +1407,7 @@ Update the navigation property operations in groups
 Update the navigation property permissions in groups
 
 ### [Update-MgGroupSiteTermStore](Update-MgGroupSiteTermStore.md)
-Update the navigation property termStore in groups
+Update the properties of a store object.
 
 ### [Update-MgGroupSiteTermStoreGroup](Update-MgGroupSiteTermStoreGroup.md)
 Update the navigation property groups in groups
@@ -1437,7 +1527,7 @@ Update the navigation property items in sites
 Update the navigation property documentSetVersions in sites
 
 ### [Update-MgSiteListItemField](Update-MgSiteListItemField.md)
-Update the navigation property fields in sites
+Update the properties on a **[listItem][]**.
 
 ### [Update-MgSiteListItemVersion](Update-MgSiteListItemVersion.md)
 Update the navigation property versions in sites

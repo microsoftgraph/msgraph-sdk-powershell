@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgFinancialCompanyCustomerPaymentCustomerPictureContent
 
 ## SYNOPSIS
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Set-MgFinancialCompanyCustomerPaymentCustomerPictureContent -InputObject <IFinan
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ## EXAMPLES
 

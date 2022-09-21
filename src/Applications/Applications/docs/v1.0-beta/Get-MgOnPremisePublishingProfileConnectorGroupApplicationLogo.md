@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgOnPremisePublishingProfileConnectorGroupApplicationLogo
 
 ## SYNOPSIS
-Get logo for the navigation property applications from onPremisesPublishingProfiles
+The main logo for the application.
+Not nullable.
 
 ## SYNTAX
 
@@ -26,7 +27,8 @@ Get-MgOnPremisePublishingProfileConnectorGroupApplicationLogo -InputObject <IApp
 ```
 
 ## DESCRIPTION
-Get logo for the navigation property applications from onPremisesPublishingProfiles
+The main logo for the application.
+Not nullable.
 
 ## EXAMPLES
 

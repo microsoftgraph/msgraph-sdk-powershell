@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDepOnboardingSettingDefaultIoEnrollmentProfile
 
 ## SYNOPSIS
-Get defaultIosEnrollmentProfile from deviceManagement
+Default iOS Enrollment Profile
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementDepOnboardingSettingDefaultIoEnrollmentProfile
 ```
 
 ## DESCRIPTION
-Get defaultIosEnrollmentProfile from deviceManagement
+Default iOS Enrollment Profile
 
 ## EXAMPLES
 

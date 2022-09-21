@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserManager
 
 ## SYNOPSIS
-Get manager from users
+Returns the user or organizational contact assigned as the user's manager.
+Optionally, you can expand the manager's chain up to the root node.
 
 ## SYNTAX
 
@@ -24,7 +25,8 @@ Get-MgUserManager -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-P
 ```
 
 ## DESCRIPTION
-Get manager from users
+Returns the user or organizational contact assigned as the user's manager.
+Optionally, you can expand the manager's chain up to the root node.
 
 ## EXAMPLES
 

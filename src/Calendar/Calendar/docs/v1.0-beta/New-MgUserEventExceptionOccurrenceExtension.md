@@ -8,7 +8,10 @@ schema: 2.0.0
 # New-MgUserEventExceptionOccurrenceExtension
 
 ## SYNOPSIS
-Create new navigation property to extensions for users
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## SYNTAX
 
@@ -37,7 +40,10 @@ New-MgUserEventExceptionOccurrenceExtension -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to extensions for users
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## EXAMPLES
 

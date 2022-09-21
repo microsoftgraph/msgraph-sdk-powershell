@@ -8,7 +8,9 @@ schema: 2.0.0
 # Invoke-MgUnmuteCommunicationCall
 
 ## SYNOPSIS
-Invoke action unmute
+Allow the application to unmute itself.
+This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again.
+For more information about how to handle unmute operations, see unmuteParticipantOperation.
 
 ## SYNTAX
 
@@ -39,9 +41,23 @@ Invoke-MgUnmuteCommunicationCall -InputObject <ICloudCommunicationsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action unmute
+Allow the application to unmute itself.
+This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again.
+For more information about how to handle unmute operations, see unmuteParticipantOperation.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgUnmuteCommunicationCall Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	ClientContext = "clientContext-value"
+}
+Invoke-MgUnmuteCommunicationCall -CallId $callId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgUnmuteCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

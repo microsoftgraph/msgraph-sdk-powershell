@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityInformationProtectionLabelPolicySetting
 
 ## SYNOPSIS
-Get labelPolicySettings from security
+Read the Microsoft Purview Information Protection policy settings for the user or organization.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgSecurityInformationProtectionLabelPolicySetting [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get labelPolicySettings from security
+Read the Microsoft Purview Information Protection policy settings for the user or organization.
 
 ## EXAMPLES
 

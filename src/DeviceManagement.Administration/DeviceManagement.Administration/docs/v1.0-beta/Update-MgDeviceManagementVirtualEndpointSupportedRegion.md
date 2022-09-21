@@ -16,7 +16,7 @@ Update the navigation property supportedRegions in deviceManagement
 ```
 Update-MgDeviceManagementVirtualEndpointSupportedRegion -CloudPcSupportedRegionId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-RegionStatus <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SupportedSolution <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -35,7 +35,7 @@ Update-MgDeviceManagementVirtualEndpointSupportedRegion -InputObject <IDeviceMan
 ```
 Update-MgDeviceManagementVirtualEndpointSupportedRegion -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-RegionStatus <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SupportedSolution <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -168,6 +168,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SupportedSolution
+cloudPcManagementService
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -226,6 +241,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcSupportedRegion>: cloudPcSupportedRegion
   - `[Id <String>]`: 
   - `[DisplayName <String>]`: The name for the supported region. Read-only.
   - `[RegionStatus <String>]`: cloudPcSupportedRegionStatus
+  - `[SupportedSolution <String>]`: cloudPcManagementService
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[AuditEventId <String>]`: key: id of auditEvent

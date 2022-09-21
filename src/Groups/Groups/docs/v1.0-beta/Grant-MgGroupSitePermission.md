@@ -8,7 +8,7 @@ schema: 2.0.0
 # Grant-MgGroupSitePermission
 
 ## SYNOPSIS
-Invoke action grant
+Grant users access to a link represented by a [permission][].
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Grant-MgGroupSitePermission -InputObject <IGroupsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Invoke action grant
+Grant users access to a link represented by a [permission][].
 
 ## EXAMPLES
 

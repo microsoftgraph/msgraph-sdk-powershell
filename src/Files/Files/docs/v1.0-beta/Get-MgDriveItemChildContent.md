@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveItemChildContent
 
 ## SYNOPSIS
-Get content for the navigation property children from drives
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgDriveItemChildContent -InputObject <IFilesIdentity> -OutFile <String> [-Pa
 ```
 
 ## DESCRIPTION
-Get content for the navigation property children from drives
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareItemContent
 
 ## SYNOPSIS
-Get content for the navigation property items from shares
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgShareItemContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThr
 ```
 
 ## DESCRIPTION
-Get content for the navigation property items from shares
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

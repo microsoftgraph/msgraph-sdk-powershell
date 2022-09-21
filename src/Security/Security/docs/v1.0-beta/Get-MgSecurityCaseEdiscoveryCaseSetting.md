@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseSetting
 
 ## SYNOPSIS
-Get settings from security
+Read the properties and relationships of an ediscoveryCaseSettings object.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get settings from security
+Read the properties and relationships of an ediscoveryCaseSettings object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

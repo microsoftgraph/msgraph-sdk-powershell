@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyCrossTenantAccessPolicyDefault
 
 ## SYNOPSIS
-Update the navigation property default in policies
+Update the default configuration of a cross-tenant access policy.
 
 ## SYNTAX
 
@@ -31,9 +31,40 @@ Update-MgPolicyCrossTenantAccessPolicyDefault
 ```
 
 ## DESCRIPTION
-Update the navigation property default in policies
+Update the default configuration of a cross-tenant access policy.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	B2bCollaborationOutbound = @{
+		UsersAndGroups = @{
+			AccessType = "blocked"
+			Targets = @(
+				@{
+					Target = "0be493dc-cb56-4a53-936f-9cf64410b8b0"
+					TargetType = "group"
+				}
+			)
+		}
+		Applications = @{
+			AccessType = "blocked"
+			Targets = @(
+				@{
+					Target = "AllApplications"
+					TargetType = "application"
+				}
+			)
+		}
+	}
+}
+Update-MgPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

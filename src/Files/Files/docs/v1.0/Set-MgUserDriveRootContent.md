@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserDriveRootContent
 
 ## SYNOPSIS
-Update content for the navigation property root in users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgUserDriveRootContent -InputObject <IFilesIdentity> -InFile <String> [-Body
 ```
 
 ## DESCRIPTION
-Update content for the navigation property root in users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

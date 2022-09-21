@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinition
 
 ## SYNOPSIS
-Get roleDefinition from roleManagement
+The roleDefinition the assignment is for.
+Supports $expand.
+roleDefinition.Id will be auto expanded.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinition -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Get roleDefinition from roleManagement
+The roleDefinition the assignment is for.
+Supports $expand.
+roleDefinition.Id will be auto expanded.
 
 ## EXAMPLES
 

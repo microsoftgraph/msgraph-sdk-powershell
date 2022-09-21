@@ -15,7 +15,8 @@ Create new navigation property to supportedRegions for deviceManagement
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementVirtualEndpointSupportedRegion [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-RegionStatus <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-RegionStatus <String>] [-SupportedSolution <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -108,6 +109,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SupportedSolution
+cloudPcManagementService
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -164,6 +180,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcSupportedRegion>: cloudPcSupportedRegion
   - `[Id <String>]`: 
   - `[DisplayName <String>]`: The name for the supported region. Read-only.
   - `[RegionStatus <String>]`: cloudPcSupportedRegionStatus
+  - `[SupportedSolution <String>]`: cloudPcManagementService
 
 ## RELATED LINKS
 

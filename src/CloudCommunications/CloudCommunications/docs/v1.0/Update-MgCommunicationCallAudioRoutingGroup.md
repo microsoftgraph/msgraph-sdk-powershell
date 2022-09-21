@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Receivers
-List of receiving participant ids.
+.
 
 ```yaml
 Type: System.String[]
@@ -183,7 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sources
-List of source participant ids.
+.
 
 ```yaml
 Type: System.String[]
@@ -253,9 +253,9 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAudioRoutingGroup>: audioRoutingGroup
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[Receivers <String[]>]`: List of receiving participant ids.
+  - `[Receivers <String[]>]`: 
   - `[RoutingMode <String>]`: 
-  - `[Sources <String[]>]`: List of source participant ids.
+  - `[Sources <String[]>]`: 
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AttendanceRecordId <String>]`: key: id of attendanceRecord

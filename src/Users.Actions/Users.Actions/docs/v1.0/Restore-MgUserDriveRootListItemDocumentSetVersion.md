@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgUserDriveRootListItemDocumentSetVersion
 
 ## SYNOPSIS
-Invoke action restore
+Restore a document set version.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Restore-MgUserDriveRootListItemDocumentSetVersion -InputObject <IUsersActionsIde
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a document set version.
 
 ## EXAMPLES
 

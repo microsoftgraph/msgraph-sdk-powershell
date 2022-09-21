@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice
 
 ## SYNOPSIS
-Invoke action assignUserToDevice
+Assigns user to Autopilot devices.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice
 ```
 
 ## DESCRIPTION
-Invoke action assignUserToDevice
+Assigns user to Autopilot devices.
 
 ## EXAMPLES
 
@@ -215,6 +215,7 @@ BODYPARAMETER <IPathsLgvh1ODevicemanagementWindowsautopilotdeviceidentitiesWindo
   - `[UserPrincipalName <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

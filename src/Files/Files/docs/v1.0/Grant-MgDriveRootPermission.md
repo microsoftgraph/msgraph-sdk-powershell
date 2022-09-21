@@ -8,7 +8,7 @@ schema: 2.0.0
 # Grant-MgDriveRootPermission
 
 ## SYNOPSIS
-Invoke action grant
+Grant users access to a link represented by a [permission][].
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Grant-MgDriveRootPermission -InputObject <IFilesIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Invoke action grant
+Grant users access to a link represented by a [permission][].
 
 ## EXAMPLES
 

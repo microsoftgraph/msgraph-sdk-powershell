@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementCloudPcRoleAssignmentRoleDefinition
 
 ## SYNOPSIS
-Get roleDefinition from roleManagement
+Specifies the roleDefinition that the assignment is for.
+Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
+Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgRoleManagementCloudPcRoleAssignmentRoleDefinition -InputObject <IDeviceMan
 ```
 
 ## DESCRIPTION
-Get roleDefinition from roleManagement
+Specifies the roleDefinition that the assignment is for.
+Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
+Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
 
 ## EXAMPLES
 

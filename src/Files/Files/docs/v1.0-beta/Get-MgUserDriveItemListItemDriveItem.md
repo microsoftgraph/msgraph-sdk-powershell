@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveItemListItemDriveItem
 
 ## SYNOPSIS
-Get driveItem from users
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserDriveItemListItemDriveItem -InputObject <IFilesIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get driveItem from users
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## EXAMPLES
 

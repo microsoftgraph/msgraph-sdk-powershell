@@ -8,7 +8,7 @@ schema: 2.0.0
 # Clear-MgUserPresenceUserPreferredPresence
 
 ## SYNOPSIS
-Invoke action clearUserPreferredPresence
+Clear the preferred availability and activity status for a user.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Clear-MgUserPresenceUserPreferredPresence -InputObject <IUsersActionsIdentity> [
 ```
 
 ## DESCRIPTION
-Invoke action clearUserPreferredPresence
+Clear the preferred availability and activity status for a user.
 
 ## EXAMPLES
 

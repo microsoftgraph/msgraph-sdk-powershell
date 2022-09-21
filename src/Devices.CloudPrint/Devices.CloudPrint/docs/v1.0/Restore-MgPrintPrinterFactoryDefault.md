@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgPrintPrinterFactoryDefault
 
 ## SYNOPSIS
-Invoke action restoreFactoryDefaults
+Restore a printer's default settings to the values specified by the manufacturer.
 
 ## SYNTAX
 
@@ -24,9 +24,18 @@ Restore-MgPrintPrinterFactoryDefault -InputObject <IDevicesCloudPrintIdentity> [
 ```
 
 ## DESCRIPTION
-Invoke action restoreFactoryDefaults
+Restore a printer's default settings to the values specified by the manufacturer.
 
 ## EXAMPLES
+
+### Example 1: Using the Restore-MgPrintPrinterFactoryDefault Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Restore-MgPrintPrinterFactoryDefault -PrinterId $printerId
+```
+
+This example shows how to use the Restore-MgPrintPrinterFactoryDefault Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -History
-The activity related to user risk level change
+.
 To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
@@ -336,8 +336,8 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphRiskyUser1>: riskyUser
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: The activity related to user risk level change
-    - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: The activity related to user risk level change
+  - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: 
+    - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: 
     - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
     - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
     - `[RiskDetail <String>]`: 
@@ -363,8 +363,8 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser1>: riskyUser
   - `[UserDisplayName <String>]`: Risky user display name.
   - `[UserPrincipalName <String>]`: Risky user principal name.
 
-HISTORY <IMicrosoftGraphRiskyUserHistoryItem1[]>: The activity related to user risk level change
-  - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: The activity related to user risk level change
+HISTORY <IMicrosoftGraphRiskyUserHistoryItem1[]>: .
+  - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: 
   - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
   - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
   - `[RiskDetail <String>]`: 
@@ -385,10 +385,14 @@ HISTORY <IMicrosoftGraphRiskyUserHistoryItem1[]>: The activity related to user r
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow

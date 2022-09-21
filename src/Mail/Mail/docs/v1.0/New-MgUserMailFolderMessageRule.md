@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserMailFolderMessageRule
 
 ## SYNOPSIS
-The collection of rules that apply to the user's Inbox folder.
+Create a messageRule object by specifying a set of conditions and actions.
+Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
 
 ## SYNTAX
 
@@ -42,9 +43,41 @@ New-MgUserMailFolderMessageRule -InputObject <IMailIdentity> [-Actions <IMicroso
 ```
 
 ## DESCRIPTION
-The collection of rules that apply to the user's Inbox folder.
+Create a messageRule object by specifying a set of conditions and actions.
+Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserMailFolderMessageRule Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	DisplayName = "From partner"
+	Sequence = 2
+	IsEnabled = $true
+	Conditions = @{
+		SenderContains = @(
+			"adele"
+		)
+	}
+	Actions = @{
+		ForwardTo = @(
+			@{
+				EmailAddress = @{
+					Name = "Alex Wilbur"
+					Address = "AlexW@contoso.onmicrosoft.com"
+				}
+			}
+		)
+		StopProcessingRules = $true
+	}
+}
+# A UPN can also be used as -UserId.
+New-MgUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserMailFolderMessageRule Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -159,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -337,7 +370,7 @@ ACTIONS <IMicrosoftGraphMessageRuleActions>: messageRuleActions
 
 BODYPARAMETER <IMicrosoftGraphMessageRule>: messageRule
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Actions <IMicrosoftGraphMessageRuleActions>]`: messageRuleActions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AssignCategories <String[]>]`: A list of categories to be assigned to a message.

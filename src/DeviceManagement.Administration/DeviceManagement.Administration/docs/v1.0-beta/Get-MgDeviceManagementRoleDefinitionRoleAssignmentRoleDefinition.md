@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition
 
 ## SYNOPSIS
-Get roleDefinition from deviceManagement
+Role definition this assignment is part of.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition
 ```
 
 ## DESCRIPTION
-Get roleDefinition from deviceManagement
+Role definition this assignment is part of.
 
 ## EXAMPLES
 

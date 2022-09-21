@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfiguration
 
 ## SYNOPSIS
-Get deviceConfiguration from deviceManagement
+The navigation link to the Device Configuration being targeted.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfiguration
 ```
 
 ## DESCRIPTION
-Get deviceConfiguration from deviceManagement
+The navigation link to the Device Configuration being targeted.
 
 ## EXAMPLES
 

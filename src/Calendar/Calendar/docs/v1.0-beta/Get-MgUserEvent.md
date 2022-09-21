@@ -8,14 +8,17 @@ schema: 2.0.0
 # Get-MgUserEvent
 
 ## SYNOPSIS
-Get events from users
+The user's events.
+Default is to show events under the Default Calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgUserEvent -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserEvent -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -29,35 +32,82 @@ Get-MgUserEvent -InputObject <ICalendarIdentity> [-Property <String[]>] [<Common
 ```
 
 ## DESCRIPTION
-Get events from users
+The user's events.
+Default is to show events under the Default Calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgUserEvent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+# A UPN can also be used as -UserId.
+Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview" 
+```
+
+This example shows how to use the Get-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserEvent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+# A UPN can also be used as -UserId.
+Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,locations" 
+```
+
+This example shows how to use the Get-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgUserEvent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+# A UPN can also be used as -UserId.
+Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,hideAttendees" 
+```
+
+This example shows how to use the Get-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgUserEvent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+# A UPN can also be used as -UserId.
+Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,start,end,occurrenceId,exceptionOccurrences,cancelledOccurrences" -ExpandProperty "exceptionOccurrences" 
+```
+
+This example shows how to use the Get-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Using the Get-MgUserEvent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+# A UPN can also be used as -UserId.
+Get-MgUserEvent -UserId $userId -Property "subject,body,bodyPreview" 
+```
+
+This example shows how to use the Get-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 6: Using the Get-MgUserEvent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+# A UPN can also be used as -UserId.
+Get-MgUserEvent -UserId $userId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location" 
+```
+
+This example shows how to use the Get-MgUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
 
 Required: False
 Position: Named
@@ -109,21 +159,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Disconnect-MgDeviceManagementRemoteAssistancePartner
 
 ## SYNOPSIS
-Invoke action disconnect
+A request to remove the active TeamViewer connector
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Disconnect-MgDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManage
 ```
 
 ## DESCRIPTION
-Invoke action disconnect
+A request to remove the active TeamViewer connector
 
 ## EXAMPLES
 
@@ -129,6 +129,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

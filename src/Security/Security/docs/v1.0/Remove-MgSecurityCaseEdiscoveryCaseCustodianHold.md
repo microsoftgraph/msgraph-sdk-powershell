@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgSecurityCaseEdiscoveryCaseCustodianHold
 
 ## SYNOPSIS
-Invoke action removeHold
+Start the process of removing hold from eDiscovery custodians.
+After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ## SYNTAX
 
@@ -51,9 +53,20 @@ Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity
 ```
 
 ## DESCRIPTION
-Invoke action removeHold
+Start the process of removing hold from eDiscovery custodians.
+After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgSecurityCaseEdiscoveryCaseCustodianHold Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+```
+
+This example shows how to use the Remove-MgSecurityCaseEdiscoveryCaseCustodianHold Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

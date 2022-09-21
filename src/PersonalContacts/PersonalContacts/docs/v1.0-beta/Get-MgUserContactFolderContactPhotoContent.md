@@ -8,26 +8,24 @@ schema: 2.0.0
 # Get-MgUserContactFolderContactPhotoContent
 
 ## SYNOPSIS
-The user's profile photo.
-Read-only.
+Get media content for the navigation property photo from users
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgUserContactFolderContactPhotoContent -ContactFolderId <String> -ContactId <String> -UserId <String>
  -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgUserContactFolderContactPhotoContent -InputObject <IPersonalContactsIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user's profile photo.
-Read-only.
+Get media content for the navigation property photo from users
 
 ## EXAMPLES
 
@@ -38,7 +36,7 @@ key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -53,7 +51,7 @@ key: id of contact
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -69,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -114,7 +112,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True

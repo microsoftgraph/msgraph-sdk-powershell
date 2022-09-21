@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgTeamInstalledApp
 
 ## SYNOPSIS
-Invoke action upgrade
+Upgrade an app installation within a chat.
 
 ## SYNTAX
 
@@ -24,9 +24,18 @@ Update-MgTeamInstalledApp -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [
 ```
 
 ## DESCRIPTION
-Invoke action upgrade
+Upgrade an app installation within a chat.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgTeamInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Update-MgTeamInstalledApp -TeamId $teamId -TeamsAppInstallationId $teamsAppInstallationId
+```
+
+This example shows how to use the Update-MgTeamInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

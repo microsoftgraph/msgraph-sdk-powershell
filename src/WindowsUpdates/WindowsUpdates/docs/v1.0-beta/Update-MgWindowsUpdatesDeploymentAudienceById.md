@@ -8,7 +8,10 @@ schema: 2.0.0
 # Update-MgWindowsUpdatesDeploymentAudienceById
 
 ## SYNOPSIS
-Invoke action updateAudienceById
+Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type.
+Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist.
+If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset.
+You can also use the method updateAudience to update the **deploymentAudience**.
 
 ## SYNTAX
 
@@ -43,9 +46,36 @@ Update-MgWindowsUpdatesDeploymentAudienceById -InputObject <IWindowsUpdatesIdent
 ```
 
 ## DESCRIPTION
-Invoke action updateAudienceById
+Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type.
+Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist.
+If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset.
+You can also use the method updateAudience to update the **deploymentAudience**.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgWindowsUpdatesDeploymentAudienceById Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+$params = @{
+	MemberEntityType = "String"
+	AddMembers = @(
+		"String"
+	)
+	RemoveMembers = @(
+		"String"
+	)
+	AddExclusions = @(
+		"String"
+	)
+	RemoveExclusions = @(
+		"String"
+	)
+}
+Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId $deploymentId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgWindowsUpdatesDeploymentAudienceById Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

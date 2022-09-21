@@ -8,26 +8,24 @@ schema: 2.0.0
 # Set-MgUserContactFolderContactPhotoContent
 
 ## SYNOPSIS
-The user's profile photo.
-Read-only.
+Update media content for the navigation property photo in users
 
 ## SYNTAX
 
-### Set1 (Default)
+### Set (Default)
 ```
 Set-MgUserContactFolderContactPhotoContent -ContactFolderId <String> -ContactId <String> -UserId <String>
  -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity1
+### SetViaIdentity
 ```
 Set-MgUserContactFolderContactPhotoContent -InputObject <IPersonalContactsIdentity> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user's profile photo.
-Read-only.
+Update media content for the navigation property photo in users
 
 ## EXAMPLES
 
@@ -53,7 +51,7 @@ key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -68,7 +66,7 @@ key: id of contact
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -101,7 +99,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: SetViaIdentity1
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -131,7 +129,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
+Parameter Sets: Set
 Aliases:
 
 Required: True

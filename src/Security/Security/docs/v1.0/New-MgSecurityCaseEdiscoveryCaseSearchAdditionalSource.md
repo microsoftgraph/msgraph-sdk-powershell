@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource
 
 ## SYNOPSIS
-Create new navigation property to additionalSources for security
+Create a new additional source associated with an eDiscovery search.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -InputObject <ISecurityId
 ```
 
 ## DESCRIPTION
-Create new navigation property to additionalSources for security
+Create a new additional source associated with an eDiscovery search.
 
 ## EXAMPLES
 

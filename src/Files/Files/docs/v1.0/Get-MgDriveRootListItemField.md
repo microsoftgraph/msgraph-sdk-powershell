@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveRootListItemField
 
 ## SYNOPSIS
-Get fields from drives
+The values of the columns set on this list item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDriveRootListItemField -InputObject <IFilesIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get fields from drives
+The values of the columns set on this list item.
 
 ## EXAMPLES
 

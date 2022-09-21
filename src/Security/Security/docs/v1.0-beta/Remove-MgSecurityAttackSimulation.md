@@ -8,16 +8,16 @@ schema: 2.0.0
 # Remove-MgSecurityAttackSimulation
 
 ## SYNOPSIS
-Delete navigation property attackSimulation for security
+Delete navigation property simulations for security
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgSecurityAttackSimulation [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete1
+### Delete
 ```
 Remove-MgSecurityAttackSimulation -SimulationId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -30,7 +30,7 @@ Remove-MgSecurityAttackSimulation -InputObject <ISecurityIdentity> [-IfMatch <St
 ```
 
 ## DESCRIPTION
-Delete navigation property attackSimulation for security
+Delete navigation property simulations for security
 
 ## EXAMPLES
 
@@ -87,7 +87,7 @@ key: id of simulation
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True

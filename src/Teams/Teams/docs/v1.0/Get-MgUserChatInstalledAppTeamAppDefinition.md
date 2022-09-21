@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserChatInstalledAppTeamAppDefinition
 
 ## SYNOPSIS
-Get teamsAppDefinition from users
+The details of this version of the app.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserChatInstalledAppTeamAppDefinition -InputObject <ITeamsIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Get teamsAppDefinition from users
+The details of this version of the app.
 
 ## EXAMPLES
 

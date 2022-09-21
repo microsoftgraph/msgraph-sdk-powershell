@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserManagedDeviceWindowProtectionState
 
 ## SYNOPSIS
-Get windowsProtectionState from users
+The device protection status.
+This property is read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgUserManagedDeviceWindowProtectionState -InputObject <IDevicesCorporateMana
 ```
 
 ## DESCRIPTION
-Get windowsProtectionState from users
+The device protection status.
+This property is read-only.
 
 ## EXAMPLES
 

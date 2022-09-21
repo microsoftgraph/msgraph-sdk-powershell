@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListItemAnalytic
 
 ## SYNOPSIS
-Get analytics from shares
+Analytics about the view activities that took place on this item.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Get-MgShareListItemAnalytic -InputObject <IFilesIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get analytics from shares
+Analytics about the view activities that took place on this item.
 
 ## EXAMPLES
 

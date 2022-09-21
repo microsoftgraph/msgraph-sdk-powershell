@@ -8,7 +8,7 @@ schema: 2.0.0
 # Rename-MgUserCloudPcUserAccountType
 
 ## SYNOPSIS
-Invoke action changeUserAccountType
+Change the account type of the user on a specific Cloud PC.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Rename-MgUserCloudPcUserAccountType -InputObject <IUsersActionsIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Invoke action changeUserAccountType
+Change the account type of the user on a specific Cloud PC.
 
 ## EXAMPLES
 

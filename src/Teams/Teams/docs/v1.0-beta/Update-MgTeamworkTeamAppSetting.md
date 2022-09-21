@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgTeamworkTeamAppSetting
 
 ## SYNOPSIS
-Update the navigation property teamsAppSettings in teamwork
+Update the properties of a teamsAppSettings object.
 
 ## SYNTAX
 
@@ -25,9 +25,22 @@ Update-MgTeamworkTeamAppSetting -BodyParameter <IMicrosoftGraphTeamsAppSettings>
 ```
 
 ## DESCRIPTION
-Update the navigation property teamsAppSettings in teamwork
+Update the properties of a teamsAppSettings object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgTeamworkTeamAppSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.teamsAppSettings"
+	IsChatResourceSpecificConsentEnabled = "true"
+}
+Update-MgTeamworkTeamAppSetting -BodyParameter $params
+```
+
+This example shows how to use the Update-MgTeamworkTeamAppSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

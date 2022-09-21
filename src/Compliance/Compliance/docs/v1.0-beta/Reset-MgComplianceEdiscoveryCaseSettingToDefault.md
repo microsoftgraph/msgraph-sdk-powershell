@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgComplianceEdiscoveryCaseSettingToDefault
 
 ## SYNOPSIS
-Invoke action resetToDefault
+Reset a caseSettings object to the default values.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Reset-MgComplianceEdiscoveryCaseSettingToDefault -InputObject <IComplianceIdenti
 ```
 
 ## DESCRIPTION
-Invoke action resetToDefault
+Reset a caseSettings object to the default values.
 
 ## EXAMPLES
+
+### Example 1: Using the Reset-MgComplianceEdiscoveryCaseSettingToDefault Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Reset-MgComplianceEdiscoveryCaseSettingToDefault -CaseId $caseId
+```
+
+This example shows how to use the Reset-MgComplianceEdiscoveryCaseSettingToDefault Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

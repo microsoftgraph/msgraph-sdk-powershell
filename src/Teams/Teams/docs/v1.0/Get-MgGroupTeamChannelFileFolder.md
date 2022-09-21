@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamChannelFileFolder
 
 ## SYNOPSIS
-Get filesFolder from groups
+Get the metadata for the location where the files of a channel are stored.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupTeamChannelFileFolder -InputObject <ITeamsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get filesFolder from groups
+Get the metadata for the location where the files of a channel are stored.
 
 ## EXAMPLES
 

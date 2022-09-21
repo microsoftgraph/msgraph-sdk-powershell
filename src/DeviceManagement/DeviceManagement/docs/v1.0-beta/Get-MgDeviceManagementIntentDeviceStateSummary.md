@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementIntentDeviceStateSummary
 
 ## SYNOPSIS
-Get deviceStateSummary from deviceManagement
+A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementIntentDeviceStateSummary -InputObject <IDeviceManagementId
 ```
 
 ## DESCRIPTION
-Get deviceStateSummary from deviceManagement
+A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
 
 ## EXAMPLES
 

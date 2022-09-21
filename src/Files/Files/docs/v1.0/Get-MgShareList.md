@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareList
 
 ## SYNOPSIS
-Get list from shares
+Used to access the underlying list
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgShareList -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get list from shares
+Used to access the underlying list
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Add-MgGroupSiteContentTypeCopy
 
 ## SYNOPSIS
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Add-MgGroupSiteContentTypeCopy -InputObject <IGroupsIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ## EXAMPLES
 

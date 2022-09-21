@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgApplicationLogo
 
 ## SYNOPSIS
-Get logo for application from applications
+The main logo for the application.
+Not nullable.
 
 ## SYNTAX
 
@@ -23,7 +24,8 @@ Get-MgApplicationLogo -InputObject <IApplicationsIdentity> -OutFile <String> [-P
 ```
 
 ## DESCRIPTION
-Get logo for application from applications
+The main logo for the application.
+Not nullable.
 
 ## EXAMPLES
 

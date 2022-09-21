@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgOnPremisePublishingProfileConnectorGroupApplicationLogo
 
 ## SYNOPSIS
-Update logo for the navigation property applications in onPremisesPublishingProfiles
+The main logo for the application.
+Not nullable.
 
 ## SYNTAX
 
@@ -26,7 +27,8 @@ Set-MgOnPremisePublishingProfileConnectorGroupApplicationLogo -InputObject <IApp
 ```
 
 ## DESCRIPTION
-Update logo for the navigation property applications in onPremisesPublishingProfiles
+The main logo for the application.
+Not nullable.
 
 ## EXAMPLES
 

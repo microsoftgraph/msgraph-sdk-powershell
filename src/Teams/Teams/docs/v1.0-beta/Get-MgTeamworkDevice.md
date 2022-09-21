@@ -8,15 +8,14 @@ schema: 2.0.0
 # Get-MgTeamworkDevice
 
 ## SYNOPSIS
-Get devices from teamwork
+The Teams devices provisioned for the tenant.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgTeamworkDevice [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgTeamworkDevice [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -32,35 +31,37 @@ Get-MgTeamworkDevice -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get devices from teamwork
+The Teams devices provisioned for the tenant.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgTeamworkDevice Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamworkDevice -TeamworkDeviceId $teamworkDeviceId
+```
+
+This example shows how to use the Get-MgTeamworkDevice Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgTeamworkDevice Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamworkDevice
+```
+
+This example shows how to use the Get-MgTeamworkDevice Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
 
 Required: False
 Position: Named
@@ -112,21 +113,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

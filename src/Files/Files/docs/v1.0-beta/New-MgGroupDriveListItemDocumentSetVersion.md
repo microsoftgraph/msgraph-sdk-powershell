@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupDriveListItemDocumentSetVersion
 
 ## SYNOPSIS
-Create new navigation property to documentSetVersions for groups
+Create a new version of a document set item in a list.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgGroupDriveListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Create new navigation property to documentSetVersions for groups
+Create a new version of a document set item in a list.
 
 ## EXAMPLES
 

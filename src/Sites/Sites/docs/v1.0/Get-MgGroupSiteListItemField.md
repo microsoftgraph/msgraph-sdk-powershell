@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListItemField
 
 ## SYNOPSIS
-Get fields from groups
+The values of the columns set on this list item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupSiteListItemField -InputObject <ISitesIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get fields from groups
+The values of the columns set on this list item.
 
 ## EXAMPLES
 

@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgGroupDriveItemSubscription
 
 ## SYNOPSIS
-Get subscriptions from groups
+The set of subscriptions on the item.
+Only supported on the root of a drive.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgGroupDriveItemSubscription -DriveId <String> -DriveItemId <String> -GroupId <String>
+Get-MgGroupDriveItemSubscription -DriveId <String> -DriveItemId <String> -GroupId <String> [-Count]
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -32,35 +33,20 @@ Get-MgGroupDriveItemSubscription -InputObject <IFilesIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get subscriptions from groups
+The set of subscriptions on the item.
+Only supported on the root of a drive.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
 
 Required: False
 Position: Named
@@ -157,21 +143,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

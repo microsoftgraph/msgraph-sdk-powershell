@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveItemContent
 
 ## SYNOPSIS
-Get content for the navigation property items from groups
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgGroupDriveItemContent -InputObject <IFilesIdentity> -OutFile <String> [-Pa
 ```
 
 ## DESCRIPTION
-Get content for the navigation property items from groups
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

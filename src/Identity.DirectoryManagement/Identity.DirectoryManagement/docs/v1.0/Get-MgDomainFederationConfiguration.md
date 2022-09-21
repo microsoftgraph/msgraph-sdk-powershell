@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgDomainFederationConfiguration
 
 ## SYNOPSIS
-Get federationConfiguration from domains
+Domain settings configured by a customer when federated with Azure AD.
+Supports $expand.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgDomainFederationConfiguration -DomainId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgDomainFederationConfiguration -DomainId <String> [-Count] [-ExpandProperty <String[]>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,35 +33,43 @@ Get-MgDomainFederationConfiguration -InputObject <IIdentityDirectoryManagementId
 ```
 
 ## DESCRIPTION
-Get federationConfiguration from domains
+Domain settings configured by a customer when federated with Azure AD.
+Supports $expand.
 
 ## EXAMPLES
 
+### Example 1: Get the federation settings for a federated domain
+```powershell
+Get-MgDomainFederationConfiguration -DomainId 'contoso.com' -InternalDomainFederationId '2a8ce608-bb34-473f-9e0f-f373ee4cbc5a' | Format-List  
+
+ActiveSignInUri                       : https://sts.deverett.info/adfs/services/trust/2005/usernamemixed 
+DisplayName                           : Contoso 
+FederatedIdpMfaBehavior               : rejectMfaByFederatedIdp 
+Id                                    : 2a8ce608-bb34-473f-9e0f-f373ee4cbc5a 
+IsSignedAuthenticationRequestRequired : 
+IssuerUri                             : http://contoso.com/adfs/services/trust/ 
+MetadataExchangeUri                   : https://sts.contoso.com/adfs/services/trust/mex 
+NextSigningCertificate                : MIIC3jCCAcagAwIBAgIQEt0T0G5GPZ9 
+PassiveSignInUri                      : https://sts.contoso.com/adfs/ls/ 
+PreferredAuthenticationProtocol       : wsFed 
+PromptLoginBehavior                   :  
+SignOutUri                            : https://sts.deverett.info/adfs/ls/ 
+SigningCertificate                    : MIIC3jCCAcagAwIBAgIQFsO0R8deG4h 
+SigningCertificateUpdateStatus        : Microsoft.Graph.PowerShell.Models.MicrosoftGraphSigningCertificateUpdateStatus 
+AdditionalProperties                    : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#domains('contoso.com')/federationConfiguration/$entity]} 
+```
+
+This examples retrieves the federation settings for the specified domain.
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases: CV
 
 Required: False
 Position: Named
@@ -139,21 +148,6 @@ Parameter Sets: Get1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

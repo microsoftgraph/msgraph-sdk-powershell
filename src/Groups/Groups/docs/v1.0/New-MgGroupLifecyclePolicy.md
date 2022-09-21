@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupLifecyclePolicy
 
 ## SYNOPSIS
-Create groupLifecyclePolicy
+Creates a new groupLifecyclePolicy.
 
 ## SYNTAX
 
@@ -26,9 +26,23 @@ New-MgGroupLifecyclePolicy -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> 
 ```
 
 ## DESCRIPTION
-Create groupLifecyclePolicy
+Creates a new groupLifecyclePolicy.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgGroupLifecyclePolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	GroupLifetimeInDays = 100
+	ManagedGroupTypes = "Selected"
+	AlternateNotificationEmails = "admin@contoso.com"
+}
+New-MgGroupLifecyclePolicy -BodyParameter $params
+```
+
+This example shows how to use the New-MgGroupLifecyclePolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

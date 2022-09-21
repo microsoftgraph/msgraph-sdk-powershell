@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: 31aed695-1602-42f3-a52b-daf20ef1be00
+Module Guid: 66f99751-c4d8-4ed2-bde2-160c7b32299b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,106 +15,108 @@ Microsoft Graph PowerShell Cmdlets
 Get deviceManagement
 
 ### [Get-MgDeviceManagementDetectedApp](Get-MgDeviceManagementDetectedApp.md)
-Get detectedApps from deviceManagement
+The list of detected apps associated with a device.
 
 ### [Get-MgDeviceManagementDetectedAppManagedDevice](Get-MgDeviceManagementDetectedAppManagedDevice.md)
-Get managedDevices from deviceManagement
+The devices that have the discovered application installed
 
 ### [Get-MgDeviceManagementDeviceCategory](Get-MgDeviceManagementDeviceCategory.md)
-Get deviceCategories from deviceManagement
+The list of device categories with the tenant.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicy](Get-MgDeviceManagementDeviceCompliancePolicy.md)
-Get deviceCompliancePolicies from deviceManagement
+The device compliance policies.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyAssignment](Get-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
-Get assignments from deviceManagement
+The collection of assignments for this compliance policy.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary](Get-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary.md)
-Get deviceSettingStateSummaries from deviceManagement
+Compliance Setting State Device Summary
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary.md)
-Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
+The device compliance state summary for this account.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses.md)
-Get deviceStatuses from deviceManagement
+List of DeviceComplianceDeviceStatus.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview.md)
-Get deviceStatusOverview from deviceManagement
+Device compliance devices status overview
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule](Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule.md)
-Get scheduledActionsForRule from deviceManagement
+The list of scheduled action per rule for this compliance policy.
+This is a required property when creating any individual per-platform compliance policies.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
-Get scheduledActionConfigurations from deviceManagement
+The list of scheduled action configurations for this compliance policy.
+Compliance policy must have one and only one block scheduled action.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummary](Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummary.md)
-Get deviceCompliancePolicySettingStateSummaries from deviceManagement
+The summary states of compliance policy settings for this account.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState](Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState.md)
-Get deviceComplianceSettingStates from deviceManagement
+Not yet documented
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyUserStatuses](Get-MgDeviceManagementDeviceCompliancePolicyUserStatuses.md)
-Get userStatuses from deviceManagement
+List of DeviceComplianceUserStatus.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview](Get-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview.md)
-Get userStatusOverview from deviceManagement
+Device compliance users status overview
 
 ### [Get-MgDeviceManagementDeviceConfiguration](Get-MgDeviceManagementDeviceConfiguration.md)
-Get deviceConfigurations from deviceManagement
+The device configurations.
 
 ### [Get-MgDeviceManagementDeviceConfigurationAssignment](Get-MgDeviceManagementDeviceConfigurationAssignment.md)
-Get assignments from deviceManagement
+The list of assignments for the device configuration profile.
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary](Get-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary.md)
-Get deviceSettingStateSummaries from deviceManagement
+Device Configuration Setting State Device Summary
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStateSummary](Get-MgDeviceManagementDeviceConfigurationDeviceStateSummary.md)
-Get deviceConfigurationDeviceStateSummaries from deviceManagement
+The device configuration device state summary for this account.
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStatuses](Get-MgDeviceManagementDeviceConfigurationDeviceStatuses.md)
-Get deviceStatuses from deviceManagement
+Device configuration installation status by device.
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStatusOverview](Get-MgDeviceManagementDeviceConfigurationDeviceStatusOverview.md)
-Get deviceStatusOverview from deviceManagement
+Device Configuration devices status overview
 
 ### [Get-MgDeviceManagementDeviceConfigurationUserStatuses](Get-MgDeviceManagementDeviceConfigurationUserStatuses.md)
-Get userStatuses from deviceManagement
+Device configuration installation status by user.
 
 ### [Get-MgDeviceManagementDeviceConfigurationUserStatusOverview](Get-MgDeviceManagementDeviceConfigurationUserStatusOverview.md)
-Get userStatusOverview from deviceManagement
+Device Configuration users status overview
 
 ### [Get-MgDeviceManagementManagedDevice](Get-MgDeviceManagementManagedDevice.md)
-Get managedDevices from deviceManagement
+The list of managed devices.
 
 ### [Get-MgDeviceManagementManagedDeviceCategory](Get-MgDeviceManagementManagedDeviceCategory.md)
-Get deviceCategory from deviceManagement
+Device category
 
 ### [Get-MgDeviceManagementManagedDeviceCompliancePolicyState](Get-MgDeviceManagementManagedDeviceCompliancePolicyState.md)
-Get deviceCompliancePolicyStates from deviceManagement
+Device compliance policy states for this device.
 
 ### [Get-MgDeviceManagementManagedDeviceConfigurationState](Get-MgDeviceManagementManagedDeviceConfigurationState.md)
-Get deviceConfigurationStates from deviceManagement
+Device configuration states for this device.
 
 ### [Get-MgDeviceManagementManagedDeviceOverview](Get-MgDeviceManagementManagedDeviceOverview.md)
-Get managedDeviceOverview from deviceManagement
+Device overview
 
 ### [Get-MgDeviceManagementNotificationMessageTemplate](Get-MgDeviceManagementNotificationMessageTemplate.md)
-Get notificationMessageTemplates from deviceManagement
+The Notification Message Templates.
 
 ### [Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage](Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage.md)
-Get localizedNotificationMessages from deviceManagement
+The list of localized messages for this Notification Message Template.
 
 ### [Get-MgDeviceManagementSoftwareUpdateStatusSummary](Get-MgDeviceManagementSoftwareUpdateStatusSummary.md)
-Get softwareUpdateStatusSummary from deviceManagement
+The software update status summary.
 
 ### [Get-MgDeviceManagementTroubleshootingEvent](Get-MgDeviceManagementTroubleshootingEvent.md)
-Get troubleshootingEvents from deviceManagement
+The list of troubleshooting events for the tenant.
 
 ### [Get-MgDeviceManagementWindowInformationProtectionAppLearningSummary](Get-MgDeviceManagementWindowInformationProtectionAppLearningSummary.md)
-Get windowsInformationProtectionAppLearningSummaries from deviceManagement
+The windows information protection app learning summaries.
 
 ### [Get-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary](Get-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary.md)
-Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
+The windows information protection network learning summaries.
 
 ### [New-MgDeviceManagementDetectedApp](New-MgDeviceManagementDetectedApp.md)
 Create new navigation property to detectedApps for deviceManagement

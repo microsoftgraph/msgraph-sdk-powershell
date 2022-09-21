@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserSettingItemInsight
 
 ## SYNOPSIS
-Get itemInsights from users
+Get the user-customizable privacy settings for itemInsights and meeting hours insights.
 
 ## SYNTAX
 
@@ -25,9 +25,19 @@ Get-MgUserSettingItemInsight -InputObject <IUsersIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get itemInsights from users
+Get the user-customizable privacy settings for itemInsights and meeting hours insights.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserSettingItemInsight Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+# A UPN can also be used as -UserId.
+Get-MgUserSettingItemInsight -UserId $userId
+```
+
+This example shows how to use the Get-MgUserSettingItemInsight Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

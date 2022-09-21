@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupTeamChannelMember
 
 ## SYNOPSIS
-Create new navigation property to members for groups
+Add a conversationMember to a channel.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgGroupTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Create new navigation property to members for groups
+Add a conversationMember to a channel.
 
 ## EXAMPLES
 

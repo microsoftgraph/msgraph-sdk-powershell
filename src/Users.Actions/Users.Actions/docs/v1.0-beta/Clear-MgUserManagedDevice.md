@@ -8,7 +8,7 @@ schema: 2.0.0
 # Clear-MgUserManagedDevice
 
 ## SYNOPSIS
-Invoke action wipe
+Wipe a device
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Clear-MgUserManagedDevice -InputObject <IUsersActionsIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Invoke action wipe
+Wipe a device
 
 ## EXAMPLES
 

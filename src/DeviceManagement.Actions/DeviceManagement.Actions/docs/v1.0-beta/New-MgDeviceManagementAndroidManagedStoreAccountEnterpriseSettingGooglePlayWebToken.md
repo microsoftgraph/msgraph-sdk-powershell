@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingGooglePlayWebToken
 
 ## SYNOPSIS
-Invoke action createGooglePlayWebToken
+Generates a web token that is used in an embeddable component.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingGooglePlayWebTo
 ```
 
 ## DESCRIPTION
-Invoke action createGooglePlayWebToken
+Generates a web token that is used in an embeddable component.
 
 ## EXAMPLES
 

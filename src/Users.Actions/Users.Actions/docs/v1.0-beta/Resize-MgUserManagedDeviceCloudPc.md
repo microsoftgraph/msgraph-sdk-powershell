@@ -8,7 +8,7 @@ schema: 2.0.0
 # Resize-MgUserManagedDeviceCloudPc
 
 ## SYNOPSIS
-Invoke action resizeCloudPc
+Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Resize-MgUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-Invoke action resizeCloudPc
+Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 
 ## EXAMPLES
 

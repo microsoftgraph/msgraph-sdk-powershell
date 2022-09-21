@@ -8,7 +8,10 @@ schema: 2.0.0
 # Invoke-MgForceDomainDelete
 
 ## SYNOPSIS
-Invoke action forceDelete
+Deletes a domain using an asynchronous long-running operation.
+Prior to calling forceDelete, you must update or remove any references to **Exchange** as the provisioning service.
+The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a HTTP 404 status code.
+To verify deletion of a domain, you can perform a get domain operation.
 
 ## SYNTAX
 
@@ -40,9 +43,24 @@ Invoke-MgForceDomainDelete -InputObject <IIdentityDirectoryManagementIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action forceDelete
+Deletes a domain using an asynchronous long-running operation.
+Prior to calling forceDelete, you must update or remove any references to **Exchange** as the provisioning service.
+The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a HTTP 404 status code.
+To verify deletion of a domain, you can perform a get domain operation.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgForceDomainDelete Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	DisableUserAccounts = $true
+}
+Invoke-MgForceDomainDelete -DomainId $domainId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgForceDomainDelete Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

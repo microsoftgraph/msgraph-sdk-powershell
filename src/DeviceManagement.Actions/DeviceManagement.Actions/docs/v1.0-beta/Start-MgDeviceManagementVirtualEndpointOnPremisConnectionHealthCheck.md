@@ -8,7 +8,8 @@ schema: 2.0.0
 # Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck
 
 ## SYNOPSIS
-Invoke action runHealthChecks
+Run health checks on the cloudPcOnPremisesConnection object.
+This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
 
 ## SYNTAX
 
@@ -25,9 +26,19 @@ Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck
 ```
 
 ## DESCRIPTION
-Invoke action runHealthChecks
+Run health checks on the cloudPcOnPremisesConnection object.
+This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
 
 ## EXAMPLES
+
+### Example 1: Using the Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Actions
+Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId
+```
+
+This example shows how to use the Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -129,6 +140,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

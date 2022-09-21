@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgInviteDriveRoot
 
 ## SYNOPSIS
-Invoke action invite
+Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Invoke-MgInviteDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <H
 ```
 
 ## DESCRIPTION
-Invoke action invite
+Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ## EXAMPLES
 

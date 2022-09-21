@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserEventAttachment
 
 ## SYNOPSIS
-Create new navigation property to attachments for users
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ## SYNTAX
 
@@ -39,9 +40,60 @@ New-MgUserEventAttachment -InputObject <ICalendarIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Create new navigation property to attachments for users
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserEventAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	"@odata.type" = "#microsoft.graph.fileAttachment"
+	Name = "menu.txt"
+	ContentBytes = "base64bWFjIGFuZCBjaGVlc2UgdG9kYXk="
+}
+# A UPN can also be used as -UserId.
+New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserEventAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgUserEventAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	"@odata.type" = "#microsoft.graph.itemAttachment"
+	Name = "Holiday event"
+	Item = @{
+		"@odata.type" = "microsoft.graph.event"
+		Subject = "Discuss gifts for children"
+	}
+}
+# A UPN can also be used as -UserId.
+New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserEventAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgUserEventAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
+	Name = "name-value"
+	Item = @{
+		"@odata.type" = "microsoft.graph.message"
+	}
+}
+# A UPN can also be used as -UserId.
+New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserEventAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -169,8 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The display name of the attachment.
-This does not need to be the actual file name.
+The attachment's file name.
 
 ```yaml
 Type: System.String
@@ -273,7 +324,7 @@ BODYPARAMETER <IMicrosoftGraphAttachment>: attachment
   - `[ContentType <String>]`: The MIME type.
   - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+  - `[Name <String>]`: The attachment's file name.
   - `[Size <Int32?>]`: The length of the attachment in bytes.
 
 INPUTOBJECT <ICalendarIdentity>: Identity Parameter

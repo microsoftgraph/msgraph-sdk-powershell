@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserInformationProtectionThreatAssessmentRequest
 
 ## SYNOPSIS
-Create new navigation property to threatAssessmentRequests for users
+Create a new threat assessment request.
+A threat assessment request can be one of the following types:
 
 ## SYNTAX
 
@@ -43,7 +44,8 @@ New-MgUserInformationProtectionThreatAssessmentRequest -InputObject <IIdentitySi
 ```
 
 ## DESCRIPTION
-Create new navigation property to threatAssessmentRequests for users
+Create a new threat assessment request.
+A threat assessment request can be one of the following types:
 
 ## EXAMPLES
 
@@ -339,10 +341,14 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow

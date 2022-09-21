@@ -8,7 +8,9 @@ schema: 2.0.0
 # Clear-MgUserPresence
 
 ## SYNOPSIS
-Invoke action clearPresence
+Clear a presence session of an application for a user.
+If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`.
+Read more about presence sessions and their time-out and expiration.
 
 ## SYNTAX
 
@@ -39,9 +41,23 @@ Clear-MgUserPresence -InputObject <IUsersActionsIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Invoke action clearPresence
+Clear a presence session of an application for a user.
+If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`.
+Read more about presence sessions and their time-out and expiration.
 
 ## EXAMPLES
+
+### Example 1: Using the Clear-MgUserPresence Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	SessionId = "22553876-f5ab-4529-bffb-cfe50aa89f87"
+}
+Clear-MgUserPresence -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the Clear-MgUserPresence Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

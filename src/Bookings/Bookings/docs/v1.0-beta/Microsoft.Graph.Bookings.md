@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: 69ab5200-ba3a-40e1-829a-a36e5f4f3d70
+Module Guid: f322a45a-f0bb-4200-b55c-c7d429c40355
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,61 +12,77 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Bookings Cmdlets
 ### [Get-MgBookingBusiness](Get-MgBookingBusiness.md)
-Get bookingBusiness
+Get the properties and relationships of a bookingBusiness object.
 
 ### [Get-MgBookingBusinessAppointment](Get-MgBookingBusinessAppointment.md)
-Get appointments from bookingBusinesses
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingBusinessCalendarView](Get-MgBookingBusinessCalendarView.md)
-Get calendarView from bookingBusinesses
+The set of appointments of this business in a specified date range.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingBusinessCustomer](Get-MgBookingBusinessCustomer.md)
-Get customers from bookingBusinesses
+All the customers of this business.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingBusinessCustomQuestion](Get-MgBookingBusinessCustomQuestion.md)
-Get customQuestions from bookingBusinesses
+All the custom questions of this business.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingBusinessService](Get-MgBookingBusinessService.md)
-Get services from bookingBusinesses
+All the services offered by this business.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingBusinessStaffAvailability](Get-MgBookingBusinessStaffAvailability.md)
-Invoke action getStaffAvailability
+Get the availability information of staff members of a Microsoft Bookings calendar.
 
 ### [Get-MgBookingBusinessStaffMember](Get-MgBookingBusinessStaffMember.md)
-Get staffMembers from bookingBusinesses
+All the staff members that provide services in this business.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingCurrency](Get-MgBookingCurrency.md)
-Get bookingCurrency
+Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
+Use the **id** property, which is the currency code, to specify the currency.
 
 ### [New-MgBookingBusiness](New-MgBookingBusiness.md)
-Create bookingBusiness
+Create a new Microsoft Bookings business in a tenant.
+This is the first step in setting up a Bookings business where you must specify the business display name.
+You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the **bookingBusiness**.
 
 ### [New-MgBookingBusinessAppointment](New-MgBookingBusinessAppointment.md)
-Create new navigation property to appointments for bookingBusinesses
+Create a new bookingAppointment for the specified bookingBusiness.
 
 ### [New-MgBookingBusinessCalendarView](New-MgBookingBusinessCalendarView.md)
 Create new navigation property to calendarView for bookingBusinesses
 
 ### [New-MgBookingBusinessCustomer](New-MgBookingBusinessCustomer.md)
-Create new navigation property to customers for bookingBusinesses
+Create a new bookingCustomer object.
 
 ### [New-MgBookingBusinessCustomQuestion](New-MgBookingBusinessCustomQuestion.md)
 Create new navigation property to customQuestions for bookingBusinesses
 
 ### [New-MgBookingBusinessService](New-MgBookingBusinessService.md)
-Create new navigation property to services for bookingBusinesses
+Create a new bookingService for the specified bookingBusiness.
 
 ### [New-MgBookingBusinessStaffMember](New-MgBookingBusinessStaffMember.md)
-Create new navigation property to staffMembers for bookingBusinesses
+Create a new staff member in the specified bookingBusiness.
 
 ### [New-MgBookingCurrency](New-MgBookingCurrency.md)
 Add new entity to bookingCurrencies
 
 ### [Publish-MgBookingBusiness](Publish-MgBookingBusiness.md)
-Invoke action publish
+Make the scheduling page of this business available to external customers.
+Set the **isPublished** property to true, and **publicUrl** property to the URL of the scheduling page.
 
 ### [Remove-MgBookingBusiness](Remove-MgBookingBusiness.md)
-Delete bookingBusiness
+Delete a bookingBusiness object.
 
 ### [Remove-MgBookingBusinessAppointment](Remove-MgBookingBusinessAppointment.md)
 Delete navigation property appointments for bookingBusinesses
@@ -90,16 +106,17 @@ Delete navigation property staffMembers for bookingBusinesses
 Delete entity from bookingCurrencies
 
 ### [Stop-MgBookingBusinessAppointment](Stop-MgBookingBusinessAppointment.md)
-Invoke action cancel
+Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.
 
 ### [Stop-MgBookingBusinessCalendarView](Stop-MgBookingBusinessCalendarView.md)
-Invoke action cancel
+Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.
 
 ### [Unpublish-MgBookingBusiness](Unpublish-MgBookingBusiness.md)
-Invoke action unpublish
+Make the scheduling page of this business not available to external customers.
+Set the **isPublished** property to false, and **publicUrl** property to null.
 
 ### [Update-MgBookingBusiness](Update-MgBookingBusiness.md)
-Update bookingbusiness
+Update the properties of a bookingBusiness object.
 
 ### [Update-MgBookingBusinessAppointment](Update-MgBookingBusinessAppointment.md)
 Update the navigation property appointments in bookingBusinesses

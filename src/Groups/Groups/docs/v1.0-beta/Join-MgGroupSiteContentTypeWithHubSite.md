@@ -8,7 +8,7 @@ schema: 2.0.0
 # Join-MgGroupSiteContentTypeWithHubSite
 
 ## SYNOPSIS
-Invoke action associateWithHubSites
+Associate a [content type][contentType] with a list of hub sites.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Join-MgGroupSiteContentTypeWithHubSite -InputObject <IGroupsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Invoke action associateWithHubSites
+Associate a [content type][contentType] with a list of hub sites.
 
 ## EXAMPLES
 

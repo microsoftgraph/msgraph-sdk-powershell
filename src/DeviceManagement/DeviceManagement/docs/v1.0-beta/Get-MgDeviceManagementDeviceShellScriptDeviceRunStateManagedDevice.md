@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceShellScriptDeviceRunStateManagedDevice
 
 ## SYNOPSIS
-Get managedDevice from deviceManagement
+The managed devices that executes the device management script.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementDeviceShellScriptDeviceRunStateManagedDevice -InputObject 
 ```
 
 ## DESCRIPTION
-Get managedDevice from deviceManagement
+The managed devices that executes the device management script.
 
 ## EXAMPLES
 

@@ -8,25 +8,36 @@ schema: 2.0.0
 # Remove-MgTeamChannelEmail
 
 ## SYNOPSIS
-Invoke action removeEmail
+Remove the email address of a channel.
+You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
 
 ## SYNTAX
 
-### Remove (Default)
+### Remove1 (Default)
 ```
 Remove-MgTeamChannelEmail -ChannelId <String> -TeamId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### RemoveViaIdentity
+### RemoveViaIdentity1
 ```
 Remove-MgTeamChannelEmail -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action removeEmail
+Remove the email address of a channel.
+You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgTeamChannelEmail Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Remove-MgTeamChannelEmail -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the Remove-MgTeamChannelEmail Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -35,7 +46,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Remove
+Parameter Sets: Remove1
 Aliases:
 
 Required: True
@@ -51,7 +62,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: RemoveViaIdentity
+Parameter Sets: RemoveViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +92,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Remove
+Parameter Sets: Remove1
 Aliases:
 
 Required: True

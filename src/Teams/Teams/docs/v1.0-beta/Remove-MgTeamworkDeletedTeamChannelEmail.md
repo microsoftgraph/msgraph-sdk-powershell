@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgTeamworkDeletedTeamChannelEmail
 
 ## SYNOPSIS
-Invoke action removeEmail
+Remove the email address of a channel.
+You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgTeamworkDeletedTeamChannelEmail -InputObject <ITeamsIdentity> [-PassThr
 ```
 
 ## DESCRIPTION
-Invoke action removeEmail
+Remove the email address of a channel.
+You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
 
 ## EXAMPLES
 

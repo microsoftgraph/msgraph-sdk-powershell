@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveItemContent
 
 ## SYNOPSIS
-Get content for the navigation property items from users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgUserDriveItemContent -InputObject <IFilesIdentity> -OutFile <String> [-Pas
 ```
 
 ## DESCRIPTION
-Get content for the navigation property items from users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

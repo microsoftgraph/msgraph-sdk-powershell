@@ -8,7 +8,8 @@ schema: 2.0.0
 # Add-MgWindowsUpdatesUpdatableAssetMemberById
 
 ## SYNOPSIS
-Invoke action addMembersById
+Add members of the same type to an updatableAssetGroup.
+You can also use the method addMembers to add members.
 
 ## SYNTAX
 
@@ -40,9 +41,27 @@ Add-MgWindowsUpdatesUpdatableAssetMemberById -InputObject <IWindowsUpdatesIdenti
 ```
 
 ## DESCRIPTION
-Invoke action addMembersById
+Add members of the same type to an updatableAssetGroup.
+You can also use the method addMembers to add members.
 
 ## EXAMPLES
+
+### Example 1: Using the Add-MgWindowsUpdatesUpdatableAssetMemberById Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+$params = @{
+	Ids = @(
+		"String"
+		"String"
+		"String"
+	)
+	MemberEntityType = "#microsoft.graph.windowsUpdates.azureADDevice"
+}
+Add-MgWindowsUpdatesUpdatableAssetMemberById -UpdatableAssetId $updatableAssetId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgWindowsUpdatesUpdatableAssetMemberById Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

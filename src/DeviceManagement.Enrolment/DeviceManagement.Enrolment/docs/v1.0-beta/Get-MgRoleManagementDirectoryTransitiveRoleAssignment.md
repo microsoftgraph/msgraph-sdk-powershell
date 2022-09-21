@@ -14,9 +14,9 @@ Get transitiveRoleAssignments from roleManagement
 
 ### List (Default)
 ```
-Get-MgRoleManagementDirectoryTransitiveRoleAssignment [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgRoleManagementDirectoryTransitiveRoleAssignment [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get
@@ -36,31 +36,42 @@ Get transitiveRoleAssignments from roleManagement
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgRoleManagementDirectoryTransitiveRoleAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Get-MgRoleManagementDirectoryTransitiveRoleAssignment -CountVariable CountVar -Filter "principalId eq '2c7936bc-3517-40f3-8eda-4806637b6516'" 
+```
+
+This example shows how to use the Get-MgRoleManagementDirectoryTransitiveRoleAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgRoleManagementDirectoryTransitiveRoleAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Get-MgRoleManagementDirectoryTransitiveRoleAssignment -CountVariable CountVar -Filter "principalId eq '2c7936bc-3517-40f3-8eda-4806637b6516' and directoryScopeId eq '/administrativeUnits/26e79164-0c5c-4281-8c5b-be7bc7809fb2'" 
+```
+
+This example shows how to use the Get-MgRoleManagementDirectoryTransitiveRoleAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgRoleManagementDirectoryTransitiveRoleAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Get-MgRoleManagementDirectoryTransitiveRoleAssignment -CountVariable CountVar -Filter "principalId eq '2c7936bc-3517-40f3-8eda-4806637b6516' and roleDefinitionId eq 'fe930be7-5e62-47db-91af-98c3a49a38b1'" 
+```
+
+This example shows how to use the Get-MgRoleManagementDirectoryTransitiveRoleAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
 
 Required: False
 Position: Named
@@ -112,21 +123,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

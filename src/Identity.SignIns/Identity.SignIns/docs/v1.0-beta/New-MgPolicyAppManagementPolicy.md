@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyAppManagementPolicy
 
 ## SYNOPSIS
-Create new navigation property to appManagementPolicies for policies
+Create an appManagementPolicy object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgPolicyAppManagementPolicy -BodyParameter <IMicrosoftGraphAppManagementPoli
 ```
 
 ## DESCRIPTION
-Create new navigation property to appManagementPolicies for policies
+Create an appManagementPolicy object.
 
 ## EXAMPLES
 

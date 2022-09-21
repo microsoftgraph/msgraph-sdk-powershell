@@ -8,24 +8,28 @@ schema: 2.0.0
 # Get-MgGroupCreatedOnBehalfOf
 
 ## SYNOPSIS
-Get createdOnBehalfOf from groups
+The user (or application) that created the group.
+NOTE: This is not set if the user is an administrator.
+Read-only.
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgGroupCreatedOnBehalfOf -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgGroupCreatedOnBehalfOf -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get createdOnBehalfOf from groups
+The user (or application) that created the group.
+NOTE: This is not set if the user is an administrator.
+Read-only.
 
 ## EXAMPLES
 
@@ -51,7 +55,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -67,7 +71,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True

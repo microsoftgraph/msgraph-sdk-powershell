@@ -191,6 +191,7 @@ BODYPARAMETER <IPathsYydoy0DevicemanagementDevicecompliancepoliciesDevicecomplia
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

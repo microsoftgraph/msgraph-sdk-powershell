@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgOrganizationSettingMicrosoftApplicationDataAccess
 
 ## SYNOPSIS
-Get microsoftApplicationDataAccess from organization
+Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgOrganizationSettingMicrosoftApplicationDataAccess -InputObject <IIdentityD
 ```
 
 ## DESCRIPTION
-Get microsoftApplicationDataAccess from organization
+Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgOrganizationSettingMicrosoftApplicationDataAccess Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgOrganizationSettingMicrosoftApplicationDataAccess -OrganizationId $organizationId
+```
+
+This example shows how to use the Get-MgOrganizationSettingMicrosoftApplicationDataAccess Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

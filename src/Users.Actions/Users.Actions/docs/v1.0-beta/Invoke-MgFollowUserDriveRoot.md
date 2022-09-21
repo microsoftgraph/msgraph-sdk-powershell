@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgFollowUserDriveRoot
 
 ## SYNOPSIS
-Invoke action follow
+Follow a driveItem.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Invoke-MgFollowUserDriveRoot -InputObject <IUsersActionsIdentity> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Invoke action follow
+Follow a driveItem.
 
 ## EXAMPLES
 

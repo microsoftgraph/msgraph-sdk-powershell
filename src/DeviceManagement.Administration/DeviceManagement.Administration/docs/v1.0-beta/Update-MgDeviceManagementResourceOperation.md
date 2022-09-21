@@ -15,8 +15,8 @@ Update the navigation property resourceOperations in deviceManagement
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementResourceOperation -ResourceOperationId <String> [-ActionName <String>]
- [-AdditionalProperties <Hashtable>] [-Description <String>] [-EnabledForScopeValidation] [-Id <String>]
- [-Resource <String>] [-ResourceName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>] [-ResourceName <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -34,9 +34,8 @@ Update-MgDeviceManagementResourceOperation -InputObject <IDeviceManagementAdmini
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementResourceOperation -InputObject <IDeviceManagementAdministrationIdentity>
- [-ActionName <String>] [-AdditionalProperties <Hashtable>] [-Description <String>]
- [-EnabledForScopeValidation] [-Id <String>] [-Resource <String>] [-ResourceName <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ActionName <String>] [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
+ [-ResourceName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,22 +108,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnabledForScopeValidation
-Determines whether the Permission is validated for Scopes defined per Role Assignment.
-This property is read-only.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -162,22 +145,6 @@ Returns true when the command succeeds
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Resource
-Resource category to which this Operation belongs.
-This property is read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -275,8 +242,6 @@ BODYPARAMETER <IMicrosoftGraphResourceOperation>: Describes the resourceOperatio
   - `[Id <String>]`: 
   - `[ActionName <String>]`: Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
   - `[Description <String>]`: Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
-  - `[EnabledForScopeValidation <Boolean?>]`: Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
-  - `[Resource <String>]`: Resource category to which this Operation belongs. This property is read-only.
   - `[ResourceName <String>]`: Name of the Resource this operation is performed on.
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgOrganizationBrandingLocalizationBannerLogo
 
 ## SYNOPSIS
-Get bannerLogo for the navigation property localizations from organization
+A banner version of your company logo that appears on the sign-in page.
+The allowed types are PNG or JPEG no larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## SYNTAX
 
@@ -25,9 +27,38 @@ Get-MgOrganizationBrandingLocalizationBannerLogo -InputObject <IIdentityDirector
 ```
 
 ## DESCRIPTION
-Get bannerLogo for the navigation property localizations from organization
+A banner version of your company logo that appears on the sign-in page.
+The allowed types are PNG or JPEG no larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
+```
+
+This example shows how to use the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
+```
+
+This example shows how to use the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -OutFile $outFileId
+```
+
+This example shows how to use the Get-MgOrganizationBrandingLocalizationBannerLogo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

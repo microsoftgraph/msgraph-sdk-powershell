@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgDevice
 
 ## SYNOPSIS
-Update device
+Update the properties of a device.
+Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
 
 ## SYNTAX
 
@@ -65,9 +66,36 @@ Update-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> [-DeviceId <
 ```
 
 ## DESCRIPTION
-Update device
+Update the properties of a device.
+Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgDevice Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	ExtensionAttributes = @{
+		ExtensionAttribute1 = "BYOD-Device"
+	}
+}
+Update-MgDevice -DeviceId $deviceId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgDevice Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Update-MgDevice Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	AccountEnabled = $false
+}
+Update-MgDevice -DeviceId $deviceId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgDevice Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

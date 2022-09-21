@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgDeviceManagementComanagedDevicePasscode
 
 ## SYNOPSIS
-Invoke action resetPasscode
+Reset passcode
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Reset-MgDeviceManagementComanagedDevicePasscode -InputObject <IDeviceManagementA
 ```
 
 ## DESCRIPTION
-Invoke action resetPasscode
+Reset passcode
 
 ## EXAMPLES
 
@@ -129,6 +129,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

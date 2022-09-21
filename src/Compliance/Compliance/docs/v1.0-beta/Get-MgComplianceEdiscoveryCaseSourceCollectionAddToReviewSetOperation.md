@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation
 
 ## SYNOPSIS
-Get addToReviewSetOperation from compliance
+Get the last addToReviewSetOperation object associated with a source collection.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation -InputObje
 ```
 
 ## DESCRIPTION
-Get addToReviewSetOperation from compliance
+Get the last addToReviewSetOperation object associated with a source collection.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation -CaseId $caseId -SourceCollectionId $sourceCollectionId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

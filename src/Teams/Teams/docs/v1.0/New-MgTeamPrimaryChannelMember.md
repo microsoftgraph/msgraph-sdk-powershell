@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamPrimaryChannelMember
 
 ## SYNOPSIS
-Create new navigation property to members for teams
+Add a conversationMember to a channel.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Create new navigation property to members for teams
+Add a conversationMember to a channel.
 
 ## EXAMPLES
 

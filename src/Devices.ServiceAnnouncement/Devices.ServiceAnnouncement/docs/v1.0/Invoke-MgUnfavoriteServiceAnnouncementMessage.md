@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgUnfavoriteServiceAnnouncementMessage
 
 ## SYNOPSIS
-Invoke action unfavorite
+Remove the favorite status of serviceUpdateMessages for the signed in user.
 
 ## SYNTAX
 
@@ -26,9 +26,24 @@ Invoke-MgUnfavoriteServiceAnnouncementMessage
 ```
 
 ## DESCRIPTION
-Invoke action unfavorite
+Remove the favorite status of serviceUpdateMessages for the signed in user.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgUnfavoriteServiceAnnouncementMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+$params = @{
+	MessageIds = @(
+		"MC172851"
+		"MC167983"
+	)
+}
+Invoke-MgUnfavoriteServiceAnnouncementMessage -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgUnfavoriteServiceAnnouncementMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

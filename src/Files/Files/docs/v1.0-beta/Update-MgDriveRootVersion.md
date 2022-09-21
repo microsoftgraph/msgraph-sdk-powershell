@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentInputFile
-Input File for Content (.)
+Input File for Content (The content stream for this version of the item.)
 
 ```yaml
 Type: System.String
@@ -301,7 +301,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItemVersion>: driveItemVersion
     - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
     - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
   - `[Id <String>]`: 
-  - `[Content <Byte[]>]`: 
+  - `[Content <Byte[]>]`: The content stream for this version of the item.
   - `[Size <Int64?>]`: Indicates the size of the content stream for this version of the item.
 
 INPUTOBJECT <IFilesIdentity>: Identity Parameter

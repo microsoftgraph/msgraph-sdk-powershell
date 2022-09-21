@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfigurationUserStatusOverview
 
 ## SYNOPSIS
-Get userStatusOverview from deviceManagement
+Device Configuration users status overview
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementDeviceConfigurationUserStatusOverview -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Get userStatusOverview from deviceManagement
+Device Configuration users status overview
 
 ## EXAMPLES
 

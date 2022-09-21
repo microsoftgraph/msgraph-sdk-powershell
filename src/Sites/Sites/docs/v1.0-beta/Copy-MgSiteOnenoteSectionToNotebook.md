@@ -8,7 +8,8 @@ schema: 2.0.0
 # Copy-MgSiteOnenoteSectionToNotebook
 
 ## SYNOPSIS
-Invoke action copyToNotebook
+Copies a section to a specific notebook.
+For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Copy-MgSiteOnenoteSectionToNotebook -InputObject <ISitesIdentity> [-SiteId <Stri
 ```
 
 ## DESCRIPTION
-Invoke action copyToNotebook
+Copies a section to a specific notebook.
+For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ## EXAMPLES
 

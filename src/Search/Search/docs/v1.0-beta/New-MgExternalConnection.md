@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgExternalConnection
 
 ## SYNOPSIS
-Create new navigation property to connections for external
+Create a new externalConnection.
 
 ## SYNTAX
 
@@ -35,9 +35,23 @@ New-MgExternalConnection -BodyParameter <IMicrosoftGraphExternalConnectorsExtern
 ```
 
 ## DESCRIPTION
-Create new navigation property to connections for external
+Create a new externalConnection.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgExternalConnection Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Search
+$params = @{
+	Id = "contosohr"
+	Name = "Contoso HR"
+	Description = "Connection to index Contoso HR system"
+}
+New-MgExternalConnection -BodyParameter $params
+```
+
+This example shows how to use the New-MgExternalConnection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -412,7 +426,7 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalConnection>: externalCon
     - `[Id <String>]`: 
     - `[Description <String>]`: The description of the external group. Optional.
     - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-    - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+    - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
       - `[Id <String>]`: 
       - `[Type <String>]`: identityType
   - `[IngestedItemsCount <Int64?>]`: The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
@@ -496,7 +510,7 @@ GROUPS <IMicrosoftGraphExternalConnectorsExternalGroup[]>: .
   - `[Id <String>]`: 
   - `[Description <String>]`: The description of the external group. Optional.
   - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
     - `[Id <String>]`: 
     - `[Type <String>]`: identityType
 

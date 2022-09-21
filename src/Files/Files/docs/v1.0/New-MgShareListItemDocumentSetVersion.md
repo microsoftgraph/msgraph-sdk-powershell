@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgShareListItemDocumentSetVersion
 
 ## SYNOPSIS
-Create new navigation property to documentSetVersions for shares
+Create a new version of a document set item in a list.
 
 ## SYNTAX
 
@@ -77,7 +77,7 @@ New-MgShareListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Create new navigation property to documentSetVersions for shares
+Create a new version of a document set item in a list.
 
 ## EXAMPLES
 

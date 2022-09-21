@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticBaselineRebootAnalyticMetric
 
 ## SYNOPSIS
-Get rebootAnalyticsMetrics from deviceManagement
+The user experience analytics reboot analytics metrics.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementUserExperienceAnalyticBaselineRebootAnalyticMetric
 ```
 
 ## DESCRIPTION
-Get rebootAnalyticsMetrics from deviceManagement
+The user experience analytics reboot analytics metrics.
 
 ## EXAMPLES
 

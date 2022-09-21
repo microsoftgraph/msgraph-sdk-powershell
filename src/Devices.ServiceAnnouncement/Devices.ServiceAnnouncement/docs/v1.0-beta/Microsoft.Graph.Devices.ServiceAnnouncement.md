@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-Module Guid: 21c4a005-a572-4d1c-8ffb-1b9c1d6a15cf
+Module Guid: 1c101335-5b4a-4cfb-a966-132107ddf5f7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,37 +12,40 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Devices.ServiceAnnouncement Cmdlets
 ### [Get-MgServiceAnnouncementHealthOverview](Get-MgServiceAnnouncementHealthOverview.md)
-Get healthOverviews from admin
+A collection of service health information for tenant.
+This property is a contained navigation property, it is nullable and readonly.
 
 ### [Get-MgServiceAnnouncementHealthOverviewIssue](Get-MgServiceAnnouncementHealthOverviewIssue.md)
-Get issues from admin
+A collection of issues that happened on the service, with detailed information for each issue.
 
 ### [Get-MgServiceAnnouncementIssue](Get-MgServiceAnnouncementIssue.md)
-Get issues from admin
+A collection of service issues for tenant.
+This property is a contained navigation property, it is nullable and readonly.
 
 ### [Get-MgServiceAnnouncementMessage](Get-MgServiceAnnouncementMessage.md)
-Get messages from admin
+A collection of service messages for tenant.
+This property is a contained navigation property, it is nullable and readonly.
 
 ### [Get-MgServiceAnnouncementMessageAttachment](Get-MgServiceAnnouncementMessageAttachment.md)
-Get attachments from admin
+A collection of serviceAnnouncementAttachments.
 
 ### [Get-MgServiceAnnouncementMessageAttachmentArchive](Get-MgServiceAnnouncementMessageAttachmentArchive.md)
-Get attachmentsArchive for the navigation property messages from admin
+The zip file of all attachments for a message.
 
 ### [Get-MgServiceAnnouncementMessageAttachmentContent](Get-MgServiceAnnouncementMessageAttachmentContent.md)
-Get content for the navigation property attachments from admin
+The attachment content.
 
 ### [Invoke-MgArchiveServiceAnnouncementMessage](Invoke-MgArchiveServiceAnnouncementMessage.md)
-Invoke action archive
+Archive a list of serviceUpdateMessages for the signed in user.
 
 ### [Invoke-MgFavoriteServiceAnnouncementMessage](Invoke-MgFavoriteServiceAnnouncementMessage.md)
-Invoke action favorite
+Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
 
 ### [Invoke-MgMarkServiceAnnouncementMessageRead](Invoke-MgMarkServiceAnnouncementMessageRead.md)
-Invoke action markRead
+Mark a list of serviceUpdateMessages as **read** for the signed in user.
 
 ### [Invoke-MgMarkServiceAnnouncementMessageUnread](Invoke-MgMarkServiceAnnouncementMessageUnread.md)
-Invoke action markUnread
+Mark a list of serviceUpdateMessages as **unread** for the signed in user.
 
 ### [Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident](Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident.md)
 Invoke function incidentReport
@@ -51,10 +54,10 @@ Invoke function incidentReport
 Invoke function incidentReport
 
 ### [Invoke-MgUnarchiveServiceAnnouncementMessage](Invoke-MgUnarchiveServiceAnnouncementMessage.md)
-Invoke action unarchive
+Unarchive a list of serviceUpdateMessages for the signed in user.
 
 ### [Invoke-MgUnfavoriteServiceAnnouncementMessage](Invoke-MgUnfavoriteServiceAnnouncementMessage.md)
-Invoke action unfavorite
+Remove the favorite status of serviceUpdateMessages for the signed in user.
 
 ### [New-MgServiceAnnouncementHealthOverview](New-MgServiceAnnouncementHealthOverview.md)
 Create new navigation property to healthOverviews for admin
@@ -87,10 +90,10 @@ Delete navigation property messages for admin
 Delete navigation property attachments for admin
 
 ### [Set-MgServiceAnnouncementMessageAttachmentArchive](Set-MgServiceAnnouncementMessageAttachmentArchive.md)
-Update attachmentsArchive for the navigation property messages in admin
+The zip file of all attachments for a message.
 
 ### [Set-MgServiceAnnouncementMessageAttachmentContent](Set-MgServiceAnnouncementMessageAttachmentContent.md)
-Update content for the navigation property attachments in admin
+The attachment content.
 
 ### [Update-MgServiceAnnouncementHealthOverview](Update-MgServiceAnnouncementHealthOverview.md)
 Update the navigation property healthOverviews in admin

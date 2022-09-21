@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticBaselineResourcePerformanceMetric
 
 ## SYNOPSIS
-Get resourcePerformanceMetrics from deviceManagement
+The user experience analytics resource performance metrics.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementUserExperienceAnalyticBaselineResourcePerformanceMetric
 ```
 
 ## DESCRIPTION
-Get resourcePerformanceMetrics from deviceManagement
+The user experience analytics resource performance metrics.
 
 ## EXAMPLES
 

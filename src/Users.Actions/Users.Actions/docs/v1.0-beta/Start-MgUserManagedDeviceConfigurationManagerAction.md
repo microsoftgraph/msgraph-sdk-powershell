@@ -8,7 +8,7 @@ schema: 2.0.0
 # Start-MgUserManagedDeviceConfigurationManagerAction
 
 ## SYNOPSIS
-Invoke action triggerConfigurationManagerAction
+Trigger action on ConfigurationManager client
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Start-MgUserManagedDeviceConfigurationManagerAction -InputObject <IUsersActionsI
 ```
 
 ## DESCRIPTION
-Invoke action triggerConfigurationManagerAction
+Trigger action on ConfigurationManager client
 
 ## EXAMPLES
 

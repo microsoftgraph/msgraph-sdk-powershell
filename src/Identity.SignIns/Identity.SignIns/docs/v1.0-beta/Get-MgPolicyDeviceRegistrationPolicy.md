@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgPolicyDeviceRegistrationPolicy
 
 ## SYNOPSIS
-Get deviceRegistrationPolicy from policies
+Read the properties and relationships of a deviceRegistrationPolicy object.
+Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 
 ## SYNTAX
 
@@ -17,9 +18,19 @@ Get-MgPolicyDeviceRegistrationPolicy [-ExpandProperty <String[]>] [-Property <St
 ```
 
 ## DESCRIPTION
-Get deviceRegistrationPolicy from policies
+Read the properties and relationships of a deviceRegistrationPolicy object.
+Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPolicyDeviceRegistrationPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyDeviceRegistrationPolicy
+```
+
+This example shows how to use the Get-MgPolicyDeviceRegistrationPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

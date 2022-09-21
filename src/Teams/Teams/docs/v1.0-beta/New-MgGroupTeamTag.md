@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupTeamTag
 
 ## SYNOPSIS
-Create new navigation property to tags for groups
+Create a standard tag for members in the team.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgGroupTeamTag -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtab
 ```
 
 ## DESCRIPTION
-Create new navigation property to tags for groups
+Create a standard tag for members in the team.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessCustomQuestion
 
 ## SYNOPSIS
-Create new navigation property to customQuestions for solutions
+Create a new bookingCustomQuestion object.
 
 ## SYNTAX
 
@@ -39,9 +39,25 @@ New-MgBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Create new navigation property to customQuestions for solutions
+Create a new bookingCustomQuestion object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgBookingBusinessCustomQuestion Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+$params = @{
+	"@odata.type" = "#microsoft.graph.bookingCustomQuestion"
+	DisplayName = "What is your age?"
+	AnswerInputType = "text"
+	AnswerOptions = @(
+	)
+}
+New-MgBookingBusinessCustomQuestion -BookingBusinessId $bookingBusinessId -BodyParameter $params
+```
+
+This example shows how to use the New-MgBookingBusinessCustomQuestion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -122,7 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name of this entity.
+The question.
 
 ```yaml
 Type: System.String
@@ -225,7 +241,7 @@ BODYPARAMETER <IMicrosoftGraphBookingCustomQuestion>: Represents a custom questi
   - `[Id <String>]`: 
   - `[AnswerInputType <String>]`: answerInputType
   - `[AnswerOptions <String[]>]`: List of possible answer values.
-  - `[DisplayName <String>]`: Display name of this entity.
+  - `[DisplayName <String>]`: The question.
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
   - `[BookingAppointmentId <String>]`: key: id of bookingAppointment

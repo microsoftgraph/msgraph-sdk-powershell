@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyAdminConsentRequestPolicy
 
 ## SYNOPSIS
-Update the navigation property adminConsentRequestPolicy in policies
+Update the properties of an adminConsentRequestPolicy object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Update-MgPolicyAdminConsentRequestPolicy -BodyParameter <IMicrosoftGraphAdminCon
 ```
 
 ## DESCRIPTION
-Update the navigation property adminConsentRequestPolicy in policies
+Update the properties of an adminConsentRequestPolicy object.
 
 ## EXAMPLES
 
@@ -249,13 +249,13 @@ BODYPARAMETER <IMicrosoftGraphAdminConsentRequestPolicy1>: adminConsentRequestPo
   - `[RemindersEnabled <Boolean?>]`: Specifies whether reviewers will receive reminder emails. Required.
   - `[RequestDurationInDays <Int32?>]`: Specifies the duration the request is active before it automatically expires if no decision is applied.
   - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope1[]>]`: Required.
-    - `[Query <String>]`: The query specifying who will be the reviewer. See table for examples.
+    - `[Query <String>]`: The query specifying who will be the reviewer.
     - `[QueryRoot <String>]`: In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
     - `[QueryType <String>]`: The type of query. Examples include MicrosoftGraph and ARM.
   - `[Version <Int32?>]`: Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
 
 REVIEWERS <IMicrosoftGraphAccessReviewReviewerScope1[]>: Required.
-  - `[Query <String>]`: The query specifying who will be the reviewer. See table for examples.
+  - `[Query <String>]`: The query specifying who will be the reviewer.
   - `[QueryRoot <String>]`: In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
   - `[QueryType <String>]`: The type of query. Examples include MicrosoftGraph and ARM.
 

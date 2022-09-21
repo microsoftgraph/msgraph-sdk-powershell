@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgIdentityConditionalAccessPolicy
 
 ## SYNOPSIS
-Get policies from identity
+Read-only.
+Nullable.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgIdentityConditionalAccessPolicy [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgIdentityConditionalAccessPolicy [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,26 +34,64 @@ Get-MgIdentityConditionalAccessPolicy -InputObject <IIdentitySignInsIdentity> [-
 ```
 
 ## DESCRIPTION
-Get policies from identity
+Read-only.
+Nullable.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ## EXAMPLES
 
-## PARAMETERS
+### Example 1: Get a list of all conditional access policies in Azure AD.
+```powershell
+Connect-MgGraph -Scopes 'Policy.Read.All'
+Get-MgIdentityConditionalAccessPolicy |Format-List
 
-### -All
-List all pages.
+Conditions           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessConditionSet
+CreatedDateTime      : 1/13/2022 6:35:35 AM
+Description          :
+DisplayName          : Exchange Online Requires Compliant Device
+GrantControls        : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessGrantControls
+Id                   : 5e7615b8-dbe4-4cc1-810c-26adb77a3518
+ModifiedDateTime     : 7/29/2022 9:08:10 AM
+SessionControls      : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessSessionControls
+State                : enabled
+AdditionalProperties : {}
 
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Conditions           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessConditionSet
+CreatedDateTime      : 1/13/2022 6:35:39 AM
+Description          :
+DisplayName          : Office 365 App Control
+GrantControls        : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessGrantControls
+Id                   : 8783f4ea-215e-49f9-a4f6-cc21f6de45f6
+ModifiedDateTime     : 7/29/2022 9:08:39 AM
+SessionControls      : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessSessionControls
+State                : enabled
+AdditionalProperties : {}
 ```
+
+This example retrieves all the conditional access policies in Azure AD.
+
+### Example 2: Get a conditional access policy by Id
+```powershell
+Connect-MgGraph -Scopes 'Policy.Read.All'
+
+Get-MgIdentityConditionalAccessPolicy -ConditionalAccessPolicyId '5e7615b8-dbe4-4cc1-810c-26adb77a3518' | 
+  Format-List
+
+Conditions           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessConditionSet
+CreatedDateTime      : 1/13/2022 6:35:35 AM
+Description          :
+DisplayName          : Exchange Online Requires Compliant Device
+GrantControls        : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessGrantControls
+Id                   : 5e7615b8-dbe4-4cc1-810c-26adb77a3518
+ModifiedDateTime     : 7/29/2022 9:08:10 AM
+SessionControls      : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessSessionControls
+State                : enabled
+AdditionalProperties : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#identity/conditionalAccess/policies/$entity]}
+```
+
+This command retrieves the conditional access by Id.
+
+## PARAMETERS
 
 ### -ConditionalAccessPolicyId
 key: id of conditionalAccessPolicy
@@ -68,14 +108,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -127,21 +166,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -243,10 +267,14 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow

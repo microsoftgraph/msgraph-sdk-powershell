@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserDriveItemChildContent
 
 ## SYNOPSIS
-Update content for the navigation property children in users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Set-MgUserDriveItemChildContent -InputObject <IFilesIdentity> -InFile <String> [
 ```
 
 ## DESCRIPTION
-Update content for the navigation property children in users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

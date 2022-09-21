@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgUserOutlookTaskFolderTask
 
 ## SYNOPSIS
-Get tasks from users
+The tasks in this task folder.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgUserOutlookTaskFolderTask -OutlookTaskFolderId <String> -UserId <String> [-Filter <String>]
- [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserOutlookTaskFolderTask -OutlookTaskFolderId <String> -UserId <String> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -31,35 +32,31 @@ Get-MgUserOutlookTaskFolderTask -InputObject <IUsersIdentity> [-Property <String
 ```
 
 ## DESCRIPTION
-Get tasks from users
+The tasks in this task folder.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgUserOutlookTaskFolderTask Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+# A UPN can also be used as -UserId.
+Get-MgUserOutlookTaskFolderTask -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId
+```
+
+This example shows how to use the Get-MgUserOutlookTaskFolderTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
 
 Required: False
 Position: Named
@@ -123,21 +120,6 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

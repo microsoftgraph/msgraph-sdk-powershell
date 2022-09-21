@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAdminConsentRequestPolicy
 
 ## SYNOPSIS
-Get adminConsentRequestPolicy from policies
+Read the properties and relationships of an adminConsentRequestPolicy object.
 
 ## SYNTAX
 
@@ -17,9 +17,18 @@ Get-MgPolicyAdminConsentRequestPolicy [-ExpandProperty <String[]>] [-Property <S
 ```
 
 ## DESCRIPTION
-Get adminConsentRequestPolicy from policies
+Read the properties and relationships of an adminConsentRequestPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPolicyAdminConsentRequestPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyAdminConsentRequestPolicy
+```
+
+This example shows how to use the Get-MgPolicyAdminConsentRequestPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

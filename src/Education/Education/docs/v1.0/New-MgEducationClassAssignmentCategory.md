@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgEducationClassAssignmentCategory
 
 ## SYNOPSIS
-Create new navigation property to assignmentCategories for education
+Creates a new educationCategory on an educationClass.
 
 ## SYNTAX
 
@@ -62,9 +62,21 @@ New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Create new navigation property to assignmentCategories for education
+Creates a new educationCategory on an educationClass.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgEducationClassAssignmentCategory Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DisplayName = "Quizzes"
+}
+New-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationClassAssignmentCategory Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

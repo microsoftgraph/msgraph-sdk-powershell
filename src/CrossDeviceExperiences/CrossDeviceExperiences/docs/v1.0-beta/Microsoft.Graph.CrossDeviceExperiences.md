@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CrossDeviceExperiences
-Module Guid: 65306b6b-b9fa-4922-8a57-35e75d60a6b2
+Module Guid: dee71470-c609-4867-aa21-506047f20428
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
@@ -24,31 +24,52 @@ Get activity from users
 Get devices from users
 
 ### [Get-MgUserDeviceCommand](Get-MgUserDeviceCommand.md)
-Get commands from users
+Set of commands sent to this device.
 
 ### [Get-MgUserDeviceCommandResponsepayload](Get-MgUserDeviceCommandResponsepayload.md)
 Get responsepayload from users
 
 ### [Get-MgUserDeviceExtension](Get-MgUserDeviceExtension.md)
-Get extensions from users
+The collection of open extensions defined for the device.
+Read-only.
+Nullable.
 
 ### [Get-MgUserDeviceMemberOf](Get-MgUserDeviceMemberOf.md)
-Get memberOf from users
+Groups and administrative units that this device is a member of.
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgUserDeviceRegisteredOwner](Get-MgUserDeviceRegisteredOwner.md)
-Get registeredOwners from users
+The user that cloud joined the device or registered their personal device.
+The registered owner is set at the time of registration.
+Currently, there can be only one owner.
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgUserDeviceRegisteredOwnerByRef](Get-MgUserDeviceRegisteredOwnerByRef.md)
-Get ref of registeredOwners from users
+The user that cloud joined the device or registered their personal device.
+The registered owner is set at the time of registration.
+Currently, there can be only one owner.
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgUserDeviceRegisteredUser](Get-MgUserDeviceRegisteredUser.md)
-Get registeredUsers from users
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgUserDeviceTransitiveMemberOf](Get-MgUserDeviceTransitiveMemberOf.md)
-Get transitiveMemberOf from users
+Groups and administrative units that this device is a member of.
+This operation is transitive.
+Supports $expand.
 
 ### [Get-MgUserDeviceUsageRights](Get-MgUserDeviceUsageRights.md)
-Get usageRights from users
+Represents the usage rights a device has been granted.
 
 ### [New-MgUserActivity](New-MgUserActivity.md)
 Create new navigation property to activities for users

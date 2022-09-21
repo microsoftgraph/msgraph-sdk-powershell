@@ -8,26 +8,41 @@ schema: 2.0.0
 # Complete-MgTeamChannelMigration
 
 ## SYNOPSIS
-Invoke action completeMigration
+Complete the message migration process by removing `migration mode` from a channel in a team.
+`Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process.
+After a **completeMigration** request is made, you cannot import additional messages into the team.
+You can add members to the team after the request returns a successful response.
 
 ## SYNTAX
 
-### Complete1 (Default)
+### Complete (Default)
 ```
 Complete-MgTeamChannelMigration -ChannelId <String> -TeamId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CompleteViaIdentity1
+### CompleteViaIdentity
 ```
 Complete-MgTeamChannelMigration -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action completeMigration
+Complete the message migration process by removing `migration mode` from a channel in a team.
+`Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process.
+After a **completeMigration** request is made, you cannot import additional messages into the team.
+You can add members to the team after the request returns a successful response.
 
 ## EXAMPLES
+
+### Example 1: Using the Complete-MgTeamChannelMigration Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Complete-MgTeamChannelMigration -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the Complete-MgTeamChannelMigration Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -36,7 +51,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Complete1
+Parameter Sets: Complete
 Aliases:
 
 Required: True
@@ -52,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: CompleteViaIdentity1
+Parameter Sets: CompleteViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +97,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Complete1
+Parameter Sets: Complete
 Aliases:
 
 Required: True

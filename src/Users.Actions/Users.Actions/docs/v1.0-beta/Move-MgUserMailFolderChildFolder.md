@@ -8,7 +8,7 @@ schema: 2.0.0
 # Move-MgUserMailFolderChildFolder
 
 ## SYNOPSIS
-Invoke action move
+Move a mailfolder and its contents to another mailfolder.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Move-MgUserMailFolderChildFolder -InputObject <IUsersActionsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Invoke action move
+Move a mailfolder and its contents to another mailfolder.
 
 ## EXAMPLES
 

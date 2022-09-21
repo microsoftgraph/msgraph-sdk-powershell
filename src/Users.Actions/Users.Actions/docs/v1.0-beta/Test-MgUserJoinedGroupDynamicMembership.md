@@ -8,7 +8,9 @@ schema: 2.0.0
 # Test-MgUserJoinedGroupDynamicMembership
 
 ## SYNOPSIS
-Invoke action evaluateDynamicMembership
+Evaluate whether a user or device is or would be a member of a dynamic group.
+The membership rule is returned along with other details that were used in the evaluation.
+You can complete this operation in the following ways:
 
 ## SYNTAX
 
@@ -40,7 +42,9 @@ Test-MgUserJoinedGroupDynamicMembership -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action evaluateDynamicMembership
+Evaluate whether a user or device is or would be a member of a dynamic group.
+The membership rule is returned along with other details that were used in the evaluation.
+You can complete this operation in the following ways:
 
 ## EXAMPLES
 

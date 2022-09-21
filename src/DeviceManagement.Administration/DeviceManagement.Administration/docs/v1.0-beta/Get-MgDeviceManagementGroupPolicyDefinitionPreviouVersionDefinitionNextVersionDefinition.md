@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition
 
 ## SYNOPSIS
-Get nextVersionDefinition from deviceManagement
+Definition of the next version of this definition
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDe
 ```
 
 ## DESCRIPTION
-Get nextVersionDefinition from deviceManagement
+Definition of the next version of this definition
 
 ## EXAMPLES
 

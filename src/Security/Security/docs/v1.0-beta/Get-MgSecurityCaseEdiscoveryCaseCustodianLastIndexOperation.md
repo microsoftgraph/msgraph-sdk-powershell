@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation
 
 ## SYNOPSIS
-Get lastIndexOperation from security
+Get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation -InputObject <ISecur
 ```
 
 ## DESCRIPTION
-Get lastIndexOperation from security
+Get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

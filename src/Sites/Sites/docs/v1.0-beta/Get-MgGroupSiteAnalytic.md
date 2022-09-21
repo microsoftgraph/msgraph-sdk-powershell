@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteAnalytic
 
 ## SYNOPSIS
-Get analytics from groups
+Analytics about the view activities that took place in this site.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupSiteAnalytic -InputObject <ISitesIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get analytics from groups
+Analytics about the view activities that took place in this site.
 
 ## EXAMPLES
 

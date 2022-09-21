@@ -8,7 +8,7 @@ schema: 2.0.0
 # Sync-MgDeviceManagementWindowDriverUpdateProfileInventory
 
 ## SYNOPSIS
-Invoke action syncInventory
+Sync the driver inventory of a WindowsDriverUpdateProfile.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Sync-MgDeviceManagementWindowDriverUpdateProfileInventory -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Invoke action syncInventory
+Sync the driver inventory of a WindowsDriverUpdateProfile.
 
 ## EXAMPLES
 
@@ -129,6 +129,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

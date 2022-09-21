@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveItemListItemVersionField
 
 ## SYNOPSIS
-Get fields from users
+A collection of the fields and values for this version of the list item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserDriveItemListItemVersionField -InputObject <IFilesIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get fields from users
+A collection of the fields and values for this version of the list item.
 
 ## EXAMPLES
 

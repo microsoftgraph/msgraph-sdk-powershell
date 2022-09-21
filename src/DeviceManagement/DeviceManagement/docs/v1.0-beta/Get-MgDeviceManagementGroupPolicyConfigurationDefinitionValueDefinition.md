@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValueDefinition
 
 ## SYNOPSIS
-Get definition from deviceManagement
+The associated group policy definition with the value.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValueDefinition
 ```
 
 ## DESCRIPTION
-Get definition from deviceManagement
+The associated group policy definition with the value.
 
 ## EXAMPLES
 

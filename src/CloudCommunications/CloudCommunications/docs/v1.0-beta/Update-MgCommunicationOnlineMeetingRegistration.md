@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgCommunicationOnlineMeetingRegistration
 
 ## SYNOPSIS
-Update the navigation property registration in communications
+Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ Update-MgCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicatio
 ```
 
 ## DESCRIPTION
-Update the navigation property registration in communications
+Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
 
 ## EXAMPLES
 
