@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPlannerTaskProgressTaskBoardFormat
 
 ## SYNOPSIS
-Update the navigation property progressTaskBoardFormat in planner
+Update the properties of **plannerProgressTaskBoardTaskFormat** object.
 
 ## SYNTAX
 
@@ -40,9 +40,21 @@ Update-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property progressTaskBoardFormat in planner
+Update the properties of **plannerProgressTaskBoardTaskFormat** object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPlannerTaskProgressTaskBoardFormat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	OrderHint = "A6673H Ejkl!"
+}
+Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPlannerTaskProgressTaskBoardFormat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

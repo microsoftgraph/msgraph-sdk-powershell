@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgGroupPlannerPlanDetail
 
 ## SYNOPSIS
-Update the navigation property details in groups
+Update the properties of **plannerplandetails** object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-AdditionalProp
 ```
 
 ## DESCRIPTION
-Update the navigation property details in groups
+Update the properties of **plannerplandetails** object.
 
 ## EXAMPLES
 

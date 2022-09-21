@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerTaskDetail
 
 ## SYNOPSIS
-Get details from planner
+Retrieve the properties and relationships of a **plannerTaskDetails** object.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgPlannerTaskDetail -InputObject <IPlannerIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get details from planner
+Retrieve the properties and relationships of a **plannerTaskDetails** object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPlannerTaskDetail Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+Get-MgPlannerTaskDetail -PlannerTaskId $plannerTaskId
+```
+
+This example shows how to use the Get-MgPlannerTaskDetail Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerTaskBucketTaskBoardFormat
 
 ## SYNOPSIS
-Get bucketTaskBoardFormat from planner
+Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get bucketTaskBoardFormat from planner
+Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPlannerTaskBucketTaskBoardFormat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+Get-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId
+```
+
+This example shows how to use the Get-MgPlannerTaskBucketTaskBoardFormat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
