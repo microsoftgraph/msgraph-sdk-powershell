@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessService
 
 ## SYNOPSIS
-Create new navigation property to services for solutions
+Create a new bookingService for the specified bookingBusiness.
 
 ## SYNTAX
 
@@ -21,7 +21,7 @@ New-MgBookingBusinessService -BookingBusinessId <String> [-AdditionalInformation
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsHiddenFromCustomers] [-IsLocationOnline]
  [-MaximumAttendeesCount <Int32>] [-Notes <String>] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
  [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>] [-SmsNotificationsEnabled]
- [-StaffMemberIds <String[]>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StaffMemberIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
@@ -45,13 +45,83 @@ New-MgBookingBusinessService -InputObject <IBookingsIdentity> [-AdditionalInform
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsHiddenFromCustomers] [-IsLocationOnline]
  [-MaximumAttendeesCount <Int32>] [-Notes <String>] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
  [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>] [-SmsNotificationsEnabled]
- [-StaffMemberIds <String[]>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StaffMemberIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to services for solutions
+Create a new bookingService for the specified bookingBusiness.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgBookingBusinessService Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+$params = @{
+	"@odata.type" = "#microsoft.graph.bookingService"
+	DefaultDuration = "PT1H30M"
+	DefaultLocation = @{
+		"@odata.type" = "#microsoft.graph.location"
+		Address = @{
+			"@odata.type" = "#microsoft.graph.physicalAddress"
+			City = "Buffalo"
+			CountryOrRegion = "USA"
+			PostalCode = "98052"
+			PostOfficeBox = $null
+			State = "NY"
+			Street = "4567 First Street"
+			"Type@odata.type" = "#microsoft.graph.physicalAddressType"
+			Type = $null
+		}
+		Coordinates = $null
+		DisplayName = "Contoso Lunch Delivery"
+		LocationEmailAddress = $null
+		"LocationType@odata.type" = "#microsoft.graph.locationType"
+		LocationType = $null
+		LocationUri = $null
+		UniqueId = $null
+		"UniqueIdType@odata.type" = "#microsoft.graph.locationUniqueIdType"
+		UniqueIdType = $null
+	}
+	DefaultPrice = 10
+	"DefaultPriceType@odata.type" = "#microsoft.graph.bookingPriceType"
+	DefaultPriceType = "fixedPrice"
+	"DefaultReminders@odata.type" = "#Collection(microsoft.graph.bookingReminder)"
+	DefaultReminders = @(
+		@{
+			"@odata.type" = "#microsoft.graph.bookingReminder"
+			Message = "Please be reminded that this service is tomorrow."
+			Offset = "P1D"
+			"Recipients@odata.type" = "#microsoft.graph.bookingReminderRecipients"
+			Recipients = "allAttendees"
+		}
+	)
+	Description = "Individual bento box lunch delivery"
+	DisplayName = "Bento"
+	IsLocationOnline = $true
+	SmsNotificationsEnabled = $true
+	IsHiddenFromCustomers = $false
+	Notes = "Home-cooked special"
+	PostBuffer = "PT10M"
+	PreBuffer = "PT5M"
+	SchedulingPolicy = @{
+		"@odata.type" = "#microsoft.graph.bookingSchedulingPolicy"
+		AllowStaffSelection = $true
+		MaximumAdvance = "P10D"
+		MinimumLeadTime = "PT10H"
+		SendConfirmationsToOwner = $true
+		TimeSlotInterval = "PT1H"
+	}
+	"StaffMemberIds@odata.type" = "#Collection(String)"
+	StaffMemberIds = @(
+		"d90d1e8c-5cfe-48cf-a2d5-966267375b6a"
+		"2f5f8794-0b29-45b5-b56a-2eb5ff7aa880"
+	)
+}
+New-MgBookingBusinessService -BookingBusinessId $bookingBusinessId -BodyParameter $params
+```
+
+This example shows how to use the New-MgBookingBusinessService Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -412,21 +482,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WebUrl
-The URL a customer uses to access the service.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -485,8 +540,8 @@ BODYPARAMETER <IMicrosoftGraphBookingService1>: Represents a particular service 
   - `[Id <String>]`: 
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]`: Contains the set of custom questions associated with a particular service.
-    - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
-    - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
+    - `[IsRequired <Boolean?>]`: The ID of the custom question.
+    - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
   - `[DefaultDuration <TimeSpan?>]`: The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
   - `[DefaultLocation <IMicrosoftGraphLocation1>]`: location
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -520,7 +575,7 @@ BODYPARAMETER <IMicrosoftGraphBookingService1>: Represents a particular service 
   - `[DisplayName <String>]`: A service name.
   - `[IsHiddenFromCustomers <Boolean?>]`: True means this service is not available to customers for booking.
   - `[IsLocationOnline <Boolean?>]`: True indicates that the appointments for the service will be held online. Default value is false.
-  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.
+  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
   - `[Notes <String>]`: Additional information about this service.
   - `[PostBuffer <TimeSpan?>]`: The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
   - `[PreBuffer <TimeSpan?>]`: The time to buffer before an appointment for this service can start.
@@ -533,11 +588,10 @@ BODYPARAMETER <IMicrosoftGraphBookingService1>: Represents a particular service 
     - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot, denoted in ISO 8601 format.
   - `[SmsNotificationsEnabled <Boolean?>]`: True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
   - `[StaffMemberIds <String[]>]`: Represents those staff members who provide this service.
-  - `[WebUrl <String>]`: The URL a customer uses to access the service.
 
 CUSTOMQUESTIONS <IMicrosoftGraphBookingQuestionAssignment[]>: Contains the set of custom questions associated with a particular service.
-  - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
-  - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
+  - `[IsRequired <Boolean?>]`: The ID of the custom question.
+  - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
 
 DEFAULTLOCATION <IMicrosoftGraphLocation1>: location
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

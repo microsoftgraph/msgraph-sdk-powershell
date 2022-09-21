@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgBookingBusinessCustomQuestion
 
 ## SYNOPSIS
-Get customQuestions from solutions
+All the custom questions of this business.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgBookingBusinessCustomQuestion -BookingBusinessId <String> [-ExpandProperty <String[]>]
+Get-MgBookingBusinessCustomQuestion -BookingBusinessId <String> [-Count] [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,26 +34,31 @@ Get-MgBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Get customQuestions from solutions
+All the custom questions of this business.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
-## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+### Example 1: Using the Get-MgBookingBusinessCustomQuestion Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusinessCustomQuestion -BookingBusinessId $bookingBusinessId
 ```
+
+This example shows how to use the Get-MgBookingBusinessCustomQuestion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgBookingBusinessCustomQuestion Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusinessCustomQuestion -BookingBusinessId $bookingBusinessId -BookingCustomQuestionId $bookingCustomQuestionId
+```
+
+This example shows how to use the Get-MgBookingBusinessCustomQuestion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+## PARAMETERS
 
 ### -BookingBusinessId
 key: id of bookingBusiness
@@ -83,14 +90,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -142,21 +148,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
