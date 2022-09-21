@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserMailFolderMessageRule
 
 ## SYNOPSIS
-The collection of rules that apply to the user's Inbox folder.
+Update the navigation property messageRules in users
 
 ## SYNTAX
 
@@ -42,9 +42,25 @@ Update-MgUserMailFolderMessageRule -InputObject <IMailIdentity> [-Actions <IMicr
 ```
 
 ## DESCRIPTION
-The collection of rules that apply to the user's Inbox folder.
+Update the navigation property messageRules in users
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgUserMailFolderMessageRule Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	DisplayName = "Important from partner"
+	Actions = @{
+		MarkImportance = "high"
+	}
+}
+# A UPN can also be used as -UserId.
+Update-MgUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgUserMailFolderMessageRule Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -159,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -367,7 +383,7 @@ ACTIONS <IMicrosoftGraphMessageRuleActions>: messageRuleActions
 
 BODYPARAMETER <IMicrosoftGraphMessageRule>: messageRule
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Actions <IMicrosoftGraphMessageRuleActions>]`: messageRuleActions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AssignCategories <String[]>]`: A list of categories to be assigned to a message.

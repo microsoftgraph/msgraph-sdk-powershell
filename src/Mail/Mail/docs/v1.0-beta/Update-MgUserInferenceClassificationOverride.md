@@ -8,9 +8,7 @@ schema: 2.0.0
 # Update-MgUserInferenceClassificationOverride
 
 ## SYNOPSIS
-A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
-Read-only.
-Nullable.
+Update the navigation property overrides in users
 
 ## SYNTAX
 
@@ -43,11 +41,22 @@ Update-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
-Read-only.
-Nullable.
+Update the navigation property overrides in users
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgUserInferenceClassificationOverride Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	ClassifyAs = "focused"
+}
+# A UPN can also be used as -UserId.
+Update-MgUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgUserInferenceClassificationOverride Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -98,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -244,7 +253,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphInferenceClassificationOverride>: inferenceClassificationOverride
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ClassifyAs <String>]`: inferenceClassificationType
   - `[SenderEmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

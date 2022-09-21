@@ -8,9 +8,8 @@ schema: 2.0.0
 # New-MgUserInferenceClassificationOverride
 
 ## SYNOPSIS
-A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
-Read-only.
-Nullable.
+Create a focused Inbox override for a sender identified by an SMTP address.
+Future messages from that SMTP address will be consistently classified\nas specified in the override.
 
 ## SYNTAX
 
@@ -41,11 +40,27 @@ New-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
-Read-only.
-Nullable.
+Create a focused Inbox override for a sender identified by an SMTP address.
+Future messages from that SMTP address will be consistently classified\nas specified in the override.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserInferenceClassificationOverride Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	ClassifyAs = "focused"
+	SenderEmailAddress = @{
+		Name = "Samantha Booth"
+		Address = "samanthab@adatum.onmicrosoft.com"
+	}
+}
+# A UPN can also be used as -UserId.
+New-MgUserInferenceClassificationOverride -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserInferenceClassificationOverride Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -96,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -212,7 +227,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphInferenceClassificationOverride>: inferenceClassificationOverride
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ClassifyAs <String>]`: inferenceClassificationType
   - `[SenderEmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

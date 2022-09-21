@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgUserMailFolderMessageMultiValueExtendedProperty
 
 ## SYNOPSIS
-The collection of multi-value extended properties defined for the message.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Remove-MgUserMailFolderMessageMultiValueExtendedProperty -InputObject <IMailIden
 ```
 
 ## DESCRIPTION
-The collection of multi-value extended properties defined for the message.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ## EXAMPLES
 

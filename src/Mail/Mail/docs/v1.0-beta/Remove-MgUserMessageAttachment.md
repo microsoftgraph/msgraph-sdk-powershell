@@ -8,24 +8,24 @@ schema: 2.0.0
 # Remove-MgUserMessageAttachment
 
 ## SYNOPSIS
-The fileAttachment and itemAttachment attachments for the message.
+Delete navigation property attachments for users
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgUserMessageAttachment -AttachmentId <String> -MessageId <String> -UserId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgUserMessageAttachment -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The fileAttachment and itemAttachment attachments for the message.
+Delete navigation property attachments for users
 
 ## EXAMPLES
 
@@ -36,7 +36,7 @@ key: id of attachment
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of message
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True

@@ -8,32 +8,30 @@ schema: 2.0.0
 # New-MgUserMailFolderMultiValueExtendedProperty
 
 ## SYNOPSIS
-The collection of multi-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Create new navigation property to multiValueExtendedProperties for users
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgUserMailFolderMultiValueExtendedProperty -MailFolderId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgUserMailFolderMultiValueExtendedProperty -MailFolderId <String> -UserId <String>
  -BodyParameter <IMicrosoftGraphMultiValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity1
 ```
 New-MgUserMailFolderMultiValueExtendedProperty -InputObject <IMailIdentity>
  -BodyParameter <IMicrosoftGraphMultiValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgUserMailFolderMultiValueExtendedProperty -InputObject <IMailIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String[]>] [-Confirm] [-WhatIf]
@@ -41,9 +39,7 @@ New-MgUserMailFolderMultiValueExtendedProperty -InputObject <IMailIdentity>
 ```
 
 ## DESCRIPTION
-The collection of multi-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Create new navigation property to multiValueExtendedProperties for users
 
 ## EXAMPLES
 
@@ -54,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -70,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -81,11 +77,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -101,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -116,7 +112,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -131,7 +127,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -146,7 +142,7 @@ A collection of property values.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -211,7 +207,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMultiValueLegacyExtendedProperty>: multiValueLegacyExtendedProperty
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Value <String[]>]`: A collection of property values.
 
 INPUTOBJECT <IMailIdentity>: Identity Parameter

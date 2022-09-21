@@ -8,38 +8,42 @@ schema: 2.0.0
 # New-MgUserMessageExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the message.
-Nullable.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgUserMessageExtension -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgUserMessageExtension -MessageId <String> -UserId <String> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity1
 ```
 New-MgUserMessageExtension -InputObject <IMailIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgUserMessageExtension -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the message.
-Nullable.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## EXAMPLES
 
@@ -50,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -65,7 +69,7 @@ extension
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -76,11 +80,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -96,7 +100,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -111,7 +115,7 @@ key: id of message
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -126,7 +130,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
