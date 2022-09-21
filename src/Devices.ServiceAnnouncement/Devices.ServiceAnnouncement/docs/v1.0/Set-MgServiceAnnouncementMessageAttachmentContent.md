@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgServiceAnnouncementMessageAttachmentContent
 
 ## SYNOPSIS
-Update content for the navigation property attachments in admin
+The attachment content.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Set-MgServiceAnnouncementMessageAttachmentContent -InputObject <IDevicesServiceA
 ```
 
 ## DESCRIPTION
-Update content for the navigation property attachments in admin
+The attachment content.
 
 ## EXAMPLES
 

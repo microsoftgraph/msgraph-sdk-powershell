@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -AttachmentsArchiveInputFile
-Input File for AttachmentsArchive (The zip file of all attachments for a message.)
+Input File for AttachmentsArchive (The zip file that contains all attachments for a message.)
 
 ```yaml
 Type: System.String
@@ -410,7 +410,7 @@ BODYPARAMETER <IMicrosoftGraphServiceUpdateMessage>: serviceUpdateMessage
     - `[LastModifiedDateTime <DateTime?>]`: 
     - `[Name <String>]`: 
     - `[Size <Int32?>]`: 
-  - `[AttachmentsArchive <Byte[]>]`: The zip file of all attachments for a message.
+  - `[AttachmentsArchive <Byte[]>]`: The zip file that contains all attachments for a message.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.

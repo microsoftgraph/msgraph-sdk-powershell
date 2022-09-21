@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgServiceAnnouncementMessageAttachmentArchive
 
 ## SYNOPSIS
-Update attachmentsArchive for the navigation property messages in admin
+The zip file of all attachments for a message.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgServiceAnnouncementMessageAttachmentArchive -InputObject <IDevicesServiceA
 ```
 
 ## DESCRIPTION
-Update attachmentsArchive for the navigation property messages in admin
+The zip file of all attachments for a message.
 
 ## EXAMPLES
 
