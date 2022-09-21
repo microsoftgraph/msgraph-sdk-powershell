@@ -28,6 +28,15 @@ Invoke function getCloudPcReviewStatus
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Functions
+Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus -ManagedDeviceId $managedDeviceId
+```
+
+This example shows how to use the Get-MgDeviceManagementManagedDeviceCloudPcReviewStatus Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -InputObject
@@ -103,6 +112,7 @@ INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
   - `[ResourceOperationId <String>]`: key: id of resourceOperation
   - `[Scope <String>]`: Usage: scope='{scope}'
   - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId='{secretReferenceValueId}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[SubscriptionId <String>]`: Usage: subscriptionId='{subscriptionId}'
   - `[SummarizeBy <String>]`: Usage: summarizeBy='{summarizeBy}'
   - `[TemplateId <String>]`: Usage: templateId='{templateId}'

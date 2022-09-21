@@ -1,41 +1,58 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/confirm-mgdevicemanagementwindowenrollmentautodiscovery
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementcomanageddeviceremotehelpsession
 schema: 2.0.0
 ---
 
-# Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery
+# Get-MgDeviceManagementComanagedDeviceRemoteHelpSession
 
 ## SYNOPSIS
-Invoke function verifyWindowsEnrollmentAutoDiscovery
+Invoke function retrieveRemoteHelpSession
 
 ## SYNTAX
 
-### Verify (Default)
+### Retrieve (Default)
 ```
-Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery -DomainName <String> [<CommonParameters>]
+Get-MgDeviceManagementComanagedDeviceRemoteHelpSession -ManagedDeviceId <String> -SessionKey <String>
+ [<CommonParameters>]
 ```
 
-### VerifyViaIdentity
+### RetrieveViaIdentity
 ```
-Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery -InputObject <IDeviceManagementFunctionsIdentity>
+Get-MgDeviceManagementComanagedDeviceRemoteHelpSession -InputObject <IDeviceManagementFunctionsIdentity>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function verifyWindowsEnrollmentAutoDiscovery
+Invoke function retrieveRemoteHelpSession
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -DomainName
-Usage: domainName='{domainName}'
+### -InputObject
+Identity Parameter
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Parameter Sets: RetrieveViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
 Type: System.String
-Parameter Sets: Verify
+Parameter Sets: Retrieve
 Aliases:
 
 Required: True
@@ -45,19 +62,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
+### -SessionKey
+Usage: sessionKey='{sessionKey}'
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
-Parameter Sets: VerifyViaIdentity
+Type: System.String
+Parameter Sets: Retrieve
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -70,7 +86,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRetrieveRemoteHelpSessionResponse
 
 ## NOTES
 

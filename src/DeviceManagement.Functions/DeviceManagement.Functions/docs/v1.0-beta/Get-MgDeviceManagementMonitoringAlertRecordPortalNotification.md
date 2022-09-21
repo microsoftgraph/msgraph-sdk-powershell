@@ -1,35 +1,26 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementvirtualendpointsnapshotsubscription
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementmonitoringalertrecordportalnotification
 schema: 2.0.0
 ---
 
-# Get-MgDeviceManagementVirtualEndpointSnapshotSubscription
+# Get-MgDeviceManagementMonitoringAlertRecordPortalNotification
 
 ## SYNOPSIS
-Invoke function getSubscriptions
+Invoke function getPortalNotifications
 
 ## SYNTAX
 
 ```
-Get-MgDeviceManagementVirtualEndpointSnapshotSubscription [-Count] [-Filter <String>] [-Search <String>]
+Get-MgDeviceManagementMonitoringAlertRecordPortalNotification [-Count] [-Filter <String>] [-Search <String>]
  [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getSubscriptions
+Invoke function getPortalNotifications
 
 ## EXAMPLES
-
-### Example 1: Using the Get-MgDeviceManagementVirtualEndpointSnapshotSubscription Cmdlet
-```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Functions
-Get-MgDeviceManagementVirtualEndpointSnapshotSubscription
-```
-
-This example shows how to use the Get-MgDeviceManagementVirtualEndpointSnapshotSubscription Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -115,7 +106,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcSubscription
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPortalNotification
 
 ## NOTES
 
