@@ -8,7 +8,9 @@ schema: 2.0.0
 # Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet
 
 ## SYNOPSIS
-Invoke action addToReviewSet
+Start the process of adding a collection from Microsoft 365 services to a review set.
+After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return a caseExportOperation.
 
 ## SYNTAX
 
@@ -43,9 +45,26 @@ Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -InputObject <IComplianceIden
 ```
 
 ## DESCRIPTION
-Invoke action addToReviewSet
+Start the process of adding a collection from Microsoft 365 services to a review set.
+After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return a caseExportOperation.
 
 ## EXAMPLES
+
+### Example 1: Using the Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+$params = @{
+	SourceCollection = @{
+		Id = "1a9b4145d8f84e39bc45a7f68c5c5119"
+	}
+	AdditionalData = "linkedFiles"
+}
+Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -CaseId $caseId -ReviewSetId $reviewSetId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

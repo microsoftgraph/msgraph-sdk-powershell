@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgReopenComplianceEdiscoveryCase
 
 ## SYNOPSIS
-Invoke action reopen
+Reopen an eDiscovery case that was closed.
+For details, see Reopen a closed case.
 
 ## SYNTAX
 
@@ -24,9 +25,19 @@ Invoke-MgReopenComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-Pas
 ```
 
 ## DESCRIPTION
-Invoke action reopen
+Reopen an eDiscovery case that was closed.
+For details, see Reopen a closed case.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgReopenComplianceEdiscoveryCase Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Invoke-MgReopenComplianceEdiscoveryCase -CaseId $caseId
+```
+
+This example shows how to use the Invoke-MgReopenComplianceEdiscoveryCase Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
