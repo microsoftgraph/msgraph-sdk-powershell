@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserActivityHistoryItemActivity
 
 ## SYNOPSIS
-Get activity from users
+Optional.
+NavigationProperty/Containment; navigation property to the associated activity.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgUserActivityHistoryItemActivity -InputObject <ICrossDeviceExperiencesIdent
 ```
 
 ## DESCRIPTION
-Get activity from users
+Optional.
+NavigationProperty/Containment; navigation property to the associated activity.
 
 ## EXAMPLES
 
