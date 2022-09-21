@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingAndroidDeviceOwnerFullyManagedEnrollmentState
 
 ## SYNOPSIS
-Invoke action setAndroidDeviceOwnerFullyManagedEnrollmentState
+Sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Set-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingAndroidDeviceOw
 ```
 
 ## DESCRIPTION
-Invoke action setAndroidDeviceOwnerFullyManagedEnrollmentState
+Sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
 
 ## EXAMPLES
 

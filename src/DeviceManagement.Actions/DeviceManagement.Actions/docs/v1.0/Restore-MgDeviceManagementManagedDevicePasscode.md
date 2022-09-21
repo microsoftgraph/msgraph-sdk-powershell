@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgDeviceManagementManagedDevicePasscode
 
 ## SYNOPSIS
-Invoke action recoverPasscode
+Recover passcode
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Restore-MgDeviceManagementManagedDevicePasscode -InputObject <IDeviceManagementA
 ```
 
 ## DESCRIPTION
-Invoke action recoverPasscode
+Recover passcode
 
 ## EXAMPLES
 
@@ -129,6 +129,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

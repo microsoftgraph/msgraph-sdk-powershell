@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgPlayDeviceManagementComanagedDeviceLostModeSound
 
 ## SYNOPSIS
-Invoke action playLostModeSound
+Play lost mode sound
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Invoke-MgPlayDeviceManagementComanagedDeviceLostModeSound -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Invoke action playLostModeSound
+Play lost mode sound
 
 ## EXAMPLES
 
@@ -197,6 +197,7 @@ BODYPARAMETER <IPaths1Hvv4Q9DevicemanagementComanageddevicesManageddeviceIdMicro
   - `[DurationInMinutes <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

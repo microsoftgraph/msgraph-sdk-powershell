@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
 
 ## SYNOPSIS
-Invoke action updateAdDomainPassword
+Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
+This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
 
 ## SYNTAX
 
@@ -43,9 +44,22 @@ Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
 ```
 
 ## DESCRIPTION
-Invoke action updateAdDomainPassword
+Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
+This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Actions
+$params = @{
+	AdDomainPassword = "AdDomainPassword value"
+}
+Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -199,6 +213,7 @@ BODYPARAMETER <IPaths32P85ZDevicemanagementVirtualendpointOnpremisesconnectionsC
   - `[AdDomainPassword <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
 
 ## SYNOPSIS
-Invoke action updateDeviceProperties
+Updates properties on Autopilot devices.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty
 ```
 
 ## DESCRIPTION
-Invoke action updateDeviceProperties
+Updates properties on Autopilot devices.
 
 ## EXAMPLES
 
@@ -299,6 +299,7 @@ BODYPARAMETER <IPaths17Vu19LDevicemanagementWindowsautopilotdeviceidentitiesWind
   - `[UserPrincipalName <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
