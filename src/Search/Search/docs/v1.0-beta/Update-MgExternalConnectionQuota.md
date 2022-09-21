@@ -1,49 +1,45 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgexternalconnectiongroup
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgexternalconnectionquota
 schema: 2.0.0
 ---
 
-# Update-MgExternalConnectionGroup
+# Update-MgExternalConnectionQuota
 
 ## SYNOPSIS
-Update the navigation property groups in external
+Update the navigation property quota in external
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgExternalConnectionGroup -ExternalConnectionId <String> -ExternalGroupId <String>
- [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-Members <IMicrosoftGraphExternalConnectorsIdentity[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgExternalConnectionQuota -ExternalConnectionId <String> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-ItemsRemaining <Int64>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgExternalConnectionGroup -ExternalConnectionId <String> -ExternalGroupId <String>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalGroup> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgExternalConnectionQuota -ExternalConnectionId <String>
+ -BodyParameter <IMicrosoftGraphExternalConnectorsConnectionQuota> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgExternalConnectionGroup -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalGroup> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgExternalConnectionQuota -InputObject <ISearchIdentity>
+ -BodyParameter <IMicrosoftGraphExternalConnectorsConnectionQuota> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgExternalConnectionGroup -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
- [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-Members <IMicrosoftGraphExternalConnectorsIdentity[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgExternalConnectionQuota -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-ItemsRemaining <Int64>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property groups in external
+Update the navigation property quota in external
 
 ## EXAMPLES
 
@@ -65,11 +61,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-externalGroup
+connectionQuota
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalGroup
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionQuota
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -80,55 +76,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Description
-The description of the external group.
-Optional.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisplayName
-The friendly name of the external group.
-Optional.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ExternalConnectionId
 key: id of externalConnection
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExternalGroupId
-key: id of externalGroup
 
 ```yaml
 Type: System.String
@@ -173,13 +122,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Members
-A member added to an externalGroup.
-You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
+### -ItemsRemaining
+The minimum of two values, one representing the items remaining in the connection and the other remaining items at tenant-level.
+The following equation represents the formula used to calculate the minimum number: min ({max capacity in the connection} – {number of items in the connection}, {tenant quota} – {number of items indexed in all connections}).
+If the connection is not monetized, such as in a preview connector or preview content experience, then this property is simply the number of remaining items in the connection.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity[]
+Type: System.Int64
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -241,7 +190,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalGroup
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionQuota
 
 ### Microsoft.Graph.PowerShell.Models.ISearchIdentity
 
@@ -258,14 +207,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalGroup>: externalGroup
+BODYPARAMETER <IMicrosoftGraphExternalConnectorsConnectionQuota>: connectionQuota
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[Description <String>]`: The description of the external group. Optional.
-  - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-    - `[Id <String>]`: 
-    - `[Type <String>]`: identityType
+  - `[ItemsRemaining <Int64?>]`: The minimum of two values, one representing the items remaining in the connection and the other remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min ({max capacity in the connection} – {number of items in the connection}, {tenant quota} – {number of items indexed in all connections}). If the connection is not monetized, such as in a preview connector or preview content experience, then this property is simply the number of remaining items in the connection.
 
 INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[AcronymId <String>]`: key: id of acronym
@@ -277,10 +222,6 @@ INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[ExternalItemId <String>]`: key: id of externalItem
   - `[IdentityId <String>]`: key: id of identity
   - `[QnaId <String>]`: key: id of qna
-
-MEMBERS <IMicrosoftGraphExternalConnectorsIdentity[]>: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-  - `[Id <String>]`: 
-  - `[Type <String>]`: identityType
 
 ## RELATED LINKS
 
