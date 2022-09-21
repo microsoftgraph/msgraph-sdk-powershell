@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgSiteOnenoteResourceContent
 
 ## SYNOPSIS
-Update content for the navigation property resources in sites
+The content stream
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgSiteOnenoteResourceContent -InputObject <INotesIdentity> -InFile <String> 
 ```
 
 ## DESCRIPTION
-Update content for the navigation property resources in sites
+The content stream
 
 ## EXAMPLES
 
