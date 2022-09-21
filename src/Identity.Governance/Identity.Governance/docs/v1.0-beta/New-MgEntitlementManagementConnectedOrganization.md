@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgEntitlementManagementConnectedOrganization
 
 ## SYNOPSIS
-Create new navigation property to connectedOrganizations for identityGovernance
+Create a new connectedOrganization object.
 
 ## SYNTAX
 
@@ -20,7 +20,7 @@ New-MgEntitlementManagementConnectedOrganization -DomainName <String> [-Descript
 
 ### Create
 ```
-New-MgEntitlementManagementConnectedOrganization -BodyParameter <IMicrosoftGraphConnectedOrganization>
+New-MgEntitlementManagementConnectedOrganization -BodyParameter <IMicrosoftGraphConnectedOrganization1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -35,9 +35,30 @@ New-MgEntitlementManagementConnectedOrganization [-AdditionalProperties <Hashtab
 ```
 
 ## DESCRIPTION
-Create new navigation property to connectedOrganizations for identityGovernance
+Create a new connectedOrganization object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgEntitlementManagementConnectedOrganization Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	DisplayName = "Connected organization name"
+	Description = "Connected organization description"
+	IdentitySources = @(
+		@{
+			"@odata.type" = "#microsoft.graph.domainIdentitySource"
+			DomainName = "example.com"
+			DisplayName = "example.com"
+		}
+	)
+	State = "proposed"
+}
+New-MgEntitlementManagementConnectedOrganization -BodyParameter $params
+```
+
+This example shows how to use the New-MgEntitlementManagementConnectedOrganization Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -61,7 +82,7 @@ connectedOrganization
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 Parameter Sets: Create
 Aliases:
 
@@ -301,11 +322,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 
 ## NOTES
 
@@ -316,7 +339,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphConnectedOrganization>: connectedOrganization
+BODYPARAMETER <IMicrosoftGraphConnectedOrganization1>: connectedOrganization
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[CreatedBy <String>]`: UPN of the user who created this resource. Read-only.

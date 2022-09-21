@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgAccessReview
 
 ## SYNOPSIS
-Create accessReview (deprecated)
+In the Azure AD access reviews feature, create a new accessReview object.
+Before making this request, the caller must have previously retrieved the list of business flow templates, to have the value of **businessFlowTemplateId** to include in the request.
+After making this request, the caller should create a programControl, to link the access review to a program.
 
 ## SYNTAX
 
@@ -29,9 +31,57 @@ New-MgAccessReview -BodyParameter <IMicrosoftGraphAccessReview> [-Confirm] [-Wha
 ```
 
 ## DESCRIPTION
-Create accessReview (deprecated)
+In the Azure AD access reviews feature, create a new accessReview object.
+Before making this request, the caller must have previously retrieved the list of business flow templates, to have the value of **businessFlowTemplateId** to include in the request.
+After making this request, the caller should create a programControl, to link the access review to a program.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgAccessReview Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	DisplayName = "TestReview"
+	StartDateTime = [System.DateTime]::Parse("2017-02-10T00:35:53.214Z")
+	EndDateTime = [System.DateTime]::Parse("2017-03-12T00:35:53.214Z")
+	ReviewedEntity = @{
+		Id = "99025615-a0b1-47ec-9117-35377b10998b"
+	}
+	ReviewerType = "delegated"
+	BusinessFlowTemplateId = "6e4f3d20-c5c3-407f-9695-8460952bcc68"
+	Description = "Sample description"
+	Reviewers = @(
+		@{
+			Id = "f260246a-09b1-4fd5-8d18-daed736071ec"
+		}
+		@{
+			Id = "5a4e184c-4ee5-4883-96e9-b371f8da88e3"
+		}
+	)
+	Settings = @{
+		MailNotificationsEnabled = $true
+		RemindersEnabled = $true
+		JustificationRequiredOnApproval = $true
+		AutoReviewEnabled = $false
+		ActivityDurationInDays = 30
+		AutoApplyReviewResultsEnabled = $false
+		AccessRecommendationsEnabled = $false
+		RecurrenceSettings = @{
+			RecurrenceType = "onetime"
+			RecurrenceEndType = "endBy"
+			DurationInDays = 0
+			RecurrenceCount = 0
+		}
+		AutoReviewSettings = @{
+			NotReviewedResult = "Deny"
+		}
+	}
+}
+New-MgAccessReview -BodyParameter $params
+```
+
+This example shows how to use the New-MgAccessReview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -393,7 +443,7 @@ BODYPARAMETER <IMicrosoftGraphAccessReview>: accessReview
     - `[Id <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: The date when the reviewer was added for the access review.
     - `[DisplayName <String>]`: Name of reviewer.
-    - `[UserPrincipalName <String>]`: User principal name of the user.
+    - `[UserPrincipalName <String>]`: User principal name of the reviewer.
   - `[Settings <IMicrosoftGraphAccessReviewSettings>]`: accessReviewSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AccessRecommendationsEnabled <Boolean?>]`: Indicates whether showing recommendations to reviewers is enabled.
@@ -473,7 +523,7 @@ INSTANCES <IMicrosoftGraphAccessReview[]>: The collection of access reviews inst
     - `[Id <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: The date when the reviewer was added for the access review.
     - `[DisplayName <String>]`: Name of reviewer.
-    - `[UserPrincipalName <String>]`: User principal name of the user.
+    - `[UserPrincipalName <String>]`: User principal name of the reviewer.
   - `[Settings <IMicrosoftGraphAccessReviewSettings>]`: accessReviewSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AccessRecommendationsEnabled <Boolean?>]`: Indicates whether showing recommendations to reviewers is enabled.
@@ -521,7 +571,7 @@ REVIEWERS <IMicrosoftGraphAccessReviewReviewer[]>: The collection of reviewers f
   - `[Id <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The date when the reviewer was added for the access review.
   - `[DisplayName <String>]`: Name of reviewer.
-  - `[UserPrincipalName <String>]`: User principal name of the user.
+  - `[UserPrincipalName <String>]`: User principal name of the reviewer.
 
 SETTINGS <IMicrosoftGraphAccessReviewSettings>: accessReviewSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

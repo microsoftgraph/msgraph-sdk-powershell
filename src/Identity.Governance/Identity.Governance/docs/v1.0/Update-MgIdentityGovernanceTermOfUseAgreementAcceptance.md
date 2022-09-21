@@ -12,7 +12,7 @@ Update the navigation property agreementAcceptances in identityGovernance
 
 ## SYNTAX
 
-### UpdateExpanded2 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String>
  [-AgreementId <String>] [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>]
@@ -22,19 +22,19 @@ Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update2
+### Update
 ```
 Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String>
  -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update3
+### Update1
 ```
 Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String> -AgreementId <String>
  -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateExpanded3
+### UpdateExpanded1
 ```
 Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <String> -AgreementId <String>
  [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>] [-AgreementId1 <String>]
@@ -44,19 +44,19 @@ Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementAcceptanceId <
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity2
+### UpdateViaIdentity
 ```
 Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity3
+### UpdateViaIdentity1
 ```
 Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded2
+### UpdateViaIdentityExpanded
 ```
 Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-AgreementId <String>] [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>]
@@ -66,7 +66,7 @@ Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityG
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded3
+### UpdateViaIdentityExpanded1
 ```
 Update-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-AgreementId <String>] [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>]
@@ -88,7 +88,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -103,7 +103,7 @@ key: id of agreementAcceptance
 
 ```yaml
 Type: System.String
-Parameter Sets: Update2, Update3, UpdateExpanded2, UpdateExpanded3
+Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -114,11 +114,11 @@ Accept wildcard characters: False
 ```
 
 ### -AgreementFileId
-ID of the agreement file accepted by the user.
+The identifier of the agreement file accepted by the user.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -133,7 +133,7 @@ key: id of agreement
 
 ```yaml
 Type: System.String
-Parameter Sets: Update3, UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: Update1, UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -144,11 +144,11 @@ Accept wildcard characters: False
 ```
 
 ### -AgreementId1
-ID of the agreement.
+The identifier of the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded3
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False
@@ -164,7 +164,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
-Parameter Sets: Update2, Update3, UpdateViaIdentity2, UpdateViaIdentity3
+Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -179,7 +179,7 @@ The display name of the device used for accepting the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -194,7 +194,7 @@ The unique identifier of the device used for accepting the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -205,11 +205,11 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceOSType
-The operating system used for accepting the agreement.
+The operating system used to accept the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -220,11 +220,11 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceOSVersion
-The operating system version of the device used for accepting the agreement.
+The operating system version of the device used to accept the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -237,11 +237,11 @@ Accept wildcard characters: False
 ### -ExpirationDateTime
 The expiration date time of the acceptance.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -272,7 +272,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: UpdateViaIdentity2, UpdateViaIdentity3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -299,11 +299,11 @@ Accept wildcard characters: False
 
 ### -RecordedDateTime
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -318,7 +318,7 @@ agreementAcceptanceState
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -333,7 +333,7 @@ Display name of the user when the acceptance was recorded.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -348,7 +348,7 @@ Email of the user when the acceptance was recorded.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -359,11 +359,11 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-ID of the user who accepted the agreement.
+The identifier of the user who accepted the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -378,7 +378,7 @@ UPN of the user when the acceptance was recorded.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -444,18 +444,18 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAgreementAcceptance>: agreementAcceptance
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
-  - `[AgreementId <String>]`: ID of the agreement.
+  - `[AgreementFileId <String>]`: The identifier of the agreement file accepted by the user.
+  - `[AgreementId <String>]`: The identifier of the agreement.
   - `[DeviceDisplayName <String>]`: The display name of the device used for accepting the agreement.
   - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement.
-  - `[DeviceOSType <String>]`: The operating system used for accepting the agreement.
-  - `[DeviceOSVersion <String>]`: The operating system version of the device used for accepting the agreement.
-  - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[DeviceOSType <String>]`: The operating system used to accept the agreement.
+  - `[DeviceOSVersion <String>]`: The operating system version of the device used to accept the agreement.
+  - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[State <String>]`: agreementAcceptanceState
   - `[UserDisplayName <String>]`: Display name of the user when the acceptance was recorded.
   - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
-  - `[UserId <String>]`: ID of the user who accepted the agreement.
+  - `[UserId <String>]`: The identifier of the user who accepted the agreement.
   - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
@@ -497,7 +497,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime='{endDateTime}'
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -518,8 +520,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime='{startDateTime}'
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 ## RELATED LINKS
 

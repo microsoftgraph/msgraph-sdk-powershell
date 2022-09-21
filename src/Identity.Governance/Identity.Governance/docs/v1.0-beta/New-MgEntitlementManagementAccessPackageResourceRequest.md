@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgEntitlementManagementAccessPackageResourceRequest
 
 ## SYNOPSIS
-Create new navigation property to accessPackageResourceRequests for identityGovernance
+Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, or the removal of a resource from a catalog.
+A resource must be included in an access package catalog before a role of that resource can be added to an access package.
 
 ## SYNTAX
 
@@ -17,7 +18,7 @@ Create new navigation property to accessPackageResourceRequests for identityGove
 New-MgEntitlementManagementAccessPackageResourceRequest
  [-AccessPackageResource <IMicrosoftGraphAccessPackageResource>] [-AdditionalProperties <Hashtable>]
  [-CatalogId <String>] [-ExecuteImmediately] [-ExpirationDateTime <DateTime>] [-Id <String>]
- [-IsValidationOnly] [-Justification <String>] [-Requestor <IMicrosoftGraphAccessPackageSubject>]
+ [-IsValidationOnly] [-Justification <String>] [-Requestor <IMicrosoftGraphAccessPackageSubject1>]
  [-RequestState <String>] [-RequestStatus <String>] [-RequestType <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -29,7 +30,8 @@ New-MgEntitlementManagementAccessPackageResourceRequest
 ```
 
 ## DESCRIPTION
-Create new navigation property to accessPackageResourceRequests for identityGovernance
+Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, or the removal of a resource from a catalog.
+A resource must be included in an access package catalog before a role of that resource can be added to an access package.
 
 ## EXAMPLES
 
@@ -203,7 +205,7 @@ accessPackageSubject
 To construct, please use Get-Help -Online and see NOTES section for REQUESTOR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -432,11 +434,11 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRequest>: accessPackageResour
   - `[RequestState <String>]`: The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
   - `[RequestStatus <String>]`: 
   - `[RequestType <String>]`: Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
-  - `[Requestor <IMicrosoftGraphAccessPackageSubject>]`: accessPackageSubject
+  - `[Requestor <IMicrosoftGraphAccessPackageSubject1>]`: accessPackageSubject
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[AltSecId <String>]`: 
-    - `[ConnectedOrganization <IMicrosoftGraphConnectedOrganization>]`: connectedOrganization
+    - `[ConnectedOrganization <IMicrosoftGraphConnectedOrganization1>]`: connectedOrganization
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
       - `[CreatedBy <String>]`: UPN of the user who created this resource. Read-only.
@@ -460,11 +462,11 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRequest>: accessPackageResour
     - `[SubjectLifecycle <String>]`: accessPackageSubjectLifecycle
     - `[Type <String>]`: The resource type of the subject.
 
-REQUESTOR <IMicrosoftGraphAccessPackageSubject>: accessPackageSubject
+REQUESTOR <IMicrosoftGraphAccessPackageSubject1>: accessPackageSubject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[AltSecId <String>]`: 
-  - `[ConnectedOrganization <IMicrosoftGraphConnectedOrganization>]`: connectedOrganization
+  - `[ConnectedOrganization <IMicrosoftGraphConnectedOrganization1>]`: connectedOrganization
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[CreatedBy <String>]`: UPN of the user who created this resource. Read-only.

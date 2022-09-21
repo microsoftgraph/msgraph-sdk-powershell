@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityGovernanceAccessReviewHistoryDefinition
 
 ## SYNOPSIS
-Create new navigation property to historyDefinitions for identityGovernance
+Create a new accessReviewHistoryDefinition object.
 
 ## SYNTAX
 
@@ -25,13 +25,60 @@ New-MgIdentityGovernanceAccessReviewHistoryDefinition [-AdditionalProperties <Ha
 ### Create1
 ```
 New-MgIdentityGovernanceAccessReviewHistoryDefinition
- -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to historyDefinitions for identityGovernance
+Create a new accessReviewHistoryDefinition object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgIdentityGovernanceAccessReviewHistoryDefinition Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	DisplayName = "Last quarter's group reviews April 2021"
+	Decisions = @(
+		"approve"
+		"deny"
+		"dontKnow"
+		"notReviewed"
+		"notNotified"
+	)
+	ScheduleSettings = @{
+		ReportRange = "P1M"
+		Recurrence = @{
+			Pattern = @{
+				Type = "monthly"
+				Interval = 1
+			}
+			Range = @{
+				Type = "noEnd"
+				StartDate = "2018-08-03T21:02:30.667Z"
+				Count = 
+			}
+		}
+	}
+	Scopes = @(
+		@{
+			"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+			QueryType = "MicrosoftGraph"
+			Query = "/identityGovernance/accessReviews/definitions?$filter=contains(scope/query, 'accessPackageAssignments')"
+			QueryRoot = $null
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+			QueryType = "MicrosoftGraph"
+			Query = "/identityGovernance/accessReviews/definitions?$filter=contains(scope/query, '/groups')"
+			QueryRoot = $null
+		}
+	)
+}
+New-MgIdentityGovernanceAccessReviewHistoryDefinition -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityGovernanceAccessReviewHistoryDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -55,7 +102,7 @@ accessReviewHistoryDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition
 Parameter Sets: Create1
 Aliases:
 
@@ -281,11 +328,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition
 
 ## NOTES
 
@@ -296,7 +343,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphAccessReviewHistoryDefinition1>: accessReviewHistoryDefinition
+BODYPARAMETER <IMicrosoftGraphAccessReviewHistoryDefinition>: accessReviewHistoryDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
