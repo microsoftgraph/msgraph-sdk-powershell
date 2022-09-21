@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDefinitionCategory
 
 ## SYNOPSIS
-Get category from deviceManagement
+The group policy category associated with the definition.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinitionPreviouVersionDe
 ```
 
 ## DESCRIPTION
-Get category from deviceManagement
+The group policy category associated with the definition.
 
 ## EXAMPLES
 

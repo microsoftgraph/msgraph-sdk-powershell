@@ -19,8 +19,8 @@ New-MgDeviceManagementComanagementEligibleDevice [-AdditionalProperties <Hashtab
  [-EntitySource <Int32>] [-Id <String>] [-ManagementAgents <ManagementAgentType>]
  [-ManagementState <ManagementState>] [-Manufacturer <String>] [-MdmStatus <String>] [-Model <String>]
  [-OSDescription <String>] [-OSVersion <String>] [-OwnerType <OwnerType>] [-ReferenceId <String>]
- [-SerialNumber <String>] [-Status <String>] [-Upn <String>] [-UserEmail <String>] [-UserId <String>]
- [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SerialNumber <String>] [-Status <ComanagementEligibleType>] [-Upn <String>] [-UserEmail <String>]
+ [-UserId <String>] [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -296,7 +296,7 @@ Accept wildcard characters: False
 comanagementEligibleType
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ComanagementEligibleType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -435,7 +435,7 @@ BODYPARAMETER <IMicrosoftGraphComanagementEligibleDevice>: Device Co-Management 
   - `[OwnerType <OwnerType?>]`: Owner type of device.
   - `[ReferenceId <String>]`: ReferenceId
   - `[SerialNumber <String>]`: SerialNumber
-  - `[Status <String>]`: comanagementEligibleType
+  - `[Status <ComanagementEligibleType?>]`: comanagementEligibleType
   - `[Upn <String>]`: UPN
   - `[UserEmail <String>]`: UserEmail
   - `[UserId <String>]`: UserId

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementTermAndConditionGroupAssignmentTermAndCondition
 
 ## SYNOPSIS
-Get termsAndConditions from deviceManagement
+Navigation link to the terms and conditions that are assigned.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementTermAndConditionGroupAssignmentTermAndCondition
 ```
 
 ## DESCRIPTION
-Get termsAndConditions from deviceManagement
+Navigation link to the terms and conditions that are assigned.
 
 ## EXAMPLES
 

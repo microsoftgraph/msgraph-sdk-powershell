@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionFile
 
 ## SYNOPSIS
-Get definitionFile from deviceManagement
+The group policy file associated with the definition.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionFile
 ```
 
 ## DESCRIPTION
-Get definitionFile from deviceManagement
+The group policy file associated with the definition.
 
 ## EXAMPLES
 

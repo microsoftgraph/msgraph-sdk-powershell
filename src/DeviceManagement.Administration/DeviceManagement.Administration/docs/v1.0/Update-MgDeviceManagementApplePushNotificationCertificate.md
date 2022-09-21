@@ -15,9 +15,9 @@ Update the navigation property applePushNotificationCertificate in deviceManagem
 ### UpdateExpanded1 (Default)
 ```
 Update-MgDeviceManagementApplePushNotificationCertificate [-AdditionalProperties <Hashtable>]
- [-AppleIdentifier <String>] [-Certificate <String>] [-CertificateSerialNumber <String>]
- [-ExpirationDateTime <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-TopicIdentifier <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppleIdentifier <String>] [-Certificate <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
+ [-LastModifiedDateTime <DateTime>] [-TopicIdentifier <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
@@ -82,22 +82,6 @@ Accept wildcard characters: False
 
 ### -Certificate
 Not yet documented
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CertificateSerialNumber
-Certificate serial number.
-This property is read-only.
 
 ```yaml
 Type: System.String
@@ -242,7 +226,6 @@ BODYPARAMETER <IMicrosoftGraphApplePushNotificationCertificate1>: Apple push not
   - `[Id <String>]`: 
   - `[AppleIdentifier <String>]`: Apple Id of the account used to create the MDM push certificate.
   - `[Certificate <String>]`: Not yet documented
-  - `[CertificateSerialNumber <String>]`: Certificate serial number. This property is read-only.
   - `[ExpirationDateTime <DateTime?>]`: The expiration date and time for Apple push notification certificate.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time for Apple push notification certificate.
   - `[TopicIdentifier <String>]`: Topic Id.

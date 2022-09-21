@@ -371,7 +371,6 @@ BODYPARAMETER <IMicrosoftGraphDeviceAndAppManagementRoleAssignment>: The Role As
         - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
     - `[Description <String>]`: Description of the Role Scope Tag.
     - `[DisplayName <String>]`: The display or friendly name of the Role Scope Tag.
-    - `[IsBuiltIn <Boolean?>]`: Description of the Role Scope Tag. This property is read-only.
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[AuditEventId <String>]`: key: id of auditEvent
@@ -460,7 +459,6 @@ ROLESCOPETAGS <IMicrosoftGraphRoleScopeTag[]>: The set of Role Scope Tags define
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[Description <String>]`: Description of the Role Scope Tag.
   - `[DisplayName <String>]`: The display or friendly name of the Role Scope Tag.
-  - `[IsBuiltIn <Boolean?>]`: Description of the Role Scope Tag. This property is read-only.
 
 ## RELATED LINKS
 

@@ -19,9 +19,9 @@ Update-MgDeviceManagementComanagementEligibleDevice -ComanagementEligibleDeviceI
  [-DeviceName <String>] [-DeviceType <DeviceType>] [-EntitySource <Int32>] [-Id <String>]
  [-ManagementAgents <ManagementAgentType>] [-ManagementState <ManagementState>] [-Manufacturer <String>]
  [-MdmStatus <String>] [-Model <String>] [-OSDescription <String>] [-OSVersion <String>]
- [-OwnerType <OwnerType>] [-ReferenceId <String>] [-SerialNumber <String>] [-Status <String>] [-Upn <String>]
- [-UserEmail <String>] [-UserId <String>] [-UserName <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OwnerType <OwnerType>] [-ReferenceId <String>] [-SerialNumber <String>]
+ [-Status <ComanagementEligibleType>] [-Upn <String>] [-UserEmail <String>] [-UserId <String>]
+ [-UserName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -45,9 +45,9 @@ Update-MgDeviceManagementComanagementEligibleDevice -InputObject <IDeviceManagem
  [-DeviceName <String>] [-DeviceType <DeviceType>] [-EntitySource <Int32>] [-Id <String>]
  [-ManagementAgents <ManagementAgentType>] [-ManagementState <ManagementState>] [-Manufacturer <String>]
  [-MdmStatus <String>] [-Model <String>] [-OSDescription <String>] [-OSVersion <String>]
- [-OwnerType <OwnerType>] [-ReferenceId <String>] [-SerialNumber <String>] [-Status <String>] [-Upn <String>]
- [-UserEmail <String>] [-UserId <String>] [-UserName <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OwnerType <OwnerType>] [-ReferenceId <String>] [-SerialNumber <String>]
+ [-Status <ComanagementEligibleType>] [-Upn <String>] [-UserEmail <String>] [-UserId <String>]
+ [-UserName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -363,7 +363,7 @@ Accept wildcard characters: False
 comanagementEligibleType
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ComanagementEligibleType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -504,7 +504,7 @@ BODYPARAMETER <IMicrosoftGraphComanagementEligibleDevice>: Device Co-Management 
   - `[OwnerType <OwnerType?>]`: Owner type of device.
   - `[ReferenceId <String>]`: ReferenceId
   - `[SerialNumber <String>]`: SerialNumber
-  - `[Status <String>]`: comanagementEligibleType
+  - `[Status <ComanagementEligibleType?>]`: comanagementEligibleType
   - `[Upn <String>]`: UPN
   - `[UserEmail <String>]`: UserEmail
   - `[UserId <String>]`: UserId

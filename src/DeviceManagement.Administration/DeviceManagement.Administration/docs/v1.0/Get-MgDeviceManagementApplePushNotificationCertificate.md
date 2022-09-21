@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementApplePushNotificationCertificate
 
 ## SYNOPSIS
-Get applePushNotificationCertificate from deviceManagement
+Apple push notification certificate.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementApplePushNotificationCertificate [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get applePushNotificationCertificate from deviceManagement
+Apple push notification certificate.
 
 ## EXAMPLES
 

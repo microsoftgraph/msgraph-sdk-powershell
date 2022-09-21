@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyCategoryDefinitionFile
 
 ## SYNOPSIS
-Get definitionFile from deviceManagement
+The id of the definition file the category came from
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementGroupPolicyCategoryDefinitionFile -InputObject <IDeviceMan
 ```
 
 ## DESCRIPTION
-Get definitionFile from deviceManagement
+The id of the definition file the category came from
 
 ## EXAMPLES
 

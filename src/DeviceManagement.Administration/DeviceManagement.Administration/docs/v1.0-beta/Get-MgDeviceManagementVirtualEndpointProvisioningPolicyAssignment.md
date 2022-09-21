@@ -8,15 +8,18 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 
 ## SYNOPSIS
-Get assignments from deviceManagement
+A defined collection of provisioning policy assignments.
+Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned.
+Returned only on $expand.
+See an example of getting the assignments relationship.
 
 ## SYNTAX
 
 ### List (Default)
 ```
 Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment -CloudPcProvisioningPolicyId <String>
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -34,26 +37,14 @@ Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 ```
 
 ## DESCRIPTION
-Get assignments from deviceManagement
+A defined collection of provisioning policy assignments.
+Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned.
+Returned only on $expand.
+See an example of getting the assignments relationship.
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -CloudPcProvisioningPolicyAssignmentId
 key: id of cloudPcProvisioningPolicyAssignment
@@ -85,14 +76,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -144,21 +134,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

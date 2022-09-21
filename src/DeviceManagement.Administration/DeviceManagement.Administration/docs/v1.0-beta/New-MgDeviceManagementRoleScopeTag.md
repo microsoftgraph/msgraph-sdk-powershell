@@ -16,7 +16,7 @@ Create new navigation property to roleScopeTags for deviceManagement
 ```
 New-MgDeviceManagementRoleScopeTag [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphRoleScopeTagAutoAssignment[]>] [-Description <String>] [-DisplayName <String>]
- [-Id <String>] [-IsBuiltIn] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -124,22 +124,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IsBuiltIn
-Description of the Role Scope Tag.
-This property is read-only.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -209,7 +193,6 @@ BODYPARAMETER <IMicrosoftGraphRoleScopeTag>: Role Scope Tag
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[Description <String>]`: Description of the Role Scope Tag.
   - `[DisplayName <String>]`: The display or friendly name of the Role Scope Tag.
-  - `[IsBuiltIn <Boolean?>]`: Description of the Role Scope Tag. This property is read-only.
 
 ## RELATED LINKS
 
