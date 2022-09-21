@@ -8,7 +8,10 @@ schema: 2.0.0
 # Add-MgWindowsUpdatesDeploymentAudienceMember
 
 ## SYNOPSIS
-Invoke action addMembers
+Add members to an updatableAssetGroup.
+You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members.
+Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist.
+You can also use the method addMembersById to add members.
 
 ## SYNTAX
 
@@ -41,7 +44,10 @@ Add-MgWindowsUpdatesDeploymentAudienceMember -InputObject <IWindowsUpdatesIdenti
 ```
 
 ## DESCRIPTION
-Invoke action addMembers
+Add members to an updatableAssetGroup.
+You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members.
+Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist.
+You can also use the method addMembersById to add members.
 
 ## EXAMPLES
 
