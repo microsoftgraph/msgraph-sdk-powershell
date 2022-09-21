@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserManagedDeviceCategory
 
 ## SYNOPSIS
-Get deviceCategory from users
+Device category
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserManagedDeviceCategory -InputObject <IDevicesCorporateManagementIdentit
 ```
 
 ## DESCRIPTION
-Get deviceCategory from users
+Device category
 
 ## EXAMPLES
 

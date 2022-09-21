@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 26b79d2b-9e45-4ab6-ab9d-9c102ea99108
+Module Guid: 55f58536-dd03-44e0-9a4a-f1dd960971b7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,136 +15,136 @@ Microsoft Graph PowerShell Cmdlets
 Get deviceAppManagement
 
 ### [Get-MgDeviceAppMgtAndroidManagedAppProtection](Get-MgDeviceAppMgtAndroidManagedAppProtection.md)
-Get androidManagedAppProtections from deviceAppManagement
+Android managed app policies.
 
 ### [Get-MgDeviceAppMgtAndroidManagedAppProtectionApp](Get-MgDeviceAppMgtAndroidManagedAppProtectionApp.md)
-Get apps from deviceAppManagement
+List of apps to which the policy is deployed.
 
 ### [Get-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary](Get-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary.md)
-Get deploymentSummary from deviceAppManagement
+Navigation property to deployment summary of the configuration.
 
 ### [Get-MgDeviceAppMgtDefaultManagedAppProtection](Get-MgDeviceAppMgtDefaultManagedAppProtection.md)
-Get defaultManagedAppProtections from deviceAppManagement
+Default managed app policies.
 
 ### [Get-MgDeviceAppMgtDefaultManagedAppProtectionApp](Get-MgDeviceAppMgtDefaultManagedAppProtectionApp.md)
-Get apps from deviceAppManagement
+List of apps to which the policy is deployed.
 
 ### [Get-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary](Get-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary.md)
-Get deploymentSummary from deviceAppManagement
+Navigation property to deployment summary of the configuration.
 
 ### [Get-MgDeviceAppMgtiOSManagedAppProtection](Get-MgDeviceAppMgtiOSManagedAppProtection.md)
-Get iosManagedAppProtections from deviceAppManagement
+iOS managed app policies.
 
 ### [Get-MgDeviceAppMgtiOSManagedAppProtectionApp](Get-MgDeviceAppMgtiOSManagedAppProtectionApp.md)
-Get apps from deviceAppManagement
+List of apps to which the policy is deployed.
 
 ### [Get-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary](Get-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary.md)
-Get deploymentSummary from deviceAppManagement
+Navigation property to deployment summary of the configuration.
 
 ### [Get-MgDeviceAppMgtManagedAppPolicy](Get-MgDeviceAppMgtManagedAppPolicy.md)
-Get managedAppPolicies from deviceAppManagement
+Managed app policies.
 
 ### [Get-MgDeviceAppMgtManagedAppRegistration](Get-MgDeviceAppMgtManagedAppRegistration.md)
-Get managedAppRegistrations from deviceAppManagement
+The managed app registrations.
 
 ### [Get-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy](Get-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy.md)
-Get appliedPolicies from deviceAppManagement
+Zero or more policys already applied on the registered app when it last synchronized with managment service.
 
 ### [Get-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy](Get-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy.md)
-Get intendedPolicies from deviceAppManagement
+Zero or more policies admin intended for the app as of now.
 
 ### [Get-MgDeviceAppMgtManagedAppRegistrationOperation](Get-MgDeviceAppMgtManagedAppRegistrationOperation.md)
-Get operations from deviceAppManagement
+Zero or more long running operations triggered on the app registration.
 
 ### [Get-MgDeviceAppMgtManagedAppRegistrationUserIdWithFlaggedAppRegistration](Get-MgDeviceAppMgtManagedAppRegistrationUserIdWithFlaggedAppRegistration.md)
 Invoke function getUserIdsWithFlaggedAppRegistration
 
 ### [Get-MgDeviceAppMgtManagedAppStatuses](Get-MgDeviceAppMgtManagedAppStatuses.md)
-Get managedAppStatuses from deviceAppManagement
+The managed app statuses.
 
 ### [Get-MgDeviceAppMgtManagedEBook](Get-MgDeviceAppMgtManagedEBook.md)
-Get managedEBooks from deviceAppManagement
+The Managed eBook.
 
 ### [Get-MgDeviceAppMgtManagedEBookAssignment](Get-MgDeviceAppMgtManagedEBookAssignment.md)
-Get assignments from deviceAppManagement
+The list of assignments for this eBook.
 
 ### [Get-MgDeviceAppMgtManagedEBookDeviceState](Get-MgDeviceAppMgtManagedEBookDeviceState.md)
-Get deviceStates from deviceAppManagement
+The list of installation states for this eBook.
 
 ### [Get-MgDeviceAppMgtManagedEBookInstallSummary](Get-MgDeviceAppMgtManagedEBookInstallSummary.md)
-Get installSummary from deviceAppManagement
+Mobile App Install Summary.
 
 ### [Get-MgDeviceAppMgtManagedEBookUserStateSummary](Get-MgDeviceAppMgtManagedEBookUserStateSummary.md)
-Get userStateSummary from deviceAppManagement
+The list of installation states for this eBook.
 
 ### [Get-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState](Get-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState.md)
-Get deviceStates from deviceAppManagement
+The install state of the eBook.
 
 ### [Get-MgDeviceAppMgtMdmWindowInformationProtectionPolicy](Get-MgDeviceAppMgtMdmWindowInformationProtectionPolicy.md)
-Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
+Windows information protection for apps running on devices which are MDM enrolled.
 
 ### [Get-MgDeviceAppMgtMobileApp](Get-MgDeviceAppMgtMobileApp.md)
-Get mobileApps from deviceAppManagement
+The mobile apps.
 
 ### [Get-MgDeviceAppMgtMobileAppAssignment](Get-MgDeviceAppMgtMobileAppAssignment.md)
-Get assignments from deviceAppManagement
+The list of group assignments for this mobile app.
 
 ### [Get-MgDeviceAppMgtMobileAppCategory](Get-MgDeviceAppMgtMobileAppCategory.md)
-Get mobileAppCategories from deviceAppManagement
+The mobile app categories.
 
 ### [Get-MgDeviceAppMgtMobileAppConfiguration](Get-MgDeviceAppMgtMobileAppConfiguration.md)
-Get mobileAppConfigurations from deviceAppManagement
+The Managed Device Mobile Application Configurations.
 
 ### [Get-MgDeviceAppMgtMobileAppConfigurationAssignment](Get-MgDeviceAppMgtMobileAppConfigurationAssignment.md)
-Get assignments from deviceAppManagement
+The list of group assignemenets for app configration.
 
 ### [Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses](Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses.md)
-Get deviceStatuses from deviceAppManagement
+List of ManagedDeviceMobileAppConfigurationDeviceStatus.
 
 ### [Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary](Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary.md)
-Get deviceStatusSummary from deviceAppManagement
+App configuration device status summary.
 
 ### [Get-MgDeviceAppMgtMobileAppConfigurationUserStatuses](Get-MgDeviceAppMgtMobileAppConfigurationUserStatuses.md)
-Get userStatuses from deviceAppManagement
+List of ManagedDeviceMobileAppConfigurationUserStatus.
 
 ### [Get-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary](Get-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary.md)
-Get userStatusSummary from deviceAppManagement
+App configuration user status summary.
 
 ### [Get-MgDeviceAppMgtTargetedManagedAppConfiguration](Get-MgDeviceAppMgtTargetedManagedAppConfiguration.md)
-Get targetedManagedAppConfigurations from deviceAppManagement
+Targeted managed app configurations.
 
 ### [Get-MgDeviceAppMgtTargetedManagedAppConfigurationApp](Get-MgDeviceAppMgtTargetedManagedAppConfigurationApp.md)
-Get apps from deviceAppManagement
+List of apps to which the policy is deployed.
 
 ### [Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment](Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment.md)
-Get assignments from deviceAppManagement
+Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 
 ### [Get-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary](Get-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary.md)
-Get deploymentSummary from deviceAppManagement
+Navigation property to deployment summary of the configuration.
 
 ### [Get-MgDeviceAppMgtVppToken](Get-MgDeviceAppMgtVppToken.md)
-Get vppTokens from deviceAppManagement
+List of Vpp tokens for this organization.
 
 ### [Get-MgDeviceAppMgtWindowInformationProtectionPolicy](Get-MgDeviceAppMgtWindowInformationProtectionPolicy.md)
-Get windowsInformationProtectionPolicies from deviceAppManagement
+Windows information protection for apps running on devices which are not MDM enrolled.
 
 ### [Get-MgUserDeviceManagementTroubleshootingEvent](Get-MgUserDeviceManagementTroubleshootingEvent.md)
-Get deviceManagementTroubleshootingEvents from users
+The list of troubleshooting events for this user.
 
 ### [Get-MgUserManagedAppRegistration](Get-MgUserManagedAppRegistration.md)
-Get managedAppRegistrations from users
+Zero or more managed app registrations that belong to the user.
 
 ### [Get-MgUserManagedDevice](Get-MgUserManagedDevice.md)
-Get managedDevices from users
+The managed devices associated with the user.
 
 ### [Get-MgUserManagedDeviceCategory](Get-MgUserManagedDeviceCategory.md)
-Get deviceCategory from users
+Device category
 
 ### [Get-MgUserManagedDeviceCompliancePolicyState](Get-MgUserManagedDeviceCompliancePolicyState.md)
-Get deviceCompliancePolicyStates from users
+Device compliance policy states for this device.
 
 ### [Get-MgUserManagedDeviceConfigurationState](Get-MgUserManagedDeviceConfigurationState.md)
-Get deviceConfigurationStates from users
+Device configuration states for this device.
 
 ### [Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp](Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp.md)
 Invoke action targetApps
@@ -399,10 +399,10 @@ Invoke action assign
 Invoke action assign
 
 ### [Sync-MgDeviceAppMgtMicrosoftStoreForBusinessApp](Sync-MgDeviceAppMgtMicrosoftStoreForBusinessApp.md)
-Invoke action syncMicrosoftStoreForBusinessApps
+Syncs Intune account with Microsoft Store For Business
 
 ### [Sync-MgDeviceAppMgtVppTokenLicense](Sync-MgDeviceAppMgtVppTokenLicense.md)
-Invoke action syncLicenses
+Syncs licenses associated with a specific appleVolumePurchaseProgramToken
 
 ### [Update-MgDeviceAppMgt](Update-MgDeviceAppMgt.md)
 Update deviceAppManagement
