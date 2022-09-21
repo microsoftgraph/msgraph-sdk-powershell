@@ -8,15 +8,19 @@ schema: 2.0.0
 # Get-MgUserEventExceptionOccurrenceInstance
 
 ## SYNOPSIS
-Get instances from users
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgUserEventExceptionOccurrenceInstance -EventId <String> -EventId1 <String> -UserId <String>
- [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserEventExceptionOccurrenceInstance -EventId <String> -EventId1 <String> -UserId <String> [-Count]
+ [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get
@@ -32,35 +36,23 @@ Get-MgUserEventExceptionOccurrenceInstance -InputObject <ICalendarIdentity> [-Pr
 ```
 
 ## DESCRIPTION
-Get instances from users
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
 
 Required: False
 Position: Named
@@ -142,21 +134,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

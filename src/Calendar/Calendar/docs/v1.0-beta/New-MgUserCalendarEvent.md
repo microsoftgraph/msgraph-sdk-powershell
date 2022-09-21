@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserCalendarEvent
 
 ## SYNOPSIS
-Create new navigation property to events for users
+Use this API to create a new event in a calendar.
+The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 
 ## SYNTAX
 
@@ -71,9 +72,87 @@ New-MgUserCalendarEvent -InputObject <ICalendarIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Create new navigation property to events for users
+Use this API to create a new event in a calendar.
+The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserCalendarEvent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	Subject = "Let's go for lunch"
+	Body = @{
+		ContentType = "HTML"
+		Content = "Does next month work for you?"
+	}
+	Start = @{
+		DateTime = "2019-03-10T12:00:00"
+		TimeZone = "Pacific Standard Time"
+	}
+	End = @{
+		DateTime = "2019-03-10T14:00:00"
+		TimeZone = "Pacific Standard Time"
+	}
+	Location = @{
+		DisplayName = "Harry's Bar"
+	}
+	Attendees = @(
+		@{
+			EmailAddress = @{
+				Address = "adelev@contoso.onmicrosoft.com"
+				Name = "Adele Vance"
+			}
+			Type = "required"
+		}
+	)
+	TransactionId = "7E163156-7762-4BEB-A1C6-729EA81755A7"
+}
+# A UPN can also be used as -UserId.
+New-MgUserCalendarEvent -UserId $userId -CalendarId $calendarId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserCalendarEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgUserCalendarEvent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	Subject = "Let's go for lunch"
+	Body = @{
+		ContentType = "HTML"
+		Content = "Does next month work for you?"
+	}
+	Start = @{
+		DateTime = "2019-03-10T12:00:00"
+		TimeZone = "Pacific Standard Time"
+	}
+	End = @{
+		DateTime = "2019-03-10T14:00:00"
+		TimeZone = "Pacific Standard Time"
+	}
+	Location = @{
+		DisplayName = "Harry's Bar"
+	}
+	Attendees = @(
+		@{
+			EmailAddress = @{
+				Address = "adelev@contoso.onmicrosoft.com"
+				Name = "Adele Vance"
+			}
+			Type = "required"
+		}
+	)
+	IsOnlineMeeting = $true
+	OnlineMeetingProvider = "teamsForBusiness"
+}
+# A UPN can also be used as -UserId.
+New-MgUserCalendarEvent -UserId $userId -CalendarId $calendarId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserCalendarEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -1001,21 +1080,21 @@ ATTACHMENTS <IMicrosoftGraphAttachment[]>: The collection of FileAttachment, Ite
   - `[ContentType <String>]`: The MIME type.
   - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+  - `[Name <String>]`: The attachment's file name.
   - `[Size <Int32?>]`: The length of the attachment in bytes.
 
 ATTENDEES <IMicrosoftGraphAttendee[]>: The collection of attendees for the event.
   - `[Type <String>]`: attendeeType
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of an entity instance.
-    - `[Name <String>]`: The display name of an entity instance.
+    - `[Address <String>]`: The email address of the person or entity.
+    - `[Name <String>]`: The display name of the person or entity.
   - `[ProposedNewTime <IMicrosoftGraphTimeSlot>]`: timeSlot
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Status <IMicrosoftGraphResponseStatus>]`: responseStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1040,20 +1119,20 @@ BODYPARAMETER <IMicrosoftGraphEvent>: event
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+    - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
     - `[ProposedNewTime <IMicrosoftGraphTimeSlot>]`: timeSlot
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
       - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[Status <IMicrosoftGraphResponseStatus>]`: responseStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1200,8 +1279,8 @@ CALENDAR <IMicrosoftGraphCalendar1>: calendar
     - `[AllowedRoles <String[]>]`: List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
     - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
     - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
     - `[Role <String>]`: calendarRoleType
@@ -1217,7 +1296,7 @@ CALENDAR <IMicrosoftGraphCalendar1>: calendar
       - `[ContentType <String>]`: The MIME type.
       - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
       - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-      - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+      - `[Name <String>]`: The attachment's file name.
       - `[Size <Int32?>]`: The length of the attachment in bytes.
     - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
       - `[Type <String>]`: attendeeType
@@ -1226,8 +1305,8 @@ CALENDAR <IMicrosoftGraphCalendar1>: calendar
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-          - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+          - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+          - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
         - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[Status <IMicrosoftGraphResponseStatus>]`: responseStatus
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1354,8 +1433,8 @@ CALENDAR <IMicrosoftGraphCalendar1>: calendar
 
 END <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 EXCEPTIONOCCURRENCES <IMicrosoftGraphEvent[]>: .
   - `[Categories <String[]>]`: The categories associated with the item
@@ -1369,20 +1448,20 @@ EXCEPTIONOCCURRENCES <IMicrosoftGraphEvent[]>: .
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+    - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
     - `[ProposedNewTime <IMicrosoftGraphTimeSlot>]`: timeSlot
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
       - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[Status <IMicrosoftGraphResponseStatus>]`: responseStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1549,20 +1628,20 @@ INSTANCES <IMicrosoftGraphEvent[]>: The occurrences of a recurring series, if th
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+    - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
     - `[ProposedNewTime <IMicrosoftGraphTimeSlot>]`: timeSlot
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
       - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[Status <IMicrosoftGraphResponseStatus>]`: responseStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1767,8 +1846,8 @@ ORGANIZER <IMicrosoftGraphRecipient>: recipient
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of an entity instance.
-    - `[Name <String>]`: The display name of an entity instance.
+    - `[Address <String>]`: The email address of the person or entity.
+    - `[Name <String>]`: The display name of the person or entity.
 
 RECURRENCE <IMicrosoftGraphPatternedRecurrence>: patternedRecurrence
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1800,8 +1879,8 @@ SINGLEVALUEEXTENDEDPROPERTIES <IMicrosoftGraphSingleValueLegacyExtendedProperty[
 
 START <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 ## RELATED LINKS
 
