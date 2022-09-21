@@ -8,7 +8,7 @@ schema: 2.0.0
 # Test-MgServicePrincipalSynchronizationJobCredentials
 
 ## SYNOPSIS
-Invoke action validateCredentials
+Validate that the credentials are valid in the tenant.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Test-MgServicePrincipalSynchronizationJobCredentials -InputObject <IApplications
 ```
 
 ## DESCRIPTION
-Invoke action validateCredentials
+Validate that the credentials are valid in the tenant.
 
 ## EXAMPLES
 

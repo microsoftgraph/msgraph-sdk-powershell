@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgApplicationExtensionProperty
 
 ## SYNOPSIS
-Create new navigation property to extensionProperties for applications
+Create a new directory extension definition, represented by an extensionProperty object.
 
 ## SYNTAX
 
@@ -41,9 +41,25 @@ New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Create new navigation property to extensionProperties for applications
+Create a new directory extension definition, represented by an extensionProperty object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgApplicationExtensionProperty Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	Name = "jobGroup"
+	DataType = "String"
+	TargetObjects = @(
+		"User"
+	)
+}
+New-MgApplicationExtensionProperty -ApplicationId $applicationId -BodyParameter $params
+```
+
+This example shows how to use the New-MgApplicationExtensionProperty Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

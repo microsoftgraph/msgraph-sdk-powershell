@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgServicePrincipalAppRoleAssignedTo
 
 ## SYNOPSIS
-Get appRoleAssignedTo from servicePrincipals
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId <String> [-ExpandProperty <String[]>]
+Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId <String> [-Count] [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,26 +33,21 @@ Get-MgServicePrincipalAppRoleAssignedTo -InputObject <IApplicationsIdentity> [-E
 ```
 
 ## DESCRIPTION
-Get appRoleAssignedTo from servicePrincipals
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ## EXAMPLES
 
-## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+### Example 1: Using the Get-MgServicePrincipalAppRoleAssignedTo Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId
 ```
+
+This example shows how to use the Get-MgServicePrincipalAppRoleAssignedTo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+## PARAMETERS
 
 ### -AppRoleAssignmentId
 key: id of appRoleAssignment
@@ -68,14 +64,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -127,21 +122,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

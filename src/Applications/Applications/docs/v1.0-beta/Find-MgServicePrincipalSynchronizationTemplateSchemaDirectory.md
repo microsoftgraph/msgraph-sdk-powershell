@@ -8,7 +8,7 @@ schema: 2.0.0
 # Find-MgServicePrincipalSynchronizationTemplateSchemaDirectory
 
 ## SYNOPSIS
-Invoke action discover
+Discover the latest schema definition for provisioning to an application.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Find-MgServicePrincipalSynchronizationTemplateSchemaDirectory -InputObject <IApp
 ```
 
 ## DESCRIPTION
-Invoke action discover
+Discover the latest schema definition for provisioning to an application.
 
 ## EXAMPLES
 

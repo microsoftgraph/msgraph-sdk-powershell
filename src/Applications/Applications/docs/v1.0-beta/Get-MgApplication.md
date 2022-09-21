@@ -8,31 +8,28 @@ schema: 2.0.0
 # Get-MgApplication
 
 ## SYNOPSIS
-Get application
+Get the properties and relationships of an application object.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgApplication [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgApplication [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-Top <Int32>]
+ [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgApplication -ApplicationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgApplication -ApplicationId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplication -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgApplication -InputObject <IApplicationsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get application
+Get the properties and relationships of an application object.
 
 ## EXAMPLES
 
@@ -143,21 +140,6 @@ For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrit
 
 ## PARAMETERS
 
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ApplicationId
 key: id of application
 
@@ -189,52 +171,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -248,21 +184,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -286,21 +207,6 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: System.Int32
 Parameter Sets: List
 Aliases:
 

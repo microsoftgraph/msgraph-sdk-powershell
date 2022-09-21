@@ -8,7 +8,8 @@ schema: 2.0.0
 # Suspend-MgApplicationSynchronizationJob
 
 ## SYNOPSIS
-Invoke action pause
+Temporarily stop a running synchronization job.
+All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Suspend-MgApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-P
 ```
 
 ## DESCRIPTION
-Invoke action pause
+Temporarily stop a running synchronization job.
+All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
 
 ## EXAMPLES
 

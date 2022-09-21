@@ -8,7 +8,7 @@ schema: 2.0.0
 # Find-MgServicePrincipalSynchronizationJobSchemaDirectory
 
 ## SYNOPSIS
-Invoke action discover
+Discover the latest schema definition for provisioning to an application.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Find-MgServicePrincipalSynchronizationJobSchemaDirectory -InputObject <IApplicat
 ```
 
 ## DESCRIPTION
-Invoke action discover
+Discover the latest schema definition for provisioning to an application.
 
 ## EXAMPLES
+
+### Example 1: Using the Find-MgServicePrincipalSynchronizationJobSchemaDirectory Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Find-MgServicePrincipalSynchronizationJobSchemaDirectory -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId -DirectoryDefinitionId $directoryDefinitionId
+```
+
+This example shows how to use the Find-MgServicePrincipalSynchronizationJobSchemaDirectory Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

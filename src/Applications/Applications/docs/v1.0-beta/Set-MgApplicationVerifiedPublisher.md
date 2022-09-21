@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgApplicationVerifiedPublisher
 
 ## SYNOPSIS
-Invoke action setVerifiedPublisher
+Set the the verifiedPublisher on an application.
+For more information, including prerequisites to setting a verified publisher, see Publisher verification.
 
 ## SYNTAX
 
@@ -39,9 +40,22 @@ Set-MgApplicationVerifiedPublisher -InputObject <IApplicationsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Invoke action setVerifiedPublisher
+Set the the verifiedPublisher on an application.
+For more information, including prerequisites to setting a verified publisher, see Publisher verification.
 
 ## EXAMPLES
+
+### Example 1: Using the Set-MgApplicationVerifiedPublisher Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	VerifiedPublisherId = "1234567"
+}
+Set-MgApplicationVerifiedPublisher -ApplicationId $applicationId -BodyParameter $params
+```
+
+This example shows how to use the Set-MgApplicationVerifiedPublisher Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
