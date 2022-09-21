@@ -8,15 +8,14 @@ schema: 2.0.0
 # Get-MgTeamScheduleSchedulingGroup
 
 ## SYNOPSIS
-Get schedulingGroups from teams
+The logical grouping of users in the schedule (usually by role).
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgTeamScheduleSchedulingGroup -TeamId <String> [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgTeamScheduleSchedulingGroup -TeamId <String> [-Count] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -31,35 +30,37 @@ Get-MgTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-Property <Stri
 ```
 
 ## DESCRIPTION
-Get schedulingGroups from teams
+The logical grouping of users in the schedule (usually by role).
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgTeamScheduleSchedulingGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamScheduleSchedulingGroup -TeamId $teamId -SchedulingGroupId $schedulingGroupId
+```
+
+This example shows how to use the Get-MgTeamScheduleSchedulingGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgTeamScheduleSchedulingGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamScheduleSchedulingGroup -TeamId $teamId
+```
+
+This example shows how to use the Get-MgTeamScheduleSchedulingGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases: CV
 
 Required: False
 Position: Named
@@ -96,21 +97,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

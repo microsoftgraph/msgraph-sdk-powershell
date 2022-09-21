@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserChatMessageReply
 
 ## SYNOPSIS
-Create new navigation property to replies for users
+Create a new reply to a chatMessage in a specified channel.
 
 ## SYNTAX
 
@@ -55,7 +55,7 @@ New-MgUserChatMessageReply -InputObject <ITeamsIdentity> [-ChatId <String>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to replies for users
+Create a new reply to a chatMessage in a specified channel.
 
 ## EXAMPLES
 
@@ -376,7 +376,7 @@ Accept wildcard characters: False
 
 ### -Mentions
 List of entities mentioned in the chat message.
-Supported entities are: user, bot, team, channel, and tag.
+Supported entities are: user, bot, team, and channel.
 To construct, please use Get-Help -Online and see NOTES section for MENTIONS properties and create a hash table.
 
 ```yaml
@@ -634,13 +634,13 @@ BODYPARAMETER <IMicrosoftGraphChatMessage1>: chatMessage
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
     - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-    - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
+    - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
     - `[Id <String>]`: 
   - `[Importance <String>]`: 
   - `[LastEditedDateTime <DateTime?>]`: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
   - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
   - `[Locale <String>]`: Locale of the chat message set by the client. Always set to en-us.
-  - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
+  - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
     - `[Id <Int32?>]`: Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
     - `[MentionText <String>]`: String used to represent the mention. For example, a user's display name, a team name.
     - `[Mentioned <IMicrosoftGraphChatMessageMentionedIdentitySet>]`: chatMessageMentionedIdentitySet
@@ -686,7 +686,7 @@ CHANNELIDENTITY <IMicrosoftGraphChannelIdentity>: channelIdentity
 
 HOSTEDCONTENTS <IMicrosoftGraphChatMessageHostedContent[]>: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
   - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-  - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
+  - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
   - `[Id <String>]`: 
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
@@ -728,7 +728,7 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
-MENTIONS <IMicrosoftGraphChatMessageMention[]>: List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
+MENTIONS <IMicrosoftGraphChatMessageMention[]>: List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
   - `[Id <Int32?>]`: Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
   - `[MentionText <String>]`: String used to represent the mention. For example, a user's display name, a team name.
   - `[Mentioned <IMicrosoftGraphChatMessageMentionedIdentitySet>]`: chatMessageMentionedIdentitySet
@@ -802,13 +802,13 @@ REPLIES <IMicrosoftGraphChatMessage1[]>: Replies for a specified message. Suppor
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
     - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-    - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
+    - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
     - `[Id <String>]`: 
   - `[Importance <String>]`: 
   - `[LastEditedDateTime <DateTime?>]`: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
   - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
   - `[Locale <String>]`: Locale of the chat message set by the client. Always set to en-us.
-  - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
+  - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
     - `[Id <Int32?>]`: Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
     - `[MentionText <String>]`: String used to represent the mention. For example, a user's display name, a team name.
     - `[Mentioned <IMicrosoftGraphChatMessageMentionedIdentitySet>]`: chatMessageMentionedIdentitySet

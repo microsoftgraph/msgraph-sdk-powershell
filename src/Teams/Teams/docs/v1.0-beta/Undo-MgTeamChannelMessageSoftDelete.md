@@ -8,7 +8,7 @@ schema: 2.0.0
 # Undo-MgTeamChannelMessageSoftDelete
 
 ## SYNOPSIS
-Invoke action undoSoftDelete
+Undo soft deletion of a single message or a message reply in a channel or a chat.
 
 ## SYNTAX
 
@@ -25,9 +25,27 @@ Undo-MgTeamChannelMessageSoftDelete -InputObject <ITeamsIdentity> [-PassThru] [-
 ```
 
 ## DESCRIPTION
-Invoke action undoSoftDelete
+Undo soft deletion of a single message or a message reply in a channel or a chat.
 
 ## EXAMPLES
+
+### Example 1: Using the Undo-MgTeamChannelMessageSoftDelete Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Undo-MgTeamChannelMessageSoftDelete -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId
+```
+
+This example shows how to use the Undo-MgTeamChannelMessageSoftDelete Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Undo-MgTeamChannelMessageSoftDelete Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Undo-MgTeamChannelMessageSoftDelete -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId
+```
+
+This example shows how to use the Undo-MgTeamChannelMessageSoftDelete Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

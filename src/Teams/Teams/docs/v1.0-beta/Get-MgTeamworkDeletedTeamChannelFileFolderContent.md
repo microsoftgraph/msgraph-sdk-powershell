@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelFileFolderContent
 
 ## SYNOPSIS
-Get content for the navigation property filesFolder from teamwork
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgTeamworkDeletedTeamChannelFileFolderContent -InputObject <ITeamsIdentity> 
 ```
 
 ## DESCRIPTION
-Get content for the navigation property filesFolder from teamwork
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

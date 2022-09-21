@@ -12,7 +12,7 @@ Update the navigation property hostedContents in teams
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageHostedContentId <String>
  -ChatMessageId <String> -ChatMessageId1 <String> -TeamId <String> [-AdditionalProperties <Hashtable>]
@@ -20,20 +20,20 @@ Update-MgTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageHo
  [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageHostedContentId <String>
  -ChatMessageId <String> -ChatMessageId1 <String> -TeamId <String> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgTeamChannelMessageReplyHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgTeamChannelMessageReplyHostedContent -InputObject <ITeamsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>]
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -67,7 +67,7 @@ chatMessageHostedContent
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ key: id of chatMessageHostedContent
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -143,7 +143,7 @@ Bytes for the hosted content (such as images).)
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -155,11 +155,12 @@ Accept wildcard characters: False
 
 ### -ContentType
 Write only.
-Content type, such as image/png, image/jpg.
+Content type.
+sicj as image/png, image/jpg.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -174,7 +175,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -190,7 +191,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -220,7 +221,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True

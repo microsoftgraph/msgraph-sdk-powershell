@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupTeamInstalledApp
 
 ## SYNOPSIS
-Create new navigation property to installedApps for groups
+Install an app to the specified team.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgGroupTeamInstalledApp -InputObject <ITeamsIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Create new navigation property to installedApps for groups
+Install an app to the specified team.
 
 ## EXAMPLES
 

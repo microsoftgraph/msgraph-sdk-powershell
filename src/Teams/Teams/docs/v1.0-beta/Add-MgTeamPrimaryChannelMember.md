@@ -8,7 +8,8 @@ schema: 2.0.0
 # Add-MgTeamPrimaryChannelMember
 
 ## SYNOPSIS
-Invoke action add
+Add multiple members in a single request to a team.
+The response provides details about which memberships could and couldn't be created.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Add-MgTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Invoke action add
+Add multiple members in a single request to a team.
+The response provides details about which memberships could and couldn't be created.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgChat
 
 ## SYNOPSIS
-Create chat
+Create a new chat object.
 
 ## SYNTAX
 
@@ -21,7 +21,7 @@ New-MgChat [-AdditionalProperties <Hashtable>] [-ChatType <String>] [-CreatedDat
  [-OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]
  [-Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]
  [-PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]
- [-PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>] [-Tabs <IMicrosoftGraphTeamsTab1[]>]
+ [-PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>] [-Tabs <IMicrosoftGraphTeamsTab1[]>]
  [-TenantId <String>] [-Topic <String>] [-Viewpoint <IMicrosoftGraphChatViewpoint>] [-WebUrl <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -32,9 +32,235 @@ New-MgChat -BodyParameter <IMicrosoftGraphChat> [-Confirm] [-WhatIf] [<CommonPar
 ```
 
 ## DESCRIPTION
-Create chat
+Create a new chat object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	ChatType = "group"
+	Topic = "Group chat title"
+	Members = @(
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8c0a1a67-50ce-4114-bb6c-da9c5dbcf6ca')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('82fe7758-5bb3-4f0d-a43f-e555fd399c6f')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('3626a173-f2bc-4883-bcf7-01514c3bfb82')"
+		}
+	)
+}
+New-MgChat -BodyParameter $params
+```
+
+This example shows how to use the New-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	ChatType = "group"
+	Topic = "Group chat title"
+	Members = @(
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8c0a1a67-50ce-4114-bb6c-da9c5dbcf6ca')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('82fe7758-5bb3-4f0d-a43f-e555fd399c6f')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"guest"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8ba98gf6-7fc2-4eb2-c7f2-aef9f21fd98g')"
+		}
+	)
+}
+New-MgChat -BodyParameter $params
+```
+
+This example shows how to use the New-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	ChatType = "group"
+	Topic = "Group chat title"
+	Members = @(
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8c0a1a67-50ce-4114-bb6c-da9c5dbcf6ca')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('82fe7758-5bb3-4f0d-a43f-e555fd399c6f')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"guest"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8ba98gf6-7fc2-4eb2-c7f2-aef9f21fd98g')"
+		}
+	)
+}
+New-MgChat -BodyParameter $params
+```
+
+This example shows how to use the New-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the New-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	ChatType = "oneOnOne"
+	Members = @(
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('82af01c5-f7cc-4a2e-a728-3a5df21afd9d')"
+			TenantId = "4dc1fe35-8ac6-4f0d-904a-7ebcd364bea1"
+		}
+	)
+}
+New-MgChat -BodyParameter $params
+```
+
+This example shows how to use the New-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Using the New-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	ChatType = "oneOnOne"
+	Members = @(
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('82af01c5-f7cc-4a2e-a728-3a5df21afd9d')"
+		}
+	)
+}
+New-MgChat -BodyParameter $params
+```
+
+This example shows how to use the New-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 6: Using the New-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	ChatType = "oneOnOne"
+	Members = @(
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('alex@contoso.com')"
+		}
+	)
+}
+New-MgChat -BodyParameter $params
+```
+
+This example shows how to use the New-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 7: Using the New-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	ChatType = "oneOnOne"
+	Members = @(
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/beta/users('82af01c5-f7cc-4a2e-a728-3a5df21afd9d')"
+		}
+	)
+	InstalledApps = @(
+		@{
+			"TeamsApp@odata.bind" = "https://graph.microsoft.com/beta/appCatalogs/teamsApps/05F59CEC-A742-4A50-A62E-202A57E478A4"
+		}
+	)
+}
+New-MgChat -BodyParameter $params
+```
+
+This example shows how to use the New-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -253,7 +479,7 @@ Nullable.
 To construct, please use Get-Help -Online and see NOTES section for PINNEDMESSAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -421,7 +647,7 @@ BODYPARAMETER <IMicrosoftGraphChat>: chat
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-            - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
+            - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
           - `[WebUrl <String>]`: The web URL that can be used for downloading the image.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -489,7 +715,7 @@ BODYPARAMETER <IMicrosoftGraphChat>: chat
     - `[From <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
     - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
       - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-      - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
+      - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
       - `[Id <String>]`: 
     - `[Importance <String>]`: 
     - `[LastEditedDateTime <DateTime?>]`: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
@@ -541,7 +767,7 @@ BODYPARAMETER <IMicrosoftGraphChat>: chat
   - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-    - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+    - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
     - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -568,7 +794,7 @@ BODYPARAMETER <IMicrosoftGraphChat>: chat
     - `[Permission <String>]`: The name of the resource-specific permission. Read-only.
     - `[PermissionType <String>]`: The type of permission. Possible values are: Application, Delegated. Read-only.
     - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
-  - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: A collection of all the pinned messages in the chat. Nullable.
+  - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
     - `[Id <String>]`: 
     - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
   - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
@@ -612,7 +838,7 @@ INSTALLEDAPPS <IMicrosoftGraphTeamsAppInstallation1[]>: A collection of all the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-          - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
+          - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
         - `[WebUrl <String>]`: The web URL that can be used for downloading the image.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -696,7 +922,7 @@ MESSAGES <IMicrosoftGraphChatMessage[]>: A collection of all the messages in the
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
     - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-    - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
+    - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
     - `[Id <String>]`: 
   - `[Importance <String>]`: 
   - `[LastEditedDateTime <DateTime?>]`: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
@@ -749,7 +975,7 @@ MESSAGES <IMicrosoftGraphChatMessage[]>: A collection of all the messages in the
 ONLINEMEETINGINFO <IMicrosoftGraphTeamworkOnlineMeetingInfo>: teamworkOnlineMeetingInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-  - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+  - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
   - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -779,7 +1005,7 @@ PERMISSIONGRANTS <IMicrosoftGraphResourceSpecificPermissionGrant[]>: A collectio
   - `[PermissionType <String>]`: The type of permission. Possible values are: Application, Delegated. Read-only.
   - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
 
-PINNEDMESSAGES <IMicrosoftGraphPinnedChatMessageInfo[]>: A collection of all the pinned messages in the chat. Nullable.
+PINNEDMESSAGES <IMicrosoftGraphPinnedChatMessageInfo1[]>: A collection of all the pinned messages in the chat. Nullable.
   - `[Id <String>]`: 
   - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -816,7 +1042,7 @@ PINNEDMESSAGES <IMicrosoftGraphPinnedChatMessageInfo[]>: A collection of all the
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
       - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-      - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
+      - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
       - `[Id <String>]`: 
     - `[Importance <String>]`: 
     - `[LastEditedDateTime <DateTime?>]`: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
@@ -894,7 +1120,7 @@ TABS <IMicrosoftGraphTeamsTab1[]>: A collection of all the tabs in the chat. Nul
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-          - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
+          - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
         - `[WebUrl <String>]`: The web URL that can be used for downloading the image.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.

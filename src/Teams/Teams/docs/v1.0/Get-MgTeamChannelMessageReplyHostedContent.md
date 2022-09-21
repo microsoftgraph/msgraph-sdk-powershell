@@ -8,59 +8,53 @@ schema: 2.0.0
 # Get-MgTeamChannelMessageReplyHostedContent
 
 ## SYNOPSIS
-Get hostedContents from teams
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageId <String>
- -ChatMessageId1 <String> -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ -ChatMessageId1 <String> -TeamId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageHostedContentId <String>
  -ChatMessageId <String> -ChatMessageId1 <String> -TeamId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgTeamChannelMessageReplyHostedContent -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get hostedContents from teams
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## EXAMPLES
 
-## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+### Example 1: Using the Get-MgTeamChannelMessageReplyHostedContent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannelMessageReplyHostedContent -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -ChatMessageId1 $chatMessageId1
 ```
+
+This example shows how to use the Get-MgTeamChannelMessageReplyHostedContent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+## PARAMETERS
 
 ### -ChannelId
 key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -75,7 +69,7 @@ key: id of chatMessageHostedContent
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -90,7 +84,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -105,7 +99,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -115,14 +109,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases: CV
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
 
 Required: False
 Position: Named
@@ -151,7 +144,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -167,28 +160,13 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -212,7 +190,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -227,7 +205,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -242,7 +220,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -257,7 +235,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -272,7 +250,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False

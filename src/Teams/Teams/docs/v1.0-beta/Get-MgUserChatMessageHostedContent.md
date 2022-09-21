@@ -8,15 +8,15 @@ schema: 2.0.0
 # Get-MgUserChatMessageHostedContent
 
 ## SYNOPSIS
-Get hostedContents from users
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgUserChatMessageHostedContent -ChatId <String> -ChatMessageId <String> -UserId <String>
+Get-MgUserChatMessageHostedContent -ChatId <String> -ChatMessageId <String> -UserId <String> [-Count]
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -33,26 +33,11 @@ Get-MgUserChatMessageHostedContent -InputObject <ITeamsIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get hostedContents from users
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -ChatId
 key: id of chat
@@ -99,14 +84,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -158,21 +142,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

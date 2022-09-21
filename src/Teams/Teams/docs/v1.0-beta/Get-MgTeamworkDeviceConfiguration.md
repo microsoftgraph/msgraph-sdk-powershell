@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeviceConfiguration
 
 ## SYNOPSIS
-Get configuration from teamwork
+Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgTeamworkDeviceConfiguration -InputObject <ITeamsIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get configuration from teamwork
+Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgTeamworkDeviceConfiguration Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamworkDeviceConfiguration -TeamworkDeviceId $teamworkDeviceId
+```
+
+This example shows how to use the Get-MgTeamworkDeviceConfiguration Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

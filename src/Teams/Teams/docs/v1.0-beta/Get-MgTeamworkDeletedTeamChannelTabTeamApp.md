@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelTabTeamApp
 
 ## SYNOPSIS
-Get teamsApp from teamwork
+The application that is linked to the tab.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgTeamworkDeletedTeamChannelTabTeamApp -InputObject <ITeamsIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get teamsApp from teamwork
+The application that is linked to the tab.
 
 ## EXAMPLES
 

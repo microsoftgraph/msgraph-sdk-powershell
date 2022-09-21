@@ -15,10 +15,9 @@ Create new navigation property to openShifts for groups
 ### CreateExpanded1 (Default)
 ```
 New-MgGroupTeamScheduleOpenShift -GroupId <String> [-AdditionalProperties <Hashtable>]
- [-CreatedDateTime <DateTime>] [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-SchedulingGroupId <String>] [-SharedOpenShift <IMicrosoftGraphOpenShiftItem>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SchedulingGroupId <String>]
+ [-SharedOpenShift <IMicrosoftGraphOpenShiftItem>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
@@ -36,10 +35,9 @@ New-MgGroupTeamScheduleOpenShift -InputObject <ITeamsIdentity> -BodyParameter <I
 ### CreateViaIdentityExpanded1
 ```
 New-MgGroupTeamScheduleOpenShift -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-CreatedDateTime <DateTime>] [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-SchedulingGroupId <String>] [-SharedOpenShift <IMicrosoftGraphOpenShiftItem>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SchedulingGroupId <String>]
+ [-SharedOpenShift <IMicrosoftGraphOpenShiftItem>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,22 +75,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -CreatedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -164,22 +146,6 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -276,7 +242,6 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphOpenShift>: openShift
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -285,7 +250,6 @@ BODYPARAMETER <IMicrosoftGraphOpenShift>: openShift
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: 
   - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

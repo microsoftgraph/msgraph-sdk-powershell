@@ -8,16 +8,15 @@ schema: 2.0.0
 # New-MgTeamScheduleTimeOff
 
 ## SYNOPSIS
-Create new navigation property to timesOff for teams
+Create a new timeOff instance in a schedule.
 
 ## SYNTAX
 
 ### CreateExpanded1 (Default)
 ```
 New-MgTeamScheduleTimeOff -TeamId <String> [-AdditionalProperties <Hashtable>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
- [-DraftTimeOff <IMicrosoftGraphTimeOffItem>] [-Id <String>] [-IsStagedForDeletion]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DraftTimeOff <IMicrosoftGraphTimeOffItem>] [-Id <String>]
+ [-IsStagedForDeletion] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-SharedTimeOff <IMicrosoftGraphTimeOffItem>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,16 +35,39 @@ New-MgTeamScheduleTimeOff -InputObject <ITeamsIdentity> -BodyParameter <IMicroso
 ### CreateViaIdentityExpanded1
 ```
 New-MgTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
- [-DraftTimeOff <IMicrosoftGraphTimeOffItem>] [-Id <String>] [-IsStagedForDeletion]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DraftTimeOff <IMicrosoftGraphTimeOffItem>] [-Id <String>]
+ [-IsStagedForDeletion] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-SharedTimeOff <IMicrosoftGraphTimeOffItem>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to timesOff for teams
+Create a new timeOff instance in a schedule.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgTeamScheduleTimeOff Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	UserId = "c5d0c76b-80c4-481c-be50-923cd8d680a1"
+	SharedTimeOff = @{
+		TimeOffReasonId = "TOR_891045ca-b5d2-406b-aa06-a3c8921245d7"
+		StartDateTime = [System.DateTime]::Parse("2019-03-11T07:00:00Z")
+		EndDateTime = [System.DateTime]::Parse("2019-03-12T07:00:00Z")
+		Theme = "white"
+	}
+	DraftTimeOff = @{
+		TimeOffReasonId = "TOR_891045ca-b5d2-406b-aa06-a3c8921245d7"
+		StartDateTime = [System.DateTime]::Parse("2019-03-11T07:00:00Z")
+		EndDateTime = [System.DateTime]::Parse("2019-03-12T07:00:00Z")
+		Theme = "pink"
+	}
+}
+New-MgTeamScheduleTimeOff -TeamId $teamId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamScheduleTimeOff Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -86,22 +108,6 @@ To construct, please use Get-Help -Online and see NOTES section for CREATEDBY pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CreatedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -180,22 +186,6 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -316,9 +306,7 @@ BODYPARAMETER <IMicrosoftGraphTimeOff1>: timeOff
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: 
   - `[DraftTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

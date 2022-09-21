@@ -15,11 +15,9 @@ Create new navigation property to openShifts for teams
 ### CreateExpanded1 (Default)
 ```
 New-MgTeamScheduleOpenShift -TeamId <String> [-AdditionalProperties <Hashtable>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
- [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>] [-IsStagedForDeletion]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-SchedulingGroupId <String>] [-SharedOpenShift <IMicrosoftGraphOpenShiftItem>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>]
+ [-IsStagedForDeletion] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SchedulingGroupId <String>]
+ [-SharedOpenShift <IMicrosoftGraphOpenShiftItem>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
@@ -37,17 +35,57 @@ New-MgTeamScheduleOpenShift -InputObject <ITeamsIdentity> -BodyParameter <IMicro
 ### CreateViaIdentityExpanded1
 ```
 New-MgTeamScheduleOpenShift -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
- [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>] [-IsStagedForDeletion]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-SchedulingGroupId <String>] [-SharedOpenShift <IMicrosoftGraphOpenShiftItem>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DraftOpenShift <IMicrosoftGraphOpenShiftItem>] [-Id <String>]
+ [-IsStagedForDeletion] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SchedulingGroupId <String>]
+ [-SharedOpenShift <IMicrosoftGraphOpenShiftItem>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Create new navigation property to openShifts for teams
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgTeamScheduleOpenShift Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	Id = "OPNSHFT_577b75d2-a927-48c0-a5d1-dc984894e7b8"
+	SchedulingGroupId = "TAG_228940ed-ff84-4e25-b129-1b395cf78be0"
+	SharedOpenShift = @{
+		Notes = "InventoryManagement"
+		OpenSlotCount = 2
+		DisplayName = "Dayshift"
+		StartDateTime = [System.DateTime]::Parse("2018-10-04T00: 58: 45.340Z")
+		EndDateTime = [System.DateTime]::Parse("2018-10-04T09: 50: 45.332Z")
+		Theme = "white"
+		Activities = @(
+			@{
+				IsPaid = $true
+				StartDateTime = [System.DateTime]::Parse("2018-10-04T00: 58: 45.340Z")
+				EndDateTime = [System.DateTime]::Parse("2018-10-04T01: 58: 45.340Z")
+				Code = ""
+				DisplayName = "Lunch"
+			}
+		)
+	}
+	DraftOpenShift = $null
+	CreatedDateTime = [System.DateTime]::Parse("2019-03-14T04: 32: 51.451Z")
+	LastModifiedDateTime = [System.DateTime]::Parse("2019-03-14T05: 32: 51.451Z")
+	LastModifiedBy = @{
+		Application = $null
+		Device = $null
+		Conversation = $null
+		User = @{
+			Id = "366c0b19-49b1-41b5-a03f-9f3887bd0ed8"
+			DisplayName = "JohnDoe"
+		}
+	}
+}
+New-MgTeamScheduleOpenShift -TeamId $teamId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamScheduleOpenShift Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -88,22 +126,6 @@ To construct, please use Get-Help -Online and see NOTES section for CREATEDBY pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CreatedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -182,22 +204,6 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -317,9 +323,7 @@ BODYPARAMETER <IMicrosoftGraphOpenShift1>: openShift
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: 
   - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

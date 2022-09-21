@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgChatInstalledApp
 
 ## SYNOPSIS
-Get installedApps from chats
+A collection of all the apps in the chat.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgChatInstalledApp -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgChatInstalledApp -ChatId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get
@@ -32,26 +33,48 @@ Get-MgChatInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get installedApps from chats
+A collection of all the apps in the chat.
+Nullable.
 
 ## EXAMPLES
 
-## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+### Example 1: Using the Get-MgChatInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
 ```
+
+This example shows how to use the Get-MgChatInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgChatInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatInstalledApp -ChatId $chatId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'" 
+```
+
+This example shows how to use the Get-MgChatInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgChatInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatInstalledApp -ChatId $chatId -ExpandProperty "teamsAppDefinition(`$expand=bot)" 
+```
+
+This example shows how to use the Get-MgChatInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgChatInstalledApp Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatInstalledApp -ChatId $chatId
+```
+
+This example shows how to use the Get-MgChatInstalledApp Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+## PARAMETERS
 
 ### -ChatId
 key: id of chat
@@ -68,14 +91,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -127,21 +149,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

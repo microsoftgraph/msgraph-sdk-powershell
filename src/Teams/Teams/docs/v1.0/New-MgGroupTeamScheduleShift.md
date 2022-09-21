@@ -8,15 +8,14 @@ schema: 2.0.0
 # New-MgGroupTeamScheduleShift
 
 ## SYNOPSIS
-Create new navigation property to shifts for groups
+Create a new shift instance in a schedule.
 
 ## SYNTAX
 
 ### CreateExpanded1 (Default)
 ```
 New-MgGroupTeamScheduleShift -GroupId <String> [-AdditionalProperties <Hashtable>]
- [-CreatedDateTime <DateTime>] [-DraftShift <IMicrosoftGraphShiftItem>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-DraftShift <IMicrosoftGraphShiftItem>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-SchedulingGroupId <String>] [-SharedShift <IMicrosoftGraphShiftItem>] [-UserId <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -36,14 +35,13 @@ New-MgGroupTeamScheduleShift -InputObject <ITeamsIdentity> -BodyParameter <IMicr
 ### CreateViaIdentityExpanded1
 ```
 New-MgGroupTeamScheduleShift -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-CreatedDateTime <DateTime>] [-DraftShift <IMicrosoftGraphShiftItem>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-DraftShift <IMicrosoftGraphShiftItem>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-SchedulingGroupId <String>] [-SharedShift <IMicrosoftGraphShiftItem>] [-UserId <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to shifts for groups
+Create a new shift instance in a schedule.
 
 ## EXAMPLES
 
@@ -77,22 +75,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -CreatedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -164,22 +146,6 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -293,7 +259,6 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphShift>: shift
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -302,7 +267,6 @@ BODYPARAMETER <IMicrosoftGraphShift>: shift
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: 
   - `[DraftShift <IMicrosoftGraphShiftItem>]`: shiftItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

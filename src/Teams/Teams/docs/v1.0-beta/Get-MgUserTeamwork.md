@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserTeamwork
 
 ## SYNOPSIS
-Get teamwork from users
+A container for Microsoft Teams features available for the user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -24,7 +26,9 @@ Get-MgUserTeamwork -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Get teamwork from users
+A container for Microsoft Teams features available for the user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

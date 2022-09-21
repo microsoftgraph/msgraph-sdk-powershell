@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgChatTabTeamApp
 
 ## SYNOPSIS
-Get teamsApp from chats
+The application that is linked to the tab.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgChatTabTeamApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get teamsApp from chats
+The application that is linked to the tab.
 
 ## EXAMPLES
 
