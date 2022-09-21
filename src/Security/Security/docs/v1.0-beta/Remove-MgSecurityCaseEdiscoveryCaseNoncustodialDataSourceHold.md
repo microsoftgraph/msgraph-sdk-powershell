@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold
 
 ## SYNOPSIS
-Invoke action removeHold
+Start the process of removing hold from eDiscovery non-custodial data sources.
+After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ## SYNTAX
 
@@ -51,9 +53,29 @@ Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -InputObject <ISec
 ```
 
 ## DESCRIPTION
-Invoke action removeHold
+Start the process of removing hold from eDiscovery non-custodial data sources.
+After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryNoncustodialDataSourceId $ediscoveryNoncustodialDataSourceId
+```
+
+This example shows how to use the Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryNoncustodialDataSourceId $ediscoveryNoncustodialDataSourceId
+```
+
+This example shows how to use the Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

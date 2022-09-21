@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseTagParent
 
 ## SYNOPSIS
-Get parent from security
+Returns the parent tag of the specified tag.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSecurityCaseEdiscoveryCaseTagParent -InputObject <ISecurityIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get parent from security
+Returns the parent tag of the specified tag.
 
 ## EXAMPLES
 

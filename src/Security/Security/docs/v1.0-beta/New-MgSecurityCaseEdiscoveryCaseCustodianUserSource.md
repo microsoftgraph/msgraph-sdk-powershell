@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityCaseEdiscoveryCaseCustodianUserSource
 
 ## SYNOPSIS
-Create new navigation property to userSources for security
+Create a new userSource object associated with an eDiscovery custodian.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgSecurityCaseEdiscoveryCaseCustodianUserSource -InputObject <ISecurityIdent
 ```
 
 ## DESCRIPTION
-Create new navigation property to userSources for security
+Create a new userSource object associated with an eDiscovery custodian.
 
 ## EXAMPLES
 

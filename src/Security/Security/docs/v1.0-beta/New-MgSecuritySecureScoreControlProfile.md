@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComplianceInformation
-The collection of compliance information associated with secure score control
+.
 To construct, please use Get-Help -Online and see NOTES section for COMPLIANCEINFORMATION properties and create a hash table.
 
 ```yaml
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ControlCategory
-Control action category (Account, Data, Device, Apps, Infrastructure).
+Control action category (Identity, Data, Device, Apps, Infrastructure).
 
 ```yaml
 Type: System.String
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -ControlStateUpdates
-Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+.
 To construct, please use Get-Help -Online and see NOTES section for CONTROLSTATEUPDATES properties and create a hash table.
 
 ```yaml
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxScore
-Current obtained max score on specified date.
+max attainable score for the control.
 
 ```yaml
 Type: System.Double
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -Threats
-List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
 
 ```yaml
 Type: System.String[]
@@ -312,7 +312,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tier
-Control tier (Core, Defense in Depth, Advanced.)
+.
 
 ```yaml
 Type: System.String
@@ -342,7 +342,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserImpact
-User impact of implementing control (low, moderate, high).
+.
 
 ```yaml
 Type: System.String
@@ -429,13 +429,13 @@ BODYPARAMETER <IMicrosoftGraphSecureScoreControlProfile>: secureScoreControlProf
   - `[ActionType <String>]`: Control action type (Config, Review, Behavior).
   - `[ActionUrl <String>]`: URL to where the control can be actioned.
   - `[AzureTenantId <String>]`: GUID string for tenant ID.
-  - `[ComplianceInformation <IMicrosoftGraphComplianceInformation[]>]`: The collection of compliance information associated with secure score control
+  - `[ComplianceInformation <IMicrosoftGraphComplianceInformation[]>]`: 
     - `[CertificationControls <IMicrosoftGraphCertificationControl[]>]`: Collection of the certification controls associated with certification
       - `[Name <String>]`: Certification control name
       - `[Url <String>]`: URL for the Microsoft Service Trust Portal
     - `[CertificationName <String>]`: Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
-  - `[ControlCategory <String>]`: Control action category (Account, Data, Device, Apps, Infrastructure).
-  - `[ControlStateUpdates <IMicrosoftGraphSecureScoreControlStateUpdate[]>]`: Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+  - `[ControlCategory <String>]`: Control action category (Identity, Data, Device, Apps, Infrastructure).
+  - `[ControlStateUpdates <IMicrosoftGraphSecureScoreControlStateUpdate[]>]`: 
     - `[AssignedTo <String>]`: Assigns the control to the user who will take the action.
     - `[Comment <String>]`: Provides optional comment about the control.
     - `[State <String>]`: State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
@@ -444,15 +444,15 @@ BODYPARAMETER <IMicrosoftGraphSecureScoreControlProfile>: secureScoreControlProf
   - `[Deprecated <Boolean?>]`: Flag to indicate if a control is depreciated.
   - `[ImplementationCost <String>]`: Resource cost of implemmentating control (low, moderate, high).
   - `[LastModifiedDateTime <DateTime?>]`: Time at which the control profile entity was last modified. The Timestamp type represents date and time
-  - `[MaxScore <Double?>]`: Current obtained max score on specified date.
+  - `[MaxScore <Double?>]`: max attainable score for the control.
   - `[Rank <Int32?>]`: Microsoft's stack ranking of control.
   - `[Remediation <String>]`: Description of what the control will help remediate.
   - `[RemediationImpact <String>]`: Description of the impact on users of the remediation.
   - `[Service <String>]`: Service that owns the control (Exchange, Sharepoint, Azure AD).
-  - `[Threats <String[]>]`: List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
-  - `[Tier <String>]`: Control tier (Core, Defense in Depth, Advanced.)
+  - `[Threats <String[]>]`: List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+  - `[Tier <String>]`: 
   - `[Title <String>]`: Title of the control.
-  - `[UserImpact <String>]`: User impact of implementing control (low, moderate, high).
+  - `[UserImpact <String>]`: 
   - `[VendorInformation <IMicrosoftGraphSecurityVendorInformation>]`: securityVendorInformation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
@@ -460,13 +460,13 @@ BODYPARAMETER <IMicrosoftGraphSecureScoreControlProfile>: secureScoreControlProf
     - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
     - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
-COMPLIANCEINFORMATION <IMicrosoftGraphComplianceInformation[]>: The collection of compliance information associated with secure score control
+COMPLIANCEINFORMATION <IMicrosoftGraphComplianceInformation[]>: .
   - `[CertificationControls <IMicrosoftGraphCertificationControl[]>]`: Collection of the certification controls associated with certification
     - `[Name <String>]`: Certification control name
     - `[Url <String>]`: URL for the Microsoft Service Trust Portal
   - `[CertificationName <String>]`: Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
 
-CONTROLSTATEUPDATES <IMicrosoftGraphSecureScoreControlStateUpdate[]>: Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+CONTROLSTATEUPDATES <IMicrosoftGraphSecureScoreControlStateUpdate[]>: .
   - `[AssignedTo <String>]`: Assigns the control to the user who will take the action.
   - `[Comment <String>]`: Provides optional comment about the control.
   - `[State <String>]`: State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
