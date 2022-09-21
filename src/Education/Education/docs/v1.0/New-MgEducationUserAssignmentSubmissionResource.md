@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-MgEducationUserAssignmentSubmissionResource
 
 ## SYNOPSIS
-Create new navigation property to resources for education
+Add an educationSubmissionResource to a submission resource list.
+Only the student assigned to the submission can perform this operation.
+The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
+To create a new file-based resource, upload the file to the resources folder associated with the submission.
+If the file doesn't exist or is not in that folder, the POST request will fail.
 
 ## SYNTAX
 
@@ -41,7 +45,11 @@ New-MgEducationUserAssignmentSubmissionResource -InputObject <IEducationIdentity
 ```
 
 ## DESCRIPTION
-Create new navigation property to resources for education
+Add an educationSubmissionResource to a submission resource list.
+Only the student assigned to the submission can perform this operation.
+The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
+To create a new file-based resource, upload the file to the resources folder associated with the submission.
+If the file doesn't exist or is not in that folder, the POST request will fail.
 
 ## EXAMPLES
 
@@ -253,10 +261,8 @@ BODYPARAMETER <IMicrosoftGraphEducationSubmissionResource>: educationSubmissionR
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[DisplayName <String>]`: Display name of resource.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment
@@ -282,10 +288,8 @@ RESOURCE <IMicrosoftGraphEducationResource>: educationResource
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[DisplayName <String>]`: Display name of resource.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ## RELATED LINKS
 

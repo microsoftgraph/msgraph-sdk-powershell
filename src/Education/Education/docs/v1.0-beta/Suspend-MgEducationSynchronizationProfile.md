@@ -8,7 +8,7 @@ schema: 2.0.0
 # Suspend-MgEducationSynchronizationProfile
 
 ## SYNOPSIS
-Invoke action pause
+Pause the sync of a specific school data synchronization profile in the tenant.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Suspend-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Pa
 ```
 
 ## DESCRIPTION
-Invoke action pause
+Pause the sync of a specific school data synchronization profile in the tenant.
 
 ## EXAMPLES
+
+### Example 1: Using the Suspend-MgEducationSynchronizationProfile Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Suspend-MgEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
+```
+
+This example shows how to use the Suspend-MgEducationSynchronizationProfile Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

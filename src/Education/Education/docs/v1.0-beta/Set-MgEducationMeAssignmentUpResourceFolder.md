@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgEducationMeAssignmentUpResourceFolder
 
 ## SYNOPSIS
-Invoke action setUpResourcesFolder
+Create a SharePoint folder to upload files for a given educationAssignment.
+The teacher determines the resources to upload in the assignment's folder.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgEducationMeAssignmentUpResourceFolder -InputObject <IEducationIdentity> [-
 ```
 
 ## DESCRIPTION
-Invoke action setUpResourcesFolder
+Create a SharePoint folder to upload files for a given educationAssignment.
+The teacher determines the resources to upload in the assignment's folder.
 
 ## EXAMPLES
 

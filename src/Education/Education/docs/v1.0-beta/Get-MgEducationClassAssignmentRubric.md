@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassAssignmentRubric
 
 ## SYNOPSIS
-Get rubric from education
+Get the educationRubric object attached to an educationAssignment, if one exists.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgEducationClassAssignmentRubric -InputObject <IEducationIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get rubric from education
+Get the educationRubric object attached to an educationAssignment, if one exists.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEducationClassAssignmentRubric Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationClassAssignmentRubric -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+```
+
+This example shows how to use the Get-MgEducationClassAssignmentRubric Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

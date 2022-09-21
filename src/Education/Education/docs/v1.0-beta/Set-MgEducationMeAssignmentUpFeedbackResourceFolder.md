@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgEducationMeAssignmentUpFeedbackResourceFolder
 
 ## SYNOPSIS
-Invoke action setUpFeedbackResourcesFolder
+Create a SharePoint folder to upload feedback files for a given educationSubmission.
+The teacher determines the resources to upload in the feedback resources folder of a submission.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgEducationMeAssignmentUpFeedbackResourceFolder -InputObject <IEducationIden
 ```
 
 ## DESCRIPTION
-Invoke action setUpFeedbackResourcesFolder
+Create a SharePoint folder to upload feedback files for a given educationSubmission.
+The teacher determines the resources to upload in the feedback resources folder of a submission.
 
 ## EXAMPLES
 
