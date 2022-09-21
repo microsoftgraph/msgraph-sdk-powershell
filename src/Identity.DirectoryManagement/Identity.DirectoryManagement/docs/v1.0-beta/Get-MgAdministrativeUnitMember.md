@@ -8,18 +8,20 @@ schema: 2.0.0
 # Get-MgAdministrativeUnitMember
 
 ## SYNOPSIS
-Get members from administrativeUnits
+Users and groups that are members of this administrative unit.
+Supports $expand.
 
 ## SYNTAX
 
 ```
-Get-MgAdministrativeUnitMember -AdministrativeUnitId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgAdministrativeUnitMember -AdministrativeUnitId <String> [-Count] [-ExpandProperty <String[]>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get members from administrativeUnits
+Users and groups that are members of this administrative unit.
+Supports $expand.
 
 ## EXAMPLES
 
@@ -40,11 +42,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -All
-List all pages.
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -55,14 +58,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -91,21 +93,6 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 

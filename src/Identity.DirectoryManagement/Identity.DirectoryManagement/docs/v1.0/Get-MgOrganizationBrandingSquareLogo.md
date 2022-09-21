@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgOrganizationBrandingSquareLogo
 
 ## SYNOPSIS
-Get squareLogo for the navigation property branding from organization
+A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
+Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size.
+We recommend using a transparent image with no padding around the logo.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgOrganizationBrandingSquareLogo -InputObject <IIdentityDirectoryManagementI
 ```
 
 ## DESCRIPTION
-Get squareLogo for the navigation property branding from organization
+A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
+Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size.
+We recommend using a transparent image with no padding around the logo.
 
 ## EXAMPLES
 

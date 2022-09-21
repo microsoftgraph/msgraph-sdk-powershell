@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgOrganizationSettingProfileCardProperty
 
 ## SYNOPSIS
-Create new navigation property to profileCardProperties for organization
+Create a new profileCardProperty for an organization.
+The new property is identified by its **directoryPropertyName** property.
+For more information on adding properties to the profile card for an organization, see customize the profile card.
 
 ## SYNTAX
 
@@ -39,9 +41,34 @@ New-MgOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryMan
 ```
 
 ## DESCRIPTION
-Create new navigation property to profileCardProperties for organization
+Create a new profileCardProperty for an organization.
+The new property is identified by its **directoryPropertyName** property.
+For more information on adding properties to the profile card for an organization, see customize the profile card.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgOrganizationSettingProfileCardProperty Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	DirectoryPropertyName = "CustomAttribute1"
+	Annotations = @(
+		@{
+			DisplayName = "Cost Center"
+			Localizations = @(
+				@{
+					LanguageTag = "ru-RU"
+					DisplayName = "центр затрат"
+				}
+			)
+		}
+	)
+}
+New-MgOrganizationSettingProfileCardProperty -OrganizationId $organizationId -BodyParameter $params
+```
+
+This example shows how to use the New-MgOrganizationSettingProfileCardProperty Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

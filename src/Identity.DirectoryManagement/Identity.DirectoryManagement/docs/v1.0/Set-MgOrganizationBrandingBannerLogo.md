@@ -8,7 +8,9 @@ schema: 2.0.0
 # Set-MgOrganizationBrandingBannerLogo
 
 ## SYNOPSIS
-Update bannerLogo for the navigation property branding in organization
+A banner version of your company logo that appears on the sign-in page.
+The allowed types are PNG or JPEG no larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Set-MgOrganizationBrandingBannerLogo -InputObject <IIdentityDirectoryManagementI
 ```
 
 ## DESCRIPTION
-Update bannerLogo for the navigation property branding in organization
+A banner version of your company logo that appears on the sign-in page.
+The allowed types are PNG or JPEG no larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## EXAMPLES
 
