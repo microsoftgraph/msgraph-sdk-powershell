@@ -1,29 +1,30 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgpreviewuseronenotepage
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermanageddeviceremotehelpsession
 schema: 2.0.0
 ---
 
-# Invoke-MgPreviewUserOnenotePage
+# Get-MgUserManagedDeviceRemoteHelpSession
 
 ## SYNOPSIS
-Invoke function preview
+Invoke function retrieveRemoteHelpSession
 
 ## SYNTAX
 
-### Preview (Default)
+### Retrieve (Default)
 ```
-Invoke-MgPreviewUserOnenotePage -OnenotePageId <String> -UserId <String> [<CommonParameters>]
+Get-MgUserManagedDeviceRemoteHelpSession -ManagedDeviceId <String> -SessionKey <String> -UserId <String>
+ [<CommonParameters>]
 ```
 
-### PreviewViaIdentity
+### RetrieveViaIdentity
 ```
-Invoke-MgPreviewUserOnenotePage -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgUserManagedDeviceRemoteHelpSession -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function preview
+Invoke function retrieveRemoteHelpSession
 
 ## EXAMPLES
 
@@ -35,7 +36,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: PreviewViaIdentity
+Parameter Sets: RetrieveViaIdentity
 Aliases:
 
 Required: True
@@ -45,12 +46,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OnenotePageId
-key: id of onenotePage
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
 Type: System.String
-Parameter Sets: Preview
+Parameter Sets: Retrieve
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SessionKey
+Usage: sessionKey='{sessionKey}'
+
+```yaml
+Type: System.String
+Parameter Sets: Retrieve
 Aliases:
 
 Required: True
@@ -65,7 +81,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Preview
+Parameter Sets: Retrieve
 Aliases:
 
 Required: True
@@ -84,7 +100,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePagePreview
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRetrieveRemoteHelpSessionResponse
 
 ## NOTES
 
