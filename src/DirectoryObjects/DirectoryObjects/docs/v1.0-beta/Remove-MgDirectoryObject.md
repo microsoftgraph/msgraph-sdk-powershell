@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDirectoryObject
 
 ## SYNOPSIS
-Delete directoryObject
+Delete a directory object, for example, a group, user, application, or service principal.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Remove-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-Delete directoryObject
+Delete a directory object, for example, a group, user, application, or service principal.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgDirectoryObject Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DirectoryObjects
+Remove-MgDirectoryObject -DirectoryObjectId $directoryObjectId
+```
+
+This example shows how to use the Remove-MgDirectoryObject Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
