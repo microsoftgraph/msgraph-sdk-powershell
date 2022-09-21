@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticBaselineDeviceBootPerformanceMetric
 
 ## SYNOPSIS
-Get deviceBootPerformanceMetrics from deviceManagement
+The user experience analytics device boot performance metrics.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementUserExperienceAnalyticBaselineDeviceBootPerformanceMetric
 ```
 
 ## DESCRIPTION
-Get deviceBootPerformanceMetrics from deviceManagement
+The user experience analytics device boot performance metrics.
 
 ## EXAMPLES
 

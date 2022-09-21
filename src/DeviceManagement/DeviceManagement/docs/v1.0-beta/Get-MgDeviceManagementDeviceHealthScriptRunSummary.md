@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceHealthScriptRunSummary
 
 ## SYNOPSIS
-Get runSummary from deviceManagement
+High level run summary for device health script.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementDeviceHealthScriptRunSummary -InputObject <IDeviceManageme
 ```
 
 ## DESCRIPTION
-Get runSummary from deviceManagement
+High level run summary for device health script.
 
 ## EXAMPLES
 

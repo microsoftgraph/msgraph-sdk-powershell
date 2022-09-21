@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticBaselineAppHealthMetric
 
 ## SYNOPSIS
-Get appHealthMetrics from deviceManagement
+The user experience analytics app health metrics.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementUserExperienceAnalyticBaselineAppHealthMetric -InputObject
 ```
 
 ## DESCRIPTION
-Get appHealthMetrics from deviceManagement
+The user experience analytics app health metrics.
 
 ## EXAMPLES
 

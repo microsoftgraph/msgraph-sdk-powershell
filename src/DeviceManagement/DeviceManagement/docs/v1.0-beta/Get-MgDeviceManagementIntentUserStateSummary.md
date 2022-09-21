@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementIntentUserStateSummary
 
 ## SYNOPSIS
-Get userStateSummary from deviceManagement
+A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementIntentUserStateSummary -InputObject <IDeviceManagementIden
 ```
 
 ## DESCRIPTION
-Get userStateSummary from deviceManagement
+A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 
 ## EXAMPLES
 

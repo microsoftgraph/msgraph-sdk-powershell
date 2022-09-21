@@ -17,10 +17,9 @@ Update the navigation property configurationPolicies in deviceManagement
 Update-MgDeviceManagementConfigurationPolicy -DeviceManagementConfigurationPolicyId <String>
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
- [-CreationSource <String>] [-Description <String>] [-Id <String>] [-IsAssigned]
- [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>]
- [-RoleScopeTagIds <String[]>] [-SettingCount <Int32>]
- [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
+ [-CreationSource <String>] [-Description <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
+ [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>] [-RoleScopeTagIds <String[]>]
+ [-SettingCount <Int32>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
  [-TemplateReference <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -45,10 +44,9 @@ Update-MgDeviceManagementConfigurationPolicy -InputObject <IDeviceManagementIden
 Update-MgDeviceManagementConfigurationPolicy -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
- [-CreationSource <String>] [-Description <String>] [-Id <String>] [-IsAssigned]
- [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>]
- [-RoleScopeTagIds <String[]>] [-SettingCount <Int32>]
- [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
+ [-CreationSource <String>] [-Description <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
+ [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>] [-RoleScopeTagIds <String[]>]
+ [-SettingCount <Int32>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
  [-TemplateReference <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -196,22 +194,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -IsAssigned
-Policy assignment status.
-This property is read-only.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -428,7 +410,6 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicy>: Device Manag
   - `[CreatedDateTime <DateTime?>]`: Policy creation date and time
   - `[CreationSource <String>]`: Policy creation source
   - `[Description <String>]`: Policy description
-  - `[IsAssigned <Boolean?>]`: Policy assignment status. This property is read-only.
   - `[LastModifiedDateTime <DateTime?>]`: Policy last modification date and time
   - `[Name <String>]`: Policy name
   - `[Platforms <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
@@ -474,8 +455,6 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicy>: Device Manag
   - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
   - `[TemplateReference <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>]`: Policy template reference information
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[TemplateDisplayName <String>]`: Template Display Name of the referenced template. This property is read-only.
-    - `[TemplateDisplayVersion <String>]`: Template Display Version of the referenced Template. This property is read-only.
     - `[TemplateFamily <DeviceManagementConfigurationTemplateFamily?>]`: Describes the TemplateFamily for the Template entity
     - `[TemplateId <String>]`: Template id
 
@@ -646,8 +625,6 @@ SETTINGS <IMicrosoftGraphDeviceManagementConfigurationSetting[]>: Policy setting
 
 TEMPLATEREFERENCE <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>: Policy template reference information
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[TemplateDisplayName <String>]`: Template Display Name of the referenced template. This property is read-only.
-  - `[TemplateDisplayVersion <String>]`: Template Display Version of the referenced Template. This property is read-only.
   - `[TemplateFamily <DeviceManagementConfigurationTemplateFamily?>]`: Describes the TemplateFamily for the Template entity
   - `[TemplateId <String>]`: Template id
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric
 
 ## SYNOPSIS
-Get workFromAnywhereMetrics from deviceManagement
+The user experience analytics work from anywhere metrics.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric
 ```
 
 ## DESCRIPTION
-Get workFromAnywhereMetrics from deviceManagement
+The user experience analytics work from anywhere metrics.
 
 ## EXAMPLES
 

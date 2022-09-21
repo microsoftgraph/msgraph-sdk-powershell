@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticBaselineBestPracticeMetric
 
 ## SYNOPSIS
-Get bestPracticesMetrics from deviceManagement
+The user experience analytics best practices metrics.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementUserExperienceAnalyticBaselineBestPracticeMetric
 ```
 
 ## DESCRIPTION
-Get bestPracticesMetrics from deviceManagement
+The user experience analytics best practices metrics.
 
 ## EXAMPLES
 

@@ -17,11 +17,10 @@ Create new navigation property to configurationPolicyTemplates for deviceManagem
 New-MgDeviceManagementConfigurationPolicyTemplate [-AdditionalProperties <Hashtable>]
  [-AllowUnmanagedSettings] [-BaseId <String>] [-Description <String>] [-DisplayName <String>]
  [-DisplayVersion <String>] [-Id <String>] [-LifecycleState <DeviceManagementTemplateLifecycleState>]
- [-Platforms <DeviceManagementConfigurationPlatforms>] [-SettingTemplateCount <Int32>]
+ [-Platforms <DeviceManagementConfigurationPlatforms>]
  [-SettingTemplates <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
- [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Version <Int32>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -189,23 +188,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SettingTemplateCount
-Number of setting templates.
-Valid values 0 to 2147483647.
-This property is read-only.
-
-```yaml
-Type: System.Int32
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SettingTemplates
 Setting templates
 To construct, please use Get-Help -Online and see NOTES section for SETTINGTEMPLATES properties and create a hash table.
@@ -242,23 +224,6 @@ Describes the TemplateFamily for the Template entity
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationTemplateFamily
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Version
-Template version.
-Valid values 1 to 2147483647.
-This property is read-only.
-
-```yaml
-Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -330,7 +295,6 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate>: Devi
   - `[DisplayVersion <String>]`: Description of template version
   - `[LifecycleState <DeviceManagementTemplateLifecycleState?>]`: Describes current lifecycle state of a template
   - `[Platforms <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
-  - `[SettingTemplateCount <Int32?>]`: Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
   - `[SettingTemplates <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>]`: Setting templates
     - `[Id <String>]`: 
     - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions
@@ -369,7 +333,6 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate>: Devi
       - `[SettingInstanceTemplateId <String>]`: Setting Instance Template Id
   - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
   - `[TemplateFamily <DeviceManagementConfigurationTemplateFamily?>]`: Describes the TemplateFamily for the Template entity
-  - `[Version <Int32?>]`: Template version. Valid values 1 to 2147483647. This property is read-only.
 
 SETTINGTEMPLATES <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>: Setting templates
   - `[Id <String>]`: 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticBaselineBatteryHealthMetric
 
 ## SYNOPSIS
-Get batteryHealthMetrics from deviceManagement
+The user experience analytics battery health metrics.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementUserExperienceAnalyticBaselineBatteryHealthMetric
 ```
 
 ## DESCRIPTION
-Get batteryHealthMetrics from deviceManagement
+The user experience analytics battery health metrics.
 
 ## EXAMPLES
 

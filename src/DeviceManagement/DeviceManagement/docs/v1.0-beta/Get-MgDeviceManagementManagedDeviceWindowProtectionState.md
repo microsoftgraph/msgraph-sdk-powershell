@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDeviceManagementManagedDeviceWindowProtectionState
 
 ## SYNOPSIS
-Get windowsProtectionState from deviceManagement
+The device protection status.
+This property is read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgDeviceManagementManagedDeviceWindowProtectionState -InputObject <IDeviceMa
 ```
 
 ## DESCRIPTION
-Get windowsProtectionState from deviceManagement
+The device protection status.
+This property is read-only.
 
 ## EXAMPLES
 
