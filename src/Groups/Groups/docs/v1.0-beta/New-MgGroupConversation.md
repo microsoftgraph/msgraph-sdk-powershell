@@ -8,7 +8,10 @@ schema: 2.0.0
 # New-MgGroupConversation
 
 ## SYNOPSIS
-Create new navigation property to conversations for groups
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## SYNTAX
 
@@ -40,9 +43,81 @@ New-MgGroupConversation -InputObject <IGroupsIdentity> [-AdditionalProperties <H
 ```
 
 ## DESCRIPTION
-Create new navigation property to conversations for groups
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgGroupConversation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	Topic = "New head count"
+	Threads = @(
+		@{
+			Posts = @(
+				@{
+					Body = @{
+						ContentType = "html"
+						Content = "The confirmation will come by the end of the week."
+					}
+					NewParticipants = @(
+						@{
+							EmailAddress = @{
+								Name = "Adele Vance"
+								Address = "AdeleV@contoso.onmicrosoft.com"
+							}
+						}
+					)
+				}
+			)
+		}
+	)
+}
+New-MgGroupConversation -GroupId $groupId -BodyParameter $params
+```
+
+This example shows how to use the New-MgGroupConversation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgGroupConversation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	Topic = "Does anyone have a second?"
+	Threads = @(
+		@{
+			Posts = @(
+				@{
+					Body = @{
+						ContentType = "HTML"
+						Content = "This is urgent!"
+					}
+					Extensions = @(
+						@{
+							"@odata.type" = "microsoft.graph.openTypeExtension"
+							ExtensionName = "Com.Contoso.Benefits"
+							CompanyName = "Contoso"
+							ExpirationDate = "2016-08-03T11:00:00.000Z"
+							TopPicks = @(
+								"Employees only"
+								"Add spouse or guest"
+								"Add family"
+							)
+						}
+					)
+				}
+			)
+		}
+	)
+}
+New-MgGroupConversation -GroupId $groupId -BodyParameter $params
+```
+
+This example shows how to use the New-MgGroupConversation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -285,8 +360,8 @@ BODYPARAMETER <IMicrosoftGraphConversation1>: conversation
     - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
       - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Address <String>]`: The email address of an entity instance.
-        - `[Name <String>]`: The display name of an entity instance.
+        - `[Address <String>]`: The email address of the person or entity.
+        - `[Name <String>]`: The display name of the person or entity.
     - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
     - `[IsLocked <Boolean?>]`: Indicates if the thread is locked. Returned by default.
     - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
@@ -301,7 +376,7 @@ BODYPARAMETER <IMicrosoftGraphConversation1>: conversation
         - `[ContentType <String>]`: The MIME type.
         - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
         - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+        - `[Name <String>]`: The attachment's file name.
         - `[Size <Int32?>]`: The length of the attachment in bytes.
       - `[Body <IMicrosoftGraphItemBody>]`: itemBody
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -389,8 +464,8 @@ THREADS <IMicrosoftGraphConversationThread1[]>: A collection of all the conversa
   - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
   - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
   - `[IsLocked <Boolean?>]`: Indicates if the thread is locked. Returned by default.
   - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
@@ -405,7 +480,7 @@ THREADS <IMicrosoftGraphConversationThread1[]>: A collection of all the conversa
       - `[ContentType <String>]`: The MIME type.
       - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
       - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-      - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+      - `[Name <String>]`: The attachment's file name.
       - `[Size <Int32?>]`: The length of the attachment in bytes.
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

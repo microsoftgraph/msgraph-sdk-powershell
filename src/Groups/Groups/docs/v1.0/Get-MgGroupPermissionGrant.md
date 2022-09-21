@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgGroupPermissionGrant
 
 ## SYNOPSIS
-Get permissionGrants from groups
+The permission that has been granted for a group to a specific application.
+Supports $expand.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgGroupPermissionGrant -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgGroupPermissionGrant -GroupId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,35 +33,29 @@ Get-MgGroupPermissionGrant -InputObject <IGroupsIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get permissionGrants from groups
+The permission that has been granted for a group to a specific application.
+Supports $expand.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgGroupPermissionGrant Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupPermissionGrant -GroupId $groupId
+```
+
+This example shows how to use the Get-MgGroupPermissionGrant Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases: CV
 
 Required: False
 Position: Named
@@ -127,21 +122,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

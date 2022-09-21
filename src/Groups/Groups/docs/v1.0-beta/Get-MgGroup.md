@@ -8,30 +8,36 @@ schema: 2.0.0
 # Get-MgGroup
 
 ## SYNOPSIS
-Get group
+Get the properties and relationships of a group object.
+This operation returns by default only a subset of all the available properties, as noted in the Properties section.
+To get properties that are _not_ returned by default, specify them in a `$select` OData query option.
+The **hasMembersWithLicenseErrors** and **isArchived** properties are an exception and are not returned in the `$select` query.
+Because the **group** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **group** instance.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgGroup [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgGroup [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-Top <Int32>]
+ [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroup -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgGroup -GroupId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroup -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgGroup -InputObject <IGroupsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get group
+Get the properties and relationships of a group object.
+This operation returns by default only a subset of all the available properties, as noted in the Properties section.
+To get properties that are _not_ returned by default, specify them in a `$select` OData query option.
+The **hasMembersWithLicenseErrors** and **isArchived** properties are an exception and are not returned in the `$select` query.
+Because the **group** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **group** instance.
 
 ## EXAMPLES
 
@@ -150,70 +156,9 @@ For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ## PARAMETERS
 
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ConsistencyLevel
 Indicates the requested consistency level.
 Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
-
-```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases: CV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
 
 ```yaml
 Type: System.String
@@ -258,21 +203,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Property
 Select properties to be returned
 
@@ -293,21 +223,6 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: System.Int32
 Parameter Sets: List1
 Aliases:
 

@@ -1,47 +1,47 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/update-mggroupthreadpostattachment
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggroupdriveitemsensitivitylabel
 schema: 2.0.0
 ---
 
-# Update-MgGroupThreadPostAttachment
+# Set-MgGroupDriveItemSensitivityLabel
 
 ## SYNOPSIS
-Update the navigation property attachments in groups
+Invoke action assignSensitivityLabel
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### AssignExpanded (Default)
 ```
-Update-MgGroupThreadPostAttachment -AttachmentId <String> -ConversationThreadId <String> -GroupId <String>
- -PostId <String> [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-IsInline]
- [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Update
-```
-Update-MgGroupThreadPostAttachment -AttachmentId <String> -ConversationThreadId <String> -GroupId <String>
- -PostId <String> -BodyParameter <IMicrosoftGraphAttachment> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgGroupDriveItemSensitivityLabel -DriveId <String> -DriveItemId <String> -GroupId <String>
+ [-AdditionalProperties <Hashtable>] [-AssignmentMethod <String>] [-JustificationText <String>]
+ [-SensitivityLabelId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### Assign
 ```
-Update-MgGroupThreadPostAttachment -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphAttachment>
+Set-MgGroupDriveItemSensitivityLabel -DriveId <String> -DriveItemId <String> -GroupId <String>
+ -BodyParameter <IPaths1EhooezGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### AssignViaIdentity
 ```
-Update-MgGroupThreadPostAttachment -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
- [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
- [-Size <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgGroupDriveItemSensitivityLabel -InputObject <IGroupsIdentity>
+ -BodyParameter <IPaths1EhooezGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### AssignViaIdentityExpanded
+```
+Set-MgGroupDriveItemSensitivityLabel -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+ [-AssignmentMethod <String>] [-JustificationText <String>] [-SensitivityLabelId <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property attachments in groups
+Invoke action assignSensitivityLabel
 
 ## EXAMPLES
 
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -62,15 +62,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AttachmentId
-key: id of attachment
+### -AssignmentMethod
+sensitivityLabelAssignmentMethod
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -78,12 +78,12 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-attachment
+.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
-Parameter Sets: Update, UpdateViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IPaths1EhooezGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
 Required: True
@@ -93,27 +93,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ContentType
-The MIME type.
+### -DriveId
+key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: Assign, AssignExpanded
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ConversationThreadId
-key: id of conversationThread
+### -DriveItemId
+key: id of driveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Assign, AssignExpanded
 Aliases:
 
 Required: True
@@ -128,25 +128,10 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Assign, AssignExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -159,7 +144,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -169,44 +154,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -IsInline
-true if the attachment is an inline attachment; otherwise, false.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-The display name of the attachment.
-This does not need to be the actual file name.
+### -JustificationText
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -231,27 +184,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PostId
-key: id of post
+### -SensitivityLabelId
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Size
-The length of the attachment in bytes.
-
-```yaml
-Type: System.Int32
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -299,7 +237,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
+### Microsoft.Graph.PowerShell.Models.IPaths1EhooezGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -314,14 +252,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphAttachment>: attachment
+BODYPARAMETER <IPaths1EhooezGroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[ContentType <String>]`: The MIME type.
-  - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
-  - `[Size <Int32?>]`: The length of the attachment in bytes.
+  - `[AssignmentMethod <String>]`: sensitivityLabelAssignmentMethod
+  - `[JustificationText <String>]`: 
+  - `[SensitivityLabelId <String>]`: 
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment

@@ -8,45 +8,40 @@ schema: 2.0.0
 # Get-MgGroupRejectedSender
 
 ## SYNOPSIS
-Get rejectedSenders from groups
+Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
+Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 
 ## SYNTAX
 
 ```
-Get-MgGroupRejectedSender -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgGroupRejectedSender -GroupId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get rejectedSenders from groups
+Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
+Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgGroupRejectedSender Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupRejectedSender -GroupId $groupId
+```
+
+This example shows how to use the Get-MgGroupRejectedSender Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
-### -All
-List all pages.
+### -Count
+Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: CV
 
 Required: False
 Position: Named
@@ -79,21 +74,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

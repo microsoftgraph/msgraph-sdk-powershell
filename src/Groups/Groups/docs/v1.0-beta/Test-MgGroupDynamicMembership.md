@@ -8,7 +8,9 @@ schema: 2.0.0
 # Test-MgGroupDynamicMembership
 
 ## SYNOPSIS
-Invoke action evaluateDynamicMembership
+Evaluate whether a user or device is or would be a member of a dynamic group.
+The membership rule is returned along with other details that were used in the evaluation.
+You can complete this operation in the following ways:
 
 ## SYNTAX
 
@@ -39,9 +41,23 @@ Test-MgGroupDynamicMembership -InputObject <IGroupsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Invoke action evaluateDynamicMembership
+Evaluate whether a user or device is or would be a member of a dynamic group.
+The membership rule is returned along with other details that were used in the evaluation.
+You can complete this operation in the following ways:
 
 ## EXAMPLES
+
+### Example 1: Using the Test-MgGroupDynamicMembership Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	MemberId = "319b41e8-d9e4-42f8-bdc9-741113f48b33"
+}
+Test-MgGroupDynamicMembership -GroupId $groupId -BodyParameter $params
+```
+
+This example shows how to use the Test-MgGroupDynamicMembership Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

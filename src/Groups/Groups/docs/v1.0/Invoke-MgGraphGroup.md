@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgGraphGroup
 
 ## SYNOPSIS
-Invoke action unsubscribeByMail
+Calling this method will prevent the current user from receiving email notifications for this group about new posts, events, and files in that group.
+Supported for Microsoft 365 groups only.
 
 ## SYNTAX
 
@@ -23,9 +24,19 @@ Invoke-MgGraphGroup -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-What
 ```
 
 ## DESCRIPTION
-Invoke action unsubscribeByMail
+Calling this method will prevent the current user from receiving email notifications for this group about new posts, events, and files in that group.
+Supported for Microsoft 365 groups only.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgGraphGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Invoke-MgGraphGroup -GroupId $groupId
+```
+
+This example shows how to use the Invoke-MgGraphGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

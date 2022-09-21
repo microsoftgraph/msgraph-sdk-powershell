@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgDismissGroupCalendarEventReminder
 
 ## SYNOPSIS
-Invoke action dismissReminder
+Dismiss a reminder that has been triggered for an event in a user calendar.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgDismissGroupCalendarEventReminder -InputObject <IGroupsIdentity> [-Pass
 ```
 
 ## DESCRIPTION
-Invoke action dismissReminder
+Dismiss a reminder that has been triggered for an event in a user calendar.
 
 ## EXAMPLES
 

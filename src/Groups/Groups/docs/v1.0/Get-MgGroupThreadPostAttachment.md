@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgGroupThreadPostAttachment
 
 ## SYNOPSIS
-Get attachments from groups
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgGroupThreadPostAttachment -ConversationThreadId <String> -GroupId <String> -PostId <String>
+Get-MgGroupThreadPostAttachment -ConversationThreadId <String> -GroupId <String> -PostId <String> [-Count]
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,26 +34,22 @@ Get-MgGroupThreadPostAttachment -InputObject <IGroupsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get attachments from groups
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 
-## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+### Example 1: Using the Get-MgGroupThreadPostAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupThreadPostAttachment -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId
 ```
+
+This example shows how to use the Get-MgGroupThreadPostAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+## PARAMETERS
 
 ### -AttachmentId
 key: id of attachment
@@ -83,14 +81,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -157,21 +154,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
