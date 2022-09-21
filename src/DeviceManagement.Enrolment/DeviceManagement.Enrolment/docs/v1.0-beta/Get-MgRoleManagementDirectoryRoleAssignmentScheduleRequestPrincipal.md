@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestPrincipal
 
 ## SYNOPSIS
-Get principal from roleManagement
+The principal that's getting a role assignment through the request.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +28,8 @@ Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestPrincipal
 ```
 
 ## DESCRIPTION
-Get principal from roleManagement
+The principal that's getting a role assignment through the request.
+Supports $expand.
 
 ## EXAMPLES
 

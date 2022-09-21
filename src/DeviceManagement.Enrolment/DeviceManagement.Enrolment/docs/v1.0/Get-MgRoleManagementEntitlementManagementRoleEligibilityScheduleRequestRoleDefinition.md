@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestRoleDefinition
 
 ## SYNOPSIS
-Get roleDefinition from roleManagement
+Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +28,8 @@ Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestRoleDefin
 ```
 
 ## DESCRIPTION
-Get roleDefinition from roleManagement
+Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property.
+Supports $expand.
 
 ## EXAMPLES
 

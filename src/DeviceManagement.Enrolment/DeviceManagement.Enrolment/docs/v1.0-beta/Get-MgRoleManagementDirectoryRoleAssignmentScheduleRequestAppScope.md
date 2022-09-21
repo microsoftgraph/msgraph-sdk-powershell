@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestAppScope
 
 ## SYNOPSIS
-Get appScope from roleManagement
+Read-only property with details of the app-specific scope when the assignment is scoped to an app.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +29,9 @@ Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestAppScope
 ```
 
 ## DESCRIPTION
-Get appScope from roleManagement
+Read-only property with details of the app-specific scope when the assignment is scoped to an app.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 

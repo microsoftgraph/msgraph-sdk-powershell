@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing
 
 ## SYNOPSIS
-Get activatedUsing from roleManagement
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it is null.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +29,9 @@ Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing
 ```
 
 ## DESCRIPTION
-Get activatedUsing from roleManagement
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it is null.
+Supports $expand.
 
 ## EXAMPLES
 

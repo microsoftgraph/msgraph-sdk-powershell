@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryRoleAssignmentDirectoryScope
 
 ## SYNOPSIS
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Read-only.
+Supports $expand.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgRoleManagementDirectoryRoleAssignmentDirectoryScope -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Read-only.
+Supports $expand.
 
 ## EXAMPLES
 

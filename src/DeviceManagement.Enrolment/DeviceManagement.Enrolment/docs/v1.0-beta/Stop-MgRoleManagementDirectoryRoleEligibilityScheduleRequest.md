@@ -8,7 +8,8 @@ schema: 2.0.0
 # Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest
 
 ## SYNOPSIS
-Invoke action cancel
+Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
 
 ## SYNTAX
 
@@ -25,9 +26,19 @@ Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest -InputObject <IDevi
 ```
 
 ## DESCRIPTION
-Invoke action cancel
+Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
 
 ## EXAMPLES
+
+### Example 1: Using the Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest -UnifiedRoleEligibilityScheduleRequestId $unifiedRoleEligibilityScheduleRequestId
+```
+
+This example shows how to use the Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

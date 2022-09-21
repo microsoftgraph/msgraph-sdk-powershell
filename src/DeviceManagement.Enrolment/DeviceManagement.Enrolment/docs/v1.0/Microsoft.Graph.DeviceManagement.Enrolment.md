@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrolment
-Module Guid: 22874840-c9c0-4bc0-810a-7914cf43e42f
+Module Guid: ad3b5efc-ace6-4cd1-ab3e-28d31656772a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.enrolment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,19 +12,20 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.DeviceManagement.Enrolment Cmdlets
 ### [Get-MgDeviceManagementConditionalAccessSetting](Get-MgDeviceManagementConditionalAccessSetting.md)
-Get conditionalAccessSettings from deviceManagement
+The Exchange on premises conditional access settings.
+On premises conditional access will require devices to be both enrolled and compliant for mail access
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfiguration](Get-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Get deviceEnrollmentConfigurations from deviceManagement
+The list of device enrollment configurations
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
-Get assignments from deviceManagement
+The list of group assignments for the device configuration profile
 
 ### [Get-MgDeviceManagementImportedWindowAutopilotDeviceIdentity](Get-MgDeviceManagementImportedWindowAutopilotDeviceIdentity.md)
-Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+Collection of imported Windows autopilot devices.
 
 ### [Get-MgDeviceManagementWindowAutopilotDeviceIdentity](Get-MgDeviceManagementWindowAutopilotDeviceIdentity.md)
-Get windowsAutopilotDeviceIdentities from deviceManagement
+The Windows autopilot device identities contained collection.
 
 ### [Get-MgRoleManagement](Get-MgRoleManagement.md)
 Get roleManagement
@@ -33,163 +34,223 @@ Get roleManagement
 Get directory from roleManagement
 
 ### [Get-MgRoleManagementDirectoryRoleAssignment](Get-MgRoleManagementDirectoryRoleAssignment.md)
-Get roleAssignments from roleManagement
+Resource to grant access to users or groups.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentAppScope](Get-MgRoleManagementDirectoryRoleAssignmentAppScope.md)
-Get appScope from roleManagement
+Read-only property with details of the app specific scope when the assignment scope is app specific.
+Containment entity.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentDirectoryScope](Get-MgRoleManagementDirectoryRoleAssignmentDirectoryScope.md)
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Read-only.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentPrincipal](Get-MgRoleManagementDirectoryRoleAssignmentPrincipal.md)
-Get principal from roleManagement
+Referencing the assigned principal.
+Read-only.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinition](Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinition.md)
-Get roleDefinition from roleManagement
+The roleDefinition the assignment is for.
+Supports $expand.
+roleDefinition.Id will be auto expanded.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentSchedule](Get-MgRoleManagementDirectoryRoleAssignmentSchedule.md)
-Get roleAssignmentSchedules from roleManagement
+Schedules for active role assignment operations.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleActivatedUsing](Get-MgRoleManagementDirectoryRoleAssignmentScheduleActivatedUsing.md)
-Get activatedUsing from roleManagement
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it is null.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstance](Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstance.md)
-Get roleAssignmentScheduleInstances from roleManagement
+Instances for active role assignments.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing](Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing.md)
-Get activatedUsing from roleManagement
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it is null.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-Get roleAssignmentScheduleRequests from roleManagement
+Requests for active role assignments to principals through PIM.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestActivatedUsing](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestActivatedUsing.md)
-Get activatedUsing from roleManagement
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it's null.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestAppScope](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestAppScope.md)
-Get appScope from roleManagement
+Read-only property with details of the app-specific scope when the assignment is scoped to an app.
+Nullable.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestDirectoryScope](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestDirectoryScope.md)
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Read-only.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestPrincipal](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestPrincipal.md)
-Get principal from roleManagement
+The principal that's getting a role assignment through the request.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestRoleDefinition](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestRoleDefinition.md)
-Get roleDefinition from roleManagement
+Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestTargetSchedule](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestTargetSchedule.md)
-Get targetSchedule from roleManagement
+The schedule for an eligible role assignment that is referenced through the targetScheduleId property.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleDefinition](Get-MgRoleManagementDirectoryRoleDefinition.md)
-Get roleDefinitions from roleManagement
+Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 
 ### [Get-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Get-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
-Get inheritsPermissionsFrom from roleManagement
+Read-only collection of role definitions that the given role definition inherits from.
+Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilitySchedule](Get-MgRoleManagementDirectoryRoleEligibilitySchedule.md)
-Get roleEligibilitySchedules from roleManagement
+Schedules for role eligibility operations.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstance](Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstance.md)
-Get roleEligibilityScheduleInstances from roleManagement
+Instances for role eligibility requests.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
-Get roleEligibilityScheduleRequests from roleManagement
+Requests for role eligibilities for principals through PIM.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestAppScope](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestAppScope.md)
-Get appScope from roleManagement
+Read-only property with details of the app-specific scope when the role eligibility is scoped to an app.
+Nullable.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestDirectoryScope](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestDirectoryScope.md)
-Get directoryScope from roleManagement
+The directory object that is the scope of the role eligibility.
+Read-only.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestPrincipal](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestPrincipal.md)
-Get principal from roleManagement
+The principal that's getting a role eligibility through the request.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestRoleDefinition](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestRoleDefinition.md)
-Get roleDefinition from roleManagement
+Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property.
+Supports $expand.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestTargetSchedule](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestTargetSchedule.md)
-Get targetSchedule from roleManagement
+The schedule for a role eligibility that is referenced through the targetScheduleId property.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagement](Get-MgRoleManagementEntitlementManagement.md)
-Get entitlementManagement from roleManagement
+Container for roles and assignments for entitlement management resources.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignment](Get-MgRoleManagementEntitlementManagementRoleAssignment.md)
-Get roleAssignments from roleManagement
+Resource to grant access to users or groups.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentAppScope](Get-MgRoleManagementEntitlementManagementRoleAssignmentAppScope.md)
-Get appScope from roleManagement
+Read-only property with details of the app specific scope when the assignment scope is app specific.
+Containment entity.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScope](Get-MgRoleManagementEntitlementManagementRoleAssignmentDirectoryScope.md)
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Read-only.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentPrincipal](Get-MgRoleManagementEntitlementManagementRoleAssignmentPrincipal.md)
-Get principal from roleManagement
+Referencing the assigned principal.
+Read-only.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinition.md)
-Get roleDefinition from roleManagement
+The roleDefinition the assignment is for.
+Supports $expand.
+roleDefinition.Id will be auto expanded.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentSchedule](Get-MgRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
-Get roleAssignmentSchedules from roleManagement
+Schedules for active role assignment operations.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing.md)
-Get activatedUsing from roleManagement
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it is null.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance.md)
-Get roleAssignmentScheduleInstances from roleManagement
+Instances for active role assignments.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceActivatedUsing](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceActivatedUsing.md)
-Get activatedUsing from roleManagement
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it is null.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-Get roleAssignmentScheduleRequests from roleManagement
+Requests for active role assignments to principals through PIM.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestActivatedUsing](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestActivatedUsing.md)
-Get activatedUsing from roleManagement
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it's null.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestAppScope](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestAppScope.md)
-Get appScope from roleManagement
+Read-only property with details of the app-specific scope when the assignment is scoped to an app.
+Nullable.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestDirectoryScope](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestDirectoryScope.md)
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Read-only.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestPrincipal](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestPrincipal.md)
-Get principal from roleManagement
+The principal that's getting a role assignment through the request.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestRoleDefinition.md)
-Get roleDefinition from roleManagement
+Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestTargetSchedule](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestTargetSchedule.md)
-Get targetSchedule from roleManagement
+The schedule for an eligible role assignment that is referenced through the targetScheduleId property.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleDefinition.md)
-Get roleDefinitions from roleManagement
+Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Get-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
-Get inheritsPermissionsFrom from roleManagement
+Read-only collection of role definitions that the given role definition inherits from.
+Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilitySchedule](Get-MgRoleManagementEntitlementManagementRoleEligibilitySchedule.md)
-Get roleEligibilitySchedules from roleManagement
+Schedules for role eligibility operations.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance.md)
-Get roleEligibilityScheduleInstances from roleManagement
+Instances for role eligibility requests.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
-Get roleEligibilityScheduleRequests from roleManagement
+Requests for role eligibilities for principals through PIM.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestAppScope](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestAppScope.md)
-Get appScope from roleManagement
+Read-only property with details of the app-specific scope when the role eligibility is scoped to an app.
+Nullable.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestDirectoryScope](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestDirectoryScope.md)
-Get directoryScope from roleManagement
+The directory object that is the scope of the role eligibility.
+Read-only.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestPrincipal](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestPrincipal.md)
-Get principal from roleManagement
+The principal that's getting a role eligibility through the request.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestRoleDefinition.md)
-Get roleDefinition from roleManagement
+Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property.
+Supports $expand.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestTargetSchedule](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestTargetSchedule.md)
-Get targetSchedule from roleManagement
+The schedule for a role eligibility that is referenced through the targetScheduleId property.
+Supports $expand.
 
 ### [Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleByCurrentUser](Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleByCurrentUser.md)
 Invoke function filterByCurrentUser
@@ -240,7 +301,7 @@ Create new navigation property to importedWindowsAutopilotDeviceIdentities for d
 Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignment](New-MgRoleManagementDirectoryRoleAssignment.md)
-Create new navigation property to roleAssignments for roleManagement
+Create a new unifiedRoleAssignment object.
 
 ### [New-MgRoleManagementDirectoryRoleAssignmentSchedule](New-MgRoleManagementDirectoryRoleAssignmentSchedule.md)
 Create new navigation property to roleAssignmentSchedules for roleManagement
@@ -249,10 +310,12 @@ Create new navigation property to roleAssignmentSchedules for roleManagement
 Create new navigation property to roleAssignmentScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-Create new navigation property to roleAssignmentScheduleRequests for roleManagement
+In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:\n+ Request active and persistent role assignments for a principal, with or without expiry dates.\n+ Activate, deactivate, extend, or renew an eligible role assignment for a principal.
+To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
+See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
 
 ### [New-MgRoleManagementDirectoryRoleDefinition](New-MgRoleManagementDirectoryRoleDefinition.md)
-Create new navigation property to roleDefinitions for roleManagement
+Create a new custom unifiedRoleDefinition object.
 
 ### [New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -264,10 +327,11 @@ Create new navigation property to roleEligibilitySchedules for roleManagement
 Create new navigation property to roleEligibilityScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
-Create new navigation property to roleEligibilityScheduleRequests for roleManagement
+In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
+This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignment](New-MgRoleManagementEntitlementManagementRoleAssignment.md)
-Create new navigation property to roleAssignments for roleManagement
+Create a new unifiedRoleAssignment object.
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignmentSchedule](New-MgRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
 Create new navigation property to roleAssignmentSchedules for roleManagement
@@ -276,10 +340,12 @@ Create new navigation property to roleAssignmentSchedules for roleManagement
 Create new navigation property to roleAssignmentScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-Create new navigation property to roleAssignmentScheduleRequests for roleManagement
+In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:\n+ Request active and persistent role assignments for a principal, with or without expiry dates.\n+ Activate, deactivate, extend, or renew an eligible role assignment for a principal.
+To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
+See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinition](New-MgRoleManagementEntitlementManagementRoleDefinition.md)
-Create new navigation property to roleDefinitions for roleManagement
+Create a new custom unifiedRoleDefinition object.
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -291,7 +357,8 @@ Create new navigation property to roleEligibilitySchedules for roleManagement
 Create new navigation property to roleEligibilityScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
-Create new navigation property to roleEligibilityScheduleRequests for roleManagement
+In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
+This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
 
 ### [Remove-MgDeviceManagementConditionalAccessSetting](Remove-MgDeviceManagementConditionalAccessSetting.md)
 Delete navigation property conditionalAccessSettings for deviceManagement
@@ -375,16 +442,20 @@ Delete navigation property roleEligibilityScheduleInstances for roleManagement
 Delete navigation property roleEligibilityScheduleRequests for roleManagement
 
 ### [Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-Invoke action cancel
+Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
+After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
 
 ### [Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
-Invoke action cancel
+Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is `Granted` and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the **status** of the cancelled **unifiedRoleEligibilityScheduleRequest** changes to `Revoked`.
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-Invoke action cancel
+Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
+After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
-Invoke action cancel
+Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is `Granted` and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the **status** of the cancelled **unifiedRoleEligibilityScheduleRequest** changes to `Revoked`.
 
 ### [Update-MgDeviceManagementConditionalAccessSetting](Update-MgDeviceManagementConditionalAccessSetting.md)
 Update the navigation property conditionalAccessSettings in deviceManagement
