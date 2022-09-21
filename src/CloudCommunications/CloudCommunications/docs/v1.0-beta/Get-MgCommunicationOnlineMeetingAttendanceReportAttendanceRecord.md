@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord
 
 ## SYNOPSIS
-Get attendanceRecords from communications
+List of attendance records of an attendance report.
+Read-only.
 
 ## SYNTAX
 
 ### List2 (Default)
 ```
-Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord -OnlineMeetingId <String>
+Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord -OnlineMeetingId <String> [-Count]
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -47,32 +48,17 @@ Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord -InputObject <I
 ### List1
 ```
 Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord -MeetingAttendanceReportId <String>
- -OnlineMeetingId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+ -OnlineMeetingId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get attendanceRecords from communications
+List of attendance records of an attendance report.
+Read-only.
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1, List2
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -AttendanceRecordId
 key: id of attendanceRecord
@@ -89,14 +75,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1, List2
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -175,21 +160,6 @@ Parameter Sets: Get1, Get2, List1, List2
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1, List2
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
