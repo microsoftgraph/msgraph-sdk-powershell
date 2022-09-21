@@ -1,32 +1,34 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginformationprotectionbitlockerrecoverykey
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgpolicyauthenticationstrengthpolicy
 schema: 2.0.0
 ---
 
-# New-MgInformationProtectionBitlockerRecoveryKey
+# New-MgPolicyAuthenticationStrengthPolicy
 
 ## SYNOPSIS
-Create new navigation property to recoveryKeys for informationProtection
+Create new navigation property to authenticationStrengthPolicies for policies
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
-New-MgInformationProtectionBitlockerRecoveryKey [-AdditionalProperties <Hashtable>]
- [-CreatedDateTime <DateTime>] [-DeviceId <String>] [-Id <String>] [-Key <String>] [-VolumeType <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgPolicyAuthenticationStrengthPolicy [-AdditionalProperties <Hashtable>] [-AllowedCombinations <String[]>]
+ [-CombinationConfigurations <IMicrosoftGraphAuthenticationCombinationConfiguration[]>]
+ [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
+ [-ModifiedDateTime <DateTime>] [-PolicyType <String>] [-RequirementsSatisfied <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgInformationProtectionBitlockerRecoveryKey -BodyParameter <IMicrosoftGraphBitlockerRecoveryKey>
+New-MgPolicyAuthenticationStrengthPolicy -BodyParameter <IMicrosoftGraphAuthenticationStrengthPolicy>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to recoveryKeys for informationProtection
+Create new navigation property to authenticationStrengthPolicies for policies
 
 ## EXAMPLES
 
@@ -47,12 +49,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AllowedCombinations
+.
+
+```yaml
+Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
-bitlockerRecoveryKey
+authenticationStrengthPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthPolicy
 Parameter Sets: Create
 Aliases:
 
@@ -63,8 +80,24 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -CombinationConfigurations
+.
+To construct, please use Get-Help -Online and see NOTES section for COMBINATIONCONFIGURATIONS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationCombinationConfiguration[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CreatedDateTime
-The date and time when the key was originally backed up to Azure Active Directory.
+.
 
 ```yaml
 Type: System.DateTime
@@ -78,8 +111,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeviceId
-ID of the device the BitLocker key is originally backed up from.
+### -Description
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisplayName
+.
 
 ```yaml
 Type: System.String
@@ -108,8 +156,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Key
-The BitLocker recovery key.
+### -ModifiedDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PolicyType
+authenticationStrengthPolicyType
 
 ```yaml
 Type: System.String
@@ -123,8 +186,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VolumeType
-volumeType
+### -RequirementsSatisfied
+authenticationStrengthRequirements
 
 ```yaml
 Type: System.String
@@ -174,11 +237,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthPolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBitlockerRecoveryKey
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthPolicy
 
 ## NOTES
 
@@ -189,13 +252,23 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphBitlockerRecoveryKey>: bitlockerRecoveryKey
+BODYPARAMETER <IMicrosoftGraphAuthenticationStrengthPolicy>: authenticationStrengthPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
-  - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
-  - `[Key <String>]`: The BitLocker recovery key.
-  - `[VolumeType <String>]`: volumeType
+  - `[AllowedCombinations <String[]>]`: 
+  - `[CombinationConfigurations <IMicrosoftGraphAuthenticationCombinationConfiguration[]>]`: 
+    - `[Id <String>]`: 
+    - `[AppliesToCombinations <String[]>]`: 
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[ModifiedDateTime <DateTime?>]`: 
+  - `[PolicyType <String>]`: authenticationStrengthPolicyType
+  - `[RequirementsSatisfied <String>]`: authenticationStrengthRequirements
+
+COMBINATIONCONFIGURATIONS <IMicrosoftGraphAuthenticationCombinationConfiguration[]>: .
+  - `[Id <String>]`: 
+  - `[AppliesToCombinations <String[]>]`: 
 
 ## RELATED LINKS
 

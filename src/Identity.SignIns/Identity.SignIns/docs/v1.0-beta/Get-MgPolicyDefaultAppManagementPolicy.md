@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyDefaultAppManagementPolicy
 
 ## SYNOPSIS
-Get defaultAppManagementPolicy from policies
+Read the properties of a tenantAppManagementPolicy object.
 
 ## SYNTAX
 
@@ -18,9 +18,18 @@ Get-MgPolicyDefaultAppManagementPolicy [-ExpandProperty <String[]>] [-Property <
 ```
 
 ## DESCRIPTION
-Get defaultAppManagementPolicy from policies
+Read the properties of a tenantAppManagementPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPolicyDefaultAppManagementPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyDefaultAppManagementPolicy
+```
+
+This example shows how to use the Get-MgPolicyDefaultAppManagementPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgTrustFrameworkKeySet
 
 ## SYNOPSIS
-Create new navigation property to keySets for trustFramework
+Create a new trustFrameworkKeySet.
+The ID of the **trustFrameworkKeySet** is expected in the create request; however, it can be modified by the service.
+The modified ID will be available in the response and in the location header.
 
 ## SYNTAX
 
@@ -25,9 +27,57 @@ New-MgTrustFrameworkKeySet -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> 
 ```
 
 ## DESCRIPTION
-Create new navigation property to keySets for trustFramework
+Create a new trustFrameworkKeySet.
+The ID of the **trustFrameworkKeySet** is expected in the create request; however, it can be modified by the service.
+The modified ID will be available in the response and in the location header.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgTrustFrameworkKeySet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "keyset1"
+	Keys = @(
+		@{
+			K = "k-value"
+			X5c = @(
+				"x5c-value"
+			)
+			X5t = "x5t-value"
+			Kty = "kty-value"
+			Use = "use-value"
+			Exp = 99
+			Nbf = 99
+			Kid = "kid-value"
+			E = "e-value"
+			N = "n-value"
+			D = "d-value"
+			P = "p-value"
+			Q = "q-value"
+			Dp = "dp-value"
+			Dq = "dq-value"
+			Qi = "qi-value"
+		}
+	)
+}
+New-MgTrustFrameworkKeySet -BodyParameter $params
+```
+
+This example shows how to use the New-MgTrustFrameworkKeySet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgTrustFrameworkKeySet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "keyset1"
+}
+New-MgTrustFrameworkKeySet -BodyParameter $params
+```
+
+This example shows how to use the New-MgTrustFrameworkKeySet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
