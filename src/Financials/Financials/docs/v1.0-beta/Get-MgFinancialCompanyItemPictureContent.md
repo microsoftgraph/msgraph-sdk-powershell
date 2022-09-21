@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgFinancialCompanyItemPictureContent
 
 ## SYNOPSIS
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgFinancialCompanyItemPictureContent -InputObject <IFinancialsIdentity> -Out
 ```
 
 ## DESCRIPTION
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ## EXAMPLES
 

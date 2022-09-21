@@ -1,71 +1,45 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanydimensionvalue
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/new-mgfinancialcompanyunitofmeasure
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyDimensionValue
+# New-MgFinancialCompanyUnitOfMeasure
 
 ## SYNOPSIS
-Update the navigation property dimensionValues in financials
+Create new navigation property to unitsOfMeasure for financials
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
-Update-MgFinancialCompanyDimensionValue -CompanyId <String> -DimensionValueId <String>
- [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Update-MgFinancialCompanyDimensionValue -CompanyId <String> -DimensionId <String> -DimensionValueId <String>
- -BodyParameter <IMicrosoftGraphDimensionValue> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgFinancialCompanyUnitOfMeasure -CompanyId <String> [-AdditionalProperties <Hashtable>] [-Code <String>]
+ [-DisplayName <String>] [-Id <String>] [-InternationalStandardCode <String>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update1
+### Create
 ```
-Update-MgFinancialCompanyDimensionValue -CompanyId <String> -DimensionValueId <String>
- -BodyParameter <IMicrosoftGraphDimensionValue> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateExpanded
-```
-Update-MgFinancialCompanyDimensionValue -CompanyId <String> -DimensionId <String> -DimensionValueId <String>
- [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgFinancialCompanyDimensionValue -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphDimensionValue> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgFinancialCompanyDimensionValue -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphDimensionValue> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgFinancialCompanyDimensionValue -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
- [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru]
+New-MgFinancialCompanyUnitOfMeasure -CompanyId <String> -BodyParameter <IMicrosoftGraphUnitOfMeasure>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### CreateViaIdentity
 ```
-Update-MgFinancialCompanyDimensionValue -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
- [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity>
+ -BodyParameter <IMicrosoftGraphUnitOfMeasure> [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Code <String>] [-DisplayName <String>] [-Id <String>] [-InternationalStandardCode <String>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property dimensionValues in financials
+Create new navigation property to unitsOfMeasure for financials
 
 ## EXAMPLES
 
@@ -76,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -87,12 +61,12 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-dimensionValue
+unitOfMeasure
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDimensionValue
-Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -107,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -122,37 +96,7 @@ key: id of company
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DimensionId
-key: id of dimension
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DimensionValueId
-key: id of dimensionValue
-
-```yaml
-Type: System.String
-Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -167,7 +111,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -178,11 +122,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -198,7 +142,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -208,12 +152,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -LastModifiedDateTime
+### -InternationalStandardCode
 .
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -223,12 +167,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -LastModifiedDateTime
+.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.DateTime
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -276,11 +220,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDimensionValue
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 
 ## NOTES
 
@@ -291,11 +235,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphDimensionValue>: dimensionValue
+BODYPARAMETER <IMicrosoftGraphUnitOfMeasure>: unitOfMeasure
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Code <String>]`: 
   - `[DisplayName <String>]`: 
+  - `[InternationalStandardCode <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
 
 INPUTOBJECT <IFinancialsIdentity>: Identity Parameter

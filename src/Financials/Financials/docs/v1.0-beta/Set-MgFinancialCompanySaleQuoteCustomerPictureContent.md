@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgFinancialCompanySaleQuoteCustomerPictureContent
 
 ## SYNOPSIS
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Set-MgFinancialCompanySaleQuoteCustomerPictureContent -InputObject <IFinancialsI
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ## EXAMPLES
 

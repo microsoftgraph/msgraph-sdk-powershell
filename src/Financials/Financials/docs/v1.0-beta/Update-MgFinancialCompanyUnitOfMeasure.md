@@ -1,46 +1,46 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanydimension
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/update-mgfinancialcompanyunitofmeasure
 schema: 2.0.0
 ---
 
-# Update-MgFinancialCompanyDimension
+# Update-MgFinancialCompanyUnitOfMeasure
 
 ## SYNOPSIS
-Update the navigation property dimensions in financials
+Update the navigation property unitsOfMeasure in financials
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyDimension -CompanyId <String> -DimensionId <String>
- [-AdditionalProperties <Hashtable>] [-Code <String>] [-DimensionValues <IMicrosoftGraphDimensionValue[]>]
- [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
+Update-MgFinancialCompanyUnitOfMeasure -CompanyId <String> -UnitOfMeasureId <String>
+ [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
+ [-InternationalStandardCode <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgFinancialCompanyDimension -CompanyId <String> -DimensionId <String>
- -BodyParameter <IMicrosoftGraphDimension> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgFinancialCompanyUnitOfMeasure -CompanyId <String> -UnitOfMeasureId <String>
+ -BodyParameter <IMicrosoftGraphUnitOfMeasure> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgFinancialCompanyDimension -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphDimension> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity>
+ -BodyParameter <IMicrosoftGraphUnitOfMeasure> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyDimension -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
- [-Code <String>] [-DimensionValues <IMicrosoftGraphDimensionValue[]>] [-DisplayName <String>] [-Id <String>]
+Update-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Code <String>] [-DisplayName <String>] [-Id <String>] [-InternationalStandardCode <String>]
  [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property dimensions in financials
+Update the navigation property unitsOfMeasure in financials
 
 ## EXAMPLES
 
@@ -62,11 +62,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-dimension
+unitOfMeasure
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDimension
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -107,37 +107,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DimensionId
-key: id of dimension
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DimensionValues
-.
-To construct, please use Get-Help -Online and see NOTES section for DIMENSIONVALUES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDimensionValue[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DisplayName
 .
 
@@ -154,7 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -184,6 +153,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -InternationalStandardCode
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastModifiedDateTime
 .
 
@@ -208,6 +192,21 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnitOfMeasureId
+key: id of unitOfMeasure
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -252,7 +251,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDimension
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 
 ## OUTPUTS
 
@@ -267,22 +266,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphDimension>: dimension
+BODYPARAMETER <IMicrosoftGraphUnitOfMeasure>: unitOfMeasure
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Code <String>]`: 
-  - `[DimensionValues <IMicrosoftGraphDimensionValue[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[Code <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[DisplayName <String>]`: 
-  - `[LastModifiedDateTime <DateTime?>]`: 
-
-DIMENSIONVALUES <IMicrosoftGraphDimensionValue[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Code <String>]`: 
   - `[DisplayName <String>]`: 
+  - `[InternationalStandardCode <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
 
 INPUTOBJECT <IFinancialsIdentity>: Identity Parameter

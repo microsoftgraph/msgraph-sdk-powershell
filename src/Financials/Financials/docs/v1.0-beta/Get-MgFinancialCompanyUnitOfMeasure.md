@@ -1,31 +1,38 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanypurchaseinvoice
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanyunitofmeasure
 schema: 2.0.0
 ---
 
-# Remove-MgFinancialCompanyPurchaseInvoice
+# Get-MgFinancialCompanyUnitOfMeasure
 
 ## SYNOPSIS
-Delete navigation property purchaseInvoices for financials
+Get unitsOfMeasure from financials
 
 ## SYNTAX
 
-### Delete (Default)
+### List (Default)
 ```
-Remove-MgFinancialCompanyPurchaseInvoice -CompanyId <String> -PurchaseInvoiceId <String> [-IfMatch <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgFinancialCompanyUnitOfMeasure -CompanyId <String> [-Count] [-ExpandProperty <String[]>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### Get
 ```
-Remove-MgFinancialCompanyPurchaseInvoice -InputObject <IFinancialsIdentity> [-IfMatch <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgFinancialCompanyUnitOfMeasure -CompanyId <String> -UnitOfMeasureId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property purchaseInvoices for financials
+Get unitsOfMeasure from financials
 
 ## EXAMPLES
 
@@ -36,7 +43,7 @@ key: id of company
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -46,12 +53,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IfMatch
-ETag
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -67,7 +104,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -77,13 +114,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -Property
+Select properties to be returned
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String[]
 Parameter Sets: (All)
-Aliases:
+Aliases: Select
 
 Required: False
 Position: Named
@@ -92,46 +129,75 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PurchaseInvoiceId
-key: id of purchaseInvoice
+### -Search
+Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sort
+Order items by property values
+
+```yaml
+Type: System.String[]
+Parameter Sets: List
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnitOfMeasureId
+key: id of unitOfMeasure
+
+```yaml
+Type: System.String
+Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -147,7 +213,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 
 ## NOTES
 

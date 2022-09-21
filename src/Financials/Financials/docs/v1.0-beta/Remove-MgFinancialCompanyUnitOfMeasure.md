@@ -1,43 +1,31 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Financials
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanysaleorderlineaccount
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/remove-mgfinancialcompanyunitofmeasure
 schema: 2.0.0
 ---
 
-# Remove-MgFinancialCompanySaleOrderLineAccount
+# Remove-MgFinancialCompanyUnitOfMeasure
 
 ## SYNOPSIS
-Delete navigation property account for financials
+Delete navigation property unitsOfMeasure for financials
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-MgFinancialCompanySaleOrderLineAccount -CompanyId <String> -SalesOrderLineId <String>
- [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Delete1
-```
-Remove-MgFinancialCompanySaleOrderLineAccount -CompanyId <String> -SalesOrderId <String>
- -SalesOrderLineId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgFinancialCompanyUnitOfMeasure -CompanyId <String> -UnitOfMeasureId <String> [-IfMatch <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgFinancialCompanySaleOrderLineAccount -InputObject <IFinancialsIdentity> [-IfMatch <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity1
-```
-Remove-MgFinancialCompanySaleOrderLineAccount -InputObject <IFinancialsIdentity> [-IfMatch <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property account for financials
+Delete navigation property unitsOfMeasure for financials
 
 ## EXAMPLES
 
@@ -48,7 +36,7 @@ key: id of company
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -79,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -104,27 +92,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SalesOrderId
-key: id of salesOrder
+### -UnitOfMeasureId
+key: id of unitOfMeasure
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SalesOrderLineId
-key: id of salesOrderLine
-
-```yaml
-Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True

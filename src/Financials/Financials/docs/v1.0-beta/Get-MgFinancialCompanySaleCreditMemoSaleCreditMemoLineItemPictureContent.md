@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent
 
 ## SYNOPSIS
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent -InputO
 ```
 
 ## DESCRIPTION
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ## EXAMPLES
 

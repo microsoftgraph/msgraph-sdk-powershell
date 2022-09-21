@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Financials
-Module Guid: 07f17ff7-1f3c-4ea9-82f1-ab4b15a40d98
+Module Guid: f2cb02d8-1185-45c3-9cb6-a0fd04bff9af
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials
 Help Version: 1.0.0.0
 Locale: en-US
@@ -51,7 +51,7 @@ Get currency from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanyCustomerPaymentCustomerPictureContent](Get-MgFinancialCompanyCustomerPaymentCustomerPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod](Get-MgFinancialCompanyCustomerPaymentCustomerShipmentMethod.md)
 Get shipmentMethod from financials
@@ -75,7 +75,7 @@ Get currency from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod](Get-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerShipmentMethod.md)
 Get shipmentMethod from financials
@@ -96,7 +96,7 @@ Get paymentTerm from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanyCustomerPictureContent](Get-MgFinancialCompanyCustomerPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanyCustomerShipmentMethod](Get-MgFinancialCompanyCustomerShipmentMethod.md)
 Get shipmentMethod from financials
@@ -114,7 +114,7 @@ Get employees from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanyEmployeePictureContent](Get-MgFinancialCompanyEmployeePictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanyGeneralLedgerEntry](Get-MgFinancialCompanyGeneralLedgerEntry.md)
 Get generalLedgerEntries from financials
@@ -126,7 +126,7 @@ Get account from financials
 Get companyInformation from financials
 
 ### [Get-MgFinancialCompanyInformationPicture](Get-MgFinancialCompanyInformationPicture.md)
-Get media content for the navigation property companyInformation from financials
+Get picture for the navigation property companyInformation from financials
 
 ### [Get-MgFinancialCompanyItem](Get-MgFinancialCompanyItem.md)
 Get items from financials
@@ -138,7 +138,7 @@ Get itemCategories from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanyItemPictureContent](Get-MgFinancialCompanyItemPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanyJournal](Get-MgFinancialCompanyJournal.md)
 Get journals from financials
@@ -162,7 +162,7 @@ Get paymentTerms from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanyPictureContent](Get-MgFinancialCompanyPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanyPurchaseInvoice](Get-MgFinancialCompanyPurchaseInvoice.md)
 Get purchaseInvoices from financials
@@ -186,7 +186,7 @@ Get itemCategory from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent](Get-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanyPurchaseInvoiceVendor](Get-MgFinancialCompanyPurchaseInvoiceVendor.md)
 Get vendor from financials
@@ -204,7 +204,7 @@ Get paymentTerm from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanyPurchaseInvoiceVendorPictureContent](Get-MgFinancialCompanyPurchaseInvoiceVendorPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleCreditMemo](Get-MgFinancialCompanySaleCreditMemo.md)
 Get salesCreditMemos from financials
@@ -228,7 +228,7 @@ Get paymentTerm from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanySaleCreditMemoCustomerPictureContent](Get-MgFinancialCompanySaleCreditMemoCustomerPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod](Get-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod.md)
 Get shipmentMethod from financials
@@ -249,7 +249,7 @@ Get itemCategory from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanySaleCreditMemoLineItemPictureContent](Get-MgFinancialCompanySaleCreditMemoLineItemPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleCreditMemoPaymentTerm](Get-MgFinancialCompanySaleCreditMemoPaymentTerm.md)
 Get paymentTerm from financials
@@ -270,7 +270,7 @@ Get itemCategory from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent](Get-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleInvoice](Get-MgFinancialCompanySaleInvoice.md)
 Get salesInvoices from financials
@@ -294,7 +294,7 @@ Get paymentTerm from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanySaleInvoiceCustomerPictureContent](Get-MgFinancialCompanySaleInvoiceCustomerPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleInvoiceCustomerShipmentMethod](Get-MgFinancialCompanySaleInvoiceCustomerShipmentMethod.md)
 Get shipmentMethod from financials
@@ -315,7 +315,7 @@ Get itemCategory from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanySaleInvoiceLineItemPictureContent](Get-MgFinancialCompanySaleInvoiceLineItemPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleInvoicePaymentTerm](Get-MgFinancialCompanySaleInvoicePaymentTerm.md)
 Get paymentTerm from financials
@@ -345,7 +345,7 @@ Get paymentTerm from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanySaleOrderCustomerPictureContent](Get-MgFinancialCompanySaleOrderCustomerPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleOrderCustomerShipmentMethod](Get-MgFinancialCompanySaleOrderCustomerShipmentMethod.md)
 Get shipmentMethod from financials
@@ -366,7 +366,7 @@ Get itemCategory from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanySaleOrderLineItemPictureContent](Get-MgFinancialCompanySaleOrderLineItemPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleOrderPaymentTerm](Get-MgFinancialCompanySaleOrderPaymentTerm.md)
 Get paymentTerm from financials
@@ -393,7 +393,7 @@ Get paymentTerm from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanySaleQuoteCustomerPictureContent](Get-MgFinancialCompanySaleQuoteCustomerPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleQuoteCustomerShipmentMethod](Get-MgFinancialCompanySaleQuoteCustomerShipmentMethod.md)
 Get shipmentMethod from financials
@@ -414,7 +414,7 @@ Get itemCategory from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanySaleQuoteLineItemPictureContent](Get-MgFinancialCompanySaleQuoteLineItemPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Get-MgFinancialCompanySaleQuotePaymentTerm](Get-MgFinancialCompanySaleQuotePaymentTerm.md)
 Get paymentTerm from financials
@@ -431,7 +431,7 @@ Get taxAreas from financials
 ### [Get-MgFinancialCompanyTaxGroup](Get-MgFinancialCompanyTaxGroup.md)
 Get taxGroups from financials
 
-### [Get-MgFinancialCompanyUnit](Get-MgFinancialCompanyUnit.md)
+### [Get-MgFinancialCompanyUnitOfMeasure](Get-MgFinancialCompanyUnitOfMeasure.md)
 Get unitsOfMeasure from financials
 
 ### [Get-MgFinancialCompanyVendor](Get-MgFinancialCompanyVendor.md)
@@ -450,7 +450,7 @@ Get paymentTerm from financials
 Get picture from financials
 
 ### [Get-MgFinancialCompanyVendorPictureContent](Get-MgFinancialCompanyVendorPictureContent.md)
-Get media content for the navigation property picture from financials
+Get content for the navigation property picture from financials
 
 ### [Invoke-MgFinancialCompanyJournal](Invoke-MgFinancialCompanyJournal.md)
 Invoke action post
@@ -463,18 +463,6 @@ Invoke action post
 
 ### [Invoke-MgFinancialCompanySaleInvoiceAndSend](Invoke-MgFinancialCompanySaleInvoiceAndSend.md)
 Invoke action postAndSend
-
-### [New-MgFinancialCompany](New-MgFinancialCompany.md)
-Create new navigation property to companies for financials
-
-### [New-MgFinancialCompanyAccount](New-MgFinancialCompanyAccount.md)
-Create new navigation property to accounts for financials
-
-### [New-MgFinancialCompanyAgedAccountPayable](New-MgFinancialCompanyAgedAccountPayable.md)
-Create new navigation property to agedAccountsPayable for financials
-
-### [New-MgFinancialCompanyAgedAccountReceivable](New-MgFinancialCompanyAgedAccountReceivable.md)
-Create new navigation property to agedAccountsReceivable for financials
 
 ### [New-MgFinancialCompanyCountryRegion](New-MgFinancialCompanyCountryRegion.md)
 Create new navigation property to countriesRegions for financials
@@ -503,23 +491,11 @@ Create new navigation property to picture for financials
 ### [New-MgFinancialCompanyCustomerPicture](New-MgFinancialCompanyCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyDimension](New-MgFinancialCompanyDimension.md)
-Create new navigation property to dimensions for financials
-
-### [New-MgFinancialCompanyDimensionValue](New-MgFinancialCompanyDimensionValue.md)
-Create new navigation property to dimensionValues for financials
-
 ### [New-MgFinancialCompanyEmployee](New-MgFinancialCompanyEmployee.md)
 Create new navigation property to employees for financials
 
 ### [New-MgFinancialCompanyEmployeePicture](New-MgFinancialCompanyEmployeePicture.md)
 Create new navigation property to picture for financials
-
-### [New-MgFinancialCompanyGeneralLedgerEntry](New-MgFinancialCompanyGeneralLedgerEntry.md)
-Create new navigation property to generalLedgerEntries for financials
-
-### [New-MgFinancialCompanyInformation](New-MgFinancialCompanyInformation.md)
-Create new navigation property to companyInformation for financials
 
 ### [New-MgFinancialCompanyItem](New-MgFinancialCompanyItem.md)
 Create new navigation property to items for financials
@@ -545,71 +521,38 @@ Create new navigation property to paymentTerms for financials
 ### [New-MgFinancialCompanyPicture](New-MgFinancialCompanyPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanyPurchaseInvoice](New-MgFinancialCompanyPurchaseInvoice.md)
-Create new navigation property to purchaseInvoices for financials
-
-### [New-MgFinancialCompanyPurchaseInvoiceLine](New-MgFinancialCompanyPurchaseInvoiceLine.md)
-Create new navigation property to purchaseInvoiceLines for financials
-
 ### [New-MgFinancialCompanyPurchaseInvoiceLineItemPicture](New-MgFinancialCompanyPurchaseInvoiceLineItemPicture.md)
 Create new navigation property to picture for financials
 
 ### [New-MgFinancialCompanyPurchaseInvoiceVendorPicture](New-MgFinancialCompanyPurchaseInvoiceVendorPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleCreditMemo](New-MgFinancialCompanySaleCreditMemo.md)
-Create new navigation property to salesCreditMemos for financials
-
 ### [New-MgFinancialCompanySaleCreditMemoCustomerPicture](New-MgFinancialCompanySaleCreditMemoCustomerPicture.md)
 Create new navigation property to picture for financials
-
-### [New-MgFinancialCompanySaleCreditMemoLine](New-MgFinancialCompanySaleCreditMemoLine.md)
-Create new navigation property to salesCreditMemoLines for financials
 
 ### [New-MgFinancialCompanySaleCreditMemoLineItemPicture](New-MgFinancialCompanySaleCreditMemoLineItemPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine](New-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine.md)
-Create new navigation property to salesCreditMemoLines for financials
-
 ### [New-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](New-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
 Create new navigation property to picture for financials
-
-### [New-MgFinancialCompanySaleInvoice](New-MgFinancialCompanySaleInvoice.md)
-Create new navigation property to salesInvoices for financials
 
 ### [New-MgFinancialCompanySaleInvoiceCustomerPicture](New-MgFinancialCompanySaleInvoiceCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleInvoiceLine](New-MgFinancialCompanySaleInvoiceLine.md)
-Create new navigation property to salesInvoiceLines for financials
-
 ### [New-MgFinancialCompanySaleInvoiceLineItemPicture](New-MgFinancialCompanySaleInvoiceLineItemPicture.md)
 Create new navigation property to picture for financials
-
-### [New-MgFinancialCompanySaleOrder](New-MgFinancialCompanySaleOrder.md)
-Create new navigation property to salesOrders for financials
 
 ### [New-MgFinancialCompanySaleOrderCustomerPicture](New-MgFinancialCompanySaleOrderCustomerPicture.md)
 Create new navigation property to picture for financials
 
-### [New-MgFinancialCompanySaleOrderLine](New-MgFinancialCompanySaleOrderLine.md)
-Create new navigation property to salesOrderLines for financials
-
 ### [New-MgFinancialCompanySaleOrderLineItemPicture](New-MgFinancialCompanySaleOrderLineItemPicture.md)
 Create new navigation property to picture for financials
-
-### [New-MgFinancialCompanySaleQuote](New-MgFinancialCompanySaleQuote.md)
-Create new navigation property to salesQuotes for financials
 
 ### [New-MgFinancialCompanySaleQuoteCustomerPicture](New-MgFinancialCompanySaleQuoteCustomerPicture.md)
 Create new navigation property to picture for financials
 
 ### [New-MgFinancialCompanySaleQuoteInvoice](New-MgFinancialCompanySaleQuoteInvoice.md)
 Invoke action makeInvoice
-
-### [New-MgFinancialCompanySaleQuoteLine](New-MgFinancialCompanySaleQuoteLine.md)
-Create new navigation property to salesQuoteLines for financials
 
 ### [New-MgFinancialCompanySaleQuoteLineItemPicture](New-MgFinancialCompanySaleQuoteLineItemPicture.md)
 Create new navigation property to picture for financials
@@ -623,7 +566,7 @@ Create new navigation property to taxAreas for financials
 ### [New-MgFinancialCompanyTaxGroup](New-MgFinancialCompanyTaxGroup.md)
 Create new navigation property to taxGroups for financials
 
-### [New-MgFinancialCompanyUnit](New-MgFinancialCompanyUnit.md)
+### [New-MgFinancialCompanyUnitOfMeasure](New-MgFinancialCompanyUnitOfMeasure.md)
 Create new navigation property to unitsOfMeasure for financials
 
 ### [New-MgFinancialCompanyVendor](New-MgFinancialCompanyVendor.md)
@@ -631,18 +574,6 @@ Create new navigation property to vendors for financials
 
 ### [New-MgFinancialCompanyVendorPicture](New-MgFinancialCompanyVendorPicture.md)
 Create new navigation property to picture for financials
-
-### [Remove-MgFinancialCompany](Remove-MgFinancialCompany.md)
-Delete navigation property companies for financials
-
-### [Remove-MgFinancialCompanyAccount](Remove-MgFinancialCompanyAccount.md)
-Delete navigation property accounts for financials
-
-### [Remove-MgFinancialCompanyAgedAccountPayable](Remove-MgFinancialCompanyAgedAccountPayable.md)
-Delete navigation property agedAccountsPayable for financials
-
-### [Remove-MgFinancialCompanyAgedAccountReceivable](Remove-MgFinancialCompanyAgedAccountReceivable.md)
-Delete navigation property agedAccountsReceivable for financials
 
 ### [Remove-MgFinancialCompanyCountryRegion](Remove-MgFinancialCompanyCountryRegion.md)
 Delete navigation property countriesRegions for financials
@@ -673,9 +604,6 @@ Delete navigation property shipmentMethod for financials
 
 ### [Remove-MgFinancialCompanyCustomerPaymentJournal](Remove-MgFinancialCompanyCustomerPaymentJournal.md)
 Delete navigation property customerPaymentJournals for financials
-
-### [Remove-MgFinancialCompanyCustomerPaymentJournalAccount](Remove-MgFinancialCompanyCustomerPaymentJournalAccount.md)
-Delete navigation property account for financials
 
 ### [Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPayment](Remove-MgFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
 Delete navigation property customerPayments for financials
@@ -710,26 +638,11 @@ Delete navigation property picture for financials
 ### [Remove-MgFinancialCompanyCustomerShipmentMethod](Remove-MgFinancialCompanyCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanyDimension](Remove-MgFinancialCompanyDimension.md)
-Delete navigation property dimensions for financials
-
-### [Remove-MgFinancialCompanyDimensionValue](Remove-MgFinancialCompanyDimensionValue.md)
-Delete navigation property dimensionValues for financials
-
 ### [Remove-MgFinancialCompanyEmployee](Remove-MgFinancialCompanyEmployee.md)
 Delete navigation property employees for financials
 
 ### [Remove-MgFinancialCompanyEmployeePicture](Remove-MgFinancialCompanyEmployeePicture.md)
 Delete navigation property picture for financials
-
-### [Remove-MgFinancialCompanyGeneralLedgerEntry](Remove-MgFinancialCompanyGeneralLedgerEntry.md)
-Delete navigation property generalLedgerEntries for financials
-
-### [Remove-MgFinancialCompanyGeneralLedgerEntryAccount](Remove-MgFinancialCompanyGeneralLedgerEntryAccount.md)
-Delete navigation property account for financials
-
-### [Remove-MgFinancialCompanyInformation](Remove-MgFinancialCompanyInformation.md)
-Delete navigation property companyInformation for financials
 
 ### [Remove-MgFinancialCompanyItem](Remove-MgFinancialCompanyItem.md)
 Delete navigation property items for financials
@@ -743,14 +656,8 @@ Delete navigation property picture for financials
 ### [Remove-MgFinancialCompanyJournal](Remove-MgFinancialCompanyJournal.md)
 Delete navigation property journals for financials
 
-### [Remove-MgFinancialCompanyJournalAccount](Remove-MgFinancialCompanyJournalAccount.md)
-Delete navigation property account for financials
-
 ### [Remove-MgFinancialCompanyJournalLine](Remove-MgFinancialCompanyJournalLine.md)
 Delete navigation property journalLines for financials
-
-### [Remove-MgFinancialCompanyJournalLineAccount](Remove-MgFinancialCompanyJournalLineAccount.md)
-Delete navigation property account for financials
 
 ### [Remove-MgFinancialCompanyPaymentMethod](Remove-MgFinancialCompanyPaymentMethod.md)
 Delete navigation property paymentMethods for financials
@@ -761,17 +668,8 @@ Delete navigation property paymentTerms for financials
 ### [Remove-MgFinancialCompanyPicture](Remove-MgFinancialCompanyPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanyPurchaseInvoice](Remove-MgFinancialCompanyPurchaseInvoice.md)
-Delete navigation property purchaseInvoices for financials
-
 ### [Remove-MgFinancialCompanyPurchaseInvoiceCurrency](Remove-MgFinancialCompanyPurchaseInvoiceCurrency.md)
 Delete navigation property currency for financials
-
-### [Remove-MgFinancialCompanyPurchaseInvoiceLine](Remove-MgFinancialCompanyPurchaseInvoiceLine.md)
-Delete navigation property purchaseInvoiceLines for financials
-
-### [Remove-MgFinancialCompanyPurchaseInvoiceLineAccount](Remove-MgFinancialCompanyPurchaseInvoiceLineAccount.md)
-Delete navigation property account for financials
 
 ### [Remove-MgFinancialCompanyPurchaseInvoiceLineItem](Remove-MgFinancialCompanyPurchaseInvoiceLineItem.md)
 Delete navigation property item for financials
@@ -797,9 +695,6 @@ Delete navigation property paymentTerm for financials
 ### [Remove-MgFinancialCompanyPurchaseInvoiceVendorPicture](Remove-MgFinancialCompanyPurchaseInvoiceVendorPicture.md)
 Delete navigation property picture for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemo](Remove-MgFinancialCompanySaleCreditMemo.md)
-Delete navigation property salesCreditMemos for financials
-
 ### [Remove-MgFinancialCompanySaleCreditMemoCurrency](Remove-MgFinancialCompanySaleCreditMemoCurrency.md)
 Delete navigation property currency for financials
 
@@ -821,12 +716,6 @@ Delete navigation property picture for financials
 ### [Remove-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod](Remove-MgFinancialCompanySaleCreditMemoCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoLine](Remove-MgFinancialCompanySaleCreditMemoLine.md)
-Delete navigation property salesCreditMemoLines for financials
-
-### [Remove-MgFinancialCompanySaleCreditMemoLineAccount](Remove-MgFinancialCompanySaleCreditMemoLineAccount.md)
-Delete navigation property account for financials
-
 ### [Remove-MgFinancialCompanySaleCreditMemoLineItem](Remove-MgFinancialCompanySaleCreditMemoLineItem.md)
 Delete navigation property item for financials
 
@@ -839,12 +728,6 @@ Delete navigation property picture for financials
 ### [Remove-MgFinancialCompanySaleCreditMemoPaymentTerm](Remove-MgFinancialCompanySaleCreditMemoPaymentTerm.md)
 Delete navigation property paymentTerm for financials
 
-### [Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine](Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine.md)
-Delete navigation property salesCreditMemoLines for financials
-
-### [Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineAccount](Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineAccount.md)
-Delete navigation property account for financials
-
 ### [Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem](Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem.md)
 Delete navigation property item for financials
 
@@ -853,9 +736,6 @@ Delete navigation property itemCategory for financials
 
 ### [Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture](Remove-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPicture.md)
 Delete navigation property picture for financials
-
-### [Remove-MgFinancialCompanySaleInvoice](Remove-MgFinancialCompanySaleInvoice.md)
-Delete navigation property salesInvoices for financials
 
 ### [Remove-MgFinancialCompanySaleInvoiceCurrency](Remove-MgFinancialCompanySaleInvoiceCurrency.md)
 Delete navigation property currency for financials
@@ -878,12 +758,6 @@ Delete navigation property picture for financials
 ### [Remove-MgFinancialCompanySaleInvoiceCustomerShipmentMethod](Remove-MgFinancialCompanySaleInvoiceCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanySaleInvoiceLine](Remove-MgFinancialCompanySaleInvoiceLine.md)
-Delete navigation property salesInvoiceLines for financials
-
-### [Remove-MgFinancialCompanySaleInvoiceLineAccount](Remove-MgFinancialCompanySaleInvoiceLineAccount.md)
-Delete navigation property account for financials
-
 ### [Remove-MgFinancialCompanySaleInvoiceLineItem](Remove-MgFinancialCompanySaleInvoiceLineItem.md)
 Delete navigation property item for financials
 
@@ -898,9 +772,6 @@ Delete navigation property paymentTerm for financials
 
 ### [Remove-MgFinancialCompanySaleInvoiceShipmentMethod](Remove-MgFinancialCompanySaleInvoiceShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
-
-### [Remove-MgFinancialCompanySaleOrder](Remove-MgFinancialCompanySaleOrder.md)
-Delete navigation property salesOrders for financials
 
 ### [Remove-MgFinancialCompanySaleOrderCurrency](Remove-MgFinancialCompanySaleOrderCurrency.md)
 Delete navigation property currency for financials
@@ -923,12 +794,6 @@ Delete navigation property picture for financials
 ### [Remove-MgFinancialCompanySaleOrderCustomerShipmentMethod](Remove-MgFinancialCompanySaleOrderCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
 
-### [Remove-MgFinancialCompanySaleOrderLine](Remove-MgFinancialCompanySaleOrderLine.md)
-Delete navigation property salesOrderLines for financials
-
-### [Remove-MgFinancialCompanySaleOrderLineAccount](Remove-MgFinancialCompanySaleOrderLineAccount.md)
-Delete navigation property account for financials
-
 ### [Remove-MgFinancialCompanySaleOrderLineItem](Remove-MgFinancialCompanySaleOrderLineItem.md)
 Delete navigation property item for financials
 
@@ -940,9 +805,6 @@ Delete navigation property picture for financials
 
 ### [Remove-MgFinancialCompanySaleOrderPaymentTerm](Remove-MgFinancialCompanySaleOrderPaymentTerm.md)
 Delete navigation property paymentTerm for financials
-
-### [Remove-MgFinancialCompanySaleQuote](Remove-MgFinancialCompanySaleQuote.md)
-Delete navigation property salesQuotes for financials
 
 ### [Remove-MgFinancialCompanySaleQuoteCurrency](Remove-MgFinancialCompanySaleQuoteCurrency.md)
 Delete navigation property currency for financials
@@ -964,12 +826,6 @@ Delete navigation property picture for financials
 
 ### [Remove-MgFinancialCompanySaleQuoteCustomerShipmentMethod](Remove-MgFinancialCompanySaleQuoteCustomerShipmentMethod.md)
 Delete navigation property shipmentMethod for financials
-
-### [Remove-MgFinancialCompanySaleQuoteLine](Remove-MgFinancialCompanySaleQuoteLine.md)
-Delete navigation property salesQuoteLines for financials
-
-### [Remove-MgFinancialCompanySaleQuoteLineAccount](Remove-MgFinancialCompanySaleQuoteLineAccount.md)
-Delete navigation property account for financials
 
 ### [Remove-MgFinancialCompanySaleQuoteLineItem](Remove-MgFinancialCompanySaleQuoteLineItem.md)
 Delete navigation property item for financials
@@ -995,7 +851,7 @@ Delete navigation property taxAreas for financials
 ### [Remove-MgFinancialCompanyTaxGroup](Remove-MgFinancialCompanyTaxGroup.md)
 Delete navigation property taxGroups for financials
 
-### [Remove-MgFinancialCompanyUnit](Remove-MgFinancialCompanyUnit.md)
+### [Remove-MgFinancialCompanyUnitOfMeasure](Remove-MgFinancialCompanyUnitOfMeasure.md)
 Delete navigation property unitsOfMeasure for financials
 
 ### [Remove-MgFinancialCompanyVendor](Remove-MgFinancialCompanyVendor.md)
@@ -1020,61 +876,61 @@ Invoke action send
 Invoke action send
 
 ### [Set-MgFinancialCompanyCustomerPaymentCustomerPictureContent](Set-MgFinancialCompanyCustomerPaymentCustomerPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent](Set-MgFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomerPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanyCustomerPictureContent](Set-MgFinancialCompanyCustomerPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanyEmployeePictureContent](Set-MgFinancialCompanyEmployeePictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanyInformationPicture](Set-MgFinancialCompanyInformationPicture.md)
-Update media content for the navigation property companyInformation in financials
+Update picture for the navigation property companyInformation in financials
 
 ### [Set-MgFinancialCompanyItemPictureContent](Set-MgFinancialCompanyItemPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanyPictureContent](Set-MgFinancialCompanyPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent](Set-MgFinancialCompanyPurchaseInvoiceLineItemPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanyPurchaseInvoiceVendorPictureContent](Set-MgFinancialCompanyPurchaseInvoiceVendorPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanySaleCreditMemoCustomerPictureContent](Set-MgFinancialCompanySaleCreditMemoCustomerPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanySaleCreditMemoLineItemPictureContent](Set-MgFinancialCompanySaleCreditMemoLineItemPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent](Set-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanySaleInvoiceCustomerPictureContent](Set-MgFinancialCompanySaleInvoiceCustomerPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanySaleInvoiceLineItemPictureContent](Set-MgFinancialCompanySaleInvoiceLineItemPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanySaleOrderCustomerPictureContent](Set-MgFinancialCompanySaleOrderCustomerPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanySaleOrderLineItemPictureContent](Set-MgFinancialCompanySaleOrderLineItemPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanySaleQuoteCustomerPictureContent](Set-MgFinancialCompanySaleQuoteCustomerPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanySaleQuoteLineItemPictureContent](Set-MgFinancialCompanySaleQuoteLineItemPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Set-MgFinancialCompanyVendorPictureContent](Set-MgFinancialCompanyVendorPictureContent.md)
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ### [Stop-MgFinancialCompanySaleInvoice](Stop-MgFinancialCompanySaleInvoice.md)
 Invoke action cancel
@@ -1084,18 +940,6 @@ Invoke action cancelAndSend
 
 ### [Update-MgFinancial](Update-MgFinancial.md)
 Update financials
-
-### [Update-MgFinancialCompany](Update-MgFinancialCompany.md)
-Update the navigation property companies in financials
-
-### [Update-MgFinancialCompanyAccount](Update-MgFinancialCompanyAccount.md)
-Update the navigation property accounts in financials
-
-### [Update-MgFinancialCompanyAgedAccountPayable](Update-MgFinancialCompanyAgedAccountPayable.md)
-Update the navigation property agedAccountsPayable in financials
-
-### [Update-MgFinancialCompanyAgedAccountReceivable](Update-MgFinancialCompanyAgedAccountReceivable.md)
-Update the navigation property agedAccountsReceivable in financials
 
 ### [Update-MgFinancialCompanyCountryRegion](Update-MgFinancialCompanyCountryRegion.md)
 Update the navigation property countriesRegions in financials
@@ -1163,20 +1007,11 @@ Update the navigation property picture in financials
 ### [Update-MgFinancialCompanyCustomerShipmentMethod](Update-MgFinancialCompanyCustomerShipmentMethod.md)
 Update the navigation property shipmentMethod in financials
 
-### [Update-MgFinancialCompanyDimension](Update-MgFinancialCompanyDimension.md)
-Update the navigation property dimensions in financials
-
-### [Update-MgFinancialCompanyDimensionValue](Update-MgFinancialCompanyDimensionValue.md)
-Update the navigation property dimensionValues in financials
-
 ### [Update-MgFinancialCompanyEmployee](Update-MgFinancialCompanyEmployee.md)
 Update the navigation property employees in financials
 
 ### [Update-MgFinancialCompanyEmployeePicture](Update-MgFinancialCompanyEmployeePicture.md)
 Update the navigation property picture in financials
-
-### [Update-MgFinancialCompanyGeneralLedgerEntry](Update-MgFinancialCompanyGeneralLedgerEntry.md)
-Update the navigation property generalLedgerEntries in financials
 
 ### [Update-MgFinancialCompanyGeneralLedgerEntryAccount](Update-MgFinancialCompanyGeneralLedgerEntryAccount.md)
 Update the navigation property account in financials
@@ -1448,7 +1283,7 @@ Update the navigation property taxAreas in financials
 ### [Update-MgFinancialCompanyTaxGroup](Update-MgFinancialCompanyTaxGroup.md)
 Update the navigation property taxGroups in financials
 
-### [Update-MgFinancialCompanyUnit](Update-MgFinancialCompanyUnit.md)
+### [Update-MgFinancialCompanyUnitOfMeasure](Update-MgFinancialCompanyUnitOfMeasure.md)
 Update the navigation property unitsOfMeasure in financials
 
 ### [Update-MgFinancialCompanyVendor](Update-MgFinancialCompanyVendor.md)

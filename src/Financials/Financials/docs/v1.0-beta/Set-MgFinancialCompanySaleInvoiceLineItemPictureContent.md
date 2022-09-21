@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgFinancialCompanySaleInvoiceLineItemPictureContent
 
 ## SYNOPSIS
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Set-MgFinancialCompanySaleInvoiceLineItemPictureContent -InputObject <IFinancial
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property picture in financials
+Update content for the navigation property picture in financials
 
 ## EXAMPLES
 
