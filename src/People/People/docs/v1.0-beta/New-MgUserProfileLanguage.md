@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileLanguage
 
 ## SYNOPSIS
-Create new navigation property to languages for users
+Use this API to create a new languageProficiency object in a user's profile.
 
 ## SYNTAX
 
@@ -45,9 +45,26 @@ New-MgUserProfileLanguage -InputObject <IPeopleIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Create new navigation property to languages for users
+Use this API to create a new languageProficiency object in a user's profile.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserProfileLanguage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+$params = @{
+	DisplayName = "Norwegian Bokmål"
+	Tag = "nb-NO"
+	Spoken = "nativeOrBilingual"
+	Written = "nativeOrBilingual"
+	Reading = "nativeOrBilingual"
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfileLanguage -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserProfileLanguage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

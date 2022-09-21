@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfile
 
 ## SYNOPSIS
-Delete navigation property profile for users
+Deletes a profile object from a user's account.
 
 ## SYNTAX
 
@@ -25,9 +25,19 @@ Remove-MgUserProfile -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassTh
 ```
 
 ## DESCRIPTION
-Delete navigation property profile for users
+Deletes a profile object from a user's account.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgUserProfile Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Remove-MgUserProfile -UserId $userId
+```
+
+This example shows how to use the Remove-MgUserProfile Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

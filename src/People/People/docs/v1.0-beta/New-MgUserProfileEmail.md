@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileEmail
 
 ## SYNOPSIS
-Create new navigation property to emails for users
+Create a new itemEmail object in a user's profile.
 
 ## SYNTAX
 
@@ -43,9 +43,22 @@ New-MgUserProfileEmail -InputObject <IPeopleIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Create new navigation property to emails for users
+Create a new itemEmail object in a user's profile.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserProfileEmail Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+$params = @{
+	Address = "Innocenty.Popov@adventureworks.com"
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfileEmail -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserProfileEmail Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

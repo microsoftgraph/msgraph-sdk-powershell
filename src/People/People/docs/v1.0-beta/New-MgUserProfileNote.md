@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileNote
 
 ## SYNOPSIS
-Create new navigation property to notes for users
+Create a new personAnnotation object in a user's profile.
 
 ## SYNTAX
 
@@ -45,9 +45,26 @@ New-MgUserProfileNote -InputObject <IPeopleIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Create new navigation property to notes for users
+Create a new personAnnotation object in a user's profile.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserProfileNote Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+$params = @{
+	Detail = @{
+		ContentType = "text"
+		Content = "I am originally from Australia, but grew up in Moscow, Russia."
+	}
+	DisplayName = "About Me"
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfileNote -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserProfileNote Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

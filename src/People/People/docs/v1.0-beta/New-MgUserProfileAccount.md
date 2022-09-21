@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileAccount
 
 ## SYNOPSIS
-Create new navigation property to account for users
+Create a new userAccountInformation object in a user's profile.
 
 ## SYNTAX
 
@@ -46,9 +46,23 @@ New-MgUserProfileAccount -InputObject <IPeopleIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Create new navigation property to account for users
+Create a new userAccountInformation object in a user's profile.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserProfileAccount Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+$params = @{
+	AllowedAudiences = "organization"
+	CountryCode = "NO"
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfileAccount -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserProfileAccount Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
