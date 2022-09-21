@@ -8,7 +8,16 @@ schema: 2.0.0
 # Update-MgSchemaExtension
 
 ## SYNOPSIS
-Update schemaExtension
+Update properties in the definition of the specified schemaExtension.
+Additive updates to the extension can only be made when the extension is in the `InDevelopment` or `Available` status.
+This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed.
+The update applies to all the resources that are included in the **targetTypes** property of the extension.
+These resources are among the supporting resource types.
+For delegated flows, the signed-in user can update a schema extension as long as the **owner** property of the extension is set to the **appId** of an application the signed-in user owns.
+That application can be the one that initially created the extension, or some other application owned by the signed-in user.
+This criteria for the **owner** property allows a signed-in user to make updates through other applications they don't own, such as Microsoft Graph Explorer.
+When using Graph Explorer to update a **schemaExtension** resource, include the **owner** property in the PATCH request body.
+For more information, see the Extensions section in Known issues with Microsoft Graph.
 
 ## SYNTAX
 
@@ -41,9 +50,78 @@ Update-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update schemaExtension
+Update properties in the definition of the specified schemaExtension.
+Additive updates to the extension can only be made when the extension is in the `InDevelopment` or `Available` status.
+This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed.
+The update applies to all the resources that are included in the **targetTypes** property of the extension.
+These resources are among the supporting resource types.
+For delegated flows, the signed-in user can update a schema extension as long as the **owner** property of the extension is set to the **appId** of an application the signed-in user owns.
+That application can be the one that initially created the extension, or some other application owned by the signed-in user.
+This criteria for the **owner** property allows a signed-in user to make updates through other applications they don't own, such as Microsoft Graph Explorer.
+When using Graph Explorer to update a **schemaExtension** resource, include the **owner** property in the PATCH request body.
+For more information, see the Extensions section in Known issues with Microsoft Graph.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgSchemaExtension Cmdlet
+```powershell
+Import-Module Microsoft.Graph.SchemaExtensions
+$params = @{
+	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	Properties = @(
+		@{
+			Name = "courseId"
+			Type = "Integer"
+		}
+		@{
+			Name = "courseName"
+			Type = "String"
+		}
+		@{
+			Name = "courseType"
+			Type = "String"
+		}
+		@{
+			Name = "courseSupervisors"
+			Type = "String"
+		}
+	)
+}
+Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Update-MgSchemaExtension Cmdlet
+```powershell
+Import-Module Microsoft.Graph.SchemaExtensions
+$params = @{
+	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	Properties = @(
+		@{
+			Name = "courseId"
+			Type = "Integer"
+		}
+		@{
+			Name = "courseName"
+			Type = "String"
+		}
+		@{
+			Name = "courseType"
+			Type = "String"
+		}
+		@{
+			Name = "courseSupervisors"
+			Type = "String"
+		}
+	)
+}
+Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -286,7 +364,7 @@ BODYPARAMETER <IMicrosoftGraphSchemaExtension>: schemaExtension
   - `[Description <String>]`: Description for the schema extension. Supports $filter (eq).
   - `[Owner <String>]`: The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. So, for example, if creating a new schema extension definition using Graph Explorer, you must supply the owner property. Once set, this property is read-only and cannot be changed. Supports $filter (eq).
   - `[Properties <IMicrosoftGraphExtensionSchemaProperty[]>]`: The collection of property names and types that make up the schema extension definition.
-    - `[Name <String>]`: The name of the strongly typed property defined as part of a schema extension.
+    - `[Name <String>]`: The name of the strongly-typed property defined as part of a schema extension.
     - `[Type <String>]`: The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
   - `[Status <String>]`: The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. For more information about the possible state transitions and behaviors, see Schema extensions lifecycle. Supports $filter (eq).
   - `[TargetTypes <String[]>]`: Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
@@ -295,7 +373,7 @@ INPUTOBJECT <ISchemaExtensionsIdentity>: Identity Parameter
   - `[SchemaExtensionId <String>]`: key: id of schemaExtension
 
 PROPERTIES <IMicrosoftGraphExtensionSchemaProperty[]>: The collection of property names and types that make up the schema extension definition.
-  - `[Name <String>]`: The name of the strongly typed property defined as part of a schema extension.
+  - `[Name <String>]`: The name of the strongly-typed property defined as part of a schema extension.
   - `[Type <String>]`: The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
 
 ## RELATED LINKS
