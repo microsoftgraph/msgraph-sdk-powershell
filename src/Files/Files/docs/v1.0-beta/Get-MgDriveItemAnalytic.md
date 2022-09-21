@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveItemAnalytic
 
 ## SYNOPSIS
-Get analytics from drives
+Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgDriveItemAnalytic -InputObject <IFilesIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get analytics from drives
+Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDriveItemAnalytic Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Files
+Get-MgDriveItemAnalytic -DriveId $driveId -DriveItemId $driveItemId
+```
+
+This example shows how to use the Get-MgDriveItemAnalytic Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

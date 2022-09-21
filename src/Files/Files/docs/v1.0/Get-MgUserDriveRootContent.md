@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveRootContent
 
 ## SYNOPSIS
-Get content for the navigation property root from users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgUserDriveRootContent -InputObject <IFilesIdentity> -OutFile <String> [-Pas
 ```
 
 ## DESCRIPTION
-Get content for the navigation property root from users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

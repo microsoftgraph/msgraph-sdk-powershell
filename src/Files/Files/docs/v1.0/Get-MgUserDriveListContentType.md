@@ -8,15 +8,15 @@ schema: 2.0.0
 # Get-MgUserDriveListContentType
 
 ## SYNOPSIS
-Get contentTypes from users
+The collection of content types present in this list.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgUserDriveListContentType -DriveId <String> -UserId <String> [-ExpandProperty <String[]>]
+Get-MgUserDriveListContentType -DriveId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -32,26 +32,11 @@ Get-MgUserDriveListContentType -InputObject <IFilesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get contentTypes from users
+The collection of content types present in this list.
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -All
-List all pages.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -ContentTypeId
 key: id of contentType
@@ -68,14 +53,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -Count
+Include count of items
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
-Aliases: CV
+Aliases:
 
 Required: False
 Position: Named
@@ -142,21 +126,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PageSize
-Sets the page size of results.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

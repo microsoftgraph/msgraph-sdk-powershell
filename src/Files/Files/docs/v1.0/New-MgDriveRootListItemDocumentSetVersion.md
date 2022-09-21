@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDriveRootListItemDocumentSetVersion
 
 ## SYNOPSIS
-Create new navigation property to documentSetVersions for drives
+Create a new version of a document set item in a list.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgDriveRootListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Create new navigation property to documentSetVersions for drives
+Create a new version of a document set item in a list.
 
 ## EXAMPLES
 

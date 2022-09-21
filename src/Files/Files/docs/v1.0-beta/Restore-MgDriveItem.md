@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgDriveItem
 
 ## SYNOPSIS
-Invoke action restore
+Restore a driveItem that has been deleted and is currently in the recycle bin.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Restore-MgDriveItem -InputObject <IFilesIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a driveItem that has been deleted and is currently in the recycle bin.
 
 ## EXAMPLES
 

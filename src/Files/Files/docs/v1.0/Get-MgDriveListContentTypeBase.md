@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveListContentTypeBase
 
 ## SYNOPSIS
-Get base from drives
+Parent contentType from which this content type is derived.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDriveListContentTypeBase -InputObject <IFilesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get base from drives
+Parent contentType from which this content type is derived.
 
 ## EXAMPLES
 

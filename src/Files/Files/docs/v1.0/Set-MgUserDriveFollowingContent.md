@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserDriveFollowingContent
 
 ## SYNOPSIS
-Update content for the navigation property following in users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgUserDriveFollowingContent -InputObject <IFilesIdentity> -InFile <String> [
 ```
 
 ## DESCRIPTION
-Update content for the navigation property following in users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

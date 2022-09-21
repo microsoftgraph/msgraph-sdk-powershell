@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserDriveRoot
 
 ## SYNOPSIS
-Get root from users
+Retrieve the metadata for a driveItem in a drive by file system path or ID.\n`item-id` is the ID of a driveItem.
+It may also be the unique ID of a SharePoint list item.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgUserDriveRoot -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get root from users
+Retrieve the metadata for a driveItem in a drive by file system path or ID.\n`item-id` is the ID of a driveItem.
+It may also be the unique ID of a SharePoint list item.
 
 ## EXAMPLES
 

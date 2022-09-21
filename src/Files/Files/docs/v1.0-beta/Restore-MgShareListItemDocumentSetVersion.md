@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgShareListItemDocumentSetVersion
 
 ## SYNOPSIS
-Invoke action restore
+Restore a document set version.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Restore-MgShareListItemDocumentSetVersion -InputObject <IFilesIdentity> [-PassTh
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a document set version.
 
 ## EXAMPLES
 

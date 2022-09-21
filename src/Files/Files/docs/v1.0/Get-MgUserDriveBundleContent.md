@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveBundleContent
 
 ## SYNOPSIS
-Get content for the navigation property bundles from users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgUserDriveBundleContent -InputObject <IFilesIdentity> -OutFile <String> [-P
 ```
 
 ## DESCRIPTION
-Get content for the navigation property bundles from users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

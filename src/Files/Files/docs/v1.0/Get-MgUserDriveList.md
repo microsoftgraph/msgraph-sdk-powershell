@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserDriveList
 
 ## SYNOPSIS
-Get list from users
+For drives in SharePoint, the underlying document library list.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgUserDriveList -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get list from users
+For drives in SharePoint, the underlying document library list.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

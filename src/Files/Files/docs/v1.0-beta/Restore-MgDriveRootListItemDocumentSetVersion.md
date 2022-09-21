@@ -8,24 +8,24 @@ schema: 2.0.0
 # Restore-MgDriveRootListItemDocumentSetVersion
 
 ## SYNOPSIS
-Invoke action restore
+Restore a document set version.
 
 ## SYNTAX
 
-### Restore (Default)
+### Restore1 (Default)
 ```
 Restore-MgDriveRootListItemDocumentSetVersion -DocumentSetVersionId <String> -DriveId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RestoreViaIdentity
+### RestoreViaIdentity1
 ```
 Restore-MgDriveRootListItemDocumentSetVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a document set version.
 
 ## EXAMPLES
 
@@ -36,7 +36,7 @@ key: id of documentSetVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore
+Parameter Sets: Restore1
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore
+Parameter Sets: Restore1
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: RestoreViaIdentity
+Parameter Sets: RestoreViaIdentity1
 Aliases:
 
 Required: True

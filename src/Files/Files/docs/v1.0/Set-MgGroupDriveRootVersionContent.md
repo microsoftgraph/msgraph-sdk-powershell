@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGroupDriveRootVersionContent
 
 ## SYNOPSIS
-Update content for the navigation property versions in groups
+The content stream for this version of the item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgGroupDriveRootVersionContent -InputObject <IFilesIdentity> -InFile <String
 ```
 
 ## DESCRIPTION
-Update content for the navigation property versions in groups
+The content stream for this version of the item.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSharePermission
 
 ## SYNOPSIS
-Get permission from shares
+Used to access the permission representing the underlying sharing link
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSharePermission -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get permission from shares
+Used to access the permission representing the underlying sharing link
 
 ## EXAMPLES
 

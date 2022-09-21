@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListContentTypeBase
 
 ## SYNOPSIS
-Get base from users
+Parent contentType from which this content type is derived.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserDriveListContentTypeBase -InputObject <IFilesIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get base from users
+Parent contentType from which this content type is derived.
 
 ## EXAMPLES
 
