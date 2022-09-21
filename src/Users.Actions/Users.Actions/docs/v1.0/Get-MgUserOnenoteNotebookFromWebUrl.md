@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserOnenoteNotebookFromWebUrl
 
 ## SYNOPSIS
-Invoke action getNotebookFromWebUrl
+Retrieve the properties and relationships of a notebook object by using its URL path.
+The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 
 ## SYNTAX
 
@@ -39,9 +40,23 @@ Get-MgUserOnenoteNotebookFromWebUrl -InputObject <IUsersActionsIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Invoke action getNotebookFromWebUrl
+Retrieve the properties and relationships of a notebook object by using its URL path.
+The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserOnenoteNotebookFromWebUrl Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	WebUrl = "webUrl value"
+}
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteNotebookFromWebUrl -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the Get-MgUserOnenoteNotebookFromWebUrl Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

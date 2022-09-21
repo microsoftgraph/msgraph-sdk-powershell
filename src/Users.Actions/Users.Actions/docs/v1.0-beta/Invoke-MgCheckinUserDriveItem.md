@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgCheckinUserDriveItem
 
 ## SYNOPSIS
-Invoke action checkin
+Check in a checked out **driveItem** resource, which makes the version of the document available to others.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Invoke-MgCheckinUserDriveItem -InputObject <IUsersActionsIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Invoke action checkin
+Check in a checked out **driveItem** resource, which makes the version of the document available to others.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserManagedDeviceName
 
 ## SYNOPSIS
-Invoke action setDeviceName
+Set device name of the device.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Set-MgUserManagedDeviceName -InputObject <IUsersActionsIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Invoke action setDeviceName
+Set device name of the device.
 
 ## EXAMPLES
 
