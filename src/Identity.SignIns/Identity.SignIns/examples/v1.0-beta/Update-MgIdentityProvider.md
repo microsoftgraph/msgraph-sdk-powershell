@@ -1,18 +1,54 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgIdentityProvider Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	DisplayName = "Apple"
+}
+Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Update-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Update-MgIdentityProvider Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	ClientSecret = "1111111111111"
+}
+Update-MgIdentityProvider -IdentityProviderId $identityProviderId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Update-MgIdentityProvider Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	ResponseType = "id_token"
+}
+Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+```
+This example shows how to use the Update-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Update-MgIdentityProvider Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	ResponseType = "id_token"
+}
+Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+```
+This example shows how to use the Update-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 5: Using the Update-MgIdentityProvider Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	ClientSecret = "1111111111111"
+}
+Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+```
+This example shows how to use the Update-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

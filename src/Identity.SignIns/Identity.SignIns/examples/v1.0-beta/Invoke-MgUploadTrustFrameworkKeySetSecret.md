@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Invoke-MgUploadTrustFrameworkKeySetSecret Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Use = "use-value"
+	K = "application-secret-to-be-uploaded"
+	Nbf = 1508969811
+	Exp = 1508973711
+}
+Invoke-MgUploadTrustFrameworkKeySetSecret -TrustFrameworkKeySetId $trustFrameworkKeySetId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Invoke-MgUploadTrustFrameworkKeySetSecret Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

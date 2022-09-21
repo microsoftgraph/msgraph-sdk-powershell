@@ -1,18 +1,49 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgWindowsUpdatesUpdatableAsset Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesUpdatableAsset -UpdatableAssetId $updatableAssetId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgWindowsUpdatesUpdatableAsset Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgWindowsUpdatesUpdatableAsset Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesUpdatableAsset -UpdatableAssetId $updatableAssetId
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgWindowsUpdatesUpdatableAsset Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgWindowsUpdatesUpdatableAsset Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesUpdatableAsset -UpdatableAssetId $updatableAssetId
+```
+This example shows how to use the Get-MgWindowsUpdatesUpdatableAsset Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Get-MgWindowsUpdatesUpdatableAsset Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesUpdatableAsset -Filter "isof('microsoft.graph.windowsUpdates.azureADDevice')" 
+```
+This example shows how to use the Get-MgWindowsUpdatesUpdatableAsset Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 5: Using the Get-MgWindowsUpdatesUpdatableAsset Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesUpdatableAsset
+```
+This example shows how to use the Get-MgWindowsUpdatesUpdatableAsset Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 6: Using the Get-MgWindowsUpdatesUpdatableAsset Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesUpdatableAsset -OutFile $outFileId
+```
+This example shows how to use the Get-MgWindowsUpdatesUpdatableAsset Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 7: Using the Get-MgWindowsUpdatesUpdatableAsset Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesUpdatableAsset -Filter "isof('microsoft.graph.windowsUpdates.updatableAssetGroup')" 
+```
+This example shows how to use the Get-MgWindowsUpdatesUpdatableAsset Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

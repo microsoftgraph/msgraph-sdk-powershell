@@ -67,8 +67,21 @@ directive:
       subject: Io(Lob|Managed)
     set:
       subject: iOS$1
-# Rename DeviceAppManagement* cmdlets to DeviceAppMgt*. Alias DeviceAppMgt* to DeviceAppManagement*.
-# This should always be the last directive.
+  - where:
+      verb: Get
+      subject: ^DeviceAppManagementMobileAppTopMobileApp$
+      variant: GetViaIdentity
+      parameter-name: Count
+    set:
+      parameter-name: ItemCount
+  - where:
+      verb: Get
+      subject: ^DeviceAppManagementMobileAppTopMobileApp$
+      variant: ^Get$
+      parameter-name: Count1
+    set:
+      parameter-name: ItemCount
+# Alias DeviceAppManagement* cmdlets to DeviceAppMgt*.
   - where:
       subject: ^DeviceAppManagement.*
     set:
@@ -86,6 +99,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.11.1
+module-version: 1.12.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -1,18 +1,21 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgTeamChannelMessage Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannelMessage -TeamId $teamId -Filter "lastModifiedDateTime gt 2019-11-01T00:00:00Z and lastModifiedDateTime lt 2021-11-01T00:00:00Z" 
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgTeamChannelMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgTeamChannelMessage Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgTeamChannelMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgTeamChannelMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -Top 3 
+```
+This example shows how to use the Get-MgTeamChannelMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

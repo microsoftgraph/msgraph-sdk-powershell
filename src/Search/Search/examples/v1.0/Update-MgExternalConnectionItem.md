@@ -1,18 +1,16 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgExternalConnectionItem Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Search
+$params = @{
+	Acl = @(
+		@{
+			Type = "everyone"
+			Value = "67a141d8-cf4e-4528-ba07-bed21bfacd2d"
+			AccessType = "grant"
+		}
+	)
+}
+Update-MgExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgExternalConnectionItem Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

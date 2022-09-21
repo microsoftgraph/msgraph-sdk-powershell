@@ -105,6 +105,18 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
+    "/chats/{chat-id}/pinnedMessages": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}/message": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
     "/chats/{chat-id}/tabs": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
@@ -517,7 +529,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
-    "/teams/{team-id}/channels/{channel-id}/microsoft.graph.doesUserHaveAccess(userId='{userId}',tenantId='{tenantId}',userPrincipalName='{userPrincipalName}')": {
+    "/teams/{team-id}/channels/{channel-id}/microsoft.graph.doesUserHaveAccess(userId='@userId',tenantId='@tenantId',userPrincipalName='@userPrincipalName')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
@@ -709,7 +721,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
-    "/teams/{team-id}/primaryChannel/microsoft.graph.doesUserHaveAccess(userId='{userId}',tenantId='{tenantId}',userPrincipalName='{userPrincipalName}')": {
+    "/teams/{team-id}/primaryChannel/microsoft.graph.doesUserHaveAccess(userId='@userId',tenantId='@tenantId',userPrincipalName='@userPrincipalName')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
@@ -910,6 +922,18 @@
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
     "/users/{user-id}/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/users/{user-id}/chats/{chat-id}/pinnedMessages": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/users/{user-id}/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/users/{user-id}/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}/message": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },

@@ -1,18 +1,21 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get a permission grant policy include by ID 
 
-{{ Add output here }}
+```powershell
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant" 
+Get-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId "microsoft-all-application-permissions" | fl  
+
+CertifiedClientApplicationsOnly             : False
+ClientApplicationIds                        : {all}
+ClientApplicationPublisherIds               : {all}
+ClientApplicationTenantIds                  : {all}
+ClientApplicationsFromVerifiedPublisherOnly : False
+Id                                          : bddda1ec-0174-44d5-84e2-47fb0ac01595
+PermissionClassification                    : all
+PermissionType                              : application
+Permissions                                 : {all}
+ResourceApplication                         : any
+AdditionalProperties                        : {[scopeSensitivityLabels, System.Collections.Generic.Dictionary`2[System.String,System.Object]]}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This command retrieves a specified permission grant policy include configuration in Azure AD.
 

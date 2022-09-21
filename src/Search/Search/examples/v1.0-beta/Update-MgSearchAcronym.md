@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgSearchAcronym Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Search
+$params = @{
+	Description = "A deep neural network is a neural network with a certain level of complexity, a neural network with more than two layers."
+}
+Update-MgSearchAcronym -AcronymId $acronymId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgSearchAcronym Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

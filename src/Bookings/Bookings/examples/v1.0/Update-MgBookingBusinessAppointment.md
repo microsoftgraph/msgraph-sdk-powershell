@@ -1,18 +1,20 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgBookingBusinessAppointment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Bookings
+$params = @{
+	"@odata.type" = "#microsoft.graph.bookingAppointment"
+	EndDateTime = @{
+		"@odata.type" = "#microsoft.graph.dateTimeTimeZone"
+		DateTime = "2018-05-06T12:30:00.0000000+00:00"
+		TimeZone = "UTC"
+	}
+	StartDateTime = @{
+		"@odata.type" = "#microsoft.graph.dateTimeTimeZone"
+		DateTime = "2018-05-06T12:00:00.0000000+00:00"
+		TimeZone = "UTC"
+	}
+}
+Update-MgBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BookingAppointmentId $bookingAppointmentId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgBookingBusinessAppointment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

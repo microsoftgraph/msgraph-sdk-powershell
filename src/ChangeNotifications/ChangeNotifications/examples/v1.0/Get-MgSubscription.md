@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgSubscription Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.ChangeNotifications
+Get-MgSubscription -SubscriptionId $subscriptionId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgSubscription Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgSubscription Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.ChangeNotifications
+Get-MgSubscription
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgSubscription Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

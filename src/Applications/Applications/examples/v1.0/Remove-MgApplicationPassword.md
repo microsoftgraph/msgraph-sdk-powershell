@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Remove-MgApplicationPassword Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	KeyId = "f0b0b335-1d71-4883-8f98-567911bfdca6"
+}
+Remove-MgApplicationPassword -ApplicationId $applicationId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Remove-MgApplicationPassword Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgIdentityB2CUserFlowLanguageDefaultPageContent Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2CUserFlowLanguageDefaultPageContent -B2cIdentityUserFlowId $b2cIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId -UserFlowLanguagePageId $userFlowLanguagePageId -OutFile $outFileId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgIdentityB2CUserFlowLanguageDefaultPageContent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

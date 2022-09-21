@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgOauth2PermissionGrant Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	ClientId = "ef969797-201d-4f6b-960c-e9ed5f31dab5"
+	ConsentType = "AllPrincipals"
+	ResourceId = "943603e4-e787-4fe9-93d1-e30f749aae39"
+	Scope = "DelegatedPermissionGrant.ReadWrite.All"
+}
+New-MgOauth2PermissionGrant -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgOauth2PermissionGrant Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,18 +1,22 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Invoke-MgAcceptUserEventTentatively Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	Comment = "I may not be able to make this week. How about next week?"
+	SendResponse = $true
+	ProposedNewTime = @{
+		Start = @{
+			DateTime = "2019-12-02T18:00:00"
+			TimeZone = "Pacific Standard Time"
+		}
+		End = @{
+			DateTime = "2019-12-02T19:00:00"
+			TimeZone = "Pacific Standard Time"
+		}
+	}
+}
+# A UPN can also be used as -UserId.
+Invoke-MgAcceptUserEventTentatively -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Invoke-MgAcceptUserEventTentatively Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

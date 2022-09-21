@@ -1,18 +1,36 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgWindowsUpdatesDeployment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.WindowsUpdates
+$params = @{
+	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
+	State = @{
+		"@odata.type" = "microsoft.graph.windowsUpdates.deploymentState"
+		RequestedValue = "paused"
+	}
+}
+Update-MgWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Update-MgWindowsUpdatesDeployment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Update-MgWindowsUpdatesDeployment Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.WindowsUpdates
+$params = @{
+	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
+	Settings = @{
+		"@odata.type" = "microsoft.graph.windowsUpdates.windowsDeploymentSettings"
+		Monitoring = @{
+			MonitoringRules = @(
+				@{
+					Signal = "rollback"
+					Threshold = 5
+					Action = "pauseDeployment"
+				}
+			)
+		}
+	}
+}
+Update-MgWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgWindowsUpdatesDeployment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

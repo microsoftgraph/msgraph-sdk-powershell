@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Restore-MgSiteListItemVersion Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+Restore-MgSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Restore-MgSiteListItemVersion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

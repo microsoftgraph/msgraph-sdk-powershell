@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgPolicyMobileDeviceManagementPolicy Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.mobilityManagementPolicy"
+	ComplianceUrl = "https://portal.uem.contoso.com/?portalAction=Compliance"
+	DiscoveryUrl = "https://enrollment.uem.contoso.com/enrollmentserver/discovery.svc"
+	TermsOfUseUrl = "https://portal.uem.contoso.com/TermsofUse.aspx"
+}
+Update-MgPolicyMobileDeviceManagementPolicy -MobilityManagementPolicyId $mobilityManagementPolicyId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgPolicyMobileDeviceManagementPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
