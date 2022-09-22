@@ -73,11 +73,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: List externalConnections
-      description: Get a list of the externalConnection objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
+      summary: Get connections from external
       operationId: external_ListConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -154,11 +150,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalConnection
-      description: Create a new externalConnection object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
+      summary: Create new navigation property to connections for external
       operationId: external_CreateConnections
       requestBody:
         description: New navigation property
@@ -385,11 +377,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalGroup
-      description: Create a new externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
+      summary: Create new navigation property to groups for external
       operationId: external.connections_CreateGroups
       parameters:
         - name: externalConnection-id
@@ -634,11 +622,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create identity
-      description: Create an identity resource for a new member in an externalGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for external
       operationId: external.connections.groups_CreateMembers
       parameters:
         - name: externalConnection-id
@@ -1296,11 +1280,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get schema
-      description: Read the properties and relationships of a schema object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+      summary: Get schema from external
       operationId: external.connections_GetSchema
       parameters:
         - name: externalConnection-id
@@ -1488,6 +1468,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of searchEntity
                 type: object
                 properties:
                   value:
@@ -1499,9 +1480,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
 components:
   schemas:
     microsoft.graph.externalConnectors.external:
@@ -1512,7 +1490,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalConnection:
@@ -1537,17 +1514,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-              x-ms-navigationProperty: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
-              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
-              x-ms-navigationProperty: true
             schema:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
           additionalProperties:
@@ -1571,7 +1545,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
               description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.identity:
@@ -1984,76 +1957,61 @@ components:
     microsoft.graph.externalConnectors.externalConnectionCollectionResponse:
       title: Collection of externalConnection
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalGroupCollectionResponse:
       title: Collection of externalGroup
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.identityCollectionResponse:
       title: Collection of identity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       title: Collection of externalItem
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.connectionOperationCollectionResponse:
       title: Collection of connectionOperation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.accessType:
@@ -2271,15 +2229,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bucketAggregationRange:

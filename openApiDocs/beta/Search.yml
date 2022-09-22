@@ -73,11 +73,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: List connections
-      description: Retrieve a list of externalConnections.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
+      summary: Get connections from external
       operationId: external_ListConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -174,11 +170,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create connection
-      description: Create a new externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
+      summary: Create new navigation property to connections for external
       operationId: external_CreateConnections
       requestBody:
         description: New navigation property
@@ -417,11 +409,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalGroup
-      description: Create a new externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
+      summary: Create new navigation property to groups for external
       operationId: external.connections_CreateGroups
       parameters:
         - name: externalConnection-id
@@ -666,11 +654,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalGroupMember
-      description: Create a new externalGroupMember object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for external
       operationId: external.connections.groups_CreateMembers
       parameters:
         - name: externalConnection-id
@@ -1499,7 +1483,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of externalActivityResult
+                title: Collection of externalItem
                 type: object
                 properties:
                   value:
@@ -1511,9 +1495,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/external/connections/{externalConnection-id}/operations':
     get:
       tags:
@@ -1749,11 +1730,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connectionQuota
-      description: Retrieve the properties and relationships of a connectionQuota object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0
+      summary: Get quota from external
       operationId: external.connections_GetQuota
       parameters:
         - name: externalConnection-id
@@ -1856,11 +1833,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get schema
-      description: Retrieve the properties of a schema for an externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+      summary: Get schema from external
       operationId: external.connections_GetSchema
       parameters:
         - name: externalConnection-id
@@ -1910,11 +1883,7 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update schema
-      description: Update the properties of a schema for an externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0
+      summary: Update the navigation property schema in external
       operationId: external.connections_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2042,11 +2011,8 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: List acronyms
-      description: Get a list of the acronym objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
+      summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
       operationId: search_ListAcronyms
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2124,11 +2090,7 @@ paths:
     post:
       tags:
         - search.acronym
-      summary: Create acronym
-      description: Create a new acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
+      summary: Create new navigation property to acronyms for search
       operationId: search_CreateAcronyms
       requestBody:
         description: New navigation property
@@ -2261,11 +2223,8 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: List bookmarks
-      description: Get a list of bookmark objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
+      summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_ListBookmarks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2370,11 +2329,7 @@ paths:
     post:
       tags:
         - search.bookmark
-      summary: Create bookmark
-      description: Create a new bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
+      summary: Create new navigation property to bookmarks for search
       operationId: search_CreateBookmarks
       requestBody:
         description: New navigation property
@@ -2517,10 +2472,6 @@ paths:
       tags:
         - search.Actions
       summary: Invoke action query
-      description: Run a specified search query. Search results are provided in the response.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-query?view=graph-rest-1.0
       operationId: search_query
       requestBody:
         description: Action parameters
@@ -2542,6 +2493,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of searchEntity
                 type: object
                 properties:
                   value:
@@ -2553,18 +2505,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /search/qnas:
     get:
       tags:
         - search.qna
-      summary: List qnas
-      description: Get a list of the qna objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
+      summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
       operationId: search_ListQnas
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2663,11 +2609,7 @@ paths:
     post:
       tags:
         - search.qna
-      summary: Create qna
-      description: Create a new qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
+      summary: Create new navigation property to qnas for search
       operationId: search_CreateQnas
       requestBody:
         description: New navigation property
@@ -2813,7 +2755,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalConnection:
@@ -2855,17 +2796,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-              x-ms-navigationProperty: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
-              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
-              x-ms-navigationProperty: true
             quota:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
             schema:
@@ -2891,7 +2829,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
               description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.identity:
@@ -2924,7 +2861,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
               description: Write-only property. Returns results.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.externalActivity:
@@ -3006,19 +2942,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.acronym'
               description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
-              x-ms-navigationProperty: true
             bookmarks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.bookmark'
               description: Administrative answer in Microsoft Search results for common search queries in an organization.
-              x-ms-navigationProperty: true
             qnas:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.qna'
               description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.search.acronym:
@@ -3706,136 +3639,109 @@ components:
     microsoft.graph.externalConnectors.externalConnectionCollectionResponse:
       title: Collection of externalConnection
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalGroupCollectionResponse:
       title: Collection of externalGroup
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.identityCollectionResponse:
       title: Collection of identity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       title: Collection of externalItem
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalActivityCollectionResponse:
       title: Collection of externalActivity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.connectionOperationCollectionResponse:
       title: Collection of connectionOperation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.search.acronymCollectionResponse:
       title: Collection of acronym
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.search.acronym'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.search.acronym'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.search.bookmarkCollectionResponse:
       title: Collection of bookmark
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.search.bookmark'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.search.bookmark'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.search.qnaCollectionResponse:
       title: Collection of qna
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.search.qna'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.search.qna'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.urlToItemResolverBase:
@@ -4135,15 +4041,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.Json:

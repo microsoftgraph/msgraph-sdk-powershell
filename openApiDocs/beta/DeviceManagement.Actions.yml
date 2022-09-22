@@ -528,6 +528,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of certificateConnectorDetails
                 type: object
                 properties:
                   value:
@@ -539,9 +540,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/certificateConnectorDetails/{certificateConnectorDetails-id}/microsoft.graph.getHealthMetricTimeSeries':
     post:
       tags:
@@ -575,6 +573,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of certificateConnectorDetails
                 type: object
                 properties:
                   value:
@@ -586,9 +585,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/chromeOSOnboardingSettings/microsoft.graph.connect:
     post:
       tags:
@@ -1225,10 +1221,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovisionCloudPc
-      description: Reprovision a Cloud PC with an Intune managed device ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
@@ -1336,10 +1328,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resizeCloudPc
-      description: Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_resizeCloudPc
       parameters:
         - name: managedDevice-id
@@ -1374,10 +1362,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action restoreCloudPc
-      description: Restore a Cloud PC device to a previous state with an Intune managed device ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_restoreCloudPc
       parameters:
         - name: managedDevice-id
@@ -1534,10 +1518,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setCloudPcReviewStatus
-      description: 'Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
@@ -1822,10 +1802,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkReprovisionCloudPc
-      description: Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
@@ -1857,10 +1833,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkRestoreCloudPc
-      description: Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
@@ -1899,10 +1871,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkSetCloudPcReviewStatus
-      description: Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
@@ -2095,7 +2063,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementConfigurationPolicyAssignment
+                title: Collection of deviceManagementCompliancePolicy
                 type: object
                 properties:
                   value:
@@ -2107,9 +2075,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy-id}/microsoft.graph.setScheduledActions':
     post:
       tags:
@@ -2145,7 +2110,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementComplianceScheduledActionForRule
+                title: Collection of deviceManagementCompliancePolicy
                 type: object
                 properties:
                   value:
@@ -2157,9 +2122,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.assign':
     post:
       tags:
@@ -2195,7 +2157,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementConfigurationPolicyAssignment
+                title: Collection of deviceManagementConfigurationPolicy
                 type: object
                 properties:
                   value:
@@ -2207,9 +2169,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.createCopy':
     post:
       tags:
@@ -2387,7 +2346,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of importedAppleDeviceIdentityResult
+                title: Collection of importedAppleDeviceIdentity
                 type: object
                 properties:
                   value:
@@ -2399,9 +2358,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.generateEncryptionPublicKey':
     post:
       tags:
@@ -2571,7 +2527,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceCompliancePolicyAssignment
+                title: Collection of deviceCompliancePolicy
                 type: object
                 properties:
                   value:
@@ -2583,9 +2539,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.scheduleActionsForRules':
     post:
       tags:
@@ -2648,6 +2601,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of deviceCompliancePolicy
                 type: object
                 properties:
                   value:
@@ -2659,9 +2613,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/deviceCompliancePolicies/microsoft.graph.refreshDeviceComplianceReportSummarization:
     post:
       tags:
@@ -2805,7 +2756,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceConfigurationAssignment
+                title: Collection of deviceConfiguration
                 type: object
                 properties:
                   value:
@@ -2817,9 +2768,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.assignedAccessMultiModeProfiles':
     post:
       tags:
@@ -2917,6 +2865,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of deviceConfiguration
                 type: object
                 properties:
                   value:
@@ -2928,9 +2877,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/deviceConfigurations/microsoft.graph.hasPayloadLinks:
     post:
       tags:
@@ -2958,6 +2904,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of deviceConfiguration
                 type: object
                 properties:
                   value:
@@ -2969,9 +2916,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/microsoft.graph.assign':
     post:
       tags:
@@ -3135,6 +3079,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of deviceEnrollmentConfiguration
                 type: object
                 properties:
                   value:
@@ -3146,9 +3091,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/microsoft.graph.assign':
     post:
       tags:
@@ -3339,6 +3281,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of deviceManagementScript
                 type: object
                 properties:
                   value:
@@ -3350,9 +3293,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/microsoft.graph.assign':
     post:
       tags:
@@ -3427,7 +3367,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of embeddedSIMActivationCodePoolAssignment
+                title: Collection of embeddedSIMActivationCodePool
                 type: object
                 properties:
                   value:
@@ -3439,9 +3379,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector-id}/microsoft.graph.sync':
     post:
       tags:
@@ -3510,7 +3447,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of groupPolicyConfigurationAssignment
+                title: Collection of groupPolicyConfiguration
                 type: object
                 properties:
                   value:
@@ -3522,9 +3459,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/microsoft.graph.updateDefinitionValues':
     post:
       tags:
@@ -3796,7 +3730,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of importedDeviceIdentityResult
+                title: Collection of importedDeviceIdentity
                 type: object
                 properties:
                   value:
@@ -3808,9 +3742,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/importedDeviceIdentities/microsoft.graph.searchExistingIdentities:
     post:
       tags:
@@ -3849,9 +3780,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/importedWindowsAutopilotDeviceIdentities/microsoft.graph.import:
     post:
       tags:
@@ -3890,9 +3818,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/intents/{deviceManagementIntent-id}/microsoft.graph.assign':
     post:
       tags:
@@ -4664,10 +4589,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovisionCloudPc
-      description: Reprovision a Cloud PC with an Intune managed device ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
@@ -4775,10 +4696,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resizeCloudPc
-      description: Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_resizeCloudPc
       parameters:
         - name: managedDevice-id
@@ -4813,10 +4730,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action restoreCloudPc
-      description: Restore a Cloud PC device to a previous state with an Intune managed device ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_restoreCloudPc
       parameters:
         - name: managedDevice-id
@@ -4973,10 +4886,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setCloudPcReviewStatus
-      description: 'Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
@@ -5261,10 +5170,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkReprovisionCloudPc
-      description: Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
@@ -5296,10 +5201,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkRestoreCloudPc
-      description: Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
@@ -5338,10 +5239,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkSetCloudPcReviewStatus
-      description: Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
@@ -5803,6 +5700,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of microsoftTunnelServer
                 type: object
                 properties:
                   value:
@@ -5814,9 +5712,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite-id}/microsoftTunnelServers/{microsoftTunnelServer-id}/microsoft.graph.getHealthMetricTimeSeries':
     post:
       tags:
@@ -5867,6 +5762,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of microsoftTunnelServer
                 type: object
                 properties:
                   value:
@@ -5878,9 +5774,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}/microsoft.graph.createDownloadUrl':
     post:
       tags:
@@ -10099,7 +9992,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementResourceAccessProfileAssignment
+                title: Collection of deviceManagementResourceAccessProfileBase
                 type: object
                 properties:
                   value:
@@ -10111,9 +10004,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/resourceAccessProfiles/microsoft.graph.queryByPlatformType:
     post:
       tags:
@@ -10150,9 +10040,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/microsoft.graph.clone':
     post:
       tags:
@@ -10221,7 +10108,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementConfigurationPolicyAssignment
+                title: Collection of deviceManagementConfigurationPolicy
                 type: object
                 properties:
                   value:
@@ -10233,9 +10120,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.createCopy':
     post:
       tags:
@@ -10320,7 +10204,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of roleScopeTagAutoAssignment
+                title: Collection of roleScopeTag
                 type: object
                 properties:
                   value:
@@ -10332,9 +10216,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/roleScopeTags/microsoft.graph.getRoleScopeTagsById:
     post:
       tags:
@@ -10374,9 +10255,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/templates/{deviceManagementTemplate-id}/microsoft.graph.createInstance':
     post:
       tags:
@@ -10506,7 +10384,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementIntent
+                title: Collection of deviceManagementTemplate
                 type: object
                 properties:
                   value:
@@ -10518,9 +10396,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/templates/microsoft.graph.importOffice365DeviceConfigurationPolicies:
     post:
       tags:
@@ -10533,7 +10408,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementIntent
+                title: Collection of deviceManagementTemplate
                 type: object
                 properties:
                   value:
@@ -10545,9 +10420,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/tenantAttachRBAC/microsoft.graph.enable:
     post:
       tags:
@@ -10647,10 +10519,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action changeUserAccountType
-      description: Change the account type of the user on a specific Cloud PC.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_changeUserAccountType
       parameters:
         - name: cloudPC-id
@@ -10684,10 +10552,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action endGracePeriod
-      description: End the grace period for a specific Cloud PC. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before de-provisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_endGracePeriod
       parameters:
         - name: cloudPC-id
@@ -10709,10 +10573,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reboot
-      description: Reboot a specific Cloud PC.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_reboot
       parameters:
         - name: cloudPC-id
@@ -10734,10 +10594,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rename
-      description: Rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_rename
       parameters:
         - name: cloudPC-id
@@ -10772,10 +10628,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovision
-      description: Reprovision a specific Cloud PC.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_reprovision
       parameters:
         - name: cloudPC-id
@@ -10811,10 +10663,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action restore
-      description: Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_restore
       parameters:
         - name: cloudPC-id
@@ -10849,10 +10697,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action troubleshoot
-      description: Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_troubleshoot
       parameters:
         - name: cloudPC-id
@@ -10874,10 +10718,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reupload
-      description: Reupload a cloudPcDeviceImage object that failed to upload.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.deviceImages_reupload
       parameters:
         - name: cloudPcDeviceImage-id
@@ -10899,10 +10739,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action runHealthChecks
-      description: Run health checks on the cloudPcOnPremisesConnection object. This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.onPremisesConnections_runHealthChecks
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -10924,10 +10760,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateAdDomainPassword
-      description: Update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.onPremisesConnections_updateAdDomainPassword
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -10962,10 +10794,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      description: Assign cloudPcProvisioningPolicy to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.provisioningPolicies_assign
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -11001,10 +10829,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      description: Assign a cloudPcUserSetting to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.userSettings_assign
       parameters:
         - name: cloudPcUserSetting-id
@@ -11314,6 +11138,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of windowsAutopilotDeploymentProfile
                 type: object
                 properties:
                   value:
@@ -11325,9 +11150,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.assignResourceAccountToDevice':
     post:
       tags:
@@ -12292,7 +12114,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -12318,7 +12139,6 @@ components:
             isAssigned:
               type: boolean
               description: Policy assignment status. This property is read-only.
-              readOnly: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -12351,13 +12171,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
               description: Policy assignments
-              x-ms-navigationProperty: true
             settings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSetting'
               description: Policy settings
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Device Management Configuration Policy
@@ -12488,7 +12306,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -12621,7 +12438,6 @@ components:
               type: string
               description: The identifier of the source of the assignment. This property is read-only.
               nullable: true
-              readOnly: true
             target:
               $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
           additionalProperties:
@@ -12807,7 +12623,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
               description: The list of group assignments for the device configuration profile
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -12883,7 +12698,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentationValue'
               description: The associated group policy presentation values with the definition value.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The definition value entity stores the value for a single group policy definition.
@@ -13079,25 +12893,21 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentAssignment'
               description: Collection of assignments
-              x-ms-navigationProperty: true
             categories:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentSettingCategory'
               description: Collection of setting categories within the intent
-              x-ms-navigationProperty: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentDeviceSettingStateSummary'
               description: Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-              x-ms-navigationProperty: true
             deviceStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentDeviceState'
               description: Collection of states of all devices that the intent is applied to
-              x-ms-navigationProperty: true
             deviceStateSummary:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentDeviceStateSummary'
             settings:
@@ -13105,13 +12915,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingInstance'
               description: Collection of all settings to be applied
-              x-ms-navigationProperty: true
             userStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentUserState'
               description: Collection of states of all users that the intent is applied to
-              x-ms-navigationProperty: true
             userStateSummary:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentUserStateSummary'
           additionalProperties:
@@ -13390,7 +13198,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementResourceAccessProfileAssignment'
               description: The list of assignments for the device configuration profile.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Base Profile Type for Resource Access
@@ -13405,7 +13212,6 @@ components:
               type: string
               description: reusable setting creation date and time. This property is read-only.
               format: date-time
-              readOnly: true
             description:
               type: string
               description: reusable setting description supplied by user.
@@ -13418,14 +13224,12 @@ components:
               type: string
               description: date and time when reusable setting was last modified. This property is read-only.
               format: date-time
-              readOnly: true
             referencingConfigurationPolicyCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
               description: count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
               format: int32
-              readOnly: true
             settingDefinitionId:
               type: string
               description: setting definition id associated with this reusable setting.
@@ -13438,13 +13242,11 @@ components:
               type: integer
               description: version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
               format: int32
-              readOnly: true
             referencingConfigurationPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
               description: configuration policies referencing the current reusable setting. This property is read-only.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Graph model for a reusable setting
@@ -13476,13 +13278,11 @@ components:
             isBuiltIn:
               type: boolean
               description: Description of the Role Scope Tag. This property is read-only.
-              readOnly: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
               description: The list of assignments for this Role Scope Tag.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Role Scope Tag
@@ -13698,11 +13498,6 @@ components:
           - value: predefined
             description: Predefined template for what will be collected
             name: predefined
-    ReferenceNumeric:
-      enum:
-        - '-INF'
-        - INF
-        - NaN
     microsoft.graph.cloudPcUserAccessLevel:
       title: cloudPcUserAccessLevel
       enum:
@@ -13912,12 +13707,10 @@ components:
           type: string
           description: Template Display Name of the referenced template. This property is read-only.
           nullable: true
-          readOnly: true
         templateDisplayVersion:
           type: string
           description: Template Display Version of the referenced Template. This property is read-only.
           nullable: true
-          readOnly: true
         templateFamily:
           $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTemplateFamily'
         templateId:
@@ -13940,7 +13733,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
               description: List of related Setting Definitions. This property is read-only.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Setting instance within policy
@@ -14154,7 +13946,6 @@ components:
             supportsScopeTags:
               type: boolean
               description: Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
-              readOnly: true
             version:
               maximum: 2147483647
               minimum: -2147483648
@@ -14166,19 +13957,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
               description: The list of assignments for the device configuration profile.
-              x-ms-navigationProperty: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
               description: Device Configuration Setting State Device Summary
-              x-ms-navigationProperty: true
             deviceStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
               description: Device configuration installation status by device.
-              x-ms-navigationProperty: true
             deviceStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceOverview'
             groupAssignments:
@@ -14186,13 +13974,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationGroupAssignment'
               description: The list of group assignments for the device configuration profile.
-              x-ms-navigationProperty: true
             userStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
               description: Device configuration installation status by user.
-              x-ms-navigationProperty: true
             userStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserOverview'
           additionalProperties:
@@ -14465,7 +14251,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
               description: The group policy presentations associated with the definition.
-              x-ms-navigationProperty: true
             previousVersionDefinition:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
           additionalProperties:
@@ -14547,7 +14332,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingInstance'
               description: The settings this category contains
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Entity representing an intent setting category
@@ -16092,7 +15876,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
               description: The children categories
-              x-ms-navigationProperty: true
             definitionFile:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
             definitions:
@@ -16100,7 +15883,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The immediate GroupPolicyDefinition children of the category
-              x-ms-navigationProperty: true
             parent:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
           additionalProperties:
@@ -16154,7 +15936,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The group policy definitions associated with the file.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
@@ -16225,7 +16006,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingDefinition'
               description: The setting definitions this category contains
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Entity representing a setting category

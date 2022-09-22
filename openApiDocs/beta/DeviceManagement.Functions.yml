@@ -44,17 +44,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceAndAppManagementAssignmentFilter
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of deviceAndAppManagementAssignmentFilter
                 type: object
                 properties:
                   value:
@@ -66,9 +62,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/assignmentFilters/microsoft.graph.getPlatformSupportedProperties(platform=''{platform}'')':
     get:
       tags:
@@ -83,17 +76,13 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of deviceAndAppManagementAssignmentFilter
                 type: object
                 properties:
                   value:
@@ -105,9 +94,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/assignmentFilters/microsoft.graph.getState():
     get:
       tags:
@@ -139,17 +125,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of auditEvent
                 type: object
                 properties:
                   value:
@@ -162,27 +144,19 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/auditEvents/microsoft.graph.getAuditCategories():
     get:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditCategories
       operationId: deviceManagement.auditEvents_getAuditCategories
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of auditEvent
                 type: object
                 properties:
                   value:
@@ -195,9 +169,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getCloudPcRemoteActionResults()':
     get:
       tags:
@@ -213,17 +184,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of managedDevice
                 type: object
                 properties:
                   value:
@@ -235,9 +202,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getCloudPcReviewStatus()':
     get:
       tags:
@@ -309,17 +273,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of managedDevice
                 type: object
                 properties:
                   value:
@@ -331,9 +291,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getOemWarranty()':
     get:
       tags:
@@ -407,17 +364,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of managedDevice
                 type: object
                 properties:
                   value:
@@ -429,9 +382,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/configManagerCollections/microsoft.graph.getPolicySummary(policyId=''{policyId}'')':
     get:
       tags:
@@ -568,18 +518,13 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getDevicesScheduledToRetire
       operationId: deviceManagement.deviceCompliancePolicies_getDevicesScheduledToRetire
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of deviceCompliancePolicy
                 type: object
                 properties:
                   value:
@@ -591,9 +536,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId=''{secretReferenceValueId}'')':
     get:
       tags:
@@ -639,18 +581,13 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getIosAvailableUpdateVersions
       operationId: deviceManagement.deviceConfigurations_getIosAvailableUpdateVersions
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of deviceConfiguration
                 type: object
                 properties:
                   value:
@@ -662,9 +599,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/microsoft.graph.getRemediationHistory()':
     get:
       tags:
@@ -746,17 +680,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of deviceManagementIntent
                 type: object
                 properties:
                   value:
@@ -768,9 +698,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getCloudPcRemoteActionResults()':
     get:
       tags:
@@ -786,17 +713,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of managedDevice
                 type: object
                 properties:
                   value:
@@ -808,9 +731,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getCloudPcReviewStatus()':
     get:
       tags:
@@ -882,17 +802,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of managedDevice
                 type: object
                 properties:
                   value:
@@ -904,9 +820,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getOemWarranty()':
     get:
       tags:
@@ -980,17 +893,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of managedDevice
                 type: object
                 properties:
                   value:
@@ -1002,9 +911,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/microsoft.graph.getAssignedRoleDetails():
     get:
       tags:
@@ -1060,18 +966,13 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
       operationId: deviceManagement_getEffectivePermissions
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of deviceManagement
                 type: object
                 properties:
                   value:
@@ -1084,9 +985,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
     get:
       tags:
@@ -1102,17 +1000,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of deviceManagement
                 type: object
                 properties:
                   value:
@@ -1124,9 +1018,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids={ids})':
     get:
       tags:
@@ -1143,53 +1034,13 @@ paths:
             type: array
             items:
               type: string
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isBuiltIn
-                - assignments
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of roleScopeTag
+                title: Collection of deviceManagement
                 type: object
                 properties:
                   value:
@@ -1201,9 +1052,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/microsoft.graph.getRoleScopeTagsByResource(resource=''{resource}'')':
     get:
       tags:
@@ -1219,53 +1067,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isBuiltIn
-                - assignments
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of roleScopeTag
+                title: Collection of deviceManagement
                 type: object
                 properties:
                   value:
@@ -1277,9 +1085,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/microsoft.graph.getSuggestedEnrollmentLimit(enrollmentType=''{enrollmentType}'')':
     get:
       tags:
@@ -1389,18 +1194,13 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getPortalNotifications
       operationId: deviceManagement.monitoring.alertRecords_getPortalNotifications
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of alertRecord
                 type: object
                 properties:
                   value:
@@ -1412,9 +1212,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/resourceOperations/{resourceOperation-id}/microsoft.graph.getScopesForUser(userid=''{userid}'')':
     get:
       tags:
@@ -1438,17 +1235,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of resourceOperation
                 type: object
                 properties:
                   value:
@@ -1461,9 +1254,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/roleScopeTags/microsoft.graph.hasCustomRoleScopeTag():
     get:
       tags:
@@ -1509,17 +1299,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of deviceManagementTemplate
                 type: object
                 properties:
                   value:
@@ -1531,9 +1317,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/templates/{deviceManagementTemplate-id}/migratableTo/{deviceManagementTemplate-id1}/microsoft.graph.compare(templateId=''{templateId}'')':
     get:
       tags:
@@ -1565,17 +1348,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of deviceManagementTemplate
                 type: object
                 properties:
                   value:
@@ -1587,9 +1366,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/tenantAttachRBAC/microsoft.graph.getState():
     get:
       tags:
@@ -1620,96 +1396,6 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - averageBlueScreens
-                - averageRestarts
-                - blueScreenCount
-                - bootScore
-                - coreBootTimeInMs
-                - coreLoginTimeInMs
-                - deviceCount
-                - deviceName
-                - diskType
-                - groupPolicyBootTimeInMs
-                - groupPolicyLoginTimeInMs
-                - healthStatus
-                - loginScore
-                - manufacturer
-                - model
-                - modelStartupPerformanceScore
-                - operatingSystemVersion
-                - responsiveDesktopTimeInMs
-                - restartCount
-                - startupPerformanceScore
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - averageBlueScreens
-                - averageBlueScreens desc
-                - averageRestarts
-                - averageRestarts desc
-                - blueScreenCount
-                - blueScreenCount desc
-                - bootScore
-                - bootScore desc
-                - coreBootTimeInMs
-                - coreBootTimeInMs desc
-                - coreLoginTimeInMs
-                - coreLoginTimeInMs desc
-                - deviceCount
-                - deviceCount desc
-                - deviceName
-                - deviceName desc
-                - diskType
-                - diskType desc
-                - groupPolicyBootTimeInMs
-                - groupPolicyBootTimeInMs desc
-                - groupPolicyLoginTimeInMs
-                - groupPolicyLoginTimeInMs desc
-                - healthStatus
-                - healthStatus desc
-                - loginScore
-                - loginScore desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - modelStartupPerformanceScore
-                - modelStartupPerformanceScore desc
-                - operatingSystemVersion
-                - operatingSystemVersion desc
-                - responsiveDesktopTimeInMs
-                - responsiveDesktopTimeInMs desc
-                - restartCount
-                - restartCount desc
-                - startupPerformanceScore
-                - startupPerformanceScore desc
-              type: string
       responses:
         '200':
           description: Success
@@ -1728,9 +1414,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy=''{summarizeBy}'')':
     get:
       tags:
@@ -1769,75 +1452,6 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - cloudPcFailurePercentage
-                - cloudPcRoundTripTime
-                - cloudPcSignInTime
-                - coreBootTime
-                - coreSignInTime
-                - deviceCount
-                - deviceId
-                - deviceName
-                - manufacturer
-                - model
-                - remoteSignInTime
-                - userPrincipalName
-                - virtualNetwork
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - cloudPcFailurePercentage
-                - cloudPcFailurePercentage desc
-                - cloudPcRoundTripTime
-                - cloudPcRoundTripTime desc
-                - cloudPcSignInTime
-                - cloudPcSignInTime desc
-                - coreBootTime
-                - coreBootTime desc
-                - coreSignInTime
-                - coreSignInTime desc
-                - deviceCount
-                - deviceCount desc
-                - deviceId
-                - deviceId desc
-                - deviceName
-                - deviceName desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - remoteSignInTime
-                - remoteSignInTime desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - virtualNetwork
-                - virtualNetwork desc
-              type: string
       responses:
         '200':
           description: Success
@@ -1856,9 +1470,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/userExperienceAnalyticsResourcePerformance/microsoft.graph.summarizeDeviceResourcePerformance(summarizeBy=''{summarizeBy}'')':
     get:
       tags:
@@ -1873,75 +1484,6 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - averageSpikeTimeScore
-                - cpuSpikeTimePercentage
-                - cpuSpikeTimePercentageThreshold
-                - cpuSpikeTimeScore
-                - deviceCount
-                - deviceId
-                - deviceName
-                - deviceResourcePerformanceScore
-                - manufacturer
-                - model
-                - ramSpikeTimePercentage
-                - ramSpikeTimePercentageThreshold
-                - ramSpikeTimeScore
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - averageSpikeTimeScore
-                - averageSpikeTimeScore desc
-                - cpuSpikeTimePercentage
-                - cpuSpikeTimePercentage desc
-                - cpuSpikeTimePercentageThreshold
-                - cpuSpikeTimePercentageThreshold desc
-                - cpuSpikeTimeScore
-                - cpuSpikeTimeScore desc
-                - deviceCount
-                - deviceCount desc
-                - deviceId
-                - deviceId desc
-                - deviceName
-                - deviceName desc
-                - deviceResourcePerformanceScore
-                - deviceResourcePerformanceScore desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - ramSpikeTimePercentage
-                - ramSpikeTimePercentage desc
-                - ramSpikeTimePercentageThreshold
-                - ramSpikeTimePercentageThreshold desc
-                - ramSpikeTimeScore
-                - ramSpikeTimeScore desc
-              type: string
       responses:
         '200':
           description: Success
@@ -1960,27 +1502,19 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/virtualEndpoint/auditEvents/microsoft.graph.getAuditActivityTypes():
     get:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
       operationId: deviceManagement.virtualEndpoint.auditEvents_getAuditActivityTypes
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of cloudPcAuditEvent
                 type: object
                 properties:
                   value:
@@ -1993,9 +1527,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getCloudPcConnectivityHistory()':
     get:
       tags:
@@ -2011,17 +1542,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of cloudPC
                 type: object
                 properties:
                   value:
@@ -2033,9 +1560,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getCloudPcLaunchInfo()':
     get:
       tags:
@@ -2067,18 +1591,13 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getSourceImages
       operationId: deviceManagement.virtualEndpoint.deviceImages_getSourceImages
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of cloudPcDeviceImage
                 type: object
                 properties:
                   value:
@@ -2090,27 +1609,19 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/virtualEndpoint/microsoft.graph.getEffectivePermissions():
     get:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
       operationId: deviceManagement.virtualEndpoint_getEffectivePermissions
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of virtualEndpoint
                 type: object
                 properties:
                   value:
@@ -2123,9 +1634,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/virtualEndpoint/snapshots/microsoft.graph.getStorageAccounts(subscriptionId=''{subscriptionId}'')':
     get:
       tags:
@@ -2141,17 +1649,13 @@ paths:
           schema:
             type: string
             nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of cloudPcSnapshot
                 type: object
                 properties:
                   value:
@@ -2163,27 +1667,19 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/virtualEndpoint/snapshots/microsoft.graph.getSubscriptions():
     get:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSubscriptions
       operationId: deviceManagement.virtualEndpoint.snapshots_getSubscriptions
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
+                title: Collection of cloudPcSnapshot
                 type: object
                 properties:
                   value:
@@ -2195,9 +1691,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
 components:
   schemas:
     microsoft.graph.assignmentFilterSupportedProperty:
@@ -2746,14 +2239,12 @@ components:
             type: string
             nullable: true
           description: Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.
-          readOnly: true
         roleDefinitionIds:
           type: array
           items:
             type: string
             nullable: true
           description: Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.
-          readOnly: true
       additionalProperties:
         type: object
       description: The set of Role Definitions and Role Assignments assigned to a user.
@@ -2767,63 +2258,54 @@ components:
           type: integer
           description: Number of devices with CompliancePolicy swung-over. This property is read-only.
           format: int32
-          readOnly: true
         configurationSettingsCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           description: Number of devices with ConfigurationSettings swung-over. This property is read-only.
           format: int32
-          readOnly: true
         endpointProtectionCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           description: Number of devices with EndpointProtection swung-over. This property is read-only.
           format: int32
-          readOnly: true
         inventoryCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           description: Number of devices with Inventory swung-over. This property is read-only.
           format: int32
-          readOnly: true
         modernAppsCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           description: Number of devices with ModernApps swung-over. This property is read-only.
           format: int32
-          readOnly: true
         officeAppsCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           description: Number of devices with OfficeApps swung-over. This property is read-only.
           format: int32
-          readOnly: true
         resourceAccessCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           description: Number of devices with ResourceAccess swung-over. This property is read-only.
           format: int32
-          readOnly: true
         totalComanagedCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           description: Number of Co-Managed Devices. This property is read-only.
           format: int32
-          readOnly: true
         windowsUpdateForBusinessCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           description: Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
           format: int32
-          readOnly: true
       additionalProperties:
         type: object
       description: Summary data for co managed devices
@@ -2898,13 +2380,11 @@ components:
             isBuiltIn:
               type: boolean
               description: Description of the Role Scope Tag. This property is read-only.
-              readOnly: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
               description: The list of assignments for this Role Scope Tag.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Role Scope Tag
@@ -3157,19 +2637,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
               description: The metric values for the user experience analytics Manufacturer regression.
-              x-ms-navigationProperty: true
             modelRegression:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
               description: The metric values for the user experience analytics model regression.
-              x-ms-navigationProperty: true
             operatingSystemRegression:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
               description: The metric values for the user experience analytics operating system regression.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The user experience analytics Regression Summary.
@@ -3935,11 +3412,6 @@ components:
         - critical
         - unknownFutureValue
       type: string
-    ReferenceNumeric:
-      enum:
-        - '-INF'
-        - INF
-        - NaN
     microsoft.graph.diskType:
       title: diskType
       enum:
@@ -4158,50 +3630,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
-  parameters:
-    top:
-      name: $top
-      in: query
-      description: Show only the first n items
-      style: form
-      explode: false
-      schema:
-        minimum: 0
-        type: integer
-      example: 50
-    skip:
-      name: $skip
-      in: query
-      description: Skip the first n items
-      style: form
-      explode: false
-      schema:
-        minimum: 0
-        type: integer
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      style: form
-      explode: false
-      schema:
-        type: string
-    filter:
-      name: $filter
-      in: query
-      description: Filter items by property values
-      style: form
-      explode: false
-      schema:
-        type: string
-    count:
-      name: $count
-      in: query
-      description: Include count of items
-      style: form
-      explode: false
-      schema:
-        type: boolean
   securitySchemes:
     azureaadv2:
       type: oauth2
