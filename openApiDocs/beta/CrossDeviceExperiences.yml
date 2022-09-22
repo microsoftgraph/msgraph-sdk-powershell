@@ -1773,9 +1773,6 @@ paths:
         - users.device
       summary: Get memberOf from users
       description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: users.devices_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -1794,16 +1791,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1890,16 +1877,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1941,9 +1918,6 @@ paths:
         - users.device
       summary: Get registeredOwners from users
       description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: users.devices_ListRegisteredOwners
       parameters:
         - name: user-id
@@ -1962,16 +1936,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2082,9 +2046,6 @@ paths:
         - users.device
       summary: Get ref of registeredOwners from users
       description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: users.devices_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
@@ -2103,16 +2064,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2178,9 +2129,6 @@ paths:
         - users.device
       summary: Get registeredUsers from users
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: users.devices_ListRegisteredUsers
       parameters:
         - name: user-id
@@ -2199,16 +2147,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2295,16 +2233,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2346,9 +2274,6 @@ paths:
         - users.device
       summary: Get transitiveMemberOf from users
       description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: users.devices_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -2367,16 +2292,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2463,16 +2378,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2512,11 +2417,8 @@ paths:
     get:
       tags:
         - users.device
-      summary: List device usageRights
-      description: Retrieve a list of usageRight objects for a given device.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
+      summary: Get usageRights from users
+      description: Represents the usage rights a device has been granted.
       operationId: users.devices_ListUsageRights
       parameters:
         - name: user-id
@@ -2839,7 +2741,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activityHistoryItem:
@@ -3055,43 +2956,36 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
               description: Represents the usage rights a device has been granted.
-              x-ms-navigationProperty: true
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-              x-ms-navigationProperty: true
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the device. Read-only. Nullable.
-              x-ms-navigationProperty: true
             commands:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
               description: Set of commands sent to this device.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.command:
@@ -3326,16 +3220,13 @@ components:
     microsoft.graph.userActivityCollectionResponse:
       title: Collection of userActivity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userActivity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userActivity'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -3350,106 +3241,85 @@ components:
     microsoft.graph.activityHistoryItemCollectionResponse:
       title: Collection of activityHistoryItem
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.deviceCollectionResponse:
       title: Collection of device
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.device'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.device'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.commandCollectionResponse:
       title: Collection of command
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.command'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.command'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.extensionCollectionResponse:
       title: Collection of extension
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.extension'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     StringCollectionResponse:
       title: Collection of string
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                type: string
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.usageRightCollectionResponse:
       title: Collection of usageRight
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.usageRight'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.usageRight'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.imageInfo:
@@ -3470,15 +3340,6 @@ components:
         iconUrl:
           type: string
           description: Optional; URI that points to an icon which represents the application used to generate the activity
-          nullable: true
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
           nullable: true
       additionalProperties:
         type: object

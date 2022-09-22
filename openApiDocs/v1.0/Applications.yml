@@ -12,9 +12,6 @@ paths:
         - applications.application
       summary: List applications
       description: Get the list of applications in this organization.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list?view=graph-rest-1.0
       operationId: applications.application_ListApplication
       parameters:
         - name: ConsistencyLevel
@@ -202,9 +199,6 @@ paths:
         - applications.application
       summary: Create application
       description: Create a new application object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
       operationId: applications.application_CreateApplication
       requestBody:
         description: New entity
@@ -229,9 +223,6 @@ paths:
         - applications.application
       summary: Get application
       description: Get the properties and relationships of an application object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0
       operationId: applications.application_GetApplication
       parameters:
         - name: application-id
@@ -381,9 +372,6 @@ paths:
         - applications.application
       summary: Update application
       description: Update the properties of an application object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0
       operationId: applications.application_UpdateApplication
       parameters:
         - name: application-id
@@ -412,9 +400,6 @@ paths:
         - applications.application
       summary: Delete application
       description: 'Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
       operationId: applications.application_DeleteApplication
       parameters:
         - name: application-id
@@ -492,11 +477,8 @@ paths:
     get:
       tags:
         - applications.extensionProperty
-      summary: List extensionProperties (directory extensions)
-      description: 'Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
+      summary: Get extensionProperties from applications
+      description: Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
       operationId: applications_ListExtensionProperties
       parameters:
         - name: application-id
@@ -579,11 +561,7 @@ paths:
     post:
       tags:
         - applications.extensionProperty
-      summary: Create extensionProperty (directory extension)
-      description: 'Create a new directory extension definition, represented by an extensionProperty object.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
+      summary: Create new navigation property to extensionProperties for applications
       operationId: applications_CreateExtensionProperties
       parameters:
         - name: application-id
@@ -748,11 +726,8 @@ paths:
     get:
       tags:
         - applications.federatedIdentityCredential
-      summary: List federatedIdentityCredentials
-      description: Get a list of the federatedIdentityCredential objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0
+      summary: Get federatedIdentityCredentials from applications
+      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
       operationId: applications_ListFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -832,11 +807,7 @@ paths:
     post:
       tags:
         - applications.federatedIdentityCredential
-      summary: Create federatedIdentityCredential
-      description: 'Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0
+      summary: Create new navigation property to federatedIdentityCredentials for applications
       operationId: applications_CreateFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -1210,10 +1181,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action addKey
-      description: 'Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. You can use the Update application operation to perform an update instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
       operationId: applications_addKey
       parameters:
         - name: application-id
@@ -1255,10 +1222,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action addPassword
-      description: Adds a strong password or secret to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0
       operationId: applications_addPassword
       parameters:
         - name: application-id
@@ -1296,10 +1259,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: applications_checkMemberGroups
       parameters:
         - name: application-id
@@ -1330,6 +1289,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of application
                 type: object
                 properties:
                   value:
@@ -1341,9 +1301,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/applications/{application-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
@@ -1379,6 +1336,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of application
                 type: object
                 properties:
                   value:
@@ -1390,18 +1348,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/applications/{application-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
         - applications.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: applications_getMemberGroups
       parameters:
         - name: application-id
@@ -1432,6 +1383,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of application
                 type: object
                 properties:
                   value:
@@ -1443,18 +1395,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/applications/{application-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
         - applications.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: applications_getMemberObjects
       parameters:
         - name: application-id
@@ -1485,6 +1430,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of application
                 type: object
                 properties:
                   value:
@@ -1496,18 +1442,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/applications/{application-id}/microsoft.graph.removeKey':
     post:
       tags:
         - applications.Actions
       summary: Invoke action removeKey
-      description: 'Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0
       operationId: applications_removeKey
       parameters:
         - name: application-id
@@ -1545,10 +1484,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action removePassword
-      description: Remove a password from an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
       operationId: applications_removePassword
       parameters:
         - name: application-id
@@ -1584,10 +1519,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: applications_restore
       parameters:
         - name: application-id
@@ -1613,10 +1544,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action setVerifiedPublisher
-      description: 'Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
       operationId: applications_setVerifiedPublisher
       parameters:
         - name: application-id
@@ -1650,10 +1577,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action unsetVerifiedPublisher
-      description: 'Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
       operationId: applications_unsetVerifiedPublisher
       parameters:
         - name: application-id
@@ -1676,9 +1599,6 @@ paths:
         - applications.directoryObject
       summary: Get owners from applications
       description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
       operationId: applications_ListOwners
       parameters:
         - name: application-id
@@ -1689,16 +1609,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1801,9 +1711,6 @@ paths:
         - applications.directoryObject
       summary: Get ref of owners from applications
       description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
       operationId: applications_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
@@ -1814,16 +1721,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1879,11 +1776,7 @@ paths:
     get:
       tags:
         - applications.tokenIssuancePolicy
-      summary: List assigned tokenIssuancePolicies
-      description: List the tokenIssuancePolicy objects that are assigned to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
+      summary: Get tokenIssuancePolicies from applications
       operationId: applications_ListTokenIssuancePolicies
       parameters:
         - name: application-id
@@ -2008,11 +1901,7 @@ paths:
     get:
       tags:
         - applications.tokenIssuancePolicy
-      summary: List assigned tokenIssuancePolicies
-      description: List the tokenIssuancePolicy objects that are assigned to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
+      summary: Get ref of tokenIssuancePolicies from applications
       operationId: applications_ListTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
@@ -2086,11 +1975,7 @@ paths:
     get:
       tags:
         - applications.tokenLifetimePolicy
-      summary: List assigned tokenLifetimePolicy
-      description: List the tokenLifetimePolicy objects that are assigned to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
+      summary: Get tokenLifetimePolicies from applications
       operationId: applications_ListTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -2215,11 +2100,7 @@ paths:
     get:
       tags:
         - applications.tokenLifetimePolicy
-      summary: List assigned tokenLifetimePolicy
-      description: List the tokenLifetimePolicy objects that are assigned to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
+      summary: Get ref of tokenLifetimePolicies from applications
       operationId: applications_ListTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
@@ -2295,149 +2176,6 @@ paths:
         - applications.Functions
       summary: Invoke function delta
       operationId: applications_delta
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-                - addIns
-                - api
-                - appId
-                - applicationTemplateId
-                - appRoles
-                - certification
-                - createdDateTime
-                - defaultRedirectUri
-                - description
-                - disabledByMicrosoftStatus
-                - displayName
-                - groupMembershipClaims
-                - identifierUris
-                - info
-                - isDeviceOnlyAuthSupported
-                - isFallbackPublicClient
-                - keyCredentials
-                - logo
-                - notes
-                - oauth2RequirePostResponse
-                - optionalClaims
-                - parentalControlSettings
-                - passwordCredentials
-                - publicClient
-                - publisherDomain
-                - requiredResourceAccess
-                - samlMetadataUrl
-                - serviceManagementReference
-                - signInAudience
-                - spa
-                - tags
-                - tokenEncryptionKeyId
-                - verifiedPublisher
-                - web
-                - createdOnBehalfOf
-                - extensionProperties
-                - federatedIdentityCredentials
-                - homeRealmDiscoveryPolicies
-                - owners
-                - tokenIssuancePolicies
-                - tokenLifetimePolicies
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - addIns
-                - addIns desc
-                - api
-                - api desc
-                - appId
-                - appId desc
-                - applicationTemplateId
-                - applicationTemplateId desc
-                - appRoles
-                - appRoles desc
-                - certification
-                - certification desc
-                - createdDateTime
-                - createdDateTime desc
-                - defaultRedirectUri
-                - defaultRedirectUri desc
-                - description
-                - description desc
-                - disabledByMicrosoftStatus
-                - disabledByMicrosoftStatus desc
-                - displayName
-                - displayName desc
-                - groupMembershipClaims
-                - groupMembershipClaims desc
-                - identifierUris
-                - identifierUris desc
-                - info
-                - info desc
-                - isDeviceOnlyAuthSupported
-                - isDeviceOnlyAuthSupported desc
-                - isFallbackPublicClient
-                - isFallbackPublicClient desc
-                - keyCredentials
-                - keyCredentials desc
-                - logo
-                - logo desc
-                - notes
-                - notes desc
-                - oauth2RequirePostResponse
-                - oauth2RequirePostResponse desc
-                - optionalClaims
-                - optionalClaims desc
-                - parentalControlSettings
-                - parentalControlSettings desc
-                - passwordCredentials
-                - passwordCredentials desc
-                - publicClient
-                - publicClient desc
-                - publisherDomain
-                - publisherDomain desc
-                - requiredResourceAccess
-                - requiredResourceAccess desc
-                - samlMetadataUrl
-                - samlMetadataUrl desc
-                - serviceManagementReference
-                - serviceManagementReference desc
-                - signInAudience
-                - signInAudience desc
-                - spa
-                - spa desc
-                - tags
-                - tags desc
-                - tokenEncryptionKeyId
-                - tokenEncryptionKeyId desc
-                - verifiedPublisher
-                - verifiedPublisher desc
-                - web
-                - web desc
-              type: string
       responses:
         '200':
           description: Success
@@ -2456,18 +2194,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /applications/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
         - applications.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: applications_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
@@ -2489,7 +2220,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of extensionProperty
+                title: Collection of application
                 type: object
                 properties:
                   value:
@@ -2501,18 +2232,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /applications/microsoft.graph.getByIds:
     post:
       tags:
         - applications.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: applications_getGraphBPreIds
       requestBody:
         description: Action parameters
@@ -2539,7 +2263,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of directoryObject
+                title: Collection of application
                 type: object
                 properties:
                   value:
@@ -2551,18 +2275,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /applications/microsoft.graph.validateProperties:
     post:
       tags:
         - applications.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: applications_validateProperties
       requestBody:
         description: Action parameters
@@ -2600,9 +2317,6 @@ paths:
         - applicationTemplates.applicationTemplate
       summary: List applicationTemplates
       description: Retrieve a list of applicationTemplate objects from the Azure AD application gallery.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0
       operationId: applicationTemplates.applicationTemplate_ListApplicationTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2708,9 +2422,6 @@ paths:
         - applicationTemplates.applicationTemplate
       summary: Get applicationTemplate
       description: Retrieve the properties of an applicationTemplate object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0
       operationId: applicationTemplates.applicationTemplate_GetApplicationTemplate
       parameters:
         - name: applicationTemplate-id
@@ -2824,10 +2535,6 @@ paths:
       tags:
         - applicationTemplates.Actions
       summary: Invoke action instantiate
-      description: 'Add an instance of an application from the Azure AD application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the **applicationTemplate** object: `8adf8e6e-67b2-4cf2-a259-e3dc5476c621`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
       operationId: applicationTemplates_instantiate
       parameters:
         - name: applicationTemplate-id
@@ -2867,9 +2574,6 @@ paths:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
       description: Represents the app roles a group has been granted for an application. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0
       operationId: groups_ListAppRoleAssignments
       parameters:
         - name: group-id
@@ -2880,16 +2584,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2968,11 +2662,7 @@ paths:
     post:
       tags:
         - groups.appRoleAssignment
-      summary: Grant an appRoleAssignment to a group
-      description: 'Use this API to assign an app role to a group. All direct members of the group will be considered assigned. To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to appRoleAssignments for groups
       operationId: groups_CreateAppRoleAssignments
       parameters:
         - name: group-id
@@ -3024,16 +2714,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: appRoleAssignment
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3151,9 +2831,6 @@ paths:
         - servicePrincipals.servicePrincipal
       summary: List servicePrincipals
       description: Retrieve a list of servicePrincipal objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0
       operationId: servicePrincipals.servicePrincipal_ListServicePrincipal
       parameters:
         - name: ConsistencyLevel
@@ -3354,9 +3031,6 @@ paths:
         - servicePrincipals.servicePrincipal
       summary: Create servicePrincipal
       description: Create a new servicePrincipal object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0
       operationId: servicePrincipals.servicePrincipal_CreateServicePrincipal
       requestBody:
         description: New entity
@@ -3381,9 +3055,6 @@ paths:
         - servicePrincipals.servicePrincipal
       summary: Get servicePrincipal
       description: Retrieve the properties and relationships of a servicePrincipal object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
       operationId: servicePrincipals.servicePrincipal_GetServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -3605,9 +3276,6 @@ paths:
         - servicePrincipals.servicePrincipal
       summary: Delete servicePrincipal
       description: Delete a servicePrincipal object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
       operationId: servicePrincipals.servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -3634,11 +3302,8 @@ paths:
     get:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: List appRoleAssignments granted for a service principal
-      description: 'Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0
+      summary: Get appRoleAssignedTo from servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
       operationId: servicePrincipals_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3727,11 +3392,7 @@ paths:
     post:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Grant an appRoleAssignment for a service principal
-      description: 'Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0
+      summary: Create new navigation property to appRoleAssignedTo for servicePrincipals
       operationId: servicePrincipals_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3900,9 +3561,6 @@ paths:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
       description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0
       operationId: servicePrincipals_ListAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -3913,16 +3571,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4001,11 +3649,7 @@ paths:
     post:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Grant an appRoleAssignment to a service principal
-      description: 'Assign an app role to a client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment to a client service principal, you need three identifiers:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to appRoleAssignments for servicePrincipals
       operationId: servicePrincipals_CreateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -4057,16 +3701,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: appRoleAssignment
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4182,11 +3816,8 @@ paths:
     get:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: List assigned claimsMappingPolicy
-      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
+      summary: Get claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -4311,11 +3942,8 @@ paths:
     get:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: List assigned claimsMappingPolicy
-      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
+      summary: Get ref of claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -4518,11 +4146,7 @@ paths:
     get:
       tags:
         - servicePrincipals.delegatedPermissionClassification
-      summary: List delegatedPermissionClassifications collection of servicePrincipal
-      description: Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0
+      summary: Get delegatedPermissionClassifications from servicePrincipals
       operationId: servicePrincipals_ListDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -4596,11 +4220,7 @@ paths:
     post:
       tags:
         - servicePrincipals.delegatedPermissionClassification
-      summary: Create delegatedPermissionClassification
-      description: Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0
+      summary: Create new navigation property to delegatedPermissionClassifications for servicePrincipals
       operationId: servicePrincipals_CreateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -5253,11 +4873,8 @@ paths:
     get:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: List assigned homeRealmDiscoveryPolicy
-      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
+      summary: Get homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -5382,11 +4999,8 @@ paths:
     get:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: List assigned homeRealmDiscoveryPolicy
-      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
+      summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -5462,9 +5076,6 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0
       operationId: servicePrincipals_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -5475,16 +5086,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5563,16 +5164,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -5613,10 +5204,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addKey
-      description: 'Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. Update servicePrincipal can be used to perform an update instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0
       operationId: servicePrincipals_addKey
       parameters:
         - name: servicePrincipal-id
@@ -5658,10 +5245,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addPassword
-      description: Add a strong password or secret to a servicePrincipal object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0
       operationId: servicePrincipals_addPassword
       parameters:
         - name: servicePrincipal-id
@@ -5699,10 +5282,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addTokenSigningCertificate
-      description: "Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with **usage** set to `Sign`.\n    + A public key object with **usage** set to `Verify`.\n+ The passwordCredentials object.  All the objects have the same value of **customKeyIdentifier**. The **passwordCredential** is used to open the PFX file (private key). It and the associated private key object have the same value of **keyId**. When set during creation through the **displayName** property, the subject of the certificate cannot be updated. The **startDateTime** is set to the same time the certificate is created using the action. The **endDateTime** can be up to three years after the certificate is created."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0
       operationId: servicePrincipals_addTokenSigningCertificate
       parameters:
         - name: servicePrincipal-id
@@ -5746,10 +5325,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: servicePrincipals_checkMemberGroups
       parameters:
         - name: servicePrincipal-id
@@ -5780,6 +5355,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of servicePrincipal
                 type: object
                 properties:
                   value:
@@ -5791,9 +5367,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
@@ -5829,6 +5402,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of servicePrincipal
                 type: object
                 properties:
                   value:
@@ -5840,18 +5414,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: servicePrincipals_getMemberGroups
       parameters:
         - name: servicePrincipal-id
@@ -5882,6 +5449,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of servicePrincipal
                 type: object
                 properties:
                   value:
@@ -5893,18 +5461,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: servicePrincipals_getMemberObjects
       parameters:
         - name: servicePrincipal-id
@@ -5935,6 +5496,7 @@ paths:
           content:
             application/json:
               schema:
+                title: Collection of servicePrincipal
                 type: object
                 properties:
                   value:
@@ -5946,18 +5508,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.removeKey':
     post:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action removeKey
-      description: 'Remove a key credential from a servicePrincipal. This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0
       operationId: servicePrincipals_removeKey
       parameters:
         - name: servicePrincipal-id
@@ -5995,10 +5550,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action removePassword
-      description: Remove a password from a servicePrincipal object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0
       operationId: servicePrincipals_removePassword
       parameters:
         - name: servicePrincipal-id
@@ -6034,10 +5585,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: servicePrincipals_restore
       parameters:
         - name: servicePrincipal-id
@@ -6062,11 +5609,8 @@ paths:
     get:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
-      summary: List oauth2PermissionGrants
-      description: 'Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0
+      summary: Get oauth2PermissionGrants from servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_ListOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -6341,9 +5885,6 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
       description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
       operationId: servicePrincipals_ListOwners
       parameters:
         - name: servicePrincipal-id
@@ -6354,16 +5895,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -6466,9 +5997,6 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
       description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
       operationId: servicePrincipals_ListOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -6479,16 +6007,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -6855,9 +6373,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
       operationId: servicePrincipals_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -6868,16 +6383,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -6955,16 +6460,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -7006,154 +6501,6 @@ paths:
         - servicePrincipals.Functions
       summary: Invoke function delta
       operationId: servicePrincipals_delta
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-                - accountEnabled
-                - addIns
-                - alternativeNames
-                - appDescription
-                - appDisplayName
-                - appId
-                - applicationTemplateId
-                - appOwnerOrganizationId
-                - appRoleAssignmentRequired
-                - appRoles
-                - description
-                - disabledByMicrosoftStatus
-                - displayName
-                - homepage
-                - info
-                - keyCredentials
-                - loginUrl
-                - logoutUrl
-                - notes
-                - notificationEmailAddresses
-                - oauth2PermissionScopes
-                - passwordCredentials
-                - preferredSingleSignOnMode
-                - preferredTokenSigningKeyThumbprint
-                - replyUrls
-                - resourceSpecificApplicationPermissions
-                - samlSingleSignOnSettings
-                - servicePrincipalNames
-                - servicePrincipalType
-                - signInAudience
-                - tags
-                - tokenEncryptionKeyId
-                - verifiedPublisher
-                - appRoleAssignedTo
-                - appRoleAssignments
-                - claimsMappingPolicies
-                - createdObjects
-                - delegatedPermissionClassifications
-                - endpoints
-                - federatedIdentityCredentials
-                - homeRealmDiscoveryPolicies
-                - memberOf
-                - oauth2PermissionGrants
-                - ownedObjects
-                - owners
-                - tokenIssuancePolicies
-                - tokenLifetimePolicies
-                - transitiveMemberOf
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - accountEnabled
-                - accountEnabled desc
-                - addIns
-                - addIns desc
-                - alternativeNames
-                - alternativeNames desc
-                - appDescription
-                - appDescription desc
-                - appDisplayName
-                - appDisplayName desc
-                - appId
-                - appId desc
-                - applicationTemplateId
-                - applicationTemplateId desc
-                - appOwnerOrganizationId
-                - appOwnerOrganizationId desc
-                - appRoleAssignmentRequired
-                - appRoleAssignmentRequired desc
-                - appRoles
-                - appRoles desc
-                - description
-                - description desc
-                - disabledByMicrosoftStatus
-                - disabledByMicrosoftStatus desc
-                - displayName
-                - displayName desc
-                - homepage
-                - homepage desc
-                - info
-                - info desc
-                - keyCredentials
-                - keyCredentials desc
-                - loginUrl
-                - loginUrl desc
-                - logoutUrl
-                - logoutUrl desc
-                - notes
-                - notes desc
-                - notificationEmailAddresses
-                - notificationEmailAddresses desc
-                - oauth2PermissionScopes
-                - oauth2PermissionScopes desc
-                - passwordCredentials
-                - passwordCredentials desc
-                - preferredSingleSignOnMode
-                - preferredSingleSignOnMode desc
-                - preferredTokenSigningKeyThumbprint
-                - preferredTokenSigningKeyThumbprint desc
-                - replyUrls
-                - replyUrls desc
-                - resourceSpecificApplicationPermissions
-                - resourceSpecificApplicationPermissions desc
-                - samlSingleSignOnSettings
-                - samlSingleSignOnSettings desc
-                - servicePrincipalNames
-                - servicePrincipalNames desc
-                - servicePrincipalType
-                - servicePrincipalType desc
-                - signInAudience
-                - signInAudience desc
-                - tags
-                - tags desc
-                - tokenEncryptionKeyId
-                - tokenEncryptionKeyId desc
-                - verifiedPublisher
-                - verifiedPublisher desc
-              type: string
       responses:
         '200':
           description: Success
@@ -7172,18 +6519,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /servicePrincipals/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: servicePrincipals_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
@@ -7205,7 +6545,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of extensionProperty
+                title: Collection of servicePrincipal
                 type: object
                 properties:
                   value:
@@ -7217,18 +6557,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /servicePrincipals/microsoft.graph.getByIds:
     post:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: servicePrincipals_getGraphBPreIds
       requestBody:
         description: Action parameters
@@ -7255,7 +6588,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of directoryObject
+                title: Collection of servicePrincipal
                 type: object
                 properties:
                   value:
@@ -7267,18 +6600,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /servicePrincipals/microsoft.graph.validateProperties:
     post:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: servicePrincipals_validateProperties
       requestBody:
         description: Action parameters
@@ -7316,9 +6642,6 @@ paths:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
       description: Represents the app roles a user has been granted for an application. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0
       operationId: users_ListAppRoleAssignments
       parameters:
         - name: user-id
@@ -7329,16 +6652,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -7417,11 +6730,7 @@ paths:
     post:
       tags:
         - users.appRoleAssignment
-      summary: Grant an appRoleAssignment to a user
-      description: 'Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to appRoleAssignments for users
       operationId: users_CreateAppRoleAssignments
       parameters:
         - name: user-id
@@ -7473,16 +6782,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: appRoleAssignment
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -7735,34 +7034,28 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
               description: Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
-              x-ms-navigationProperty: true
             federatedIdentityCredentials:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
               description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
-              x-ms-navigationProperty: true
             homeRealmDiscoveryPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-              x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
-              x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-              x-ms-navigationProperty: true
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:
@@ -8176,88 +7469,73 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
-              x-ms-navigationProperty: true
             appRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
-              x-ms-navigationProperty: true
             claimsMappingPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
-              x-ms-navigationProperty: true
             createdObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects created by this service principal. Read-only. Nullable.
-              x-ms-navigationProperty: true
             delegatedPermissionClassifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
-              x-ms-navigationProperty: true
             endpoints:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
-              x-ms-navigationProperty: true
             federatedIdentityCredentials:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
               description: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
-              x-ms-navigationProperty: true
             homeRealmDiscoveryPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
               description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-              x-ms-navigationProperty: true
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-              x-ms-navigationProperty: true
             oauth2PermissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
               description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-              x-ms-navigationProperty: true
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
               description: The tokenIssuancePolicies assigned to this service principal.
-              x-ms-navigationProperty: true
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
               description: The tokenLifetimePolicies assigned to this service principal.
-              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.delegatedPermissionClassification:
@@ -8475,7 +7753,6 @@ components:
           type: string
           description: URL that shows certification details for the application.
           nullable: true
-          readOnly: true
         certificationExpirationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
@@ -8486,7 +7763,6 @@ components:
           type: boolean
           description: Indicates whether the application is certified by Microsoft.
           nullable: true
-          readOnly: true
         isPublisherAttested:
           type: boolean
           description: Indicates whether the application has been self-attested by the application developer or the publisher.
@@ -8670,7 +7946,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permissionScope:
@@ -8775,16 +8050,13 @@ components:
     microsoft.graph.applicationCollectionResponse:
       title: Collection of application
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.application'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.application'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -8799,211 +8071,169 @@ components:
     microsoft.graph.extensionPropertyCollectionResponse:
       title: Collection of extensionProperty
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extensionProperty'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.federatedIdentityCredentialCollectionResponse:
       title: Collection of federatedIdentityCredential
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.homeRealmDiscoveryPolicyCollectionResponse:
       title: Collection of homeRealmDiscoveryPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     StringCollectionResponse:
       title: Collection of string
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                type: string
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.tokenIssuancePolicyCollectionResponse:
       title: Collection of tokenIssuancePolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.tokenLifetimePolicyCollectionResponse:
       title: Collection of tokenLifetimePolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.applicationTemplateCollectionResponse:
       title: Collection of applicationTemplate
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.appRoleAssignmentCollectionResponse:
       title: Collection of appRoleAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.servicePrincipalCollectionResponse:
       title: Collection of servicePrincipal
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.claimsMappingPolicyCollectionResponse:
       title: Collection of claimsMappingPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.delegatedPermissionClassificationCollectionResponse:
       title: Collection of delegatedPermissionClassification
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.endpointCollectionResponse:
       title: Collection of endpoint
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.endpoint'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.endpoint'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.oAuth2PermissionGrantCollectionResponse:
       title: Collection of oAuth2PermissionGrant
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.keyValue:
@@ -9117,15 +8347,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code

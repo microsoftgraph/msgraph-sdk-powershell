@@ -146,6 +146,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.12.0
+module-version: 1.12.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
