@@ -13407,11 +13407,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List auditEvents
-      description: List all the cloudPcAuditEvent objects for the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0
+      summary: Get auditEvents from deviceManagement
+      description: Cloud PC audit event.
       operationId: deviceManagement.virtualEndpoint_ListAuditEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13638,11 +13635,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPCs
-      description: List the cloudPC devices in a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-1.0
+      summary: Get cloudPCs from deviceManagement
+      description: Cloud managed virtual desktops.
       operationId: deviceManagement.virtualEndpoint_ListCloudPCs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13932,11 +13926,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List deviceImages
-      description: List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0
+      summary: Get deviceImages from deviceManagement
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListDeviceImages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14023,11 +14014,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcDeviceImage
-      description: Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0
+      summary: Create new navigation property to deviceImages for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateDeviceImages
       requestBody:
         description: New navigation property
@@ -14166,11 +14153,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPcExternalPartnerSettings
-      description: Get a list of the cloudPcExternalPartnerSetting objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-1.0
+      summary: Get externalPartnerSettings from deviceManagement
+      description: The external partner settings on a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSettings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14242,11 +14226,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcExternalPartnerSetting
-      description: Create a new cloudPcExternalPartnerSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-1.0
+      summary: Create new navigation property to externalPartnerSettings for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateExternalPartnerSettings
       requestBody:
         description: New navigation property
@@ -14377,11 +14357,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List galleryImages
-      description: List the properties and relationships of the cloudPcGalleryImage objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0
+      summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListGalleryImages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14612,11 +14589,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List onPremisesConnections
-      description: List properties and relationships of the cloudPcOnPremisesConnection objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0
+      summary: Get onPremisesConnections from deviceManagement
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14721,11 +14695,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcOnPremisesConnection
-      description: Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0
+      summary: Create new navigation property to onPremisesConnections for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateOnPremisesConnections
       requestBody:
         description: New navigation property
@@ -14872,11 +14842,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcOrganizationSettings
-      description: Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one **cloudPcOrganizationSettings** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-1.0
+      summary: Get organizationSettings from deviceManagement
+      description: The Cloud PC organization settings for a tenant.
       operationId: deviceManagement.virtualEndpoint_GetOrganizationSettings
       parameters:
         - name: $select
@@ -14920,11 +14887,7 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update cloudPcOrganizationSettings
-      description: Update the properties of the cloudPcOrganizationSettings object in a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-1.0
+      summary: Update the navigation property organizationSettings in deviceManagement
       operationId: deviceManagement.virtualEndpoint_UpdateOrganizationSettings
       requestBody:
         description: New navigation property values
@@ -14961,11 +14924,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List provisioningPolicies
-      description: List properties and relationships of the cloudPcProvisioningPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0
+      summary: Get provisioningPolicies from deviceManagement
+      description: Cloud PC provisioning policy.
       operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15066,11 +15026,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcProvisioningPolicy
-      description: Create a new cloudPcProvisioningPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0
+      summary: Create new navigation property to provisioningPolicies for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateProvisioningPolicies
       requestBody:
         description: New navigation property
@@ -15448,11 +15404,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List servicePlans
-      description: 'List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-1.0
+      summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_ListServicePlans
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15659,11 +15612,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List snapshots
-      description: Get a list of cloudPcSnapshot objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-1.0
+      summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_ListSnapshots
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15862,11 +15812,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List supportedRegions
-      description: List the supported regions that are available for creating Cloud PC connections.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-1.0
+      summary: Get supportedRegions from deviceManagement
+      description: Cloud PC supported regions.
       operationId: deviceManagement.virtualEndpoint_ListSupportedRegions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16061,11 +16008,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List userSettings
-      description: Retrieve a list of cloudPcUserSetting objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0
+      summary: Get userSettings from deviceManagement
+      description: Cloud PC user settings.
       operationId: deviceManagement.virtualEndpoint_ListUserSettings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16142,11 +16086,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcUserSetting
-      description: Create a new cloudPcUserSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0
+      summary: Create new navigation property to userSettings for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateUserSettings
       requestBody:
         description: New navigation property
@@ -16536,7 +16476,6 @@ components:
               type: string
               description: Certificate serial number. This property is read-only.
               nullable: true
-              readOnly: true
             certificateUploadFailureReason:
               type: string
               description: The reason the certificate upload failed.
@@ -17092,7 +17031,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
               description: The children categories
-              x-ms-navigationProperty: true
             definitionFile:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
             definitions:
@@ -17100,7 +17038,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The immediate GroupPolicyDefinition children of the category
-              x-ms-navigationProperty: true
             parent:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
           additionalProperties:
@@ -17154,7 +17091,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The group policy definitions associated with the file.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
@@ -17220,7 +17156,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
               description: The group policy presentations associated with the definition.
-              x-ms-navigationProperty: true
             previousVersionDefinition:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
           additionalProperties:
@@ -17313,13 +17248,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicySettingMapping'
               description: A list of group policy settings to MDM/Intune mappings.
-              x-ms-navigationProperty: true
             unsupportedGroupPolicyExtensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unsupportedGroupPolicyExtension'
               description: A list of unsupported group policy extensions inside the Group Policy Object.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Group Policy migration report.
@@ -17496,7 +17429,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyOperation'
               description: The list of operations on the uploaded ADMX file.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The entity represents an ADMX (Administrative Template) XML file uploaded by Administrator. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
@@ -17643,7 +17575,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.intuneBrandingProfileAssignment'
               description: The list of group assignments for the branding profile
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: This entity contains data which is used in customizing the tenant level appearance of the Company Portal applications as well as the end user web portal.
@@ -17866,12 +17797,10 @@ components:
             enabledForScopeValidation:
               type: boolean
               description: Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
-              readOnly: true
             resource:
               type: string
               description: Resource category to which this Operation belongs. This property is read-only.
               nullable: true
-              readOnly: true
             resourceName:
               type: string
               description: Name of the Resource this operation is performed on.
@@ -17896,7 +17825,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
               description: The set of Role Scope Tags defined on the Role Assignment.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
@@ -17917,13 +17845,11 @@ components:
             isBuiltIn:
               type: boolean
               description: Description of the Role Scope Tag. This property is read-only.
-              readOnly: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
               description: The list of assignments for this Role Scope Tag.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Role Scope Tag
@@ -17968,7 +17894,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleAssignment'
               description: List of Role assignments for this role definition.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: 'The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.'
@@ -18101,19 +18026,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
               description: The list of acceptance statuses for this T&C policy.
-              x-ms-navigationProperty: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
               description: The list of assignments for this T&C policy.
-              x-ms-navigationProperty: true
             groupAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsGroupAssignment'
               description: The list of group assignments for this T&C policy.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
@@ -18242,37 +18164,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcAuditEvent'
               description: Cloud PC audit event.
-              x-ms-navigationProperty: true
             cloudPCs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
               description: Cloud managed virtual desktops.
-              x-ms-navigationProperty: true
             deviceImages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
               description: The image resource on Cloud PC.
-              x-ms-navigationProperty: true
             externalPartnerSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
               description: The external partner settings on a Cloud PC.
-              x-ms-navigationProperty: true
             galleryImages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
               description: The gallery image resource on Cloud PC.
-              x-ms-navigationProperty: true
             onPremisesConnections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
               description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-              x-ms-navigationProperty: true
             organizationSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOrganizationSettings'
             provisioningPolicies:
@@ -18280,31 +18196,26 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
               description: Cloud PC provisioning policy.
-              x-ms-navigationProperty: true
             servicePlans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
               description: Cloud PC service plans.
-              x-ms-navigationProperty: true
             snapshots:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
               description: Cloud PC snapshots.
-              x-ms-navigationProperty: true
             supportedRegions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
               description: Cloud PC supported regions.
-              x-ms-navigationProperty: true
             userSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcUserSetting'
               description: Cloud PC user settings.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcAuditEvent:
@@ -18702,7 +18613,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
               description: A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcProvisioningPolicyAssignment:
@@ -18829,7 +18739,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
               description: 'Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcUserSettingAssignment:
@@ -20634,766 +20543,613 @@ components:
     microsoft.graph.auditEventCollectionResponse:
       title: Collection of auditEvent
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.auditEvent'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cartToClassAssociationCollectionResponse:
       title: Collection of cartToClassAssociation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cartToClassAssociation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cartToClassAssociation'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.comanagementEligibleDeviceCollectionResponse:
       title: Collection of comanagementEligibleDevice
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.comanagementEligibleDevice'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.comanagementEligibleDevice'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       title: Collection of complianceManagementPartner
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.restrictedAppsViolationCollectionResponse:
       title: Collection of restrictedAppsViolation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.restrictedAppsViolation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.restrictedAppsViolation'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.managedAllDeviceCertificateStateCollectionResponse:
       title: Collection of managedAllDeviceCertificateState
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedAllDeviceCertificateState'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedAllDeviceCertificateState'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementPartnerCollectionResponse:
       title: Collection of deviceManagementPartner
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementDomainJoinConnectorCollectionResponse:
       title: Collection of deviceManagementDomainJoinConnector
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementDomainJoinConnector'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementDomainJoinConnector'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementExchangeConnectorCollectionResponse:
       title: Collection of deviceManagementExchangeConnector
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementExchangeOnPremisesPolicyCollectionResponse:
       title: Collection of deviceManagementExchangeOnPremisesPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeOnPremisesPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeOnPremisesPolicy'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.groupPolicyCategoryCollectionResponse:
       title: Collection of groupPolicyCategory
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.groupPolicyDefinitionCollectionResponse:
       title: Collection of groupPolicyDefinition
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.groupPolicyDefinitionFileCollectionResponse:
       title: Collection of groupPolicyDefinitionFile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.groupPolicyPresentationCollectionResponse:
       title: Collection of groupPolicyPresentation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.groupPolicyMigrationReportCollectionResponse:
       title: Collection of groupPolicyMigrationReport
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.groupPolicyMigrationReport'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupPolicyMigrationReport'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.groupPolicySettingMappingCollectionResponse:
       title: Collection of groupPolicySettingMapping
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.groupPolicySettingMapping'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupPolicySettingMapping'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.unsupportedGroupPolicyExtensionCollectionResponse:
       title: Collection of unsupportedGroupPolicyExtension
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unsupportedGroupPolicyExtension'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unsupportedGroupPolicyExtension'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.groupPolicyObjectFileCollectionResponse:
       title: Collection of groupPolicyObjectFile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.groupPolicyObjectFile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupPolicyObjectFile'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.groupPolicyUploadedDefinitionFileCollectionResponse:
       title: Collection of groupPolicyUploadedDefinitionFile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.groupPolicyUploadedDefinitionFile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupPolicyUploadedDefinitionFile'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.groupPolicyOperationCollectionResponse:
       title: Collection of groupPolicyOperation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.groupPolicyOperation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupPolicyOperation'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.intuneBrandingProfileCollectionResponse:
       title: Collection of intuneBrandingProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.intuneBrandingProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.intuneBrandingProfile'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.intuneBrandingProfileAssignmentCollectionResponse:
       title: Collection of intuneBrandingProfileAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.intuneBrandingProfileAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.intuneBrandingProfileAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.iosUpdateDeviceStatusCollectionResponse:
       title: Collection of iosUpdateDeviceStatus
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.mobileThreatDefenseConnectorCollectionResponse:
       title: Collection of mobileThreatDefenseConnector
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.ndesConnectorCollectionResponse:
       title: Collection of ndesConnector
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.ndesConnector'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.ndesConnector'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.remoteAssistancePartnerCollectionResponse:
       title: Collection of remoteAssistancePartner
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.resourceOperationCollectionResponse:
       title: Collection of resourceOperation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.resourceOperation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.resourceOperation'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementRoleAssignmentCollectionResponse:
       title: Collection of deviceAndAppManagementRoleAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.roleScopeTagCollectionResponse:
       title: Collection of roleScopeTag
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.roleDefinitionCollectionResponse:
       title: Collection of roleDefinition
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.roleDefinition'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.roleAssignmentCollectionResponse:
       title: Collection of roleAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.roleAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roleAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.roleScopeTagAutoAssignmentCollectionResponse:
       title: Collection of roleScopeTagAutoAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.telecomExpenseManagementPartnerCollectionResponse:
       title: Collection of telecomExpenseManagementPartner
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.termsAndConditionsCollectionResponse:
       title: Collection of termsAndConditions
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.termsAndConditionsAcceptanceStatusCollectionResponse:
       title: Collection of termsAndConditionsAcceptanceStatus
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.termsAndConditionsAssignmentCollectionResponse:
       title: Collection of termsAndConditionsAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.termsAndConditionsGroupAssignmentCollectionResponse:
       title: Collection of termsAndConditionsGroupAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsGroupAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.termsAndConditionsGroupAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.userPFXCertificateCollectionResponse:
       title: Collection of userPFXCertificate
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userPFXCertificate'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userPFXCertificate'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcAuditEventCollectionResponse:
       title: Collection of cloudPcAuditEvent
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcAuditEvent'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcAuditEvent'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPCCollectionResponse:
       title: Collection of cloudPC
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPC'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPC'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcDeviceImageCollectionResponse:
       title: Collection of cloudPcDeviceImage
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcExternalPartnerSettingCollectionResponse:
       title: Collection of cloudPcExternalPartnerSetting
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerSetting'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcGalleryImageCollectionResponse:
       title: Collection of cloudPcGalleryImage
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcOnPremisesConnectionCollectionResponse:
       title: Collection of cloudPcOnPremisesConnection
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcProvisioningPolicyCollectionResponse:
       title: Collection of cloudPcProvisioningPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcProvisioningPolicyAssignmentCollectionResponse:
       title: Collection of cloudPcProvisioningPolicyAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcServicePlanCollectionResponse:
       title: Collection of cloudPcServicePlan
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcSnapshotCollectionResponse:
       title: Collection of cloudPcSnapshot
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcSupportedRegionCollectionResponse:
       title: Collection of cloudPcSupportedRegion
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcUserSettingCollectionResponse:
       title: Collection of cloudPcUserSetting
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcUserSetting'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcUserSetting'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcUserSettingAssignmentCollectionResponse:
       title: Collection of cloudPcUserSettingAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.roleScopeTagInfo:
@@ -21714,15 +21470,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcConnectivityEventResult:
