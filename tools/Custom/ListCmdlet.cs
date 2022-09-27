@@ -116,6 +116,11 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                     top = PageSize;
                 }
             }
+            else if (invocationInfo.BoundParameters.ContainsKey("PageSize"))
+            {
+                invocationInfo.BoundParameters["Top"] = PageSize;
+                top = PageSize;
+            }
 
             if ((!invocationInfo.BoundParameters.ContainsKey("Count")) && invocationInfo.BoundParameters.ContainsKey("CountVariable"))
             {
