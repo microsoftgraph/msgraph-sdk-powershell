@@ -4569,6 +4569,7 @@ paths:
                 - authenticationContextClassReferences
                 - namedLocations
                 - policies
+                - templates
               type: string
         - name: $expand
           in: query
@@ -4585,6 +4586,7 @@ paths:
                 - authenticationContextClassReferences
                 - namedLocations
                 - policies
+                - templates
               type: string
       responses:
         '200':
@@ -4602,6 +4604,8 @@ paths:
               operationId: identity.ConditionalAccess.ListNamedLocations
             policies:
               operationId: identity.ConditionalAccess.ListPolicies
+            templates:
+              operationId: identity.ConditionalAccess.ListTemplates
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6062,6 +6066,204 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: conditionalAccessPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/templates:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get templates from identity
+      operationId: identity.conditionalAccess_ListTemplates
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - details
+                - details desc
+                - name
+                - name desc
+                - scenarios
+                - scenarios desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - details
+                - name
+                - scenarios
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conditionalAccessTemplateCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Create new navigation property to templates for identity
+      operationId: identity.conditionalAccess_CreateTemplates
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/conditionalAccess/templates/{conditionalAccessTemplate-id}':
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get templates from identity
+      operationId: identity.conditionalAccess_GetTemplates
+      parameters:
+        - name: conditionalAccessTemplate-id
+          in: path
+          description: 'key: id of conditionalAccessTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conditionalAccessTemplate
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - details
+                - name
+                - scenarios
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Update the navigation property templates in identity
+      operationId: identity.conditionalAccess_UpdateTemplates
+      parameters:
+        - name: conditionalAccessTemplate-id
+          in: path
+          description: 'key: id of conditionalAccessTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conditionalAccessTemplate
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Delete navigation property templates for identity
+      operationId: identity.conditionalAccess_DeleteTemplates
+      parameters:
+        - name: conditionalAccessTemplate-id
+          in: path
+          description: 'key: id of conditionalAccessTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conditionalAccessTemplate
         - name: If-Match
           in: header
           description: ETag
@@ -32554,6 +32756,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
               description: Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+            templates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
           additionalProperties:
             type: object
     microsoft.graph.authenticationContextClassReference:
@@ -32766,6 +32972,22 @@ components:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControls'
             state:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicyState'
+          additionalProperties:
+            type: object
+    microsoft.graph.conditionalAccessTemplate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: conditionalAccessTemplate
+          type: object
+          properties:
+            description:
+              type: string
+            details:
+              $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicyDetail'
+            name:
+              type: string
+            scenarios:
+              $ref: '#/components/schemas/microsoft.graph.templateScenarios'
           additionalProperties:
             type: object
     microsoft.graph.continuousAccessEvaluationPolicy:
@@ -35988,6 +36210,29 @@ components:
         - enabled
         - disabled
         - enabledForReportingButNotEnforced
+      type: string
+    microsoft.graph.conditionalAccessPolicyDetail:
+      title: conditionalAccessPolicyDetail
+      type: object
+      properties:
+        conditions:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditionSet'
+        grantControls:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessGrantControls'
+        sessionControls:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControls'
+      additionalProperties:
+        type: object
+    microsoft.graph.templateScenarios:
+      title: templateScenarios
+      enum:
+        - new
+        - secureFoundation
+        - zeroTrust
+        - remoteWork
+        - protectAdmins
+        - emergingThreats
+        - unknownFutureValue
       type: string
     microsoft.graph.customCalloutExtension:
       allOf:
@@ -40328,11 +40573,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -40666,6 +40911,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.conditionalAccessTemplateCollectionResponse:
+      title: Collection of conditionalAccessTemplate
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -41346,6 +41603,8 @@ components:
       title: conditionalAccessApplications
       type: object
       properties:
+        applicationFilter:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessFilter'
         excludeApplications:
           type: array
           items:
@@ -41382,6 +41641,8 @@ components:
           items:
             type: string
           description: 'Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.'
+        servicePrincipalFilter:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessFilter'
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessClientApp:
@@ -48703,11 +48964,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -51944,6 +52205,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
             references:
@@ -53065,6 +53328,7 @@ components:
       title: teamworkTagType
       enum:
         - standard
+        - unknownFutureValue
       type: string
     microsoft.graph.teamworkTagMember:
       allOf:
@@ -53993,6 +54257,9 @@ components:
               type: string
               description: The DateTimeOffset when the job was created. Read-only.
               format: date-time
+            displayName:
+              type: string
+              nullable: true
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'
@@ -59136,6 +59403,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicyCollectionResponse'
+    microsoft.graph.conditionalAccessTemplateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplateCollectionResponse'
     microsoft.graph.customAuthenticationExtensionCollectionResponse:
       description: Retrieved collection
       content:

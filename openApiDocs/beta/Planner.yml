@@ -1525,6 +1525,7 @@ paths:
                 - id
                 - checklist
                 - description
+                - notes
                 - previewType
                 - references
               type: string
@@ -2701,6 +2702,7 @@ paths:
                 - id
                 - checklist
                 - description
+                - notes
                 - previewType
                 - references
               type: string
@@ -3888,6 +3890,7 @@ paths:
                 - id
                 - checklist
                 - description
+                - notes
                 - previewType
                 - references
               type: string
@@ -5334,6 +5337,7 @@ paths:
                 - id
                 - checklist
                 - description
+                - notes
                 - previewType
                 - references
               type: string
@@ -6346,6 +6350,7 @@ paths:
                 - id
                 - checklist
                 - description
+                - notes
                 - previewType
                 - references
               type: string
@@ -7726,6 +7731,7 @@ paths:
                 - id
                 - checklist
                 - description
+                - notes
                 - previewType
                 - references
               type: string
@@ -9857,6 +9863,7 @@ paths:
                 - id
                 - checklist
                 - description
+                - notes
                 - previewType
                 - references
               type: string
@@ -11033,6 +11040,7 @@ paths:
                 - id
                 - checklist
                 - description
+                - notes
                 - previewType
                 - references
               type: string
@@ -12293,6 +12301,7 @@ paths:
                 - id
                 - checklist
                 - description
+                - notes
                 - previewType
                 - references
               type: string
@@ -12744,6 +12753,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
             references:
@@ -12965,6 +12976,18 @@ components:
     microsoft.graph.plannerChecklistItems:
       title: plannerChecklistItems
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
       additionalProperties:
         type: object
     microsoft.graph.plannerExternalReferences:
@@ -13192,11 +13215,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -13228,6 +13251,12 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code

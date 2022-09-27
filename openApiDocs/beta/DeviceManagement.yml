@@ -53914,6 +53914,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
               description: Cloud PC provisioning policy.
+            reports:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcReports'
             servicePlans:
               type: array
               items:
@@ -63939,6 +63941,18 @@ components:
               description: A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcReports:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcReports
+          type: object
+          properties:
+            exportJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcServicePlan:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -70857,6 +70871,42 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcExportJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcExportJob
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            exportJobStatus:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExportJobStatus'
+            exportUrl:
+              type: string
+              nullable: true
+            filter:
+              type: string
+              nullable: true
+            format:
+              type: string
+              nullable: true
+            reportName:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcReportName'
+            requestDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            select:
+              type: array
+              items:
+                type: string
+                nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcSnapshotStatus:
       title: cloudPcSnapshotStatus
       enum:
@@ -72525,11 +72575,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -77240,6 +77290,22 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcExportJobStatus:
+      title: cloudPcExportJobStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcReportName:
+      title: cloudPcReportName
+      enum:
+        - remoteConnectionHistoricalReports
+        - dailyAggregatedRemoteConnectionReports
+        - totalAggregatedRemoteConnectionReports
+        - unknownFutureValue
+      type: string
     microsoft.graph.organizationalMessageLogoType:
       title: organizationalMessageLogoType
       enum:
@@ -77595,11 +77661,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -80135,6 +80201,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
             references:
@@ -81310,6 +81378,7 @@ components:
       title: teamworkTagType
       enum:
         - standard
+        - unknownFutureValue
       type: string
     microsoft.graph.teamworkTagMember:
       allOf:
@@ -82190,6 +82259,9 @@ components:
               type: string
               description: The DateTimeOffset when the job was created. Read-only.
               format: date-time
+            displayName:
+              type: string
+              nullable: true
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'

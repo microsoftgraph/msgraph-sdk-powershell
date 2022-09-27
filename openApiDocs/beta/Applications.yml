@@ -25,7 +25,10 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -92,6 +95,8 @@ paths:
                 - samlMetadataUrl desc
                 - serviceManagementReference
                 - serviceManagementReference desc
+                - servicePrincipalLockConfiguration
+                - servicePrincipalLockConfiguration desc
                 - signInAudience
                 - signInAudience desc
                 - spa
@@ -149,6 +154,7 @@ paths:
                 - requiredResourceAccess
                 - samlMetadataUrl
                 - serviceManagementReference
+                - servicePrincipalLockConfiguration
                 - signInAudience
                 - spa
                 - tags
@@ -158,6 +164,28 @@ paths:
                 - web
                 - windows
                 - onPremisesPublishing
+                - appManagementPolicies
+                - createdOnBehalfOf
+                - extensionProperties
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - appManagementPolicies
                 - createdOnBehalfOf
                 - extensionProperties
@@ -255,6 +283,7 @@ paths:
                 - requiredResourceAccess
                 - samlMetadataUrl
                 - serviceManagementReference
+                - servicePrincipalLockConfiguration
                 - signInAudience
                 - spa
                 - tags
@@ -264,6 +293,28 @@ paths:
                 - web
                 - windows
                 - onPremisesPublishing
+                - appManagementPolicies
+                - createdOnBehalfOf
+                - extensionProperties
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - appManagementPolicies
                 - createdOnBehalfOf
                 - extensionProperties
@@ -7812,6 +7863,8 @@ paths:
                 - samlMetadataUrl desc
                 - serviceManagementReference
                 - serviceManagementReference desc
+                - servicePrincipalLockConfiguration
+                - servicePrincipalLockConfiguration desc
                 - signInAudience
                 - signInAudience desc
                 - spa
@@ -7869,6 +7922,7 @@ paths:
                 - requiredResourceAccess
                 - samlMetadataUrl
                 - serviceManagementReference
+                - servicePrincipalLockConfiguration
                 - signInAudience
                 - spa
                 - tags
@@ -7989,6 +8043,7 @@ paths:
                 - requiredResourceAccess
                 - samlMetadataUrl
                 - serviceManagementReference
+                - servicePrincipalLockConfiguration
                 - signInAudience
                 - spa
                 - tags
@@ -9418,7 +9473,10 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -9579,6 +9637,36 @@ paths:
                 - transitiveMemberOf
                 - synchronization
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appManagementPolicies
+                - appRoleAssignedTo
+                - appRoleAssignments
+                - claimsMappingPolicies
+                - createdObjects
+                - delegatedPermissionClassifications
+                - endpoints
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - licenseDetails
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedObjects
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - transitiveMemberOf
+                - synchronization
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.servicePrincipalCollectionResponse'
@@ -9677,6 +9765,36 @@ paths:
                 - tags
                 - tokenEncryptionKeyId
                 - verifiedPublisher
+                - appManagementPolicies
+                - appRoleAssignedTo
+                - appRoleAssignments
+                - claimsMappingPolicies
+                - createdObjects
+                - delegatedPermissionClassifications
+                - endpoints
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - licenseDetails
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedObjects
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - transitiveMemberOf
+                - synchronization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - appManagementPolicies
                 - appRoleAssignedTo
                 - appRoleAssignments
@@ -16044,7 +16162,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
+              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
             certification:
               $ref: '#/components/schemas/microsoft.graph.certification'
             createdDateTime:
@@ -16131,6 +16249,8 @@ components:
               type: string
               description: References application or service contact information from a Service or Asset Management database. Nullable.
               nullable: true
+            servicePrincipalLockConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.servicePrincipalLockConfiguration'
             signInAudience:
               type: string
               description: 'Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).'
@@ -17580,6 +17700,26 @@ components:
         resourceAppId:
           type: string
           description: The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
+      additionalProperties:
+        type: object
+    microsoft.graph.servicePrincipalLockConfiguration:
+      title: servicePrincipalLockConfiguration
+      type: object
+      properties:
+        allProperties:
+          type: boolean
+          nullable: true
+        credentialsWithUsageSign:
+          type: boolean
+          nullable: true
+        credentialsWithUsageVerify:
+          type: boolean
+          nullable: true
+        isEnabled:
+          type: boolean
+        tokenEncryptionKeyId:
+          type: boolean
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.spaApplication:
@@ -19143,11 +19283,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -19635,14 +19775,6 @@ components:
         minimum: 0
         type: integer
       example: 50
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      style: form
-      explode: false
-      schema:
-        type: string
     skip:
       name: $skip
       in: query
@@ -19652,6 +19784,14 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
     filter:
       name: $filter
       in: query

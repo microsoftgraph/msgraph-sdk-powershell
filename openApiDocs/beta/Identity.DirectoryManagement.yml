@@ -25,7 +25,10 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -65,6 +68,21 @@ paths:
                 - displayName
                 - isMemberManagementRestricted
                 - visibility
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - members
                 - scopedRoleMembers
                 - extensions
@@ -133,6 +151,21 @@ paths:
                 - displayName
                 - isMemberManagementRestricted
                 - visibility
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - members
                 - scopedRoleMembers
                 - extensions
@@ -1233,7 +1266,10 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -1303,6 +1339,23 @@ paths:
                 - phones
                 - proxyAddresses
                 - surname
+                - directReports
+                - manager
+                - memberOf
+                - transitiveMemberOf
+                - transitiveReports
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - directReports
                 - manager
                 - memberOf
@@ -1382,6 +1435,23 @@ paths:
                 - phones
                 - proxyAddresses
                 - surname
+                - directReports
+                - manager
+                - memberOf
+                - transitiveMemberOf
+                - transitiveReports
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - directReports
                 - manager
                 - memberOf
@@ -2404,7 +2474,10 @@ paths:
       operationId: contracts.contract_ListContract
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -2444,6 +2517,18 @@ paths:
                 - customerId
                 - defaultDomainName
                 - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -2508,6 +2593,18 @@ paths:
                 - customerId
                 - defaultDomainName
                 - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -2926,7 +3023,10 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -3070,6 +3170,25 @@ paths:
                 - extensions
                 - commands
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - usageRights
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+                - commands
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.deviceCollectionResponse'
@@ -3166,6 +3285,25 @@ paths:
                 - name
                 - platform
                 - status
+                - usageRights
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+                - commands
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - usageRights
                 - memberOf
                 - registeredOwners
@@ -10392,7 +10530,10 @@ paths:
       description: 'List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin''s behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.'
       operationId: directoryRoles.directoryRole_ListDirectoryRole
       parameters:
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -10429,6 +10570,20 @@ paths:
                 - description
                 - displayName
                 - roleTemplateId
+                - members
+                - scopedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - members
                 - scopedMembers
               type: string
@@ -10495,6 +10650,20 @@ paths:
                 - description
                 - displayName
                 - roleTemplateId
+                - members
+                - scopedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - members
                 - scopedMembers
               type: string
@@ -11352,7 +11521,10 @@ paths:
       description: Retrieve a list of directoryroletemplate objects.
       operationId: directoryRoleTemplates.directoryRoleTemplate_ListDirectoryRoleTemplate
       parameters:
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -11386,6 +11558,18 @@ paths:
                 - deletedDateTime
                 - description
                 - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -11448,6 +11632,18 @@ paths:
                 - deletedDateTime
                 - description
                 - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -11856,7 +12052,10 @@ paths:
       operationId: directorySettingTemplates.directorySettingTemplate_ListDirectorySettingTemplate
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -11893,6 +12092,18 @@ paths:
                 - description
                 - displayName
                 - values
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -11956,6 +12167,18 @@ paths:
                 - description
                 - displayName
                 - values
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -13865,7 +14088,10 @@ paths:
       operationId: organization.organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -13970,6 +14196,22 @@ paths:
                 - extensions
                 - settings
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - branding
+                - certificateBasedAuthConfiguration
+                - extensions
+                - settings
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.organizationCollectionResponse'
@@ -14053,6 +14295,22 @@ paths:
                 - verifiedDomains
                 - certificateConnectorSetting
                 - mobileDeviceManagementAuthority
+                - branding
+                - certificateBasedAuthConfiguration
+                - extensions
+                - settings
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - branding
                 - certificateBasedAuthConfiguration
                 - extensions
@@ -15803,6 +16061,7 @@ paths:
               enum:
                 - id
                 - microsoftApplicationDataAccess
+                - contactInsights
                 - itemInsights
                 - peopleInsights
                 - profileCardProperties
@@ -15819,6 +16078,7 @@ paths:
               enum:
                 - '*'
                 - microsoftApplicationDataAccess
+                - contactInsights
                 - itemInsights
                 - peopleInsights
                 - profileCardProperties
@@ -15833,6 +16093,10 @@ paths:
           links:
             microsoftApplicationDataAccess:
               operationId: organization.Settings.GetMicrosoftApplicationDataAccess
+              parameters:
+                organization-id: $request.path.organization-id
+            contactInsights:
+              operationId: organization.Settings.GetContactInsights
               parameters:
                 organization-id: $request.path.organization-id
             itemInsights:
@@ -15882,6 +16146,110 @@ paths:
         - organization.organizationSettings
       summary: Delete navigation property settings for organization
       operationId: organization_DeleteSettings
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/settings/contactInsights':
+    get:
+      tags:
+        - organization.organizationSettings
+      summary: Get contactInsights from organization
+      operationId: organization.settings_GetContactInsights
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - disabledForGroup
+                - isEnabledInOrganization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.insightsSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - organization.organizationSettings
+      summary: Update the navigation property contactInsights in organization
+      operationId: organization.settings_UpdateContactInsights
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationSettings
+      summary: Delete navigation property contactInsights for organization
+      operationId: organization.settings_DeleteContactInsights
       parameters:
         - name: organization-id
           in: path
@@ -18304,6 +18672,8 @@ components:
           properties:
             microsoftApplicationDataAccess:
               $ref: '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
+            contactInsights:
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.insightsSettings'
             peopleInsights:
@@ -18439,11 +18809,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -18631,11 +19001,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -19922,14 +20292,6 @@ components:
         minimum: 0
         type: integer
       example: 50
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      style: form
-      explode: false
-      schema:
-        type: string
     skip:
       name: $skip
       in: query
@@ -19939,6 +20301,14 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
     filter:
       name: $filter
       in: query
