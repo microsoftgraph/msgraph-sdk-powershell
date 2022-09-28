@@ -726,11 +726,12 @@ BODYPARAMETER <IMicrosoftGraphOrganization>: organization
   - `[Settings <IMicrosoftGraphOrganizationSettings>]`: organizationSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
-    - `[ItemInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
+    - `[ContactInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
       - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
       - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
+    - `[ItemInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
     - `[MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]`: microsoftApplicationDataAccessSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
@@ -858,11 +859,12 @@ PROVISIONEDPLANS <IMicrosoftGraphProvisionedPlan[]>: Not nullable.
 SETTINGS <IMicrosoftGraphOrganizationSettings>: organizationSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[ItemInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
+  - `[ContactInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
     - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
+  - `[ItemInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
   - `[MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]`: microsoftApplicationDataAccessSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 

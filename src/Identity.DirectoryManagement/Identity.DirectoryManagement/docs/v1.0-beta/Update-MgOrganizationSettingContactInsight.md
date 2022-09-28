@@ -1,79 +1,89 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgadministrativeunit
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgorganizationsettingcontactinsight
 schema: 2.0.0
 ---
 
-# Get-MgAdministrativeUnit
+# Update-MgOrganizationSettingContactInsight
 
 ## SYNOPSIS
-Retrieve the properties and relationships of an administrativeUnit object.
-Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
+Update the navigation property contactInsights in organization
 
 ## SYNTAX
 
-### List (Default)
+### UpdateExpanded (Default)
 ```
-Get-MgAdministrativeUnit [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>]
+Update-MgOrganizationSettingContactInsight -OrganizationId <String> [-AdditionalProperties <Hashtable>]
+ [-DisabledForGroup <String>] [-Id <String>] [-IsEnabledInOrganization] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Get
+### Update
 ```
-Get-MgAdministrativeUnit -AdministrativeUnitId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Update-MgOrganizationSettingContactInsight -OrganizationId <String>
+ -BodyParameter <IMicrosoftGraphInsightsSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### UpdateViaIdentity
 ```
-Get-MgAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Update-MgOrganizationSettingContactInsight -InputObject <IIdentityDirectoryManagementIdentity>
+ -BodyParameter <IMicrosoftGraphInsightsSettings> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-MgOrganizationSettingContactInsight -InputObject <IIdentityDirectoryManagementIdentity>
+ [-AdditionalProperties <Hashtable>] [-DisabledForGroup <String>] [-Id <String>] [-IsEnabledInOrganization]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of an administrativeUnit object.
-Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
+Update the navigation property contactInsights in organization
 
 ## EXAMPLES
 
-### Example 1: Get a list of administrative units
-```powershell
-Get-MgDirectoryAdministrativeUnit
-
-DeletedDateTime Id                                   Description DisplayName    Visibility
---------------- --                                   ----------- -----------    ----------
-                416f19a5-2e01-4d15-a78c-d9028fee1ebb             Test Unit
-                d924fbd3-69c5-4cdf-b9ea-9b0badcf9c4d             East wing Unit
-```
-
-This example retrieves a list of administrative units.
-
 ## PARAMETERS
 
-### -AdministrativeUnitId
-key: id of administrativeUnit
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
-Parameter Sets: Get
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+insightsSettings
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ConsistencyLevel
-Indicates the requested consistency level.
-Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+### -DisabledForGroup
+The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members.
+Default is empty.
+Optional.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -83,42 +93,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
+### -Id
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -134,7 +114,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -144,13 +124,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Property
-Select properties to be returned
+### -IsEnabledInOrganization
+true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions.
+Default is true.
+Optional.
 
 ```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Select
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
 
 Required: False
 Position: Named
@@ -159,12 +141,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Search
-Search items by search phrases
+### -OrganizationId
+key: id of organization
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: Update, UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -174,13 +171,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-Skip the first n items
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named
@@ -189,28 +186,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Sort
-Order items by property values
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.String[]
-Parameter Sets: List
-Aliases: OrderBy
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-Show only the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases: Limit
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named
@@ -226,9 +209,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
+### System.Boolean
 
 ## NOTES
 
@@ -238,6 +223,12 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IMicrosoftGraphInsightsSettings>: insightsSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: 
+  - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+  - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit

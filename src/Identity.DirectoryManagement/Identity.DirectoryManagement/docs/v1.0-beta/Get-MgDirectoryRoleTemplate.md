@@ -14,18 +14,20 @@ Retrieve the properties and relationships of a directoryroletemplate object.
 
 ### List (Default)
 ```
-Get-MgDirectoryRoleTemplate [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [<CommonParameters>]
+Get-MgDirectoryRoleTemplate [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDirectoryRoleTemplate -DirectoryRoleTemplateId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgDirectoryRoleTemplate -DirectoryRoleTemplateId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDirectoryRoleTemplate -InputObject <IIdentityDirectoryManagementIdentity> [-Property <String[]>]
- [<CommonParameters>]
+Get-MgDirectoryRoleTemplate -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,6 +55,21 @@ To learn about permissions for this resource, see the [permissions reference](/g
 
 ## PARAMETERS
 
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DirectoryRoleTemplateId
 key: id of directoryRoleTemplate
 
@@ -62,6 +79,36 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: List
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -104,6 +151,21 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
 Parameter Sets: List
 Aliases:
 

@@ -14,18 +14,20 @@ Get the properties and relationships of an organizational contact object.
 
 ### List (Default)
 ```
-Get-MgContact [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-Top <Int32>]
- [-ConsistencyLevel <String>] [<CommonParameters>]
+Get-MgContact [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>]
+ [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgContact -OrgContactId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgContact -OrgContactId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgContact -InputObject <IIdentityDirectoryManagementIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgContact -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,6 +52,51 @@ This example retrieves all contact objects in the directory.
 ### -ConsistencyLevel
 Indicates the requested consistency level.
 Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
 
 ```yaml
 Type: System.String
@@ -114,6 +161,21 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
 Parameter Sets: List
 Aliases:
 

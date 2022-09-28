@@ -15,18 +15,20 @@ Since the **device** resource supports extensions, you can also use the `GET` op
 
 ### List1 (Default)
 ```
-Get-MgDevice [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-Top <Int32>]
- [-ConsistencyLevel <String>] [<CommonParameters>]
+Get-MgDevice [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>]
+ [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgDevice -DeviceId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgDevice -DeviceId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,6 +109,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DeviceId
 key: id of device
 
@@ -116,6 +133,36 @@ Parameter Sets: Get1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -158,6 +205,21 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
 Parameter Sets: List1
 Aliases:
 

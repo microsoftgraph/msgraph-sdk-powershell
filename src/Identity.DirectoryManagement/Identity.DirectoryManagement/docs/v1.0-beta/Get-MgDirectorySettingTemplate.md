@@ -15,20 +15,20 @@ This operation allows retrieval of the properties of the **directorySettingTempl
 
 ### List (Default)
 ```
-Get-MgDirectorySettingTemplate [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-Top <Int32>]
- [<CommonParameters>]
+Get-MgDirectorySettingTemplate [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgDirectorySettingTemplate -DirectorySettingTemplateId <String> [-Property <String[]>]
- [<CommonParameters>]
+Get-MgDirectorySettingTemplate -DirectorySettingTemplateId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentity> [-Property <String[]>]
- [<CommonParameters>]
+Get-MgDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentity>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,6 +57,21 @@ To learn about permissions for this resource, see the [permissions reference](/g
 
 ## PARAMETERS
 
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DirectorySettingTemplateId
 key: id of directorySettingTemplate
 
@@ -66,6 +81,36 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: List
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -108,6 +153,21 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
 Parameter Sets: List
 Aliases:
 

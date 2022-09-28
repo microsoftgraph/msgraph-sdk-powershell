@@ -1,102 +1,35 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgadministrativeunit
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganizationsettingcontactinsight
 schema: 2.0.0
 ---
 
-# Get-MgAdministrativeUnit
+# Get-MgOrganizationSettingContactInsight
 
 ## SYNOPSIS
-Retrieve the properties and relationships of an administrativeUnit object.
-Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
+Get contactInsights from organization
 
 ## SYNTAX
 
-### List (Default)
+### Get (Default)
 ```
-Get-MgAdministrativeUnit [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>]
- [<CommonParameters>]
-```
-
-### Get
-```
-Get-MgAdministrativeUnit -AdministrativeUnitId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgOrganizationSettingContactInsight -OrganizationId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgOrganizationSettingContactInsight -InputObject <IIdentityDirectoryManagementIdentity>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of an administrativeUnit object.
-Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
+Get contactInsights from organization
 
 ## EXAMPLES
 
-### Example 1: Get a list of administrative units
-```powershell
-Get-MgDirectoryAdministrativeUnit
-
-DeletedDateTime Id                                   Description DisplayName    Visibility
---------------- --                                   ----------- -----------    ----------
-                416f19a5-2e01-4d15-a78c-d9028fee1ebb             Test Unit
-                d924fbd3-69c5-4cdf-b9ea-9b0badcf9c4d             East wing Unit
-```
-
-This example retrieves a list of administrative units.
-
 ## PARAMETERS
-
-### -AdministrativeUnitId
-key: id of administrativeUnit
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConsistencyLevel
-Indicates the requested consistency level.
-Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Count
-Include count of items
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -ExpandProperty
 Expand related entities
@@ -105,21 +38,6 @@ Expand related entities
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases:
 
 Required: False
 Position: Named
@@ -144,6 +62,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -OrganizationId
+key: id of organization
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Property
 Select properties to be returned
 
@@ -151,66 +84,6 @@ Select properties to be returned
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Search
-Search items by search phrases
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Sort
-Order items by property values
-
-```yaml
-Type: System.String[]
-Parameter Sets: List
-Aliases: OrderBy
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-Show only the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases: Limit
 
 Required: False
 Position: Named
@@ -228,7 +101,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
 
 ## NOTES
 
