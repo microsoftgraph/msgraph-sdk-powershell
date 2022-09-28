@@ -437,6 +437,22 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
+    "/groups/{group-id}/team/tags": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/groups/{group-id}/team/tags/{teamworkTag-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/groups/{group-id}/team/tags/{teamworkTag-id}/members": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/groups/{group-id}/team/tags/{teamworkTag-id}/members/{teamworkTagMember-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
     "/groups/{group-id}/team/template": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
@@ -529,7 +545,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
-    "/teams/{team-id}/channels/{channel-id}/microsoft.graph.doesUserHaveAccess(userId='{userId}',tenantId='{tenantId}',userPrincipalName='{userPrincipalName}')": {
+    "/teams/{team-id}/channels/{channel-id}/microsoft.graph.doesUserHaveAccess(userId='@userId',tenantId='@tenantId',userPrincipalName='@userPrincipalName')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
@@ -721,7 +737,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
-    "/teams/{team-id}/primaryChannel/microsoft.graph.doesUserHaveAccess(userId='{userId}',tenantId='{tenantId}',userPrincipalName='{userPrincipalName}')": {
+    "/teams/{team-id}/primaryChannel/microsoft.graph.doesUserHaveAccess(userId='@userId',tenantId='@tenantId',userPrincipalName='@userPrincipalName')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
@@ -838,6 +854,22 @@
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
     "/teams/{team-id}/schedule/timesOff/{timeOff-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/teams/{team-id}/tags": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/teams/{team-id}/tags/{teamworkTag-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/teams/{team-id}/tags/{teamworkTag-id}/members": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/teams/{team-id}/tags/{teamworkTag-id}/members/{teamworkTagMember-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
@@ -1254,6 +1286,22 @@
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
     "/users/{user-id}/joinedTeams/{team-id}/schedule/timesOff/{timeOff-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/tags": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/tags/{teamworkTag-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/tags/{teamworkTag-id}/members": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}/tags/{teamworkTag-id}/members/{teamworkTagMember-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },

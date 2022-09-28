@@ -189,8 +189,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get aggregatedPolicyCompliances from tenantRelationships
-      description: Aggregate view of device compliance policies across managed tenants.
+      summary: List aggregatedPolicyCompliances
+      description: Get a list of the aggregatedPolicyCompliance objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-aggregatedpolicycompliances?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListAggregatedPolicyCompliances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -653,8 +656,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get cloudPcConnections from tenantRelationships
-      description: The collection of cloud PC connections across managed tenants.
+      summary: List cloudPcConnections
+      description: Get a list of the cloudPcConnection objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListCloudPcConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -857,8 +863,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get cloudPcDevices from tenantRelationships
-      description: The collection of cloud PC devices across managed tenants.
+      summary: List cloudPcDevices
+      description: Get a list of the cloudPcDevice objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcdevices?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListCloudPcDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1089,8 +1098,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get cloudPcsOverview from tenantRelationships
-      description: Overview of cloud PC information across managed tenants.
+      summary: List cloudPcOverviews
+      description: Get a list of the cloudPcOverview objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcsoverview?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListCloudPcsOverview
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1353,8 +1365,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get conditionalAccessPolicyCoverages from tenantRelationships
-      description: Aggregate view of conditional access policy coverage across managed tenants.
+      summary: List conditionalAccessPolicyCoverages
+      description: Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list of Azure Active Directory conditional access policy coverage across all tenants that are being managed by the multi-tenant management platform.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-conditionalaccesspolicycoverages?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListConditionalAccessPolicyCoverages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1553,8 +1568,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get credentialUserRegistrationsSummaries from tenantRelationships
-      description: Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+      summary: List credentialUserRegistrationsSummaries
+      description: Get a list of the credentialUserRegistrationsSummary objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-credentialuserregistrationssummaries?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListCredentialUserRegistrationsSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1781,8 +1799,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get deviceCompliancePolicySettingStateSummaries from tenantRelationships
-      description: Summary information for device compliance policy setting states across managed tenants.
+      summary: List deviceCompliancePolicySettingStateSummary
+      description: Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-devicecompliancepolicysettingstatesummary?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListDeviceCompliancePolicySettingStateSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2017,8 +2038,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managedDeviceCompliances from tenantRelationships
-      description: The collection of compliance for managed devices across managed tenants.
+      summary: List managedDeviceCompliances
+      description: Get a list of the managedDeviceCompliance objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliances?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListManagedDeviceCompliances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2257,8 +2281,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managedDeviceComplianceTrends from tenantRelationships
-      description: Trend insights for device compliance across managed tenants.
+      summary: List managedDeviceComplianceTrends
+      description: Get a list of the managedDeviceComplianceTrend objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliancetrends?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListManagedDeviceComplianceTrends
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2477,8 +2504,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managementActions from tenantRelationships
-      description: The collection of baseline management actions across managed tenants.
+      summary: List managementActions
+      description: Get a list of the managementAction objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactions?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListManagementActions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2688,8 +2718,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managementActionTenantDeploymentStatuses from tenantRelationships
-      description: The tenant level status of management actions across managed tenants.
+      summary: List managementActionTenantDeploymentStatus
+      description: Get a list of the managementActionTenantDeploymentStatus objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactiontenantdeploymentstatuses?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListManagementActionTenantDeploymentStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2884,8 +2917,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managementIntents from tenantRelationships
-      description: The collection of baseline management intents across managed tenants.
+      summary: List managementIntents
+      description: Get a list of the managementIntent objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementintents?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListManagementIntents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3493,8 +3529,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managementTemplates from tenantRelationships
-      description: The collection of baseline management templates across managed tenants.
+      summary: List managementTemplates
+      description: Get a list of the managementTemplate objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementtemplates?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListManagementTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5415,8 +5454,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get myRoles from tenantRelationships
-      description: The collection of role assignments to a signed-in user for a managed tenant.
+      summary: List myRoles
+      description: "Get the roles that a signed-in user has through a delegated relationship across managed tenants. For information on the types of delegated relationships between a Managed Service Provider (MSP) who uses Microsoft 365 Lighthouse, and their business customers with Microsoft 365 Business Premium tenants, see the following articles on the Partner Center:\n- Delegated administration privileges (DAP)\n- Granular delegated admin privileges (GDAP)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-myroles?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListMyRoles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5603,8 +5645,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenantGroups from tenantRelationships
-      description: The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+      summary: List tenantGroups
+      description: Get a list of the tenantGroup objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantgroups?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListTenantGroups
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5807,8 +5852,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenants from tenantRelationships
-      description: The collection of tenants associated with the managing entity.
+      summary: List tenants
+      description: Get a list of the tenant objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenants?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListTenants
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6020,8 +6068,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenantsCustomizedInformation from tenantRelationships
-      description: The collection of tenant level customized information across managed tenants.
+      summary: List tenantCustomizedInformation
+      description: Get a list of the tenantCustomizedInformation objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantscustomizedinformation?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListTenantsCustomizedInformation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6220,8 +6271,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenantsDetailedInformation from tenantRelationships
-      description: The collection tenant level detailed information across managed tenants.
+      summary: List tenantDetailedInformation
+      description: Get a list of the tenantDetailedInformation objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantsdetailedinformation?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListTenantsDetailedInformation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6444,8 +6498,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenantTags from tenantRelationships
-      description: The collection of tenant tags across managed tenants.
+      summary: List tenantTags
+      description: Get a list of the tenantTag objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenanttags?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListTenantTags
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6526,7 +6583,11 @@ paths:
     post:
       tags:
         - tenantRelationships.managedTenant
-      summary: Create new navigation property to tenantTags for tenantRelationships
+      summary: Create tenantTag
+      description: Create a new tenantTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-post-tenanttags?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_CreateTenantTags
       requestBody:
         description: New navigation property
@@ -6665,8 +6726,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get windowsDeviceMalwareStates from tenantRelationships
-      description: 'The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
+      summary: List windowsDeviceMalwareStates
+      description: Get a list of the windowsDeviceMalwareState objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsdevicemalwarestates?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListWindowsDeviceMalwareStates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6913,8 +6977,11 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get windowsProtectionStates from tenantRelationships
-      description: 'The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
+      summary: List windowsProtectionStates
+      description: Get a list of the windowsProtectionState objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsprotectionstates?view=graph-rest-1.0
       operationId: tenantRelationships.managedTenants_ListWindowsProtectionStates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7206,123 +7273,148 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyCompliance'
               description: Aggregate view of device compliance policies across managed tenants.
+              x-ms-navigationProperty: true
             auditEvents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.auditEvent'
               description: The collection of audit events across managed tenants.
+              x-ms-navigationProperty: true
             cloudPcConnections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcConnection'
               description: The collection of cloud PC connections across managed tenants.
+              x-ms-navigationProperty: true
             cloudPcDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcDevice'
               description: The collection of cloud PC devices across managed tenants.
+              x-ms-navigationProperty: true
             cloudPcsOverview:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcOverview'
               description: Overview of cloud PC information across managed tenants.
+              x-ms-navigationProperty: true
             conditionalAccessPolicyCoverages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.conditionalAccessPolicyCoverage'
               description: Aggregate view of conditional access policy coverage across managed tenants.
+              x-ms-navigationProperty: true
             credentialUserRegistrationsSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummary'
               description: Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+              x-ms-navigationProperty: true
             deviceCompliancePolicySettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
               description: Summary information for device compliance policy setting states across managed tenants.
+              x-ms-navigationProperty: true
             managedDeviceCompliances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceCompliance'
               description: The collection of compliance for managed devices across managed tenants.
+              x-ms-navigationProperty: true
             managedDeviceComplianceTrends:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
               description: Trend insights for device compliance across managed tenants.
+              x-ms-navigationProperty: true
             managementActions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementAction'
               description: The collection of baseline management actions across managed tenants.
+              x-ms-navigationProperty: true
             managementActionTenantDeploymentStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionTenantDeploymentStatus'
               description: The tenant level status of management actions across managed tenants.
+              x-ms-navigationProperty: true
             managementIntents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementIntent'
               description: The collection of baseline management intents across managed tenants.
+              x-ms-navigationProperty: true
             managementTemplateCollections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
+              x-ms-navigationProperty: true
             managementTemplates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
               description: The collection of baseline management templates across managed tenants.
+              x-ms-navigationProperty: true
             managementTemplateSteps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
+              x-ms-navigationProperty: true
             managementTemplateStepVersions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
+              x-ms-navigationProperty: true
             myRoles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.myRole'
               description: The collection of role assignments to a signed-in user for a managed tenant.
+              x-ms-navigationProperty: true
             tenantGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
               description: The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+              x-ms-navigationProperty: true
             tenants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
               description: The collection of tenants associated with the managing entity.
+              x-ms-navigationProperty: true
             tenantsCustomizedInformation:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantCustomizedInformation'
               description: The collection of tenant level customized information across managed tenants.
+              x-ms-navigationProperty: true
             tenantsDetailedInformation:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantDetailedInformation'
               description: The collection tenant level detailed information across managed tenants.
+              x-ms-navigationProperty: true
             tenantTags:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
               description: The collection of tenant tags across managed tenants.
+              x-ms-navigationProperty: true
             windowsDeviceMalwareStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsDeviceMalwareState'
               description: 'The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
+              x-ms-navigationProperty: true
             windowsProtectionStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsProtectionState'
               description: 'The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.aggregatedPolicyCompliance:
@@ -8083,6 +8175,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.managementTemplate:
@@ -8151,10 +8244,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
+              x-ms-navigationProperty: true
             managementTemplateSteps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.managementTemplateStep:
@@ -8203,6 +8298,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.managedTenants.managementTemplateStepVersion:
@@ -8248,6 +8344,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
+              x-ms-navigationProperty: true
             templateStep:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
           additionalProperties:
@@ -9000,313 +9097,391 @@ components:
     microsoft.graph.managedTenants.aggregatedPolicyComplianceCollectionResponse:
       title: Collection of aggregatedPolicyCompliance
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyCompliance'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyCompliance'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.auditEventCollectionResponse:
       title: Collection of auditEvent
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.auditEvent'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.auditEvent'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.cloudPcConnectionCollectionResponse:
       title: Collection of cloudPcConnection
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcConnection'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcConnection'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.cloudPcDeviceCollectionResponse:
       title: Collection of cloudPcDevice
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcDevice'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcDevice'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.cloudPcOverviewCollectionResponse:
       title: Collection of cloudPcOverview
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcOverview'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcOverview'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.conditionalAccessPolicyCoverageCollectionResponse:
       title: Collection of conditionalAccessPolicyCoverage
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.conditionalAccessPolicyCoverage'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.conditionalAccessPolicyCoverage'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.credentialUserRegistrationsSummaryCollectionResponse:
       title: Collection of credentialUserRegistrationsSummary
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummary'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummary'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummaryCollectionResponse:
       title: Collection of deviceCompliancePolicySettingStateSummary
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managedDeviceComplianceCollectionResponse:
       title: Collection of managedDeviceCompliance
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceCompliance'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceCompliance'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managedDeviceComplianceTrendCollectionResponse:
       title: Collection of managedDeviceComplianceTrend
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementActionCollectionResponse:
       title: Collection of managementAction
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementAction'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementAction'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementActionTenantDeploymentStatusCollectionResponse:
       title: Collection of managementActionTenantDeploymentStatus
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionTenantDeploymentStatus'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionTenantDeploymentStatus'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementIntentCollectionResponse:
       title: Collection of managementIntent
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementIntent'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementIntent'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementTemplateCollectionCollectionResponse:
       title: Collection of managementTemplateCollection
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementTemplateCollectionResponse:
       title: Collection of managementTemplate
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementTemplateStepCollectionResponse:
       title: Collection of managementTemplateStep
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementTemplateStepVersionCollectionResponse:
       title: Collection of managementTemplateStepVersion
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementTemplateStepDeploymentCollectionResponse:
       title: Collection of managementTemplateStepDeployment
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.myRoleCollectionResponse:
       title: Collection of myRole
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.myRole'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.myRole'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.tenantGroupCollectionResponse:
       title: Collection of tenantGroup
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.tenantCollectionResponse:
       title: Collection of tenant
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.tenantCustomizedInformationCollectionResponse:
       title: Collection of tenantCustomizedInformation
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantCustomizedInformation'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantCustomizedInformation'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.tenantDetailedInformationCollectionResponse:
       title: Collection of tenantDetailedInformation
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantDetailedInformation'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantDetailedInformation'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.tenantTagCollectionResponse:
       title: Collection of tenantTag
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.windowsDeviceMalwareStateCollectionResponse:
       title: Collection of windowsDeviceMalwareState
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsDeviceMalwareState'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsDeviceMalwareState'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.windowsProtectionStateCollectionResponse:
       title: Collection of windowsProtectionState
       type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsProtectionState'
-        '@odata.nextLink':
-          type: string
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsProtectionState'
+          additionalProperties:
+            type: object
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.workloadActionCategory:
@@ -9486,6 +9661,15 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    BaseCollectionPaginationCountResponse:
+      title: Base collection pagination and count responses
+      type: object
+      properties:
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.genericError:
