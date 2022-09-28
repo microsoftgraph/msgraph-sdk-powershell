@@ -425,6 +425,7 @@ BODYPARAMETER <IMicrosoftGraphPrint1>: print
         - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
         - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
       - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+      - `[DisplayName <String>]`: 
       - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
         - `[Id <String>]`: 
         - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -1348,7 +1349,7 @@ BODYPARAMETER <IMicrosoftGraphPrint1>: print
               - `[KeyStrength <String>]`: authenticationMethodKeyStrength
           - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            - `[CertificateUserIds <String[]>]`: 
           - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
           - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
           - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -3082,16 +3083,16 @@ BODYPARAMETER <IMicrosoftGraphPrint1>: print
               - `[OwnersCount <Int32?>]`: 
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: 
-              - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-              - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-              - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+              - `[Description <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[MemberCount <Int32?>]`: 
+              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                 - `[Id <String>]`: 
-                - `[DisplayName <String>]`: The member's display name.
+                - `[DisplayName <String>]`: 
                 - `[TenantId <String>]`: 
                 - `[UserId <String>]`: 
               - `[TagType <String>]`: teamworkTagType
-              - `[TeamId <String>]`: ID of the team in which the tag is defined.
+              - `[TeamId <String>]`: 
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -4020,6 +4021,7 @@ BODYPARAMETER <IMicrosoftGraphPrint1>: print
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5041,6 +5043,7 @@ PRINTERS <IMicrosoftGraphPrinter1[]>: The list of printers registered in the ten
       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
     - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+    - `[DisplayName <String>]`: 
     - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
       - `[Id <String>]`: 
       - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -6014,7 +6017,7 @@ PRINTERS <IMicrosoftGraphPrinter1[]>: The list of printers registered in the ten
               - `[KeyStrength <String>]`: authenticationMethodKeyStrength
           - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            - `[CertificateUserIds <String[]>]`: 
           - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
           - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
           - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -7748,16 +7751,16 @@ PRINTERS <IMicrosoftGraphPrinter1[]>: The list of printers registered in the ten
               - `[OwnersCount <Int32?>]`: 
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: 
-              - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-              - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-              - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+              - `[Description <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[MemberCount <Int32?>]`: 
+              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                 - `[Id <String>]`: 
-                - `[DisplayName <String>]`: The member's display name.
+                - `[DisplayName <String>]`: 
                 - `[TenantId <String>]`: 
                 - `[UserId <String>]`: 
               - `[TagType <String>]`: teamworkTagType
-              - `[TeamId <String>]`: ID of the team in which the tag is defined.
+              - `[TeamId <String>]`: 
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -8686,6 +8689,7 @@ PRINTERS <IMicrosoftGraphPrinter1[]>: The list of printers registered in the ten
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9563,6 +9567,7 @@ PRINTERSHARES <IMicrosoftGraphPrinterShare[]>: .
       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
     - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+    - `[DisplayName <String>]`: 
     - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
       - `[Id <String>]`: 
       - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -10506,7 +10511,7 @@ PRINTERSHARES <IMicrosoftGraphPrinterShare[]>: .
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          - `[CertificateUserIds <String[]>]`: 
         - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -12240,16 +12245,16 @@ PRINTERSHARES <IMicrosoftGraphPrinterShare[]>: .
             - `[OwnersCount <Int32?>]`: 
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: 
-            - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-            - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-            - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+            - `[Description <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[MemberCount <Int32?>]`: 
+            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
               - `[Id <String>]`: 
-              - `[DisplayName <String>]`: The member's display name.
+              - `[DisplayName <String>]`: 
               - `[TenantId <String>]`: 
               - `[UserId <String>]`: 
             - `[TagType <String>]`: teamworkTagType
-            - `[TeamId <String>]`: ID of the team in which the tag is defined.
+            - `[TeamId <String>]`: 
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -13178,6 +13183,7 @@ PRINTERSHARES <IMicrosoftGraphPrinterShare[]>: .
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14169,6 +14175,7 @@ SHARES <IMicrosoftGraphPrinterShare[]>: The list of printer shares registered in
       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
     - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+    - `[DisplayName <String>]`: 
     - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
       - `[Id <String>]`: 
       - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -15112,7 +15119,7 @@ SHARES <IMicrosoftGraphPrinterShare[]>: The list of printer shares registered in
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          - `[CertificateUserIds <String[]>]`: 
         - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -16846,16 +16853,16 @@ SHARES <IMicrosoftGraphPrinterShare[]>: The list of printer shares registered in
             - `[OwnersCount <Int32?>]`: 
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: 
-            - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-            - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-            - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+            - `[Description <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[MemberCount <Int32?>]`: 
+            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
               - `[Id <String>]`: 
-              - `[DisplayName <String>]`: The member's display name.
+              - `[DisplayName <String>]`: 
               - `[TenantId <String>]`: 
               - `[UserId <String>]`: 
             - `[TagType <String>]`: teamworkTagType
-            - `[TeamId <String>]`: ID of the team in which the tag is defined.
+            - `[TeamId <String>]`: 
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -17784,6 +17791,7 @@ SHARES <IMicrosoftGraphPrinterShare[]>: The list of printer shares registered in
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
