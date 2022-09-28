@@ -24,7 +24,7 @@ New-MgUserContact -UserId <String> [-AdditionalProperties <Hashtable>] [-Assista
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-NickName <String>]
  [-OfficeLocation <String>] [-ParentFolderId <String>] [-PersonalNotes <String>]
  [-Phones <IMicrosoftGraphPhone[]>] [-Photo <IMicrosoftGraphProfilePhoto>]
- [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <String>]
+ [-PostalAddresses <IMicrosoftGraphPhysicalAddress1[]>] [-Profession <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-Surname <String>] [-Title <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <DateTime>]
  [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Confirm] [-WhatIf]
@@ -33,13 +33,13 @@ New-MgUserContact -UserId <String> [-AdditionalProperties <Hashtable>] [-Assista
 
 ### Create1
 ```
-New-MgUserContact -UserId <String> -BodyParameter <IMicrosoftGraphContact> [-Confirm] [-WhatIf]
+New-MgUserContact -UserId <String> -BodyParameter <IMicrosoftGraphContact1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserContact -InputObject <IPersonalContactsIdentity> -BodyParameter <IMicrosoftGraphContact> [-Confirm]
+New-MgUserContact -InputObject <IPersonalContactsIdentity> -BodyParameter <IMicrosoftGraphContact1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ New-MgUserContact -InputObject <IPersonalContactsIdentity> [-AdditionalPropertie
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-NickName <String>]
  [-OfficeLocation <String>] [-ParentFolderId <String>] [-PersonalNotes <String>]
  [-Phones <IMicrosoftGraphPhone[]>] [-Photo <IMicrosoftGraphProfilePhoto>]
- [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <String>]
+ [-PostalAddresses <IMicrosoftGraphPhysicalAddress1[]>] [-Profession <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-Surname <String>] [-Title <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <DateTime>]
  [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Confirm] [-WhatIf]
@@ -155,7 +155,7 @@ contact
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -639,7 +639,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for POSTALADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -855,13 +855,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
 
 ### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
 
 ## NOTES
 
@@ -872,7 +872,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphContact>: contact
+BODYPARAMETER <IMicrosoftGraphContact1>: contact
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
@@ -926,7 +926,7 @@ BODYPARAMETER <IMicrosoftGraphContact>: contact
     - `[Id <String>]`: 
     - `[Height <Int32?>]`: The height of the photo. Read-only.
     - `[Width <Int32?>]`: The width of the photo. Read-only.
-  - `[PostalAddresses <IMicrosoftGraphPhysicalAddress[]>]`: 
+  - `[PostalAddresses <IMicrosoftGraphPhysicalAddress1[]>]`: 
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[PostOfficeBox <String>]`: The post office box number.
@@ -992,7 +992,7 @@ PHOTO <IMicrosoftGraphProfilePhoto>: profilePhoto
   - `[Height <Int32?>]`: The height of the photo. Read-only.
   - `[Width <Int32?>]`: The width of the photo. Read-only.
 
-POSTALADDRESSES <IMicrosoftGraphPhysicalAddress[]>: .
+POSTALADDRESSES <IMicrosoftGraphPhysicalAddress1[]>: .
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[PostOfficeBox <String>]`: The post office box number.

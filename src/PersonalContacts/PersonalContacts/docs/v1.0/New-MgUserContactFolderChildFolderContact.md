@@ -16,16 +16,16 @@ Add a contact to the root Contacts folder or to the `contacts` endpoint of anoth
 ```
 New-MgUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-AssistantName <String>] [-Birthday <DateTime>]
- [-BusinessAddress <IMicrosoftGraphPhysicalAddress1>] [-BusinessHomePage <String>]
- [-BusinessPhones <String[]>] [-Categories <String[]>] [-ChangeKey <String>] [-Children <String[]>]
- [-CompanyName <String>] [-CreatedDateTime <DateTime>] [-Department <String>] [-DisplayName <String>]
+ [-BusinessAddress <IMicrosoftGraphPhysicalAddress>] [-BusinessHomePage <String>] [-BusinessPhones <String[]>]
+ [-Categories <String[]>] [-ChangeKey <String>] [-Children <String[]>] [-CompanyName <String>]
+ [-CreatedDateTime <DateTime>] [-Department <String>] [-DisplayName <String>]
  [-EmailAddresses <IMicrosoftGraphEmailAddress[]>] [-Extensions <IMicrosoftGraphExtension[]>]
  [-FileAs <String>] [-Generation <String>] [-GivenName <String>]
- [-HomeAddress <IMicrosoftGraphPhysicalAddress1>] [-HomePhones <String[]>] [-Id <String>]
+ [-HomeAddress <IMicrosoftGraphPhysicalAddress>] [-HomePhones <String[]>] [-Id <String>]
  [-ImAddresses <String[]>] [-Initials <String>] [-JobTitle <String>] [-LastModifiedDateTime <DateTime>]
  [-Manager <String>] [-MiddleName <String>] [-MobilePhone <String>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-NickName <String>]
- [-OfficeLocation <String>] [-OtherAddress <IMicrosoftGraphPhysicalAddress1>] [-ParentFolderId <String>]
+ [-OfficeLocation <String>] [-OtherAddress <IMicrosoftGraphPhysicalAddress>] [-ParentFolderId <String>]
  [-PersonalNotes <String>] [-Photo <IMicrosoftGraphProfilePhoto>] [-Profession <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-Surname <String>] [-Title <String>] [-YomiCompanyName <String>] [-YomiGivenName <String>]
@@ -35,29 +35,29 @@ New-MgUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFold
 ### Create1
 ```
 New-MgUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
- -UserId <String> -BodyParameter <IMicrosoftGraphContact1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UserId <String> -BodyParameter <IMicrosoftGraphContact> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
- -BodyParameter <IMicrosoftGraphContact1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphContact> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
 New-MgUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
  [-AdditionalProperties <Hashtable>] [-AssistantName <String>] [-Birthday <DateTime>]
- [-BusinessAddress <IMicrosoftGraphPhysicalAddress1>] [-BusinessHomePage <String>]
- [-BusinessPhones <String[]>] [-Categories <String[]>] [-ChangeKey <String>] [-Children <String[]>]
- [-CompanyName <String>] [-CreatedDateTime <DateTime>] [-Department <String>] [-DisplayName <String>]
+ [-BusinessAddress <IMicrosoftGraphPhysicalAddress>] [-BusinessHomePage <String>] [-BusinessPhones <String[]>]
+ [-Categories <String[]>] [-ChangeKey <String>] [-Children <String[]>] [-CompanyName <String>]
+ [-CreatedDateTime <DateTime>] [-Department <String>] [-DisplayName <String>]
  [-EmailAddresses <IMicrosoftGraphEmailAddress[]>] [-Extensions <IMicrosoftGraphExtension[]>]
  [-FileAs <String>] [-Generation <String>] [-GivenName <String>]
- [-HomeAddress <IMicrosoftGraphPhysicalAddress1>] [-HomePhones <String[]>] [-Id <String>]
+ [-HomeAddress <IMicrosoftGraphPhysicalAddress>] [-HomePhones <String[]>] [-Id <String>]
  [-ImAddresses <String[]>] [-Initials <String>] [-JobTitle <String>] [-LastModifiedDateTime <DateTime>]
  [-Manager <String>] [-MiddleName <String>] [-MobilePhone <String>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-NickName <String>]
- [-OfficeLocation <String>] [-OtherAddress <IMicrosoftGraphPhysicalAddress1>] [-ParentFolderId <String>]
+ [-OfficeLocation <String>] [-OtherAddress <IMicrosoftGraphPhysicalAddress>] [-ParentFolderId <String>]
  [-PersonalNotes <String>] [-Photo <IMicrosoftGraphProfilePhoto>] [-Profession <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-Surname <String>] [-Title <String>] [-YomiCompanyName <String>] [-YomiGivenName <String>]
@@ -123,7 +123,7 @@ contact
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -139,7 +139,7 @@ physicalAddress
 To construct, please use Get-Help -Online and see NOTES section for BUSINESSADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -406,7 +406,7 @@ physicalAddress
 To construct, please use Get-Help -Online and see NOTES section for HOMEADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -622,7 +622,7 @@ physicalAddress
 To construct, please use Get-Help -Online and see NOTES section for OTHERADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -853,13 +853,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
 
 ### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
 
 ## NOTES
 
@@ -870,7 +870,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphContact1>: contact
+BODYPARAMETER <IMicrosoftGraphContact>: contact
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
@@ -879,7 +879,7 @@ BODYPARAMETER <IMicrosoftGraphContact1>: contact
   - `[Id <String>]`: 
   - `[AssistantName <String>]`: The name of the contact's assistant.
   - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[BusinessAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+  - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -900,7 +900,7 @@ BODYPARAMETER <IMicrosoftGraphContact1>: contact
   - `[FileAs <String>]`: The name the contact is filed under.
   - `[Generation <String>]`: The contact's generation.
   - `[GivenName <String>]`: The contact's given name.
-  - `[HomeAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+  - `[HomeAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
   - `[HomePhones <String[]>]`: The contact's home phone numbers.
   - `[ImAddresses <String[]>]`: 
   - `[Initials <String>]`: 
@@ -913,7 +913,7 @@ BODYPARAMETER <IMicrosoftGraphContact1>: contact
     - `[Value <String[]>]`: A collection of property values.
   - `[NickName <String>]`: 
   - `[OfficeLocation <String>]`: 
-  - `[OtherAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+  - `[OtherAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
   - `[ParentFolderId <String>]`: 
   - `[PersonalNotes <String>]`: 
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
@@ -932,7 +932,7 @@ BODYPARAMETER <IMicrosoftGraphContact1>: contact
   - `[YomiGivenName <String>]`: 
   - `[YomiSurname <String>]`: 
 
-BUSINESSADDRESS <IMicrosoftGraphPhysicalAddress1>: physicalAddress
+BUSINESSADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -947,7 +947,7 @@ EMAILADDRESSES <IMicrosoftGraphEmailAddress[]>: The contact's email addresses.
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the contact. Read-only. Nullable.
   - `[Id <String>]`: 
 
-HOMEADDRESS <IMicrosoftGraphPhysicalAddress1>: physicalAddress
+HOMEADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -968,7 +968,7 @@ MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>
   - `[Id <String>]`: 
   - `[Value <String[]>]`: A collection of property values.
 
-OTHERADDRESS <IMicrosoftGraphPhysicalAddress1>: physicalAddress
+OTHERADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
