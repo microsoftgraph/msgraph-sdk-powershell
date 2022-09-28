@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The member's display name.
+.
 
 ```yaml
 Type: System.String
@@ -238,7 +238,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTeamworkTagMember>: teamworkTagMember
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[DisplayName <String>]`: The member's display name.
+  - `[DisplayName <String>]`: 
   - `[TenantId <String>]`: 
   - `[UserId <String>]`: 
 

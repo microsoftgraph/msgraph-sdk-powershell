@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserChatPinnedMessage
 
 ## SYNOPSIS
-Get pinnedMessages from users
+A collection of all the pinned messages in the chat.
+Nullable.
 
 ## SYNTAX
 
@@ -44,7 +45,8 @@ Get-MgUserChatPinnedMessage -InputObject <ITeamsIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get pinnedMessages from users
+A collection of all the pinned messages in the chat.
+Nullable.
 
 ## EXAMPLES
 
