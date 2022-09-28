@@ -15,8 +15,8 @@ Update the navigation property accessPackageAssignmentPolicies in identityGovern
 ### UpdateExpanded (Default)
 ```
 Update-MgEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssignmentPolicyId <String>
- [-AccessPackage <IMicrosoftGraphAccessPackage>]
- [-AccessPackageCatalog <IMicrosoftGraphAccessPackageCatalog1>] [-AccessPackageId <String>]
+ -AccessPackageId <String> [-AccessPackage <IMicrosoftGraphAccessPackage>]
+ [-AccessPackageCatalog <IMicrosoftGraphAccessPackageCatalog1>] [-AccessPackageId1 <String>]
  [-AccessReviewSettings <IMicrosoftGraphAssignmentReviewSettings>] [-AdditionalProperties <Hashtable>]
  [-CanExtend] [-CreatedBy <String>] [-CreatedDateTime <DateTime>]
  [-CustomExtensionHandlers <IMicrosoftGraphCustomExtensionHandler[]>] [-Description <String>]
@@ -29,8 +29,8 @@ Update-MgEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssign
 ### Update
 ```
 Update-MgEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssignmentPolicyId <String>
- -BodyParameter <IMicrosoftGraphAccessPackageAssignmentPolicy1> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -AccessPackageId <String> -BodyParameter <IMicrosoftGraphAccessPackageAssignmentPolicy1> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -43,8 +43,8 @@ Update-MgEntitlementManagementAccessPackageAssignmentPolicy -InputObject <IIdent
 ### UpdateViaIdentityExpanded
 ```
 Update-MgEntitlementManagementAccessPackageAssignmentPolicy -InputObject <IIdentityGovernanceIdentity>
- [-AccessPackage <IMicrosoftGraphAccessPackage>]
- [-AccessPackageCatalog <IMicrosoftGraphAccessPackageCatalog1>] [-AccessPackageId <String>]
+ [-AccessPackageId <String>] [-AccessPackage <IMicrosoftGraphAccessPackage>]
+ [-AccessPackageCatalog <IMicrosoftGraphAccessPackageCatalog1>]
  [-AccessReviewSettings <IMicrosoftGraphAssignmentReviewSettings>] [-AdditionalProperties <Hashtable>]
  [-CanExtend] [-CreatedBy <String>] [-CreatedDateTime <DateTime>]
  [-CustomExtensionHandlers <IMicrosoftGraphCustomExtensionHandler[]>] [-Description <String>]
@@ -109,11 +109,26 @@ Accept wildcard characters: False
 ```
 
 ### -AccessPackageId
+key: id of accessPackage
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AccessPackageId1
 Identifier of the access package.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -992,8 +1007,8 @@ ACCESSPACKAGE <IMicrosoftGraphAccessPackage>: accessPackage
           - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
             - `[Id <String>]`: 
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-              - `[Key <String>]`: Key.
-              - `[Value <String>]`: Value.
+              - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+              - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
             - `[Type <String>]`: 
           - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
           - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -4157,6 +4172,7 @@ ACCESSPACKAGE <IMicrosoftGraphAccessPackage>: accessPackage
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4345,6 +4361,7 @@ ACCESSPACKAGE <IMicrosoftGraphAccessPackage>: accessPackage
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+              - `[DisplayName <String>]`: 
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: 
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -5667,8 +5684,8 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalo
             - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
               - `[Id <String>]`: 
               - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-                - `[Key <String>]`: Key.
-                - `[Value <String>]`: Value.
+                - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+                - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
               - `[Type <String>]`: 
             - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
             - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -8832,6 +8849,7 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalo
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9020,6 +9038,7 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalo
                   - `[Scaling <String>]`: printScaling
                 - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                - `[DisplayName <String>]`: 
                 - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                   - `[Id <String>]`: 
                   - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -10320,8 +10339,8 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageAssignmentPolicy1>: accessPackageAssi
             - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
               - `[Id <String>]`: 
               - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-                - `[Key <String>]`: Key.
-                - `[Value <String>]`: Value.
+                - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+                - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
               - `[Type <String>]`: 
             - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
             - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -13485,6 +13504,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageAssignmentPolicy1>: accessPackageAssi
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13673,6 +13693,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageAssignmentPolicy1>: accessPackageAssi
                   - `[Scaling <String>]`: printScaling
                 - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                - `[DisplayName <String>]`: 
                 - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                   - `[Id <String>]`: 
                   - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 0eeb825e-404f-4bf7-8e91-0e888b5a47e9
+Module Guid: 529db52d-de04-4ef9-8f21-6af4077acf5f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -435,6 +435,9 @@ Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance t
 ### [Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder](Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder.md)
 Send a reminder to the reviewers of an active accessReviewInstance.
 
+### [Set-MgEntitlementManagementAssignmentPolicy](Set-MgEntitlementManagementAssignmentPolicy.md)
+Update the navigation property assignmentPolicies in identityGovernance
+
 ### [Stop-MgEntitlementManagementAssignmentRequest](Stop-MgEntitlementManagementAssignmentRequest.md)
 In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: `accepted`, `pendingApproval`, `pendingNotBefore`, `pendingApprovalEscalated`.
 
@@ -501,14 +504,8 @@ Update the navigation property accessPackageAssignmentApprovals in identityGover
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Update-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 Update the navigation property stages in identityGovernance
 
-### [Update-MgEntitlementManagementAccessPackageAssignmentPolicy](Update-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
-Update the navigation property assignmentPolicies in identityGovernance
-
 ### [Update-MgEntitlementManagementAssignment](Update-MgEntitlementManagementAssignment.md)
 Invoke action reprocess
-
-### [Update-MgEntitlementManagementAssignmentPolicy](Update-MgEntitlementManagementAssignmentPolicy.md)
-Update the navigation property assignmentPolicies in identityGovernance
 
 ### [Update-MgEntitlementManagementAssignmentRequest](Update-MgEntitlementManagementAssignmentRequest.md)
 Invoke action reprocess
