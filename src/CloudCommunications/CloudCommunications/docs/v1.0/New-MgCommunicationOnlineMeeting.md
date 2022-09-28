@@ -559,6 +559,11 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting>: onlineMeeting
   - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedAudience <String>]`: broadcastMeetingAudience
+    - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsCaptionEnabled <Boolean?>]`: Indicates whether captions are enabled for this Teams live event.
+      - `[SpokenLanguage <String>]`: The spoken language.
+      - `[TranslationLanguages <String[]>]`: The translation languages (choose up to 6).
     - `[IsAttendeeReportEnabled <Boolean?>]`: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
     - `[IsQuestionAndAnswerEnabled <Boolean?>]`: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
     - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
@@ -601,6 +606,11 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting>: onlineMeeting
 BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings>: broadcastMeetingSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedAudience <String>]`: broadcastMeetingAudience
+  - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsCaptionEnabled <Boolean?>]`: Indicates whether captions are enabled for this Teams live event.
+    - `[SpokenLanguage <String>]`: The spoken language.
+    - `[TranslationLanguages <String[]>]`: The translation languages (choose up to 6).
   - `[IsAttendeeReportEnabled <Boolean?>]`: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
   - `[IsQuestionAndAnswerEnabled <Boolean?>]`: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
   - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
