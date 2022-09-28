@@ -1080,7 +1080,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[KeyStrength <String>]`: authenticationMethodKeyStrength
           - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            - `[CertificateUserIds <String[]>]`: 
           - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
           - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -2628,12 +2628,12 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
             - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
             - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
             - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-            - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+            - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
               - `[Id <String>]`: 
               - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
               - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
               - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-              - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+              - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                 - `[Id <String>]`: 
                 - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
                 - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -2873,6 +2873,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                       - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[Description <String>]`: Description of the task.
+                      - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                       - `[PreviewType <String>]`: plannerPreviewType
                       - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3182,16 +3183,16 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                 - `[OwnersCount <Int32?>]`: 
               - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
                 - `[Id <String>]`: 
-                - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-                - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-                - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-                - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+                - `[Description <String>]`: 
+                - `[DisplayName <String>]`: 
+                - `[MemberCount <Int32?>]`: 
+                - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                   - `[Id <String>]`: 
-                  - `[DisplayName <String>]`: The member's display name.
+                  - `[DisplayName <String>]`: 
                   - `[TenantId <String>]`: 
                   - `[UserId <String>]`: 
                 - `[TagType <String>]`: teamworkTagType
-                - `[TeamId <String>]`: ID of the team in which the tag is defined.
+                - `[TeamId <String>]`: 
               - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: 
@@ -3214,7 +3215,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[Visibility <String>]`: teamVisibilityType
               - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
             - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-            - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+            - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
             - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
             - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
             - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -3801,7 +3802,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
               - `[TollNumber <String>]`: 
               - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowedAudience <String>]`: broadcastMeetingAudience
               - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -4213,6 +4214,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                   - `[Scaling <String>]`: printScaling
                 - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                - `[DisplayName <String>]`: 
                 - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                   - `[Id <String>]`: 
                   - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -5803,7 +5805,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          - `[CertificateUserIds <String[]>]`: 
         - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -7351,12 +7353,12 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
           - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
           - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-          - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+          - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
             - `[Id <String>]`: 
             - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
             - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
             - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-            - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+            - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
               - `[Id <String>]`: 
               - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
               - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -7596,6 +7598,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7905,16 +7908,16 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
               - `[OwnersCount <Int32?>]`: 
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: 
-              - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-              - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-              - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+              - `[Description <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[MemberCount <Int32?>]`: 
+              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                 - `[Id <String>]`: 
-                - `[DisplayName <String>]`: The member's display name.
+                - `[DisplayName <String>]`: 
                 - `[TenantId <String>]`: 
                 - `[UserId <String>]`: 
               - `[TagType <String>]`: teamworkTagType
-              - `[TeamId <String>]`: ID of the team in which the tag is defined.
+              - `[TeamId <String>]`: 
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -7937,7 +7940,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[Visibility <String>]`: teamVisibilityType
             - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-          - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+          - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
           - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
           - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
           - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -8524,7 +8527,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
             - `[TollNumber <String>]`: 
             - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedAudience <String>]`: broadcastMeetingAudience
             - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -8936,6 +8939,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+              - `[DisplayName <String>]`: 
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: 
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -10372,7 +10376,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          - `[CertificateUserIds <String[]>]`: 
         - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -11920,12 +11924,12 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
           - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
           - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-          - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+          - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
             - `[Id <String>]`: 
             - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
             - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
             - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-            - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+            - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
               - `[Id <String>]`: 
               - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
               - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -12165,6 +12169,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12474,16 +12479,16 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
               - `[OwnersCount <Int32?>]`: 
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: 
-              - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-              - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-              - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+              - `[Description <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[MemberCount <Int32?>]`: 
+              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                 - `[Id <String>]`: 
-                - `[DisplayName <String>]`: The member's display name.
+                - `[DisplayName <String>]`: 
                 - `[TenantId <String>]`: 
                 - `[UserId <String>]`: 
               - `[TagType <String>]`: teamworkTagType
-              - `[TeamId <String>]`: ID of the team in which the tag is defined.
+              - `[TeamId <String>]`: 
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -12506,7 +12511,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[Visibility <String>]`: teamVisibilityType
             - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-          - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+          - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
           - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
           - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
           - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -13093,7 +13098,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
             - `[TollNumber <String>]`: 
             - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedAudience <String>]`: broadcastMeetingAudience
             - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -13505,6 +13510,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+              - `[DisplayName <String>]`: 
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: 
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -15015,7 +15021,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[KeyStrength <String>]`: authenticationMethodKeyStrength
             - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+              - `[CertificateUserIds <String[]>]`: 
             - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
             - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
             - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -16563,12 +16569,12 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
               - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
               - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
               - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-              - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+              - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
                 - `[Id <String>]`: 
                 - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
                 - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
                 - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-                - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+                - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                   - `[Id <String>]`: 
                   - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
                   - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -16808,6 +16814,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                         - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[Description <String>]`: Description of the task.
+                        - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                         - `[PreviewType <String>]`: plannerPreviewType
                         - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -17117,16 +17124,16 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                   - `[OwnersCount <Int32?>]`: 
                 - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
                   - `[Id <String>]`: 
-                  - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-                  - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-                  - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-                  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+                  - `[Description <String>]`: 
+                  - `[DisplayName <String>]`: 
+                  - `[MemberCount <Int32?>]`: 
+                  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                     - `[Id <String>]`: 
-                    - `[DisplayName <String>]`: The member's display name.
+                    - `[DisplayName <String>]`: 
                     - `[TenantId <String>]`: 
                     - `[UserId <String>]`: 
                   - `[TagType <String>]`: teamworkTagType
-                  - `[TeamId <String>]`: ID of the team in which the tag is defined.
+                  - `[TeamId <String>]`: 
                 - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: 
@@ -17149,7 +17156,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[Visibility <String>]`: teamVisibilityType
                 - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
               - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-              - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+              - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
               - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
               - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
               - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -17736,7 +17743,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
                 - `[TollNumber <String>]`: 
                 - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-              - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+              - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[AllowedAudience <String>]`: broadcastMeetingAudience
                 - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -18148,6 +18155,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                     - `[Scaling <String>]`: printScaling
                   - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                   - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                  - `[DisplayName <String>]`: 
                   - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                     - `[Id <String>]`: 
                     - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -19646,7 +19654,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[KeyStrength <String>]`: authenticationMethodKeyStrength
                 - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+                  - `[CertificateUserIds <String[]>]`: 
                 - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
                 - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
                 - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -21194,12 +21202,12 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                   - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
                   - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
                   - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-                  - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+                  - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
                     - `[Id <String>]`: 
                     - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
                     - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
                     - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-                    - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+                    - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                       - `[Id <String>]`: 
                       - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
                       - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -21439,6 +21447,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                             - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                               - `[(Any) <Object>]`: This indicates any property can be added to this object.
                             - `[Description <String>]`: Description of the task.
+                            - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                             - `[PreviewType <String>]`: plannerPreviewType
                             - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -21748,16 +21757,16 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                       - `[OwnersCount <Int32?>]`: 
                     - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
                       - `[Id <String>]`: 
-                      - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-                      - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-                      - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-                      - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+                      - `[Description <String>]`: 
+                      - `[DisplayName <String>]`: 
+                      - `[MemberCount <Int32?>]`: 
+                      - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                         - `[Id <String>]`: 
-                        - `[DisplayName <String>]`: The member's display name.
+                        - `[DisplayName <String>]`: 
                         - `[TenantId <String>]`: 
                         - `[UserId <String>]`: 
                       - `[TagType <String>]`: teamworkTagType
-                      - `[TeamId <String>]`: ID of the team in which the tag is defined.
+                      - `[TeamId <String>]`: 
                     - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[Id <String>]`: 
@@ -21780,7 +21789,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[Visibility <String>]`: teamVisibilityType
                     - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
                   - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-                  - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+                  - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
                   - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
                   - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
                   - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -22367,7 +22376,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
                     - `[TollNumber <String>]`: 
                     - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-                  - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+                  - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[AllowedAudience <String>]`: broadcastMeetingAudience
                     - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -22779,6 +22788,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                         - `[Scaling <String>]`: printScaling
                       - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                       - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                      - `[DisplayName <String>]`: 
                       - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                         - `[Id <String>]`: 
                         - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
