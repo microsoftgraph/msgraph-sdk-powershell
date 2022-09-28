@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.ManagedTenants
-Module Guid: 8a7478b8-2f66-482b-83a8-adc42071fc51
+Module Guid: 6647ce05-9652-4c0c-a310-8b39b168d802
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants
 Help Version: 1.0.0.0
 Locale: en-US
