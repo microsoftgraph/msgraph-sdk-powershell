@@ -2973,6 +2973,7 @@ paths:
       tags:
         - chats.pinnedChatMessageInfo
       summary: Get pinnedMessages from chats
+      description: A collection of all the pinned messages in the chat. Nullable.
       operationId: chats_ListPinnedMessages
       parameters:
         - name: chat-id
@@ -3072,6 +3073,7 @@ paths:
       tags:
         - chats.pinnedChatMessageInfo
       summary: Get pinnedMessages from chats
+      description: A collection of all the pinned messages in the chat. Nullable.
       operationId: chats_GetPinnedMessages
       parameters:
         - name: chat-id
@@ -3206,6 +3208,7 @@ paths:
       tags:
         - chats.pinnedChatMessageInfo
       summary: Get message from chats
+      description: Represents details about the chat message that is pinned.
       operationId: chats.pinnedMessages_GetMessage
       parameters:
         - name: chat-id
@@ -3685,6 +3688,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -3708,6 +3712,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -3753,6 +3758,10 @@ paths:
                 group-id: $request.path.group-id
             primaryChannel:
               operationId: groups.Team.GetPrimaryChannel
+              parameters:
+                group-id: $request.path.group-id
+            tags:
+              operationId: groups.Team.ListTags
               parameters:
                 group-id: $request.path.group-id
             template:
@@ -13644,6 +13653,534 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/tags':
+    get:
+      tags:
+        - groups.team
+      summary: Get tags from groups
+      operationId: groups.team_ListTags
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - memberCount
+                - memberCount desc
+                - tagType
+                - tagType desc
+                - teamId
+                - teamId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - memberCount
+                - tagType
+                - teamId
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.teamworkTagCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.team
+      summary: Create new navigation property to tags for groups
+      operationId: groups.team_CreateTags
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/tags/{teamworkTag-id}':
+    get:
+      tags:
+        - groups.team
+      summary: Get tags from groups
+      operationId: groups.team_GetTags
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - memberCount
+                - tagType
+                - teamId
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+          links:
+            members:
+              operationId: groups.team.Tags.ListMembers
+              parameters:
+                group-id: $request.path.group-id
+                teamworkTag-id: $request.path.teamworkTag-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.team
+      summary: Update the navigation property tags in groups
+      operationId: groups.team_UpdateTags
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.team
+      summary: Delete navigation property tags for groups
+      operationId: groups.team_DeleteTags
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/tags/{teamworkTag-id}/members':
+    get:
+      tags:
+        - groups.team
+      summary: Get members from groups
+      operationId: groups.team.tags_ListMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.teamworkTagMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.team
+      summary: Create new navigation property to members for groups
+      operationId: groups.team.tags_CreateMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/tags/{teamworkTag-id}/members/{teamworkTagMember-id}':
+    get:
+      tags:
+        - groups.team
+      summary: Get members from groups
+      operationId: groups.team.tags_GetMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: teamworkTagMember-id
+          in: path
+          description: 'key: id of teamworkTagMember'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTagMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.team
+      summary: Update the navigation property members in groups
+      operationId: groups.team.tags_UpdateMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: teamworkTagMember-id
+          in: path
+          description: 'key: id of teamworkTagMember'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTagMember
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.team
+      summary: Delete navigation property members for groups
+      operationId: groups.team.tags_DeleteMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: teamworkTagMember-id
+          in: path
+          description: 'key: id of teamworkTagMember'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTagMember
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/team/template':
     get:
       tags:
@@ -13785,6 +14322,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -13808,6 +14346,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -13894,6 +14433,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -13917,6 +14457,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -13962,6 +14503,10 @@ paths:
                 team-id: $request.path.team-id
             primaryChannel:
               operationId: teams.GetPrimaryChannel
+              parameters:
+                team-id: $request.path.team-id
+            tags:
+              operationId: teams.ListTags
               parameters:
                 team-id: $request.path.team-id
             template:
@@ -24722,6 +25267,534 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/tags':
+    get:
+      tags:
+        - teams.teamworkTag
+      summary: Get tags from teams
+      operationId: teams_ListTags
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - memberCount
+                - memberCount desc
+                - tagType
+                - tagType desc
+                - teamId
+                - teamId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - memberCount
+                - tagType
+                - teamId
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.teamworkTagCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teams.teamworkTag
+      summary: Create new navigation property to tags for teams
+      operationId: teams_CreateTags
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/tags/{teamworkTag-id}':
+    get:
+      tags:
+        - teams.teamworkTag
+      summary: Get tags from teams
+      operationId: teams_GetTags
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - memberCount
+                - tagType
+                - teamId
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+          links:
+            members:
+              operationId: teams.Tags.ListMembers
+              parameters:
+                team-id: $request.path.team-id
+                teamworkTag-id: $request.path.teamworkTag-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teams.teamworkTag
+      summary: Update the navigation property tags in teams
+      operationId: teams_UpdateTags
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teams.teamworkTag
+      summary: Delete navigation property tags for teams
+      operationId: teams_DeleteTags
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/tags/{teamworkTag-id}/members':
+    get:
+      tags:
+        - teams.teamworkTag
+      summary: Get members from teams
+      operationId: teams.tags_ListMembers
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.teamworkTagMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teams.teamworkTag
+      summary: Create new navigation property to members for teams
+      operationId: teams.tags_CreateMembers
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/tags/{teamworkTag-id}/members/{teamworkTagMember-id}':
+    get:
+      tags:
+        - teams.teamworkTag
+      summary: Get members from teams
+      operationId: teams.tags_GetMembers
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: teamworkTagMember-id
+          in: path
+          description: 'key: id of teamworkTagMember'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTagMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teams.teamworkTag
+      summary: Update the navigation property members in teams
+      operationId: teams.tags_UpdateMembers
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: teamworkTagMember-id
+          in: path
+          description: 'key: id of teamworkTagMember'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTagMember
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teams.teamworkTag
+      summary: Delete navigation property members for teams
+      operationId: teams.tags_DeleteMembers
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: teamworkTagMember-id
+          in: path
+          description: 'key: id of teamworkTagMember'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTagMember
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/template':
     get:
       tags:
@@ -27556,6 +28629,7 @@ paths:
       tags:
         - users.chat
       summary: Get pinnedMessages from users
+      description: A collection of all the pinned messages in the chat. Nullable.
       operationId: users.chats_ListPinnedMessages
       parameters:
         - name: user-id
@@ -27671,6 +28745,7 @@ paths:
       tags:
         - users.chat
       summary: Get pinnedMessages from users
+      description: A collection of all the pinned messages in the chat. Nullable.
       operationId: users.chats_GetPinnedMessages
       parameters:
         - name: user-id
@@ -27830,6 +28905,7 @@ paths:
       tags:
         - users.chat
       summary: Get message from users
+      description: Represents details about the chat message that is pinned.
       operationId: users.chats.pinnedMessages_GetMessage
       parameters:
         - name: user-id
@@ -28392,6 +29468,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -28415,6 +29492,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -28516,6 +29594,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -28539,6 +29618,7 @@ paths:
                 - operations
                 - photo
                 - primaryChannel
+                - tags
                 - template
                 - schedule
               type: string
@@ -28592,6 +29672,11 @@ paths:
                 team-id: $request.path.team-id
             primaryChannel:
               operationId: users.JoinedTeams.GetPrimaryChannel
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+            tags:
+              operationId: users.JoinedTeams.ListTags
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
@@ -39918,6 +41003,615 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/tags':
+    get:
+      tags:
+        - users.team
+      summary: Get tags from users
+      operationId: users.joinedTeams_ListTags
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - memberCount
+                - memberCount desc
+                - tagType
+                - tagType desc
+                - teamId
+                - teamId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - memberCount
+                - tagType
+                - teamId
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.teamworkTagCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.team
+      summary: Create new navigation property to tags for users
+      operationId: users.joinedTeams_CreateTags
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/tags/{teamworkTag-id}':
+    get:
+      tags:
+        - users.team
+      summary: Get tags from users
+      operationId: users.joinedTeams_GetTags
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - memberCount
+                - tagType
+                - teamId
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+          links:
+            members:
+              operationId: users.joinedTeams.Tags.ListMembers
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                teamworkTag-id: $request.path.teamworkTag-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.team
+      summary: Update the navigation property tags in users
+      operationId: users.joinedTeams_UpdateTags
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.team
+      summary: Delete navigation property tags for users
+      operationId: users.joinedTeams_DeleteTags
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/tags/{teamworkTag-id}/members':
+    get:
+      tags:
+        - users.team
+      summary: Get members from users
+      operationId: users.joinedTeams.tags_ListMembers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - tenantId
+                - tenantId desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.teamworkTagMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.team
+      summary: Create new navigation property to members for users
+      operationId: users.joinedTeams.tags_CreateMembers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}/tags/{teamworkTag-id}/members/{teamworkTagMember-id}':
+    get:
+      tags:
+        - users.team
+      summary: Get members from users
+      operationId: users.joinedTeams.tags_GetMembers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: teamworkTagMember-id
+          in: path
+          description: 'key: id of teamworkTagMember'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTagMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - tenantId
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.team
+      summary: Update the navigation property members in users
+      operationId: users.joinedTeams.tags_UpdateMembers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: teamworkTagMember-id
+          in: path
+          description: 'key: id of teamworkTagMember'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTagMember
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.team
+      summary: Delete navigation property members for users
+      operationId: users.joinedTeams.tags_DeleteMembers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamworkTag-id
+          in: path
+          description: 'key: id of teamworkTag'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTag
+        - name: teamworkTagMember-id
+          in: path
+          description: 'key: id of teamworkTagMember'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamworkTagMember
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/joinedTeams/{team-id}/template':
     get:
       tags:
@@ -40814,6 +42508,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -41135,6 +42830,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
               $ref: '#/components/schemas/microsoft.graph.channel'
+            tags:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
             schedule:
@@ -41912,6 +43611,52 @@ components:
             userId:
               type: string
               description: ID of the user assigned to the timeOff. Required.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.teamworkTag:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkTag
+          type: object
+          properties:
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            memberCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            tagType:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagType'
+            teamId:
+              type: string
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+          additionalProperties:
+            type: object
+    microsoft.graph.teamworkTagMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkTagMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+            userId:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -44065,6 +45810,12 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamworkTagType:
+      title: teamworkTagType
+      enum:
+        - standard
+        - unknownFutureValue
+      type: string
     microsoft.graph.workforceIntegrationEncryption:
       title: workforceIntegrationEncryption
       type: object
@@ -44350,6 +46101,30 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.teamworkTagCollectionResponse:
+      title: Collection of teamworkTag
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.teamworkTagMemberCollectionResponse:
+      title: Collection of teamworkTagMember
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.teamCollectionResponse:
       title: Collection of team
       type: object
@@ -44590,6 +46365,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
               description: The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
+            authorizationInfo:
+              $ref: '#/components/schemas/microsoft.graph.authorizationInfo'
             businessPhones:
               type: array
               items:
@@ -46591,6 +48368,17 @@ components:
           description: 'A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.'
           format: uuid
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.authorizationInfo:
+      title: authorizationInfo
+      type: object
+      properties:
+        certificateUserIds:
+          type: array
+          items:
+            type: string
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.employeeOrgData:
@@ -50470,6 +52258,8 @@ components:
       properties:
         allowedAudience:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        captions:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingCaptionSettings'
         isAttendeeReportEnabled:
           type: boolean
           description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -51982,6 +53772,26 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+    microsoft.graph.broadcastMeetingCaptionSettings:
+      title: broadcastMeetingCaptionSettings
+      type: object
+      properties:
+        isCaptionEnabled:
+          type: boolean
+          description: Indicates whether captions are enabled for this Teams live event.
+          nullable: true
+        spokenLanguage:
+          type: string
+          description: The spoken language.
+          nullable: true
+        translationLanguages:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The translation languages (choose up to 6).
+      additionalProperties:
+        type: object
     microsoft.graph.lobbyBypassScope:
       title: lobbyBypassScope
       enum:
@@ -52966,6 +54776,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.timeOffCollectionResponse'
+    microsoft.graph.teamworkTagCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.teamworkTagCollectionResponse'
+    microsoft.graph.teamworkTagMemberCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.teamworkTagMemberCollectionResponse'
     microsoft.graph.teamCollectionResponse:
       description: Retrieved collection
       content:

@@ -13301,6 +13301,7 @@ paths:
                 - onPremisesConnections
                 - organizationSettings
                 - provisioningPolicies
+                - reports
                 - servicePlans
                 - snapshots
                 - supportedRegions
@@ -13325,6 +13326,7 @@ paths:
                 - onPremisesConnections
                 - organizationSettings
                 - provisioningPolicies
+                - reports
                 - servicePlans
                 - snapshots
                 - supportedRegions
@@ -13354,6 +13356,8 @@ paths:
               operationId: deviceManagement.VirtualEndpoint.GetOrganizationSettings
             provisioningPolicies:
               operationId: deviceManagement.VirtualEndpoint.ListProvisioningPolicies
+            reports:
+              operationId: deviceManagement.VirtualEndpoint.GetReports
             servicePlans:
               operationId: deviceManagement.VirtualEndpoint.ListServicePlans
             snapshots:
@@ -15388,6 +15392,312 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicyAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/reports:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get reports from deviceManagement
+      operationId: deviceManagement.virtualEndpoint_GetReports
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - exportJobs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - exportJobs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcReports'
+          links:
+            exportJobs:
+              operationId: deviceManagement.virtualEndpoint.Reports.ListExportJobs
+            getDailyAggregatedRemoteConnectionReports:
+              operationId: deviceManagement.virtualEndpoint.reports.getDailyAggregatedRemoteConnectionReports
+            getRealTimeRemoteConnectionLatency:
+              operationId: deviceManagement.virtualEndpoint.reports.getRealTimeRemoteConnectionLatency
+            getRealTimeRemoteConnectionStatus:
+              operationId: deviceManagement.virtualEndpoint.reports.getRealTimeRemoteConnectionStatus
+            getRemoteConnectionHistoricalReports:
+              operationId: deviceManagement.virtualEndpoint.reports.getRemoteConnectionHistoricalReports
+            getTotalAggregatedRemoteConnectionReports:
+              operationId: deviceManagement.virtualEndpoint.reports.getTotalAggregatedRemoteConnectionReports
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update the navigation property reports in deviceManagement
+      operationId: deviceManagement.virtualEndpoint_UpdateReports
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcReports'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Delete navigation property reports for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_DeleteReports
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/reports/exportJobs:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get exportJobs from deviceManagement
+      operationId: deviceManagement.virtualEndpoint.reports_ListExportJobs
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - exportJobStatus
+                - exportJobStatus desc
+                - exportUrl
+                - exportUrl desc
+                - filter
+                - filter desc
+                - format
+                - format desc
+                - reportName
+                - reportName desc
+                - requestDateTime
+                - requestDateTime desc
+                - select
+                - select desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expirationDateTime
+                - exportJobStatus
+                - exportUrl
+                - filter
+                - format
+                - reportName
+                - requestDateTime
+                - select
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.cloudPcExportJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Create new navigation property to exportJobs for deviceManagement
+      operationId: deviceManagement.virtualEndpoint.reports_CreateExportJobs
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/reports/exportJobs/{cloudPcExportJob-id}':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get exportJobs from deviceManagement
+      operationId: deviceManagement.virtualEndpoint.reports_GetExportJobs
+      parameters:
+        - name: cloudPcExportJob-id
+          in: path
+          description: 'key: id of cloudPcExportJob'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcExportJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expirationDateTime
+                - exportJobStatus
+                - exportUrl
+                - filter
+                - format
+                - reportName
+                - requestDateTime
+                - select
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update the navigation property exportJobs in deviceManagement
+      operationId: deviceManagement.virtualEndpoint.reports_UpdateExportJobs
+      parameters:
+        - name: cloudPcExportJob-id
+          in: path
+          description: 'key: id of cloudPcExportJob'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcExportJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Delete navigation property exportJobs for deviceManagement
+      operationId: deviceManagement.virtualEndpoint.reports_DeleteExportJobs
+      parameters:
+        - name: cloudPcExportJob-id
+          in: path
+          description: 'key: id of cloudPcExportJob'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcExportJob
         - name: If-Match
           in: header
           description: ETag
@@ -18196,6 +18506,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
               description: Cloud PC provisioning policy.
+            reports:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcReports'
             servicePlans:
               type: array
               items:
@@ -18623,6 +18935,54 @@ components:
           properties:
             target:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcReports:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcReports
+          type: object
+          properties:
+            exportJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcExportJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcExportJob
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            exportJobStatus:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExportJobStatus'
+            exportUrl:
+              type: string
+              nullable: true
+            filter:
+              type: string
+              nullable: true
+            format:
+              type: string
+              nullable: true
+            reportName:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcReportName'
+            requestDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            select:
+              type: array
+              items:
+                type: string
+                nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcServicePlan:
@@ -20500,6 +20860,22 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcExportJobStatus:
+      title: cloudPcExportJobStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcReportName:
+      title: cloudPcReportName
+      enum:
+        - remoteConnectionHistoricalReports
+        - dailyAggregatedRemoteConnectionReports
+        - totalAggregatedRemoteConnectionReports
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcSnapshotStatus:
       title: cloudPcSnapshotStatus
       enum:
@@ -21088,6 +21464,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcExportJobCollectionResponse:
+      title: Collection of cloudPcExportJob
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -21846,6 +22234,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignmentCollectionResponse'
+    microsoft.graph.cloudPcExportJobCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcExportJobCollectionResponse'
     microsoft.graph.cloudPcServicePlanCollectionResponse:
       description: Retrieved collection
       content:

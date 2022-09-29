@@ -1634,6 +1634,70 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/virtualEndpoint/reports/microsoft.graph.getRealTimeRemoteConnectionLatency(cloudPcId=''{cloudPcId}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getRealTimeRemoteConnectionLatency
+      operationId: deviceManagement.virtualEndpoint.reports_getRealTimeRemoteConnectionLatency
+      parameters:
+        - name: cloudPcId
+          in: path
+          description: 'Usage: cloudPcId=''{cloudPcId}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/virtualEndpoint/reports/microsoft.graph.getRealTimeRemoteConnectionStatus(cloudPcId=''{cloudPcId}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getRealTimeRemoteConnectionStatus
+      operationId: deviceManagement.virtualEndpoint.reports_getRealTimeRemoteConnectionStatus
+      parameters:
+        - name: cloudPcId
+          in: path
+          description: 'Usage: cloudPcId=''{cloudPcId}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/virtualEndpoint/snapshots/microsoft.graph.getStorageAccounts(subscriptionId=''{subscriptionId}'')':
     get:
       tags:

@@ -3081,6 +3081,8 @@ components:
           nullable: true
         resultTemplateOptions:
           $ref: '#/components/schemas/microsoft.graph.resultTemplateOption'
+        sharePointOneDriveOptions:
+          $ref: '#/components/schemas/microsoft.graph.sharePointOneDriveOptions'
         size:
           maximum: 2147483647
           minimum: -2147483648
@@ -3566,6 +3568,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.sharePointOneDriveOptions:
+      title: sharePointOneDriveOptions
+      type: object
+      properties:
+        includeContent:
+          $ref: '#/components/schemas/microsoft.graph.searchContent'
+      additionalProperties:
+        type: object
     microsoft.graph.sortProperty:
       title: sortProperty
       type: object
@@ -3931,6 +3941,13 @@ components:
           description: Contains the actual search terms of the request.
       additionalProperties:
         type: object
+    microsoft.graph.searchContent:
+      title: searchContent
+      enum:
+        - sharedContent
+        - privateContent
+        - unknownFutureValue
+      type: string
     microsoft.graph.searchAggregation:
       title: searchAggregation
       type: object

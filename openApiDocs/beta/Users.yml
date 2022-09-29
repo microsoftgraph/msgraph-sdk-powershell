@@ -25,7 +25,10 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -359,6 +362,83 @@ paths:
                 - teamwork
                 - todo
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - analytics
+                - cloudPCs
+                - usageRights
+                - informationProtection
+                - appRoleAssignedResources
+                - appRoleAssignments
+                - createdObjects
+                - directReports
+                - licenseDetails
+                - manager
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedDevices
+                - ownedObjects
+                - registeredDevices
+                - scopedRoleMemberOf
+                - transitiveMemberOf
+                - transitiveReports
+                - calendar
+                - calendarGroups
+                - calendars
+                - calendarView
+                - contactFolders
+                - contacts
+                - events
+                - inferenceClassification
+                - joinedGroups
+                - mailFolders
+                - messages
+                - outlook
+                - people
+                - drive
+                - drives
+                - followedSites
+                - extensions
+                - appConsentRequestsForApproval
+                - approvals
+                - pendingAccessReviewInstances
+                - agreementAcceptances
+                - security
+                - deviceEnrollmentConfigurations
+                - managedDevices
+                - managedAppRegistrations
+                - windowsInformationProtectionDeviceRegistrations
+                - deviceManagementTroubleshootingEvents
+                - mobileAppIntentAndStates
+                - mobileAppTroubleshootingEvents
+                - notifications
+                - planner
+                - insights
+                - settings
+                - onenote
+                - photo
+                - photos
+                - profile
+                - activities
+                - devices
+                - onlineMeetings
+                - presence
+                - authentication
+                - tasks
+                - chats
+                - joinedTeams
+                - teamwork
+                - todo
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
@@ -499,6 +579,83 @@ paths:
                 - responsibilities
                 - schools
                 - skills
+                - analytics
+                - cloudPCs
+                - usageRights
+                - informationProtection
+                - appRoleAssignedResources
+                - appRoleAssignments
+                - createdObjects
+                - directReports
+                - licenseDetails
+                - manager
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedDevices
+                - ownedObjects
+                - registeredDevices
+                - scopedRoleMemberOf
+                - transitiveMemberOf
+                - transitiveReports
+                - calendar
+                - calendarGroups
+                - calendars
+                - calendarView
+                - contactFolders
+                - contacts
+                - events
+                - inferenceClassification
+                - joinedGroups
+                - mailFolders
+                - messages
+                - outlook
+                - people
+                - drive
+                - drives
+                - followedSites
+                - extensions
+                - appConsentRequestsForApproval
+                - approvals
+                - pendingAccessReviewInstances
+                - agreementAcceptances
+                - security
+                - deviceEnrollmentConfigurations
+                - managedDevices
+                - managedAppRegistrations
+                - windowsInformationProtectionDeviceRegistrations
+                - deviceManagementTroubleshootingEvents
+                - mobileAppIntentAndStates
+                - mobileAppTroubleshootingEvents
+                - notifications
+                - planner
+                - insights
+                - settings
+                - onenote
+                - photo
+                - photos
+                - profile
+                - activities
+                - devices
+                - onlineMeetings
+                - presence
+                - authentication
+                - tasks
+                - chats
+                - joinedTeams
+                - teamwork
+                - todo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - analytics
                 - cloudPCs
                 - usageRights
@@ -19106,11 +19263,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -25426,11 +25583,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -28685,6 +28842,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
             references:
@@ -29739,6 +29898,7 @@ components:
       title: teamworkTagType
       enum:
         - standard
+        - unknownFutureValue
       type: string
     microsoft.graph.teamworkTagMember:
       allOf:
@@ -30483,6 +30643,9 @@ components:
               type: string
               description: The DateTimeOffset when the job was created. Read-only.
               format: date-time
+            displayName:
+              type: string
+              nullable: true
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'
@@ -35610,14 +35773,6 @@ components:
         minimum: 0
         type: integer
       example: 50
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      style: form
-      explode: false
-      schema:
-        type: string
     skip:
       name: $skip
       in: query
@@ -35627,6 +35782,14 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
     filter:
       name: $filter
       in: query

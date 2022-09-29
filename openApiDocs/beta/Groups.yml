@@ -349,7 +349,10 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -556,6 +559,46 @@ paths:
                 - photos
                 - team
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appRoleAssignments
+                - createdOnBehalfOf
+                - endpoints
+                - memberOf
+                - members
+                - membersWithLicenseErrors
+                - owners
+                - permissionGrants
+                - settings
+                - transitiveMemberOf
+                - transitiveMembers
+                - acceptedSenders
+                - calendar
+                - calendarView
+                - conversations
+                - events
+                - rejectedSenders
+                - threads
+                - drive
+                - drives
+                - sites
+                - extensions
+                - groupLifecyclePolicies
+                - planner
+                - onenote
+                - photo
+                - photos
+                - team
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
@@ -666,6 +709,46 @@ paths:
                 - unseenMessagesCount
                 - membershipRuleProcessingStatus
                 - isArchived
+                - appRoleAssignments
+                - createdOnBehalfOf
+                - endpoints
+                - memberOf
+                - members
+                - membersWithLicenseErrors
+                - owners
+                - permissionGrants
+                - settings
+                - transitiveMemberOf
+                - transitiveMembers
+                - acceptedSenders
+                - calendar
+                - calendarView
+                - conversations
+                - events
+                - rejectedSenders
+                - threads
+                - drive
+                - drives
+                - sites
+                - extensions
+                - groupLifecyclePolicies
+                - planner
+                - onenote
+                - photo
+                - photos
+                - team
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - appRoleAssignments
                 - createdOnBehalfOf
                 - endpoints
@@ -40349,11 +40432,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -44644,6 +44727,7 @@ components:
       title: teamworkTagType
       enum:
         - standard
+        - unknownFutureValue
       type: string
     microsoft.graph.teamworkTagMember:
       allOf:
@@ -45298,11 +45382,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -45547,6 +45631,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
             references:
@@ -54207,6 +54293,9 @@ components:
               type: string
               description: The DateTimeOffset when the job was created. Read-only.
               format: date-time
+            displayName:
+              type: string
+              nullable: true
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'
