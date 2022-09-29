@@ -98,7 +98,7 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
 
             if (invocationInfo.BoundParameters.ContainsKey("Top"))
             {
-                if ((top > MaxPageSize) || invocationInfo.BoundParameters.ContainsKey("All") || invocationInfo.BoundParameters.ContainsKey("PageSize"))
+                if ((top > MaxPageSize) || IsAllPresent(invocationInfo.BoundParameters) || invocationInfo.BoundParameters.ContainsKey("PageSize"))
                 {
                     limit = top;
                 }
@@ -115,6 +115,11 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                     invocationInfo.BoundParameters["Top"] = PageSize;
                     top = PageSize;
                 }
+            }
+            else if (invocationInfo.BoundParameters.ContainsKey("PageSize"))
+            {
+                invocationInfo.BoundParameters["Top"] = PageSize;
+                top = PageSize;
             }
 
             if ((!invocationInfo.BoundParameters.ContainsKey("Count")) && invocationInfo.BoundParameters.ContainsKey("CountVariable"))
@@ -146,7 +151,7 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
             iteratedPages++;
             totalFetchedItems += itemsCount;
 
-            return (boundParameters.ContainsKey("All") && limit == default) || totalFetchedItems < limit;
+            return (IsAllPresent(boundParameters) && limit == default) || totalFetchedItems < limit;
         }
 
         /// <summary>
@@ -207,6 +212,11 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                 var psVI = SessionState.PSVariable;
                 psVI.Set(new PSVariable(CountVariable.Contains(":") ? CountVariable : $"global:{CountVariable}", odataCount));
             }
+        }
+
+        private bool IsAllPresent(global::System.Collections.Generic.Dictionary<string, object> boundParameters)
+        {
+            return boundParameters.ContainsKey("All") && All.IsPresent;
         }
     }
 }
