@@ -77,38 +77,15 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.inferenceClassification
-      summary: Delete navigation property inferenceClassification for users
-      operationId: users_DeleteInferenceClassification
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides':
     get:
       tags:
         - users.inferenceClassification
-      summary: Get overrides from users
-      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
+      summary: List overrides
+      description: 'Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0
       operationId: users.inferenceClassification_ListOverrides
       parameters:
         - name: user-id
@@ -166,7 +143,11 @@ paths:
     post:
       tags:
         - users.inferenceClassification
-      summary: Create new navigation property to overrides for users
+      summary: Create inferenceClassificationOverride
+      description: "Create an override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classified\nas specified in the override. **Note**"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0
       operationId: users.inferenceClassification_CreateOverrides
       parameters:
         - name: user-id
@@ -315,8 +296,11 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get mailFolders from users
-      description: The user's mail folders. Read-only. Nullable.
+      summary: List mailFolders
+      description: 'Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0
       operationId: users_ListMailFolders
       parameters:
         - name: user-id
@@ -391,7 +375,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to mailFolders for users
+      summary: Create MailFolder
+      description: 'Use this API to create a new mail folder in the root folder of the user''s mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0
       operationId: users_CreateMailFolders
       parameters:
         - name: user-id
@@ -579,8 +567,11 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get childFolders from users
-      description: The collection of child folders in the mailFolder.
+      summary: List childFolders
+      description: "Get the folder collection under the specified folder. You can use the `.../me/mailFolders` shortcut to get the top-level \nfolder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0
       operationId: users.mailFolders_ListChildFolders
       parameters:
         - name: user-id
@@ -680,7 +671,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to childFolders for users
+      summary: Create child folder
+      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
       operationId: users.mailFolders_CreateChildFolders
       parameters:
         - name: user-id
@@ -922,8 +917,11 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messageRules from users
-      description: The collection of rules that apply to the user's Inbox folder.
+      summary: List rules
+      description: Get all the messageRule objects defined for the user's inbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_ListMessageRules
       parameters:
         - name: user-id
@@ -1015,7 +1013,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messageRules for users
+      summary: Create rule
+      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_CreateMessageRules
       parameters:
         - name: user-id
@@ -1234,8 +1236,11 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messages from users
-      description: The collection of messages in the mailFolder.
+      summary: List messages
+      description: 'Get all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_ListMessages
       parameters:
         - name: user-id
@@ -1414,7 +1419,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messages for users
+      summary: Create message in a mailfolder
+      description: Use this API to create a new Message in a mailfolder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_CreateMessages
       parameters:
         - name: user-id
@@ -1723,6 +1732,9 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_GetMessagesContent
       parameters:
         - name: user-id
@@ -1824,8 +1836,11 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get attachments from users
-      description: The fileAttachment and itemAttachment attachments for the message.
+      summary: List attachments
+      description: Retrieve a list of attachment objects attached to a message.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_ListAttachments
       parameters:
         - name: user-id
@@ -1928,7 +1943,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to attachments for users
+      summary: Add attachment
+      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_CreateAttachments
       parameters:
         - name: user-id
@@ -2064,65 +2083,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.mailFolder
-      summary: Update the navigation property attachments in users
-      operationId: users.mailFolders.childFolders.messages_UpdateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.attachment'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2277,7 +2237,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to extensions for users
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_CreateExtensions
       parameters:
         - name: user-id
@@ -3848,8 +3812,11 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messageRules from users
-      description: The collection of rules that apply to the user's Inbox folder.
+      summary: List rules
+      description: Get all the messageRule objects defined for the user's inbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
       operationId: users.mailFolders_ListMessageRules
       parameters:
         - name: user-id
@@ -3933,7 +3900,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messageRules for users
+      summary: Create rule
+      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
       operationId: users.mailFolders_CreateMessageRules
       parameters:
         - name: user-id
@@ -4120,8 +4091,11 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messages from users
-      description: The collection of messages in the mailFolder.
+      summary: List messages
+      description: 'Get all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders_ListMessages
       parameters:
         - name: user-id
@@ -4292,7 +4266,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messages for users
+      summary: Create message in a mailfolder
+      description: Use this API to create a new Message in a mailfolder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
       operationId: users.mailFolders_CreateMessages
       parameters:
         - name: user-id
@@ -4565,6 +4543,9 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders_GetMessagesContent
       parameters:
         - name: user-id
@@ -4650,8 +4631,11 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get attachments from users
-      description: The fileAttachment and itemAttachment attachments for the message.
+      summary: List attachments
+      description: Retrieve a list of attachment objects attached to a message.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: users.mailFolders.messages_ListAttachments
       parameters:
         - name: user-id
@@ -4746,7 +4730,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to attachments for users
+      summary: Add attachment
+      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
       operationId: users.mailFolders.messages_CreateAttachments
       parameters:
         - name: user-id
@@ -4866,57 +4854,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.mailFolder
-      summary: Update the navigation property attachments in users
-      operationId: users.mailFolders.messages_UpdateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.attachment'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5055,7 +4992,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to extensions for users
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: users.mailFolders.messages_CreateExtensions
       parameters:
         - name: user-id
@@ -6434,8 +6375,11 @@ paths:
     get:
       tags:
         - users.message
-      summary: Get messages from users
-      description: The messages in a mailbox or folder. Read-only. Nullable.
+      summary: Get open extension
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: users_ListMessages
       parameters:
         - name: user-id
@@ -6582,7 +6526,11 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create new navigation property to messages for users
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: users_CreateMessages
       parameters:
         - name: user-id
@@ -6803,6 +6751,9 @@ paths:
       tags:
         - users.message
       summary: Get media content for the navigation property messages from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: users_GetMessagesContent
       parameters:
         - name: user-id
@@ -6872,8 +6823,11 @@ paths:
     get:
       tags:
         - users.message
-      summary: Get attachments from users
-      description: The fileAttachment and itemAttachment attachments for the message.
+      summary: List attachments
+      description: Retrieve a list of attachment objects attached to a message.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: users.messages_ListAttachments
       parameters:
         - name: user-id
@@ -6960,7 +6914,11 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create new navigation property to attachments for users
+      summary: Add attachment
+      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
       operationId: users.messages_CreateAttachments
       parameters:
         - name: user-id
@@ -7064,49 +7022,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.message
-      summary: Update the navigation property attachments in users
-      operationId: users.messages_UpdateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.attachment'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7229,7 +7144,11 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create new navigation property to extensions for users
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: users.messages_CreateExtensions
       parameters:
         - name: user-id
@@ -7967,6 +7886,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
               description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.inferenceClassificationOverride:
@@ -8025,26 +7945,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The collection of child folders in the mailFolder.
+              x-ms-navigationProperty: true
             messageRules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
               description: The collection of rules that apply to the user's Inbox folder.
+              x-ms-navigationProperty: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The collection of messages in the mailFolder.
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.messageRule:
@@ -8182,21 +8107,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: The fileAttachment and itemAttachment attachments for the message.
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the message. Nullable.
+              x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the message. Nullable.
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the message. Nullable.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.attachment:
@@ -8582,6 +8511,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.mailFolderCollectionResponse:
@@ -8594,6 +8524,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.mailFolder'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.messageRuleCollectionResponse:
@@ -8606,6 +8537,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.messageRule'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.messageCollectionResponse:
@@ -8618,6 +8550,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.message'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.attachmentCollectionResponse:
@@ -8630,6 +8563,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.attachment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.extensionCollectionResponse:
@@ -8642,6 +8576,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.extension'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
@@ -8654,6 +8589,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
@@ -8666,6 +8602,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.messageActionFlag:

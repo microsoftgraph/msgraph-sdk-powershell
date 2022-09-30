@@ -101,8 +101,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get healthOverviews from admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: List healthOverviews
+      description: Retrieve the serviceHealth resources from the **healthOverviews** navigation property. This operation provides the health report of all subscribed services for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_ListHealthOverviews
       parameters:
         - $ref: '#/components/parameters/top'
@@ -626,8 +629,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get issues from admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: List issues
+      description: Retrieve serviceHealthIssue resources from the **issues** navigation property. This operation retrieves information about all service health issues that exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_ListIssues
       parameters:
         - $ref: '#/components/parameters/top'
@@ -901,8 +907,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get messages from admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: List serviceAnnouncement messages
+      description: Retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_ListMessages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1154,8 +1163,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get attachments from admin
-      description: A collection of serviceAnnouncementAttachments.
+      summary: List attachments
+      description: Get the list of attachments associated with a service message.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_ListAttachments
       parameters:
         - name: serviceUpdateMessage-id
@@ -1401,6 +1413,9 @@ paths:
         - admin.serviceAnnouncement
       summary: Get content for the navigation property attachments from admin
       description: The attachment content.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_GetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
@@ -1473,6 +1488,9 @@ paths:
         - admin.serviceAnnouncement
       summary: Get attachmentsArchive for the navigation property messages from admin
       description: The zip file that contains all attachments for a message.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
@@ -1528,6 +1546,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action archive
+      description: Archive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_archive
       requestBody:
         description: Action parameters
@@ -1566,6 +1588,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action favorite
+      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_favorite
       requestBody:
         description: Action parameters
@@ -1604,6 +1630,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markRead
+      description: Mark a list of serviceUpdateMessages as **read** for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_markRead
       requestBody:
         description: Action parameters
@@ -1642,6 +1672,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markUnread
+      description: Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_markUnread
       requestBody:
         description: Action parameters
@@ -1680,6 +1714,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unarchive
+      description: Unarchive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_unarchive
       requestBody:
         description: Action parameters
@@ -1718,6 +1756,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unfavorite
+      description: Remove the favorite status of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_unfavorite
       requestBody:
         description: Action parameters
@@ -1764,16 +1806,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealth'
               description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              x-ms-navigationProperty: true
             issues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
               description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              x-ms-navigationProperty: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
               description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.serviceHealth:
@@ -1792,6 +1837,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
               description: 'A collection of issues that happened on the service, with detailed information for each issue.'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.serviceHealthIssue:
@@ -1879,6 +1925,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
               description: A collection of serviceAnnouncementAttachments.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.serviceAnnouncementAttachment:
@@ -2067,6 +2114,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.serviceHealth'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.serviceHealthIssueCollectionResponse:
@@ -2079,6 +2127,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.serviceUpdateMessageCollectionResponse:
@@ -2091,6 +2140,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.serviceAnnouncementAttachmentCollectionResponse:
@@ -2103,6 +2153,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.keyValuePair:

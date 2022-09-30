@@ -77,7 +77,11 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get bookingBusinesses from solutions
+      summary: List bookingBusinesses
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the **id** and **displayName** of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its **id** in a GET operation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
       operationId: solutions_ListBookingBusinesses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -179,7 +183,11 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create new navigation property to bookingBusinesses for solutions
+      summary: Create bookingBusiness
+      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the **bookingBusiness**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
       operationId: solutions_CreateBookingBusinesses
       requestBody:
         description: New navigation property
@@ -358,8 +366,11 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get appointments from solutions
-      description: All the appointments of this business. Read-only. Nullable.
+      summary: List appointments
+      description: Get a list of bookingAppointment objects for the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_ListAppointments
       parameters:
         - name: bookingBusiness-id
@@ -493,7 +504,11 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create new navigation property to appointments for solutions
+      summary: Create bookingAppointment
+      description: Create a new bookingAppointment for the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_CreateAppointments
       parameters:
         - name: bookingBusiness-id
@@ -679,7 +694,10 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
+      description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses.appointments_cancel
       parameters:
         - name: bookingBusiness-id
@@ -721,8 +739,11 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get calendarView from solutions
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
+      summary: List business calendarView
+      description: Get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1042,7 +1063,10 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
+      description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1084,8 +1108,11 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get customers from solutions
-      description: All the customers of this business. Read-only. Nullable.
+      summary: List customers
+      description: Get a list of bookingCustomer objects of a business.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_ListCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1150,7 +1177,11 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create new navigation property to customers for solutions
+      summary: Create bookingCustomer
+      description: Create a new bookingCustomer object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_CreateCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1309,8 +1340,11 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get customQuestions from solutions
-      description: All the custom questions of this business. Read-only. Nullable.
+      summary: List customQuestions
+      description: Get the bookingCustomQuestion resources associated with a bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_ListCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1384,7 +1418,11 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create new navigation property to customQuestions for solutions
+      summary: Create bookingCustomQuestion
+      description: Create a new bookingCustomQuestion object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_CreateCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1547,6 +1585,10 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action getStaffAvailability
+      description: Get the availability information of staff members of a Microsoft Bookings calendar.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
@@ -1581,7 +1623,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of bookingBusiness
                 type: object
                 properties:
                   value:
@@ -1593,12 +1634,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish':
     post:
       tags:
         - solutions.Actions
       summary: Invoke action publish
-      description: Makes the scheduling page of this business available to the general public.
+      description: 'Make the scheduling page of a business available to external customers. Set the **isPublished** property to `true`, and the **publicUrl** property to the URL of the scheduling page.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_publish
       parameters:
         - name: bookingBusiness-id
@@ -1620,7 +1667,10 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action unpublish
-      description: Prevents the general public from seeing the scheduling page of this business.
+      description: 'Make the scheduling page of this business not available to external customers. Set the **isPublished** property to `false`, and the **publicUrl** property to `null`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1641,8 +1691,11 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get services from solutions
-      description: All the services offered by this business. Read-only. Nullable.
+      summary: List services
+      description: Get a list of bookingService objects in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_ListServices
       parameters:
         - name: bookingBusiness-id
@@ -1764,7 +1817,11 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create new navigation property to services for solutions
+      summary: Create bookingService
+      description: Create a new bookingService for the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_CreateServices
       parameters:
         - name: bookingBusiness-id
@@ -1942,8 +1999,11 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get staffMembers from solutions
-      description: All the staff members that provide services in this business. Read-only. Nullable.
+      summary: List staffMembers
+      description: Get a list of bookingStaffMember objects in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_ListStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2008,7 +2068,11 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create new navigation property to staffMembers for solutions
+      summary: Create bookingStaffMember
+      description: Create a new bookingStaffMember in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
       operationId: solutions.bookingBusinesses_CreateStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2167,7 +2231,11 @@ paths:
     get:
       tags:
         - solutions.bookingCurrency
-      summary: Get bookingCurrencies from solutions
+      summary: List bookingCurrencies
+      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
       operationId: solutions_ListBookingCurrencies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2359,10 +2427,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+          x-ms-navigationProperty: true
         bookingCurrencies:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.bookingBusiness:
@@ -2397,6 +2467,7 @@ components:
               type: boolean
               description: The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
               nullable: true
+              readOnly: true
             phone:
               type: string
               description: 'The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.'
@@ -2405,6 +2476,7 @@ components:
               type: string
               description: 'The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.'
               nullable: true
+              readOnly: true
             schedulingPolicy:
               $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
             webSiteUrl:
@@ -2416,31 +2488,37 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
               description: All the appointments of this business. Read-only. Nullable.
+              x-ms-navigationProperty: true
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
               description: The set of appointments of this business in a specified date range. Read-only. Nullable.
+              x-ms-navigationProperty: true
             customers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
               description: All the customers of this business. Read-only. Nullable.
+              x-ms-navigationProperty: true
             customQuestions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
               description: All the custom questions of this business. Read-only. Nullable.
+              x-ms-navigationProperty: true
             services:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
               description: All the services offered by this business. Read-only. Nullable.
+              x-ms-navigationProperty: true
             staffMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
               description: All the staff members that provide services in this business. Read-only. Nullable.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Represents a Microsot Bookings Business.
@@ -2468,6 +2546,7 @@ components:
               type: string
               description: 'The length of the appointment, denoted in ISO8601 format.'
               format: duration
+              readOnly: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             filledAttendeesCount:
@@ -2476,6 +2555,7 @@ components:
               type: integer
               description: The current number of customers in the appointment
               format: int32
+              readOnly: true
             isLocationOnline:
               type: boolean
               description: 'If true, indicates that the appointment will be held online. Default value is false.'
@@ -2681,6 +2761,7 @@ components:
               type: string
               description: The URL a customer uses to access the service.
               nullable: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Represents a particular service offered by a booking business.
@@ -2784,6 +2865,11 @@ components:
       type: object
       additionalProperties:
         type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.bookingPriceType:
       title: bookingPriceType
       enum:
@@ -2927,6 +3013,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingAppointmentCollectionResponse:
@@ -2939,6 +3026,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingCustomerBaseCollectionResponse:
@@ -2951,6 +3039,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingCustomQuestionCollectionResponse:
@@ -2963,6 +3052,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingServiceCollectionResponse:
@@ -2975,6 +3065,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingService'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingStaffMemberBaseCollectionResponse:
@@ -2987,6 +3078,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingCurrencyCollectionResponse:
@@ -2999,6 +3091,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.dayOfWeek:
