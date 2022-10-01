@@ -348,6 +348,10 @@ BODYPARAMETER <IMicrosoftGraphPlannerPlan1>: plannerPlan
         - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Description <String>]`: Description of the task.
+        - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Content <String>]`: The content of the item.
+          - `[ContentType <String>]`: bodyType
         - `[PreviewType <String>]`: plannerPreviewType
         - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -464,6 +468,10 @@ BUCKETS <IMicrosoftGraphPlannerBucket1[]>: Collection of buckets in the plan. Re
       - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Description <String>]`: Description of the task.
+      - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Content <String>]`: The content of the item.
+        - `[ContentType <String>]`: bodyType
       - `[PreviewType <String>]`: plannerPreviewType
       - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -579,6 +587,10 @@ TASKS <IMicrosoftGraphPlannerTask1[]>: Collection of tasks in the plan. Read-onl
     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Description <String>]`: Description of the task.
+    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Content <String>]`: The content of the item.
+      - `[ContentType <String>]`: bodyType
     - `[PreviewType <String>]`: plannerPreviewType
     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
