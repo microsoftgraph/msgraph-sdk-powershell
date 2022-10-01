@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastActivityDateTime
-Represents the time when most recent changes were observed in profile.
+Date and time when most recent changes were observed in the profile.
 
 ```yaml
 Type: System.DateTime
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastSynchronizationDateTime
-Represents the time of the most recent successful synchronization.
+Date and time of the most recent successful synchronization.
 
 ```yaml
 Type: System.DateTime
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -StatusMessage
-Status message for the current profile's synchronization stage.
+Status message for the synchronization stage of the current profile.
 
 ```yaml
 Type: System.String
@@ -273,10 +273,10 @@ BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfileStatus>: educationS
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[ErrorCount <Int64?>]`: Number of errors during synchronization.
-  - `[LastActivityDateTime <DateTime?>]`: Represents the time when most recent changes were observed in profile.
-  - `[LastSynchronizationDateTime <DateTime?>]`: Represents the time of the most recent successful  synchronization.
+  - `[LastActivityDateTime <DateTime?>]`: Date and time when most recent changes were observed in the profile.
+  - `[LastSynchronizationDateTime <DateTime?>]`: Date and time of the most recent successful synchronization.
   - `[Status <String>]`: educationSynchronizationStatus
-  - `[StatusMessage <String>]`: Status message for the current profile's synchronization stage.
+  - `[StatusMessage <String>]`: Status message for the synchronization stage of the current profile.
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment
