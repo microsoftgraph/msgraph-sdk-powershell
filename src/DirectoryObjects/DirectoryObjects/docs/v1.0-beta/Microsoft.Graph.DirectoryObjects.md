@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DirectoryObjects
-Module Guid: 75e45e3e-9f07-439b-b010-691657d82ecc
+Module Guid: 9105848a-23cd-4a46-8fbd-62635433c86b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.directoryobjects
 Help Version: 1.0.0.0
 Locale: en-US
