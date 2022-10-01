@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 0287aecd-e0a1-4ddb-b218-8b2ad37fc84f
+Module Guid: 2763508e-bd59-4642-9576-208d4f60c75a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US

@@ -606,7 +606,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                   - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
                   - `[RestrictionType <String>]`: appCredentialRestrictionType
             - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
-            - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+            - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
               - `[Id <String>]`: 
               - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
               - `[CreationTimestamp <DateTime?>]`: The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -616,7 +616,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
               - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
             - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
-            - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
+            - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
             - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
               - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
               - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
@@ -920,7 +920,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[AddedDateTime <DateTime?>]`: The timestamp when the verified publisher was first added or most recently updated.
               - `[DisplayName <String>]`: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
               - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
-          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
+          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
           - `[Approvals <IMicrosoftGraphApproval[]>]`: 
           - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
             - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
@@ -1080,7 +1080,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[KeyStrength <String>]`: authenticationMethodKeyStrength
           - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            - `[CertificateUserIds <String[]>]`: 
           - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
           - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -2619,7 +2619,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
             - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
             - `[AccessType <String>]`: groupAccessType
             - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-            - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
+            - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
             - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
               - `[DisplayName <String>]`: The display name of the label. Read-only.
               - `[LabelId <String>]`: The unique identifier of the label.
@@ -2628,12 +2628,12 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
             - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
             - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
             - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-            - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+            - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
               - `[Id <String>]`: 
               - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
               - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
               - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-              - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+              - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                 - `[Id <String>]`: 
                 - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
                 - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -2701,7 +2701,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
             - `[IsFavorite <Boolean?>]`: 
             - `[IsManagementRestricted <Boolean?>]`: 
             - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-            - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
+            - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState1>]`: licenseProcessingState
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[State <String>]`: 
             - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -2873,6 +2873,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                       - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[Description <String>]`: Description of the task.
+                      - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                       - `[PreviewType <String>]`: plannerPreviewType
                       - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3182,16 +3183,16 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                 - `[OwnersCount <Int32?>]`: 
               - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
                 - `[Id <String>]`: 
-                - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-                - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-                - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-                - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+                - `[Description <String>]`: 
+                - `[DisplayName <String>]`: 
+                - `[MemberCount <Int32?>]`: 
+                - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                   - `[Id <String>]`: 
-                  - `[DisplayName <String>]`: The member's display name.
+                  - `[DisplayName <String>]`: 
                   - `[TenantId <String>]`: 
                   - `[UserId <String>]`: 
                 - `[TagType <String>]`: teamworkTagType
-                - `[TeamId <String>]`: ID of the team in which the tag is defined.
+                - `[TeamId <String>]`: 
               - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: 
@@ -3214,7 +3215,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[Visibility <String>]`: teamVisibilityType
               - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
             - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-            - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+            - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
             - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
             - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
             - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -3801,7 +3802,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
               - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
               - `[TollNumber <String>]`: 
               - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowedAudience <String>]`: broadcastMeetingAudience
               - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -4213,6 +4214,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCase>: ediscoveryCase
                   - `[Scaling <String>]`: printScaling
                 - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                - `[DisplayName <String>]`: 
                 - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                   - `[Id <String>]`: 
                   - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -5329,7 +5331,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                 - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
                 - `[RestrictionType <String>]`: appCredentialRestrictionType
           - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
-          - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+          - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
             - `[Id <String>]`: 
             - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
             - `[CreationTimestamp <DateTime?>]`: The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -5339,7 +5341,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
             - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
           - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
-          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
+          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
           - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
             - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
             - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
@@ -5643,7 +5645,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[AddedDateTime <DateTime?>]`: The timestamp when the verified publisher was first added or most recently updated.
             - `[DisplayName <String>]`: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
             - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
-        - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
+        - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
         - `[Approvals <IMicrosoftGraphApproval[]>]`: 
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
           - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
@@ -5803,7 +5805,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          - `[CertificateUserIds <String[]>]`: 
         - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -7342,7 +7344,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
           - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
           - `[AccessType <String>]`: groupAccessType
           - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
+          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
           - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
             - `[DisplayName <String>]`: The display name of the label. Read-only.
             - `[LabelId <String>]`: The unique identifier of the label.
@@ -7351,12 +7353,12 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
           - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
           - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-          - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+          - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
             - `[Id <String>]`: 
             - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
             - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
             - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-            - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+            - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
               - `[Id <String>]`: 
               - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
               - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -7424,7 +7426,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
           - `[IsFavorite <Boolean?>]`: 
           - `[IsManagementRestricted <Boolean?>]`: 
           - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-          - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
+          - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState1>]`: licenseProcessingState
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[State <String>]`: 
           - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -7596,6 +7598,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7905,16 +7908,16 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
               - `[OwnersCount <Int32?>]`: 
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: 
-              - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-              - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-              - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+              - `[Description <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[MemberCount <Int32?>]`: 
+              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                 - `[Id <String>]`: 
-                - `[DisplayName <String>]`: The member's display name.
+                - `[DisplayName <String>]`: 
                 - `[TenantId <String>]`: 
                 - `[UserId <String>]`: 
               - `[TagType <String>]`: teamworkTagType
-              - `[TeamId <String>]`: ID of the team in which the tag is defined.
+              - `[TeamId <String>]`: 
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -7937,7 +7940,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[Visibility <String>]`: teamVisibilityType
             - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-          - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+          - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
           - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
           - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
           - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -8524,7 +8527,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
             - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
             - `[TollNumber <String>]`: 
             - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedAudience <String>]`: broadcastMeetingAudience
             - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -8936,6 +8939,7 @@ CUSTODIANS <IMicrosoftGraphSecurityEdiscoveryCustodian[]>: Returns a list of cas
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+              - `[DisplayName <String>]`: 
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: 
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -9898,7 +9902,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                 - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
                 - `[RestrictionType <String>]`: appCredentialRestrictionType
           - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
-          - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+          - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
             - `[Id <String>]`: 
             - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
             - `[CreationTimestamp <DateTime?>]`: The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -9908,7 +9912,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
             - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
           - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
-          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
+          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
           - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
             - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
             - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
@@ -10212,7 +10216,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[AddedDateTime <DateTime?>]`: The timestamp when the verified publisher was first added or most recently updated.
             - `[DisplayName <String>]`: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
             - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
-        - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
+        - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
         - `[Approvals <IMicrosoftGraphApproval[]>]`: 
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
           - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
@@ -10372,7 +10376,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          - `[CertificateUserIds <String[]>]`: 
         - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -11911,7 +11915,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
           - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
           - `[AccessType <String>]`: groupAccessType
           - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
+          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
           - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
             - `[DisplayName <String>]`: The display name of the label. Read-only.
             - `[LabelId <String>]`: The unique identifier of the label.
@@ -11920,12 +11924,12 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
           - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
           - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-          - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+          - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
             - `[Id <String>]`: 
             - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
             - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
             - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-            - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+            - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
               - `[Id <String>]`: 
               - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
               - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -11993,7 +11997,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
           - `[IsFavorite <Boolean?>]`: 
           - `[IsManagementRestricted <Boolean?>]`: 
           - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-          - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
+          - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState1>]`: licenseProcessingState
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[State <String>]`: 
           - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -12165,6 +12169,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12474,16 +12479,16 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
               - `[OwnersCount <Int32?>]`: 
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: 
-              - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-              - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-              - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+              - `[Description <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[MemberCount <Int32?>]`: 
+              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                 - `[Id <String>]`: 
-                - `[DisplayName <String>]`: The member's display name.
+                - `[DisplayName <String>]`: 
                 - `[TenantId <String>]`: 
                 - `[UserId <String>]`: 
               - `[TagType <String>]`: teamworkTagType
-              - `[TeamId <String>]`: ID of the team in which the tag is defined.
+              - `[TeamId <String>]`: 
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -12506,7 +12511,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[Visibility <String>]`: teamVisibilityType
             - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-          - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+          - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
           - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
           - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
           - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -13093,7 +13098,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
             - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
             - `[TollNumber <String>]`: 
             - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedAudience <String>]`: broadcastMeetingAudience
             - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -13505,6 +13510,7 @@ LEGALHOLDS <IMicrosoftGraphSecurityEdiscoveryHoldPolicy[]>: Returns a list of ca
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+              - `[DisplayName <String>]`: 
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: 
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -14541,7 +14547,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                     - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
                     - `[RestrictionType <String>]`: appCredentialRestrictionType
               - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
-              - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+              - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
                 - `[Id <String>]`: 
                 - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
                 - `[CreationTimestamp <DateTime?>]`: The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -14551,7 +14557,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
                 - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
               - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
-              - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
+              - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
               - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
                 - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
                 - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
@@ -14855,7 +14861,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[AddedDateTime <DateTime?>]`: The timestamp when the verified publisher was first added or most recently updated.
                 - `[DisplayName <String>]`: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
                 - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
-            - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
+            - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
             - `[Approvals <IMicrosoftGraphApproval[]>]`: 
             - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
               - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
@@ -15015,7 +15021,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[KeyStrength <String>]`: authenticationMethodKeyStrength
             - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+              - `[CertificateUserIds <String[]>]`: 
             - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
             - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
             - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -16554,7 +16560,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
               - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
               - `[AccessType <String>]`: groupAccessType
               - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-              - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
+              - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
               - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
                 - `[DisplayName <String>]`: The display name of the label. Read-only.
                 - `[LabelId <String>]`: The unique identifier of the label.
@@ -16563,12 +16569,12 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
               - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
               - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
               - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-              - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+              - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
                 - `[Id <String>]`: 
                 - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
                 - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
                 - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-                - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+                - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                   - `[Id <String>]`: 
                   - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
                   - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -16636,7 +16642,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
               - `[IsFavorite <Boolean?>]`: 
               - `[IsManagementRestricted <Boolean?>]`: 
               - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-              - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
+              - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState1>]`: licenseProcessingState
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[State <String>]`: 
               - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -16808,6 +16814,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                         - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[Description <String>]`: Description of the task.
+                        - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                         - `[PreviewType <String>]`: plannerPreviewType
                         - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -17117,16 +17124,16 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                   - `[OwnersCount <Int32?>]`: 
                 - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
                   - `[Id <String>]`: 
-                  - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-                  - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-                  - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-                  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+                  - `[Description <String>]`: 
+                  - `[DisplayName <String>]`: 
+                  - `[MemberCount <Int32?>]`: 
+                  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                     - `[Id <String>]`: 
-                    - `[DisplayName <String>]`: The member's display name.
+                    - `[DisplayName <String>]`: 
                     - `[TenantId <String>]`: 
                     - `[UserId <String>]`: 
                   - `[TagType <String>]`: teamworkTagType
-                  - `[TeamId <String>]`: ID of the team in which the tag is defined.
+                  - `[TeamId <String>]`: 
                 - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: 
@@ -17149,7 +17156,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[Visibility <String>]`: teamVisibilityType
                 - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
               - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-              - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+              - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
               - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
               - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
               - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -17736,7 +17743,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                 - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
                 - `[TollNumber <String>]`: 
                 - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-              - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+              - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[AllowedAudience <String>]`: broadcastMeetingAudience
                 - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -18148,6 +18155,7 @@ REVIEWSETS <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>: Returns a list of eDi
                     - `[Scaling <String>]`: printScaling
                   - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                   - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                  - `[DisplayName <String>]`: 
                   - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                     - `[Id <String>]`: 
                     - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -19172,7 +19180,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                         - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
                         - `[RestrictionType <String>]`: appCredentialRestrictionType
                   - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
-                  - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+                  - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
                     - `[Id <String>]`: 
                     - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
                     - `[CreationTimestamp <DateTime?>]`: The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -19182,7 +19190,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
                     - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
                   - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
-                  - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
+                  - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
                   - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
                     - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
                     - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
@@ -19486,7 +19494,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[AddedDateTime <DateTime?>]`: The timestamp when the verified publisher was first added or most recently updated.
                     - `[DisplayName <String>]`: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
                     - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
-                - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
+                - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
                 - `[Approvals <IMicrosoftGraphApproval[]>]`: 
                 - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
                   - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
@@ -19646,7 +19654,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[KeyStrength <String>]`: authenticationMethodKeyStrength
                 - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+                  - `[CertificateUserIds <String[]>]`: 
                 - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
                 - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
                 - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -21185,7 +21193,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                   - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
                   - `[AccessType <String>]`: groupAccessType
                   - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-                  - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
+                  - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
                   - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
                     - `[DisplayName <String>]`: The display name of the label. Read-only.
                     - `[LabelId <String>]`: The unique identifier of the label.
@@ -21194,12 +21202,12 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                   - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
                   - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
                   - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-                  - `[Conversations <IMicrosoftGraphConversation[]>]`: The group's conversations.
+                  - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
                     - `[Id <String>]`: 
                     - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
                     - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
                     - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
-                    - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+                    - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                       - `[Id <String>]`: 
                       - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread. Returned only on $select.
                       - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -21267,7 +21275,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                   - `[IsFavorite <Boolean?>]`: 
                   - `[IsManagementRestricted <Boolean?>]`: 
                   - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-                  - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
+                  - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState1>]`: licenseProcessingState
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[State <String>]`: 
                   - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -21439,6 +21447,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                             - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                               - `[(Any) <Object>]`: This indicates any property can be added to this object.
                             - `[Description <String>]`: Description of the task.
+                            - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                             - `[PreviewType <String>]`: plannerPreviewType
                             - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -21748,16 +21757,16 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                       - `[OwnersCount <Int32?>]`: 
                     - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
                       - `[Id <String>]`: 
-                      - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-                      - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-                      - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-                      - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+                      - `[Description <String>]`: 
+                      - `[DisplayName <String>]`: 
+                      - `[MemberCount <Int32?>]`: 
+                      - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                         - `[Id <String>]`: 
-                        - `[DisplayName <String>]`: The member's display name.
+                        - `[DisplayName <String>]`: 
                         - `[TenantId <String>]`: 
                         - `[UserId <String>]`: 
                       - `[TagType <String>]`: teamworkTagType
-                      - `[TeamId <String>]`: ID of the team in which the tag is defined.
+                      - `[TeamId <String>]`: 
                     - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[Id <String>]`: 
@@ -21780,7 +21789,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[Visibility <String>]`: teamVisibilityType
                     - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
                   - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
-                  - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
+                  - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
                   - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
                   - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
                   - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
@@ -22367,7 +22376,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                     - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
                     - `[TollNumber <String>]`: 
                     - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-                  - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+                  - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[AllowedAudience <String>]`: broadcastMeetingAudience
                     - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -22779,6 +22788,7 @@ SEARCHES <IMicrosoftGraphSecurityEdiscoverySearch[]>: Returns a list of eDiscove
                         - `[Scaling <String>]`: printScaling
                       - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                       - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                      - `[DisplayName <String>]`: 
                       - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                         - `[Id <String>]`: 
                         - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
