@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserChatPinnedMessage
 
 ## SYNOPSIS
-Create new navigation property to pinnedMessages for users
+Pin a chat message in the specified chat.
+This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
 
 ## SYNTAX
 
@@ -37,7 +38,8 @@ New-MgUserChatPinnedMessage -InputObject <ITeamsIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Create new navigation property to pinnedMessages for users
+Pin a chat message in the specified chat.
+This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
 
 ## EXAMPLES
 

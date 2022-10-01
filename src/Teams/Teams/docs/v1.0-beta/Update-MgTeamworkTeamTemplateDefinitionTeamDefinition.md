@@ -1367,10 +1367,10 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
           - `[KeyStrength <String>]`: authenticationMethodKeyStrength
       - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+        - `[CertificateUserIds <String[]>]`: 
       - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
       - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
-      - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+      - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
         - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
@@ -1385,7 +1385,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
           - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
           - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
           - `[Role <String>]`: calendarRoleType
-        - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
+        - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Navigation property. Read-only.
           - `[Categories <String[]>]`: The categories associated with the item
           - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
           - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -1418,15 +1418,15 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
             - `[Content <String>]`: The content of the item.
             - `[ContentType <String>]`: bodyType
           - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-          - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+          - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
           - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
           - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-          - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
+          - `[ExceptionOccurrences <IMicrosoftGraphEvent1[]>]`: 
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
           - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
           - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
           - `[Importance <String>]`: importance
-          - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+          - `[Instances <IMicrosoftGraphEvent1[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
           - `[IsAllDay <Boolean?>]`: 
           - `[IsCancelled <Boolean?>]`: 
           - `[IsDraft <Boolean?>]`: 
@@ -1519,7 +1519,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
         - `[ChangeKey <String>]`: Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[Color <String>]`: calendarColor
         - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
-        - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
+        - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
         - `[HexColor <String>]`: The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
         - `[IsDefaultCalendar <Boolean?>]`: true if this is the default calendar where new events are created by default, false otherwise.
         - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -1532,12 +1532,12 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
         - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
         - `[Id <String>]`: 
-        - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
+        - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
         - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[ClassId <String>]`: The class identifier. Read-only.
         - `[Name <String>]`: The group name.
-      - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only. Nullable.
-      - `[Calendars <IMicrosoftGraphCalendar[]>]`: The user's calendars. Read-only. Nullable.
+      - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
+      - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
       - `[Chats <IMicrosoftGraphChat[]>]`: 
         - `[Id <String>]`: 
         - `[ChatType <String>]`: chatType
@@ -2301,7 +2301,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
         - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
         - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
       - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-      - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+      - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
       - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
       - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -2670,8 +2670,8 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
         - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-        - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
+        - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
+        - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only.
         - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
         - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
           - `[Id <String>]`: 
@@ -2728,7 +2728,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
         - `[Drive <IMicrosoftGraphDrive1>]`: drive
         - `[Drives <IMicrosoftGraphDrive1[]>]`: The group's drives. Read-only.
         - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-        - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
+        - `[Events <IMicrosoftGraphEvent1[]>]`: The group's events.
         - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
         - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -2829,6 +2829,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3116,16 +3117,16 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
             - `[OwnersCount <Int32?>]`: 
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: 
-            - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-            - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-            - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+            - `[Description <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[MemberCount <Int32?>]`: 
+            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
               - `[Id <String>]`: 
-              - `[DisplayName <String>]`: The member's display name.
+              - `[DisplayName <String>]`: 
               - `[TenantId <String>]`: 
               - `[UserId <String>]`: 
             - `[TagType <String>]`: teamworkTagType
-            - `[TeamId <String>]`: ID of the team in which the tag is defined.
+            - `[TeamId <String>]`: 
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -3735,7 +3736,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
           - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
           - `[TollNumber <String>]`: 
           - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowedAudience <String>]`: broadcastMeetingAudience
           - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -4147,6 +4148,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+            - `[DisplayName <String>]`: 
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: 
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -5894,10 +5896,10 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          - `[CertificateUserIds <String[]>]`: 
         - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
-        - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+        - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
           - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
@@ -5912,7 +5914,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
             - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
             - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
             - `[Role <String>]`: calendarRoleType
-          - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
+          - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Navigation property. Read-only.
             - `[Categories <String[]>]`: The categories associated with the item
             - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -5945,15 +5947,15 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
               - `[Content <String>]`: The content of the item.
               - `[ContentType <String>]`: bodyType
             - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-            - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+            - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
             - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
             - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-            - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
+            - `[ExceptionOccurrences <IMicrosoftGraphEvent1[]>]`: 
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
             - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
             - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
             - `[Importance <String>]`: importance
-            - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+            - `[Instances <IMicrosoftGraphEvent1[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
             - `[IsAllDay <Boolean?>]`: 
             - `[IsCancelled <Boolean?>]`: 
             - `[IsDraft <Boolean?>]`: 
@@ -6046,7 +6048,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
           - `[ChangeKey <String>]`: Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
           - `[Color <String>]`: calendarColor
           - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
-          - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
+          - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
           - `[HexColor <String>]`: The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
           - `[IsDefaultCalendar <Boolean?>]`: true if this is the default calendar where new events are created by default, false otherwise.
           - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -6059,12 +6061,12 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
           - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
         - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
           - `[Id <String>]`: 
-          - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
+          - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
           - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
           - `[ClassId <String>]`: The class identifier. Read-only.
           - `[Name <String>]`: The group name.
-        - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only. Nullable.
-        - `[Calendars <IMicrosoftGraphCalendar[]>]`: The user's calendars. Read-only. Nullable.
+        - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
+        - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
         - `[Chats <IMicrosoftGraphChat[]>]`: 
           - `[Id <String>]`: 
           - `[ChatType <String>]`: chatType
@@ -6828,7 +6830,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
           - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
           - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
         - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-        - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+        - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
         - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
         - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -7197,8 +7199,8 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
             - `[LabelId <String>]`: The unique identifier of the label.
           - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
           - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-          - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-          - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
+          - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
+          - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only.
           - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
           - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
             - `[Id <String>]`: 
@@ -7255,7 +7257,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
           - `[Drive <IMicrosoftGraphDrive1>]`: drive
           - `[Drives <IMicrosoftGraphDrive1[]>]`: The group's drives. Read-only.
           - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-          - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
+          - `[Events <IMicrosoftGraphEvent1[]>]`: The group's events.
           - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
           - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -7356,6 +7358,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8025,7 +8028,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
             - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
             - `[TollNumber <String>]`: 
             - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedAudience <String>]`: broadcastMeetingAudience
             - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -8437,6 +8440,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+              - `[DisplayName <String>]`: 
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: 
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -9756,16 +9760,16 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
     - `[OwnersCount <Int32?>]`: 
   - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
     - `[Id <String>]`: 
-    - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-    - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-    - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-    - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+    - `[Description <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[MemberCount <Int32?>]`: 
+    - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
       - `[Id <String>]`: 
-      - `[DisplayName <String>]`: The member's display name.
+      - `[DisplayName <String>]`: 
       - `[TenantId <String>]`: 
       - `[UserId <String>]`: 
     - `[TagType <String>]`: teamworkTagType
-    - `[TeamId <String>]`: ID of the team in which the tag is defined.
+    - `[TeamId <String>]`: 
   - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
@@ -10415,10 +10419,10 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
           - `[KeyStrength <String>]`: authenticationMethodKeyStrength
       - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+        - `[CertificateUserIds <String[]>]`: 
       - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
       - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
-      - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+      - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
         - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
@@ -10433,7 +10437,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
           - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
           - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
           - `[Role <String>]`: calendarRoleType
-        - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
+        - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Navigation property. Read-only.
           - `[Categories <String[]>]`: The categories associated with the item
           - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
           - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -10466,15 +10470,15 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
             - `[Content <String>]`: The content of the item.
             - `[ContentType <String>]`: bodyType
           - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-          - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+          - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
           - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
           - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-          - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
+          - `[ExceptionOccurrences <IMicrosoftGraphEvent1[]>]`: 
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
           - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
           - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
           - `[Importance <String>]`: importance
-          - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+          - `[Instances <IMicrosoftGraphEvent1[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
           - `[IsAllDay <Boolean?>]`: 
           - `[IsCancelled <Boolean?>]`: 
           - `[IsDraft <Boolean?>]`: 
@@ -10567,7 +10571,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
         - `[ChangeKey <String>]`: Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[Color <String>]`: calendarColor
         - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
-        - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
+        - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
         - `[HexColor <String>]`: The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
         - `[IsDefaultCalendar <Boolean?>]`: true if this is the default calendar where new events are created by default, false otherwise.
         - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -10580,12 +10584,12 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
         - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
         - `[Id <String>]`: 
-        - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
+        - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
         - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[ClassId <String>]`: The class identifier. Read-only.
         - `[Name <String>]`: The group name.
-      - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only. Nullable.
-      - `[Calendars <IMicrosoftGraphCalendar[]>]`: The user's calendars. Read-only. Nullable.
+      - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
+      - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
       - `[Chats <IMicrosoftGraphChat[]>]`: 
         - `[Id <String>]`: 
         - `[ChatType <String>]`: chatType
@@ -11349,7 +11353,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
         - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
         - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
       - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-      - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+      - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
       - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
       - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -11718,8 +11722,8 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
         - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-        - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
+        - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
+        - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only.
         - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
         - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
           - `[Id <String>]`: 
@@ -11776,7 +11780,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
         - `[Drive <IMicrosoftGraphDrive1>]`: drive
         - `[Drives <IMicrosoftGraphDrive1[]>]`: The group's drives. Read-only.
         - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-        - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
+        - `[Events <IMicrosoftGraphEvent1[]>]`: The group's events.
         - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
         - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -11877,6 +11881,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12164,16 +12169,16 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
             - `[OwnersCount <Int32?>]`: 
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: 
-            - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-            - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-            - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+            - `[Description <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[MemberCount <Int32?>]`: 
+            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
               - `[Id <String>]`: 
-              - `[DisplayName <String>]`: The member's display name.
+              - `[DisplayName <String>]`: 
               - `[TenantId <String>]`: 
               - `[UserId <String>]`: 
             - `[TagType <String>]`: teamworkTagType
-            - `[TeamId <String>]`: ID of the team in which the tag is defined.
+            - `[TeamId <String>]`: 
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -12783,7 +12788,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
           - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
           - `[TollNumber <String>]`: 
           - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowedAudience <String>]`: broadcastMeetingAudience
           - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -13195,6 +13200,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+            - `[DisplayName <String>]`: 
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: 
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -14348,7 +14354,7 @@ GROUP <IMicrosoftGraphGroup1>: group
     - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
     - `[SkuId <String>]`: The unique identifier for the SKU.
   - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-  - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+  - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
@@ -14363,7 +14369,7 @@ GROUP <IMicrosoftGraphGroup1>: group
       - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
       - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
       - `[Role <String>]`: calendarRoleType
-    - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
+    - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Navigation property. Read-only.
       - `[Categories <String[]>]`: The categories associated with the item
       - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -14396,16 +14402,16 @@ GROUP <IMicrosoftGraphGroup1>: group
         - `[Content <String>]`: The content of the item.
         - `[ContentType <String>]`: bodyType
       - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-      - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+      - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
       - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
       - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-      - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
+      - `[ExceptionOccurrences <IMicrosoftGraphEvent1[]>]`: 
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
         - `[Id <String>]`: 
       - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
       - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
       - `[Importance <String>]`: importance
-      - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+      - `[Instances <IMicrosoftGraphEvent1[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
       - `[IsAllDay <Boolean?>]`: 
       - `[IsCancelled <Boolean?>]`: 
       - `[IsDraft <Boolean?>]`: 
@@ -14498,7 +14504,7 @@ GROUP <IMicrosoftGraphGroup1>: group
     - `[ChangeKey <String>]`: Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[Color <String>]`: calendarColor
     - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
-    - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
+    - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
     - `[HexColor <String>]`: The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
     - `[IsDefaultCalendar <Boolean?>]`: true if this is the default calendar where new events are created by default, false otherwise.
     - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -14509,7 +14515,7 @@ GROUP <IMicrosoftGraphGroup1>: group
     - `[Name <String>]`: The calendar name.
     - `[Owner <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-  - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
+  - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only.
   - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
   - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
     - `[Id <String>]`: 
@@ -15171,18 +15177,18 @@ GROUP <IMicrosoftGraphGroup1>: group
           - `[KeyStrength <String>]`: authenticationMethodKeyStrength
       - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+        - `[CertificateUserIds <String[]>]`: 
       - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
       - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
-      - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+      - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
       - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
         - `[Id <String>]`: 
-        - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
+        - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
         - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[ClassId <String>]`: The class identifier. Read-only.
         - `[Name <String>]`: The group name.
-      - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only. Nullable.
-      - `[Calendars <IMicrosoftGraphCalendar[]>]`: The user's calendars. Read-only. Nullable.
+      - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
+      - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
       - `[Chats <IMicrosoftGraphChat[]>]`: 
         - `[Id <String>]`: 
         - `[ChatType <String>]`: chatType
@@ -15541,7 +15547,7 @@ GROUP <IMicrosoftGraphGroup1>: group
         - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
         - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
       - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-      - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+      - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
       - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
       - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -16905,16 +16911,16 @@ GROUP <IMicrosoftGraphGroup1>: group
           - `[OwnersCount <Int32?>]`: 
         - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
           - `[Id <String>]`: 
-          - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-          - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-          - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-          - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+          - `[Description <String>]`: 
+          - `[DisplayName <String>]`: 
+          - `[MemberCount <Int32?>]`: 
+          - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
             - `[Id <String>]`: 
-            - `[DisplayName <String>]`: The member's display name.
+            - `[DisplayName <String>]`: 
             - `[TenantId <String>]`: 
             - `[UserId <String>]`: 
           - `[TagType <String>]`: teamworkTagType
-          - `[TeamId <String>]`: ID of the team in which the tag is defined.
+          - `[TeamId <String>]`: 
         - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
@@ -17515,7 +17521,7 @@ GROUP <IMicrosoftGraphGroup1>: group
           - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
           - `[TollNumber <String>]`: 
           - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowedAudience <String>]`: broadcastMeetingAudience
           - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -17848,6 +17854,7 @@ GROUP <IMicrosoftGraphGroup1>: group
                 - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Description <String>]`: Description of the task.
+                - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -18036,6 +18043,7 @@ GROUP <IMicrosoftGraphGroup1>: group
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+            - `[DisplayName <String>]`: 
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: 
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -18764,7 +18772,7 @@ GROUP <IMicrosoftGraphGroup1>: group
     - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
   - `[Drives <IMicrosoftGraphDrive1[]>]`: The group's drives. Read-only.
   - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-  - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
+  - `[Events <IMicrosoftGraphEvent1[]>]`: The group's events.
   - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
   - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -19478,10 +19486,10 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
           - `[KeyStrength <String>]`: authenticationMethodKeyStrength
       - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+        - `[CertificateUserIds <String[]>]`: 
       - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
       - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
-      - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+      - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
         - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
@@ -19496,7 +19504,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
           - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
           - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
           - `[Role <String>]`: calendarRoleType
-        - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
+        - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Navigation property. Read-only.
           - `[Categories <String[]>]`: The categories associated with the item
           - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
           - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -19529,15 +19537,15 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
             - `[Content <String>]`: The content of the item.
             - `[ContentType <String>]`: bodyType
           - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-          - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+          - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
           - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
           - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-          - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
+          - `[ExceptionOccurrences <IMicrosoftGraphEvent1[]>]`: 
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
           - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
           - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
           - `[Importance <String>]`: importance
-          - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+          - `[Instances <IMicrosoftGraphEvent1[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
           - `[IsAllDay <Boolean?>]`: 
           - `[IsCancelled <Boolean?>]`: 
           - `[IsDraft <Boolean?>]`: 
@@ -19630,7 +19638,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
         - `[ChangeKey <String>]`: Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[Color <String>]`: calendarColor
         - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
-        - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
+        - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
         - `[HexColor <String>]`: The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
         - `[IsDefaultCalendar <Boolean?>]`: true if this is the default calendar where new events are created by default, false otherwise.
         - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -19643,12 +19651,12 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
         - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
         - `[Id <String>]`: 
-        - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
+        - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
         - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[ClassId <String>]`: The class identifier. Read-only.
         - `[Name <String>]`: The group name.
-      - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only. Nullable.
-      - `[Calendars <IMicrosoftGraphCalendar[]>]`: The user's calendars. Read-only. Nullable.
+      - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
+      - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
       - `[Chats <IMicrosoftGraphChat[]>]`: 
         - `[Id <String>]`: 
         - `[ChatType <String>]`: chatType
@@ -20412,7 +20420,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
         - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
         - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
       - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-      - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+      - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
       - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
       - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -20781,8 +20789,8 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
         - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-        - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
+        - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
+        - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only.
         - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
         - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
           - `[Id <String>]`: 
@@ -20839,7 +20847,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
         - `[Drive <IMicrosoftGraphDrive1>]`: drive
         - `[Drives <IMicrosoftGraphDrive1[]>]`: The group's drives. Read-only.
         - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-        - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
+        - `[Events <IMicrosoftGraphEvent1[]>]`: The group's events.
         - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
         - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -20940,6 +20948,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -21227,16 +21236,16 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
             - `[OwnersCount <Int32?>]`: 
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: 
-            - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-            - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-            - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+            - `[Description <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[MemberCount <Int32?>]`: 
+            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
               - `[Id <String>]`: 
-              - `[DisplayName <String>]`: The member's display name.
+              - `[DisplayName <String>]`: 
               - `[TenantId <String>]`: 
               - `[UserId <String>]`: 
             - `[TagType <String>]`: teamworkTagType
-            - `[TeamId <String>]`: ID of the team in which the tag is defined.
+            - `[TeamId <String>]`: 
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -21846,7 +21855,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
           - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
           - `[TollNumber <String>]`: 
           - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowedAudience <String>]`: broadcastMeetingAudience
           - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -22258,6 +22267,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+            - `[DisplayName <String>]`: 
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: 
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -24110,10 +24120,10 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
       - `[KeyStrength <String>]`: authenticationMethodKeyStrength
   - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+    - `[CertificateUserIds <String[]>]`: 
   - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
   - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
-  - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+  - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
@@ -24128,7 +24138,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
       - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
       - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
       - `[Role <String>]`: calendarRoleType
-    - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
+    - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Navigation property. Read-only.
       - `[Categories <String[]>]`: The categories associated with the item
       - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -24161,15 +24171,15 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
         - `[Content <String>]`: The content of the item.
         - `[ContentType <String>]`: bodyType
       - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-      - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+      - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
       - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
       - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-      - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
+      - `[ExceptionOccurrences <IMicrosoftGraphEvent1[]>]`: 
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
       - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
       - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
       - `[Importance <String>]`: importance
-      - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+      - `[Instances <IMicrosoftGraphEvent1[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
       - `[IsAllDay <Boolean?>]`: 
       - `[IsCancelled <Boolean?>]`: 
       - `[IsDraft <Boolean?>]`: 
@@ -24262,7 +24272,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
     - `[ChangeKey <String>]`: Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[Color <String>]`: calendarColor
     - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
-    - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
+    - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
     - `[HexColor <String>]`: The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
     - `[IsDefaultCalendar <Boolean?>]`: true if this is the default calendar where new events are created by default, false otherwise.
     - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -24275,12 +24285,12 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
   - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
     - `[Id <String>]`: 
-    - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
+    - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
     - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[ClassId <String>]`: The class identifier. Read-only.
     - `[Name <String>]`: The group name.
-  - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only. Nullable.
-  - `[Calendars <IMicrosoftGraphCalendar[]>]`: The user's calendars. Read-only. Nullable.
+  - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
+  - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
   - `[Chats <IMicrosoftGraphChat[]>]`: 
     - `[Id <String>]`: 
     - `[ChatType <String>]`: chatType
@@ -25488,7 +25498,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
     - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
     - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
   - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-  - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+  - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
   - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
   - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -25821,8 +25831,8 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
       - `[LabelId <String>]`: The unique identifier of the label.
     - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
     - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-    - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-    - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
+    - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
+    - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only.
     - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
     - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
       - `[Id <String>]`: 
@@ -25879,7 +25889,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
     - `[Drive <IMicrosoftGraphDrive1>]`: drive
     - `[Drives <IMicrosoftGraphDrive1[]>]`: The group's drives. Read-only.
     - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-    - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
+    - `[Events <IMicrosoftGraphEvent1[]>]`: The group's events.
     - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
     - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -25980,6 +25990,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
               - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Description <String>]`: Description of the task.
+              - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
               - `[PreviewType <String>]`: plannerPreviewType
               - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -26289,16 +26300,16 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
         - `[OwnersCount <Int32?>]`: 
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: 
-        - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-        - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-        - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+        - `[Description <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[MemberCount <Int32?>]`: 
+        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
           - `[Id <String>]`: 
-          - `[DisplayName <String>]`: The member's display name.
+          - `[DisplayName <String>]`: 
           - `[TenantId <String>]`: 
           - `[UserId <String>]`: 
         - `[TagType <String>]`: teamworkTagType
-        - `[TeamId <String>]`: ID of the team in which the tag is defined.
+        - `[TeamId <String>]`: 
       - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
@@ -26908,7 +26919,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
       - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
       - `[TollNumber <String>]`: 
       - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowedAudience <String>]`: broadcastMeetingAudience
       - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -27320,6 +27331,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
           - `[Scaling <String>]`: printScaling
         - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+        - `[DisplayName <String>]`: 
         - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
           - `[Id <String>]`: 
           - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -28659,10 +28671,10 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
           - `[KeyStrength <String>]`: authenticationMethodKeyStrength
       - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+        - `[CertificateUserIds <String[]>]`: 
       - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
       - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
-      - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+      - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
         - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
@@ -28677,7 +28689,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
           - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
           - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
           - `[Role <String>]`: calendarRoleType
-        - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
+        - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Navigation property. Read-only.
           - `[Categories <String[]>]`: The categories associated with the item
           - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
           - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -28710,15 +28722,15 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
             - `[Content <String>]`: The content of the item.
             - `[ContentType <String>]`: bodyType
           - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-          - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+          - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
           - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
           - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-          - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
+          - `[ExceptionOccurrences <IMicrosoftGraphEvent1[]>]`: 
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
           - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
           - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
           - `[Importance <String>]`: importance
-          - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+          - `[Instances <IMicrosoftGraphEvent1[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
           - `[IsAllDay <Boolean?>]`: 
           - `[IsCancelled <Boolean?>]`: 
           - `[IsDraft <Boolean?>]`: 
@@ -28811,7 +28823,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
         - `[ChangeKey <String>]`: Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[Color <String>]`: calendarColor
         - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
-        - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
+        - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
         - `[HexColor <String>]`: The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
         - `[IsDefaultCalendar <Boolean?>]`: true if this is the default calendar where new events are created by default, false otherwise.
         - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -28824,12 +28836,12 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
         - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
       - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
         - `[Id <String>]`: 
-        - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
+        - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
         - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[ClassId <String>]`: The class identifier. Read-only.
         - `[Name <String>]`: The group name.
-      - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only. Nullable.
-      - `[Calendars <IMicrosoftGraphCalendar[]>]`: The user's calendars. Read-only. Nullable.
+      - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
+      - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
       - `[Chats <IMicrosoftGraphChat[]>]`: 
         - `[Id <String>]`: 
         - `[ChatType <String>]`: chatType
@@ -29593,7 +29605,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
         - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
         - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
       - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-      - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+      - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
       - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
       - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -29962,8 +29974,8 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
         - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-        - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
+        - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
+        - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only.
         - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
         - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
           - `[Id <String>]`: 
@@ -30020,7 +30032,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
         - `[Drive <IMicrosoftGraphDrive1>]`: drive
         - `[Drives <IMicrosoftGraphDrive1[]>]`: The group's drives. Read-only.
         - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-        - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
+        - `[Events <IMicrosoftGraphEvent1[]>]`: The group's events.
         - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
         - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -30121,6 +30133,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -30408,16 +30421,16 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
             - `[OwnersCount <Int32?>]`: 
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: 
-            - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-            - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-            - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+            - `[Description <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[MemberCount <Int32?>]`: 
+            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
               - `[Id <String>]`: 
-              - `[DisplayName <String>]`: The member's display name.
+              - `[DisplayName <String>]`: 
               - `[TenantId <String>]`: 
               - `[UserId <String>]`: 
             - `[TagType <String>]`: teamworkTagType
-            - `[TeamId <String>]`: ID of the team in which the tag is defined.
+            - `[TeamId <String>]`: 
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -31027,7 +31040,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
           - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
           - `[TollNumber <String>]`: 
           - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowedAudience <String>]`: broadcastMeetingAudience
           - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -31439,6 +31452,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+            - `[DisplayName <String>]`: 
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: 
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -32725,16 +32739,16 @@ SUMMARY <IMicrosoftGraphTeamSummary>: teamSummary
 
 TAGS <IMicrosoftGraphTeamworkTag[]>: The tags associated with the team.
   - `[Id <String>]`: 
-  - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-  - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-  - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[MemberCount <Int32?>]`: 
+  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
     - `[Id <String>]`: 
-    - `[DisplayName <String>]`: The member's display name.
+    - `[DisplayName <String>]`: 
     - `[TenantId <String>]`: 
     - `[UserId <String>]`: 
   - `[TagType <String>]`: teamworkTagType
-  - `[TeamId <String>]`: ID of the team in which the tag is defined.
+  - `[TeamId <String>]`: 
 
 TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -33380,10 +33394,10 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
               - `[KeyStrength <String>]`: authenticationMethodKeyStrength
           - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            - `[CertificateUserIds <String[]>]`: 
           - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
           - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
-          - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+          - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
             - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
@@ -33398,7 +33412,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
               - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
               - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
               - `[Role <String>]`: calendarRoleType
-            - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
+            - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Navigation property. Read-only.
               - `[Categories <String[]>]`: The categories associated with the item
               - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -33431,15 +33445,15 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
                 - `[Content <String>]`: The content of the item.
                 - `[ContentType <String>]`: bodyType
               - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-              - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+              - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
               - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
               - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-              - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
+              - `[ExceptionOccurrences <IMicrosoftGraphEvent1[]>]`: 
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
               - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
               - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
               - `[Importance <String>]`: importance
-              - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+              - `[Instances <IMicrosoftGraphEvent1[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
               - `[IsAllDay <Boolean?>]`: 
               - `[IsCancelled <Boolean?>]`: 
               - `[IsDraft <Boolean?>]`: 
@@ -33532,7 +33546,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
             - `[ChangeKey <String>]`: Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             - `[Color <String>]`: calendarColor
             - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
-            - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
+            - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
             - `[HexColor <String>]`: The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
             - `[IsDefaultCalendar <Boolean?>]`: true if this is the default calendar where new events are created by default, false otherwise.
             - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -33545,12 +33559,12 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
             - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
           - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
             - `[Id <String>]`: 
-            - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
+            - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
             - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             - `[ClassId <String>]`: The class identifier. Read-only.
             - `[Name <String>]`: The group name.
-          - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only. Nullable.
-          - `[Calendars <IMicrosoftGraphCalendar[]>]`: The user's calendars. Read-only. Nullable.
+          - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
+          - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
           - `[Chats <IMicrosoftGraphChat[]>]`: 
             - `[Id <String>]`: 
             - `[ChatType <String>]`: chatType
@@ -34314,7 +34328,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
             - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
             - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
           - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-          - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+          - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
           - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
           - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -34683,8 +34697,8 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
               - `[LabelId <String>]`: The unique identifier of the label.
             - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
             - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-            - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-            - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
+            - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
+            - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only.
             - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
             - `[Conversations <IMicrosoftGraphConversation1[]>]`: The group's conversations.
               - `[Id <String>]`: 
@@ -34741,7 +34755,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
             - `[Drive <IMicrosoftGraphDrive1>]`: drive
             - `[Drives <IMicrosoftGraphDrive1[]>]`: The group's drives. Read-only.
             - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-            - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
+            - `[Events <IMicrosoftGraphEvent1[]>]`: The group's events.
             - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
             - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -34842,6 +34856,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
                       - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[Description <String>]`: Description of the task.
+                      - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                       - `[PreviewType <String>]`: plannerPreviewType
                       - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -35511,7 +35526,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
               - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
               - `[TollNumber <String>]`: 
               - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowedAudience <String>]`: broadcastMeetingAudience
               - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -35923,6 +35938,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
                   - `[Scaling <String>]`: printScaling
                 - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                - `[DisplayName <String>]`: 
                 - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                   - `[Id <String>]`: 
                   - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -37242,16 +37258,16 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
       - `[OwnersCount <Int32?>]`: 
     - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
       - `[Id <String>]`: 
-      - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-      - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-      - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-      - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[MemberCount <Int32?>]`: 
+      - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
         - `[Id <String>]`: 
-        - `[DisplayName <String>]`: The member's display name.
+        - `[DisplayName <String>]`: 
         - `[TenantId <String>]`: 
         - `[UserId <String>]`: 
       - `[TagType <String>]`: teamworkTagType
-      - `[TeamId <String>]`: ID of the team in which the tag is defined.
+      - `[TeamId <String>]`: 
     - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 

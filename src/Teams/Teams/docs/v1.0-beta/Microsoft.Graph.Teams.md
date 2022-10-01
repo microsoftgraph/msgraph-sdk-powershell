@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 881afa9b-a781-45b0-988c-fc4aab82afec
+Module Guid: be27008e-c540-4a3d-b82e-73094373b2d5
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -838,7 +838,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamChannelMessageHostedContent](New-MgGroupTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -872,7 +872,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamPrimaryChannelMessageHostedContent](New-MgGroupTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -942,7 +942,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -982,7 +982,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1052,7 +1052,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teamwork
@@ -1699,11 +1699,7 @@ Update the navigation property sharedWithTeams in groups
 Update the navigation property tabs in groups
 
 ### [Update-MgGroupTeamSchedule](Update-MgGroupTeamSchedule.md)
-Create or replace a schedule object.
-The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation replaces the schedule; otherwise, the operation starts the schedule provisioning process in the background.
-During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning.
-If the provisioning failed, clients can get additional information from the `provisionStatusCode` property.
-Clients can also inspect the configuration of the schedule.
+Update the navigation property schedule in groups
 
 ### [Update-MgGroupTeamScheduleOfferShiftRequest](Update-MgGroupTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in groups
@@ -1802,11 +1798,7 @@ Update the navigation property sharedWithTeams in teams
 Update the navigation property tabs in teams
 
 ### [Update-MgTeamSchedule](Update-MgTeamSchedule.md)
-Create or replace a schedule object.
-The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation replaces the schedule; otherwise, the operation starts the schedule provisioning process in the background.
-During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning.
-If the provisioning failed, clients can get additional information from the `provisionStatusCode` property.
-Clients can also inspect the configuration of the schedule.
+Update the navigation property schedule in teams
 
 ### [Update-MgTeamScheduleOfferShiftRequest](Update-MgTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in teams

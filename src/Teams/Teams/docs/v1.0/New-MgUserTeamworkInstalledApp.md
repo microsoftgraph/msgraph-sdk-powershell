@@ -363,7 +363,7 @@ BODYPARAMETER <IMicrosoftGraphUserScopeTeamsAppInstallation>: userScopeTeamsAppI
         - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
         - `[UserIdentityType <String>]`: teamworkUserIdentityType
-    - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: 
+    - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: A collection of all the pinned messages in the chat. Nullable.
       - `[Id <String>]`: 
       - `[Message <IMicrosoftGraphChatMessage1>]`: chatMessage
     - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the chat. Nullable.
@@ -504,7 +504,7 @@ CHAT <IMicrosoftGraphChat1>: chat
       - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
       - `[UserIdentityType <String>]`: teamworkUserIdentityType
-  - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: 
+  - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: A collection of all the pinned messages in the chat. Nullable.
     - `[Id <String>]`: 
     - `[Message <IMicrosoftGraphChatMessage1>]`: chatMessage
   - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the chat. Nullable.

@@ -12,21 +12,21 @@ Content in a message hosted by Microsoft Teams - for example, images or code sni
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
-Get-MgTeamChannelMessageHostedContent -ChannelId <String> -ChatMessageId <String> -TeamId <String> [-Count]
+Get-MgTeamChannelMessageHostedContent -ChannelId <String> -ChatMessageId <String> -TeamId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgTeamChannelMessageHostedContent -ChannelId <String> -ChatMessageHostedContentId <String>
  -ChatMessageId <String> -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgTeamChannelMessageHostedContent -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -48,12 +48,27 @@ To learn about permissions for this resource, see the [permissions reference](/g
 
 ## PARAMETERS
 
+### -All
+List all pages.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ChannelId
 key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -68,7 +83,7 @@ key: id of chatMessageHostedContent
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -83,7 +98,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -93,13 +108,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
+Type: System.String
+Parameter Sets: List
+Aliases: CV
 
 Required: False
 Position: Named
@@ -128,7 +144,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -144,13 +160,28 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -174,7 +205,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -189,7 +220,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -204,7 +235,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -219,7 +250,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -234,7 +265,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
