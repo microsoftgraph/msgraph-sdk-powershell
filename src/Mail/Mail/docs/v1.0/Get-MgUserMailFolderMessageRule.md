@@ -14,8 +14,9 @@ The collection of rules that apply to the user's Inbox folder.
 
 ### List (Default)
 ```
-Get-MgUserMailFolderMessageRule -MailFolderId <String> -UserId <String> [-Count] [-Filter <String>]
- [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
+Get-MgUserMailFolderMessageRule -MailFolderId <String> -UserId <String> [-Filter <String>]
+ [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -56,13 +57,29 @@ To learn about permissions for this resource, see the [permissions reference](/g
 
 ## PARAMETERS
 
-### -Count
-Include count of items
+### -All
+List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: List
+Aliases: CV
 
 Required: False
 Position: Named
@@ -126,6 +143,21 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
