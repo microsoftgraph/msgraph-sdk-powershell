@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 9dd4c8b5-b646-425d-ab99-3125bf9401a9
+Module Guid: 97454772-2908-461c-b3a5-2f32b26493fb
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -585,6 +585,9 @@ Depending on the type of insights, you can get their settings by using list item
 This operation does not return microsoftApplicationDataAccessSettings.
 To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
 
+### [Get-MgOrganizationSettingContactInsight](Get-MgOrganizationSettingContactInsight.md)
+Get contactInsights from organization
+
 ### [Get-MgOrganizationSettingItemInsight](Get-MgOrganizationSettingItemInsight.md)
 Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
 To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy.
@@ -962,6 +965,9 @@ Delete navigation property extensions for organization
 ### [Remove-MgOrganizationSetting](Remove-MgOrganizationSetting.md)
 Delete navigation property settings for organization
 
+### [Remove-MgOrganizationSettingContactInsight](Remove-MgOrganizationSettingContactInsight.md)
+Delete navigation property contactInsights for organization
+
 ### [Remove-MgOrganizationSettingItemInsight](Remove-MgOrganizationSettingItemInsight.md)
 Delete navigation property itemInsights for organization
 
@@ -1282,6 +1288,9 @@ Update the navigation property extensions in organization
 
 ### [Update-MgOrganizationSetting](Update-MgOrganizationSetting.md)
 Update the navigation property settings in organization
+
+### [Update-MgOrganizationSettingContactInsight](Update-MgOrganizationSettingContactInsight.md)
+Update the navigation property contactInsights in organization
 
 ### [Update-MgOrganizationSettingItemInsight](Update-MgOrganizationSettingItemInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
