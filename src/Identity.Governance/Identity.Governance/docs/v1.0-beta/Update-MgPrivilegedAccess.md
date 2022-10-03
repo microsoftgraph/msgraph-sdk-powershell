@@ -347,8 +347,8 @@ BODYPARAMETER <IMicrosoftGraphPrivilegedAccess>: privilegedAccess
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
         - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -425,7 +425,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[EndDateTime <DateTime?>]`: Usage: endDateTime='{endDateTime}'
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -447,7 +447,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
   - `[RunId <String>]`: key: id of run
-  - `[StartDateTime <DateTime?>]`: Usage: startDateTime='{startDateTime}'
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
   - `[TaskDefinitionId <String>]`: key: id of taskDefinition
   - `[TaskId <String>]`: key: id of task
   - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
@@ -509,8 +509,8 @@ RESOURCES <IMicrosoftGraphGovernanceResource[]>: A collection of resources for t
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
       - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
+        - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+        - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
       - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
     - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -619,8 +619,8 @@ ROLEASSIGNMENTREQUESTS <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>: A col
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
     - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
+      - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+      - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
     - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
   - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
   - `[SubjectId <String>]`: Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
@@ -685,8 +685,8 @@ ROLEASSIGNMENTS <IMicrosoftGraphGovernanceRoleAssignment[]>: A collection of rol
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
         - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -742,8 +742,8 @@ ROLEDEFINITIONS <IMicrosoftGraphGovernanceRoleDefinition[]>: A collection of rol
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
         - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -837,8 +837,8 @@ ROLESETTINGS <IMicrosoftGraphGovernanceRoleSetting[]>: A collection of role sett
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
         - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.

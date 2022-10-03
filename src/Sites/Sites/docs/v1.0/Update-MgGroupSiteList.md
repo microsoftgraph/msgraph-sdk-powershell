@@ -746,6 +746,9 @@ BODYPARAMETER <IMicrosoftGraphList1>: list
         - `[Device <IMicrosoftGraphDevice1>]`: device
         - `[DisplayName <String>]`: The name of the device on which Windows Hello for Business is registered
         - `[KeyStrength <String>]`: authenticationMethodKeyStrength
+    - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[CertificateUserIds <String[]>]`: 
     - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     - `[BusinessPhones <String[]>]`: The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
     - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -1022,7 +1025,7 @@ BODYPARAMETER <IMicrosoftGraphList1>: list
           - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
           - `[Id <String>]`: Unique identifier for the identity.
           - `[UserIdentityType <String>]`: teamworkUserIdentityType
-      - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: 
+      - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
         - `[Id <String>]`: 
         - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
       - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
@@ -2512,6 +2515,18 @@ BODYPARAMETER <IMicrosoftGraphList1>: list
         - `[GuestsCount <Int32?>]`: 
         - `[MembersCount <Int32?>]`: 
         - `[OwnersCount <Int32?>]`: 
+      - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: 
+        - `[Id <String>]`: 
+        - `[Description <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[MemberCount <Int32?>]`: 
+        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
+          - `[Id <String>]`: 
+          - `[DisplayName <String>]`: 
+          - `[TenantId <String>]`: 
+          - `[UserId <String>]`: 
+        - `[TagType <String>]`: teamworkTagType
+        - `[TeamId <String>]`: 
       - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
@@ -2878,9 +2893,14 @@ BODYPARAMETER <IMicrosoftGraphList1>: list
         - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
         - `[TollNumber <String>]`: 
         - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[AllowedAudience <String>]`: broadcastMeetingAudience
+        - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[IsCaptionEnabled <Boolean?>]`: Indicates whether captions are enabled for this Teams live event.
+          - `[SpokenLanguage <String>]`: The spoken language.
+          - `[TranslationLanguages <String[]>]`: The translation languages (choose up to 6).
         - `[IsAttendeeReportEnabled <Boolean?>]`: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
         - `[IsQuestionAndAnswerEnabled <Boolean?>]`: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
         - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
@@ -3602,6 +3622,9 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[Device <IMicrosoftGraphDevice1>]`: device
       - `[DisplayName <String>]`: The name of the device on which Windows Hello for Business is registered
       - `[KeyStrength <String>]`: authenticationMethodKeyStrength
+  - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[CertificateUserIds <String[]>]`: 
   - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
   - `[BusinessPhones <String[]>]`: The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
   - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -3885,7 +3908,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
         - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
         - `[UserIdentityType <String>]`: teamworkUserIdentityType
-    - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: 
+    - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
       - `[Id <String>]`: 
       - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
     - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
@@ -5402,6 +5425,18 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[GuestsCount <Int32?>]`: 
       - `[MembersCount <Int32?>]`: 
       - `[OwnersCount <Int32?>]`: 
+    - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: 
+      - `[Id <String>]`: 
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[MemberCount <Int32?>]`: 
+      - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
+        - `[Id <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[TenantId <String>]`: 
+        - `[UserId <String>]`: 
+      - `[TagType <String>]`: teamworkTagType
+      - `[TeamId <String>]`: 
     - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
@@ -5768,9 +5803,14 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
       - `[TollNumber <String>]`: 
       - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowedAudience <String>]`: broadcastMeetingAudience
+      - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsCaptionEnabled <Boolean?>]`: Indicates whether captions are enabled for this Teams live event.
+        - `[SpokenLanguage <String>]`: The spoken language.
+        - `[TranslationLanguages <String[]>]`: The translation languages (choose up to 6).
       - `[IsAttendeeReportEnabled <Boolean?>]`: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
       - `[IsQuestionAndAnswerEnabled <Boolean?>]`: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
       - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
@@ -6148,6 +6188,9 @@ DRIVE <IMicrosoftGraphDrive>: drive
         - `[Device <IMicrosoftGraphDevice1>]`: device
         - `[DisplayName <String>]`: The name of the device on which Windows Hello for Business is registered
         - `[KeyStrength <String>]`: authenticationMethodKeyStrength
+    - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[CertificateUserIds <String[]>]`: 
     - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     - `[BusinessPhones <String[]>]`: The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
     - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -6424,7 +6467,7 @@ DRIVE <IMicrosoftGraphDrive>: drive
           - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
           - `[Id <String>]`: Unique identifier for the identity.
           - `[UserIdentityType <String>]`: teamworkUserIdentityType
-      - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: 
+      - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
         - `[Id <String>]`: 
         - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
       - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
@@ -7908,6 +7951,18 @@ DRIVE <IMicrosoftGraphDrive>: drive
         - `[GuestsCount <Int32?>]`: 
         - `[MembersCount <Int32?>]`: 
         - `[OwnersCount <Int32?>]`: 
+      - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: 
+        - `[Id <String>]`: 
+        - `[Description <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[MemberCount <Int32?>]`: 
+        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
+          - `[Id <String>]`: 
+          - `[DisplayName <String>]`: 
+          - `[TenantId <String>]`: 
+          - `[UserId <String>]`: 
+        - `[TagType <String>]`: teamworkTagType
+        - `[TeamId <String>]`: 
       - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
@@ -8274,9 +8329,14 @@ DRIVE <IMicrosoftGraphDrive>: drive
         - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
         - `[TollNumber <String>]`: 
         - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[AllowedAudience <String>]`: broadcastMeetingAudience
+        - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[IsCaptionEnabled <Boolean?>]`: Indicates whether captions are enabled for this Teams live event.
+          - `[SpokenLanguage <String>]`: The spoken language.
+          - `[TranslationLanguages <String[]>]`: The translation languages (choose up to 6).
         - `[IsAttendeeReportEnabled <Boolean?>]`: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
         - `[IsQuestionAndAnswerEnabled <Boolean?>]`: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
         - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
@@ -8720,6 +8780,9 @@ ITEMS <IMicrosoftGraphListItem1[]>: All items contained in the list.
         - `[Device <IMicrosoftGraphDevice1>]`: device
         - `[DisplayName <String>]`: The name of the device on which Windows Hello for Business is registered
         - `[KeyStrength <String>]`: authenticationMethodKeyStrength
+    - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[CertificateUserIds <String[]>]`: 
     - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     - `[BusinessPhones <String[]>]`: The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
     - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -8996,7 +9059,7 @@ ITEMS <IMicrosoftGraphListItem1[]>: All items contained in the list.
           - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
           - `[Id <String>]`: Unique identifier for the identity.
           - `[UserIdentityType <String>]`: teamworkUserIdentityType
-      - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: 
+      - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
         - `[Id <String>]`: 
         - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
       - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
@@ -10473,6 +10536,18 @@ ITEMS <IMicrosoftGraphListItem1[]>: All items contained in the list.
         - `[GuestsCount <Int32?>]`: 
         - `[MembersCount <Int32?>]`: 
         - `[OwnersCount <Int32?>]`: 
+      - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: 
+        - `[Id <String>]`: 
+        - `[Description <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[MemberCount <Int32?>]`: 
+        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
+          - `[Id <String>]`: 
+          - `[DisplayName <String>]`: 
+          - `[TenantId <String>]`: 
+          - `[UserId <String>]`: 
+        - `[TagType <String>]`: teamworkTagType
+        - `[TeamId <String>]`: 
       - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
@@ -10839,9 +10914,14 @@ ITEMS <IMicrosoftGraphListItem1[]>: All items contained in the list.
         - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
         - `[TollNumber <String>]`: 
         - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[AllowedAudience <String>]`: broadcastMeetingAudience
+        - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[IsCaptionEnabled <Boolean?>]`: Indicates whether captions are enabled for this Teams live event.
+          - `[SpokenLanguage <String>]`: The spoken language.
+          - `[TranslationLanguages <String[]>]`: The translation languages (choose up to 6).
         - `[IsAttendeeReportEnabled <Boolean?>]`: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
         - `[IsQuestionAndAnswerEnabled <Boolean?>]`: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
         - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
@@ -11255,6 +11335,9 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[Device <IMicrosoftGraphDevice1>]`: device
       - `[DisplayName <String>]`: The name of the device on which Windows Hello for Business is registered
       - `[KeyStrength <String>]`: authenticationMethodKeyStrength
+  - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[CertificateUserIds <String[]>]`: 
   - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
   - `[BusinessPhones <String[]>]`: The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
   - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -11538,7 +11621,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
         - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
         - `[UserIdentityType <String>]`: teamworkUserIdentityType
-    - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: 
+    - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
       - `[Id <String>]`: 
       - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
     - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
@@ -13055,6 +13138,18 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[GuestsCount <Int32?>]`: 
       - `[MembersCount <Int32?>]`: 
       - `[OwnersCount <Int32?>]`: 
+    - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: 
+      - `[Id <String>]`: 
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[MemberCount <Int32?>]`: 
+      - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
+        - `[Id <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[TenantId <String>]`: 
+        - `[UserId <String>]`: 
+      - `[TagType <String>]`: teamworkTagType
+      - `[TeamId <String>]`: 
     - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
@@ -13421,9 +13516,14 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
       - `[TollNumber <String>]`: 
       - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowedAudience <String>]`: broadcastMeetingAudience
+      - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsCaptionEnabled <Boolean?>]`: Indicates whether captions are enabled for this Teams live event.
+        - `[SpokenLanguage <String>]`: The spoken language.
+        - `[TranslationLanguages <String[]>]`: The translation languages (choose up to 6).
       - `[IsAttendeeReportEnabled <Boolean?>]`: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
       - `[IsQuestionAndAnswerEnabled <Boolean?>]`: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
       - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.

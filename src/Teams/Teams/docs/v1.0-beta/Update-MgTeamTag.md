@@ -12,7 +12,7 @@ Update the navigation property tags in teams
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgTeamTag -TeamId <String> -TeamworkTagId <String> [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-MemberCount <Int32>]
@@ -20,19 +20,19 @@ Update-MgTeamTag -TeamId <String> -TeamworkTagId <String> [-AdditionalProperties
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgTeamTag -TeamId <String> -TeamworkTagId <String> -BodyParameter <IMicrosoftGraphTeamworkTag>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgTeamTag -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTag> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgTeamTag -InputObject <ITeamsIdentity> [-TeamId <String>] [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-MemberCount <Int32>]
@@ -64,7 +64,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -80,7 +80,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTag
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -91,11 +91,11 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Tag description as it will appear to the user in Microsoft Teams.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -106,11 +106,11 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Tag name as it will appear to the user in Microsoft Teams.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -141,7 +141,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -152,11 +152,11 @@ Accept wildcard characters: False
 ```
 
 ### -MemberCount
-The number of users assigned to the tag.
+.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -167,12 +167,12 @@ Accept wildcard characters: False
 ```
 
 ### -Members
-Users assigned to the tag.
+.
 To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -202,7 +202,7 @@ teamworkTagType
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -217,7 +217,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: Update1, UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -228,11 +228,11 @@ Accept wildcard characters: False
 ```
 
 ### -TeamId1
-ID of the team in which the tag is defined.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False
@@ -247,7 +247,7 @@ key: id of teamworkTag
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -313,16 +313,16 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTeamworkTag>: teamworkTag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-  - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-  - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[MemberCount <Int32?>]`: 
+  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
     - `[Id <String>]`: 
-    - `[DisplayName <String>]`: The member's display name.
+    - `[DisplayName <String>]`: 
     - `[TenantId <String>]`: 
     - `[UserId <String>]`: 
   - `[TagType <String>]`: teamworkTagType
-  - `[TeamId <String>]`: ID of the team in which the tag is defined.
+  - `[TeamId <String>]`: 
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
@@ -363,9 +363,9 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
-MEMBERS <IMicrosoftGraphTeamworkTagMember[]>: Users assigned to the tag.
+MEMBERS <IMicrosoftGraphTeamworkTagMember[]>: .
   - `[Id <String>]`: 
-  - `[DisplayName <String>]`: The member's display name.
+  - `[DisplayName <String>]`: 
   - `[TenantId <String>]`: 
   - `[UserId <String>]`: 
 

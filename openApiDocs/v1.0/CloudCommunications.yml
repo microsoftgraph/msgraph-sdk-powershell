@@ -315,8 +315,11 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get sessions from communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
+      summary: List callRecord sessions
+      description: Retrieve the list of sessions associated with a callRecord object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/callrecords-session-list?view=graph-rest-1.0
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
@@ -988,7 +991,11 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create new navigation property to calls for communications
+      summary: Create call
+      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
       operationId: communications_CreateCalls
       requestBody:
         description: New navigation property
@@ -1683,6 +1690,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action answer
+      description: 'Enable a bot to answer an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer, reject, or redirect the call before the call times out. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-answer?view=graph-rest-1.0
       operationId: communications.calls_answer
       parameters:
         - name: call-id
@@ -1730,6 +1741,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action cancelMediaProcessing
+      description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The **cancelMediaProcessing** method cancels any operation that is in-process as well as operations that are queued. For example, this method can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a **subscribeToTone** operation because it operates independent of any operation queue.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0
       operationId: communications.calls_cancelMediaProcessing
       parameters:
         - name: call-id
@@ -1768,6 +1783,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action changeScreenSharingRole
+      description: Allow applications to share screen content with the participants of a group call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0
       operationId: communications.calls_changeScreenSharingRole
       parameters:
         - name: call-id
@@ -1801,6 +1820,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action keepAlive
+      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that does not receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a `404 Not-Found` error. The resources related to the call should be cleaned up on the application side.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-keepalive?view=graph-rest-1.0
       operationId: communications.calls_keepAlive
       parameters:
         - name: call-id
@@ -1822,6 +1845,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
+      description: 'Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-mute?view=graph-rest-1.0
       operationId: communications.calls_mute
       parameters:
         - name: call-id
@@ -1860,6 +1887,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action playPrompt
+      description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
       operationId: communications.calls_playPrompt
       parameters:
         - name: call-id
@@ -1902,6 +1933,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action recordResponse
+      description: "Records a short audio response from the caller.\nA bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-record?view=graph-rest-1.0
       operationId: communications.calls_recordResponse
       parameters:
         - name: call-id
@@ -1975,6 +2010,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action redirect
+      description: Redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
       operationId: communications.calls_redirect
       parameters:
         - name: call-id
@@ -2019,6 +2058,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action reject
+      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the **chatInfo** and **meetingInfo** parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
       operationId: communications.calls_reject
       parameters:
         - name: call-id
@@ -2055,6 +2098,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action subscribeToTone
+      description: Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a 'dialpad'.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
       operationId: communications.calls_subscribeToTone
       parameters:
         - name: call-id
@@ -2093,6 +2140,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action transfer
+      description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
       operationId: communications.calls_transfer
       parameters:
         - name: call-id
@@ -2128,6 +2179,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action unmute
+      description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-unmute?view=graph-rest-1.0
       operationId: communications.calls_unmute
       parameters:
         - name: call-id
@@ -2166,6 +2221,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action updateRecordingStatus
+      description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0
       operationId: communications.calls_updateRecordingStatus
       parameters:
         - name: call-id
@@ -2440,7 +2499,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get participants from communications
+      summary: List participants
+      description: Retrieve a list of participant objects in the call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
       operationId: communications.calls_ListParticipants
       parameters:
         - name: call-id
@@ -2695,6 +2758,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
+      description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
       operationId: communications.calls.participants_mute
       parameters:
         - name: call-id
@@ -2741,6 +2808,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action startHoldMusic
+      description: Put a participant on hold and play music in the background.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0
       operationId: communications.calls.participants_startHoldMusic
       parameters:
         - name: call-id
@@ -2789,6 +2860,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action stopHoldMusic
+      description: Reincorporate a participant previously put on hold to the call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
       operationId: communications.calls.participants_stopHoldMusic
       parameters:
         - name: call-id
@@ -2835,6 +2910,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
@@ -2877,6 +2956,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action logTeleconferenceDeviceQuality
+      description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-1.0
       operationId: communications.calls_logTeleconferenceDeviceQuality
       requestBody:
         description: Action parameters
@@ -2901,6 +2984,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action getPresencesByUserId
+      description: Get the presence information for multiple users.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
       operationId: communications_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
@@ -2922,7 +3009,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of cloudCommunications
+                title: Collection of presence
                 type: object
                 properties:
                   value:
@@ -2934,11 +3021,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /communications/onlineMeetings:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get onlineMeetings from communications
+      summary: Get onlineMeeting
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communications_ListOnlineMeetings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3217,8 +3311,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
+      summary: List meetingAttendanceReports
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: communications.onlineMeetings_ListAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3464,8 +3561,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -3751,6 +3851,9 @@ paths:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
       description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communications_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -3806,6 +3909,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action createOrGet
+      description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
       operationId: communications.onlineMeetings_createOrGet
       requestBody:
         description: Action parameters
@@ -4050,6 +4157,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearPresence
+      description: 'Clear the application''s presence session for a user. If it is the user''s only presence session, the user''s presence will change to `Offline/Offline`. For details about presences sessions, see presence: setPresence.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
       operationId: communications.presences_clearPresence
       parameters:
         - name: presence-id
@@ -4084,6 +4195,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearUserPreferredPresence
+      description: Clear the preferred availability and activity status for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
       operationId: communications.presences_clearUserPreferredPresence
       parameters:
         - name: presence-id
@@ -4105,6 +4220,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setPresence
+      description: Set the state of a user's presence session as an application.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
       operationId: communications.presences_setPresence
       parameters:
         - name: presence-id
@@ -4148,6 +4267,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setUserPreferredPresence
+      description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user''s presence shows as `Offline`. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
       operationId: communications.presences_setUserPreferredPresence
       parameters:
         - name: presence-id
@@ -4187,7 +4310,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get onlineMeetings from users
+      summary: Get onlineMeeting
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_ListOnlineMeetings
       parameters:
         - name: user-id
@@ -4320,7 +4447,11 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create new navigation property to onlineMeetings for users
+      summary: Create onlineMeeting
+      description: Create an online meeting on behalf of a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0
       operationId: users_CreateOnlineMeetings
       parameters:
         - name: user-id
@@ -4508,8 +4639,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
+      summary: List meetingAttendanceReports
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: users.onlineMeetings_ListAttendanceReports
       parameters:
         - name: user-id
@@ -4796,8 +4930,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -5123,6 +5260,9 @@ paths:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
       description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -5193,7 +5333,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence from users
+      summary: Get presence
+      description: Get a user's presence information.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: users_GetPresence
       parameters:
         - name: user-id
@@ -5314,18 +5458,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.call'
+              x-ms-navigationProperty: true
             callRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+              x-ms-navigationProperty: true
             onlineMeetings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+              x-ms-navigationProperty: true
             presences:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.presence'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callRecords.callRecord:
@@ -5376,6 +5524,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.session'
               description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callRecords.session:
@@ -5410,6 +5559,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
               description: The list of segments involved in the session. Read-only. Nullable.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callRecords.segment:
@@ -5504,18 +5654,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+              x-ms-navigationProperty: true
             contentSharingSessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.commsOperation'
+              x-ms-navigationProperty: true
             participants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.participant'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.audioRoutingGroup:
@@ -5930,6 +6084,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
               description: The attendance reports of an online meeting. Read-only.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.meetingAttendanceReport:
@@ -5962,6 +6117,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
               description: List of attendance records of an attendance report. Read-only.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.attendanceRecord:
@@ -6576,6 +6732,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callRecords.sessionCollectionResponse:
@@ -6588,6 +6745,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.callRecords.session'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callRecords.segmentCollectionResponse:
@@ -6600,6 +6758,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callCollectionResponse:
@@ -6612,6 +6771,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.call'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.audioRoutingGroupCollectionResponse:
@@ -6624,6 +6784,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.contentSharingSessionCollectionResponse:
@@ -6636,6 +6797,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.commsOperationCollectionResponse:
@@ -6648,6 +6810,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.commsOperation'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.participantCollectionResponse:
@@ -6660,6 +6823,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.participant'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.onlineMeetingCollectionResponse:
@@ -6672,6 +6836,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReportCollectionResponse:
@@ -6684,6 +6849,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.attendanceRecordCollectionResponse:
@@ -6696,6 +6862,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.presenceCollectionResponse:
@@ -6708,6 +6875,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.presence'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callRecords.userAgent:
@@ -7162,6 +7330,11 @@ components:
         - receiveOnly
         - sendReceive
       type: string
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.broadcastMeetingAudience:
       title: broadcastMeetingAudience
       enum:

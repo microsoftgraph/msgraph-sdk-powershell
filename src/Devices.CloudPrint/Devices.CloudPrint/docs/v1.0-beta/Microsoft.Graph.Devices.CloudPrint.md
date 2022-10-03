@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CloudPrint
-Module Guid: 94dbd1e3-461f-4096-bbf5-04034c3603ef
+Module Guid: 652bf6e3-6f3d-4402-a6c4-9ca18f0df636
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 0dbe1aa1-bbb8-4573-976a-1647e42ab83a
+Module Guid: 67dc5682-f2b6-49ef-b7ff-938e51c7f46e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,6 +11,9 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.CloudCommunications Cmdlets
+### [Add-MgCommunicationCallLargeGalleryView](Add-MgCommunicationCallLargeGalleryView.md)
+Invoke action addLargeGalleryView
+
 ### [Clear-MgCommunicationPresence](Clear-MgCommunicationPresence.md)
 Clear the application's presence session for a user.
 If it is the user's only presence session, the user's presence will change to `Offline/Offline`.
@@ -94,8 +97,11 @@ Create an onlineMeeting object with a custom specified external ID.
 If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 
 ### [Invoke-MgInviteCommunicationCallParticipant](Invoke-MgInviteCommunicationCallParticipant.md)
-Invite participants to the active call.
-For more information about how to handle operations, see commsOperation.
+Delete a specific participant in a call.
+In some situations, it is appropriate for an application to remove a participant from an active call.
+This action can be done before or after the participant answers the call.
+When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
+When an invited participant is removed, any outstanding add participant request is canceled.
 
 ### [Invoke-MgKeepCommunicationCallAlive](Invoke-MgKeepCommunicationCallAlive.md)
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.

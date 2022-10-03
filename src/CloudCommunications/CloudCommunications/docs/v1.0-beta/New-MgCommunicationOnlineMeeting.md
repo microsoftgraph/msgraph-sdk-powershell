@@ -19,7 +19,7 @@ New-MgCommunicationOnlineMeeting [-AdditionalProperties <Hashtable>] [-AllowAtte
  [-AlternativeRecordingInputFile <String>] [-AnonymizeIdentityForRoles <String[]>]
  [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>] [-AttendeeReportInputFile <String>]
  [-AudioConferencing <IMicrosoftGraphAudioConferencing>]
- [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>] [-Capabilities <String[]>]
+ [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>] [-Capabilities <String[]>]
  [-ChatInfo <IMicrosoftGraphChatInfo>] [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>]
  [-ExternalId <String>] [-Id <String>] [-IsBroadcast] [-IsEntryExitAnnounced]
  [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]
@@ -220,7 +220,7 @@ broadcastMeetingSettings
 To construct, please use Get-Help -Online and see NOTES section for BROADCASTSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBroadcastMeetingSettings1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBroadcastMeetingSettings
 Parameter Sets: CreateExpanded2
 Aliases:
 
@@ -709,7 +709,7 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
     - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
     - `[TollNumber <String>]`: 
     - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-  - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+  - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedAudience <String>]`: broadcastMeetingAudience
     - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -806,7 +806,7 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
 
-BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings1>: broadcastMeetingSettings
+BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings>: broadcastMeetingSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedAudience <String>]`: broadcastMeetingAudience
   - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings

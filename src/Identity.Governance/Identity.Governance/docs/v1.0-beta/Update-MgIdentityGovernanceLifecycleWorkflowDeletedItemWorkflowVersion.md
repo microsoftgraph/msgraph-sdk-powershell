@@ -471,8 +471,8 @@ BODYPARAMETER <IMicrosoftGraphIdentityGovernanceWorkflowVersion>: workflowVersio
       - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
         - `[Id <String>]`: 
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
         - `[Type <String>]`: 
       - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
       - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -2842,6 +2842,7 @@ BODYPARAMETER <IMicrosoftGraphIdentityGovernanceWorkflowVersion>: workflowVersio
                 - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Description <String>]`: Description of the task.
+                - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4182,6 +4183,7 @@ BODYPARAMETER <IMicrosoftGraphIdentityGovernanceWorkflowVersion>: workflowVersio
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+          - `[DisplayName <String>]`: 
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: 
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -5022,8 +5024,8 @@ CREATEDBY <IMicrosoftGraphUser>: user
     - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
       - `[Id <String>]`: 
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
+        - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+        - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
       - `[Type <String>]`: 
     - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
     - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -7393,6 +7395,7 @@ CREATEDBY <IMicrosoftGraphUser>: user
               - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Description <String>]`: Description of the task.
+              - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
               - `[PreviewType <String>]`: plannerPreviewType
               - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8733,6 +8736,7 @@ CREATEDBY <IMicrosoftGraphUser>: user
           - `[Scaling <String>]`: printScaling
         - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+        - `[DisplayName <String>]`: 
         - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
           - `[Id <String>]`: 
           - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -9470,7 +9474,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[EndDateTime <DateTime?>]`: Usage: endDateTime='{endDateTime}'
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -9492,7 +9496,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
   - `[RunId <String>]`: key: id of run
-  - `[StartDateTime <DateTime?>]`: Usage: startDateTime='{startDateTime}'
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
   - `[TaskDefinitionId <String>]`: key: id of taskDefinition
   - `[TaskId <String>]`: key: id of task
   - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
@@ -9621,8 +9625,8 @@ LASTMODIFIEDBY <IMicrosoftGraphUser>: user
     - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
       - `[Id <String>]`: 
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
+        - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+        - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
       - `[Type <String>]`: 
     - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
     - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -11992,6 +11996,7 @@ LASTMODIFIEDBY <IMicrosoftGraphUser>: user
               - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Description <String>]`: Description of the task.
+              - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
               - `[PreviewType <String>]`: plannerPreviewType
               - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13332,6 +13337,7 @@ LASTMODIFIEDBY <IMicrosoftGraphUser>: user
           - `[Scaling <String>]`: printScaling
         - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+        - `[DisplayName <String>]`: 
         - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
           - `[Id <String>]`: 
           - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -14164,8 +14170,8 @@ TASKS <IMicrosoftGraphIdentityGovernanceTask[]>: The tasks in the workflow.
         - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
           - `[Id <String>]`: 
           - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-            - `[Key <String>]`: Key.
-            - `[Value <String>]`: Value.
+            - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+            - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           - `[Type <String>]`: 
         - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
         - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -16533,6 +16539,7 @@ TASKS <IMicrosoftGraphIdentityGovernanceTask[]>: The tasks in the workflow.
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -17873,6 +17880,7 @@ TASKS <IMicrosoftGraphIdentityGovernanceTask[]>: The tasks in the workflow.
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+            - `[DisplayName <String>]`: 
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: 
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration

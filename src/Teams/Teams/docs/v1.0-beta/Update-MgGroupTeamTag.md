@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Tag description as it will appear to the user in Microsoft Teams.
+.
 
 ```yaml
 Type: System.String
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Tag name as it will appear to the user in Microsoft Teams.
+.
 
 ```yaml
 Type: System.String
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberCount
-The number of users assigned to the tag.
+.
 
 ```yaml
 Type: System.Int32
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -Members
-Users assigned to the tag.
+.
 To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -TeamId
-ID of the team in which the tag is defined.
+.
 
 ```yaml
 Type: System.String
@@ -301,16 +301,16 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTeamworkTag>: teamworkTag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-  - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-  - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[MemberCount <Int32?>]`: 
+  - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
     - `[Id <String>]`: 
-    - `[DisplayName <String>]`: The member's display name.
+    - `[DisplayName <String>]`: 
     - `[TenantId <String>]`: 
     - `[UserId <String>]`: 
   - `[TagType <String>]`: teamworkTagType
-  - `[TeamId <String>]`: ID of the team in which the tag is defined.
+  - `[TeamId <String>]`: 
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
@@ -351,9 +351,9 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
-MEMBERS <IMicrosoftGraphTeamworkTagMember[]>: Users assigned to the tag.
+MEMBERS <IMicrosoftGraphTeamworkTagMember[]>: .
   - `[Id <String>]`: 
-  - `[DisplayName <String>]`: The member's display name.
+  - `[DisplayName <String>]`: 
   - `[TenantId <String>]`: 
   - `[UserId <String>]`: 
 

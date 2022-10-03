@@ -41,7 +41,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceCompliancePolicy
+                title: Collection of deviceCompliancePolicyAssignment
                 type: object
                 properties:
                   value:
@@ -53,6 +53,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.scheduleActionsForRules':
     post:
       tags:
@@ -123,7 +126,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceConfiguration
+                title: Collection of deviceConfigurationAssignment
                 type: object
                 properties:
                   value:
@@ -135,6 +138,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.assign':
     post:
       tags:
@@ -277,6 +283,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
     post:
       tags:
@@ -2158,6 +2167,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule

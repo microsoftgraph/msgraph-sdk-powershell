@@ -1934,11 +1934,11 @@ BODYPARAMETER <IMicrosoftGraphEducationUser>: educationUser
               - `[KeyStrength <String>]`: authenticationMethodKeyStrength
           - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            - `[CertificateUserIds <String[]>]`: 
           - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
           - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-          - `[CalendarGroups <IMicrosoftGraphCalendarGroup[]>]`: The user's calendar groups. Read-only. Nullable.
+          - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
             - `[Id <String>]`: 
             - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
             - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
@@ -2182,7 +2182,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser>: educationUser
           - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
             - `[Id <String>]`: 
             - `[ChildFolders <IMicrosoftGraphContactFolder[]>]`: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-            - `[Contacts <IMicrosoftGraphContact[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
+            - `[Contacts <IMicrosoftGraphContact1[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
               - `[Categories <String[]>]`: The categories associated with the item
               - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -2246,7 +2246,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser>: educationUser
             - `[ParentFolderId <String>]`: The ID of the folder's parent folder.
             - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
             - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
-          - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
+          - `[Contacts <IMicrosoftGraphContact1[]>]`: The user's contacts. Read-only. Nullable.
           - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[CreatedDateTime <DateTime?>]`: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
           - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
@@ -3668,16 +3668,16 @@ BODYPARAMETER <IMicrosoftGraphEducationUser>: educationUser
               - `[OwnersCount <Int32?>]`: 
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: 
-              - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-              - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-              - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+              - `[Description <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[MemberCount <Int32?>]`: 
+              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                 - `[Id <String>]`: 
-                - `[DisplayName <String>]`: The member's display name.
+                - `[DisplayName <String>]`: 
                 - `[TenantId <String>]`: 
                 - `[UserId <String>]`: 
               - `[TagType <String>]`: teamworkTagType
-              - `[TeamId <String>]`: ID of the team in which the tag is defined.
+              - `[TeamId <String>]`: 
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -4278,7 +4278,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser>: educationUser
               - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
               - `[TollNumber <String>]`: 
               - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowedAudience <String>]`: broadcastMeetingAudience
               - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -4611,6 +4611,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser>: educationUser
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4799,6 +4800,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser>: educationUser
                   - `[Scaling <String>]`: printScaling
                 - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                - `[DisplayName <String>]`: 
                 - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                   - `[Id <String>]`: 
                   - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -6647,11 +6649,11 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          - `[CertificateUserIds <String[]>]`: 
         - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-        - `[CalendarGroups <IMicrosoftGraphCalendarGroup[]>]`: The user's calendar groups. Read-only. Nullable.
+        - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
           - `[Id <String>]`: 
           - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
           - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
@@ -6895,7 +6897,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
         - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
           - `[Id <String>]`: 
           - `[ChildFolders <IMicrosoftGraphContactFolder[]>]`: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-          - `[Contacts <IMicrosoftGraphContact[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
+          - `[Contacts <IMicrosoftGraphContact1[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
             - `[Categories <String[]>]`: The categories associated with the item
             - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -6959,7 +6961,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
           - `[ParentFolderId <String>]`: The ID of the folder's parent folder.
           - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
           - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
-        - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
+        - `[Contacts <IMicrosoftGraphContact1[]>]`: The user's contacts. Read-only. Nullable.
         - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[CreatedDateTime <DateTime?>]`: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
         - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
@@ -8381,16 +8383,16 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[OwnersCount <Int32?>]`: 
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: 
-            - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-            - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-            - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+            - `[Description <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[MemberCount <Int32?>]`: 
+            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
               - `[Id <String>]`: 
-              - `[DisplayName <String>]`: The member's display name.
+              - `[DisplayName <String>]`: 
               - `[TenantId <String>]`: 
               - `[UserId <String>]`: 
             - `[TagType <String>]`: teamworkTagType
-            - `[TeamId <String>]`: ID of the team in which the tag is defined.
+            - `[TeamId <String>]`: 
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -8991,7 +8993,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
             - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
             - `[TollNumber <String>]`: 
             - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedAudience <String>]`: broadcastMeetingAudience
             - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -9324,6 +9326,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9512,6 +9515,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes to which the user belongs. Nu
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+              - `[DisplayName <String>]`: 
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: 
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -11486,11 +11490,11 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: Schools to which the user belongs. N
               - `[KeyStrength <String>]`: authenticationMethodKeyStrength
           - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            - `[CertificateUserIds <String[]>]`: 
           - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
           - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-          - `[CalendarGroups <IMicrosoftGraphCalendarGroup[]>]`: The user's calendar groups. Read-only. Nullable.
+          - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
             - `[Id <String>]`: 
             - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
             - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
@@ -11734,7 +11738,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: Schools to which the user belongs. N
           - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
             - `[Id <String>]`: 
             - `[ChildFolders <IMicrosoftGraphContactFolder[]>]`: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-            - `[Contacts <IMicrosoftGraphContact[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
+            - `[Contacts <IMicrosoftGraphContact1[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
               - `[Categories <String[]>]`: The categories associated with the item
               - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -11798,7 +11802,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: Schools to which the user belongs. N
             - `[ParentFolderId <String>]`: The ID of the folder's parent folder.
             - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
             - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
-          - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
+          - `[Contacts <IMicrosoftGraphContact1[]>]`: The user's contacts. Read-only. Nullable.
           - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[CreatedDateTime <DateTime?>]`: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
           - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
@@ -13220,16 +13224,16 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: Schools to which the user belongs. N
               - `[OwnersCount <Int32?>]`: 
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: 
-              - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-              - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-              - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+              - `[Description <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[MemberCount <Int32?>]`: 
+              - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                 - `[Id <String>]`: 
-                - `[DisplayName <String>]`: The member's display name.
+                - `[DisplayName <String>]`: 
                 - `[TenantId <String>]`: 
                 - `[UserId <String>]`: 
               - `[TagType <String>]`: teamworkTagType
-              - `[TeamId <String>]`: ID of the team in which the tag is defined.
+              - `[TeamId <String>]`: 
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: 
@@ -13830,7 +13834,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: Schools to which the user belongs. N
               - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
               - `[TollNumber <String>]`: 
               - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowedAudience <String>]`: broadcastMeetingAudience
               - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -14163,6 +14167,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: Schools to which the user belongs. N
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Description <String>]`: Description of the task.
+                    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14351,6 +14356,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: Schools to which the user belongs. N
                   - `[Scaling <String>]`: printScaling
                 - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                - `[DisplayName <String>]`: 
                 - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                   - `[Id <String>]`: 
                   - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -16193,11 +16199,11 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          - `[CertificateUserIds <String[]>]`: 
         - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-        - `[CalendarGroups <IMicrosoftGraphCalendarGroup[]>]`: The user's calendar groups. Read-only. Nullable.
+        - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
           - `[Id <String>]`: 
           - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
           - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
@@ -16441,7 +16447,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
         - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
           - `[Id <String>]`: 
           - `[ChildFolders <IMicrosoftGraphContactFolder[]>]`: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-          - `[Contacts <IMicrosoftGraphContact[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
+          - `[Contacts <IMicrosoftGraphContact1[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
             - `[Categories <String[]>]`: The categories associated with the item
             - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -16505,7 +16511,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
           - `[ParentFolderId <String>]`: The ID of the folder's parent folder.
           - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
           - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
-        - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
+        - `[Contacts <IMicrosoftGraphContact1[]>]`: The user's contacts. Read-only. Nullable.
         - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[CreatedDateTime <DateTime?>]`: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
         - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
@@ -17927,16 +17933,16 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[OwnersCount <Int32?>]`: 
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: 
-            - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-            - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-            - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+            - `[Description <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[MemberCount <Int32?>]`: 
+            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
               - `[Id <String>]`: 
-              - `[DisplayName <String>]`: The member's display name.
+              - `[DisplayName <String>]`: 
               - `[TenantId <String>]`: 
               - `[UserId <String>]`: 
             - `[TagType <String>]`: teamworkTagType
-            - `[TeamId <String>]`: ID of the team in which the tag is defined.
+            - `[TeamId <String>]`: 
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -18537,7 +18543,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
             - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
             - `[TollNumber <String>]`: 
             - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedAudience <String>]`: broadcastMeetingAudience
             - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -18870,6 +18876,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -19058,6 +19065,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass[]>: Classes for which the user is a
                 - `[Scaling <String>]`: printScaling
               - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+              - `[DisplayName <String>]`: 
               - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                 - `[Id <String>]`: 
                 - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -20587,7 +20595,7 @@ USER <IMicrosoftGraphUser>: user
       - `[KeyStrength <String>]`: authenticationMethodKeyStrength
   - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+    - `[CertificateUserIds <String[]>]`: 
   - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
   - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
   - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
@@ -20750,7 +20758,7 @@ USER <IMicrosoftGraphUser>: user
     - `[Name <String>]`: The calendar name.
     - `[Owner <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-  - `[CalendarGroups <IMicrosoftGraphCalendarGroup[]>]`: The user's calendar groups. Read-only. Nullable.
+  - `[CalendarGroups <IMicrosoftGraphCalendarGroup1[]>]`: The user's calendar groups. Read-only. Nullable.
     - `[Id <String>]`: 
     - `[Calendars <IMicrosoftGraphCalendar[]>]`: The calendars in the calendar group. Navigation property. Read-only. Nullable.
     - `[ChangeKey <String>]`: Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
@@ -20994,7 +21002,7 @@ USER <IMicrosoftGraphUser>: user
   - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
     - `[Id <String>]`: 
     - `[ChildFolders <IMicrosoftGraphContactFolder[]>]`: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-    - `[Contacts <IMicrosoftGraphContact[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
+    - `[Contacts <IMicrosoftGraphContact1[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
       - `[Categories <String[]>]`: The categories associated with the item
       - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -21058,7 +21066,7 @@ USER <IMicrosoftGraphUser>: user
     - `[ParentFolderId <String>]`: The ID of the folder's parent folder.
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
-  - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
+  - `[Contacts <IMicrosoftGraphContact1[]>]`: The user's contacts. Read-only. Nullable.
   - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[CreatedDateTime <DateTime?>]`: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
   - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
@@ -22457,6 +22465,7 @@ USER <IMicrosoftGraphUser>: user
               - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Description <String>]`: Description of the task.
+              - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
               - `[PreviewType <String>]`: plannerPreviewType
               - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -22766,16 +22775,16 @@ USER <IMicrosoftGraphUser>: user
         - `[OwnersCount <Int32?>]`: 
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: 
-        - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-        - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-        - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+        - `[Description <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[MemberCount <Int32?>]`: 
+        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
           - `[Id <String>]`: 
-          - `[DisplayName <String>]`: The member's display name.
+          - `[DisplayName <String>]`: 
           - `[TenantId <String>]`: 
           - `[UserId <String>]`: 
         - `[TagType <String>]`: teamworkTagType
-        - `[TeamId <String>]`: ID of the team in which the tag is defined.
+        - `[TeamId <String>]`: 
       - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
@@ -23385,7 +23394,7 @@ USER <IMicrosoftGraphUser>: user
       - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
       - `[TollNumber <String>]`: 
       - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowedAudience <String>]`: broadcastMeetingAudience
       - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -23797,6 +23806,7 @@ USER <IMicrosoftGraphUser>: user
           - `[Scaling <String>]`: printScaling
         - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+        - `[DisplayName <String>]`: 
         - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
           - `[Id <String>]`: 
           - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration

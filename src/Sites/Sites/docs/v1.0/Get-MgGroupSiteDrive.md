@@ -39,9 +39,9 @@ Get-MgGroupSiteDrive -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] 
 
 ### List1
 ```
-Get-MgGroupSiteDrive -GroupId <String> -SiteId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [<CommonParameters>]
+Get-MgGroupSiteDrive -GroupId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,13 +52,29 @@ A Drive is the top-level container for a file system, such as OneDrive or ShareP
 
 ## PARAMETERS
 
-### -Count
-Include count of items
+### -All
+List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases: CV
 
 Required: False
 Position: Named
@@ -140,6 +156,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: System.Int32
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

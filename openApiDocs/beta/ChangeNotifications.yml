@@ -12,6 +12,9 @@ paths:
         - subscriptions.subscription
       summary: List subscriptions
       description: 'Retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the Permissions section.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/subscription-list?view=graph-rest-1.0
       operationId: subscriptions.subscription_ListSubscription
       parameters:
         - $ref: '#/components/parameters/search'
@@ -56,6 +59,9 @@ paths:
         - subscriptions.subscription
       summary: Create subscription
       description: 'Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. See the table in the Permissions section for the list of resources that support subscribing to change notifications. Some resources support the option to include encrypted resource data in change notifications. These resources include chatMessage, contact, event, message, onlineMeetings and presence. For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-1.0
       operationId: subscriptions.subscription_CreateSubscription
       requestBody:
         description: New entity
@@ -80,6 +86,9 @@ paths:
         - subscriptions.subscription
       summary: Get subscription
       description: Retrieve the properties and relationships of a subscription. See the table in the Permissions section for the list of resources that support subscribing to change notifications.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/subscription-get?view=graph-rest-1.0
       operationId: subscriptions.subscription_GetSubscription
       parameters:
         - name: subscription-id
@@ -135,6 +144,9 @@ paths:
         - subscriptions.subscription
       summary: Update subscription
       description: 'Renew a subscription by extending its expiry time. The table in the Permissions section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See subscription for maximum length of a subscription for each resource type.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/subscription-update?view=graph-rest-1.0
       operationId: subscriptions.subscription_UpdateSubscription
       parameters:
         - name: subscription-id
@@ -163,6 +175,9 @@ paths:
         - subscriptions.subscription
       summary: Delete subscription
       description: 'Delete a subscription. For the list of resources that support subscribing to change notifications, see the table in the Permissions section.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/subscription-delete?view=graph-rest-1.0
       operationId: subscriptions.subscription_DeleteSubscription
       parameters:
         - name: subscription-id
@@ -292,6 +307,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.subscription'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:

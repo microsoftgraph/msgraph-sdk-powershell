@@ -14,7 +14,8 @@ Get entity from subscribedSkus by key
 
 ### List1 (Default)
 ```
-Get-MgSubscribedSku [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [<CommonParameters>]
+Get-MgSubscribedSku [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -54,6 +55,37 @@ This command gets the information about the service SKU that the company has sub
 
 ## PARAMETERS
 
+### -All
+List all pages.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -67,6 +99,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: System.Int32
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

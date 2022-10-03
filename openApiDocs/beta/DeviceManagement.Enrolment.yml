@@ -6139,8 +6139,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
+      summary: List resourceActions
+      description: Get a list of the unifiedRbacResourceAction objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
       operationId: roleManagement.cloudPC.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6519,7 +6522,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get roleAssignments from roleManagement
+      summary: Get unifiedRoleAssignmentMultiple
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6605,7 +6612,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create new navigation property to roleAssignments for roleManagement
+      summary: Create unifiedRoleAssignmentMultiple
+      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -7318,7 +7329,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get roleDefinitions from roleManagement
+      summary: List roleDefinitions
+      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7401,7 +7416,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create new navigation property to roleDefinitions for roleManagement
+      summary: Create roleDefinitions
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -7808,7 +7827,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -7833,7 +7852,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
-          description: 'Usage: transitive={transitive}'
+          description: 'Usage: transitive=@transitive'
           style: form
           explode: false
           schema:
@@ -7841,25 +7860,58 @@ paths:
             default: false
         - name: directoryScopeType
           in: query
-          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
           style: form
           explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of unifiedRoleDefinition
+                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
@@ -7871,7 +7923,10 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -7888,7 +7943,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
-          description: 'Usage: transitive={transitive}'
+          description: 'Usage: transitive=@transitive'
           style: form
           explode: false
           schema:
@@ -7896,25 +7951,58 @@ paths:
             default: false
         - name: directoryScopeType
           in: query
-          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
           style: form
           explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of unifiedRoleDefinition
+                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
@@ -7926,6 +8014,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/deviceManagement:
     get:
       tags:
@@ -8260,8 +8351,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
+      summary: List resourceActions
+      description: Get a list of the unifiedRbacResourceAction objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -8640,7 +8734,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get roleAssignments from roleManagement
+      summary: Get unifiedRoleAssignmentMultiple
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8726,7 +8824,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create new navigation property to roleAssignments for roleManagement
+      summary: Create unifiedRoleAssignmentMultiple
+      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -9439,7 +9541,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get roleDefinitions from roleManagement
+      summary: List roleDefinitions
+      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9522,7 +9628,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create new navigation property to roleDefinitions for roleManagement
+      summary: Create roleDefinitions
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -9929,7 +10039,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -9954,7 +10064,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
-          description: 'Usage: transitive={transitive}'
+          description: 'Usage: transitive=@transitive'
           style: form
           explode: false
           schema:
@@ -9962,25 +10072,58 @@ paths:
             default: false
         - name: directoryScopeType
           in: query
-          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
           style: form
           explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of unifiedRoleDefinition
+                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
@@ -9992,7 +10135,10 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -10009,7 +10155,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
-          description: 'Usage: transitive={transitive}'
+          description: 'Usage: transitive=@transitive'
           style: form
           explode: false
           schema:
@@ -10017,25 +10163,58 @@ paths:
             default: false
         - name: directoryScopeType
           in: query
-          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
           style: form
           explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of unifiedRoleDefinition
+                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
@@ -10047,6 +10226,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory:
     get:
       tags:
@@ -10173,7 +10355,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/roleManagement/directory/microsoft.graph.roleScheduleInstances(directoryScopeId=''{directoryScopeId}'',appScopeId=''{appScopeId}'',principalId=''{principalId}'',roleDefinitionId=''{roleDefinitionId}'')':
+  '/roleManagement/directory/microsoft.graph.roleScheduleInstances(directoryScopeId=''@directoryScopeId'',appScopeId=''@appScopeId'',principalId=''@principalId'',roleDefinitionId=''@roleDefinitionId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -10182,7 +10364,7 @@ paths:
       parameters:
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
@@ -10190,7 +10372,7 @@ paths:
             nullable: true
         - name: appScopeId
           in: query
-          description: 'Usage: appScopeId=''{appScopeId}'''
+          description: 'Usage: appScopeId=''@appScopeId'''
           style: form
           explode: false
           schema:
@@ -10198,7 +10380,7 @@ paths:
             nullable: true
         - name: principalId
           in: query
-          description: 'Usage: principalId=''{principalId}'''
+          description: 'Usage: principalId=''@principalId'''
           style: form
           explode: false
           schema:
@@ -10206,19 +10388,65 @@ paths:
             nullable: true
         - name: roleDefinitionId
           in: query
-          description: 'Usage: roleDefinitionId=''{roleDefinitionId}'''
+          description: 'Usage: roleDefinitionId=''@roleDefinitionId'''
           style: form
           explode: false
           schema:
             type: string
             nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - directoryScopeId
+                - principalId
+                - roleDefinitionId
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of rbacApplication
+                title: Collection of unifiedRoleScheduleInstanceBase
                 type: object
                 properties:
                   value:
@@ -10230,7 +10458,10 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/roleManagement/directory/microsoft.graph.roleSchedules(directoryScopeId=''{directoryScopeId}'',appScopeId=''{appScopeId}'',principalId=''{principalId}'',roleDefinitionId=''{roleDefinitionId}'')':
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/roleManagement/directory/microsoft.graph.roleSchedules(directoryScopeId=''@directoryScopeId'',appScopeId=''@appScopeId'',principalId=''@principalId'',roleDefinitionId=''@roleDefinitionId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -10239,7 +10470,7 @@ paths:
       parameters:
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
@@ -10247,7 +10478,7 @@ paths:
             nullable: true
         - name: appScopeId
           in: query
-          description: 'Usage: appScopeId=''{appScopeId}'''
+          description: 'Usage: appScopeId=''@appScopeId'''
           style: form
           explode: false
           schema:
@@ -10255,7 +10486,7 @@ paths:
             nullable: true
         - name: principalId
           in: query
-          description: 'Usage: principalId=''{principalId}'''
+          description: 'Usage: principalId=''@principalId'''
           style: form
           explode: false
           schema:
@@ -10263,19 +10494,77 @@ paths:
             nullable: true
         - name: roleDefinitionId
           in: query
-          description: 'Usage: roleDefinitionId=''{roleDefinitionId}'''
+          description: 'Usage: roleDefinitionId=''@roleDefinitionId'''
           style: form
           explode: false
           schema:
             type: string
             nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - createdDateTime
+                - createdUsing
+                - directoryScopeId
+                - modifiedDateTime
+                - principalId
+                - roleDefinitionId
+                - status
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - createdDateTime
+                - createdDateTime desc
+                - createdUsing
+                - createdUsing desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - status
+                - status desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of rbacApplication
+                title: Collection of unifiedRoleScheduleBase
                 type: object
                 properties:
                   value:
@@ -10287,11 +10576,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory/resourceNamespaces:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get resourceNamespaces from roleManagement
+      summary: List resourceNamespaces
+      description: Get a list of the unifiedRbacResourceNamespace objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-1.0
       operationId: roleManagement.directory_ListResourceNamespaces
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10530,8 +10826,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
+      summary: List resourceActions
+      description: Get a list of the unifiedRbacResourceAction objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
       operationId: roleManagement.directory.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -11101,7 +11400,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get steps from roleManagement
+      summary: List approvalSteps
+      description: 'In Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/approval-list-steps?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentApprovals_ListSteps
       parameters:
         - name: approval-id
@@ -11362,6 +11665,37 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.approvalFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - steps
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
       responses:
         '200':
           description: Success
@@ -11380,11 +11714,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory/roleAssignments:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleAssignments from roleManagement
+      summary: List unifiedRoleAssignments
+      description: "Get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.directory_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11470,7 +11811,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create new navigation property to roleAssignments for roleManagement
+      summary: Create unifiedRoleAssignment
+      description: Create a new unifiedRoleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.directory_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -11899,7 +12244,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleAssignmentScheduleInstances from roleManagement
+      summary: List roleAssignmentScheduleInstances
+      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
       operationId: roleManagement.directory_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12255,6 +12604,71 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleInstanceFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - directoryScopeId
+                - principalId
+                - roleDefinitionId
+                - assignmentType
+                - endDateTime
+                - memberType
+                - roleAssignmentOriginId
+                - roleAssignmentScheduleId
+                - startDateTime
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+                - activatedUsing
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - assignmentType
+                - assignmentType desc
+                - endDateTime
+                - endDateTime desc
+                - memberType
+                - memberType desc
+                - roleAssignmentOriginId
+                - roleAssignmentOriginId desc
+                - roleAssignmentScheduleId
+                - roleAssignmentScheduleId desc
+                - startDateTime
+                - startDateTime desc
+              type: string
       responses:
         '200':
           description: Success
@@ -12273,11 +12687,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory/roleAssignmentScheduleRequests:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleAssignmentScheduleRequests from roleManagement
+      summary: List roleAssignmentScheduleRequests
+      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
       operationId: roleManagement.directory_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12394,7 +12815,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create new navigation property to roleAssignmentScheduleRequests for roleManagement
+      summary: Create roleAssignmentScheduleRequests
+      description: 'Create a new unifiedRoleAssignmentScheduleRequest object. This operation allows both admins and users to add, remove, extend, or renew assignments. To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
       operationId: roleManagement.directory_CreateRoleAssignmentScheduleRequests
       requestBody:
         description: New navigation property
@@ -12763,6 +13188,10 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
+      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days. After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -13001,6 +13430,90 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleRequestFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - approvalId
+                - completedDateTime
+                - createdBy
+                - createdDateTime
+                - customData
+                - status
+                - action
+                - appScopeId
+                - directoryScopeId
+                - isValidationOnly
+                - justification
+                - principalId
+                - roleDefinitionId
+                - scheduleInfo
+                - targetScheduleId
+                - ticketInfo
+                - activatedUsing
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+                - targetSchedule
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - approvalId
+                - approvalId desc
+                - completedDateTime
+                - completedDateTime desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - customData
+                - customData desc
+                - status
+                - status desc
+                - action
+                - action desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - isValidationOnly
+                - isValidationOnly desc
+                - justification
+                - justification desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - scheduleInfo
+                - scheduleInfo desc
+                - targetScheduleId
+                - targetScheduleId desc
+                - ticketInfo
+                - ticketInfo desc
+              type: string
       responses:
         '200':
           description: Success
@@ -13019,11 +13532,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory/roleAssignmentSchedules:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleAssignmentSchedules from roleManagement
+      summary: List roleAssignmentSchedules
+      description: Get the schedules for active role assignment operations.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
       operationId: roleManagement.directory_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13385,6 +13905,74 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - createdDateTime
+                - createdUsing
+                - directoryScopeId
+                - modifiedDateTime
+                - principalId
+                - roleDefinitionId
+                - status
+                - assignmentType
+                - memberType
+                - scheduleInfo
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+                - activatedUsing
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - createdDateTime
+                - createdDateTime desc
+                - createdUsing
+                - createdUsing desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - status
+                - status desc
+                - assignmentType
+                - assignmentType desc
+                - memberType
+                - memberType desc
+                - scheduleInfo
+                - scheduleInfo desc
+              type: string
       responses:
         '200':
           description: Success
@@ -13403,11 +13991,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory/roleDefinitions:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleDefinitions from roleManagement
+      summary: List roleDefinitions
+      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.directory_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13490,7 +14085,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create new navigation property to roleDefinitions for roleManagement
+      summary: Create roleDefinitions
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.directory_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -13897,7 +14496,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -13922,7 +14521,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
-          description: 'Usage: transitive={transitive}'
+          description: 'Usage: transitive=@transitive'
           style: form
           explode: false
           schema:
@@ -13930,25 +14529,58 @@ paths:
             default: false
         - name: directoryScopeType
           in: query
-          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
           style: form
           explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of unifiedRoleDefinition
+                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
@@ -13960,7 +14592,10 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -13977,7 +14612,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
-          description: 'Usage: transitive={transitive}'
+          description: 'Usage: transitive=@transitive'
           style: form
           explode: false
           schema:
@@ -13985,25 +14620,58 @@ paths:
             default: false
         - name: directoryScopeType
           in: query
-          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
           style: form
           explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of unifiedRoleDefinition
+                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
@@ -14015,11 +14683,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory/roleEligibilityScheduleInstances:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleEligibilityScheduleInstances from roleManagement
+      summary: List roleEligibilityScheduleInstancess
+      description: Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
       operationId: roleManagement.directory_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14276,6 +14951,64 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleInstanceFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - directoryScopeId
+                - principalId
+                - roleDefinitionId
+                - endDateTime
+                - memberType
+                - roleEligibilityScheduleId
+                - startDateTime
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - endDateTime
+                - endDateTime desc
+                - memberType
+                - memberType desc
+                - roleEligibilityScheduleId
+                - roleEligibilityScheduleId desc
+                - startDateTime
+                - startDateTime desc
+              type: string
       responses:
         '200':
           description: Success
@@ -14294,11 +15027,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory/roleEligibilityScheduleRequests:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleEligibilityScheduleRequests from roleManagement
+      summary: List roleEligibilityScheduleRequests
+      description: Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
       operationId: roleManagement.directory_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14413,7 +15153,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create new navigation property to roleEligibilityScheduleRequests for roleManagement
+      summary: Create roleEligibilityScheduleRequests
+      description: 'Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
       operationId: roleManagement.directory_CreateRoleEligibilityScheduleRequests
       requestBody:
         description: New navigation property
@@ -14691,6 +15435,10 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
+      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days. After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -14922,6 +15670,89 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleRequestFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - approvalId
+                - completedDateTime
+                - createdBy
+                - createdDateTime
+                - customData
+                - status
+                - action
+                - appScopeId
+                - directoryScopeId
+                - isValidationOnly
+                - justification
+                - principalId
+                - roleDefinitionId
+                - scheduleInfo
+                - targetScheduleId
+                - ticketInfo
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+                - targetSchedule
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - approvalId
+                - approvalId desc
+                - completedDateTime
+                - completedDateTime desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - customData
+                - customData desc
+                - status
+                - status desc
+                - action
+                - action desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - isValidationOnly
+                - isValidationOnly desc
+                - justification
+                - justification desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - scheduleInfo
+                - scheduleInfo desc
+                - targetScheduleId
+                - targetScheduleId desc
+                - ticketInfo
+                - ticketInfo desc
+              type: string
       responses:
         '200':
           description: Success
@@ -14940,11 +15771,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory/roleEligibilitySchedules:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleEligibilitySchedules from roleManagement
+      summary: List roleEligibilitySchedules
+      description: Get a list of the unifiedRoleEligibilitySchedule objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
       operationId: roleManagement.directory_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15209,6 +16047,70 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - createdDateTime
+                - createdUsing
+                - directoryScopeId
+                - modifiedDateTime
+                - principalId
+                - roleDefinitionId
+                - status
+                - memberType
+                - scheduleInfo
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - createdDateTime
+                - createdDateTime desc
+                - createdUsing
+                - createdUsing desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - status
+                - status desc
+                - memberType
+                - memberType desc
+                - scheduleInfo
+                - scheduleInfo desc
+              type: string
       responses:
         '200':
           description: Success
@@ -15227,11 +16129,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/directory/transitiveRoleAssignments:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get transitiveRoleAssignments from roleManagement
+      summary: List transitiveRoleAssignment
+      description: 'Get the list of direct and transitive unifiedRoleAssignment objects for a specific principal. For example, if a user is assigned an Azure AD role through group membership, the role assignment is transitive, and this request will list the group''s ID as the **principalId**. Results can also be filtered by the **roleDefinitionId** and **directoryScopeId**. Supported only for directory (Azure AD) provider. For more information, see Use Azure AD groups to manage role assignments.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-transitiveroleassignments?view=graph-rest-1.0
       operationId: roleManagement.directory_ListTransitiveRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15869,7 +16778,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/roleManagement/entitlementManagement/microsoft.graph.roleScheduleInstances(directoryScopeId=''{directoryScopeId}'',appScopeId=''{appScopeId}'',principalId=''{principalId}'',roleDefinitionId=''{roleDefinitionId}'')':
+  '/roleManagement/entitlementManagement/microsoft.graph.roleScheduleInstances(directoryScopeId=''@directoryScopeId'',appScopeId=''@appScopeId'',principalId=''@principalId'',roleDefinitionId=''@roleDefinitionId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -15878,7 +16787,7 @@ paths:
       parameters:
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
@@ -15886,7 +16795,7 @@ paths:
             nullable: true
         - name: appScopeId
           in: query
-          description: 'Usage: appScopeId=''{appScopeId}'''
+          description: 'Usage: appScopeId=''@appScopeId'''
           style: form
           explode: false
           schema:
@@ -15894,7 +16803,7 @@ paths:
             nullable: true
         - name: principalId
           in: query
-          description: 'Usage: principalId=''{principalId}'''
+          description: 'Usage: principalId=''@principalId'''
           style: form
           explode: false
           schema:
@@ -15902,19 +16811,65 @@ paths:
             nullable: true
         - name: roleDefinitionId
           in: query
-          description: 'Usage: roleDefinitionId=''{roleDefinitionId}'''
+          description: 'Usage: roleDefinitionId=''@roleDefinitionId'''
           style: form
           explode: false
           schema:
             type: string
             nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - directoryScopeId
+                - principalId
+                - roleDefinitionId
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of rbacApplication
+                title: Collection of unifiedRoleScheduleInstanceBase
                 type: object
                 properties:
                   value:
@@ -15926,7 +16881,10 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/roleManagement/entitlementManagement/microsoft.graph.roleSchedules(directoryScopeId=''{directoryScopeId}'',appScopeId=''{appScopeId}'',principalId=''{principalId}'',roleDefinitionId=''{roleDefinitionId}'')':
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/roleManagement/entitlementManagement/microsoft.graph.roleSchedules(directoryScopeId=''@directoryScopeId'',appScopeId=''@appScopeId'',principalId=''@principalId'',roleDefinitionId=''@roleDefinitionId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -15935,7 +16893,7 @@ paths:
       parameters:
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
@@ -15943,7 +16901,7 @@ paths:
             nullable: true
         - name: appScopeId
           in: query
-          description: 'Usage: appScopeId=''{appScopeId}'''
+          description: 'Usage: appScopeId=''@appScopeId'''
           style: form
           explode: false
           schema:
@@ -15951,7 +16909,7 @@ paths:
             nullable: true
         - name: principalId
           in: query
-          description: 'Usage: principalId=''{principalId}'''
+          description: 'Usage: principalId=''@principalId'''
           style: form
           explode: false
           schema:
@@ -15959,19 +16917,77 @@ paths:
             nullable: true
         - name: roleDefinitionId
           in: query
-          description: 'Usage: roleDefinitionId=''{roleDefinitionId}'''
+          description: 'Usage: roleDefinitionId=''@roleDefinitionId'''
           style: form
           explode: false
           schema:
             type: string
             nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - createdDateTime
+                - createdUsing
+                - directoryScopeId
+                - modifiedDateTime
+                - principalId
+                - roleDefinitionId
+                - status
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - createdDateTime
+                - createdDateTime desc
+                - createdUsing
+                - createdUsing desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - status
+                - status desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of rbacApplication
+                title: Collection of unifiedRoleScheduleBase
                 type: object
                 properties:
                   value:
@@ -15983,11 +16999,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/entitlementManagement/resourceNamespaces:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get resourceNamespaces from roleManagement
+      summary: List resourceNamespaces
+      description: Get a list of the unifiedRbacResourceNamespace objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListResourceNamespaces
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16226,8 +17249,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get resourceActions from roleManagement
-      description: Operations that an authorized principal are allowed to perform.
+      summary: List resourceActions
+      description: Get a list of the unifiedRbacResourceAction objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -16797,7 +17823,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get steps from roleManagement
+      summary: List approvalSteps
+      description: 'In Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/approval-list-steps?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_ListSteps
       parameters:
         - name: approval-id
@@ -17058,6 +18088,37 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.approvalFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - steps
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
       responses:
         '200':
           description: Success
@@ -17076,11 +18137,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/entitlementManagement/roleAssignments:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleAssignments from roleManagement
+      summary: List unifiedRoleAssignments
+      description: "Get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17166,7 +18234,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create new navigation property to roleAssignments for roleManagement
+      summary: Create unifiedRoleAssignment
+      description: Create a new unifiedRoleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -17595,7 +18667,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleAssignmentScheduleInstances from roleManagement
+      summary: List roleAssignmentScheduleInstances
+      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17951,6 +19027,71 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleInstanceFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - directoryScopeId
+                - principalId
+                - roleDefinitionId
+                - assignmentType
+                - endDateTime
+                - memberType
+                - roleAssignmentOriginId
+                - roleAssignmentScheduleId
+                - startDateTime
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+                - activatedUsing
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - assignmentType
+                - assignmentType desc
+                - endDateTime
+                - endDateTime desc
+                - memberType
+                - memberType desc
+                - roleAssignmentOriginId
+                - roleAssignmentOriginId desc
+                - roleAssignmentScheduleId
+                - roleAssignmentScheduleId desc
+                - startDateTime
+                - startDateTime desc
+              type: string
       responses:
         '200':
           description: Success
@@ -17969,11 +19110,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/entitlementManagement/roleAssignmentScheduleRequests:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleAssignmentScheduleRequests from roleManagement
+      summary: List roleAssignmentScheduleRequests
+      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18090,7 +19238,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create new navigation property to roleAssignmentScheduleRequests for roleManagement
+      summary: Create roleAssignmentScheduleRequests
+      description: 'Create a new unifiedRoleAssignmentScheduleRequest object. This operation allows both admins and users to add, remove, extend, or renew assignments. To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_CreateRoleAssignmentScheduleRequests
       requestBody:
         description: New navigation property
@@ -18459,6 +19611,10 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
+      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days. After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -18697,6 +19853,90 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleRequestFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - approvalId
+                - completedDateTime
+                - createdBy
+                - createdDateTime
+                - customData
+                - status
+                - action
+                - appScopeId
+                - directoryScopeId
+                - isValidationOnly
+                - justification
+                - principalId
+                - roleDefinitionId
+                - scheduleInfo
+                - targetScheduleId
+                - ticketInfo
+                - activatedUsing
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+                - targetSchedule
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - approvalId
+                - approvalId desc
+                - completedDateTime
+                - completedDateTime desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - customData
+                - customData desc
+                - status
+                - status desc
+                - action
+                - action desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - isValidationOnly
+                - isValidationOnly desc
+                - justification
+                - justification desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - scheduleInfo
+                - scheduleInfo desc
+                - targetScheduleId
+                - targetScheduleId desc
+                - ticketInfo
+                - ticketInfo desc
+              type: string
       responses:
         '200':
           description: Success
@@ -18715,11 +19955,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/entitlementManagement/roleAssignmentSchedules:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleAssignmentSchedules from roleManagement
+      summary: List roleAssignmentSchedules
+      description: Get the schedules for active role assignment operations.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19081,6 +20328,74 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleAssignmentScheduleFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - createdDateTime
+                - createdUsing
+                - directoryScopeId
+                - modifiedDateTime
+                - principalId
+                - roleDefinitionId
+                - status
+                - assignmentType
+                - memberType
+                - scheduleInfo
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+                - activatedUsing
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - createdDateTime
+                - createdDateTime desc
+                - createdUsing
+                - createdUsing desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - status
+                - status desc
+                - assignmentType
+                - assignmentType desc
+                - memberType
+                - memberType desc
+                - scheduleInfo
+                - scheduleInfo desc
+              type: string
       responses:
         '200':
           description: Success
@@ -19099,11 +20414,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/entitlementManagement/roleDefinitions:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleDefinitions from roleManagement
+      summary: List roleDefinitions
+      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19186,7 +20508,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create new navigation property to roleDefinitions for roleManagement
+      summary: Create roleDefinitions
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -19593,7 +20919,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+  '/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -19618,7 +20944,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
-          description: 'Usage: transitive={transitive}'
+          description: 'Usage: transitive=@transitive'
           style: form
           explode: false
           schema:
@@ -19626,25 +20952,58 @@ paths:
             default: false
         - name: directoryScopeType
           in: query
-          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
           style: form
           explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of unifiedRoleDefinition
+                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
@@ -19656,7 +21015,10 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType=''{directoryScopeType}'',directoryScopeId=''{directoryScopeId}'')':
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
         - roleManagement.Functions
@@ -19673,7 +21035,7 @@ paths:
           x-ms-docs-key-type: unifiedRoleDefinition
         - name: transitive
           in: query
-          description: 'Usage: transitive={transitive}'
+          description: 'Usage: transitive=@transitive'
           style: form
           explode: false
           schema:
@@ -19681,25 +21043,58 @@ paths:
             default: false
         - name: directoryScopeType
           in: query
-          description: 'Usage: directoryScopeType=''{directoryScopeType}'''
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
           style: form
           explode: false
           schema:
             type: string
         - name: directoryScopeId
           in: query
-          description: 'Usage: directoryScopeId=''{directoryScopeId}'''
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
           style: form
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                title: Collection of unifiedRoleDefinition
+                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
@@ -19711,11 +21106,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/entitlementManagement/roleEligibilityScheduleInstances:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleEligibilityScheduleInstances from roleManagement
+      summary: List roleEligibilityScheduleInstancess
+      description: Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19972,6 +21374,64 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleInstanceFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - directoryScopeId
+                - principalId
+                - roleDefinitionId
+                - endDateTime
+                - memberType
+                - roleEligibilityScheduleId
+                - startDateTime
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - endDateTime
+                - endDateTime desc
+                - memberType
+                - memberType desc
+                - roleEligibilityScheduleId
+                - roleEligibilityScheduleId desc
+                - startDateTime
+                - startDateTime desc
+              type: string
       responses:
         '200':
           description: Success
@@ -19990,11 +21450,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/entitlementManagement/roleEligibilityScheduleRequests:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleEligibilityScheduleRequests from roleManagement
+      summary: List roleEligibilityScheduleRequests
+      description: Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20109,7 +21576,11 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create new navigation property to roleEligibilityScheduleRequests for roleManagement
+      summary: Create roleEligibilityScheduleRequests
+      description: 'Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_CreateRoleEligibilityScheduleRequests
       requestBody:
         description: New navigation property
@@ -20387,6 +21858,10 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
+      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days. After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -20618,6 +22093,89 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleRequestFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - approvalId
+                - completedDateTime
+                - createdBy
+                - createdDateTime
+                - customData
+                - status
+                - action
+                - appScopeId
+                - directoryScopeId
+                - isValidationOnly
+                - justification
+                - principalId
+                - roleDefinitionId
+                - scheduleInfo
+                - targetScheduleId
+                - ticketInfo
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+                - targetSchedule
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - approvalId
+                - approvalId desc
+                - completedDateTime
+                - completedDateTime desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - customData
+                - customData desc
+                - status
+                - status desc
+                - action
+                - action desc
+                - appScopeId
+                - appScopeId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - isValidationOnly
+                - isValidationOnly desc
+                - justification
+                - justification desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - scheduleInfo
+                - scheduleInfo desc
+                - targetScheduleId
+                - targetScheduleId desc
+                - ticketInfo
+                - ticketInfo desc
+              type: string
       responses:
         '200':
           description: Success
@@ -20636,11 +22194,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/entitlementManagement/roleEligibilitySchedules:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get roleEligibilitySchedules from roleManagement
+      summary: List roleEligibilitySchedules
+      description: Get a list of the unifiedRoleEligibilitySchedule objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20905,6 +22470,70 @@ paths:
           style: simple
           schema:
             $ref: '#/components/schemas/microsoft.graph.roleEligibilityScheduleFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - createdDateTime
+                - createdUsing
+                - directoryScopeId
+                - modifiedDateTime
+                - principalId
+                - roleDefinitionId
+                - status
+                - memberType
+                - scheduleInfo
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - createdDateTime
+                - createdDateTime desc
+                - createdUsing
+                - createdUsing desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - status
+                - status desc
+                - memberType
+                - memberType desc
+                - scheduleInfo
+                - scheduleInfo desc
+              type: string
       responses:
         '200':
           description: Success
@@ -20923,11 +22552,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/entitlementManagement/transitiveRoleAssignments:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get transitiveRoleAssignments from roleManagement
+      summary: List transitiveRoleAssignment
+      description: 'Get the list of direct and transitive unifiedRoleAssignment objects for a specific principal. For example, if a user is assigned an Azure AD role through group membership, the role assignment is transitive, and this request will list the group''s ID as the **principalId**. Results can also be filtered by the **roleDefinitionId** and **directoryScopeId**. Supported only for directory (Azure AD) provider. For more information, see Use Azure AD groups to manage role assignments.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/rbacapplication-list-transitiveroleassignments?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement_ListTransitiveRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21625,6 +23261,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appleEnrollmentProfileAssignment'
               description: The list of assignments for this profile.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile's configurations at enrollment of the corresponding device.
@@ -21758,6 +23395,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
               description: Policy and application status details for this device.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Represents an Autopilot flow event.
@@ -21890,11 +23528,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentProfile'
               description: The enrollment profiles.
+              x-ms-navigationProperty: true
             importedAppleDeviceIdentities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentity'
               description: The imported Apple device identities.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The depOnboardingSetting represents an instance of the Apple DEP service being onboarded to Intune. The onboarded service instance manages an Apple Token used to synchronize data between Apple and Intune.
@@ -22221,6 +23861,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
               description: The list of group assignments for the device configuration profile
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -22417,11 +24058,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
               description: The list of assigned devices for the profile.
+              x-ms-navigationProperty: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfileAssignment'
               description: The list of group assignments for the profile.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Windows Autopilot Deployment Profile
@@ -22620,6 +24263,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfileAssignment'
               description: The list of group assignments of the profile.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Windows Feature Update Profile
@@ -22658,14 +24302,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+              x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+              x-ms-navigationProperty: true
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRbacResourceNamespace:
@@ -22682,6 +24329,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
               description: Operations that an authorized principal are allowed to perform.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRbacResourceAction:
@@ -22768,16 +24416,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
               description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
+              x-ms-navigationProperty: true
             directoryScopes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+              x-ms-navigationProperty: true
             principals:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+              x-ms-navigationProperty: true
             roleDefinition:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
           additionalProperties:
@@ -22857,6 +24508,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
               description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.rbacApplication:
@@ -22869,46 +24521,57 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+              x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+              x-ms-navigationProperty: true
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              x-ms-navigationProperty: true
             transitiveRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+              x-ms-navigationProperty: true
             roleAssignmentApprovals:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approval'
+              x-ms-navigationProperty: true
             roleAssignmentScheduleInstances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
+              x-ms-navigationProperty: true
             roleAssignmentScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
+              x-ms-navigationProperty: true
             roleAssignmentSchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
+              x-ms-navigationProperty: true
             roleEligibilityScheduleInstances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+              x-ms-navigationProperty: true
             roleEligibilityScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
+              x-ms-navigationProperty: true
             roleEligibilitySchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleScheduleInstanceBase:
@@ -23005,6 +24668,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStep'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.approvalStep:
@@ -24232,6 +25896,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.androidDeviceOwnerEnrollmentProfile'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -24253,6 +25918,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.androidForWorkEnrollmentProfile'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.appleUserInitiatedEnrollmentProfileCollectionResponse:
@@ -24265,6 +25931,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.appleUserInitiatedEnrollmentProfile'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.appleEnrollmentProfileAssignmentCollectionResponse:
@@ -24277,6 +25944,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.appleEnrollmentProfileAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementAutopilotEventCollectionResponse:
@@ -24289,6 +25957,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotEvent'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementAutopilotPolicyStatusDetailCollectionResponse:
@@ -24301,6 +25970,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.depOnboardingSettingCollectionResponse:
@@ -24313,6 +25983,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.depOnboardingSetting'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.enrollmentProfileCollectionResponse:
@@ -24325,6 +25996,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.enrollmentProfile'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.importedAppleDeviceIdentityCollectionResponse:
@@ -24337,6 +26009,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentity'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceEnrollmentConfigurationCollectionResponse:
@@ -24349,6 +26022,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.enrollmentConfigurationAssignmentCollectionResponse:
@@ -24361,6 +26035,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.importedDeviceIdentityCollectionResponse:
@@ -24373,6 +26048,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentity'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.importedWindowsAutopilotDeviceIdentityCollectionResponse:
@@ -24385,6 +26061,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse:
@@ -24397,6 +26074,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsAutopilotDeploymentProfileCollectionResponse:
@@ -24409,6 +26087,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfile'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsAutopilotDeviceIdentityCollectionResponse:
@@ -24421,6 +26100,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsAutopilotDeploymentProfileAssignmentCollectionResponse:
@@ -24433,6 +26113,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfileAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsFeatureUpdateProfileCollectionResponse:
@@ -24445,6 +26126,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfile'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsFeatureUpdateProfileAssignmentCollectionResponse:
@@ -24457,6 +26139,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfileAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse:
@@ -24469,6 +26152,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRbacResourceActionCollectionResponse:
@@ -24481,6 +26165,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleAssignmentMultipleCollectionResponse:
@@ -24493,6 +26178,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.appScopeCollectionResponse:
@@ -24505,6 +26191,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.appScope'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.directoryObjectCollectionResponse:
@@ -24517,6 +26204,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.directoryObject'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleDefinitionCollectionResponse:
@@ -24529,6 +26217,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.approvalCollectionResponse:
@@ -24541,6 +26230,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.approval'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.approvalStepCollectionResponse:
@@ -24553,6 +26243,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.approvalStep'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleAssignmentCollectionResponse:
@@ -24565,6 +26256,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleAssignmentScheduleInstanceCollectionResponse:
@@ -24577,6 +26269,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleAssignmentScheduleRequestCollectionResponse:
@@ -24589,6 +26282,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleAssignmentScheduleCollectionResponse:
@@ -24601,6 +26295,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleEligibilityScheduleInstanceCollectionResponse:
@@ -24613,6 +26308,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleEligibilityScheduleRequestCollectionResponse:
@@ -24625,6 +26321,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleEligibilityScheduleCollectionResponse:
@@ -24637,6 +26334,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.managedDeviceOwnerType:

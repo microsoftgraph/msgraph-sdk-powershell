@@ -52,7 +52,7 @@ Update-MgDeviceManagement [-AdditionalProperties <Hashtable>]
 
 ### Update1
 ```
-Update-MgDeviceManagement -BodyParameter <IMicrosoftGraphDeviceManagement1> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgDeviceManagement -BodyParameter <IMicrosoftGraphDeviceManagement> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -99,7 +99,7 @@ Singleton entity that acts as a container for all device management functionalit
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagement1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagement
 Parameter Sets: Update1
 Aliases:
 
@@ -718,7 +718,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagement1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagement
 
 ## OUTPUTS
 
@@ -742,7 +742,7 @@ APPLEPUSHNOTIFICATIONCERTIFICATE <IMicrosoftGraphApplePushNotificationCertificat
   - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time for Apple push notification certificate.
   - `[TopicIdentifier <String>]`: Topic Id.
 
-BODYPARAMETER <IMicrosoftGraphDeviceManagement1>: Singleton entity that acts as a container for all device management functionality.
+BODYPARAMETER <IMicrosoftGraphDeviceManagement>: Singleton entity that acts as a container for all device management functionality.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[ApplePushNotificationCertificate <IMicrosoftGraphApplePushNotificationCertificate>]`: Apple push notification certificate.

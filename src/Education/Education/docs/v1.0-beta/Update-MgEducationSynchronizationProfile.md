@@ -366,10 +366,10 @@ BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfile>: educationSynchro
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[ErrorCount <Int64?>]`: Number of errors during synchronization.
-    - `[LastActivityDateTime <DateTime?>]`: Represents the time when most recent changes were observed in profile.
-    - `[LastSynchronizationDateTime <DateTime?>]`: Represents the time of the most recent successful  synchronization.
+    - `[LastActivityDateTime <DateTime?>]`: Date and time when most recent changes were observed in the profile.
+    - `[LastSynchronizationDateTime <DateTime?>]`: Date and time of the most recent successful synchronization.
     - `[Status <String>]`: educationSynchronizationStatus
-    - `[StatusMessage <String>]`: Status message for the current profile's synchronization stage.
+    - `[StatusMessage <String>]`: Status message for the synchronization stage of the current profile.
   - `[State <String>]`: educationSynchronizationProfileState
 
 ERRORS <IMicrosoftGraphEducationSynchronizationError[]>: All errors associated with this synchronization profile.
@@ -403,10 +403,10 @@ PROFILESTATUS <IMicrosoftGraphEducationSynchronizationProfileStatus>: educationS
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
   - `[ErrorCount <Int64?>]`: Number of errors during synchronization.
-  - `[LastActivityDateTime <DateTime?>]`: Represents the time when most recent changes were observed in profile.
-  - `[LastSynchronizationDateTime <DateTime?>]`: Represents the time of the most recent successful  synchronization.
+  - `[LastActivityDateTime <DateTime?>]`: Date and time when most recent changes were observed in the profile.
+  - `[LastSynchronizationDateTime <DateTime?>]`: Date and time of the most recent successful synchronization.
   - `[Status <String>]`: educationSynchronizationStatus
-  - `[StatusMessage <String>]`: Status message for the current profile's synchronization stage.
+  - `[StatusMessage <String>]`: Status message for the synchronization stage of the current profile.
 
 ## RELATED LINKS
 

@@ -15,9 +15,9 @@ Nullable.
 
 ### List1 (Default)
 ```
-Get-MgUserMailFolderMessageExtension -MailFolderId <String> -MessageId <String> -UserId <String> [-Count]
+Get-MgUserMailFolderMessageExtension -MailFolderId <String> -MessageId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -40,13 +40,29 @@ Nullable.
 
 ## PARAMETERS
 
-### -Count
-Include count of items
+### -All
+List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases: CV
 
 Required: False
 Position: Named
@@ -140,6 +156,21 @@ Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: System.Int32
+Parameter Sets: List1
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

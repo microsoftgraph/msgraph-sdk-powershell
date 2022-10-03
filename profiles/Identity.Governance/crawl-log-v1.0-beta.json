@@ -2165,11 +2165,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/runs/{run-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
+    "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/runs/{run-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/runs/microsoft.graph.identityGovernance.summary(startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
+    "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/runs/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -2209,7 +2209,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
+    "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -2245,7 +2245,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
+    "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -2357,11 +2357,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/runs/{run-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
+    "/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/runs/{run-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/runs/microsoft.graph.identityGovernance.summary(startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
+    "/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/runs/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -2401,7 +2401,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
+    "/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -2437,7 +2437,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime='{startDateTime}',endDateTime='{endDateTime}')": {
+    "/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },

@@ -1197,7 +1197,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
           - `[KeyStrength <String>]`: authenticationMethodKeyStrength
       - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+        - `[CertificateUserIds <String[]>]`: 
       - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
       - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
       - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -2615,6 +2615,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2928,16 +2929,16 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
             - `[OwnersCount <Int32?>]`: 
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: 
-            - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-            - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-            - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+            - `[Description <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[MemberCount <Int32?>]`: 
+            - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
               - `[Id <String>]`: 
-              - `[DisplayName <String>]`: The member's display name.
+              - `[DisplayName <String>]`: 
               - `[TenantId <String>]`: 
               - `[UserId <String>]`: 
             - `[TagType <String>]`: teamworkTagType
-            - `[TeamId <String>]`: ID of the team in which the tag is defined.
+            - `[TeamId <String>]`: 
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: 
@@ -3547,7 +3548,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
           - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
           - `[TollNumber <String>]`: 
           - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowedAudience <String>]`: broadcastMeetingAudience
           - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -3959,6 +3960,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+            - `[DisplayName <String>]`: 
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: 
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -5699,7 +5701,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
               - `[KeyStrength <String>]`: authenticationMethodKeyStrength
           - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            - `[CertificateUserIds <String[]>]`: 
           - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
           - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
           - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -7132,6 +7134,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
                       - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[Description <String>]`: Description of the task.
+                      - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                       - `[PreviewType <String>]`: plannerPreviewType
                       - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7445,16 +7448,16 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
                 - `[OwnersCount <Int32?>]`: 
               - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
                 - `[Id <String>]`: 
-                - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-                - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-                - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-                - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+                - `[Description <String>]`: 
+                - `[DisplayName <String>]`: 
+                - `[MemberCount <Int32?>]`: 
+                - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
                   - `[Id <String>]`: 
-                  - `[DisplayName <String>]`: The member's display name.
+                  - `[DisplayName <String>]`: 
                   - `[TenantId <String>]`: 
                   - `[UserId <String>]`: 
                 - `[TagType <String>]`: teamworkTagType
-                - `[TeamId <String>]`: ID of the team in which the tag is defined.
+                - `[TeamId <String>]`: 
               - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: 
@@ -8064,7 +8067,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
               - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
               - `[TollNumber <String>]`: 
               - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+            - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowedAudience <String>]`: broadcastMeetingAudience
               - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -8476,6 +8479,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
                   - `[Scaling <String>]`: printScaling
                 - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+                - `[DisplayName <String>]`: 
                 - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
                   - `[Id <String>]`: 
                   - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -10207,7 +10211,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
         - `[KeyStrength <String>]`: authenticationMethodKeyStrength
     - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+      - `[CertificateUserIds <String[]>]`: 
     - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
     - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
     - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -12035,6 +12039,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
                 - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Description <String>]`: Description of the task.
+                - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12344,16 +12349,16 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
           - `[OwnersCount <Int32?>]`: 
         - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
           - `[Id <String>]`: 
-          - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-          - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-          - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-          - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+          - `[Description <String>]`: 
+          - `[DisplayName <String>]`: 
+          - `[MemberCount <Int32?>]`: 
+          - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
             - `[Id <String>]`: 
-            - `[DisplayName <String>]`: The member's display name.
+            - `[DisplayName <String>]`: 
             - `[TenantId <String>]`: 
             - `[UserId <String>]`: 
           - `[TagType <String>]`: teamworkTagType
-          - `[TeamId <String>]`: ID of the team in which the tag is defined.
+          - `[TeamId <String>]`: 
         - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
@@ -12963,7 +12968,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
         - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
         - `[TollNumber <String>]`: 
         - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[AllowedAudience <String>]`: broadcastMeetingAudience
         - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -13375,6 +13380,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+          - `[DisplayName <String>]`: 
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: 
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -14742,7 +14748,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[KeyStrength <String>]`: authenticationMethodKeyStrength
   - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+    - `[CertificateUserIds <String[]>]`: 
   - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
   - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
   - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -16612,6 +16618,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
               - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Description <String>]`: Description of the task.
+              - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
               - `[PreviewType <String>]`: plannerPreviewType
               - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -16921,16 +16928,16 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
         - `[OwnersCount <Int32?>]`: 
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: 
-        - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-        - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-        - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+        - `[Description <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[MemberCount <Int32?>]`: 
+        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
           - `[Id <String>]`: 
-          - `[DisplayName <String>]`: The member's display name.
+          - `[DisplayName <String>]`: 
           - `[TenantId <String>]`: 
           - `[UserId <String>]`: 
         - `[TagType <String>]`: teamworkTagType
-        - `[TeamId <String>]`: ID of the team in which the tag is defined.
+        - `[TeamId <String>]`: 
       - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
@@ -17540,7 +17547,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
       - `[TollNumber <String>]`: 
       - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowedAudience <String>]`: broadcastMeetingAudience
       - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -17952,6 +17959,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
           - `[Scaling <String>]`: printScaling
         - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+        - `[DisplayName <String>]`: 
         - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
           - `[Id <String>]`: 
           - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -19300,7 +19308,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[KeyStrength <String>]`: authenticationMethodKeyStrength
     - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+      - `[CertificateUserIds <String[]>]`: 
     - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
     - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
     - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -20762,6 +20770,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
                 - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Description <String>]`: Description of the task.
+                - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -21075,16 +21084,16 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
           - `[OwnersCount <Int32?>]`: 
         - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
           - `[Id <String>]`: 
-          - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-          - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-          - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-          - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+          - `[Description <String>]`: 
+          - `[DisplayName <String>]`: 
+          - `[MemberCount <Int32?>]`: 
+          - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
             - `[Id <String>]`: 
-            - `[DisplayName <String>]`: The member's display name.
+            - `[DisplayName <String>]`: 
             - `[TenantId <String>]`: 
             - `[UserId <String>]`: 
           - `[TagType <String>]`: teamworkTagType
-          - `[TeamId <String>]`: ID of the team in which the tag is defined.
+          - `[TeamId <String>]`: 
         - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: 
@@ -21694,7 +21703,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
         - `[TollNumber <String>]`: 
         - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+      - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[AllowedAudience <String>]`: broadcastMeetingAudience
         - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -22106,6 +22115,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+          - `[DisplayName <String>]`: 
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: 
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -23855,7 +23865,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[KeyStrength <String>]`: authenticationMethodKeyStrength
   - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+    - `[CertificateUserIds <String[]>]`: 
   - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
   - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
   - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
@@ -25725,6 +25735,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
               - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Description <String>]`: Description of the task.
+              - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
               - `[PreviewType <String>]`: plannerPreviewType
               - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -26034,16 +26045,16 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
         - `[OwnersCount <Int32?>]`: 
       - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
         - `[Id <String>]`: 
-        - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-        - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
-        - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
-        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
+        - `[Description <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[MemberCount <Int32?>]`: 
+        - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: 
           - `[Id <String>]`: 
-          - `[DisplayName <String>]`: The member's display name.
+          - `[DisplayName <String>]`: 
           - `[TenantId <String>]`: 
           - `[UserId <String>]`: 
         - `[TagType <String>]`: teamworkTagType
-        - `[TeamId <String>]`: ID of the team in which the tag is defined.
+        - `[TeamId <String>]`: 
       - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: 
@@ -26653,7 +26664,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
       - `[TollNumber <String>]`: 
       - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+    - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowedAudience <String>]`: broadcastMeetingAudience
       - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
@@ -27065,6 +27076,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
           - `[Scaling <String>]`: printScaling
         - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+        - `[DisplayName <String>]`: 
         - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
           - `[Id <String>]`: 
           - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration

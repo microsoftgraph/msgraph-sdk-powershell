@@ -18,18 +18,20 @@ Because the **user** resource supports extensions, you can also use the `GET` op
 
 ### List (Default)
 ```
-Get-MgUser [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-Top <Int32>]
- [-ConsistencyLevel <String>] [<CommonParameters>]
+Get-MgUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUser -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgUser -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUser -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgUser -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -179,9 +181,70 @@ For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
 
 ## PARAMETERS
 
+### -All
+List all pages.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ConsistencyLevel
 Indicates the requested consistency level.
 Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: List
+Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
 
 ```yaml
 Type: System.String
@@ -211,6 +274,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Property
 Select properties to be returned
 
@@ -231,6 +309,21 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
 Parameter Sets: List
 Aliases:
 

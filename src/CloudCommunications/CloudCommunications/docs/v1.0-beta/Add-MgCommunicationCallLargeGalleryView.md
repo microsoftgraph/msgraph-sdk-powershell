@@ -12,27 +12,27 @@ Add the large gallery view to a call.
 
 ## SYNTAX
 
-### AddExpanded (Default)
+### AddExpanded1 (Default)
 ```
 Add-MgCommunicationCallLargeGalleryView -CallId <String> [-AdditionalProperties <Hashtable>]
  [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Add
+### Add1
 ```
 Add-MgCommunicationCallLargeGalleryView -CallId <String>
  -BodyParameter <IPaths12Hh6NfCommunicationsCallsCallIdMicrosoftGraphAddlargegalleryviewPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AddViaIdentity
+### AddViaIdentity1
 ```
 Add-MgCommunicationCallLargeGalleryView -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths12Hh6NfCommunicationsCallsCallIdMicrosoftGraphAddlargegalleryviewPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AddViaIdentityExpanded
+### AddViaIdentityExpanded1
 ```
 Add-MgCommunicationCallLargeGalleryView -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -62,7 +62,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: AddExpanded, AddViaIdentityExpanded
+Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -78,7 +78,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths12Hh6NfCommunicationsCallsCallIdMicrosoftGraphAddlargegalleryviewPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Add, AddViaIdentity
+Parameter Sets: Add1, AddViaIdentity1
 Aliases:
 
 Required: True
@@ -93,7 +93,7 @@ key: id of call
 
 ```yaml
 Type: System.String
-Parameter Sets: Add, AddExpanded
+Parameter Sets: Add1, AddExpanded1
 Aliases:
 
 Required: True
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: AddExpanded, AddViaIdentityExpanded
+Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -124,7 +124,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: AddViaIdentity, AddViaIdentityExpanded
+Parameter Sets: AddViaIdentity1, AddViaIdentityExpanded1
 Aliases:
 
 Required: True

@@ -453,8 +453,8 @@ BODYPARAMETER <IMicrosoftGraphRecommendation>: recommendation
     - `[Id <String>]`: 
     - `[AddedDateTime <DateTime?>]`: 
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
+      - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+      - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
     - `[ApiUrl <String>]`: 
     - `[DisplayName <String>]`: 
     - `[Owner <String>]`: 
@@ -475,8 +475,8 @@ IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
   - `[Id <String>]`: 
   - `[AddedDateTime <DateTime?>]`: 
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-    - `[Key <String>]`: Key.
-    - `[Value <String>]`: Value.
+    - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+    - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
   - `[ApiUrl <String>]`: 
   - `[DisplayName <String>]`: 
   - `[Owner <String>]`: 

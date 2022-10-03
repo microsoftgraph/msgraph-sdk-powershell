@@ -18,9 +18,9 @@ For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayNa
 ## SYNTAX
 
 ```
-Get-MgGroupOwner -GroupId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-ConsistencyLevel <String>] [<CommonParameters>]
+Get-MgGroupOwner -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,6 +46,21 @@ This example gets the owner of the specified group.
 
 ## PARAMETERS
 
+### -All
+List all pages.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ConsistencyLevel
 Indicates the requested consistency level.
 Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
@@ -62,13 +77,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -116,6 +132,21 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -724,8 +724,8 @@ BODYPARAMETER <IMicrosoftGraphDeviceHealthScriptDeviceState>: Contains propertie
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Application <IMicrosoftGraphIdentity>]`: identity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[Device <IMicrosoftGraphIdentity>]`: identity
             - `[User <IMicrosoftGraphIdentity>]`: identity
           - `[CreatedDateTime <DateTime?>]`: The request creation date time.
@@ -752,8 +752,8 @@ BODYPARAMETER <IMicrosoftGraphDeviceHealthScriptDeviceState>: Contains propertie
         - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
           - `[Id <String>]`: 
           - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-            - `[Key <String>]`: Key.
-            - `[Value <String>]`: Value.
+            - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+            - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           - `[Type <String>]`: 
         - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
         - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -1519,13 +1519,13 @@ BODYPARAMETER <IMicrosoftGraphDeviceHealthScriptDeviceState>: Contains propertie
               - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
                 - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
               - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[MessageType <String>]`: chatMessageType
           - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
           - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
@@ -1558,8 +1558,8 @@ BODYPARAMETER <IMicrosoftGraphDeviceHealthScriptDeviceState>: Contains propertie
           - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
           - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[UserIdentityType <String>]`: teamworkUserIdentityType
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: 
@@ -2011,8 +2011,8 @@ BODYPARAMETER <IMicrosoftGraphDeviceHealthScriptDeviceState>: Contains propertie
                 - `[Group <IMicrosoftGraphIdentity>]`: identity
                 - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                  - `[Id <String>]`: Unique identifier for the identity.
+                  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                  - `[Id <String>]`: The identifier of the identity. This property is read-only.
                   - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                 - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
               - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -3109,6 +3109,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceHealthScriptDeviceState>: Contains propertie
                   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Description <String>]`: Description of the task.
+                  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3912,8 +3913,8 @@ BODYPARAMETER <IMicrosoftGraphDeviceHealthScriptDeviceState>: Contains propertie
           - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
           - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
             - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
           - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -4166,6 +4167,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceHealthScriptDeviceState>: Contains propertie
               - `[Scaling <String>]`: printScaling
             - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+            - `[DisplayName <String>]`: 
             - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
               - `[Id <String>]`: 
               - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
@@ -5380,8 +5382,8 @@ MANAGEDDEVICE <IMicrosoftGraphManagedDevice1>: Devices that are managed or pre-e
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Application <IMicrosoftGraphIdentity>]`: identity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[Device <IMicrosoftGraphIdentity>]`: identity
           - `[User <IMicrosoftGraphIdentity>]`: identity
         - `[CreatedDateTime <DateTime?>]`: The request creation date time.
@@ -5408,8 +5410,8 @@ MANAGEDDEVICE <IMicrosoftGraphManagedDevice1>: Devices that are managed or pre-e
       - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
         - `[Id <String>]`: 
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
         - `[Type <String>]`: 
       - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
       - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -6175,13 +6177,13 @@ MANAGEDDEVICE <IMicrosoftGraphManagedDevice1>: Devices that are managed or pre-e
             - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
             - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[MessageType <String>]`: chatMessageType
         - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
         - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
@@ -6214,8 +6216,8 @@ MANAGEDDEVICE <IMicrosoftGraphManagedDevice1>: Devices that are managed or pre-e
         - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
         - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[UserIdentityType <String>]`: teamworkUserIdentityType
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         - `[Id <String>]`: 
@@ -6667,8 +6669,8 @@ MANAGEDDEVICE <IMicrosoftGraphManagedDevice1>: Devices that are managed or pre-e
               - `[Group <IMicrosoftGraphIdentity>]`: identity
               - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
                 - `[LoginName <String>]`: The sign in name of the SharePoint identity.
               - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
             - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -7765,6 +7767,7 @@ MANAGEDDEVICE <IMicrosoftGraphManagedDevice1>: Devices that are managed or pre-e
                 - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Description <String>]`: Description of the task.
+                - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8568,8 +8571,8 @@ MANAGEDDEVICE <IMicrosoftGraphManagedDevice1>: Devices that are managed or pre-e
         - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
         - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
           - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
         - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -8822,6 +8825,7 @@ MANAGEDDEVICE <IMicrosoftGraphManagedDevice1>: Devices that are managed or pre-e
             - `[Scaling <String>]`: printScaling
           - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+          - `[DisplayName <String>]`: 
           - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
             - `[Id <String>]`: 
             - `[Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]`: printerDocumentConfiguration
