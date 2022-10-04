@@ -17,6 +17,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -72,6 +73,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -98,12 +100,14 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -117,12 +121,14 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_ListActivityStatistics
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -202,6 +208,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -227,12 +234,14 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_GetActivityStatistics
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -240,6 +249,7 @@ paths:
           in: path
           description: 'key: id of activityStatistics'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityStatistics
@@ -292,6 +302,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -299,6 +310,7 @@ paths:
           in: path
           description: 'key: id of activityStatistics'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityStatistics
@@ -325,6 +337,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -332,12 +345,14 @@ paths:
           in: path
           description: 'key: id of activityStatistics'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: activityStatistics
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -350,13 +365,18 @@ paths:
     get:
       tags:
         - users.person
-      summary: Get people from users
+      summary: List people
+      description: 'Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user''s communication and collaboration patterns, and business relationships.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
       operationId: users_ListPeople
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -459,47 +479,19 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.person
-      summary: Create new navigation property to people for users
-      operationId: users_CreatePeople
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.person'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.person'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/people/{person-id}':
     get:
       tags:
         - users.person
       summary: Get people from users
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_GetPeople
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -507,6 +499,7 @@ paths:
           in: path
           description: 'key: id of person'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: person
@@ -552,81 +545,22 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.person
-      summary: Update the navigation property people in users
-      operationId: users_UpdatePeople
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: person-id
-          in: path
-          description: 'key: id of person'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: person
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.person'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.person
-      summary: Delete navigation property people for users
-      operationId: users_DeletePeople
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: person-id
-          in: path
-          description: 'key: id of person'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: person
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/profile':
     get:
       tags:
         - users.profile
-      summary: Get profile from users
+      summary: Get profile
+      description: 'Retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-1.0
       operationId: users_GetProfile
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -789,6 +723,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -808,19 +743,25 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete navigation property profile for users
+      summary: Delete profile
+      description: Deletes a profile object from a user's account.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0
       operationId: users_DeleteProfile
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -833,13 +774,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get account from users
+      summary: List accounts
+      description: Retrieves properties related to the user's accounts from the profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0
       operationId: users.profile_ListAccount
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -933,13 +879,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to account for users
+      summary: Create account
+      description: Create a new userAccountInformation object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0
       operationId: users.profile_CreateAccount
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -971,6 +922,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -978,6 +930,7 @@ paths:
           in: path
           description: 'key: id of userAccountInformation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userAccountInformation
@@ -1037,6 +990,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1044,6 +998,7 @@ paths:
           in: path
           description: 'key: id of userAccountInformation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userAccountInformation
@@ -1070,6 +1025,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1077,12 +1033,14 @@ paths:
           in: path
           description: 'key: id of userAccountInformation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userAccountInformation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1095,13 +1053,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get addresses from users
+      summary: List addresses
+      description: Get the itemAddress resources from the **addresses** navigation property.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-1.0
       operationId: users.profile_ListAddresses
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1192,13 +1155,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to addresses for users
+      summary: Create addresses
+      description: Create a new itemAddress object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-addresses?view=graph-rest-1.0
       operationId: users.profile_CreateAddresses
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1224,12 +1192,14 @@ paths:
       tags:
         - users.profile
       summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_GetAddresses
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1237,6 +1207,7 @@ paths:
           in: path
           description: 'key: id of itemAddress'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemAddress
@@ -1295,6 +1266,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1302,6 +1274,7 @@ paths:
           in: path
           description: 'key: id of itemAddress'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemAddress
@@ -1328,6 +1301,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1335,12 +1309,14 @@ paths:
           in: path
           description: 'key: id of itemAddress'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemAddress
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1353,13 +1329,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get anniversaries from users
+      summary: List anniversaries
+      description: Retrieve a list of personAnniversary objects for the given user from their profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
       operationId: users.profile_ListAnniversaries
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1450,13 +1431,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to anniversaries for users
+      summary: Create personAnniversary
+      description: Use this API to create a new personAnniversary object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
       operationId: users.profile_CreateAnniversaries
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1482,12 +1468,14 @@ paths:
       tags:
         - users.profile
       summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_GetAnniversaries
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1495,6 +1483,7 @@ paths:
           in: path
           description: 'key: id of personAnnualEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnualEvent
@@ -1553,6 +1542,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1560,6 +1550,7 @@ paths:
           in: path
           description: 'key: id of personAnnualEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnualEvent
@@ -1586,6 +1577,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1593,12 +1585,14 @@ paths:
           in: path
           description: 'key: id of personAnnualEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnualEvent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1611,13 +1605,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get awards from users
+      summary: List awards
+      description: Retrieve a list of personAward objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0
       operationId: users.profile_ListAwards
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1717,13 +1716,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to awards for users
+      summary: Create personAward
+      description: Create a new personAward object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0
       operationId: users.profile_CreateAwards
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1749,12 +1753,14 @@ paths:
       tags:
         - users.profile
       summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_GetAwards
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1762,6 +1768,7 @@ paths:
           in: path
           description: 'key: id of personAward'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAward
@@ -1823,6 +1830,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1830,6 +1838,7 @@ paths:
           in: path
           description: 'key: id of personAward'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAward
@@ -1856,6 +1865,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1863,12 +1873,14 @@ paths:
           in: path
           description: 'key: id of personAward'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAward
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1881,13 +1893,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get certifications from users
+      summary: List certifications
+      description: Retrieve a list of personCertification objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-1.0
       operationId: users.profile_ListCertifications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1999,13 +2016,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to certifications for users
+      summary: Create personCertification
+      description: Create a new personCertification object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-certifications?view=graph-rest-1.0
       operationId: users.profile_CreateCertifications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2031,12 +2053,14 @@ paths:
       tags:
         - users.profile
       summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_GetCertifications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2044,6 +2068,7 @@ paths:
           in: path
           description: 'key: id of personCertification'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personCertification
@@ -2109,6 +2134,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2116,6 +2142,7 @@ paths:
           in: path
           description: 'key: id of personCertification'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personCertification
@@ -2142,6 +2169,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2149,12 +2177,14 @@ paths:
           in: path
           description: 'key: id of personCertification'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personCertification
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2167,13 +2197,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get educationalActivities from users
+      summary: List educationalActivities
+      description: Retrieve a list of educationalActivity objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
       operationId: users.profile_ListEducationalActivities
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2270,13 +2305,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to educationalActivities for users
+      summary: Create educationalActivity
+      description: Create a new educationalActivity in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
       operationId: users.profile_CreateEducationalActivities
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2302,12 +2342,14 @@ paths:
       tags:
         - users.profile
       summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_GetEducationalActivities
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2315,6 +2357,7 @@ paths:
           in: path
           description: 'key: id of educationalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationalActivity
@@ -2375,6 +2418,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2382,6 +2426,7 @@ paths:
           in: path
           description: 'key: id of educationalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationalActivity
@@ -2408,6 +2453,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2415,12 +2461,14 @@ paths:
           in: path
           description: 'key: id of educationalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: educationalActivity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2433,13 +2481,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get emails from users
+      summary: List emails
+      description: Retrieve a list of itemEmail objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-emails?view=graph-rest-1.0
       operationId: users.profile_ListEmails
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2530,13 +2583,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to emails for users
+      summary: Create itemEmail
+      description: Create a new itemEmail object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-emails?view=graph-rest-1.0
       operationId: users.profile_CreateEmails
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2562,12 +2620,14 @@ paths:
       tags:
         - users.profile
       summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_GetEmails
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2575,6 +2635,7 @@ paths:
           in: path
           description: 'key: id of itemEmail'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemEmail
@@ -2633,6 +2694,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2640,6 +2702,7 @@ paths:
           in: path
           description: 'key: id of itemEmail'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemEmail
@@ -2666,6 +2729,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2673,12 +2737,14 @@ paths:
           in: path
           description: 'key: id of itemEmail'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemEmail
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2691,13 +2757,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get interests from users
+      summary: List interests
+      description: Retrieve a list of personInterest objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-1.0
       operationId: users.profile_ListInterests
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2797,13 +2868,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to interests for users
+      summary: Create personInterest
+      description: Create a new personInterest.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-interests?view=graph-rest-1.0
       operationId: users.profile_CreateInterests
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2829,12 +2905,14 @@ paths:
       tags:
         - users.profile
       summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_GetInterests
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2842,6 +2920,7 @@ paths:
           in: path
           description: 'key: id of personInterest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personInterest
@@ -2903,6 +2982,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2910,6 +2990,7 @@ paths:
           in: path
           description: 'key: id of personInterest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personInterest
@@ -2936,6 +3017,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2943,12 +3025,14 @@ paths:
           in: path
           description: 'key: id of personInterest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personInterest
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2961,13 +3045,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get languages from users
+      summary: List languages
+      description: Retrieve a list of languageProficiency objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-languages?view=graph-rest-1.0
       operationId: users.profile_ListLanguages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3070,13 +3159,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to languages for users
+      summary: Create languageProficiency
+      description: Use this API to create a new languageProficiency object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-languages?view=graph-rest-1.0
       operationId: users.profile_CreateLanguages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3102,12 +3196,14 @@ paths:
       tags:
         - users.profile
       summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_GetLanguages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3115,6 +3211,7 @@ paths:
           in: path
           description: 'key: id of languageProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: languageProficiency
@@ -3177,6 +3274,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3184,6 +3282,7 @@ paths:
           in: path
           description: 'key: id of languageProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: languageProficiency
@@ -3210,6 +3309,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3217,12 +3317,14 @@ paths:
           in: path
           description: 'key: id of languageProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: languageProficiency
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3235,13 +3337,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get names from users
+      summary: List names
+      description: Retrieve a list of personName objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-names?view=graph-rest-1.0
       operationId: users.profile_ListNames
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3356,13 +3463,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to names for users
+      summary: Create personName
+      description: Use this API to create a new personName object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-names?view=graph-rest-1.0
       operationId: users.profile_CreateNames
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3388,12 +3500,14 @@ paths:
       tags:
         - users.profile
       summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_GetNames
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3401,6 +3515,7 @@ paths:
           in: path
           description: 'key: id of personName'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personName
@@ -3467,6 +3582,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3474,6 +3590,7 @@ paths:
           in: path
           description: 'key: id of personName'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personName
@@ -3500,6 +3617,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3507,12 +3625,14 @@ paths:
           in: path
           description: 'key: id of personName'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personName
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3525,13 +3645,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get notes from users
+      summary: List notes
+      description: Retrieve a list of personAnnotation objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-1.0
       operationId: users.profile_ListNotes
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3622,13 +3747,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to notes for users
+      summary: Create personAnnotation
+      description: Create a new personAnnotation object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-notes?view=graph-rest-1.0
       operationId: users.profile_CreateNotes
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3654,12 +3784,14 @@ paths:
       tags:
         - users.profile
       summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_GetNotes
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3667,6 +3799,7 @@ paths:
           in: path
           description: 'key: id of personAnnotation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnotation
@@ -3725,6 +3858,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3732,6 +3866,7 @@ paths:
           in: path
           description: 'key: id of personAnnotation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnotation
@@ -3758,6 +3893,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3765,12 +3901,14 @@ paths:
           in: path
           description: 'key: id of personAnnotation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personAnnotation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3783,13 +3921,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get patents from users
+      summary: List patents
+      description: Retrieve a list of itemPatent objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
       operationId: users.profile_ListPatents
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3892,13 +4035,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to patents for users
+      summary: Create itemPatent
+      description: Create a new itemPatent object within a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
       operationId: users.profile_CreatePatents
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3924,12 +4072,14 @@ paths:
       tags:
         - users.profile
       summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_GetPatents
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3937,6 +4087,7 @@ paths:
           in: path
           description: 'key: id of itemPatent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPatent
@@ -3999,6 +4150,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4006,6 +4158,7 @@ paths:
           in: path
           description: 'key: id of itemPatent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPatent
@@ -4032,6 +4185,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4039,12 +4193,14 @@ paths:
           in: path
           description: 'key: id of itemPatent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPatent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4057,13 +4213,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get phones from users
+      summary: List phones
+      description: Retrieve a list of itemPhone objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-phones?view=graph-rest-1.0
       operationId: users.profile_ListPhones
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4154,13 +4315,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to phones for users
+      summary: Create itemPhoneNumber
+      description: Use this API to create a new itemPhone object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-phones?view=graph-rest-1.0
       operationId: users.profile_CreatePhones
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4186,12 +4352,14 @@ paths:
       tags:
         - users.profile
       summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_GetPhones
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4199,6 +4367,7 @@ paths:
           in: path
           description: 'key: id of itemPhone'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPhone
@@ -4257,6 +4426,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4264,6 +4434,7 @@ paths:
           in: path
           description: 'key: id of itemPhone'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPhone
@@ -4290,6 +4461,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4297,12 +4469,14 @@ paths:
           in: path
           description: 'key: id of itemPhone'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPhone
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4315,13 +4489,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get positions from users
+      summary: List positions
+      description: Retrieve a list of workPosition objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-positions?view=graph-rest-1.0
       operationId: users.profile_ListPositions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4418,13 +4597,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to positions for users
+      summary: Create workPosition
+      description: Use this API to create a new workPosition in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-positions?view=graph-rest-1.0
       operationId: users.profile_CreatePositions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4450,12 +4634,14 @@ paths:
       tags:
         - users.profile
       summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_GetPositions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4463,6 +4649,7 @@ paths:
           in: path
           description: 'key: id of workPosition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: workPosition
@@ -4523,6 +4710,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4530,6 +4718,7 @@ paths:
           in: path
           description: 'key: id of workPosition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: workPosition
@@ -4556,6 +4745,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4563,12 +4753,14 @@ paths:
           in: path
           description: 'key: id of workPosition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: workPosition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4581,13 +4773,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get projects from users
+      summary: List projects
+      description: Retrieve a list of projectParticipation objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-projects?view=graph-rest-1.0
       operationId: users.profile_ListProjects
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4693,13 +4890,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to projects for users
+      summary: Create projectParticipation
+      description: Use this API to create a new projectParticipation object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-projects?view=graph-rest-1.0
       operationId: users.profile_CreateProjects
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4725,12 +4927,14 @@ paths:
       tags:
         - users.profile
       summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_GetProjects
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4738,6 +4942,7 @@ paths:
           in: path
           description: 'key: id of projectParticipation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: projectParticipation
@@ -4801,6 +5006,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4808,6 +5014,7 @@ paths:
           in: path
           description: 'key: id of projectParticipation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: projectParticipation
@@ -4834,6 +5041,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4841,12 +5049,14 @@ paths:
           in: path
           description: 'key: id of projectParticipation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: projectParticipation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4859,13 +5069,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get publications from users
+      summary: List publications
+      description: Retrieve a list of itemPublication objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-1.0
       operationId: users.profile_ListPublications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4965,13 +5180,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to publications for users
+      summary: Create itemPublication
+      description: Create a new itemPublication object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-publications?view=graph-rest-1.0
       operationId: users.profile_CreatePublications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4997,12 +5217,14 @@ paths:
       tags:
         - users.profile
       summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_GetPublications
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5010,6 +5232,7 @@ paths:
           in: path
           description: 'key: id of itemPublication'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPublication
@@ -5071,6 +5294,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5078,6 +5302,7 @@ paths:
           in: path
           description: 'key: id of itemPublication'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPublication
@@ -5104,6 +5329,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5111,12 +5337,14 @@ paths:
           in: path
           description: 'key: id of itemPublication'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: itemPublication
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5129,13 +5357,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get skills from users
+      summary: List skills
+      description: Retrieve a list of skillProficiency objects in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
       operationId: users.profile_ListSkills
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5235,13 +5468,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to skills for users
+      summary: Create skillProficiency
+      description: Use this API to create a new skillProficiency object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
       operationId: users.profile_CreateSkills
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5267,12 +5505,14 @@ paths:
       tags:
         - users.profile
       summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_GetSkills
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5280,6 +5520,7 @@ paths:
           in: path
           description: 'key: id of skillProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: skillProficiency
@@ -5341,6 +5582,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5348,6 +5590,7 @@ paths:
           in: path
           description: 'key: id of skillProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: skillProficiency
@@ -5374,6 +5617,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5381,12 +5625,14 @@ paths:
           in: path
           description: 'key: id of skillProficiency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: skillProficiency
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5399,13 +5645,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get webAccounts from users
+      summary: List webAccounts
+      description: Retrieve a list of webAccounts objects from the user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-1.0
       operationId: users.profile_ListWebAccounts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5505,13 +5756,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to webAccounts for users
+      summary: Create webAccount
+      description: Create a new webAccount object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-webaccounts?view=graph-rest-1.0
       operationId: users.profile_CreateWebAccounts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5537,12 +5793,14 @@ paths:
       tags:
         - users.profile
       summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_GetWebAccounts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5550,6 +5808,7 @@ paths:
           in: path
           description: 'key: id of webAccount'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: webAccount
@@ -5611,6 +5870,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5618,6 +5878,7 @@ paths:
           in: path
           description: 'key: id of webAccount'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: webAccount
@@ -5644,6 +5905,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5651,12 +5913,14 @@ paths:
           in: path
           description: 'key: id of webAccount'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: webAccount
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5669,13 +5933,18 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get websites from users
+      summary: List websites
+      description: Retrieve a list of personWebsite objects from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-1.0
       operationId: users.profile_ListWebsites
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5772,13 +6041,18 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create new navigation property to websites for users
+      summary: Create personWebsite
+      description: Create a new personWebsite object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profile-post-websites?view=graph-rest-1.0
       operationId: users.profile_CreateWebsites
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5804,12 +6078,14 @@ paths:
       tags:
         - users.profile
       summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_GetWebsites
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5817,6 +6093,7 @@ paths:
           in: path
           description: 'key: id of personWebsite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personWebsite
@@ -5877,6 +6154,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5884,6 +6162,7 @@ paths:
           in: path
           description: 'key: id of personWebsite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personWebsite
@@ -5910,6 +6189,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5917,12 +6197,14 @@ paths:
           in: path
           description: 'key: id of personWebsite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: personWebsite
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5946,6 +6228,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
               description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activityStatistics:
@@ -6080,96 +6363,115 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
+              x-ms-navigationProperty: true
             addresses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
               description: Represents details of addresses associated with the user.
+              x-ms-navigationProperty: true
             anniversaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
               description: Represents the details of meaningful dates associated with a person.
+              x-ms-navigationProperty: true
             awards:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
               description: Represents the details of awards or honors associated with a person.
+              x-ms-navigationProperty: true
             certifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
               description: Represents the details of certifications associated with a person.
+              x-ms-navigationProperty: true
             educationalActivities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
               description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
+              x-ms-navigationProperty: true
             emails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
               description: Represents detailed information about email addresses associated with the user.
+              x-ms-navigationProperty: true
             interests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
               description: Provides detailed information about interests the user has associated with themselves in various services.
+              x-ms-navigationProperty: true
             languages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
               description: Represents detailed information about languages that a user has added to their profile.
+              x-ms-navigationProperty: true
             names:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personName'
               description: Represents the names a user has added to their profile.
+              x-ms-navigationProperty: true
             notes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
               description: Represents notes that a user has added to their profile.
+              x-ms-navigationProperty: true
             patents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
               description: Represents patents that a user has added to their profile.
+              x-ms-navigationProperty: true
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
               description: Represents detailed information about phone numbers associated with a user in various services.
+              x-ms-navigationProperty: true
             positions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
               description: Represents detailed information about work positions associated with a user's profile.
+              x-ms-navigationProperty: true
             projects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
               description: Represents detailed information about projects associated with a user.
+              x-ms-navigationProperty: true
             publications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
               description: Represents details of any publications a user has added to their profile.
+              x-ms-navigationProperty: true
             skills:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
               description: Represents detailed information about skills associated with a user in various services.
+              x-ms-navigationProperty: true
             webAccounts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
               description: Represents web accounts the user has indicated they use or has added to their user profile.
+              x-ms-navigationProperty: true
             websites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
               description: Represents detailed information about websites associated with a user in various services.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userAccountInformation:
@@ -6181,6 +6483,7 @@ components:
             ageGroup:
               type: string
               description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and cannot be changed.'
+              nullable: true
             countryCode:
               type: string
               description: Contains the two-character country code associated with the users account.
@@ -6732,6 +7035,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.settings:
@@ -7201,6 +7505,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.activityStatistics'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.personCollectionResponse:
@@ -7213,6 +7518,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.person'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userAccountInformationCollectionResponse:
@@ -7225,6 +7531,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.itemAddressCollectionResponse:
@@ -7237,6 +7544,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.itemAddress'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.personAnnualEventCollectionResponse:
@@ -7249,6 +7557,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.personAwardCollectionResponse:
@@ -7261,6 +7570,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.personAward'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.personCertificationCollectionResponse:
@@ -7273,6 +7583,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.personCertification'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.educationalActivityCollectionResponse:
@@ -7285,6 +7596,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.educationalActivity'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.itemEmailCollectionResponse:
@@ -7297,6 +7609,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.itemEmail'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.personInterestCollectionResponse:
@@ -7309,6 +7622,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.personInterest'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.languageProficiencyCollectionResponse:
@@ -7321,6 +7635,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.languageProficiency'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.personNameCollectionResponse:
@@ -7333,6 +7648,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.personName'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.personAnnotationCollectionResponse:
@@ -7345,6 +7661,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.personAnnotation'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.itemPatentCollectionResponse:
@@ -7357,6 +7674,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.itemPatent'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.itemPhoneCollectionResponse:
@@ -7369,6 +7687,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.itemPhone'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.workPositionCollectionResponse:
@@ -7381,6 +7700,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.workPosition'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.projectParticipationCollectionResponse:
@@ -7393,6 +7713,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.projectParticipation'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.itemPublicationCollectionResponse:
@@ -7405,6 +7726,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.itemPublication'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.skillProficiencyCollectionResponse:
@@ -7417,6 +7739,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.skillProficiency'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.webAccountCollectionResponse:
@@ -7429,6 +7752,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.webAccount'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.personWebsiteCollectionResponse:
@@ -7441,8 +7765,14 @@ components:
             $ref: '#/components/schemas/microsoft.graph.personWebsite'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
@@ -7617,11 +7947,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -7783,6 +8113,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -7791,6 +8123,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -7798,18 +8132,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

@@ -62,7 +62,7 @@ paths:
             presences:
               operationId: communications.ListPresences
             getPresencesByUserId:
-              operationId: communications.getPresencesGraphBPreUserId
+              operationId: communications.getPresencesByUserId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -204,6 +204,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -267,6 +268,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -293,12 +295,14 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -311,13 +315,18 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get sessions from communications
+      summary: List callRecord sessions
+      description: Retrieve the list of sessions associated with a callRecord object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/callrecords-session-list?view=graph-rest-1.0
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -402,6 +411,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -427,12 +437,14 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_GetSessions
       parameters:
         - name: callRecord-id
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -440,6 +452,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -501,6 +514,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -508,6 +522,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -534,6 +549,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -541,12 +557,14 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -560,12 +578,14 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_ListSegments
       parameters:
         - name: callRecord-id
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -573,6 +593,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -655,6 +676,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -662,6 +684,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -687,12 +710,14 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_GetSegments
       parameters:
         - name: callRecord-id
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -700,6 +725,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -707,6 +733,7 @@ paths:
           in: path
           description: 'key: id of segment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: segment
@@ -760,6 +787,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -767,6 +795,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -774,6 +803,7 @@ paths:
           in: path
           description: 'key: id of segment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: segment
@@ -800,6 +830,7 @@ paths:
           in: path
           description: 'key: id of callRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: callRecord
@@ -807,6 +838,7 @@ paths:
           in: path
           description: 'key: id of session'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: session
@@ -814,12 +846,14 @@ paths:
           in: path
           description: 'key: id of segment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: segment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -925,6 +959,7 @@ paths:
                 - toneInfo
                 - transcription
                 - audioRoutingGroups
+                - contentSharingSessions
                 - operations
                 - participants
               type: string
@@ -940,6 +975,7 @@ paths:
               enum:
                 - '*'
                 - audioRoutingGroups
+                - contentSharingSessions
                 - operations
                 - participants
               type: string
@@ -955,7 +991,11 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create new navigation property to calls for communications
+      summary: Create call
+      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
       operationId: communications_CreateCalls
       requestBody:
         description: New navigation property
@@ -985,6 +1025,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1020,6 +1061,7 @@ paths:
                 - toneInfo
                 - transcription
                 - audioRoutingGroups
+                - contentSharingSessions
                 - operations
                 - participants
               type: string
@@ -1035,6 +1077,7 @@ paths:
               enum:
                 - '*'
                 - audioRoutingGroups
+                - contentSharingSessions
                 - operations
                 - participants
               type: string
@@ -1050,6 +1093,10 @@ paths:
               operationId: communications.Calls.ListAudioRoutingGroups
               parameters:
                 call-id: $request.path.call-id
+            contentSharingSessions:
+              operationId: communications.Calls.ListContentSharingSessions
+              parameters:
+                call-id: $request.path.call-id
             operations:
               operationId: communications.Calls.ListOperations
               parameters:
@@ -1058,6 +1105,8 @@ paths:
               operationId: communications.Calls.ListParticipants
               parameters:
                 call-id: $request.path.call-id
+            addLargeGalleryView:
+              operationId: communications.calls.call.addLargeGalleryView
             answer:
               operationId: communications.calls.call.answer
             cancelMediaProcessing:
@@ -1097,6 +1146,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1123,12 +1173,14 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1148,6 +1200,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1221,6 +1274,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1252,6 +1306,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1259,6 +1314,7 @@ paths:
           in: path
           description: 'key: id of audioRoutingGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: audioRoutingGroup
@@ -1309,6 +1365,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1316,6 +1373,7 @@ paths:
           in: path
           description: 'key: id of audioRoutingGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: audioRoutingGroup
@@ -1342,6 +1400,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1349,12 +1408,14 @@ paths:
           in: path
           description: 'key: id of audioRoutingGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: audioRoutingGroup
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1363,17 +1424,291 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/contentSharingSessions':
+    get:
+      tags:
+        - communications.call
+      summary: List contentSharingSessions
+      description: Retrieve a list of contentSharingSession objects in a call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
+      operationId: communications.calls_ListContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.contentSharingSessionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.call
+      summary: Create new navigation property to contentSharingSessions for communications
+      operationId: communications.calls_CreateContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/contentSharingSessions/{contentSharingSession-id}':
+    get:
+      tags:
+        - communications.call
+      summary: Get contentSharingSessions from communications
+      operationId: communications.calls_GetContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: contentSharingSession-id
+          in: path
+          description: 'key: id of contentSharingSession'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentSharingSession
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.call
+      summary: Update the navigation property contentSharingSessions in communications
+      operationId: communications.calls_UpdateContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: contentSharingSession-id
+          in: path
+          description: 'key: id of contentSharingSession'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentSharingSession
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.call
+      summary: Delete navigation property contentSharingSessions for communications
+      operationId: communications.calls_DeleteContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: contentSharingSession-id
+          in: path
+          description: 'key: id of contentSharingSession'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentSharingSession
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/microsoft.graph.addLargeGalleryView':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action addLargeGalleryView
+      description: Add the large gallery view to a call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
+      operationId: communications.calls_addLargeGalleryView
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.addLargeGalleryViewOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/communications/calls/{call-id}/microsoft.graph.answer':
     post:
       tags:
         - communications.Actions
       summary: Invoke action answer
+      description: 'Enable a bot to answer an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer, reject, or redirect the call before the call times out. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-answer?view=graph-rest-1.0
       operationId: communications.calls_answer
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1414,12 +1749,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action cancelMediaProcessing
+      description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The **cancelMediaProcessing** method cancels any operation that is in-process as well as operations that are queued. For example, this method can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a **subscribeToTone** operation because it operates independent of any operation queue.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0
       operationId: communications.calls_cancelMediaProcessing
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1451,12 +1791,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action changeScreenSharingRole
+      description: Allow applications to share screen content with the participants of a group call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0
       operationId: communications.calls_changeScreenSharingRole
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1483,12 +1828,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action keepAlive
+      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that does not receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a `404 Not-Found` error. The resources related to the call should be cleaned up on the application side.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-keepalive?view=graph-rest-1.0
       operationId: communications.calls_keepAlive
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1503,12 +1853,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
+      description: 'Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-mute?view=graph-rest-1.0
       operationId: communications.calls_mute
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1540,12 +1895,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action playPrompt
+      description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
       operationId: communications.calls_playPrompt
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1581,12 +1941,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action recordResponse
+      description: "Records a short audio response from the caller.\nA bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-record?view=graph-rest-1.0
       operationId: communications.calls_recordResponse
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1653,12 +2018,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action redirect
+      description: Redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
       operationId: communications.calls_redirect
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1696,12 +2066,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action reject
+      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the **chatInfo** and **meetingInfo** parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
       operationId: communications.calls_reject
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1731,12 +2106,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action subscribeToTone
+      description: Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a 'dialpad'.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
       operationId: communications.calls_subscribeToTone
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1768,12 +2148,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action transfer
+      description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
       operationId: communications.calls_transfer
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1802,12 +2187,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action unmute
+      description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-unmute?view=graph-rest-1.0
       operationId: communications.calls_unmute
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1839,12 +2229,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action updateRecordingStatus
+      description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0
       operationId: communications.calls_updateRecordingStatus
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1884,6 +2279,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1957,6 +2353,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1988,6 +2385,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -1995,6 +2393,7 @@ paths:
           in: path
           description: 'key: id of commsOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: commsOperation
@@ -2045,6 +2444,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2052,6 +2452,7 @@ paths:
           in: path
           description: 'key: id of commsOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: commsOperation
@@ -2078,6 +2479,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2085,12 +2487,14 @@ paths:
           in: path
           description: 'key: id of commsOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: commsOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2103,13 +2507,18 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get participants from communications
+      summary: List participants
+      description: Retrieve a list of participant objects in the call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
       operationId: communications.calls_ListParticipants
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2192,6 +2601,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2223,6 +2633,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2230,6 +2641,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2290,6 +2702,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2297,6 +2710,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2323,6 +2737,7 @@ paths:
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2330,12 +2745,14 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2349,12 +2766,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
+      description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
       operationId: communications.calls.participants_mute
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2362,6 +2784,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2393,12 +2816,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action startHoldMusic
+      description: Put a participant on hold and play music in the background.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0
       operationId: communications.calls.participants_startHoldMusic
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2406,6 +2834,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2439,12 +2868,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action stopHoldMusic
+      description: Reincorporate a participant previously put on hold to the call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
       operationId: communications.calls.participants_stopHoldMusic
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2452,6 +2886,7 @@ paths:
           in: path
           description: 'key: id of participant'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: participant
@@ -2483,12 +2918,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
           in: path
           description: 'key: id of call'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: call
@@ -2524,6 +2964,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action logTeleconferenceDeviceQuality
+      description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-1.0
       operationId: communications.calls_logTeleconferenceDeviceQuality
       requestBody:
         description: Action parameters
@@ -2548,7 +2992,11 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action getPresencesByUserId
-      operationId: communications_getPresencesGraphBPreUserId
+      description: Get the presence information for multiple users.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
+      operationId: communications_getPresencesByUserId
       requestBody:
         description: Action parameters
         content:
@@ -2569,7 +3017,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of cloudCommunications
+                title: Collection of presence
                 type: object
                 properties:
                   value:
@@ -2581,11 +3029,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /communications/onlineMeetings:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get onlineMeetings from communications
+      summary: Get onlineMeeting
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communications_ListOnlineMeetings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2740,6 +3195,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2816,6 +3272,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2842,12 +3299,14 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2860,13 +3319,18 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get attendanceReports from communications
+      summary: List meetingAttendanceReports
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: communications.onlineMeetings_ListAttendanceReports
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2942,6 +3406,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2967,12 +3432,14 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
+      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_GetAttendanceReports
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -2980,6 +3447,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3038,6 +3506,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3045,6 +3514,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3071,6 +3541,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3078,12 +3549,14 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3096,13 +3569,18 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get attendanceRecords from communications
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3110,6 +3588,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3189,6 +3668,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3196,6 +3676,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3221,12 +3702,14 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3234,6 +3717,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3241,6 +3725,7 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
@@ -3293,6 +3778,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3300,6 +3786,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3307,6 +3794,7 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
@@ -3333,6 +3821,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3340,6 +3829,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -3347,12 +3837,14 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3366,12 +3858,17 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communications_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3390,12 +3887,14 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3418,6 +3917,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action createOrGet
+      description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
       operationId: communications.onlineMeetings_createOrGet
       requestBody:
         description: Action parameters
@@ -3555,6 +4058,7 @@ paths:
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
@@ -3594,8 +4098,12 @@ paths:
           links:
             clearPresence:
               operationId: communications.presences.presence.clearPresence
+            clearUserPreferredPresence:
+              operationId: communications.presences.presence.clearUserPreferredPresence
             setPresence:
               operationId: communications.presences.presence.setPresence
+            setUserPreferredPresence:
+              operationId: communications.presences.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3609,6 +4117,7 @@ paths:
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
@@ -3635,12 +4144,14 @@ paths:
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3654,12 +4165,17 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearPresence
+      description: 'Clear the application''s presence session for a user. If it is the user''s only presence session, the user''s presence will change to `Offline/Offline`. For details about presences sessions, see presence: setPresence.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
       operationId: communications.presences_clearPresence
       parameters:
         - name: presence-id
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
@@ -3682,17 +4198,47 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.clearUserPreferredPresence':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action clearUserPreferredPresence
+      description: Clear the preferred availability and activity status for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
+      operationId: communications.presences_clearUserPreferredPresence
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/communications/presences/{presence-id}/microsoft.graph.setPresence':
     post:
       tags:
         - communications.Actions
       summary: Invoke action setPresence
+      description: Set the state of a user's presence session as an application.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
       operationId: communications.presences_setPresence
       parameters:
         - name: presence-id
           in: path
           description: 'key: id of presence'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: presence
@@ -3724,17 +4270,66 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.setUserPreferredPresence':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action setUserPreferredPresence
+      description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user''s presence shows as `Offline`. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
+      operationId: communications.presences_setUserPreferredPresence
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                availability:
+                  type: string
+                activity:
+                  type: string
+                expirationDuration:
+                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                  type: string
+                  format: duration
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onlineMeetings':
     get:
       tags:
         - users.onlineMeeting
-      summary: Get onlineMeetings from users
+      summary: Get onlineMeeting
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_ListOnlineMeetings
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3860,13 +4455,18 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create new navigation property to onlineMeetings for users
+      summary: Create onlineMeeting
+      description: Create an online meeting on behalf of a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0
       operationId: users_CreateOnlineMeetings
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3898,6 +4498,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3905,6 +4506,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -3982,6 +4584,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3989,6 +4592,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4015,6 +4619,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4022,12 +4627,14 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4040,13 +4647,18 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get attendanceReports from users
+      summary: List meetingAttendanceReports
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: users.onlineMeetings_ListAttendanceReports
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4054,6 +4666,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4129,6 +4742,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4136,6 +4750,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4161,12 +4776,14 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
+      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_GetAttendanceReports
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4174,6 +4791,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4181,6 +4799,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4240,6 +4859,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4247,6 +4867,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4254,6 +4875,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4280,6 +4902,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4287,6 +4910,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4294,12 +4918,14 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4312,13 +4938,18 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get attendanceRecords from users
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4326,6 +4957,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4333,6 +4965,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4412,6 +5045,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4419,6 +5053,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4426,6 +5061,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4451,12 +5087,14 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4464,6 +5102,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4471,6 +5110,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4478,6 +5118,7 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
@@ -4530,6 +5171,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4537,6 +5179,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4544,6 +5187,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4551,6 +5195,7 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
@@ -4577,6 +5222,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4584,6 +5230,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4591,6 +5238,7 @@ paths:
           in: path
           description: 'key: id of meetingAttendanceReport'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: meetingAttendanceReport
@@ -4598,12 +5246,14 @@ paths:
           in: path
           description: 'key: id of attendanceRecord'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attendanceRecord
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4617,12 +5267,17 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4630,6 +5285,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4648,12 +5304,14 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in users
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4661,6 +5319,7 @@ paths:
           in: path
           description: 'key: id of onlineMeeting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
@@ -4682,13 +5341,18 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence from users
+      summary: Get presence
+      description: Get a user's presence information.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: users_GetPresence
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4728,8 +5392,12 @@ paths:
           links:
             clearPresence:
               operationId: users.user.presence.clearPresence
+            clearUserPreferredPresence:
+              operationId: users.user.presence.clearUserPreferredPresence
             setPresence:
               operationId: users.user.presence.setPresence
+            setUserPreferredPresence:
+              operationId: users.user.presence.setUserPreferredPresence
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4743,6 +5411,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4769,12 +5438,14 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4795,18 +5466,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.call'
+              x-ms-navigationProperty: true
             callRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+              x-ms-navigationProperty: true
             onlineMeetings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+              x-ms-navigationProperty: true
             presences:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.presence'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callRecords.callRecord:
@@ -4844,19 +5519,20 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             type:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callType'
             version:
               type: integer
-              description: Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+              description: Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
               format: int64
             sessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.session'
               description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callRecords.session:
@@ -4884,13 +5560,14 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             segments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
               description: The list of segments involved in the session. Read-only. Nullable.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callRecords.segment:
@@ -4961,6 +5638,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.modality'
+              description: 'The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.'
             resultInfo:
               $ref: '#/components/schemas/microsoft.graph.resultInfo'
             source:
@@ -4969,11 +5647,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.callState'
             subject:
               type: string
+              description: The subject of the conversation.
               nullable: true
             targets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.invitationParticipantInfo'
+              description: The targets of the call. Required information for creating peer to peer call.
             tenantId:
               type: string
               nullable: true
@@ -4985,14 +5665,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+              x-ms-navigationProperty: true
+            contentSharingSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+              x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.commsOperation'
+              x-ms-navigationProperty: true
             participants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.participant'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.audioRoutingGroup:
@@ -5006,7 +5694,6 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of receiving participant ids.
             routingMode:
               $ref: '#/components/schemas/microsoft.graph.routingMode'
             sources:
@@ -5014,7 +5701,20 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of source participant ids.
+          additionalProperties:
+            type: object
+    microsoft.graph.contentSharingSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentSharingSession
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.addLargeGalleryViewOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: addLargeGalleryViewOperation
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.mediaConfig:
@@ -5145,7 +5845,7 @@ components:
           nullable: true
         region:
           type: string
-          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location, unlike countryCode. Read-only.'
+          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location. Read-only.'
           nullable: true
       additionalProperties:
         type: object
@@ -5298,7 +5998,7 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
@@ -5326,11 +6026,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowTeamworkReactions:
               type: boolean
-              description: Indicates if Teams reactions are enabled for the meeting.
+              description: Indicates whether Teams reactions are enabled for the meeting.
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a Teams live event. Read-only.
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -5353,11 +6053,10 @@ components:
               nullable: true
             externalId:
               type: string
-              description: The external ID. A custom ID. Optional.
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates whether this is a Teams live event.
+              description: Indicates if this is a Teams live event.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -5396,6 +6095,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
               description: The attendance reports of an online meeting. Read-only.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.meetingAttendanceReport:
@@ -5428,6 +6128,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
               description: List of attendance records of an attendance report. Read-only.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.attendanceRecord:
@@ -5466,7 +6167,7 @@ components:
       properties:
         messageId:
           type: string
-          description: The unique identifier for a message in a Microsoft Teams channel.
+          description: The unique identifier of a message in a Microsoft Teams channel.
           nullable: true
         replyChainMessageId:
           type: string
@@ -5486,7 +6187,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: Information of the meeting attendees.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
@@ -5497,6 +6197,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.callRecords.modality:
@@ -5578,6 +6279,11 @@ components:
       properties:
         hideBotAfterEscalation:
           type: boolean
+          description: Indicates whether to hide the app after the call is escalated.
+          nullable: true
+        isContentSharingNotificationEnabled:
+          type: boolean
+          description: Indicates whether content sharing notifications should be enabled for the call.
           nullable: true
       additionalProperties:
         type: object
@@ -5605,13 +6311,13 @@ components:
       properties:
         observedParticipantId:
           type: string
-          description: The id of the participant that is under observation. Read-only.
+          description: The ID of the participant that is under observation. Read-only.
           nullable: true
         onBehalfOf:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         sourceParticipantId:
           type: string
-          description: The id of the participant that triggered the incoming call. Read-only.
+          description: The ID of the participant that triggered the incoming call. Read-only.
           nullable: true
         transferor:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -5730,7 +6436,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.modality'
         serverMuted:
           type: boolean
-          description: Indicates whether the media is muted by the server.
+          description: If the media is muted by the server.
         sourceId:
           type: string
           description: The source ID.
@@ -5924,6 +6630,8 @@ components:
       properties:
         allowedAudience:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        captions:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingCaptionSettings'
         isAttendeeReportEnabled:
           type: boolean
           description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -6038,6 +6746,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callRecords.sessionCollectionResponse:
@@ -6050,6 +6759,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.callRecords.session'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callRecords.segmentCollectionResponse:
@@ -6062,6 +6772,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callCollectionResponse:
@@ -6074,6 +6785,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.call'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.audioRoutingGroupCollectionResponse:
@@ -6086,6 +6798,20 @@ components:
             $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
         '@odata.nextLink':
           type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.contentSharingSessionCollectionResponse:
+      title: Collection of contentSharingSession
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.commsOperationCollectionResponse:
@@ -6098,6 +6824,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.commsOperation'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.participantCollectionResponse:
@@ -6110,6 +6837,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.participant'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.onlineMeetingCollectionResponse:
@@ -6122,6 +6850,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReportCollectionResponse:
@@ -6134,6 +6863,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.attendanceRecordCollectionResponse:
@@ -6146,6 +6876,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.presenceCollectionResponse:
@@ -6158,6 +6889,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.presence'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callRecords.userAgent:
@@ -6612,6 +7344,11 @@ components:
         - receiveOnly
         - sendReceive
       type: string
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.broadcastMeetingAudience:
       title: broadcastMeetingAudience
       enum:
@@ -6620,6 +7357,26 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+    microsoft.graph.broadcastMeetingCaptionSettings:
+      title: broadcastMeetingCaptionSettings
+      type: object
+      properties:
+        isCaptionEnabled:
+          type: boolean
+          description: Indicates whether captions are enabled for this Teams live event.
+          nullable: true
+        spokenLanguage:
+          type: string
+          description: The spoken language.
+          nullable: true
+        translationLanguages:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The translation languages (choose up to 6).
+      additionalProperties:
+        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -6692,7 +7449,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The network path count of this hop that was used to compute the round-trip time.
+          description: The network path count of this hop that was used to compute the RTT.
           format: int32
           nullable: true
         ipAddress:
@@ -6834,6 +7591,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.audioRoutingGroupCollectionResponse'
+    microsoft.graph.contentSharingSessionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.contentSharingSessionCollectionResponse'
     microsoft.graph.commsOperationCollectionResponse:
       description: Retrieved collection
       content:
@@ -6875,6 +7638,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -6883,6 +7648,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -6890,18 +7657,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:
