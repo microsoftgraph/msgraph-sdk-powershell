@@ -203,6 +203,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
+      description: The list of detected apps associated with a device.
       operationId: deviceManagement_ListDetectedApps
       parameters:
         - $ref: '#/components/parameters/top'
@@ -226,6 +227,10 @@ paths:
                 - deviceCount desc
                 - displayName
                 - displayName desc
+                - platform
+                - platform desc
+                - publisher
+                - publisher desc
                 - sizeInByte
                 - sizeInByte desc
                 - version
@@ -244,6 +249,8 @@ paths:
                 - id
                 - deviceCount
                 - displayName
+                - platform
+                - publisher
                 - sizeInByte
                 - version
                 - managedDevices
@@ -297,12 +304,14 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
+      description: The list of detected apps associated with a device.
       operationId: deviceManagement_GetDetectedApps
       parameters:
         - name: detectedApp-id
           in: path
           description: 'key: id of detectedApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: detectedApp
@@ -319,6 +328,8 @@ paths:
                 - id
                 - deviceCount
                 - displayName
+                - platform
+                - publisher
                 - sizeInByte
                 - version
                 - managedDevices
@@ -361,6 +372,7 @@ paths:
           in: path
           description: 'key: id of detectedApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: detectedApp
@@ -387,12 +399,14 @@ paths:
           in: path
           description: 'key: id of detectedApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: detectedApp
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -406,12 +420,14 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get managedDevices from deviceManagement
+      description: The devices that have the discovered application installed
       operationId: deviceManagement.detectedApps_ListManagedDevices
       parameters:
         - name: detectedApp-id
           in: path
           description: 'key: id of detectedApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: detectedApp
@@ -630,12 +646,14 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get managedDevices from deviceManagement
+      description: The devices that have the discovered application installed
       operationId: deviceManagement.detectedApps_GetManagedDevices
       parameters:
         - name: detectedApp-id
           in: path
           description: 'key: id of detectedApp'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: detectedApp
@@ -643,6 +661,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -758,6 +777,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
+      description: The list of device categories with the tenant.
       operationId: deviceManagement_ListDeviceCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -844,12 +864,14 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
+      description: The list of device categories with the tenant.
       operationId: deviceManagement_GetDeviceCategories
       parameters:
         - name: deviceCategory-id
           in: path
           description: 'key: id of deviceCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCategory
@@ -899,6 +921,7 @@ paths:
           in: path
           description: 'key: id of deviceCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCategory
@@ -925,12 +948,14 @@ paths:
           in: path
           description: 'key: id of deviceCategory'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCategory
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -944,6 +969,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
+      description: The device compliance policies.
       operationId: deviceManagement_ListDeviceCompliancePolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1053,12 +1079,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
+      description: The device compliance policies.
       operationId: deviceManagement_GetDeviceCompliancePolicies
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1130,7 +1158,7 @@ paths:
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
             scheduledActionsForRule:
-              operationId: deviceManagement.DeviceCompliancePolicies.ListScheduledActionsGraphFPreRule
+              operationId: deviceManagement.DeviceCompliancePolicies.ListScheduledActionsForRule
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
             userStatuses:
@@ -1144,7 +1172,7 @@ paths:
             assign:
               operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.assign
             scheduleActionsForRules:
-              operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.scheduleActionsGraphFPreRules
+              operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.scheduleActionsForRules
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1158,6 +1186,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1184,12 +1213,14 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1203,12 +1234,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
+      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_ListAssignments
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1276,6 +1309,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1301,12 +1335,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
+      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_GetAssignments
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1314,6 +1350,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicyAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicyAssignment
@@ -1362,6 +1399,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1369,6 +1407,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicyAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicyAssignment
@@ -1395,6 +1434,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1402,12 +1442,14 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicyAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicyAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1421,12 +1463,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
+      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_ListDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1518,6 +1562,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1543,12 +1588,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
+      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1556,6 +1603,7 @@ paths:
           in: path
           description: 'key: id of settingStateDeviceSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: settingStateDeviceSummary
@@ -1612,6 +1660,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1619,6 +1668,7 @@ paths:
           in: path
           description: 'key: id of settingStateDeviceSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: settingStateDeviceSummary
@@ -1645,6 +1695,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1652,12 +1703,14 @@ paths:
           in: path
           description: 'key: id of settingStateDeviceSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: settingStateDeviceSummary
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1671,12 +1724,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
+      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_ListDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1762,6 +1817,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1787,12 +1843,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
+      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1800,6 +1858,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceDeviceStatus
@@ -1854,6 +1913,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1861,6 +1921,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceDeviceStatus
@@ -1887,6 +1948,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1894,12 +1956,14 @@ paths:
           in: path
           description: 'key: id of deviceComplianceDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceDeviceStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1913,12 +1977,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatusOverview from deviceManagement
+      description: Device compliance devices status overview
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1973,6 +2039,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -1999,12 +2066,14 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2018,12 +2087,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsGraphFPreRule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+      operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2087,12 +2158,13 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionsForRule for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsGraphFPreRule
+      operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2118,12 +2190,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsGraphFPreRule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+      operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2131,6 +2205,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceScheduledActionForRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
@@ -2170,7 +2245,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
           links:
             scheduledActionConfigurations:
-              operationId: deviceManagement.deviceCompliancePolicies.ScheduledActionsGraphFPreRule.ListScheduledActionConfigurations
+              operationId: deviceManagement.deviceCompliancePolicies.ScheduledActionsForRule.ListScheduledActionConfigurations
               parameters:
                 deviceCompliancePolicy-id: $request.path.deviceCompliancePolicy-id
                 deviceComplianceScheduledActionForRule-id: $request.path.deviceComplianceScheduledActionForRule-id
@@ -2181,12 +2256,13 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionsForRule in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsGraphFPreRule
+      operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2194,6 +2270,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceScheduledActionForRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
@@ -2214,12 +2291,13 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionsForRule for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsGraphFPreRule
+      operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2227,12 +2305,14 @@ paths:
           in: path
           description: 'key: id of deviceComplianceScheduledActionForRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2246,12 +2326,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_ListScheduledActionConfigurations
+      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_ListScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2259,6 +2341,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceScheduledActionForRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
@@ -2329,12 +2412,13 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionConfigurations for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_CreateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_CreateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2342,6 +2426,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceScheduledActionForRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
@@ -2367,12 +2452,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_GetScheduledActionConfigurations
+      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_GetScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2380,6 +2467,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceScheduledActionForRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
@@ -2387,6 +2475,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceActionItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceActionItem
@@ -2432,12 +2521,13 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionConfigurations in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_UpdateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_UpdateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2445,6 +2535,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceScheduledActionForRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
@@ -2452,6 +2543,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceActionItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceActionItem
@@ -2472,12 +2564,13 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionConfigurations for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsGraphFPreRule_DeleteScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_DeleteScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2485,6 +2578,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceScheduledActionForRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScheduledActionForRule
@@ -2492,12 +2586,14 @@ paths:
           in: path
           description: 'key: id of deviceComplianceActionItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceActionItem
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2511,12 +2607,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
+      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_ListUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2596,6 +2694,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2621,12 +2720,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
+      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_GetUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2634,6 +2735,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceUserStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceUserStatus
@@ -2686,6 +2788,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2693,6 +2796,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceUserStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceUserStatus
@@ -2719,6 +2823,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2726,12 +2831,14 @@ paths:
           in: path
           description: 'key: id of deviceComplianceUserStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceUserStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2745,12 +2852,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatusOverview from deviceManagement
+      description: Device compliance users status overview
       operationId: deviceManagement.deviceCompliancePolicies_GetUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2805,6 +2914,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2831,12 +2941,14 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2850,6 +2962,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
+      description: The device compliance state summary for this account.
       operationId: deviceManagement_GetDeviceCompliancePolicyDeviceStateSummary
       parameters:
         - name: $select
@@ -2922,6 +3035,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2935,6 +3049,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
+      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_ListDeviceCompliancePolicySettingStateSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3047,12 +3162,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
+      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_GetDeviceCompliancePolicySettingStateSummaries
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
           description: 'key: id of deviceCompliancePolicySettingStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
@@ -3117,6 +3234,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicySettingStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
@@ -3143,12 +3261,14 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicySettingStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3162,12 +3282,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
+      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_ListDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
           description: 'key: id of deviceCompliancePolicySettingStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
@@ -3265,6 +3387,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicySettingStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
@@ -3290,12 +3413,14 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
+      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_GetDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
           in: path
           description: 'key: id of deviceCompliancePolicySettingStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
@@ -3303,6 +3428,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceSettingState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceSettingState
@@ -3361,6 +3487,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicySettingStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
@@ -3368,6 +3495,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceSettingState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceSettingState
@@ -3394,6 +3522,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicySettingStateSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicySettingStateSummary
@@ -3401,12 +3530,14 @@ paths:
           in: path
           description: 'key: id of deviceComplianceSettingState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceSettingState
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3420,6 +3551,7 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Get deviceConfigurationDeviceStateSummaries from deviceManagement
+      description: The device configuration device state summary for this account.
       operationId: deviceManagement_GetDeviceConfigurationDeviceStateSummaries
       parameters:
         - name: $select
@@ -3490,6 +3622,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3503,6 +3636,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
+      description: The device configurations.
       operationId: deviceManagement_ListDeviceConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3610,12 +3744,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
+      description: The device configurations.
       operationId: deviceManagement_GetDeviceConfigurations
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -3709,6 +3845,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -3735,12 +3872,14 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3754,12 +3893,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_ListAssignments
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -3827,6 +3968,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -3852,12 +3994,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_GetAssignments
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -3865,6 +4009,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationAssignment
@@ -3913,6 +4058,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -3920,6 +4066,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationAssignment
@@ -3946,6 +4093,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -3953,12 +4101,14 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3972,12 +4122,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
+      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_ListDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4069,6 +4221,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4094,12 +4247,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
+      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_GetDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4107,6 +4262,7 @@ paths:
           in: path
           description: 'key: id of settingStateDeviceSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: settingStateDeviceSummary
@@ -4163,6 +4319,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4170,6 +4327,7 @@ paths:
           in: path
           description: 'key: id of settingStateDeviceSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: settingStateDeviceSummary
@@ -4196,6 +4354,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4203,12 +4362,14 @@ paths:
           in: path
           description: 'key: id of settingStateDeviceSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: settingStateDeviceSummary
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4222,12 +4383,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
+      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_ListDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4313,6 +4476,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4338,12 +4502,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
+      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_GetDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4351,6 +4517,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationDeviceStatus
@@ -4405,6 +4572,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4412,6 +4580,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationDeviceStatus
@@ -4438,6 +4607,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4445,12 +4615,14 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationDeviceStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4464,12 +4636,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatusOverview from deviceManagement
+      description: Device Configuration devices status overview
       operationId: deviceManagement.deviceConfigurations_GetDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4524,6 +4698,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4550,12 +4725,14 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4569,12 +4746,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
+      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_ListUserStatuses
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4654,6 +4833,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4679,12 +4859,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
+      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_GetUserStatuses
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4692,6 +4874,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationUserStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationUserStatus
@@ -4744,6 +4927,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4751,6 +4935,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationUserStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationUserStatus
@@ -4777,6 +4962,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4784,12 +4970,14 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationUserStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationUserStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4803,12 +4991,14 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatusOverview from deviceManagement
+      description: Device Configuration users status overview
       operationId: deviceManagement.deviceConfigurations_GetUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4863,6 +5053,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -4889,12 +5080,14 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4908,6 +5101,7 @@ paths:
       tags:
         - deviceManagement.managedDeviceOverview
       summary: Get managedDeviceOverview from deviceManagement
+      description: Device overview
       operationId: deviceManagement_GetManagedDeviceOverview
       parameters:
         - name: $select
@@ -4954,6 +5148,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
+      description: The list of managed devices.
       operationId: deviceManagement_ListManagedDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5193,12 +5388,14 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
+      description: The list of managed devices.
       operationId: deviceManagement_GetManagedDevices
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5352,6 +5549,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5378,12 +5576,14 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5397,12 +5597,14 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCategory from deviceManagement
+      description: Device category
       operationId: deviceManagement.managedDevices_GetDeviceCategory
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5452,6 +5654,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5478,12 +5681,14 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5497,12 +5702,14 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
+      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_ListDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5585,6 +5792,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5610,12 +5818,14 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
+      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_GetDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5623,6 +5833,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicyState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicyState
@@ -5676,6 +5887,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5683,6 +5895,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicyState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicyState
@@ -5709,6 +5922,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5716,12 +5930,14 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicyState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicyState
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5735,12 +5951,14 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
+      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_ListDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5823,6 +6041,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5848,12 +6067,14 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
+      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_GetDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5861,6 +6082,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationState
@@ -5914,6 +6136,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5921,6 +6144,7 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationState
@@ -5947,6 +6171,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -5954,12 +6179,14 @@ paths:
           in: path
           description: 'key: id of deviceConfigurationState'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfigurationState
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5973,6 +6200,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
+      description: The Notification Message Templates.
       operationId: deviceManagement_ListNotificationMessageTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6067,12 +6295,14 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
+      description: The Notification Message Templates.
       operationId: deviceManagement_GetNotificationMessageTemplates
       parameters:
         - name: notificationMessageTemplate-id
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
@@ -6133,6 +6363,7 @@ paths:
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
@@ -6159,12 +6390,14 @@ paths:
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6178,12 +6411,14 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
+      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_ListLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
@@ -6263,6 +6498,7 @@ paths:
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
@@ -6288,12 +6524,14 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
+      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_GetLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
@@ -6301,6 +6539,7 @@ paths:
           in: path
           description: 'key: id of localizedNotificationMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: localizedNotificationMessage
@@ -6353,6 +6592,7 @@ paths:
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
@@ -6360,6 +6600,7 @@ paths:
           in: path
           description: 'key: id of localizedNotificationMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: localizedNotificationMessage
@@ -6386,6 +6627,7 @@ paths:
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
@@ -6393,12 +6635,14 @@ paths:
           in: path
           description: 'key: id of localizedNotificationMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: localizedNotificationMessage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6412,6 +6656,7 @@ paths:
       tags:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Get softwareUpdateStatusSummary from deviceManagement
+      description: The software update status summary.
       operationId: deviceManagement_GetSoftwareUpdateStatusSummary
       parameters:
         - name: $select
@@ -6468,6 +6713,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
+      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_ListTroubleshootingEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6554,12 +6800,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
+      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_GetTroubleshootingEvents
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
           in: path
           description: 'key: id of deviceManagementTroubleshootingEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTroubleshootingEvent
@@ -6609,6 +6857,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementTroubleshootingEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTroubleshootingEvent
@@ -6635,12 +6884,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementTroubleshootingEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTroubleshootingEvent
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6654,6 +6905,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
+      description: The windows information protection app learning summaries.
       operationId: deviceManagement_ListWindowsInformationProtectionAppLearningSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6743,12 +6995,14 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
+      description: The windows information protection app learning summaries.
       operationId: deviceManagement_GetWindowsInformationProtectionAppLearningSummaries
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
           in: path
           description: 'key: id of windowsInformationProtectionAppLearningSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionAppLearningSummary
@@ -6799,6 +7053,7 @@ paths:
           in: path
           description: 'key: id of windowsInformationProtectionAppLearningSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionAppLearningSummary
@@ -6825,12 +7080,14 @@ paths:
           in: path
           description: 'key: id of windowsInformationProtectionAppLearningSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionAppLearningSummary
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6844,6 +7101,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
+      description: The windows information protection network learning summaries.
       operationId: deviceManagement_ListWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6930,12 +7188,14 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
+      description: The windows information protection network learning summaries.
       operationId: deviceManagement_GetWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
           in: path
           description: 'key: id of windowsInformationProtectionNetworkLearningSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionNetworkLearningSummary
@@ -6985,6 +7245,7 @@ paths:
           in: path
           description: 'key: id of windowsInformationProtectionNetworkLearningSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionNetworkLearningSummary
@@ -7011,12 +7272,14 @@ paths:
           in: path
           description: 'key: id of windowsInformationProtectionNetworkLearningSummary'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsInformationProtectionNetworkLearningSummary
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7036,7 +7299,7 @@ components:
             intuneAccountId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Intune Account ID for given tenant
+              description: Intune Account Id for given tenant
               format: uuid
             settings:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementSettings'
@@ -7049,11 +7312,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
               description: The terms and conditions associated with device management of the company.
+              x-ms-navigationProperty: true
             deviceCompliancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
               description: The device compliance policies.
+              x-ms-navigationProperty: true
             deviceCompliancePolicyDeviceStateSummary:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyDeviceStateSummary'
             deviceCompliancePolicySettingStateSummaries:
@@ -7061,6 +7326,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
               description: The summary states of compliance policy settings for this account.
+              x-ms-navigationProperty: true
             deviceConfigurationDeviceStateSummaries:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStateSummary'
             deviceConfigurations:
@@ -7068,11 +7334,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
               description: The device configurations.
+              x-ms-navigationProperty: true
             iosUpdateStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
               description: The IOS software update installation statuses for this account.
+              x-ms-navigationProperty: true
             softwareUpdateStatusSummary:
               $ref: '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
             complianceManagementPartners:
@@ -7080,6 +7348,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
               description: The list of Compliance Management Partners configured by the tenant.
+              x-ms-navigationProperty: true
             conditionalAccessSettings:
               $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
             deviceCategories:
@@ -7087,26 +7356,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCategory'
               description: The list of device categories with the tenant.
+              x-ms-navigationProperty: true
             deviceEnrollmentConfigurations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
               description: The list of device enrollment configurations
+              x-ms-navigationProperty: true
             deviceManagementPartners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
               description: The list of Device Management Partners configured by the tenant.
+              x-ms-navigationProperty: true
             exchangeConnectors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
               description: The list of Exchange Connectors configured by the tenant.
+              x-ms-navigationProperty: true
             mobileThreatDefenseConnectors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
               description: The list of Mobile threat Defense connectors configured by the tenant.
+              x-ms-navigationProperty: true
             applePushNotificationCertificate:
               $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
             detectedApps:
@@ -7114,6 +7388,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.detectedApp'
               description: The list of detected apps associated with a device.
+              x-ms-navigationProperty: true
             managedDeviceOverview:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceOverview'
             managedDevices:
@@ -7121,41 +7396,49 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
               description: The list of managed devices.
+              x-ms-navigationProperty: true
             importedWindowsAutopilotDeviceIdentities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
               description: Collection of imported Windows autopilot devices.
+              x-ms-navigationProperty: true
             windowsAutopilotDeviceIdentities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
               description: The Windows autopilot device identities contained collection.
+              x-ms-navigationProperty: true
             notificationMessageTemplates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
               description: The Notification Message Templates.
+              x-ms-navigationProperty: true
             resourceOperations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceOperation'
               description: The Resource Operations.
+              x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
               description: The Role Assignments.
+              x-ms-navigationProperty: true
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleDefinition'
               description: The Role Definitions.
+              x-ms-navigationProperty: true
             remoteAssistancePartners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
               description: The remote assist partners.
+              x-ms-navigationProperty: true
             reports:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReports'
             telecomExpenseManagementPartners:
@@ -7163,21 +7446,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
               description: The telecom expense management partners.
+              x-ms-navigationProperty: true
             troubleshootingEvents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
               description: The list of troubleshooting events for the tenant.
+              x-ms-navigationProperty: true
             windowsInformationProtectionAppLearningSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
               description: The windows information protection app learning summaries.
+              x-ms-navigationProperty: true
             windowsInformationProtectionNetworkLearningSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
               description: The windows information protection network learning summaries.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Singleton entity that acts as a container for all device management functionality.
@@ -7197,6 +7484,12 @@ components:
               type: string
               description: Name of the discovered application. Read-only
               nullable: true
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.detectedAppPlatformType'
+            publisher:
+              type: string
+              description: 'Indicates the publisher of the discovered application. For example: ''Microsoft''.  The default value is an empty string.'
+              nullable: true
             sizeInByte:
               type: integer
               description: Discovered application size in bytes. Read-only
@@ -7210,6 +7503,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
               description: The devices that have the discovered application installed
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: A managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.
@@ -7223,23 +7517,28 @@ components:
               type: string
               description: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
               nullable: true
+              readOnly: true
             androidSecurityPatchLevel:
               type: string
               description: Android security patch level. This property is read-only.
               nullable: true
+              readOnly: true
             azureADDeviceId:
               type: string
               description: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
               nullable: true
+              readOnly: true
             azureADRegistered:
               type: boolean
               description: Whether the device is Azure Active Directory registered. This property is read-only.
               nullable: true
+              readOnly: true
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The DateTime when device compliance grace period expires. This property is read-only.
               format: date-time
+              readOnly: true
             complianceState:
               $ref: '#/components/schemas/microsoft.graph.complianceState'
             configurationManagerClientEnabledFeatures:
@@ -7249,10 +7548,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceActionResult'
               description: List of ComplexType deviceActionResult objects. This property is read-only.
+              readOnly: true
             deviceCategoryDisplayName:
               type: string
               description: Device category display name. This property is read-only.
               nullable: true
+              readOnly: true
             deviceEnrollmentType:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentType'
             deviceHealthAttestationState:
@@ -7261,33 +7562,40 @@ components:
               type: string
               description: Name of the device. This property is read-only.
               nullable: true
+              readOnly: true
             deviceRegistrationState:
               $ref: '#/components/schemas/microsoft.graph.deviceRegistrationState'
             easActivated:
               type: boolean
               description: Whether the device is Exchange ActiveSync activated. This property is read-only.
+              readOnly: true
             easActivationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: Exchange ActivationSync activation time of the device. This property is read-only.
               format: date-time
+              readOnly: true
             easDeviceId:
               type: string
               description: Exchange ActiveSync Id of the device. This property is read-only.
               nullable: true
+              readOnly: true
             emailAddress:
               type: string
               description: Email(s) for the user associated with the device. This property is read-only.
               nullable: true
+              readOnly: true
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+              readOnly: true
             ethernetMacAddress:
               type: string
               description: Ethernet MAC. This property is read-only.
               nullable: true
+              readOnly: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -7297,33 +7605,41 @@ components:
               type: string
               description: Last time the device contacted Exchange. This property is read-only.
               format: date-time
+              readOnly: true
             freeStorageSpaceInBytes:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+              readOnly: true
             iccid:
               type: string
               description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
               nullable: true
+              readOnly: true
             imei:
               type: string
               description: IMEI. This property is read-only.
               nullable: true
+              readOnly: true
             isEncrypted:
               type: boolean
               description: Device encryption status. This property is read-only.
+              readOnly: true
             isSupervised:
               type: boolean
               description: Device supervised status. This property is read-only.
+              readOnly: true
             jailBroken:
               type: string
               description: whether the device is jail broken or rooted. This property is read-only.
               nullable: true
+              readOnly: true
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
               format: date-time
+              readOnly: true
             managedDeviceName:
               type: string
               description: Automatically generated name to identify a device. Can be overwritten to a user friendly name.
@@ -7336,14 +7652,17 @@ components:
               type: string
               description: Manufacturer of the device. This property is read-only.
               nullable: true
+              readOnly: true
             meid:
               type: string
               description: MEID. This property is read-only.
               nullable: true
+              readOnly: true
             model:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+              readOnly: true
             notes:
               type: string
               description: Notes on the device created by IT Admin
@@ -7352,70 +7671,86 @@ components:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
               nullable: true
+              readOnly: true
             osVersion:
               type: string
               description: Operating system version of the device. This property is read-only.
               nullable: true
+              readOnly: true
             partnerReportedThreatState:
               $ref: '#/components/schemas/microsoft.graph.managedDevicePartnerReportedHealthState'
             phoneNumber:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+              readOnly: true
             physicalMemoryInBytes:
               type: integer
               description: Total Memory in Bytes. This property is read-only.
               format: int64
+              readOnly: true
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
               nullable: true
+              readOnly: true
             remoteAssistanceSessionUrl:
               type: string
               description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
               nullable: true
+              readOnly: true
             serialNumber:
               type: string
               description: SerialNumber. This property is read-only.
               nullable: true
+              readOnly: true
             subscriberCarrier:
               type: string
               description: Subscriber Carrier. This property is read-only.
               nullable: true
+              readOnly: true
             totalStorageSpaceInBytes:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+              readOnly: true
             udid:
               type: string
               description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
               nullable: true
+              readOnly: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
               nullable: true
+              readOnly: true
             userId:
               type: string
               description: Unique Identifier for the user associated with the device. This property is read-only.
               nullable: true
+              readOnly: true
             userPrincipalName:
               type: string
               description: Device user principal name. This property is read-only.
               nullable: true
+              readOnly: true
             wiFiMacAddress:
               type: string
               description: Wi-Fi MAC. This property is read-only.
               nullable: true
+              readOnly: true
             deviceCompliancePolicyStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
               description: Device compliance policy states for this device.
+              x-ms-navigationProperty: true
             deviceConfigurationStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
               description: Device configuration states for this device.
+              x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
           additionalProperties:
@@ -7472,28 +7807,33 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
               description: The collection of assignments for this compliance policy.
+              x-ms-navigationProperty: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
               description: Compliance Setting State Device Summary
+              x-ms-navigationProperty: true
             deviceStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
               description: List of DeviceComplianceDeviceStatus.
+              x-ms-navigationProperty: true
             deviceStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceOverview'
             scheduledActionsForRule:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-              description: The list of scheduled action for this rule
+              description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+              x-ms-navigationProperty: true
             userStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
               description: List of DeviceComplianceUserStatus.
+              x-ms-navigationProperty: true
             userStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserOverview'
           additionalProperties:
@@ -7669,6 +8009,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -7902,6 +8243,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
               description: Not yet documented
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Device Compilance Policy Setting State summary across the account.
@@ -8041,16 +8383,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
               description: The list of assignments for the device configuration profile.
+              x-ms-navigationProperty: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
               description: Device Configuration Setting State Device Summary
+              x-ms-navigationProperty: true
             deviceStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
               description: Device configuration installation status by device.
+              x-ms-navigationProperty: true
             deviceStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceOverview'
             userStatuses:
@@ -8058,6 +8403,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
               description: Device configuration installation status by user.
+              x-ms-navigationProperty: true
             userStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserOverview'
           additionalProperties:
@@ -8359,6 +8705,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
               description: The list of localized messages for this Notification Message Template.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Notification messages are messages that are sent to end users who are determined to be not-compliant with the compliance policies defined by the administrator. Administrators choose notifications and configure them in the Intune Admin Console using the compliance policy creation page under the “Actions for non-compliance” section. Use the notificationMessageTemplate object to create your own custom notifications for administrators to choose while configuring actions for non-compliance.
@@ -8548,6 +8895,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementSettings:
@@ -8705,11 +9053,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
               description: The list of acceptance statuses for this T&C policy.
+              x-ms-navigationProperty: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
               description: The list of assignments for this T&C policy.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
@@ -8877,6 +9227,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
               description: The list of group assignments for the device configuration profile
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -9018,6 +9369,7 @@ components:
               type: string
               description: Certificate serial number. This property is read-only.
               nullable: true
+              readOnly: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -9206,6 +9558,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleAssignment'
               description: List of Role assignments for this role definition.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: 'The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.'
@@ -9244,6 +9597,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
               description: Entity representing a job to export a report
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Singleton entity that acts as a container for all reports functionality.
@@ -9275,6 +9629,59 @@ components:
           additionalProperties:
             type: object
           description: 'telecomExpenseManagementPartner resources represent the metadata and status of a given TEM service. Once your organization has onboarded with a partner, the partner can be enabled or disabled to switch TEM functionality on or off.'
+    microsoft.graph.detectedAppPlatformType:
+      title: detectedAppPlatformType
+      enum:
+        - unknown
+        - windows
+        - windowsMobile
+        - windowsHolographic
+        - ios
+        - macOS
+        - chromeOS
+        - androidOSP
+        - androidDeviceAdministrator
+        - androidWorkProfile
+        - androidDedicatedAndFullyManaged
+      type: string
+      description: 'Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).'
+      x-ms-enum:
+        name: detectedAppPlatformType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Set to unknown when platform cannot be determined.
+            name: unknown
+          - value: windows
+            description: Indicates that the platform of the detected application is Windows.
+            name: windows
+          - value: windowsMobile
+            description: Indicates that the platform of the detected application is Windows Mobile.
+            name: windowsMobile
+          - value: windowsHolographic
+            description: Indicates that the platform of the detected application is Windows Holographic.
+            name: windowsHolographic
+          - value: ios
+            description: Indicates that the platform of the detected application is iOS.
+            name: ios
+          - value: macOS
+            description: Indicates that the platform of the detected application is macOS.
+            name: macOS
+          - value: chromeOS
+            description: Indicates that the platform of the detected application is ChromeOS.
+            name: chromeOS
+          - value: androidOSP
+            description: Indicates that the platform of the detected application is Android open source project.
+            name: androidOSP
+          - value: androidDeviceAdministrator
+            description: Indicates that the platform of the detected application is Android device administrator.
+            name: androidDeviceAdministrator
+          - value: androidWorkProfile
+            description: Indicates that the platform of the detected application is Android work profile.
+            name: androidWorkProfile
+          - value: androidDedicatedAndFullyManaged
+            description: Indicates that the platform of the detected application is Android dedicated and fully managed.
+            name: androidDedicatedAndFullyManaged
     microsoft.graph.complianceState:
       title: complianceState
       enum:
@@ -10175,6 +10582,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.detectedApp'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.managedDeviceCollectionResponse:
@@ -10187,6 +10595,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.managedDevice'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceCategoryCollectionResponse:
@@ -10199,6 +10608,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceCategory'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceCompliancePolicyCollectionResponse:
@@ -10211,6 +10621,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceCompliancePolicyAssignmentCollectionResponse:
@@ -10223,6 +10634,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.settingStateDeviceSummaryCollectionResponse:
@@ -10235,6 +10647,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceDeviceStatusCollectionResponse:
@@ -10247,6 +10660,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceScheduledActionForRuleCollectionResponse:
@@ -10259,6 +10673,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceActionItemCollectionResponse:
@@ -10271,6 +10686,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceUserStatusCollectionResponse:
@@ -10283,6 +10699,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceCompliancePolicySettingStateSummaryCollectionResponse:
@@ -10295,6 +10712,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceSettingStateCollectionResponse:
@@ -10307,6 +10725,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationCollectionResponse:
@@ -10319,6 +10738,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationAssignmentCollectionResponse:
@@ -10331,6 +10751,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationDeviceStatusCollectionResponse:
@@ -10343,6 +10764,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationUserStatusCollectionResponse:
@@ -10355,6 +10777,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceCompliancePolicyStateCollectionResponse:
@@ -10367,6 +10790,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceConfigurationStateCollectionResponse:
@@ -10379,6 +10803,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.notificationMessageTemplateCollectionResponse:
@@ -10391,6 +10816,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.localizedNotificationMessageCollectionResponse:
@@ -10403,6 +10829,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementTroubleshootingEventCollectionResponse:
@@ -10415,6 +10842,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsInformationProtectionAppLearningSummaryCollectionResponse:
@@ -10427,6 +10855,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsInformationProtectionNetworkLearningSummaryCollectionResponse:
@@ -10439,6 +10868,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.mimeContent:
@@ -10968,6 +11398,8 @@ components:
       enum:
         - csv
         - pdf
+        - json
+        - unknownFutureValue
       type: string
       description: Possible values for the file format of a report
       x-ms-enum:
@@ -10978,8 +11410,14 @@ components:
             description: CSV Format
             name: csv
           - value: pdf
-            description: Portable Document Format
+            description: PDF Format
             name: pdf
+          - value: json
+            description: JSON Format
+            name: json
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementExportJobLocalizationType:
       title: deviceManagementExportJobLocalizationType
       enum:
@@ -11202,6 +11640,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -11210,6 +11650,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -11217,18 +11659,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:
