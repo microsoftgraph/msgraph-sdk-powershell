@@ -51,7 +51,12 @@ if ($ModuleFullName -ne "Microsoft.Graph.Authentication") {
     }
 }
 
+# Lock module GUID. See https://github.com/Azure/autorest.powershell/issues/981.
+$ExistingModule = Find-Module $ModuleFullName -Repository PSGallery -ErrorAction SilentlyContinue
+$ModuleGuid = ($null -eq $ExistingModule) ? (New-Guid).Guid : $ExistingModule.AdditionalMetadata.GUID
+
 [HashTable]$ModuleManifestSettings = @{
+    Guid          = $ModuleGuid
     Path          = $ModuleManifest
     ModuleVersion = $Version
     IconUri       = $ModuleMetadata["iconUri"]
