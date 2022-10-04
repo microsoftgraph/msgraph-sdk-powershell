@@ -996,6 +996,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.enrollNowAction':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action enrollNowAction
+      description: Trigger comanagement enrollment action on ConfigurationManager client
+      operationId: deviceManagement.comanagedDevices_enrollNowAction
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.locateDevice':
     post:
       tags:
@@ -2618,6 +2640,78 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/deviceCompliancePolicies/microsoft.graph.getNoncompliantDevicesToRetire:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getNoncompliantDevicesToRetire
+      operationId: deviceManagement.deviceCompliancePolicies_getNoncompliantDevicesToRetire
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -4435,6 +4529,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.enrollNowAction':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action enrollNowAction
+      description: Trigger comanagement enrollment action on ConfigurationManager client
+      operationId: deviceManagement.managedDevices_enrollNowAction
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice':
     post:
       tags:
@@ -5623,6 +5739,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/microsoft.graph.postOrganizationalMessageTenantConsent:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action postOrganizationalMessageTenantConsent
+      operationId: deviceManagement_postOrganizationalMessageTenantConsent
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstPartyMessageAllowed:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.organizationalMessageTenantConsent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/microsoft.graph.sendCustomNotificationToCompanyPortal:
     post:
       tags:
@@ -5656,12 +5801,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/microsoft.graph.updateOrganizationalMessageTenantConsent:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action updateOrganizationalMessageTenantConsent
+      operationId: deviceManagement_updateOrganizationalMessageTenantConsent
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstPartyMessageAllowed:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.organizationalMessageTenantConsent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/microsoftTunnelServerLogCollectionResponses/{microsoftTunnelServerLogCollectionResponse-id}/microsoft.graph.createDownloadUrl':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
       operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses_createDownloadUrl
+      parameters:
+        - name: microsoftTunnelServerLogCollectionResponse-id
+          in: path
+          description: 'key: id of microsoftTunnelServerLogCollectionResponse'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftTunnelServerLogCollectionResponse
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/microsoftTunnelServerLogCollectionResponses/{microsoftTunnelServerLogCollectionResponse-id}/microsoft.graph.generateDownloadUrl':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action generateDownloadUrl
+      operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses_generateDownloadUrl
       parameters:
         - name: microsoftTunnelServerLogCollectionResponse-id
           in: path
@@ -5714,6 +5919,57 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action createServerLogCollectionRequest
       operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_createServerLogCollectionRequest
+      parameters:
+        - name: microsoftTunnelSite-id
+          in: path
+          description: 'key: id of microsoftTunnelSite'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftTunnelSite
+        - name: microsoftTunnelServer-id
+          in: path
+          description: 'key: id of microsoftTunnelServer'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftTunnelServer
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                startDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                endDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.microsoftTunnelServerLogCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite-id}/microsoftTunnelServers/{microsoftTunnelServer-id}/microsoft.graph.generateServerLogCollectionRequest':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action generateServerLogCollectionRequest
+      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_generateServerLogCollectionRequest
       parameters:
         - name: microsoftTunnelSite-id
           in: path
@@ -8695,6 +8951,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getMobileApplicationManagementAppRegistrationSummaryReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getMobileApplicationManagementAppRegistrationSummaryReport
+      operationId: deviceManagement.reports_getMobileApplicationManagementAppRegistrationSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getNoncompliantDevicesAndSettingsReport:
     post:
       tags:
@@ -10996,6 +11324,204 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/virtualEndpoint/reports/microsoft.graph.getDailyAggregatedRemoteConnectionReports:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDailyAggregatedRemoteConnectionReports
+      operationId: deviceManagement.virtualEndpoint.reports_getDailyAggregatedRemoteConnectionReports
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/virtualEndpoint/reports/microsoft.graph.getRemoteConnectionHistoricalReports:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getRemoteConnectionHistoricalReports
+      operationId: deviceManagement.virtualEndpoint.reports_getRemoteConnectionHistoricalReports
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/virtualEndpoint/reports/microsoft.graph.getTotalAggregatedRemoteConnectionReports:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getTotalAggregatedRemoteConnectionReports
+      operationId: deviceManagement.virtualEndpoint.reports_getTotalAggregatedRemoteConnectionReports
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}/microsoft.graph.assign':
     post:
       tags:
@@ -11835,6 +12361,11 @@ components:
               type: string
               description: Last modified time of the Assignment Filter.
               format: date-time
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.payloadByFilter'
+              description: Associated assignments for a specific filter
             platform:
               $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
             roleScopeTags:
@@ -12330,6 +12861,8 @@ components:
               nullable: true
             platforms:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+            priorityMetaData:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementPriorityMetaData'
             roleScopeTagIds:
               type: array
               items:
@@ -12529,10 +13062,10 @@ components:
         modelAsString: false
         values:
           - value: cancelRetire
-            description: Cancel retire.
+            description: CancelRetire
             name: cancelRetire
           - value: confirmRetire
-            description: Retire these devices.
+            description: ConfirmRetire
             name: confirmRetire
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
@@ -13207,6 +13740,16 @@ components:
       additionalProperties:
         type: object
       description: Represent status details for device and payload and all associated applied filters.
+    microsoft.graph.organizationalMessageTenantConsent:
+      title: organizationalMessageTenantConsent
+      type: object
+      properties:
+        firstPartyMessageAllowed:
+          type: boolean
+          description: Indicates if first party message is allowed
+      additionalProperties:
+        type: object
+      description: This will allow the admin to see tenant consent info for specific tenant
     microsoft.graph.microsoftTunnelServerLogCollectionResponse:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13634,8 +14177,28 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.payloadByFilter:
+      title: payloadByFilter
+      type: object
+      properties:
+        assignmentFilterType:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
+        groupId:
+          type: string
+          description: The Azure AD security group ID
+          nullable: true
+        payloadId:
+          type: string
+          description: The policy identifier
+          nullable: true
+        payloadType:
+          $ref: '#/components/schemas/microsoft.graph.associatedAssignmentPayloadType'
+      additionalProperties:
+        type: object
+      description: This entity represents a single payload with requested assignment filter Id
     microsoft.graph.devicePlatformType:
       title: devicePlatformType
       enum:
@@ -13855,6 +14418,11 @@ components:
           - value: unknownFutureValue
             description: Sentinel member for cases where the client cannot handle the new enum values.
             name: unknownFutureValue
+    microsoft.graph.deviceManagementPriorityMetaData:
+      title: deviceManagementPriorityMetaData
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.deviceManagementConfigurationTechnologies:
       title: deviceManagementConfigurationTechnologies
       enum:
@@ -14801,21 +15369,25 @@ components:
         - pending
         - completed
         - failed
+        - unknownFutureValue
       type: string
-      description: Enum type that represent the status of log collection.
+      description: Enum type that represent the status of log collection
       x-ms-enum:
         name: microsoftTunnelLogCollectionStatus
         modelAsString: false
         values:
           - value: pending
-            description: Log collection is in progress
+            description: Indicates that the log collection is in progress
             name: pending
           - value: completed
-            description: Log collection is completed
+            description: Indicates that the log collection is completed
             name: completed
           - value: failed
-            description: Log collection has failed
+            description: Indicates that the log collection has failed
             name: failed
+          - value: unknownFutureValue
+            description: Placeholder value for future expansion enums
+            name: unknownFutureValue
     microsoft.graph.appLogDecryptionAlgorithm:
       title: appLogDecryptionAlgorithm
       enum:
@@ -14906,6 +15478,63 @@ components:
           - value: exclude
             description: 'Indicates out-filter, rule matching will not offer the payload to devices.'
             name: exclude
+    microsoft.graph.associatedAssignmentPayloadType:
+      title: associatedAssignmentPayloadType
+      enum:
+        - unknown
+        - deviceConfigurationAndCompliance
+        - application
+        - androidEnterpriseApp
+        - enrollmentConfiguration
+        - groupPolicyConfiguration
+        - zeroTouchDeploymentDeviceConfigProfile
+        - androidEnterpriseConfiguration
+        - deviceFirmwareConfigurationInterfacePolicy
+        - resourceAccessPolicy
+        - win32app
+        - deviceManagmentConfigurationAndCompliancePolicy
+      type: string
+      description: This enum represents associated assignment payload type
+      x-ms-enum:
+        name: associatedAssignmentPayloadType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Invalid payload type
+            name: unknown
+          - value: deviceConfigurationAndCompliance
+            description: Indicates that this filter is associated with a configuration or compliance policy payload type
+            name: deviceConfigurationAndCompliance
+          - value: application
+            description: Indicates that this assignment filter is associated with an application payload type
+            name: application
+          - value: androidEnterpriseApp
+            description: Indicates that this filter is associated with a Android Enterprise application payload type
+            name: androidEnterpriseApp
+          - value: enrollmentConfiguration
+            description: Indicates that this filter is associated with an enrollment restriction or enrollment status page policy payload type
+            name: enrollmentConfiguration
+          - value: groupPolicyConfiguration
+            description: Indicates that this filter is associated with an Administrative Template policy payload type
+            name: groupPolicyConfiguration
+          - value: zeroTouchDeploymentDeviceConfigProfile
+            description: Indicates that this assignment filter is associated with Zero touch deployment Device Configuration Profile payload type
+            name: zeroTouchDeploymentDeviceConfigProfile
+          - value: androidEnterpriseConfiguration
+            description: Indicates that this filter is associated with an Android Enterprise Configuration policy payload type
+            name: androidEnterpriseConfiguration
+          - value: deviceFirmwareConfigurationInterfacePolicy
+            description: Indicates that this assignment filter is associated with Device Firmware Configuration Interface(DCFI) payload type
+            name: deviceFirmwareConfigurationInterfacePolicy
+          - value: resourceAccessPolicy
+            description: 'Indicates that this filter is associated with a resource access policy (Wifi, VPN, Certificate) payload type'
+            name: resourceAccessPolicy
+          - value: win32app
+            description: Indicates that this filter is associated with a Win32 app payload type
+            name: win32app
+          - value: deviceManagmentConfigurationAndCompliancePolicy
+            description: Indicates that this filter is associated with a configuration or compliance policy on Device Configuration v2 Infrastructure payload type
+            name: deviceManagmentConfigurationAndCompliancePolicy
     microsoft.graph.deviceManagementComplianceActionType:
       title: deviceManagementComplianceActionType
       enum:
@@ -14958,6 +15587,7 @@ components:
         - endpointSecurityAttackSurfaceReduction
         - endpointSecurityAccountProtection
         - endpointSecurityApplicationControl
+        - enrollmentConfiguration
         - baseline
       type: string
       description: Describes the TemplateFamily for the Template entity
@@ -14989,6 +15619,9 @@ components:
           - value: endpointSecurityApplicationControl
             description: Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
             name: endpointSecurityApplicationControl
+          - value: enrollmentConfiguration
+            description: Template Family for EnrollmentConfiguration
+            name: enrollmentConfiguration
           - value: baseline
             description: Template Family for Baseline
             name: baseline

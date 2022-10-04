@@ -1428,7 +1428,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get contentSharingSessions from communications
+      summary: List contentSharingSessions
+      description: Retrieve a list of contentSharingSession objects in a call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
       operationId: communications.calls_ListContentSharingSessions
       parameters:
         - name: call-id
@@ -1652,6 +1656,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action addLargeGalleryView
+      description: Add the large gallery view to a call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
       operationId: communications.calls_addLargeGalleryView
       parameters:
         - name: call-id
@@ -5630,6 +5638,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.modality'
+              description: 'The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.'
             resultInfo:
               $ref: '#/components/schemas/microsoft.graph.resultInfo'
             source:
@@ -5638,11 +5647,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.callState'
             subject:
               type: string
+              description: The subject of the conversation.
               nullable: true
             targets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.invitationParticipantInfo'
+              description: The targets of the call. Required information for creating peer to peer call.
             tenantId:
               type: string
               nullable: true
@@ -6186,6 +6197,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.callRecords.modality:
@@ -6267,9 +6279,11 @@ components:
       properties:
         hideBotAfterEscalation:
           type: boolean
+          description: Indicates whether to hide the app after the call is escalated.
           nullable: true
         isContentSharingNotificationEnabled:
           type: boolean
+          description: Indicates whether content sharing notifications should be enabled for the call.
           nullable: true
       additionalProperties:
         type: object

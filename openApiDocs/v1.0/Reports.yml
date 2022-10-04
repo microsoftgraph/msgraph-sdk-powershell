@@ -1199,6 +1199,7 @@ paths:
                 - dailyPrintUsageByUser
                 - monthlyPrintUsageByPrinter
                 - monthlyPrintUsageByUser
+                - security
               type: string
         - name: $expand
           in: query
@@ -1215,6 +1216,7 @@ paths:
                 - dailyPrintUsageByUser
                 - monthlyPrintUsageByPrinter
                 - monthlyPrintUsageByUser
+                - security
               type: string
       responses:
         '200':
@@ -1232,6 +1234,8 @@ paths:
               operationId: reports.ListMonthlyPrintUsageGraphBPrePrinter
             monthlyPrintUsageByUser:
               operationId: reports.ListMonthlyPrintUsageGraphBPreUser
+            security:
+              operationId: reports.GetSecurity
             deviceConfigurationDeviceActivity:
               operationId: reports.deviceConfigurationDeviceActivity
             deviceConfigurationUserActivity:
@@ -4674,6 +4678,186 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /reports/security:
+    get:
+      tags:
+        - reports.securityReportsRoot
+      summary: Get security from reports
+      operationId: reports_GetSecurity
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
+          links:
+            getAttackSimulationRepeatOffenders:
+              operationId: reports.security.getAttackSimulationRepeatOffenders
+            getAttackSimulationSimulationUserCoverage:
+              operationId: reports.security.getAttackSimulationSimulationUserCoverage
+            getAttackSimulationTrainingUserCoverage:
+              operationId: reports.security.getAttackSimulationTrainingUserCoverage
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.securityReportsRoot
+      summary: Update the navigation property security in reports
+      operationId: reports_UpdateSecurity
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.securityReportsRoot
+      summary: Delete navigation property security for reports
+      operationId: reports_DeleteSecurity
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/security/microsoft.graph.getAttackSimulationRepeatOffenders():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getAttackSimulationRepeatOffenders
+      operationId: reports.security_getAttackSimulationRepeatOffenders
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /reports/security/microsoft.graph.getAttackSimulationSimulationUserCoverage():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getAttackSimulationSimulationUserCoverage
+      operationId: reports.security_getAttackSimulationSimulationUserCoverage
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /reports/security/microsoft.graph.getAttackSimulationTrainingUserCoverage():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getAttackSimulationTrainingUserCoverage
+      operationId: reports.security_getAttackSimulationTrainingUserCoverage
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
 components:
   schemas:
     microsoft.graph.auditLogRoot:
@@ -4984,6 +5168,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
               x-ms-navigationProperty: true
+            security:
+              $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
           additionalProperties:
             type: object
           description: The resource that represents an instance of Enrollment Failure Reports.
@@ -5063,12 +5249,83 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
       additionalProperties:
         type: object
+    microsoft.graph.securityReportsRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: securityReportsRoot
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.attackSimulationRepeatOffender:
+      title: attackSimulationRepeatOffender
+      type: object
+      properties:
+        attackSimulationUser:
+          $ref: '#/components/schemas/microsoft.graph.attackSimulationUser'
+        repeatOffenceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of repeat offences of the user in attack simulation and training campaigns.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.attackSimulationSimulationUserCoverage:
+      title: attackSimulationSimulationUserCoverage
+      type: object
+      properties:
+        attackSimulationUser:
+          $ref: '#/components/schemas/microsoft.graph.attackSimulationUser'
+        clickCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
+          format: int32
+          nullable: true
+        compromisedCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of compromising actions by the user in attack simulation and training campaigns.
+          format: int32
+          nullable: true
+        latestSimulationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time of the latest attack simulation and training campaign that the user was included in.
+          format: date-time
+          nullable: true
+        simulationCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of attack simulation and training campaigns that the user was included in.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.attackSimulationTrainingUserCoverage:
+      title: attackSimulationTrainingUserCoverage
+      type: object
+      properties:
+        attackSimulationUser:
+          $ref: '#/components/schemas/microsoft.graph.attackSimulationUser'
+        userTrainings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userTrainingStatusInfo'
+          description: List of assigned trainings and their statuses for the user.
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.keyValue:
@@ -5521,6 +5778,48 @@ components:
         - aborted
         - unknownFutureValue
       type: string
+    microsoft.graph.attackSimulationUser:
+      title: attackSimulationUser
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name of the user.
+          nullable: true
+        email:
+          type: string
+          description: Email address of the user.
+          nullable: true
+        userId:
+          type: string
+          description: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userTrainingStatusInfo:
+      title: userTrainingStatusInfo
+      type: object
+      properties:
+        assignedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time of assignment of the training to the user.
+          format: date-time
+          nullable: true
+        completionDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time of completion of the training by the user.
+          format: date-time
+          nullable: true
+        displayName:
+          type: string
+          description: Display name of the assigned training.
+          nullable: true
+        trainingStatus:
+          $ref: '#/components/schemas/microsoft.graph.trainingStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -5739,6 +6038,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.trainingStatus:
+      title: trainingStatus
+      enum:
+        - unknown
+        - assigned
+        - inProgress
+        - completed
+        - overdue
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code

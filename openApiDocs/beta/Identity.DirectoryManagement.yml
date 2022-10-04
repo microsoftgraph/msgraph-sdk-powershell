@@ -17323,7 +17323,11 @@ paths:
     get:
       tags:
         - organization.organizationSettings
-      summary: Get contactInsights from organization
+      summary: List contactInsights
+      description: Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-1.0
       operationId: organization.settings_GetContactInsights
       parameters:
         - name: organization-id
@@ -17373,7 +17377,11 @@ paths:
     patch:
       tags:
         - organization.organizationSettings
-      summary: Update the navigation property contactInsights in organization
+      summary: Update insightsSettings
+      description: "Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
       operationId: organization.settings_UpdateContactInsights
       parameters:
         - name: organization-id
@@ -17482,7 +17490,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Update insightsSettings
-      description: "Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be item insights or people insights. To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy"
+      description: "Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy"
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
@@ -17706,7 +17714,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Update insightsSettings
-      description: "Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be item insights or people insights. To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy"
+      description: "Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy"
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
@@ -20057,6 +20065,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.identity:

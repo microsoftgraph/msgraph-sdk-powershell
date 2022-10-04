@@ -1441,6 +1441,8 @@ paths:
               operationId: deviceManagement.reports.getHistoricalReport
             getMalwareSummaryReport:
               operationId: deviceManagement.reports.getMalwareSummaryReport
+            getMobileApplicationManagementAppRegistrationSummaryReport:
+              operationId: deviceManagement.reports.getMobileApplicationManagementAppRegistrationSummaryReport
             getNoncompliantDevicesAndSettingsReport:
               operationId: deviceManagement.reports.getNoncompliantDevicesAndSettingsReport
             getPolicyNonComplianceMetadata:
@@ -10631,7 +10633,7 @@ components:
         latestSimulationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Date and time of latest attack simulation and training campaign that the user was included in.
+          description: Date and time of the latest attack simulation and training campaign that the user was included in.
           format: date-time
           nullable: true
         simulationCount:
@@ -10653,7 +10655,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userTrainingStatusInfo'
-          description: List of assigned trainings' and their statuses for the user.
+          description: List of assigned trainings and their statuses for the user.
       additionalProperties:
         type: object
     microsoft.graph.applicationSignInSummary:
@@ -11409,6 +11411,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.keyValue:
@@ -12112,7 +12115,7 @@ components:
           nullable: true
         userId:
           type: string
-          description: This is the id property value of the user resource that represents the user in the Azure AD tenant.
+          description: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
           nullable: true
       additionalProperties:
         type: object

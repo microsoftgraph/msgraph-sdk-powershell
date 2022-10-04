@@ -444,6 +444,22 @@
     "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/security": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/security/microsoft.graph.getAttackSimulationRepeatOffenders()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/security/microsoft.graph.getAttackSimulationSimulationUserCoverage()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/security/microsoft.graph.getAttackSimulationTrainingUserCoverage()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     }
   }
 }
