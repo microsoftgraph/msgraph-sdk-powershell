@@ -145,6 +145,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
+    "/deviceManagement/microsoft.graph.getOrganizationalMessageTenantConsent()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
     "/deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids={ids})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
@@ -226,6 +230,14 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/virtualEndpoint/microsoft.graph.getEffectivePermissions()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
+    "/deviceManagement/virtualEndpoint/reports/microsoft.graph.getRealTimeRemoteConnectionLatency(cloudPcId='{cloudPcId}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
+    "/deviceManagement/virtualEndpoint/reports/microsoft.graph.getRealTimeRemoteConnectionStatus(cloudPcId='{cloudPcId}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },

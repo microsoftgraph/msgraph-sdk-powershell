@@ -253,6 +253,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackagesIncompatibleWith": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackagesIncompatibleWith/{accessPackage-id1}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/assignmentPolicies": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
@@ -270,6 +278,30 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/catalog": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/incompatibleAccessPackages": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/incompatibleAccessPackages/{accessPackage-id1}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/incompatibleAccessPackages/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/incompatibleGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/incompatibleGroups/{group-id}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/incompatibleGroups/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
@@ -353,6 +385,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/assignments/microsoft.graph.additionalAccess()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignments/microsoft.graph.additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
     "/identityGovernance/entitlementManagement/assignments/microsoft.graph.filterByCurrentUser(on='{on}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
@@ -373,6 +413,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackagesIncompatibleWith": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackagesIncompatibleWith/{accessPackage-id1}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
     "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/assignmentPolicies": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
@@ -390,6 +438,30 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/catalog": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/incompatibleAccessPackages": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/incompatibleAccessPackages/{accessPackage-id1}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/incompatibleAccessPackages/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/incompatibleGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/incompatibleGroups/{group-id}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/incompatibleGroups/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },

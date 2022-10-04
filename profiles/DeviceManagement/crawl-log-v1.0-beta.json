@@ -1089,6 +1089,22 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
+    "/deviceManagement/userExperienceAnalyticsAnomaly": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsAnomaly/{userExperienceAnalyticsAnomaly-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsAnomalyDevice": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsAnomalyDevice/{userExperienceAnalyticsAnomalyDevice-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
     "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformance": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"

@@ -3148,6 +3148,8 @@ components:
           nullable: true
         resultTemplateOptions:
           $ref: '#/components/schemas/microsoft.graph.resultTemplateOption'
+        sharePointOneDriveOptions:
+          $ref: '#/components/schemas/microsoft.graph.sharePointOneDriveOptions'
         size:
           maximum: 2147483647
           minimum: -2147483648
@@ -3247,6 +3249,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.activitySettings:
@@ -3268,6 +3271,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.displayTemplate'
+          description: Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.configuration:
@@ -3631,6 +3635,14 @@ components:
           type: boolean
           description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.'
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharePointOneDriveOptions:
+      title: sharePointOneDriveOptions
+      type: object
+      properties:
+        includeContent:
+          $ref: '#/components/schemas/microsoft.graph.searchContent'
       additionalProperties:
         type: object
     microsoft.graph.sortProperty:
@@ -4007,6 +4019,13 @@ components:
           description: Contains the actual search terms of the request.
       additionalProperties:
         type: object
+    microsoft.graph.searchContent:
+      title: searchContent
+      enum:
+        - sharedContent
+        - privateContent
+        - unknownFutureValue
+      type: string
     microsoft.graph.searchAggregation:
       title: searchAggregation
       type: object

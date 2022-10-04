@@ -9532,6 +9532,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.callRecords.modality:
@@ -9613,6 +9614,7 @@ components:
       properties:
         hideBotAfterEscalation:
           type: boolean
+          description: Indicates whether to hide the app after the call is escalated.
           nullable: true
         isContentSharingNotificationEnabled:
           type: boolean

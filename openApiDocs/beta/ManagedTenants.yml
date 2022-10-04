@@ -7580,10 +7580,11 @@ components:
               nullable: true
             deviceSpecification:
               type: string
+              description: The specification of the cloud PC device. Required. Read-only.
               nullable: true
             displayName:
               type: string
-              description: The display name for the cloud PC. Required. Read-only.
+              description: The display name  of the cloud PC device. Required. Read-only.
               nullable: true
             lastRefreshedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7593,22 +7594,23 @@ components:
               nullable: true
             managedDeviceId:
               type: string
-              description: The managed device identifier for the cloud PC. Optional. Read-only.
+              description: The managed device identifier of the cloud PC device. Optional. Read-only.
               nullable: true
             managedDeviceName:
               type: string
-              description: The managed device display name for the cloud PC. Optional. Read-only.
+              description: The managed device display name of the cloud PC device. Optional. Read-only.
               nullable: true
             provisioningPolicyId:
               type: string
-              description: The provisioning policy identifier for the cloud PC. Required. Read-only.
+              description: The provisioning policy identifier for the cloud PC device. Required. Read-only.
               nullable: true
             servicePlanName:
               type: string
-              description: The service plan name for the cloud PC. Required. Read-only.
+              description: The service plan name of the cloud PC device. Required. Read-only.
               nullable: true
             servicePlanType:
               type: string
+              description: The service plan type of the cloud PC device. Required. Read-only.
               nullable: true
             tenantDisplayName:
               type: string
@@ -7620,7 +7622,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: The user principal name (UPN) of the user assigned to the cloud PC. Required. Read-only.
+              description: The user principal name (UPN) of the user assigned to the cloud PC device. Required. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -7737,6 +7739,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The total number of cloud PC devices that have the Business SKU. Optional. Read-only.
               format: int32
               nullable: true
             totalCloudPcConnectionStatus:
@@ -7757,6 +7760,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
               format: int32
               nullable: true
           additionalProperties:
@@ -8782,6 +8786,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementCategory:

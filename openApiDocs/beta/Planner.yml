@@ -13288,6 +13288,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.plannerPlanContainer:
@@ -13594,6 +13595,7 @@ components:
         - group
         - unknownFutureValue
         - roster
+        - project
       type: string
     microsoft.graph.identity:
       title: identity

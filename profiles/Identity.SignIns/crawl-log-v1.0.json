@@ -109,6 +109,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
     },
+    "/identity/conditionalAccess/authenticationContextClassReferences": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/conditionalAccess/authenticationContextClassReferences/{authenticationContextClassReference-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
     "/identity/conditionalAccess/namedLocations": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"

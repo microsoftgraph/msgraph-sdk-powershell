@@ -1023,7 +1023,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get simulationAutomations from security
-      description: Represents simulation automations created to run on a tenant.
+      description: Represents simulation automation created to run on a tenant.
       operationId: security.attackSimulation_GetSimulationAutomations
       parameters:
         - name: simulationAutomation-id
@@ -17597,7 +17597,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
-              description: Represents simulation automations created to run on a tenant.
+              description: Represents simulation automation created to run on a tenant.
               x-ms-navigationProperty: true
             simulations:
               type: array
@@ -17723,7 +17723,7 @@ components:
               nullable: true
             isAutomated:
               type: boolean
-              description: Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+              description: Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
@@ -20378,6 +20378,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.securityProviderStatus:
@@ -21173,7 +21174,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userSimulationDetails'
-          description: Represents users of a tenant and their online actions in an attack simulation and training campaign.
+          description: The tenant users and their online actions in an attack simulation and training campaign.
       additionalProperties:
         type: object
     microsoft.graph.simulationStatus:
@@ -24480,24 +24481,24 @@ components:
         attackSimDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Specifies the date time of the attack simulation.
+          description: The date and time of the attack simulation.
           format: date-time
           nullable: true
         attackSimDurationTime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: Specifies the duration (in time) for the attack simulation
+          description: The duration (in time) for the attack simulation.
           format: duration
           nullable: true
         attackSimId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: Specifies the activity id for the attack simulation.
+          description: The activity ID for the attack simulation.
           format: uuid
           nullable: true
         attackSimUserId:
           type: string
-          description: Specifies the user id of the user who got the attack simulation email
+          description: The unique identifier for the user who got the attack simulation email.
           nullable: true
       additionalProperties:
         type: object
@@ -25425,12 +25426,12 @@ components:
           nullable: true
         isCompromised:
           type: boolean
-          description: Flag representing if user was compromised in an attack simulation and training campaign.
+          description: Indicates whether a user was compromised in an attack simulation and training campaign.
           nullable: true
         reportedPhishDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+          description: Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
           format: date-time
           nullable: true
         simulationEvents:
@@ -27987,6 +27988,7 @@ components:
               description: 'The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
             publisherName:
               type: string
+              description: The name of the Azure AD tenant that published the application.
               nullable: true
             replyUrls:
               type: array
@@ -28179,7 +28181,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -30894,7 +30896,7 @@ components:
           nullable: true
         potentialScoreImpact:
           type: number
-          description: Potential improvement in security score of the tenant from the recommended action.
+          description: Potential improvement in the tenant security score from the recommended action.
           format: double
           nullable: true
         title:
@@ -30979,7 +30981,7 @@ components:
           nullable: true
         userId:
           type: string
-          description: This is the id property value of the user resource that represents the user in the Azure AD tenant.
+          description: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
           nullable: true
       additionalProperties:
         type: object
@@ -36037,6 +36039,7 @@ components:
             ageGroup:
               type: string
               description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and cannot be changed.'
+              nullable: true
             countryCode:
               type: string
               description: Contains the two-character country code associated with the users account.
@@ -37803,7 +37806,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Count of occurence of the simulation event in an attack simulation and training campaign.
+          description: Count of the simulation event occurrence in an attack simulation and training campaign.
           format: int32
           nullable: true
         eventName:
@@ -37870,7 +37873,7 @@ components:
           nullable: true
         potentialScoreImpact:
           type: number
-          description: Potential improvement in security posture of the tenant after completion of the training by the user.
+          description: Potential improvement in the tenant security posture after completion of the training by the user.
           format: double
           nullable: true
       additionalProperties:
@@ -38445,6 +38448,7 @@ components:
         - group
         - unknownFutureValue
         - roster
+        - project
       type: string
     microsoft.graph.plannerCategoryDescriptions:
       title: plannerCategoryDescriptions

@@ -39,6 +39,7 @@ paths:
                 - managedDeviceCleanupSettings
                 - subscriptions
                 - subscriptionState
+                - userExperienceAnalyticsAnomalySeverityOverview
                 - userExperienceAnalyticsSettings
                 - windowsMalwareOverview
                 - monitoring
@@ -109,6 +110,8 @@ paths:
                 - oemWarrantyInformationOnboarding
                 - remoteActionAudits
                 - tenantAttachRBAC
+                - userExperienceAnalyticsAnomaly
+                - userExperienceAnalyticsAnomalyDevice
                 - userExperienceAnalyticsAppHealthApplicationPerformance
                 - userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
                 - userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
@@ -279,6 +282,8 @@ paths:
                 - oemWarrantyInformationOnboarding
                 - remoteActionAudits
                 - tenantAttachRBAC
+                - userExperienceAnalyticsAnomaly
+                - userExperienceAnalyticsAnomalyDevice
                 - userExperienceAnalyticsAppHealthApplicationPerformance
                 - userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
                 - userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
@@ -514,6 +519,10 @@ paths:
               operationId: deviceManagement.ListRemoteActionAudits
             tenantAttachRBAC:
               operationId: deviceManagement.GetTenantAttachRBAC
+            userExperienceAnalyticsAnomaly:
+              operationId: deviceManagement.ListUserExperienceAnalyticsAnomaly
+            userExperienceAnalyticsAnomalyDevice:
+              operationId: deviceManagement.ListUserExperienceAnalyticsAnomalyDevice
             userExperienceAnalyticsAppHealthApplicationPerformance:
               operationId: deviceManagement.ListUserExperienceAnalyticsAppHealthApplicationPerformance
             userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion:
@@ -712,16 +721,22 @@ paths:
               operationId: deviceManagement.getComanagementEligibleDevicesSummary
             getEffectivePermissions:
               operationId: deviceManagement.getEffectivePermissions
+            getOrganizationalMessageTenantConsent:
+              operationId: deviceManagement.getOrganizationalMessageTenantConsent
             getRoleScopeTagsByIds:
               operationId: deviceManagement.getRoleScopeTagsGraphBPreIds
             getRoleScopeTagsByResource:
               operationId: deviceManagement.getRoleScopeTagsGraphBPreResource
             getSuggestedEnrollmentLimit:
               operationId: deviceManagement.getSuggestedEnrollmentLimit
+            postOrganizationalMessageTenantConsent:
+              operationId: deviceManagement.postOrganizationalMessageTenantConsent
             scopedForResource:
               operationId: deviceManagement.scopedGraphFPreResource
             sendCustomNotificationToCompanyPortal:
               operationId: deviceManagement.sendCustomNotificationToCompanyPortal
+            updateOrganizationalMessageTenantConsent:
+              operationId: deviceManagement.updateOrganizationalMessageTenantConsent
             userExperienceAnalyticsSummarizeWorkFromAnywhereDevices:
               operationId: deviceManagement.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
             verifyWindowsEnrollmentAutoDiscovery:
@@ -1692,6 +1707,8 @@ paths:
                 - displayName desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - payloads
+                - payloads desc
                 - platform
                 - platform desc
                 - roleScopeTags
@@ -1714,6 +1731,7 @@ paths:
                 - description
                 - displayName
                 - lastModifiedDateTime
+                - payloads
                 - platform
                 - roleScopeTags
                 - rule
@@ -1792,6 +1810,7 @@ paths:
                 - description
                 - displayName
                 - lastModifiedDateTime
+                - payloads
                 - platform
                 - roleScopeTags
                 - rule
@@ -2897,6 +2916,8 @@ paths:
               operationId: deviceManagement.comanagedDevices.managedDevice.disableLostMode
             enableLostMode:
               operationId: deviceManagement.comanagedDevices.managedDevice.enableLostMode
+            enrollNowAction:
+              operationId: deviceManagement.comanagedDevices.managedDevice.enrollNowAction
             getCloudPcRemoteActionResults:
               operationId: deviceManagement.comanagedDevices.managedDevice.getCloudPcRemoteActionResults
             getCloudPcReviewStatus:
@@ -7688,6 +7709,8 @@ paths:
                 - name desc
                 - platforms
                 - platforms desc
+                - priorityMetaData
+                - priorityMetaData desc
                 - roleScopeTagIds
                 - roleScopeTagIds desc
                 - settingCount
@@ -7715,6 +7738,7 @@ paths:
                 - lastModifiedDateTime
                 - name
                 - platforms
+                - priorityMetaData
                 - roleScopeTagIds
                 - settingCount
                 - technologies
@@ -7801,6 +7825,7 @@ paths:
                 - lastModifiedDateTime
                 - name
                 - platforms
+                - priorityMetaData
                 - roleScopeTagIds
                 - settingCount
                 - technologies
@@ -26875,6 +26900,8 @@ paths:
               operationId: deviceManagement.managedDevices.managedDevice.disableLostMode
             enableLostMode:
               operationId: deviceManagement.managedDevices.managedDevice.enableLostMode
+            enrollNowAction:
+              operationId: deviceManagement.managedDevices.managedDevice.enrollNowAction
             getCloudPcRemoteActionResults:
               operationId: deviceManagement.managedDevices.managedDevice.getCloudPcRemoteActionResults
             getCloudPcReviewStatus:
@@ -29954,6 +29981,10 @@ paths:
                 - network desc
                 - roleScopeTagIds
                 - roleScopeTagIds desc
+                - routeExcludes
+                - routeExcludes desc
+                - routeIncludes
+                - routeIncludes desc
                 - routesExclude
                 - routesExclude desc
                 - routesInclude
@@ -29982,6 +30013,8 @@ paths:
                 - listenPort
                 - network
                 - roleScopeTagIds
+                - routeExcludes
+                - routeIncludes
                 - routesExclude
                 - routesInclude
                 - splitDNS
@@ -30066,6 +30099,8 @@ paths:
                 - listenPort
                 - network
                 - roleScopeTagIds
+                - routeExcludes
+                - routeIncludes
                 - routesExclude
                 - routesInclude
                 - splitDNS
@@ -30504,6 +30539,8 @@ paths:
           links:
             createDownloadUrl:
               operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses.microsoftTunnelServerLogCollectionResponse.createDownloadUrl
+            generateDownloadUrl:
+              operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses.microsoftTunnelServerLogCollectionResponse.generateDownloadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30844,6 +30881,8 @@ paths:
                 - listenPort
                 - network
                 - roleScopeTagIds
+                - routeExcludes
+                - routeIncludes
                 - routesExclude
                 - routesInclude
                 - splitDNS
@@ -31099,6 +31138,8 @@ paths:
           links:
             createServerLogCollectionRequest:
               operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.microsoftTunnelServers.microsoftTunnelServer.createServerLogCollectionRequest
+            generateServerLogCollectionRequest:
+              operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.microsoftTunnelServers.microsoftTunnelServer.generateServerLogCollectionRequest
             getHealthMetrics:
               operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.microsoftTunnelServers.microsoftTunnelServer.getHealthMetrics
             getHealthMetricTimeSeries:
@@ -35697,6 +35738,462 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTroubleshootingEvent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/userExperienceAnalyticsAnomaly:
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomaly
+      summary: Get userExperienceAnalyticsAnomaly from deviceManagement
+      description: The user experience analytics anomaly entity contains anomaly details.
+      operationId: deviceManagement_ListUserExperienceAnalyticsAnomaly
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - anomalyFirstOccurrenceDateTime
+                - anomalyFirstOccurrenceDateTime desc
+                - anomalyId
+                - anomalyId desc
+                - anomalyLatestOccurrenceDateTime
+                - anomalyLatestOccurrenceDateTime desc
+                - anomalyName
+                - anomalyName desc
+                - anomalyType
+                - anomalyType desc
+                - assetName
+                - assetName desc
+                - assetPublisher
+                - assetPublisher desc
+                - assetVersion
+                - assetVersion desc
+                - detectionModelId
+                - detectionModelId desc
+                - deviceImpactedCount
+                - deviceImpactedCount desc
+                - issueId
+                - issueId desc
+                - severity
+                - severity desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - anomalyFirstOccurrenceDateTime
+                - anomalyId
+                - anomalyLatestOccurrenceDateTime
+                - anomalyName
+                - anomalyType
+                - assetName
+                - assetPublisher
+                - assetVersion
+                - detectionModelId
+                - deviceImpactedCount
+                - issueId
+                - severity
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userExperienceAnalyticsAnomalyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomaly
+      summary: Create new navigation property to userExperienceAnalyticsAnomaly for deviceManagement
+      operationId: deviceManagement_CreateUserExperienceAnalyticsAnomaly
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomaly'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomaly'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/userExperienceAnalyticsAnomaly/{userExperienceAnalyticsAnomaly-id}':
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomaly
+      summary: Get userExperienceAnalyticsAnomaly from deviceManagement
+      description: The user experience analytics anomaly entity contains anomaly details.
+      operationId: deviceManagement_GetUserExperienceAnalyticsAnomaly
+      parameters:
+        - name: userExperienceAnalyticsAnomaly-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsAnomaly'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsAnomaly
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - anomalyFirstOccurrenceDateTime
+                - anomalyId
+                - anomalyLatestOccurrenceDateTime
+                - anomalyName
+                - anomalyType
+                - assetName
+                - assetPublisher
+                - assetVersion
+                - detectionModelId
+                - deviceImpactedCount
+                - issueId
+                - severity
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomaly'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomaly
+      summary: Update the navigation property userExperienceAnalyticsAnomaly in deviceManagement
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsAnomaly
+      parameters:
+        - name: userExperienceAnalyticsAnomaly-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsAnomaly'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsAnomaly
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomaly'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomaly
+      summary: Delete navigation property userExperienceAnalyticsAnomaly for deviceManagement
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsAnomaly
+      parameters:
+        - name: userExperienceAnalyticsAnomaly-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsAnomaly'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsAnomaly
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/userExperienceAnalyticsAnomalyDevice:
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomalyDevice
+      summary: Get userExperienceAnalyticsAnomalyDevice from deviceManagement
+      description: The user experience analytics anomaly entity contains device details.
+      operationId: deviceManagement_ListUserExperienceAnalyticsAnomalyDevice
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - anomalyId
+                - anomalyId desc
+                - anomalyOnDeviceFirstOccurrenceDateTime
+                - anomalyOnDeviceFirstOccurrenceDateTime desc
+                - anomalyOnDeviceLatestOccurrenceDateTime
+                - anomalyOnDeviceLatestOccurrenceDateTime desc
+                - deviceId
+                - deviceId desc
+                - deviceManufacturer
+                - deviceManufacturer desc
+                - deviceModel
+                - deviceModel desc
+                - deviceName
+                - deviceName desc
+                - osName
+                - osName desc
+                - osVersion
+                - osVersion desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - anomalyId
+                - anomalyOnDeviceFirstOccurrenceDateTime
+                - anomalyOnDeviceLatestOccurrenceDateTime
+                - deviceId
+                - deviceManufacturer
+                - deviceModel
+                - deviceName
+                - osName
+                - osVersion
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userExperienceAnalyticsAnomalyDeviceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomalyDevice
+      summary: Create new navigation property to userExperienceAnalyticsAnomalyDevice for deviceManagement
+      operationId: deviceManagement_CreateUserExperienceAnalyticsAnomalyDevice
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyDevice'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyDevice'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/userExperienceAnalyticsAnomalyDevice/{userExperienceAnalyticsAnomalyDevice-id}':
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomalyDevice
+      summary: Get userExperienceAnalyticsAnomalyDevice from deviceManagement
+      description: The user experience analytics anomaly entity contains device details.
+      operationId: deviceManagement_GetUserExperienceAnalyticsAnomalyDevice
+      parameters:
+        - name: userExperienceAnalyticsAnomalyDevice-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsAnomalyDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsAnomalyDevice
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - anomalyId
+                - anomalyOnDeviceFirstOccurrenceDateTime
+                - anomalyOnDeviceLatestOccurrenceDateTime
+                - deviceId
+                - deviceManufacturer
+                - deviceModel
+                - deviceName
+                - osName
+                - osVersion
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyDevice'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomalyDevice
+      summary: Update the navigation property userExperienceAnalyticsAnomalyDevice in deviceManagement
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsAnomalyDevice
+      parameters:
+        - name: userExperienceAnalyticsAnomalyDevice-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsAnomalyDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsAnomalyDevice
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyDevice'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.userExperienceAnalyticsAnomalyDevice
+      summary: Delete navigation property userExperienceAnalyticsAnomalyDevice for deviceManagement
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsAnomalyDevice
+      parameters:
+        - name: userExperienceAnalyticsAnomalyDevice-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsAnomalyDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsAnomalyDevice
         - name: If-Match
           in: header
           description: ETag
@@ -46332,6 +46829,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementSubscriptions'
             subscriptionState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementSubscriptionState'
+            userExperienceAnalyticsAnomalySeverityOverview:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalySeverityOverview'
             userExperienceAnalyticsSettings:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSettings'
             windowsMalwareOverview:
@@ -46688,6 +47187,18 @@ components:
               x-ms-navigationProperty: true
             tenantAttachRBAC:
               $ref: '#/components/schemas/microsoft.graph.tenantAttachRBAC'
+            userExperienceAnalyticsAnomaly:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomaly'
+              description: The user experience analytics anomaly entity contains anomaly details.
+              x-ms-navigationProperty: true
+            userExperienceAnalyticsAnomalyDevice:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyDevice'
+              description: The user experience analytics anomaly entity contains device details.
+              x-ms-navigationProperty: true
             userExperienceAnalyticsAppHealthApplicationPerformance:
               type: array
               items:
@@ -47472,6 +47983,11 @@ components:
               type: string
               description: Last modified time of the Assignment Filter.
               format: date-time
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.payloadByFilter'
+              description: Associated assignments for a specific filter
             platform:
               $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
             roleScopeTags:
@@ -48687,6 +49203,8 @@ components:
               nullable: true
             platforms:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+            priorityMetaData:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementPriorityMetaData'
             roleScopeTagIds:
               type: array
               items:
@@ -51224,15 +51742,15 @@ components:
               nullable: true
             description:
               type: string
-              description: The MicrosoftTunnelConfiguration's description
+              description: The configuration's description (optional)
               nullable: true
             disableUdpConnections:
               type: boolean
-              description: 'When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.'
+              description: 'When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to transfer data.'
               nullable: true
             displayName:
               type: string
-              description: The MicrosoftTunnelConfiguration's display name
+              description: The display name for the server configuration. This property is required when a server is created.
               nullable: true
             dnsServers:
               type: array
@@ -51243,7 +51761,7 @@ components:
             lastUpdateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: When the MicrosoftTunnelConfiguration was last updated
+              description: When the configuration was last updated
               format: date-time
             listenPort:
               maximum: 2147483647
@@ -51261,19 +51779,31 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of Scope Tags for this Entity instance.
-            routesExclude:
+              description: List of Scope Tags for this Entity instance
+            routeExcludes:
               type: array
               items:
                 type: string
                 nullable: true
               description: Subsets of the routes that will not be routed by the server
+            routeIncludes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The routes that will be routed by the server
+            routesExclude:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Subsets of the routes that will not be routed by the server. This property is going to be deprecated with the option of using the new property, ''RouteExcludes''.'
             routesInclude:
               type: array
               items:
                 type: string
                 nullable: true
-              description: The routs that will be routed by the server
+              description: 'The routes that will be routed by the server. This property is going to be deprecated with the option of using the new property, ''RouteIncludes''.'
             splitDNS:
               type: array
               items:
@@ -51291,23 +51821,23 @@ components:
           properties:
             defaultHealthyThreshold:
               type: integer
-              description: The default threshold for being healthy
+              description: 'The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized. Read-only.'
               format: int64
             defaultUnhealthyThreshold:
               type: integer
-              description: The default threshold for being unhealthy
+              description: 'The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency unhealthy > 20ms, health metrics can be customized. Read-only.'
               format: int64
             healthyThreshold:
               type: integer
-              description: The threshold for being healthy
+              description: 'The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized.'
               format: int64
             unhealthyThreshold:
               type: integer
-              description: The threshold for being unhealthy
+              description: 'The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.'
               format: int64
           additionalProperties:
             type: object
-          description: Entity that represents the health thresholds of a health metric.
+          description: Entity that represents the health thresholds of a health metric
     microsoft.graph.microsoftTunnelServerLogCollectionResponse:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -51355,35 +51885,35 @@ components:
           properties:
             description:
               type: string
-              description: The MicrosoftTunnelSite's description
+              description: The site's description (optional)
               nullable: true
             displayName:
               type: string
-              description: The MicrosoftTunnelSite's display name
+              description: The display name for the site. This property is required when a site is created.
               nullable: true
             enableCertificatePinning:
               type: boolean
               description: 'When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.'
             internalNetworkProbeUrl:
               type: string
-              description: The MicrosoftTunnelSite's Internal Network Access Probe URL
+              description: The site's Internal Network Access Probe URL
               nullable: true
             publicAddress:
               type: string
-              description: The MicrosoftTunnelSite's public domain name or IP address
+              description: The site's public domain name or IP address
               nullable: true
             roleScopeTagIds:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of Scope Tags for this Entity instance.
+              description: List of Scope Tags for this Entity instance
             upgradeAutomatically:
               type: boolean
               description: 'The site''s automatic upgrade setting. True for automatic upgrades, false for manual control'
             upgradeAvailable:
               type: boolean
-              description: True if an upgrade is available
+              description: The site provides the state of when an upgrade is available
             upgradeWindowEndTime:
               pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
               type: string
@@ -51426,12 +51956,12 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The MicrosoftTunnelServer's display name
+              description: The display name for the server. This property is required when a server is created and cannot be cleared during updates.
               nullable: true
             lastCheckinDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: When the MicrosoftTunnelServer last checked in
+              description: Indicates when the server last checked in
               format: date-time
             serverImageDigest:
               type: string
@@ -51865,6 +52395,112 @@ components:
           additionalProperties:
             type: object
           description: Event representing an general failure.
+    microsoft.graph.userExperienceAnalyticsAnomaly:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsAnomaly
+          type: object
+          properties:
+            anomalyFirstOccurrenceDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Indicates the first occurrence date and time for the anomaly.
+              format: date-time
+            anomalyId:
+              type: string
+              description: The unique identifier of the anomaly.
+              nullable: true
+            anomalyLatestOccurrenceDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Indicates the latest occurrence date and time for the anomaly.
+              format: date-time
+            anomalyName:
+              type: string
+              description: The name of the anomaly.
+              nullable: true
+            anomalyType:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyType'
+            assetName:
+              type: string
+              description: The name of the application or module that caused the anomaly.
+              nullable: true
+            assetPublisher:
+              type: string
+              description: The publisher of the application or module that caused the anomaly.
+              nullable: true
+            assetVersion:
+              type: string
+              description: The version of the application or module that caused the anomaly.
+              nullable: true
+            detectionModelId:
+              type: string
+              description: The unique identifier of the anomaly detection model.
+              nullable: true
+            deviceImpactedCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The number of devices impacted by the anomaly. Valid values -2147483648 to 2147483647
+              format: int32
+            issueId:
+              type: string
+              description: The unique identifier of the anomaly detection model.
+              nullable: true
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalySeverity'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyState'
+          additionalProperties:
+            type: object
+          description: The user experience analytics anomaly entity contains anomaly details.
+    microsoft.graph.userExperienceAnalyticsAnomalyDevice:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsAnomalyDevice
+          type: object
+          properties:
+            anomalyId:
+              type: string
+              description: The unique identifier of the anomaly.
+              nullable: true
+            anomalyOnDeviceFirstOccurrenceDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Indicates the first occurance date and time for the anomaly on the device.
+              format: date-time
+            anomalyOnDeviceLatestOccurrenceDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Indicates the latest occurance date and time for the anomaly on the device.
+              format: date-time
+            deviceId:
+              type: string
+              description: The unique identifier of the device.
+              nullable: true
+            deviceManufacturer:
+              type: string
+              description: The manufacturer name of the device.
+              nullable: true
+            deviceModel:
+              type: string
+              description: The model name of the device.
+              nullable: true
+            deviceName:
+              type: string
+              description: The name of the device.
+              nullable: true
+            osName:
+              type: string
+              description: The name of the OS installed on the device.
+              nullable: true
+            osVersion:
+              type: string
+              description: The OS version installed on the device.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The user experience analytics anomaly entity contains device details.
     microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -52691,17 +53327,17 @@ components:
           properties:
             averageBlueScreens:
               type: number
-              description: Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
+              description: Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
               format: double
             averageRestarts:
               type: number
-              description: Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
+              description: Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
               format: double
             blueScreenCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
+              description: Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
               format: int32
             bootScore:
               maximum: 2147483647
@@ -52777,7 +53413,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of Restarts in the last 14 days. Valid values 0 to 9999999
+              description: Number of Restarts in the last 30 days. Valid values 0 to 9999999
               format: int32
             startupPerformanceScore:
               type: number
@@ -53739,6 +54375,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementSettings:
@@ -53874,6 +54511,9 @@ components:
         showAzureADEnterpriseApps:
           type: boolean
           description: Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
+        showConfigurationManagerApps:
+          type: boolean
+          description: Boolean that indicates if ConfigurationManagerApps will be shown in Company Portal
         showDisplayNameNextToLogo:
           type: boolean
           description: Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
@@ -54069,6 +54709,43 @@ components:
           - value: lockedOut
             description: LockedOut
             name: lockedOut
+    microsoft.graph.userExperienceAnalyticsAnomalySeverityOverview:
+      title: userExperienceAnalyticsAnomalySeverityOverview
+      type: object
+      properties:
+        highSeverityAnomalyCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+          format: int32
+        informationalSeverityAnomalyCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+          format: int32
+        lowSeverityAnomalyCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+          format: int32
+        mediumSeverityAnomalyCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+          format: int32
+        otherSeverityAnomalyCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of anomalies which have been detected with undefined severity. Valid values -2147483648 to 2147483647
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
     microsoft.graph.userExperienceAnalyticsSettings:
       title: userExperienceAnalyticsSettings
       type: object
@@ -54202,6 +54879,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
               description: Cloud PC provisioning policy.
               x-ms-navigationProperty: true
+            reports:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcReports'
             servicePlans:
               type: array
               items:
@@ -56528,6 +57207,9 @@ components:
             allowSessionsToUnenrolledDevices:
               type: boolean
               description: Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
+            blockChat:
+              type: boolean
+              description: Indicates if sessions to block chat function. This setting is configurable by the admin. Default value is false.
             remoteAssistanceState:
               $ref: '#/components/schemas/microsoft.graph.remoteAssistanceState'
           additionalProperties:
@@ -57422,6 +58104,25 @@ components:
       additionalProperties:
         type: object
       description: Single configuration item inside an Android application's custom configuration schema.
+    microsoft.graph.payloadByFilter:
+      title: payloadByFilter
+      type: object
+      properties:
+        assignmentFilterType:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
+        groupId:
+          type: string
+          description: The Azure AD security group ID
+          nullable: true
+        payloadId:
+          type: string
+          description: The policy identifier
+          nullable: true
+        payloadType:
+          $ref: '#/components/schemas/microsoft.graph.associatedAssignmentPayloadType'
+      additionalProperties:
+        type: object
+      description: This entity represents a single payload with requested assignment filter Id
     microsoft.graph.devicePlatformType:
       title: devicePlatformType
       enum:
@@ -60433,6 +61134,11 @@ components:
           - value: template
             description: Visible to template
             name: template
+    microsoft.graph.deviceManagementPriorityMetaData:
+      title: deviceManagementPriorityMetaData
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.deviceManagementConfigurationPolicyTemplateReference:
       title: deviceManagementConfigurationPolicyTemplateReference
       type: object
@@ -60500,6 +61206,7 @@ components:
         - endpointSecurityAttackSurfaceReduction
         - endpointSecurityAccountProtection
         - endpointSecurityApplicationControl
+        - enrollmentConfiguration
         - baseline
       type: string
       description: Describes the TemplateFamily for the Template entity
@@ -60531,6 +61238,9 @@ components:
           - value: endpointSecurityApplicationControl
             description: Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
             name: endpointSecurityApplicationControl
+          - value: enrollmentConfiguration
+            description: Template Family for EnrollmentConfiguration
+            name: enrollmentConfiguration
           - value: baseline
             description: Template Family for Baseline
             name: baseline
@@ -61475,21 +62185,25 @@ components:
         - pending
         - completed
         - failed
+        - unknownFutureValue
       type: string
-      description: Enum type that represent the status of log collection.
+      description: Enum type that represent the status of log collection
       x-ms-enum:
         name: microsoftTunnelLogCollectionStatus
         modelAsString: false
         values:
           - value: pending
-            description: Log collection is in progress
+            description: Indicates that the log collection is in progress
             name: pending
           - value: completed
-            description: Log collection is completed
+            description: Indicates that the log collection is completed
             name: completed
           - value: failed
-            description: Log collection has failed
+            description: Indicates that the log collection has failed
             name: failed
+          - value: unknownFutureValue
+            description: Placeholder value for future expansion enums
+            name: unknownFutureValue
     microsoft.graph.microsoftTunnelServerHealthStatus:
       title: microsoftTunnelServerHealthStatus
       enum:
@@ -61500,6 +62214,7 @@ components:
         - offline
         - upgradeInProgress
         - upgradeFailed
+        - unknownFutureValue
       type: string
       description: Enum of possible MicrosoftTunnelServer health status types
       x-ms-enum:
@@ -61507,26 +62222,29 @@ components:
         modelAsString: false
         values:
           - value: unknown
-            description: The state is unknown
+            description: 'Indicates that the health status of the server is unknown. This occurs when no health status has been reported, for example when the server is initialized, but has not yet been evaluated for its health.'
             name: unknown
           - value: healthy
-            description: The state is healthy
+            description: Indicates that the health status of the server is healthy. This should be the normal operational health status.
             name: healthy
           - value: unhealthy
-            description: The state is unhealthy
+            description: 'Indicates that the health status of the server is unhealthy. This is normally a transient condition that will last up to 5 minutes. If the server cannot be remediated while reporting unhealthy state, the health state will change to ''warning''. If it can be remediated, the health state will return to ''healthy''.'
             name: unhealthy
           - value: warning
-            description: The state is warning
+            description: 'Indicates a warning based on the Tunnel Gateway server''s CPU usage, memory usage, latency, TLS certificate, version'
             name: warning
           - value: offline
-            description: The state is offline
+            description: Indicates the server state is offline
             name: offline
           - value: upgradeInProgress
-            description: The state is upgradeInProgress
+            description: 'Indicates the upgrade in progress during the upgrade cycle of when Intune begins upgrading servers, one server at a time'
             name: upgradeInProgress
           - value: upgradeFailed
-            description: The state is upgradeFailed
+            description: 'Indicates the failure of the upgrade during the upgrade cycle of when Intune begins upgrading servers, one server at a time'
             name: upgradeFailed
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use enums.
+            name: unknownFutureValue
     microsoft.graph.mobileAppTroubleshootingHistoryItem:
       title: mobileAppTroubleshootingHistoryItem
       type: object
@@ -61622,6 +62340,10 @@ components:
         - getFileVaultKey
         - setDeviceName
         - activateDeviceEsim
+        - deprovision
+        - disable
+        - reenable
+        - moveDeviceToOrganizationalUnit
       type: string
       description: Remote actions Intune supports.
       x-ms-enum:
@@ -61629,77 +62351,89 @@ components:
         modelAsString: false
         values:
           - value: unknown
-            description: User initiates an unknown action.
+            description: Indicate user initiates an unknown action.
             name: unknown
           - value: factoryReset
-            description: 'User initiates an action to factory reset a device. '
+            description: 'Indicate user initiates an action to factory reset a device. '
             name: factoryReset
           - value: removeCompanyData
-            description: 'User initiates an action to remove company data from a device. '
+            description: 'Indicate user initiates an action to remove company data from a device. '
             name: removeCompanyData
           - value: resetPasscode
-            description: 'User initiates an action to remove the passcode of an iOS device, or reset the passcode of Android / Windows device. '
+            description: 'Indicate user initiates an action to remove the passcode of an iOS device, or reset the passcode of Android / Windows device. '
             name: resetPasscode
           - value: remoteLock
-            description: User initiates an action to remote lock a device.
+            description: Indicate user initiates an action to remote lock a device.
             name: remoteLock
           - value: enableLostMode
-            description: User initiates an action to enable lost mode on a supervised iOS device.
+            description: Indicate user initiates an action to enable lost mode on a supervised iOS device.
             name: enableLostMode
           - value: disableLostMode
-            description: User initiates an action to disable lost mode on a supervised iOS device.
+            description: Indicate user initiates an action to disable lost mode on a supervised iOS device.
             name: disableLostMode
           - value: locateDevice
-            description: User initiates an action to locate a supervised iOS device.
+            description: Indicate user initiates an action to locate a supervised iOS device.
             name: locateDevice
           - value: rebootNow
-            description: User initiates an action to reboot a Windows device.
+            description: Indicate user initiates an action to reboot the device.
             name: rebootNow
           - value: recoverPasscode
-            description: User initiates an action to reset the pin for passport for work on windows phone device.
+            description: Indicate user initiates an action to reset the pin for passport for work on windows phone device.
             name: recoverPasscode
           - value: cleanWindowsDevice
-            description: User initiates an action to clean up windows device.
+            description: Indicate user initiates an action to clean up windows device.
             name: cleanWindowsDevice
           - value: logoutSharedAppleDeviceActiveUser
-            description: User initiates an action to log out current user on shared apple device.
+            description: Indicate user initiates an action to log out current user on shared apple device.
             name: logoutSharedAppleDeviceActiveUser
           - value: quickScan
-            description: User initiates an action to run quick scan on device.
+            description: Indicate user initiates an action to run quick scan on device.
             name: quickScan
           - value: fullScan
-            description: User initiates an action to run full scan on device.
+            description: Indicate user initiates an action to run full scan on device.
             name: fullScan
           - value: windowsDefenderUpdateSignatures
-            description: User initiates an action to update malware signatures on device.
+            description: Indicate user initiates an action to update malware signatures on device.
             name: windowsDefenderUpdateSignatures
           - value: factoryResetKeepEnrollmentData
-            description: User initiates an action remote wipe device with keeping enrollment data.
+            description: Indicate user initiates an action remote wipe device with keeping enrollment data.
             name: factoryResetKeepEnrollmentData
           - value: updateDeviceAccount
-            description: User initiates an action to update account on device.
+            description: Indicate user initiates an action to update account on device.
             name: updateDeviceAccount
           - value: automaticRedeployment
-            description: User initiates an action to automatice redeploy the device
+            description: Indicate user initiates an action to automatic redeploy the device
             name: automaticRedeployment
           - value: shutDown
-            description: User initiates an action to shut down the device.
+            description: Indicate user initiates an action to shut down the device.
             name: shutDown
           - value: rotateBitLockerKeys
-            description: User initiates an action to Rotate BitLockerKeys on the device.
+            description: Indicate user initiates an action to Rotate BitLockerKeys on the device.
             name: rotateBitLockerKeys
           - value: rotateFileVaultKey
-            description: User initiates an action to Rotate FileVaultKey on mac.
+            description: Indicate user initiates an action to Rotate FileVaultKey on mac.
             name: rotateFileVaultKey
           - value: getFileVaultKey
-            description: User initiates an action to Get FileVaultKey on mac.
+            description: Indicate user initiates an action to Get FileVaultKey on mac.
             name: getFileVaultKey
           - value: setDeviceName
-            description: User initiates an action to Set Device Name on the device.
+            description: Indicate user initiates an action to Set Device Name on the device.
             name: setDeviceName
           - value: activateDeviceEsim
-            description: User initiates an action to Activate eSIM on the device.
+            description: Indicate user initiates an action to Activate eSIM on the device.
             name: activateDeviceEsim
+          - value: deprovision
+            description: Indicate user initiates an action to deprovision the device.
+            name: deprovision
+          - value: disable
+            description: Indicate user initiates an action to disable the device.
+            name: disable
+          - value: reenable
+            description: Indicate user initiates an action to reenable the device.
+            name: reenable
+          - value: moveDeviceToOrganizationalUnit
+            description: Indicate user initiates an action to move the device to a new organizational unit.
+            name: moveDeviceToOrganizationalUnit
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -61862,6 +62596,105 @@ components:
       additionalProperties:
         type: object
       description: Object containing detailed information about the error and its remediation.
+    microsoft.graph.userExperienceAnalyticsAnomalyType:
+      title: userExperienceAnalyticsAnomalyType
+      enum:
+        - device
+        - application
+        - stopError
+        - driver
+        - other
+        - unknownFutureValue
+      type: string
+      description: 'Indicates the category of the anomaly. Eg: anomaly type can be device, application, stop error, driver or other.'
+      x-ms-enum:
+        name: userExperienceAnalyticsAnomalyType
+        modelAsString: false
+        values:
+          - value: device
+            description: Indicates the detected anomaly is due to certain devices.
+            name: device
+          - value: application
+            description: Indicates the detected anomaly is due to a specific application.
+            name: application
+          - value: stopError
+            description: Indicates the detected anomaly is due to a specific stop error.
+            name: stopError
+          - value: driver
+            description: Indicates the detected anomaly is due to a specific driver.
+            name: driver
+          - value: other
+            description: Indicates the category of detected anomaly is undefined.
+            name: other
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.userExperienceAnalyticsAnomalySeverity:
+      title: userExperienceAnalyticsAnomalySeverity
+      enum:
+        - high
+        - medium
+        - low
+        - informational
+        - other
+        - unknownFutureValue
+      type: string
+      description: 'Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.'
+      x-ms-enum:
+        name: userExperienceAnalyticsAnomalySeverity
+        modelAsString: false
+        values:
+          - value: high
+            description: Indicates the anomaly is of high severity.
+            name: high
+          - value: medium
+            description: Indicates the anomaly is of medium severity.
+            name: medium
+          - value: low
+            description: Indicates the anomaly is of low severity.
+            name: low
+          - value: informational
+            description: Indicates the anomaly is of informational severity.
+            name: informational
+          - value: other
+            description: Indicates the severity of anomaly is undefined.
+            name: other
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.userExperienceAnalyticsAnomalyState:
+      title: userExperienceAnalyticsAnomalyState
+      enum:
+        - new
+        - active
+        - disabled
+        - removed
+        - other
+        - unknownFutureValue
+      type: string
+      description: 'Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.'
+      x-ms-enum:
+        name: userExperienceAnalyticsAnomalyState
+        modelAsString: false
+        values:
+          - value: new
+            description: Indicates the state of anomaly is new.
+            name: new
+          - value: active
+            description: Indicates the state of anomaly is active.
+            name: active
+          - value: disabled
+            description: Indicates the state of anomaly is disabled.
+            name: disabled
+          - value: removed
+            description: Indicates the state of anomaly is removed.
+            name: removed
+          - value: other
+            description: Indicates the state of anomaly is undefined.
+            name: other
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.userExperienceAnalyticsHealthState:
       title: userExperienceAnalyticsHealthState
       enum:
@@ -63209,6 +64042,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userExperienceAnalyticsAnomalyCollectionResponse:
+      title: Collection of userExperienceAnalyticsAnomaly
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomaly'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userExperienceAnalyticsAnomalyDeviceCollectionResponse:
+      title: Collection of userExperienceAnalyticsAnomalyDevice
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyDevice'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse:
       title: Collection of userExperienceAnalyticsAppHealthApplicationPerformance
       type: object
@@ -64455,6 +65314,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
               description: A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcReports:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcReports
+          type: object
+          properties:
+            exportJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -66039,6 +66911,10 @@ components:
           description: 'Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.'
           format: date-time
           nullable: true
+        firmwareTargetArtifactDescription:
+          type: string
+          description: 'A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).'
+          nullable: true
         firmwareTargetBoardSupportPackageVersion:
           type: string
           description: 'Deployment''s Board Support Package (BSP. E.g.: ''01.18.02.00''). Required only for custom update type.'
@@ -67168,6 +68044,84 @@ components:
         - hidden
       type: string
       description: Data type for a configuration item inside an Android application's custom configuration schema
+    microsoft.graph.deviceAndAppManagementAssignmentFilterType:
+      title: deviceAndAppManagementAssignmentFilterType
+      enum:
+        - none
+        - include
+        - exclude
+      type: string
+      description: Represents type of the assignment filter.
+      x-ms-enum:
+        name: deviceAndAppManagementAssignmentFilterType
+        modelAsString: false
+        values:
+          - value: none
+            description: Default value. Do not use.
+            name: none
+          - value: include
+            description: 'Indicates in-filter, rule matching will offer the payload to devices.'
+            name: include
+          - value: exclude
+            description: 'Indicates out-filter, rule matching will not offer the payload to devices.'
+            name: exclude
+    microsoft.graph.associatedAssignmentPayloadType:
+      title: associatedAssignmentPayloadType
+      enum:
+        - unknown
+        - deviceConfigurationAndCompliance
+        - application
+        - androidEnterpriseApp
+        - enrollmentConfiguration
+        - groupPolicyConfiguration
+        - zeroTouchDeploymentDeviceConfigProfile
+        - androidEnterpriseConfiguration
+        - deviceFirmwareConfigurationInterfacePolicy
+        - resourceAccessPolicy
+        - win32app
+        - deviceManagmentConfigurationAndCompliancePolicy
+      type: string
+      description: This enum represents associated assignment payload type
+      x-ms-enum:
+        name: associatedAssignmentPayloadType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Invalid payload type
+            name: unknown
+          - value: deviceConfigurationAndCompliance
+            description: Indicates that this filter is associated with a configuration or compliance policy payload type
+            name: deviceConfigurationAndCompliance
+          - value: application
+            description: Indicates that this assignment filter is associated with an application payload type
+            name: application
+          - value: androidEnterpriseApp
+            description: Indicates that this filter is associated with a Android Enterprise application payload type
+            name: androidEnterpriseApp
+          - value: enrollmentConfiguration
+            description: Indicates that this filter is associated with an enrollment restriction or enrollment status page policy payload type
+            name: enrollmentConfiguration
+          - value: groupPolicyConfiguration
+            description: Indicates that this filter is associated with an Administrative Template policy payload type
+            name: groupPolicyConfiguration
+          - value: zeroTouchDeploymentDeviceConfigProfile
+            description: Indicates that this assignment filter is associated with Zero touch deployment Device Configuration Profile payload type
+            name: zeroTouchDeploymentDeviceConfigProfile
+          - value: androidEnterpriseConfiguration
+            description: Indicates that this filter is associated with an Android Enterprise Configuration policy payload type
+            name: androidEnterpriseConfiguration
+          - value: deviceFirmwareConfigurationInterfacePolicy
+            description: Indicates that this assignment filter is associated with Device Firmware Configuration Interface(DCFI) payload type
+            name: deviceFirmwareConfigurationInterfacePolicy
+          - value: resourceAccessPolicy
+            description: 'Indicates that this filter is associated with a resource access policy (Wifi, VPN, Certificate) payload type'
+            name: resourceAccessPolicy
+          - value: win32app
+            description: Indicates that this filter is associated with a Win32 app payload type
+            name: win32app
+          - value: deviceManagmentConfigurationAndCompliancePolicy
+            description: Indicates that this filter is associated with a configuration or compliance policy on Device Configuration v2 Infrastructure payload type
+            name: deviceManagmentConfigurationAndCompliancePolicy
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
       type: object
@@ -67953,6 +68907,7 @@ components:
               description: 'The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
             publisherName:
               type: string
+              description: The name of the Azure AD tenant that published the application.
               nullable: true
             replyUrls:
               type: array
@@ -68188,7 +69143,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -70929,27 +71884,6 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
-    microsoft.graph.deviceAndAppManagementAssignmentFilterType:
-      title: deviceAndAppManagementAssignmentFilterType
-      enum:
-        - none
-        - include
-        - exclude
-      type: string
-      description: Represents type of the assignment filter.
-      x-ms-enum:
-        name: deviceAndAppManagementAssignmentFilterType
-        modelAsString: false
-        values:
-          - value: none
-            description: Default value. Do not use.
-            name: none
-          - value: include
-            description: 'Indicates in-filter, rule matching will offer the payload to devices.'
-            name: include
-          - value: exclude
-            description: 'Indicates out-filter, rule matching will not offer the payload to devices.'
-            name: exclude
     microsoft.graph.deviceManagementConfigurationSettingInstanceTemplateReference:
       title: deviceManagementConfigurationSettingInstanceTemplateReference
       type: object
@@ -71549,6 +72483,42 @@ components:
           properties:
             target:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcExportJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcExportJob
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            exportJobStatus:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExportJobStatus'
+            exportUrl:
+              type: string
+              nullable: true
+            filter:
+              type: string
+              nullable: true
+            format:
+              type: string
+              nullable: true
+            reportName:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcReportName'
+            requestDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            select:
+              type: array
+              items:
+                type: string
+                nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcSnapshotStatus:
@@ -75777,6 +76747,7 @@ components:
             ageGroup:
               type: string
               description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and cannot be changed.'
+              nullable: true
             countryCode:
               type: string
               description: Contains the two-character country code associated with the users account.
@@ -78013,6 +78984,22 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcExportJobStatus:
+      title: cloudPcExportJobStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcReportName:
+      title: cloudPcReportName
+      enum:
+        - remoteConnectionHistoricalReports
+        - dailyAggregatedRemoteConnectionReports
+        - totalAggregatedRemoteConnectionReports
+        - unknownFutureValue
+      type: string
     microsoft.graph.organizationalMessageLogoType:
       title: organizationalMessageLogoType
       enum:
@@ -84106,6 +85093,7 @@ components:
         - group
         - unknownFutureValue
         - roster
+        - project
       type: string
     microsoft.graph.plannerCategoryDescriptions:
       title: plannerCategoryDescriptions
@@ -88221,6 +89209,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEventCollectionResponse'
+    microsoft.graph.userExperienceAnalyticsAnomalyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyCollectionResponse'
+    microsoft.graph.userExperienceAnalyticsAnomalyDeviceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAnomalyDeviceCollectionResponse'
     microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse:
       description: Retrieved collection
       content:

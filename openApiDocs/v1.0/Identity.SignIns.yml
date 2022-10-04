@@ -2485,6 +2485,7 @@ paths:
             items:
               enum:
                 - id
+                - authenticationContextClassReferences
                 - namedLocations
                 - policies
               type: string
@@ -2499,6 +2500,7 @@ paths:
             items:
               enum:
                 - '*'
+                - authenticationContextClassReferences
                 - namedLocations
                 - policies
               type: string
@@ -2510,6 +2512,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
           links:
+            authenticationContextClassReferences:
+              operationId: identity.ConditionalAccess.ListAuthenticationContextClassReferences
             namedLocations:
               operationId: identity.ConditionalAccess.ListNamedLocations
             policies:
@@ -2541,6 +2545,205 @@ paths:
       summary: Delete navigation property conditionalAccess for identity
       operationId: identity_DeleteConditionalAccess
       parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/authenticationContextClassReferences:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: List authenticationContextClassReferences
+      description: Retrieve a list of authenticationContextClassReference objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0
+      operationId: identity.conditionalAccess_ListAuthenticationContextClassReferences
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isAvailable
+                - isAvailable desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isAvailable
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.authenticationContextClassReferenceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Create new navigation property to authenticationContextClassReferences for identity
+      operationId: identity.conditionalAccess_CreateAuthenticationContextClassReferences
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/conditionalAccess/authenticationContextClassReferences/{authenticationContextClassReference-id}':
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get authenticationContextClassReferences from identity
+      description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
+      operationId: identity.conditionalAccess_GetAuthenticationContextClassReferences
+      parameters:
+        - name: authenticationContextClassReference-id
+          in: path
+          description: 'key: id of authenticationContextClassReference'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationContextClassReference
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isAvailable
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Update the navigation property authenticationContextClassReferences in identity
+      operationId: identity.conditionalAccess_UpdateAuthenticationContextClassReferences
+      parameters:
+        - name: authenticationContextClassReference-id
+          in: path
+          description: 'key: id of authenticationContextClassReference'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationContextClassReference
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Delete navigation property authenticationContextClassReferences for identity
+      operationId: identity.conditionalAccess_DeleteAuthenticationContextClassReferences
+      parameters:
+        - name: authenticationContextClassReference-id
+          in: path
+          description: 'key: id of authenticationContextClassReference'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationContextClassReference
         - name: If-Match
           in: header
           description: ETag
@@ -16366,6 +16569,12 @@ components:
         - title: conditionalAccessRoot
           type: object
           properties:
+            authenticationContextClassReferences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+              description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
+              x-ms-navigationProperty: true
             namedLocations:
               type: array
               items:
@@ -16378,6 +16587,26 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
               description: Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.authenticationContextClassReference:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationContextClassReference
+          type: object
+          properties:
+            description:
+              type: string
+              description: 'A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user-facing admin experiences. For example, a selection UX.'
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name is the friendly name of the authenticationContextClassReference object. This value should be used to identify the authentication context class reference when building user-facing admin experiences. For example, a selection UX.'
+              nullable: true
+            isAvailable:
+              type: boolean
+              description: 'Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in authentication context selection UX, or used to protect app resources. It will be shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.namedLocation:
@@ -17302,7 +17531,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
           additionalProperties:
             type: object
@@ -18281,6 +18510,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     ReferenceNumeric:
@@ -21217,6 +21447,19 @@ components:
           type: array
           items:
             type: string
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationContextClassReferenceCollectionResponse:
+      title: Collection of authenticationContextClassReference
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -30959,6 +31202,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/StringCollectionResponse'
+    microsoft.graph.authenticationContextClassReferenceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReferenceCollectionResponse'
     microsoft.graph.namedLocationCollectionResponse:
       description: Retrieved collection
       content:
