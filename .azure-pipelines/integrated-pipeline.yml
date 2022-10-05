@@ -49,6 +49,7 @@ pr:
   branches:
     exclude:
     - DocsGeneration/*
+    - features/2.0
 
 stages:
 - stage: ComputeVersion
