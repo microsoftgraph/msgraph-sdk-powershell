@@ -2534,13 +2534,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetCreatedByUser
+              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetCreatedGraphBPreUser
               parameters:
                 ediscoveryCase-id: $request.path.ediscoveryCase-id
                 ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
                 siteSource-id: $request.path.siteSource-id
             lastModifiedByUser:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetLastModifiedByUser
+              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetLastModifiedGraphBPreUser
               parameters:
                 ediscoveryCase-id: $request.path.ediscoveryCase-id
                 ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
@@ -3099,13 +3099,13 @@ paths:
                 ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             createdOnBehalfOf:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfOf
+              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
               parameters:
                 ediscoveryCase-id: $request.path.ediscoveryCase-id
                 ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             memberOf:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMemberOf
+              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMemberGraphOPre
               parameters:
                 ediscoveryCase-id: $request.path.ediscoveryCase-id
                 ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
@@ -3117,7 +3117,7 @@ paths:
                 ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             membersWithLicenseErrors:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMembersWithLicenseErrors
+              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
               parameters:
                 ediscoveryCase-id: $request.path.ediscoveryCase-id
                 ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
@@ -3141,7 +3141,7 @@ paths:
                 ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
                 unifiedGroupSource-id: $request.path.unifiedGroupSource-id
             transitiveMemberOf:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListTransitiveMemberOf
+              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
               parameters:
                 ediscoveryCase-id: $request.path.ediscoveryCase-id
                 ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id

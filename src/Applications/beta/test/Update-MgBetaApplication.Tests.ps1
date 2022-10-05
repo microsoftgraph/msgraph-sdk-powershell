@@ -1,24 +1,24 @@
 # ------------------------------------------------------------------------------
 # Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License in the project root for license information.
 # ------------------------------------------------------------------------------
-Describe "Update-MgApplication" {
+Describe "Update-MgBetaApplication" {
     BeforeAll {
-        $UpdateMgApplication = Get-Command Update-MgApplication
+        $UpdateMgBetaApplication = Get-Command Update-MgBetaApplication
     }
 
     It "Should support minimum set of parameter sets" {
-        $UpdateMgApplication.ParameterSets.Name | Should -BeIn @("UpdateExpanded", "Update", "UpdateViaIdentityExpanded", "UpdateViaIdentity")
-        $UpdateMgApplication.Visibility | Should -Be "Public"
-        $UpdateMgApplication.CommandType | Should -Be "Function"
+        $UpdateMgBetaApplication.ParameterSets.Name | Should -BeIn @("UpdateExpanded", "Update", "UpdateViaIdentityExpanded", "UpdateViaIdentity")
+        $UpdateMgBetaApplication.Visibility | Should -Be "Public"
+        $UpdateMgBetaApplication.CommandType | Should -Be "Function"
     }
 
     It "Should support UpdateExpanded parameterSet by default" {
-        $UpdateMgApplication.OutputType | Should -Be "System.Boolean"
-        $UpdateMgApplication.DefaultParameterSet | Should -Be "UpdateExpanded"
+        $UpdateMgBetaApplication.OutputType | Should -Be "System.Boolean"
+        $UpdateMgBetaApplication.DefaultParameterSet | Should -Be "UpdateExpanded"
     }
 
     It 'Should have UpdateExpanded parameterSet' {
-        $UpdateExpandedParameterSet = $UpdateMgApplication.ParameterSets | Where-Object Name -eq "UpdateExpanded"
+        $UpdateExpandedParameterSet = $UpdateMgBetaApplication.ParameterSets | Where-Object Name -eq "UpdateExpanded"
         $UpdateExpandedParameterSet.Parameters.Name | Should -Contain ApplicationId
         $UpdateExpandedParameterSet.Parameters.Name | Should -Contain DisplayName
         $UpdateExpandedParameterSet.Parameters.Name | Should -Contain Description
@@ -27,14 +27,14 @@ Describe "Update-MgApplication" {
     }
 
     It 'Should have Update parameterSet' {
-        $UpdateParameterSet = $UpdateMgApplication.ParameterSets | Where-Object Name -eq "Update"
+        $UpdateParameterSet = $UpdateMgBetaApplication.ParameterSets | Where-Object Name -eq "Update"
         $UpdateParameterSet.Parameters.Name | Should -Contain ApplicationId
         $UpdateParameterSet.Parameters.Name | Should -Contain BodyParameter
         $UpdateParameterSet.Parameters.Name | Should -Contain Confirm
     }
 
     It 'Should have UpdateViaIdentityExpanded parameterSet' {
-        $UpdateViaIdentityExpandedParameterSet = $UpdateMgApplication.ParameterSets | Where-Object Name -eq "UpdateViaIdentityExpanded"
+        $UpdateViaIdentityExpandedParameterSet = $UpdateMgBetaApplication.ParameterSets | Where-Object Name -eq "UpdateViaIdentityExpanded"
         $UpdateViaIdentityExpandedParameterSet.Parameters.Name | Should -Contain InputObject
         $UpdateViaIdentityExpandedParameterSet.Parameters.Name | Should -Contain DisplayName
         $UpdateViaIdentityExpandedParameterSet.Parameters.Name | Should -Contain Description
@@ -43,7 +43,7 @@ Describe "Update-MgApplication" {
     }
 
     It 'Should have UpdateViaIdentity parameterSet' {
-        $UpdateViaIdentityParameterSet = $UpdateMgApplication.ParameterSets | Where-Object Name -eq "UpdateViaIdentity"
+        $UpdateViaIdentityParameterSet = $UpdateMgBetaApplication.ParameterSets | Where-Object Name -eq "UpdateViaIdentity"
         $UpdateViaIdentityParameterSet.Parameters.Name | Should -Contain InputObject
         $UpdateViaIdentityParameterSet.Parameters.Name | Should -Contain BodyParameter
         $UpdateViaIdentityParameterSet.Parameters.Name | Should -Contain Confirm

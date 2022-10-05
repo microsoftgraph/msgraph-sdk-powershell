@@ -2445,7 +2445,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedGroups for print
-      operationId: print.shares_DeleteAllowedGroupsByRef
+      operationId: print.shares_DeleteAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2491,7 +2491,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
-      operationId: print.shares_ListAllowedGroupsByRef
+      operationId: print.shares_ListAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -2610,7 +2610,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
-      operationId: print.shares_CreateAllowedGroupsByRef
+      operationId: print.shares_CreateAllowedGroupsGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3014,7 +3014,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property allowedUsers for print
-      operationId: print.shares_DeleteAllowedUsersByRef
+      operationId: print.shares_DeleteAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3060,7 +3060,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
-      operationId: print.shares_ListAllowedUsersByRef
+      operationId: print.shares_ListAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -3247,7 +3247,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
-      operationId: print.shares_CreateAllowedUsersByRef
+      operationId: print.shares_CreateAllowedUsersGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path

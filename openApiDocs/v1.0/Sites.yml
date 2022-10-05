@@ -250,12 +250,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: groups.Sites.GetCreatedByUser
+              operationId: groups.Sites.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
             lastModifiedByUser:
-              operationId: groups.Sites.GetLastModifiedByUser
+              operationId: groups.Sites.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -330,11 +330,11 @@ paths:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
             getActivitiesByInterval:
-              operationId: groups.group.sites.site.getActivitiesByInterval
+              operationId: groups.group.sites.site.getActivitiesGraphBPreInterval
             getApplicableContentTypesForList:
-              operationId: groups.group.sites.site.getApplicableContentTypesForList
+              operationId: groups.group.sites.site.getApplicableContentTypesGraphFPreList
             getByPath:
-              operationId: groups.group.sites.site.getByPath
+              operationId: groups.group.sites.site.getGraphBPrePath
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1258,7 +1258,7 @@ paths:
                 site-id: $request.path.site-id
                 contentType-id: $request.path.contentType-id
             associateWithHubSites:
-              operationId: groups.group.sites.site.contentTypes.contentType.associateWithHubSites
+              operationId: groups.group.sites.site.contentTypes.contentType.associateGraphWPreHubSites
             copyToDefaultContentLocation:
               operationId: groups.group.sites.site.contentTypes.contentType.copyToDefaultContentLocation
             isPublished:
@@ -3000,12 +3000,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: groups.sites.Drive.GetCreatedByUser
+              operationId: groups.sites.Drive.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
             lastModifiedByUser:
-              operationId: groups.sites.Drive.GetLastModifiedByUser
+              operationId: groups.sites.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -3273,13 +3273,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: groups.sites.Drives.GetCreatedByUser
+              operationId: groups.sites.Drives.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: groups.sites.Drives.GetLastModifiedByUser
+              operationId: groups.sites.Drives.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -3781,13 +3781,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.baseItem'
           links:
             createdByUser:
-              operationId: groups.sites.Items.GetCreatedByUser
+              operationId: groups.sites.Items.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 baseItem-id: $request.path.baseItem-id
             lastModifiedByUser:
-              operationId: groups.sites.Items.GetLastModifiedByUser
+              operationId: groups.sites.Items.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -4065,13 +4065,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.list'
           links:
             createdByUser:
-              operationId: groups.sites.Lists.GetCreatedByUser
+              operationId: groups.sites.Lists.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
             lastModifiedByUser:
-              operationId: groups.sites.Lists.GetLastModifiedByUser
+              operationId: groups.sites.Lists.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -5080,7 +5080,7 @@ paths:
                 list-id: $request.path.list-id
                 contentType-id: $request.path.contentType-id
             associateWithHubSites:
-              operationId: groups.group.sites.site.lists.list.contentTypes.contentType.associateWithHubSites
+              operationId: groups.group.sites.site.lists.list.contentTypes.contentType.associateGraphWPreHubSites
             copyToDefaultContentLocation:
               operationId: groups.group.sites.site.lists.list.contentTypes.contentType.copyToDefaultContentLocation
             isPublished:
@@ -6984,13 +6984,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: groups.sites.lists.Drive.GetCreatedByUser
+              operationId: groups.sites.lists.Drive.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
             lastModifiedByUser:
-              operationId: groups.sites.lists.Drive.GetLastModifiedByUser
+              operationId: groups.sites.lists.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -7316,14 +7316,14 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: groups.sites.lists.Items.GetCreatedByUser
+              operationId: groups.sites.lists.Items.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: groups.sites.lists.Items.GetLastModifiedByUser
+              operationId: groups.sites.lists.Items.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -7365,7 +7365,7 @@ paths:
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
             getActivitiesByInterval:
-              operationId: groups.group.sites.site.lists.list.items.listItem.getActivitiesByInterval
+              operationId: groups.group.sites.site.lists.list.items.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8097,14 +8097,14 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.sites.lists.items.DriveItem.GetCreatedByUser
+              operationId: groups.sites.lists.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: groups.sites.lists.items.DriveItem.GetLastModifiedByUser
+              operationId: groups.sites.lists.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -19601,13 +19601,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: groups.sites.Sites.GetCreatedByUser
+              operationId: groups.sites.Sites.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
                 site-id1: $request.path.site-id1
             lastModifiedByUser:
-              operationId: groups.sites.Sites.GetLastModifiedByUser
+              operationId: groups.sites.Sites.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -63300,11 +63300,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: sites.GetCreatedByUser
+              operationId: sites.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             lastModifiedByUser:
-              operationId: sites.GetLastModifiedByUser
+              operationId: sites.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             analytics:
@@ -63364,11 +63364,11 @@ paths:
               parameters:
                 site-id: $request.path.site-id
             getActivitiesByInterval:
-              operationId: sites.site.getActivitiesByInterval
+              operationId: sites.site.getActivitiesGraphBPreInterval
             getApplicableContentTypesForList:
-              operationId: sites.site.getApplicableContentTypesForList
+              operationId: sites.site.getApplicableContentTypesGraphFPreList
             getByPath:
-              operationId: sites.site.getByPath
+              operationId: sites.site.getGraphBPrePath
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -64194,7 +64194,7 @@ paths:
                 site-id: $request.path.site-id
                 contentType-id: $request.path.contentType-id
             associateWithHubSites:
-              operationId: sites.site.contentTypes.contentType.associateWithHubSites
+              operationId: sites.site.contentTypes.contentType.associateGraphWPreHubSites
             copyToDefaultContentLocation:
               operationId: sites.site.contentTypes.contentType.copyToDefaultContentLocation
             isPublished:
@@ -65698,7 +65698,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: sites.contentTypes_associateWithHubSites
+      operationId: sites.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: site-id
           in: path
@@ -66170,11 +66170,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: sites.Drive.GetCreatedByUser
+              operationId: sites.Drive.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             lastModifiedByUser:
-              operationId: sites.Drive.GetLastModifiedByUser
+              operationId: sites.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
             bundles:
@@ -66419,12 +66419,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: sites.Drives.GetCreatedByUser
+              operationId: sites.Drives.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: sites.Drives.GetLastModifiedByUser
+              operationId: sites.Drives.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 drive-id: $request.path.drive-id
@@ -66964,12 +66964,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.list'
           links:
             createdByUser:
-              operationId: sites.Lists.GetCreatedByUser
+              operationId: sites.Lists.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
             lastModifiedByUser:
-              operationId: sites.Lists.GetLastModifiedByUser
+              operationId: sites.Lists.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -67876,7 +67876,7 @@ paths:
                 list-id: $request.path.list-id
                 contentType-id: $request.path.contentType-id
             associateWithHubSites:
-              operationId: sites.site.lists.list.contentTypes.contentType.associateWithHubSites
+              operationId: sites.site.lists.list.contentTypes.contentType.associateGraphWPreHubSites
             copyToDefaultContentLocation:
               operationId: sites.site.lists.list.contentTypes.contentType.copyToDefaultContentLocation
             isPublished:
@@ -69537,7 +69537,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: sites.lists.contentTypes_associateWithHubSites
+      operationId: sites.lists.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: site-id
           in: path
@@ -70078,12 +70078,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: sites.lists.Drive.GetCreatedByUser
+              operationId: sites.lists.Drive.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
             lastModifiedByUser:
-              operationId: sites.lists.Drive.GetLastModifiedByUser
+              operationId: sites.lists.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -70378,13 +70378,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: sites.lists.Items.GetCreatedByUser
+              operationId: sites.lists.Items.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: sites.lists.Items.GetLastModifiedByUser
+              operationId: sites.lists.Items.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -70420,7 +70420,7 @@ paths:
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
             getActivitiesByInterval:
-              operationId: sites.site.lists.list.items.listItem.getActivitiesByInterval
+              operationId: sites.site.lists.list.items.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -71125,13 +71125,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: sites.lists.items.DriveItem.GetCreatedByUser
+              operationId: sites.lists.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: sites.lists.items.DriveItem.GetLastModifiedByUser
+              operationId: sites.lists.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 list-id: $request.path.list-id
@@ -71435,7 +71435,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: sites.lists.items_getActivitiesByInterval
+      operationId: sites.lists.items_getActivitiesGraphBPreInterval
       parameters:
         - name: site-id
           in: path
@@ -71545,7 +71545,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: sites.lists.items_getActivitiesByInterval
+      operationId: sites.lists.items_getActivitiesGraphBPreInterval
       parameters:
         - name: site-id
           in: path
@@ -72899,7 +72899,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: sites_getActivitiesByInterval
+      operationId: sites_getActivitiesGraphBPreInterval
       parameters:
         - name: site-id
           in: path
@@ -72993,7 +72993,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: sites_getActivitiesByInterval
+      operationId: sites_getActivitiesGraphBPreInterval
       parameters:
         - name: site-id
           in: path
@@ -73111,7 +73111,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getApplicableContentTypesForList
-      operationId: sites_getApplicableContentTypesForList
+      operationId: sites_getApplicableContentTypesGraphFPreList
       parameters:
         - name: site-id
           in: path
@@ -73231,7 +73231,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getByPath
-      operationId: sites_getByPath
+      operationId: sites_getGraphBPrePath
       parameters:
         - name: site-id
           in: path
@@ -75431,12 +75431,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: sites.Sites.GetCreatedByUser
+              operationId: sites.Sites.GetCreatedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 site-id1: $request.path.site-id1
             lastModifiedByUser:
-              operationId: sites.Sites.GetLastModifiedByUser
+              operationId: sites.Sites.GetLastModifiedGraphBPreUser
               parameters:
                 site-id: $request.path.site-id
                 site-id1: $request.path.site-id1
@@ -115072,12 +115072,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: users.FollowedSites.GetCreatedByUser
+              operationId: users.FollowedSites.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 site-id: $request.path.site-id
             lastModifiedByUser:
-              operationId: users.FollowedSites.GetLastModifiedByUser
+              operationId: users.FollowedSites.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 site-id: $request.path.site-id

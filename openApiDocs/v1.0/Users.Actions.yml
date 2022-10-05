@@ -408,7 +408,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_checkMemberGroups
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_checkMemberGroups
       parameters:
         - name: user-id
           in: path
@@ -465,7 +465,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkMemberObjects
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_checkMemberObjects
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_checkMemberObjects
       parameters:
         - name: user-id
           in: path
@@ -526,7 +526,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_getMemberGroups
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_getMemberGroups
       parameters:
         - name: user-id
           in: path
@@ -587,7 +587,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_getMemberObjects
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_getMemberObjects
       parameters:
         - name: user-id
           in: path
@@ -648,7 +648,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: users.authentication.windowsHelloForBusinessMethods.device_restore
+      operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device_restore
       parameters:
         - name: user-id
           in: path
@@ -8474,7 +8474,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: users.drives.list.contentTypes_associateWithHubSites
+      operationId: users.drives.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: user-id
           in: path
@@ -14286,7 +14286,7 @@ paths:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
       description: Issues a wipe operation on an app registration with specified device tag.
-      operationId: users_wipeManagedAppRegistrationsByDeviceTag
+      operationId: users_wipeManagedAppRegistrationsGraphBPreDeviceTag
       parameters:
         - name: user-id
           in: path
@@ -15975,7 +15975,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: users_getByIds
+      operationId: users_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:

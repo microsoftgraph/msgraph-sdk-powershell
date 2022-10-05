@@ -1,10 +1,10 @@
 ﻿# ------------------------------------------------------------------------------
 # Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License in the project root for license information.
 # ------------------------------------------------------------------------------
-Describe "Microsoft.Graph.Applications Module" {
+Describe "Microsoft.Graph.Beta.Applications Module" {
     Context "On module import" {
         BeforeAll {
-            $ModuleName = "Microsoft.Graph.Applications"
+            $ModuleName = "Microsoft.Graph.Beta.Applications"
             $ModulePath = Join-Path $PSScriptRoot "..\$ModuleName.psd1"
             $PSModuleInfo = Get-Module $ModuleName
         }
@@ -26,7 +26,8 @@ Describe "Microsoft.Graph.Applications Module" {
             $PSModuleInfo.Definition | Should -Not -BeNullOrEmpty
         }
     
-        It 'Should lock GUID' {
+        It 'Should lock GUID' -Skip {
+            # TODO: Remove Skip when GUID is locked.
             $PSModuleInfo.Guid.Guid | Should -Be "467f54f2-44a8-4993-8e75-b96c3e443098"
         }
     

@@ -652,7 +652,7 @@ paths:
               parameters:
                 user-id: $request.path.user-id
             memberOf:
-              operationId: users.ListMemberOf
+              operationId: users.ListMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
             oauth2PermissionGrants:
@@ -672,11 +672,11 @@ paths:
               parameters:
                 user-id: $request.path.user-id
             scopedRoleMemberOf:
-              operationId: users.ListScopedRoleMemberOf
+              operationId: users.ListScopedRoleMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
             transitiveMemberOf:
-              operationId: users.ListTransitiveMemberOf
+              operationId: users.ListTransitiveMemberGraphOPre
               parameters:
                 user-id: $request.path.user-id
             calendar:
@@ -852,7 +852,7 @@ paths:
             translateExchangeIds:
               operationId: users.user.translateExchangeIds
             wipeManagedAppRegistrationsByDeviceTag:
-              operationId: users.user.wipeManagedAppRegistrationsByDeviceTag
+              operationId: users.user.wipeManagedAppRegistrationsGraphBPreDeviceTag
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1729,7 +1729,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
-      operationId: users_GetManagerByRef
+      operationId: users_GetManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1753,7 +1753,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Update the ref of navigation property manager in users
-      operationId: users_SetManagerByRef
+      operationId: users_SetManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1775,7 +1775,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Delete ref of navigation property manager for users
-      operationId: users_DeleteManagerByRef
+      operationId: users_DeleteManagerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -1806,7 +1806,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
-      operationId: users_ListMemberOf
+      operationId: users_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -1886,7 +1886,7 @@ paths:
         - users.directoryObject
       summary: Get memberOf from users
       description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users_GetMemberOf
+      operationId: users_GetMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -6041,7 +6041,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0
-      operationId: users_ListTransitiveMemberOf
+      operationId: users_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -6121,7 +6121,7 @@ paths:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
       description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
-      operationId: users_GetTransitiveMemberOf
+      operationId: users_GetTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path

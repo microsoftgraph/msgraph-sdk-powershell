@@ -227,11 +227,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: drives.GetCreatedByUser
+              operationId: drives.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.GetLastModifiedByUser
+              operationId: drives.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             bundles:
@@ -263,7 +263,7 @@ paths:
             search:
               operationId: drives.drive.search
             sharedWithMe:
-              operationId: drives.drive.sharedWithMe
+              operationId: drives.drive.sharedGraphWPreMe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -619,12 +619,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.Bundles.GetCreatedByUser
+              operationId: drives.Bundles.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: drives.Bundles.GetLastModifiedByUser
+              operationId: drives.Bundles.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
@@ -1045,12 +1045,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.Following.GetCreatedByUser
+              operationId: drives.Following.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: drives.Following.GetLastModifiedByUser
+              operationId: drives.Following.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
@@ -1499,12 +1499,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.Items.GetCreatedByUser
+              operationId: drives.Items.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: drives.Items.GetLastModifiedByUser
+              operationId: drives.Items.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
@@ -1563,7 +1563,7 @@ paths:
             follow:
               operationId: drives.drive.items.driveItem.follow
             getActivitiesByInterval:
-              operationId: drives.drive.items.driveItem.getActivitiesByInterval
+              operationId: drives.drive.items.driveItem.getActivitiesGraphBPreInterval
             invite:
               operationId: drives.drive.items.driveItem.invite
             preview:
@@ -2043,13 +2043,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.items.Children.GetCreatedByUser
+              operationId: drives.items.Children.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
                 driveItem-id1: $request.path.driveItem-id1
             lastModifiedByUser:
-              operationId: drives.items.Children.GetLastModifiedByUser
+              operationId: drives.items.Children.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
@@ -2350,12 +2350,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: drives.items.ListItem.GetCreatedByUser
+              operationId: drives.items.ListItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: drives.items.ListItem.GetLastModifiedByUser
+              operationId: drives.items.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
@@ -2385,7 +2385,7 @@ paths:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             getActivitiesByInterval:
-              operationId: drives.drive.items.driveItem.listItem.getActivitiesByInterval
+              operationId: drives.drive.items.driveItem.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3006,12 +3006,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.items.listItem.DriveItem.GetCreatedByUser
+              operationId: drives.items.listItem.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: drives.items.listItem.DriveItem.GetLastModifiedByUser
+              operationId: drives.items.listItem.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
@@ -3266,7 +3266,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.items.listItem_getActivitiesByInterval
+      operationId: drives.items.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -3368,7 +3368,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.items.listItem_getActivitiesByInterval
+      operationId: drives.items.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -4640,7 +4640,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.items_getActivitiesByInterval
+      operationId: drives.items_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -4742,7 +4742,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.items_getActivitiesByInterval
+      operationId: drives.items_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -6857,11 +6857,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.list'
           links:
             createdByUser:
-              operationId: drives.List.GetCreatedByUser
+              operationId: drives.List.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.List.GetLastModifiedByUser
+              operationId: drives.List.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             columns:
@@ -7666,7 +7666,7 @@ paths:
                 drive-id: $request.path.drive-id
                 contentType-id: $request.path.contentType-id
             associateWithHubSites:
-              operationId: drives.drive.list.contentTypes.contentType.associateWithHubSites
+              operationId: drives.drive.list.contentTypes.contentType.associateGraphWPreHubSites
             copyToDefaultContentLocation:
               operationId: drives.drive.list.contentTypes.contentType.copyToDefaultContentLocation
             isPublished:
@@ -9170,7 +9170,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: drives.list.contentTypes_associateWithHubSites
+      operationId: drives.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: drive-id
           in: path
@@ -9639,11 +9639,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: drives.list.Drive.GetCreatedByUser
+              operationId: drives.list.Drive.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.list.Drive.GetLastModifiedByUser
+              operationId: drives.list.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             bundles:
@@ -9907,12 +9907,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: drives.list.Items.GetCreatedByUser
+              operationId: drives.list.Items.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: drives.list.Items.GetLastModifiedByUser
+              operationId: drives.list.Items.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
@@ -9942,7 +9942,7 @@ paths:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             getActivitiesByInterval:
-              operationId: drives.drive.list.items.listItem.getActivitiesByInterval
+              operationId: drives.drive.list.items.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10563,12 +10563,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.list.items.DriveItem.GetCreatedByUser
+              operationId: drives.list.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: drives.list.items.DriveItem.GetLastModifiedByUser
+              operationId: drives.list.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
@@ -10823,7 +10823,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.list.items_getActivitiesByInterval
+      operationId: drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -10925,7 +10925,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.list.items_getActivitiesByInterval
+      operationId: drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -12444,7 +12444,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function sharedWithMe
-      operationId: drives_sharedWithMe
+      operationId: drives_sharedGraphWPreMe
       parameters:
         - name: drive-id
           in: path
@@ -12707,11 +12707,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.Root.GetCreatedByUser
+              operationId: drives.Root.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.Root.GetLastModifiedByUser
+              operationId: drives.Root.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             workbook:
@@ -12761,7 +12761,7 @@ paths:
             follow:
               operationId: drives.drive.root.follow
             getActivitiesByInterval:
-              operationId: drives.drive.root.getActivitiesByInterval
+              operationId: drives.drive.root.getActivitiesGraphBPreInterval
             invite:
               operationId: drives.drive.root.invite
             preview:
@@ -13198,12 +13198,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.root.Children.GetCreatedByUser
+              operationId: drives.root.Children.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: drives.root.Children.GetLastModifiedByUser
+              operationId: drives.root.Children.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
@@ -13458,11 +13458,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: drives.root.ListItem.GetCreatedByUser
+              operationId: drives.root.ListItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.root.ListItem.GetLastModifiedByUser
+              operationId: drives.root.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             analytics:
@@ -13486,7 +13486,7 @@ paths:
               parameters:
                 drive-id: $request.path.drive-id
             getActivitiesByInterval:
-              operationId: drives.drive.root.listItem.getActivitiesByInterval
+              operationId: drives.drive.root.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14023,11 +14023,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.root.listItem.DriveItem.GetCreatedByUser
+              operationId: drives.root.listItem.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: drives.root.listItem.DriveItem.GetLastModifiedByUser
+              operationId: drives.root.listItem.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
             workbook:
@@ -14233,7 +14233,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.root.listItem_getActivitiesByInterval
+      operationId: drives.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -14327,7 +14327,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.root.listItem_getActivitiesByInterval
+      operationId: drives.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -15454,7 +15454,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.root_getActivitiesByInterval
+      operationId: drives.root_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -15548,7 +15548,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: drives.root_getActivitiesByInterval
+      operationId: drives.root_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
           in: path
@@ -17625,12 +17625,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: drives.Special.GetCreatedByUser
+              operationId: drives.Special.GetCreatedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: drives.Special.GetLastModifiedByUser
+              operationId: drives.Special.GetLastModifiedGraphBPreUser
               parameters:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
@@ -17831,11 +17831,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: groups.Drive.GetCreatedByUser
+              operationId: groups.Drive.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             lastModifiedByUser:
-              operationId: groups.Drive.GetLastModifiedByUser
+              operationId: groups.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
             bundles:
@@ -18111,12 +18111,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: groups.Drives.GetCreatedByUser
+              operationId: groups.Drives.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: groups.Drives.GetLastModifiedByUser
+              operationId: groups.Drives.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -18155,7 +18155,7 @@ paths:
             search:
               operationId: groups.group.drives.drive.search
             sharedWithMe:
-              operationId: groups.group.drives.drive.sharedWithMe
+              operationId: groups.group.drives.drive.sharedGraphWPreMe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18543,13 +18543,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.Bundles.GetCreatedByUser
+              operationId: groups.drives.Bundles.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: groups.drives.Bundles.GetLastModifiedByUser
+              operationId: groups.drives.Bundles.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -19011,13 +19011,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.Following.GetCreatedByUser
+              operationId: groups.drives.Following.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: groups.drives.Following.GetLastModifiedByUser
+              operationId: groups.drives.Following.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -19515,13 +19515,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.Items.GetCreatedByUser
+              operationId: groups.drives.Items.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: groups.drives.Items.GetLastModifiedByUser
+              operationId: groups.drives.Items.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -19589,7 +19589,7 @@ paths:
             follow:
               operationId: groups.group.drives.drive.items.driveItem.follow
             getActivitiesByInterval:
-              operationId: groups.group.drives.drive.items.driveItem.getActivitiesByInterval
+              operationId: groups.group.drives.drive.items.driveItem.getActivitiesGraphBPreInterval
             invite:
               operationId: groups.group.drives.drive.items.driveItem.invite
             preview:
@@ -20112,14 +20112,14 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.items.Children.GetCreatedByUser
+              operationId: groups.drives.items.Children.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
                 driveItem-id1: $request.path.driveItem-id1
             lastModifiedByUser:
-              operationId: groups.drives.items.Children.GetLastModifiedByUser
+              operationId: groups.drives.items.Children.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -20469,13 +20469,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: groups.drives.items.ListItem.GetCreatedByUser
+              operationId: groups.drives.items.ListItem.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: groups.drives.items.ListItem.GetLastModifiedByUser
+              operationId: groups.drives.items.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -20511,7 +20511,7 @@ paths:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             getActivitiesByInterval:
-              operationId: groups.group.drives.drive.items.driveItem.listItem.getActivitiesByInterval
+              operationId: groups.group.drives.drive.items.driveItem.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21167,13 +21167,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.items.listItem.DriveItem.GetCreatedByUser
+              operationId: groups.drives.items.listItem.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: groups.drives.items.listItem.DriveItem.GetLastModifiedByUser
+              operationId: groups.drives.items.listItem.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -23548,12 +23548,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.list'
           links:
             createdByUser:
-              operationId: groups.drives.List.GetCreatedByUser
+              operationId: groups.drives.List.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: groups.drives.List.GetLastModifiedByUser
+              operationId: groups.drives.List.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -24460,7 +24460,7 @@ paths:
                 drive-id: $request.path.drive-id
                 contentType-id: $request.path.contentType-id
             associateWithHubSites:
-              operationId: groups.group.drives.drive.list.contentTypes.contentType.associateWithHubSites
+              operationId: groups.group.drives.drive.list.contentTypes.contentType.associateGraphWPreHubSites
             copyToDefaultContentLocation:
               operationId: groups.group.drives.drive.list.contentTypes.contentType.copyToDefaultContentLocation
             isPublished:
@@ -26199,12 +26199,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: groups.drives.list.Drive.GetCreatedByUser
+              operationId: groups.drives.list.Drive.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: groups.drives.list.Drive.GetLastModifiedByUser
+              operationId: groups.drives.list.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -26499,13 +26499,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: groups.drives.list.Items.GetCreatedByUser
+              operationId: groups.drives.list.Items.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: groups.drives.list.Items.GetLastModifiedByUser
+              operationId: groups.drives.list.Items.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -26541,7 +26541,7 @@ paths:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             getActivitiesByInterval:
-              operationId: groups.group.drives.drive.list.items.listItem.getActivitiesByInterval
+              operationId: groups.group.drives.drive.list.items.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27197,13 +27197,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.list.items.DriveItem.GetCreatedByUser
+              operationId: groups.drives.list.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: groups.drives.list.items.DriveItem.GetLastModifiedByUser
+              operationId: groups.drives.list.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -28749,12 +28749,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.Root.GetCreatedByUser
+              operationId: groups.drives.Root.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: groups.drives.Root.GetLastModifiedByUser
+              operationId: groups.drives.Root.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -28813,7 +28813,7 @@ paths:
             follow:
               operationId: groups.group.drives.drive.root.follow
             getActivitiesByInterval:
-              operationId: groups.group.drives.drive.root.getActivitiesByInterval
+              operationId: groups.group.drives.drive.root.getActivitiesGraphBPreInterval
             invite:
               operationId: groups.group.drives.drive.root.invite
             preview:
@@ -29293,13 +29293,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.root.Children.GetCreatedByUser
+              operationId: groups.drives.root.Children.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: groups.drives.root.Children.GetLastModifiedByUser
+              operationId: groups.drives.root.Children.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -29603,12 +29603,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: groups.drives.root.ListItem.GetCreatedByUser
+              operationId: groups.drives.root.ListItem.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: groups.drives.root.ListItem.GetLastModifiedByUser
+              operationId: groups.drives.root.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -29638,7 +29638,7 @@ paths:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
             getActivitiesByInterval:
-              operationId: groups.group.drives.drive.root.listItem.getActivitiesByInterval
+              operationId: groups.group.drives.drive.root.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30218,12 +30218,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.root.listItem.DriveItem.GetCreatedByUser
+              operationId: groups.drives.root.listItem.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: groups.drives.root.listItem.DriveItem.GetLastModifiedByUser
+              operationId: groups.drives.root.listItem.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -32534,13 +32534,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: groups.drives.Special.GetCreatedByUser
+              operationId: groups.drives.Special.GetCreatedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: groups.drives.Special.GetLastModifiedByUser
+              operationId: groups.drives.Special.GetLastModifiedGraphBPreUser
               parameters:
                 group-id: $request.path.group-id
                 drive-id: $request.path.drive-id
@@ -32893,11 +32893,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharedDriveItem'
           links:
             createdByUser:
-              operationId: shares.GetCreatedByUser
+              operationId: shares.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.GetLastModifiedByUser
+              operationId: shares.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             driveItem:
@@ -33089,11 +33089,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.DriveItem.GetCreatedByUser
+              operationId: shares.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.DriveItem.GetLastModifiedByUser
+              operationId: shares.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             workbook:
@@ -33486,12 +33486,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.Items.GetCreatedByUser
+              operationId: shares.Items.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: shares.Items.GetLastModifiedByUser
+              operationId: shares.Items.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 driveItem-id: $request.path.driveItem-id
@@ -33688,11 +33688,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.list'
           links:
             createdByUser:
-              operationId: shares.List.GetCreatedByUser
+              operationId: shares.List.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.List.GetLastModifiedByUser
+              operationId: shares.List.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             columns:
@@ -34497,7 +34497,7 @@ paths:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 contentType-id: $request.path.contentType-id
             associateWithHubSites:
-              operationId: shares.sharedDriveItem.list.contentTypes.contentType.associateWithHubSites
+              operationId: shares.sharedDriveItem.list.contentTypes.contentType.associateGraphWPreHubSites
             copyToDefaultContentLocation:
               operationId: shares.sharedDriveItem.list.contentTypes.contentType.copyToDefaultContentLocation
             isPublished:
@@ -36001,7 +36001,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: shares.list.contentTypes_associateWithHubSites
+      operationId: shares.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -36470,11 +36470,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: shares.list.Drive.GetCreatedByUser
+              operationId: shares.list.Drive.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.list.Drive.GetLastModifiedByUser
+              operationId: shares.list.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             bundles:
@@ -36738,12 +36738,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: shares.list.Items.GetCreatedByUser
+              operationId: shares.list.Items.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: shares.list.Items.GetLastModifiedByUser
+              operationId: shares.list.Items.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
@@ -36773,7 +36773,7 @@ paths:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
             getActivitiesByInterval:
-              operationId: shares.sharedDriveItem.list.items.listItem.getActivitiesByInterval
+              operationId: shares.sharedDriveItem.list.items.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37394,12 +37394,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.list.items.DriveItem.GetCreatedByUser
+              operationId: shares.list.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: shares.list.items.DriveItem.GetLastModifiedByUser
+              operationId: shares.list.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
                 listItem-id: $request.path.listItem-id
@@ -37654,7 +37654,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: shares.list.items_getActivitiesByInterval
+      operationId: shares.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -37756,7 +37756,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: shares.list.items_getActivitiesByInterval
+      operationId: shares.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -39010,11 +39010,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: shares.ListItem.GetCreatedByUser
+              operationId: shares.ListItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.ListItem.GetLastModifiedByUser
+              operationId: shares.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             analytics:
@@ -39038,7 +39038,7 @@ paths:
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             getActivitiesByInterval:
-              operationId: shares.sharedDriveItem.listItem.getActivitiesByInterval
+              operationId: shares.sharedDriveItem.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39575,11 +39575,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.listItem.DriveItem.GetCreatedByUser
+              operationId: shares.listItem.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.listItem.DriveItem.GetLastModifiedByUser
+              operationId: shares.listItem.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             workbook:
@@ -39785,7 +39785,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: shares.listItem_getActivitiesByInterval
+      operationId: shares.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -39879,7 +39879,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: shares.listItem_getActivitiesByInterval
+      operationId: shares.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -40682,11 +40682,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: shares.Root.GetCreatedByUser
+              operationId: shares.Root.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.Root.GetLastModifiedByUser
+              operationId: shares.Root.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             workbook:
@@ -40875,11 +40875,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.site'
           links:
             createdByUser:
-              operationId: shares.Site.GetCreatedByUser
+              operationId: shares.Site.GetCreatedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             lastModifiedByUser:
-              operationId: shares.Site.GetLastModifiedByUser
+              operationId: shares.Site.GetLastModifiedGraphBPreUser
               parameters:
                 sharedDriveItem-id: $request.path.sharedDriveItem-id
             analytics:
@@ -41023,11 +41023,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: users.Drive.GetCreatedByUser
+              operationId: users.Drive.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
             lastModifiedByUser:
-              operationId: users.Drive.GetLastModifiedByUser
+              operationId: users.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
             bundles:
@@ -41303,12 +41303,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: users.Drives.GetCreatedByUser
+              operationId: users.Drives.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: users.Drives.GetLastModifiedByUser
+              operationId: users.Drives.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -41347,7 +41347,7 @@ paths:
             search:
               operationId: users.user.drives.drive.search
             sharedWithMe:
-              operationId: users.user.drives.drive.sharedWithMe
+              operationId: users.user.drives.drive.sharedGraphWPreMe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41735,13 +41735,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.Bundles.GetCreatedByUser
+              operationId: users.drives.Bundles.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: users.drives.Bundles.GetLastModifiedByUser
+              operationId: users.drives.Bundles.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -42203,13 +42203,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.Following.GetCreatedByUser
+              operationId: users.drives.Following.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: users.drives.Following.GetLastModifiedByUser
+              operationId: users.drives.Following.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -42707,13 +42707,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.Items.GetCreatedByUser
+              operationId: users.drives.Items.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: users.drives.Items.GetLastModifiedByUser
+              operationId: users.drives.Items.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -42781,7 +42781,7 @@ paths:
             follow:
               operationId: users.user.drives.drive.items.driveItem.follow
             getActivitiesByInterval:
-              operationId: users.user.drives.drive.items.driveItem.getActivitiesByInterval
+              operationId: users.user.drives.drive.items.driveItem.getActivitiesGraphBPreInterval
             invite:
               operationId: users.user.drives.drive.items.driveItem.invite
             preview:
@@ -43304,14 +43304,14 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.items.Children.GetCreatedByUser
+              operationId: users.drives.items.Children.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
                 driveItem-id1: $request.path.driveItem-id1
             lastModifiedByUser:
-              operationId: users.drives.items.Children.GetLastModifiedByUser
+              operationId: users.drives.items.Children.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -43661,13 +43661,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: users.drives.items.ListItem.GetCreatedByUser
+              operationId: users.drives.items.ListItem.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: users.drives.items.ListItem.GetLastModifiedByUser
+              operationId: users.drives.items.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -43703,7 +43703,7 @@ paths:
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             getActivitiesByInterval:
-              operationId: users.user.drives.drive.items.driveItem.listItem.getActivitiesByInterval
+              operationId: users.user.drives.drive.items.driveItem.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44359,13 +44359,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.items.listItem.DriveItem.GetCreatedByUser
+              operationId: users.drives.items.listItem.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: users.drives.items.listItem.DriveItem.GetLastModifiedByUser
+              operationId: users.drives.items.listItem.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -46740,12 +46740,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.list'
           links:
             createdByUser:
-              operationId: users.drives.List.GetCreatedByUser
+              operationId: users.drives.List.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: users.drives.List.GetLastModifiedByUser
+              operationId: users.drives.List.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -47652,7 +47652,7 @@ paths:
                 drive-id: $request.path.drive-id
                 contentType-id: $request.path.contentType-id
             associateWithHubSites:
-              operationId: users.user.drives.drive.list.contentTypes.contentType.associateWithHubSites
+              operationId: users.user.drives.drive.list.contentTypes.contentType.associateGraphWPreHubSites
             copyToDefaultContentLocation:
               operationId: users.user.drives.drive.list.contentTypes.contentType.copyToDefaultContentLocation
             isPublished:
@@ -49391,12 +49391,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.drive'
           links:
             createdByUser:
-              operationId: users.drives.list.Drive.GetCreatedByUser
+              operationId: users.drives.list.Drive.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: users.drives.list.Drive.GetLastModifiedByUser
+              operationId: users.drives.list.Drive.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -49691,13 +49691,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: users.drives.list.Items.GetCreatedByUser
+              operationId: users.drives.list.Items.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: users.drives.list.Items.GetLastModifiedByUser
+              operationId: users.drives.list.Items.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -49733,7 +49733,7 @@ paths:
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             getActivitiesByInterval:
-              operationId: users.user.drives.drive.list.items.listItem.getActivitiesByInterval
+              operationId: users.user.drives.drive.list.items.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -50389,13 +50389,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.list.items.DriveItem.GetCreatedByUser
+              operationId: users.drives.list.items.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 listItem-id: $request.path.listItem-id
             lastModifiedByUser:
-              operationId: users.drives.list.items.DriveItem.GetLastModifiedByUser
+              operationId: users.drives.list.items.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -51941,12 +51941,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.Root.GetCreatedByUser
+              operationId: users.drives.Root.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: users.drives.Root.GetLastModifiedByUser
+              operationId: users.drives.Root.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -52005,7 +52005,7 @@ paths:
             follow:
               operationId: users.user.drives.drive.root.follow
             getActivitiesByInterval:
-              operationId: users.user.drives.drive.root.getActivitiesByInterval
+              operationId: users.user.drives.drive.root.getActivitiesGraphBPreInterval
             invite:
               operationId: users.user.drives.drive.root.invite
             preview:
@@ -52485,13 +52485,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.root.Children.GetCreatedByUser
+              operationId: users.drives.root.Children.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: users.drives.root.Children.GetLastModifiedByUser
+              operationId: users.drives.root.Children.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -52795,12 +52795,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
           links:
             createdByUser:
-              operationId: users.drives.root.ListItem.GetCreatedByUser
+              operationId: users.drives.root.ListItem.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: users.drives.root.ListItem.GetLastModifiedByUser
+              operationId: users.drives.root.ListItem.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -52830,7 +52830,7 @@ paths:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
             getActivitiesByInterval:
-              operationId: users.user.drives.drive.root.listItem.getActivitiesByInterval
+              operationId: users.user.drives.drive.root.listItem.getActivitiesGraphBPreInterval
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -53410,12 +53410,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.root.listItem.DriveItem.GetCreatedByUser
+              operationId: users.drives.root.listItem.DriveItem.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
             lastModifiedByUser:
-              operationId: users.drives.root.listItem.DriveItem.GetLastModifiedByUser
+              operationId: users.drives.root.listItem.DriveItem.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
@@ -55726,13 +55726,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
           links:
             createdByUser:
-              operationId: users.drives.Special.GetCreatedByUser
+              operationId: users.drives.Special.GetCreatedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id
                 driveItem-id: $request.path.driveItem-id
             lastModifiedByUser:
-              operationId: users.drives.Special.GetLastModifiedByUser
+              operationId: users.drives.Special.GetLastModifiedGraphBPreUser
               parameters:
                 user-id: $request.path.user-id
                 drive-id: $request.path.drive-id

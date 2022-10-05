@@ -729,11 +729,11 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             createdOnBehalfOf:
-              operationId: groups.GetCreatedOnBehalfOf
+              operationId: groups.GetCreatedOnBehalfGraphOPre
               parameters:
                 group-id: $request.path.group-id
             memberOf:
-              operationId: groups.ListMemberOf
+              operationId: groups.ListMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             members:
@@ -741,7 +741,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             membersWithLicenseErrors:
-              operationId: groups.ListMembersWithLicenseErrors
+              operationId: groups.ListMembersGraphWPreLicenseErrors
               parameters:
                 group-id: $request.path.group-id
             owners:
@@ -757,7 +757,7 @@ paths:
               parameters:
                 group-id: $request.path.group-id
             transitiveMemberOf:
-              operationId: groups.ListTransitiveMemberOf
+              operationId: groups.ListTransitiveMemberGraphOPre
               parameters:
                 group-id: $request.path.group-id
             transitiveMembers:
@@ -837,7 +837,7 @@ paths:
             assignLicense:
               operationId: groups.group.assignLicense
             checkGrantedPermissionsForApp:
-              operationId: groups.group.checkGrantedPermissionsForApp
+              operationId: groups.group.checkGrantedPermissionsGraphFPreApp
             checkMemberGroups:
               operationId: groups.group.checkMemberGroups
             checkMemberObjects:
@@ -855,9 +855,9 @@ paths:
             restore:
               operationId: groups.group.restore
             subscribeByMail:
-              operationId: groups.group.subscribeByMail
+              operationId: groups.group.subscribeGraphBPreMail
             unsubscribeByMail:
-              operationId: groups.group.unsubscribeByMail
+              operationId: groups.group.unsubscribeGraphBPreMail
             validateProperties:
               operationId: groups.group.validateProperties
         default:
@@ -989,7 +989,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property acceptedSenders for groups
-      operationId: groups_DeleteAcceptedSendersByRef
+      operationId: groups_DeleteAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1035,7 +1035,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
-      operationId: groups_ListAcceptedSendersByRef
+      operationId: groups_ListAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -1077,7 +1077,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to acceptedSenders for groups
-      operationId: groups_CreateAcceptedSendersByRef
+      operationId: groups_CreateAcceptedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -8973,7 +8973,7 @@ paths:
         - groups.directoryObject
       summary: Get createdOnBehalfOf from groups
       description: 'The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.'
-      operationId: groups_GetCreatedOnBehalfOf
+      operationId: groups_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -9072,7 +9072,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items.listItem_getActivitiesByInterval
+      operationId: groups.drives.items.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -9182,7 +9182,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items.listItem_getActivitiesByInterval
+      operationId: groups.drives.items.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -10090,7 +10090,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items_getActivitiesByInterval
+      operationId: groups.drives.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -10200,7 +10200,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.items_getActivitiesByInterval
+      operationId: groups.drives.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -11021,7 +11021,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: groups.drives.list.contentTypes_associateWithHubSites
+      operationId: groups.drives.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: group-id
           in: path
@@ -11529,7 +11529,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.list.items_getActivitiesByInterval
+      operationId: groups.drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -11639,7 +11639,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.list.items_getActivitiesByInterval
+      operationId: groups.drives.list.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -12209,7 +12209,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function sharedWithMe
-      operationId: groups.drives_sharedWithMe
+      operationId: groups.drives_sharedGraphWPreMe
       parameters:
         - name: group-id
           in: path
@@ -12421,7 +12421,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root.listItem_getActivitiesByInterval
+      operationId: groups.drives.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -12523,7 +12523,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root.listItem_getActivitiesByInterval
+      operationId: groups.drives.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -13351,7 +13351,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root_getActivitiesByInterval
+      operationId: groups.drives.root_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -13453,7 +13453,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.drives.root_getActivitiesByInterval
+      operationId: groups.drives.root_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -15984,7 +15984,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
-      operationId: groups_ListMemberOf
+      operationId: groups_ListMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -16064,7 +16064,7 @@ paths:
         - groups.directoryObject
       summary: Get memberOf from groups
       description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-      operationId: groups_GetMemberOf
+      operationId: groups_GetMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -16215,7 +16215,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property members for groups
-      operationId: groups_DeleteMembersByRef
+      operationId: groups_DeleteMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -16261,7 +16261,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
-      operationId: groups_ListMembersByRef
+      operationId: groups_ListMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -16314,7 +16314,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to members for groups
-      operationId: groups_CreateMembersByRef
+      operationId: groups_CreateMembersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -16338,7 +16338,7 @@ paths:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
       description: A list of group members with license errors from this group-based license assignment. Read-only.
-      operationId: groups_ListMembersWithLicenseErrors
+      operationId: groups_ListMembersGraphWPreLicenseErrors
       parameters:
         - name: group-id
           in: path
@@ -16418,7 +16418,7 @@ paths:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
       description: A list of group members with license errors from this group-based license assignment. Read-only.
-      operationId: groups_GetMembersWithLicenseErrors
+      operationId: groups_GetMembersGraphWPreLicenseErrors
       parameters:
         - name: group-id
           in: path
@@ -16560,7 +16560,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkGrantedPermissionsForApp
-      operationId: groups_checkGrantedPermissionsForApp
+      operationId: groups_checkGrantedPermissionsGraphFPreApp
       parameters:
         - name: group-id
           in: path
@@ -16912,7 +16912,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-subscribebymail?view=graph-rest-1.0
-      operationId: groups_subscribeByMail
+      operationId: groups_subscribeGraphBPreMail
       parameters:
         - name: group-id
           in: path
@@ -16937,7 +16937,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-unsubscribebymail?view=graph-rest-1.0
-      operationId: groups_unsubscribeByMail
+      operationId: groups_unsubscribeGraphBPreMail
       parameters:
         - name: group-id
           in: path
@@ -18666,7 +18666,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property owners for groups
-      operationId: groups_DeleteOwnersByRef
+      operationId: groups_DeleteOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -18712,7 +18712,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
-      operationId: groups_ListOwnersByRef
+      operationId: groups_ListOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -18765,7 +18765,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to owners for groups
-      operationId: groups_CreateOwnersByRef
+      operationId: groups_CreateOwnersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -19386,7 +19386,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: groups.permissionGrants_getByIds
+      operationId: groups.permissionGrants_getGraphBPreIds
       parameters:
         - name: group-id
           in: path
@@ -19855,7 +19855,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property rejectedSenders for groups
-      operationId: groups_DeleteRejectedSendersByRef
+      operationId: groups_DeleteRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -19901,7 +19901,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
-      operationId: groups_ListRejectedSendersByRef
+      operationId: groups_ListRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -19943,7 +19943,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to rejectedSenders for groups
-      operationId: groups_CreateRejectedSendersByRef
+      operationId: groups_CreateRejectedSendersGraphBPreRef
       parameters:
         - name: group-id
           in: path
@@ -19970,7 +19970,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: groups.sites.contentTypes_associateWithHubSites
+      operationId: groups.sites.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: group-id
           in: path
@@ -20433,7 +20433,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
-      operationId: groups.sites.lists.contentTypes_associateWithHubSites
+      operationId: groups.sites.lists.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: group-id
           in: path
@@ -21013,7 +21013,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites.lists.items_getActivitiesByInterval
+      operationId: groups.sites.lists.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -21131,7 +21131,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites.lists.items_getActivitiesByInterval
+      operationId: groups.sites.lists.items_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -21375,7 +21375,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites_getActivitiesByInterval
+      operationId: groups.sites_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -21477,7 +21477,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.sites_getActivitiesByInterval
+      operationId: groups.sites_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
           in: path
@@ -21603,7 +21603,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getApplicableContentTypesForList
-      operationId: groups.sites_getApplicableContentTypesForList
+      operationId: groups.sites_getApplicableContentTypesGraphFPreList
       parameters:
         - name: group-id
           in: path
@@ -21731,7 +21731,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getByPath
-      operationId: groups.sites_getByPath
+      operationId: groups.sites_getGraphBPrePath
       parameters:
         - name: group-id
           in: path
@@ -28611,7 +28611,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0
-      operationId: groups_ListTransitiveMemberOf
+      operationId: groups_ListTransitiveMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -28691,7 +28691,7 @@ paths:
         - groups.directoryObject
       summary: Get transitiveMemberOf from groups
       description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
-      operationId: groups_GetTransitiveMemberOf
+      operationId: groups_GetTransitiveMemberGraphOPre
       parameters:
         - name: group-id
           in: path
@@ -29162,7 +29162,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: groups_getByIds
+      operationId: groups_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
