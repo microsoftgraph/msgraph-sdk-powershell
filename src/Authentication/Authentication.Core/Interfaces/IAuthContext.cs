@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 
 using System;
+using System.Security;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Microsoft.Graph.PowerShell.Authentication
@@ -27,7 +28,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
         DeviceCode,
         ClientCertificate,
         UserProvidedAccessToken,
-        ManagedIdentity
+        ManagedIdentity,
+        ClientSecret
     }
 
     public interface IAuthContext
@@ -46,5 +48,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         ContextScope ContextScope { get; set; }
         Version PSHostVersion { get; set; }
         TimeSpan ClientTimeout { get; set; }
+        SecureString ClientSecret { get; set; }
     }
 }

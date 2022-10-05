@@ -3,14 +3,15 @@
 // ------------------------------------------------------------------------------
 using Azure.Core;
 using Azure.Identity;
+using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Identity.Client;
 using Microsoft.Identity.Client.Extensions.Msal;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography.X509Certificates;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -38,7 +39,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         return await GetInteractiveBrowserCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                     return await GetDeviceCodeCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
-                    return await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false);
+                    if (authContext.TokenCredentialType == TokenCredentialType.ClientCertificate)
+                        return await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false);
+                    else
+                        return await GetClientSecretCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.ManagedIdentity:
                     return await GetManagedIdentityCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.UserProvidedAccessToken:
@@ -46,6 +50,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 default:
                     throw new NotSupportedException($"{authContext.AuthType} is not supported.");
             }
+        }
+
+        private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var clientSecretCredentialOptions = new ClientSecretCredentialOptions
+            {
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
+            };
+            var clientSecretCredential = new ClientSecretCredential(authContext.TenantId, authContext.ClientId, authContext.ClientSecret.ConvertToString(), clientSecretCredentialOptions);
+            return await Task.FromResult(clientSecretCredential).ConfigureAwait(false);
         }
 
         private static async Task<TokenCredential> GetManagedIdentityCredentialAsync(IAuthContext authContext)
