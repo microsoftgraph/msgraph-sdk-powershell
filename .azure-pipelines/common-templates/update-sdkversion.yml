@@ -1,0 +1,20 @@
+
+parameters:
+  projectFileName: PowerShellV1ExecutionTests
+  testType: 'Execution'
+steps:
+- task: PowerShell@2
+  displayName: Install Required Modules
+  inputs:
+    targetType: 'inline'
+    script: |
+          $sdk = Get-InstalledModule Microsoft.Graph
+          echo "Current version "+$sdk.Version
+          echo "Updating to the latest sdk version"
+          Update-Module Microsoft.Graph -Scope CurrentUser
+          Import-Module Microsoft.Graph -Global -Force  
+- template: ../common-templates/checkout.yml
+  parameters:
+    projectFileName: ${{ parameters.projectFileName }}
+    runName: ${{ parameters.projectFileName }}
+    testType: ${{ parameters.testType }}
