@@ -7,9 +7,12 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-          $sdk = Get-InstalledModule Microsoft.Graph
-          echo "Current version "+$sdk.Version
-          echo "Updating to the latest sdk version"
-          Update-Module Microsoft.Graph -Scope CurrentUser
+        $modules = Get-Module -Name Microsoft.Graph -ListAvailable
+        if ($modules.Count -gt 0 -and $modules[0].Version -eq "1.11.1") {
+          echo "Latest version already installed"
+        }else {
+          echo "Installing latest version"
+          Install-Module Microsoft.Graph -Repository PSGallery -Scope AllUsers -Force -AllowClobber
           Import-Module Microsoft.Graph -Global -Force  
+        } 
 - template: ../common-templates/checkout.yml
