@@ -12,7 +12,7 @@ steps:
           echo "Latest version already installed"
         }else {
           echo "Installing latest version"
-          Install-Module Microsoft.Graph -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
-          Import-Module Microsoft.Graph -Scope CurrentUser  
+          Install-Module Microsoft.Graph -Repository PSGallery -Scope AllUsers -Force -AllowClobber
+          Import-Module Microsoft.Graph -Global -Force 
         } 
 - template: ../common-templates/checkout.yml
