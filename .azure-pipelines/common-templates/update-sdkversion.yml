@@ -1,4 +1,3 @@
-
 parameters:
   projectFileName: PowerShellV1ExecutionTests
   testType: 'Execution'
