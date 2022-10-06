@@ -14,7 +14,3 @@ steps:
           Update-Module Microsoft.Graph -Scope CurrentUser
           Import-Module Microsoft.Graph -Global -Force  
 - template: ../common-templates/checkout.yml
-  parameters:
-    projectFileName: ${{ parameters.projectFileName }}
-    runName: ${{ parameters.projectFileName }}
-    testType: ${{ parameters.testType }}
