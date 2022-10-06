@@ -214,6 +214,10 @@ function UpdateExampleFile {
             $totalText = "$titleValue`r`n`n$code`r`n$description`r`n"
             Add-Content -Path $ExampleFile -Value $totalText
         }
+        git config --global user.email "timwamalwa@gmail.com"
+        git config --global user.name "Timothy Wamalwa"
+        git add $ExampleFile
+        git commit -m "Examples update on  $ExampleFile-$GraphProfile" 
     }
     else {
         if ($headCount -ne $exampleCount) {
@@ -243,5 +247,20 @@ if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
 }
+Set-Location msgraph-sdk-powershell
+$date = Get-Date -Format "dd-MM-yyyy"
+$proposedBranch = "weekly_examples_update_"+$date
+$exists = git branch -l $proposedBranch
+if ([string]::IsNullOrEmpty($exists)) {
+    git checkout -b $proposedBranch
+}else{
+	Write-Host "Branch already exists"
+    $currentBranch = git rev-parse --abbrev-ref HEAD
+    if($currentBranch -ne $proposedBranch){
+        git checkout $proposedBranch
+     }
+     git checkout $proposedBranch
+}
 
 Start-Generator -ModulesToGenerate $ModulesToGenerate
+Write-Host -ForegroundColor Green "-------------Done-------------"
