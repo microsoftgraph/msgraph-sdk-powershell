@@ -8,7 +8,7 @@ schedules:
     displayName: 'PowerShellExamplesUpdate Check'
     branches:
       include:
-      - main
+      - 1408-explore-embedding-of-api-reference-snippets-in-help-file
     always: true
 
 parameters:
