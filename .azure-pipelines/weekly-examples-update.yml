@@ -8,7 +8,7 @@ schedules:
     displayName: 'PowerShellExamplesUpdate Check'
     branches:
       include:
-      - 1408-explore-embedding-of-api-reference-snippets-in-help-file
+      - main
     always: true
 
 parameters:
@@ -23,7 +23,7 @@ resources:
      type: github
      endpoint: microsoftgraph
      name: microsoftgraph/msgraph-sdk-powershell
-     ref: dev
+     ref: 1408-explore-embedding-of-api-reference-snippets-in-help-file
 
 variables:
   buildConfiguration: 'Release'
