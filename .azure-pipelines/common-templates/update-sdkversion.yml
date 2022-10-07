@@ -5,6 +5,7 @@ steps:
 - task: PowerShell@2
   displayName: Install Required Modules
   inputs:
+  pwsh: true
     targetType: 'inline'
     script: |
         $modules = Get-Module -Name Microsoft.Graph -ListAvailable
@@ -13,5 +14,6 @@ steps:
         }else {
           echo "Installing latest version"
           Install-Module Microsoft.Graph -Repository PSGallery -Scope AllUsers -Force -AllowClobber
+          Import-Module Microsoft.Graph -Global -Force
         } 
 - template: ../common-templates/checkout.yml
