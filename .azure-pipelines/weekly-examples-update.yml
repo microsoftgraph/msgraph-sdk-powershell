@@ -56,11 +56,10 @@ jobs:
       script: |
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
-        cd microsoftgraph-docs-powershell
         $date = Get-Date -Format "dd-MM-yyyy"
-        $proposedBranch = "weekly_update_help_files_"+$date
+        $proposedBranch = "weekly_examples_update_"+$date
         git add .
-        git commit -m "Updating help files "+$date
-        git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/MicrosoftDocs/microsoftgraph-docs-powershell.git" $proposedBranch
+        git commit -m "Updating examples "+$date
+        git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
         git status
          
