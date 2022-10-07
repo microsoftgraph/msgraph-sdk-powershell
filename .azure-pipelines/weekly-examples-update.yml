@@ -45,7 +45,7 @@ jobs:
     inputs:
       targetType: 'filePath'
       pwsh: true
-      filePath: msgraph-sdk-powershell\tools\ExamplesGenerator.ps1
+      filePath: tools\ExamplesGenerator.ps1
 
   - task: PowerShell@2
     displayName: Pushing to github
