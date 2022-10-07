@@ -37,9 +37,14 @@ function Get-FilesByProfile {
         $ModuleName = $_
         $modulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$GraphProfilePath"
         $OpenApiFile = Join-Path $PSScriptRoot "..\openApiDocs\v1.0\$ModuleName.yml"
+        #test this path first before proceeding
+        if (-not (Test-Path $ModuleMappingConfigPath)) {
+            Write-Error "OpenApi file not be found: $OpenApiFile ."
+        }else{
         $yamlContent = Get-Content -Path $OpenApiFile
         $OpenApiContent = ($yamlContent | ConvertFrom-Yaml)
         Get-Files -GraphProfile $GraphProfile -GraphProfilePath $modulePath -Module $ModuleName -OpenApiContent $OpenApiContent
+        }
     }
 
 }
