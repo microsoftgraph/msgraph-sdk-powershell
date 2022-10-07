@@ -4,7 +4,7 @@
 parameters:
   - name: TargetBranch
     type: string
-    default: ''
+    default: '1408-explore-embedding-of-api-reference-snippets-in-help-file'
 
 steps:
   - checkout: self
@@ -13,28 +13,28 @@ steps:
     submodules: true
     persistCredentials: true
 
-  # - task: PowerShell@2
-  #   displayName: "Configure user"
-  #   inputs:
-  #     targetType: "inline"
-  #     script: |
-  #       git config --global user.email "GraphTooling@service.microsoft.com"
-  #       git config --global user.name "Microsoft Graph DevX Tooling"
+  - task: PowerShell@2
+    displayName: "Configure user"
+    inputs:
+      targetType: "inline"
+      script: |
+        git config --global user.email "timwamalwa@gmail.com"
+        git config --global user.name "Timothy Wamalwa"
 
-  # - task: Bash@3
-  #   displayName: "Switch to target branch: ${{ parameters.TargetBranch }}"
-  #   condition: and(succeeded(), ne('${{ parameters.TargetBranch }}', ''))
-  #   inputs:
-  #     targetType: inline
-  #     script: |
-  #       git status
-  #       git fetch --all
-  #       git checkout ${{ parameters.TargetBranch }}
-  #       git pull
-  #       git status
+  - task: Bash@3
+    displayName: "Switch to target branch: ${{ parameters.TargetBranch }}"
+    condition: and(succeeded(), ne('${{ parameters.TargetBranch }}', ''))
+    inputs:
+      targetType: inline
+      script: |
+        git status
+        git fetch --all
+        git checkout ${{ parameters.TargetBranch }}
+        git pull
+        git status
 
 
-  # - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-  #   displayName: "Run CredScan"
-  #   inputs:
-  #     debugMode: false
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+    displayName: "Run CredScan"
+    inputs:
+      debugMode: false
