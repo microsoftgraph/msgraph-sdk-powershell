@@ -32,9 +32,3 @@ steps:
         git checkout ${{ parameters.TargetBranch }}
         git pull
         git status
-
-
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: "Run CredScan"
-    inputs:
-      debugMode: false
