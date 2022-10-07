@@ -247,7 +247,6 @@ if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
 }
-Set-Location msgraph-sdk-powershell
 $date = Get-Date -Format "dd-MM-yyyy"
 $proposedBranch = "weekly_examples_update_"+$date
 $exists = git branch -l $proposedBranch
