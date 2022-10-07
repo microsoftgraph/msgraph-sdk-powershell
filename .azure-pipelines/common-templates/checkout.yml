@@ -4,7 +4,7 @@
 parameters:
   - name: TargetBranch
     type: string
-    default: '1408-explore-embedding-of-api-reference-snippets-in-help-file'
+    default: ''
 
 steps:
   - checkout: self
@@ -18,10 +18,10 @@ steps:
     inputs:
       targetType: "inline"
       script: |
-        git config --global user.email "timwamalwa@gmail.com"
-        git config --global user.name "Timothy Wamalwa"
+        git config --global user.email "GraphTooling@service.microsoft.com"
+        git config --global user.name "Microsoft Graph DevX Tooling"
 
-  - task: PowerShell@2
+  - task: Bash@3
     displayName: "Switch to target branch: ${{ parameters.TargetBranch }}"
     condition: and(succeeded(), ne('${{ parameters.TargetBranch }}', ''))
     inputs:
@@ -32,3 +32,9 @@ steps:
         git checkout ${{ parameters.TargetBranch }}
         git pull
         git status
+
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+    displayName: "Run CredScan"
+    inputs:
+      debugMode: false

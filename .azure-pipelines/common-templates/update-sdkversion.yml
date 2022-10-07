@@ -16,4 +16,4 @@ steps:
           Install-Module Microsoft.Graph -Repository PSGallery -Scope AllUsers -Force -AllowClobber
           Import-Module Microsoft.Graph -Global -Force
         } 
-- template: ../common-templates/checkout.yml
+- template: ../common-templates/checkout-example.yml
