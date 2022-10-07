@@ -31,7 +31,7 @@ variables:
 jobs:
 - job: PowerShellExamplesUpdate
   pool: 
-    name: 1es-windows-ps-compute
+    name: Dev
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
   - template: ./common-templates/update-sdkversion.yml
