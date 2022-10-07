@@ -21,7 +21,7 @@ steps:
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
 
-  - task: Bash@3
+  - task: PowerShell@2
     displayName: "Switch to target branch: ${{ parameters.TargetBranch }}"
     condition: and(succeeded(), ne('${{ parameters.TargetBranch }}', ''))
     inputs:
