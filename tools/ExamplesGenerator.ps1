@@ -244,7 +244,7 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 }
 If (-not (Get-Module -ErrorAction Ignore -ListAvailable PowerHTML)) {
     Write-Verbose "Installing PowerHTML module for the current user..."
-    Install-Module PowerHTML -ErrorAction Stop
+    Install-Module PowerHTML -ErrorAction Stop -Scope AllUsers
 }
 Import-Module -ErrorAction Stop PowerHTML
 
