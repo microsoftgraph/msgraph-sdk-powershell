@@ -53,6 +53,12 @@ directive:
       verb: Remove|Update
       subject: ^(Chat|TeamChannel|TeamPrimaryChannel)MessageHostedContent$
     remove: true
+  - where:
+      verb: Get
+      subject: ^(TeamChannel|GroupTeamChannel)$
+      variant: ^Get$|Get2|^GetViaIdentity$|GetViaIdentity2|^List$|List2
+    set:
+      subject: All$1
 ```
 ### Versioning
 
