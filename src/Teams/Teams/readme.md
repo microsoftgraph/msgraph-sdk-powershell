@@ -57,7 +57,7 @@ directive:
       verb: Get
       subject: ^(TeamChannel|GroupTeamChannel)$
       variant: ^Get$|Get2|^GetViaIdentity$|GetViaIdentity2|^List$|List2
-    rename:
+    set:
       subject: All$1
 ```
 ### Versioning
