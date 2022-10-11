@@ -1256,6 +1256,12 @@ paths:
               operationId: reports.getEmailAppUsageVersionsUserCounts
             getGroupArchivedPrintJobs:
               operationId: reports.getGroupArchivedPrintJobs
+            getM365AppPlatformUserCounts:
+              operationId: reports.getM365AppPlatformUserCounts
+            getM365AppUserCounts:
+              operationId: reports.getM365AppUserCounts
+            getM365AppUserDetail:
+              operationId: reports.getM365AppUserDetail
             getMailboxUsageDetail:
               operationId: reports.getMailboxUsageDetail
             getMailboxUsageMailboxCounts:
@@ -2186,6 +2192,128 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/reports/microsoft.graph.getM365AppPlatformUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getM365AppPlatformUserCounts
+      operationId: reports_getM365AppPlatformUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getM365AppUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getM365AppUserCounts
+      operationId: reports_getM365AppUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getM365AppUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getM365AppUserDetail
+      operationId: reports_getM365AppUserDetail
+      parameters:
+        - name: date
+          in: path
+          description: 'Usage: date={date}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getM365AppUserDetail(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getM365AppUserDetail
+      operationId: reports_getM365AppUserDetail
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getMailboxUsageDetail(period=''{period}'')':
     get:
       tags:
@@ -4904,7 +5032,7 @@ components:
               description: Indicates additional details on the activity.
             category:
               type: string
-              description: 'Indicates which resource category that''s targeted by the activity. (For example: User Management, Group Management etc..)'
+              description: 'Indicates which resource category that''s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.'
             correlationId:
               type: string
               description: Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.

@@ -14221,7 +14221,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get tags from groups
+      summary: List teamworkTags
+      description: Get a list of the tag objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
       operationId: groups.team_ListTags
       parameters:
         - name: group-id
@@ -14303,7 +14307,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create new navigation property to tags for groups
+      summary: Create teamworkTag
+      description: Create a standard tag for members in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
       operationId: groups.team_CreateTags
       parameters:
         - name: group-id
@@ -14336,6 +14344,7 @@ paths:
       tags:
         - groups.team
       summary: Get tags from groups
+      description: The tags associated with the team.
       operationId: groups.team_GetTags
       parameters:
         - name: group-id
@@ -14474,7 +14483,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get members from groups
+      summary: List members in a teamworkTag
+      description: Get a list of the members of a standard tag in a team and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0
       operationId: groups.team.tags_ListMembers
       parameters:
         - name: group-id
@@ -14556,7 +14569,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create new navigation property to members for groups
+      summary: Create teamworkTagMember
+      description: Create a new teamworkTagMember object in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0
       operationId: groups.team.tags_CreateMembers
       parameters:
         - name: group-id
@@ -14597,6 +14614,7 @@ paths:
       tags:
         - groups.team
       summary: Get members from groups
+      description: Users assigned to the tag.
       operationId: groups.team.tags_GetMembers
       parameters:
         - name: group-id
@@ -26580,7 +26598,11 @@ paths:
     get:
       tags:
         - teams.teamworkTag
-      summary: Get tags from teams
+      summary: List teamworkTags
+      description: Get a list of the tag objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
       operationId: teams_ListTags
       parameters:
         - name: team-id
@@ -26662,7 +26684,11 @@ paths:
     post:
       tags:
         - teams.teamworkTag
-      summary: Create new navigation property to tags for teams
+      summary: Create teamworkTag
+      description: Create a standard tag for members in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
       operationId: teams_CreateTags
       parameters:
         - name: team-id
@@ -26695,6 +26721,7 @@ paths:
       tags:
         - teams.teamworkTag
       summary: Get tags from teams
+      description: The tags associated with the team.
       operationId: teams_GetTags
       parameters:
         - name: team-id
@@ -26833,7 +26860,11 @@ paths:
     get:
       tags:
         - teams.teamworkTag
-      summary: Get members from teams
+      summary: List members in a teamworkTag
+      description: Get a list of the members of a standard tag in a team and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0
       operationId: teams.tags_ListMembers
       parameters:
         - name: team-id
@@ -26915,7 +26946,11 @@ paths:
     post:
       tags:
         - teams.teamworkTag
-      summary: Create new navigation property to members for teams
+      summary: Create teamworkTagMember
+      description: Create a new teamworkTagMember object in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0
       operationId: teams.tags_CreateMembers
       parameters:
         - name: team-id
@@ -26956,6 +26991,7 @@ paths:
       tags:
         - teams.teamworkTag
       summary: Get members from teams
+      description: Users assigned to the tag.
       operationId: teams.tags_GetMembers
       parameters:
         - name: team-id
@@ -27320,6 +27356,8 @@ paths:
           links:
             workforceIntegrations:
               operationId: teamwork.ListWorkforceIntegrations
+            sendActivityNotificationToRecipients:
+              operationId: teamwork.sendActivityNotificationToRecipients
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27341,6 +27379,50 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /teamwork/microsoft.graph.sendActivityNotificationToRecipients:
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action sendActivityNotificationToRecipients
+      operationId: teamwork_sendActivityNotificationToRecipients
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                topic:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkActivityTopic'
+                activityType:
+                  type: string
+                  nullable: true
+                chainId:
+                  type: integer
+                  format: int64
+                  nullable: true
+                previewText:
+                  $ref: '#/components/schemas/microsoft.graph.itemBody'
+                teamsAppId:
+                  type: string
+                  nullable: true
+                templateParameters:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /teamwork/workforceIntegrations:
     get:
       tags:
@@ -42655,7 +42737,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get tags from users
+      summary: List teamworkTags
+      description: Get a list of the tag objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
       operationId: users.joinedTeams_ListTags
       parameters:
         - name: user-id
@@ -42745,7 +42831,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create new navigation property to tags for users
+      summary: Create teamworkTag
+      description: Create a standard tag for members in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
       operationId: users.joinedTeams_CreateTags
       parameters:
         - name: user-id
@@ -42786,6 +42876,7 @@ paths:
       tags:
         - users.team
       summary: Get tags from users
+      description: The tags associated with the team.
       operationId: users.joinedTeams_GetTags
       parameters:
         - name: user-id
@@ -42949,7 +43040,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get members from users
+      summary: List members in a teamworkTag
+      description: Get a list of the members of a standard tag in a team and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0
       operationId: users.joinedTeams.tags_ListMembers
       parameters:
         - name: user-id
@@ -43039,7 +43134,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create new navigation property to members for users
+      summary: Create teamworkTagMember
+      description: Create a new teamworkTagMember object in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0
       operationId: users.joinedTeams.tags_CreateMembers
       parameters:
         - name: user-id
@@ -43088,6 +43187,7 @@ paths:
       tags:
         - users.team
       summary: Get members from users
+      description: Users assigned to the tag.
       operationId: users.joinedTeams.tags_GetMembers
       parameters:
         - name: user-id
@@ -44509,6 +44609,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+              description: The tags associated with the team.
               x-ms-navigationProperty: true
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
@@ -44752,7 +44853,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -45340,25 +45441,30 @@ components:
           properties:
             description:
               type: string
+              description: The description of the tag as it will appear to the user in Microsoft Teams.
               nullable: true
             displayName:
               type: string
+              description: The name of the tag as it will appear to the user in Microsoft Teams.
               nullable: true
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of users assigned to the tag.
               format: int32
               nullable: true
             tagType:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagType'
             teamId:
               type: string
+              description: ID of the team in which the tag is defined.
               nullable: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+              description: Users assigned to the tag.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -45370,12 +45476,15 @@ components:
           properties:
             displayName:
               type: string
+              description: The member's display name.
               nullable: true
             tenantId:
               type: string
+              description: The ID of the tenant that the tag member is a part of.
               nullable: true
             userId:
               type: string
+              description: The user ID of the member.
               nullable: true
           additionalProperties:
             type: object
@@ -51231,6 +51340,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceOwnerType'
             managementAgent:
               $ref: '#/components/schemas/microsoft.graph.managementAgentType'
+            managementCertificateExpirationDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Reports device management certificate expiration date. This property is read-only.
+              format: date-time
+              readOnly: true
             manufacturer:
               type: string
               description: Manufacturer of the device. This property is read-only.
@@ -51280,6 +51395,11 @@ components:
             remoteAssistanceSessionUrl:
               type: string
               description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              nullable: true
+              readOnly: true
+            requireUserEnrollmentApproval:
+              type: boolean
+              description: Reports if the managed iOS device is user approval enrollment. This property is read-only.
               nullable: true
               readOnly: true
             serialNumber:
@@ -51336,6 +51456,12 @@ components:
               x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+            users:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.user'
+              description: The primary users associated with the managed device.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Devices that are managed or pre-enrolled through Intune
