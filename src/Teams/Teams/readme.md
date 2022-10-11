@@ -53,10 +53,16 @@ directive:
       verb: Remove|Update
       subject: ^(Chat|TeamChannel|TeamPrimaryChannel)MessageHostedContent$
     remove: true
+  - where:
+      verb: Get
+      subject: ^(TeamChannel|GroupTeamChannel)$
+      variant: ^Get$|Get2|^GetViaIdentity$|GetViaIdentity2|^List$|List2
+    set:
+      subject: All$1
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.12.3
+module-version: 1.12.4
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
