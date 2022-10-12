@@ -16,7 +16,10 @@ function Start-Generator {
         $ModulesToGenerate = @()
     )
 
-    $GraphMapping = Get-GraphMapping 
+    $GraphMapping = @{
+        "v1.0" = "examples\v1.0"
+        "beta" = "examples\v1.0-beta"
+    }
     $GraphMapping.Keys | ForEach-Object {
         $graphProfile = $_
         Get-FilesByProfile -GraphProfile $graphProfile -GraphProfilePath $GraphMapping[$graphProfile] -ModulesToGenerate $ModulesToGenerate 
