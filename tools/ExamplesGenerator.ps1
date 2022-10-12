@@ -35,7 +35,7 @@ function Get-FilesByProfile {
 
     $ModulesToGenerate | ForEach-Object {
         $ModuleName = $_
-        $modulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$GraphProfilePath"
+        $ModulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$GraphProfilePath"
         $OpenApiFile = Join-Path $PSScriptRoot "..\openApiDocs\v1.0\$ModuleName.yml"
         #test this path first before proceeding
         if (Test-Path $OpenApiFile) {
