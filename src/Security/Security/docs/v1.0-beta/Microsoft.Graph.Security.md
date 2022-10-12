@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 2763508e-bd59-4642-9576-208d4f60c75a
+Module Guid: de4511f6-87e6-4cdc-b378-a4baccff0ff7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -59,7 +59,7 @@ Notifications for suspicious or potential security issues in a customer’s tena
 Represents an attack simulation training campaign in a tenant.
 
 ### [Get-MgSecurityAttackSimulationAutomation](Get-MgSecurityAttackSimulationAutomation.md)
-Represents simulation automations created to run on a tenant.
+Represents simulation automation created to run on a tenant.
 
 ### [Get-MgSecurityAttackSimulationAutomationRun](Get-MgSecurityAttackSimulationAutomationRun.md)
 A collection of simulation automation runs.
