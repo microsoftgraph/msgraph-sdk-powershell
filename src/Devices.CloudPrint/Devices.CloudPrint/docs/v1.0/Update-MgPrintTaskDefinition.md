@@ -123,7 +123,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -256,7 +257,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPrintTaskDefinition>: printTaskDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
@@ -265,7 +266,7 @@ BODYPARAMETER <IMicrosoftGraphPrintTaskDefinition>: printTaskDefinition
     - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
   - `[DisplayName <String>]`: The name of the printTaskDefinition.
   - `[Tasks <IMicrosoftGraphPrintTask1[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
     - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
@@ -274,7 +275,7 @@ BODYPARAMETER <IMicrosoftGraphPrintTaskDefinition>: printTaskDefinition
       - `[State <String>]`: printTaskProcessingState
     - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
       - `[Event <String>]`: printEvent
 
@@ -299,10 +300,10 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 TASKS <IMicrosoftGraphPrintTask1[]>: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
@@ -318,7 +319,7 @@ TASKS <IMicrosoftGraphPrintTask1[]>: A list of tasks that have been created base
     - `[State <String>]`: printTaskProcessingState
   - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[Event <String>]`: printEvent
 
