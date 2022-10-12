@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The MicrosoftTunnelSite's description
+The site's description (optional)
 
 ```yaml
 Type: System.String
@@ -102,7 +102,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The MicrosoftTunnelSite's display name
+The display name for the site.
+This property is required when a site is created.
 
 ```yaml
 Type: System.String
@@ -133,7 +134,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -164,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -InternalNetworkProbeUrl
-The MicrosoftTunnelSite's Internal Network Access Probe URL
+The site's Internal Network Access Probe URL
 
 ```yaml
 Type: System.String
@@ -241,7 +243,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicAddress
-The MicrosoftTunnelSite's public domain name or IP address
+The site's public domain name or IP address
 
 ```yaml
 Type: System.String
@@ -256,7 +258,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleScopeTagIds
-List of Scope Tags for this Entity instance.
+List of Scope Tags for this Entity instance
 
 ```yaml
 Type: System.String[]
@@ -287,7 +289,7 @@ Accept wildcard characters: False
 ```
 
 ### -UpgradeAvailable
-True if an upgrade is available
+The site provides the state of when an upgrade is available
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -401,40 +403,42 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelSite>: Entity that represents a Microsoft Tunnel site
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[Description <String>]`: The MicrosoftTunnelSite's description
-  - `[DisplayName <String>]`: The MicrosoftTunnelSite's display name
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Description <String>]`: The site's description (optional)
+  - `[DisplayName <String>]`: The display name for the site. This property is required when a site is created.
   - `[EnableCertificatePinning <Boolean?>]`: When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.
-  - `[InternalNetworkProbeUrl <String>]`: The MicrosoftTunnelSite's Internal Network Access Probe URL
+  - `[InternalNetworkProbeUrl <String>]`: The site's Internal Network Access Probe URL
   - `[MicrosoftTunnelConfiguration <IMicrosoftGraphMicrosoftTunnelConfiguration>]`: Entity that represents a collection of Microsoft Tunnel settings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AdvancedSettings <IMicrosoftGraphKeyValuePair[]>]`: Additional settings that may be applied to the server
       - `[Name <String>]`: Name for this key-value pair
       - `[Value <String>]`: Value for this key-value pair
     - `[DefaultDomainSuffix <String>]`: The Default Domain appendix that will be used by the clients
-    - `[Description <String>]`: The MicrosoftTunnelConfiguration's description
-    - `[DisableUdpConnections <Boolean?>]`: When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
-    - `[DisplayName <String>]`: The MicrosoftTunnelConfiguration's display name
+    - `[Description <String>]`: The configuration's description (optional)
+    - `[DisableUdpConnections <Boolean?>]`: When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to transfer data.
+    - `[DisplayName <String>]`: The display name for the server configuration. This property is required when a server is created.
     - `[DnsServers <String[]>]`: The DNS servers that will be used by the clients
-    - `[LastUpdateDateTime <DateTime?>]`: When the MicrosoftTunnelConfiguration was last updated
+    - `[LastUpdateDateTime <DateTime?>]`: When the configuration was last updated
     - `[ListenPort <Int32?>]`: The port that both TCP and UPD will listen over on the server
     - `[Network <String>]`: The subnet that will be used to allocate virtual address for the clients
-    - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
-    - `[RoutesExclude <String[]>]`: Subsets of the routes that will not be routed by the server
-    - `[RoutesInclude <String[]>]`: The routs that will be routed by the server
+    - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance
+    - `[RouteExcludes <String[]>]`: Subsets of the routes that will not be routed by the server
+    - `[RouteIncludes <String[]>]`: The routes that will be routed by the server
+    - `[RoutesExclude <String[]>]`: Subsets of the routes that will not be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteExcludes'.
+    - `[RoutesInclude <String[]>]`: The routes that will be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteIncludes'.
     - `[SplitDns <String[]>]`: The domains that will be resolved using the provided dns servers
   - `[MicrosoftTunnelServers <IMicrosoftGraphMicrosoftTunnelServer[]>]`: A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AgentImageDigest <String>]`: The digest of the current agent image running on this server
-    - `[DisplayName <String>]`: The MicrosoftTunnelServer's display name
-    - `[LastCheckinDateTime <DateTime?>]`: When the MicrosoftTunnelServer last checked in
+    - `[DisplayName <String>]`: The display name for the server. This property is required when a server is created and cannot be cleared during updates.
+    - `[LastCheckinDateTime <DateTime?>]`: Indicates when the server last checked in
     - `[ServerImageDigest <String>]`: The digest of the current server image running on this server
     - `[TunnelServerHealthStatus <MicrosoftTunnelServerHealthStatus?>]`: Enum of possible MicrosoftTunnelServer health status types
-  - `[PublicAddress <String>]`: The MicrosoftTunnelSite's public domain name or IP address
-  - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
+  - `[PublicAddress <String>]`: The site's public domain name or IP address
+  - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance
   - `[UpgradeAutomatically <Boolean?>]`: The site's automatic upgrade setting. True for automatic upgrades, false for manual control
-  - `[UpgradeAvailable <Boolean?>]`: True if an upgrade is available
+  - `[UpgradeAvailable <Boolean?>]`: The site provides the state of when an upgrade is available
   - `[UpgradeWindowEndTime <String>]`: The site's upgrade window end time of day
   - `[UpgradeWindowStartTime <String>]`: The site's upgrade window start time of day
   - `[UpgradeWindowUtcOffsetInMinutes <Int32?>]`: The site's timezone represented as a minute offset from UTC
@@ -526,6 +530,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
@@ -568,28 +574,30 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
 
 MICROSOFTTUNNELCONFIGURATION <IMicrosoftGraphMicrosoftTunnelConfiguration>: Entity that represents a collection of Microsoft Tunnel settings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AdvancedSettings <IMicrosoftGraphKeyValuePair[]>]`: Additional settings that may be applied to the server
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair
   - `[DefaultDomainSuffix <String>]`: The Default Domain appendix that will be used by the clients
-  - `[Description <String>]`: The MicrosoftTunnelConfiguration's description
-  - `[DisableUdpConnections <Boolean?>]`: When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
-  - `[DisplayName <String>]`: The MicrosoftTunnelConfiguration's display name
+  - `[Description <String>]`: The configuration's description (optional)
+  - `[DisableUdpConnections <Boolean?>]`: When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to transfer data.
+  - `[DisplayName <String>]`: The display name for the server configuration. This property is required when a server is created.
   - `[DnsServers <String[]>]`: The DNS servers that will be used by the clients
-  - `[LastUpdateDateTime <DateTime?>]`: When the MicrosoftTunnelConfiguration was last updated
+  - `[LastUpdateDateTime <DateTime?>]`: When the configuration was last updated
   - `[ListenPort <Int32?>]`: The port that both TCP and UPD will listen over on the server
   - `[Network <String>]`: The subnet that will be used to allocate virtual address for the clients
-  - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
-  - `[RoutesExclude <String[]>]`: Subsets of the routes that will not be routed by the server
-  - `[RoutesInclude <String[]>]`: The routs that will be routed by the server
+  - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance
+  - `[RouteExcludes <String[]>]`: Subsets of the routes that will not be routed by the server
+  - `[RouteIncludes <String[]>]`: The routes that will be routed by the server
+  - `[RoutesExclude <String[]>]`: Subsets of the routes that will not be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteExcludes'.
+  - `[RoutesInclude <String[]>]`: The routes that will be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteIncludes'.
   - `[SplitDns <String[]>]`: The domains that will be resolved using the provided dns servers
 
 MICROSOFTTUNNELSERVERS <IMicrosoftGraphMicrosoftTunnelServer[]>: A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AgentImageDigest <String>]`: The digest of the current agent image running on this server
-  - `[DisplayName <String>]`: The MicrosoftTunnelServer's display name
-  - `[LastCheckinDateTime <DateTime?>]`: When the MicrosoftTunnelServer last checked in
+  - `[DisplayName <String>]`: The display name for the server. This property is required when a server is created and cannot be cleared during updates.
+  - `[LastCheckinDateTime <DateTime?>]`: Indicates when the server last checked in
   - `[ServerImageDigest <String>]`: The digest of the current server image running on this server
   - `[TunnelServerHealthStatus <MicrosoftTunnelServerHealthStatus?>]`: Enum of possible MicrosoftTunnelServer health status types
 
