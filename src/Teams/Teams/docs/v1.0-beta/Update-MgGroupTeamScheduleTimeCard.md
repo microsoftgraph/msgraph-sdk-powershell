@@ -177,7 +177,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -379,7 +380,7 @@ BODYPARAMETER <IMicrosoftGraphTimeCard>: timeCard
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Breaks <IMicrosoftGraphTimeCardBreak[]>]`: The list of breaks associated with the timeCard.
     - `[BreakId <String>]`: ID of the timeCardBreak.
     - `[End <IMicrosoftGraphTimeCardEvent>]`: timeCardEvent

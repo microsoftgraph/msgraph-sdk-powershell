@@ -190,7 +190,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -411,18 +412,18 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTeamsAppDefinition1>: teamsAppDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowedInstallationScopes <String>]`: teamsAppInstallationScopes
   - `[AzureAdAppId <String>]`: The WebApplicationInfo.Id from the Teams app manifest.
   - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ColorIcon <IMicrosoftGraphTeamsAppIcon>]`: teamsAppIcon
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[HostedContent <IMicrosoftGraphTeamworkHostedContent>]`: teamworkHostedContent
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
       - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
     - `[WebUrl <String>]`: The web URL that can be used for downloading the image.
@@ -445,10 +446,10 @@ BODYPARAMETER <IMicrosoftGraphTeamsAppDefinition1>: teamsAppDefinition
 
 COLORICON <IMicrosoftGraphTeamsAppIcon>: teamsAppIcon
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[HostedContent <IMicrosoftGraphTeamworkHostedContent>]`: teamworkHostedContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
     - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
   - `[WebUrl <String>]`: The web URL that can be used for downloading the image.
@@ -503,10 +504,10 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
 
 OUTLINEICON <IMicrosoftGraphTeamsAppIcon>: teamsAppIcon
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[HostedContent <IMicrosoftGraphTeamworkHostedContent>]`: teamworkHostedContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
     - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
   - `[WebUrl <String>]`: The web URL that can be used for downloading the image.

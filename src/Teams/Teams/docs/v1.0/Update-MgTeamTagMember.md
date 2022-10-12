@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The member's display name.
 
 ```yaml
 Type: System.String
@@ -92,7 +92,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -183,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-.
+The ID of the tenant that the tag member is a part of.
 
 ```yaml
 Type: System.String
@@ -198,7 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-.
+The user ID of the member.
 
 ```yaml
 Type: System.String
@@ -267,10 +268,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTeamworkTagMember>: teamworkTagMember
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[TenantId <String>]`: 
-  - `[UserId <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[DisplayName <String>]`: The member's display name.
+  - `[TenantId <String>]`: The ID of the tenant that the tag member is a part of.
+  - `[UserId <String>]`: The user ID of the member.
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo

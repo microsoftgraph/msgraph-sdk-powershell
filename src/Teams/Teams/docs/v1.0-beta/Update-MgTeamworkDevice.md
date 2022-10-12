@@ -258,7 +258,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -435,12 +436,12 @@ To create the parameters described below, construct a hash table containing the 
 
 ACTIVITY <IMicrosoftGraphTeamworkDeviceActivity>: teamworkDeviceActivity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActivePeripherals <IMicrosoftGraphTeamworkActivePeripherals>]`: teamworkActivePeripherals
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CommunicationSpeaker <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DisplayName <String>]`: Display name for the peripheral.
       - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
       - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
@@ -462,15 +463,15 @@ ACTIVITY <IMicrosoftGraphTeamworkDeviceActivity>: teamworkDeviceActivity
 
 BODYPARAMETER <IMicrosoftGraphTeamworkDevice>: teamworkDevice
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Activity <IMicrosoftGraphTeamworkDeviceActivity>]`: teamworkDeviceActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActivePeripherals <IMicrosoftGraphTeamworkActivePeripherals>]`: teamworkActivePeripherals
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CommunicationSpeaker <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[DisplayName <String>]`: Display name for the peripheral.
         - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
         - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
@@ -493,7 +494,7 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDevice>: teamworkDevice
   - `[CompanyAssetTag <String>]`: The company asset tag assigned by the admin on the device.
   - `[Configuration <IMicrosoftGraphTeamworkDeviceConfiguration>]`: teamworkDeviceConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CameraConfiguration <IMicrosoftGraphTeamworkCameraConfiguration>]`: teamworkCameraConfiguration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Cameras <IMicrosoftGraphTeamworkPeripheral[]>]`: 
@@ -610,7 +611,7 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDevice>: teamworkDevice
     - `[UniqueId <String>]`: The unique identifier for the device.
   - `[Health <IMicrosoftGraphTeamworkDeviceHealth>]`: teamworkDeviceHealth
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Connection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ConnectionStatus <String>]`: teamworkConnectionStatus
@@ -657,7 +658,7 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDevice>: teamworkDevice
   - `[LastModifiedDateTime <DateTime?>]`: The UTC date and time when the device detail was last modified.
   - `[Notes <String>]`: The notes added by the admin to the device.
   - `[Operations <IMicrosoftGraphTeamworkDeviceOperation[]>]`: The async operations on the device.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CompletedDateTime <DateTime?>]`: Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The UTC date and time when the device operation was created.
@@ -673,11 +674,11 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDevice>: teamworkDevice
 
 CONFIGURATION <IMicrosoftGraphTeamworkDeviceConfiguration>: teamworkDeviceConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CameraConfiguration <IMicrosoftGraphTeamworkCameraConfiguration>]`: teamworkCameraConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Cameras <IMicrosoftGraphTeamworkPeripheral[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DisplayName <String>]`: Display name for the peripheral.
       - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
       - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
@@ -810,7 +811,7 @@ HARDWAREDETAIL <IMicrosoftGraphTeamworkHardwareDetail>: teamworkHardwareDetail
 
 HEALTH <IMicrosoftGraphTeamworkDeviceHealth>: teamworkDeviceHealth
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Connection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ConnectionStatus <String>]`: teamworkConnectionStatus
@@ -832,7 +833,7 @@ HEALTH <IMicrosoftGraphTeamworkDeviceHealth>: teamworkDeviceHealth
       - `[IsOptional <Boolean?>]`: True if the peripheral is optional. Used for health computation.
       - `[Peripheral <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[DisplayName <String>]`: Display name for the peripheral.
         - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
         - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
@@ -914,7 +915,7 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
 OPERATIONS <IMicrosoftGraphTeamworkDeviceOperation[]>: The async operations on the device.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CompletedDateTime <DateTime?>]`: Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
