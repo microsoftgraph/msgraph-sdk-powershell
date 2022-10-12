@@ -4,13 +4,6 @@ Param(
     $ModulesToGenerate = @(),
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc")
 )
-function Get-GraphMapping {
-    $graphMapping = @{}
-    $graphMapping.Add("v1.0", "examples\v1.0")
-    $graphMapping.Add("beta", "examples\v1.0-beta")
-    return $graphMapping
-}
-
 function Start-Generator {
     Param(
         $ModulesToGenerate = @()
