@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
 
 ## NOTES
 

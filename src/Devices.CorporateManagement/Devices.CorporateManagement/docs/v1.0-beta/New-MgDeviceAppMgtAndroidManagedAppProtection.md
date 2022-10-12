@@ -35,7 +35,7 @@ New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>
  [-AppActionIfUnableToAuthenticateUser <ManagedAppRemediationAction>]
  [-AppGroupType <TargetedManagedAppGroupType>] [-ApprovedKeyboards <IMicrosoftGraphKeyValuePair[]>]
  [-Apps <IMicrosoftGraphManagedMobileApp[]>]
- [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>] [-BiometricAuthenticationBlocked]
+ [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>] [-BiometricAuthenticationBlocked]
  [-BlockAfterCompanyPortalUpdateDeferralInDays <Int32>] [-BlockDataIngestionIntoOrganizationDocuments]
  [-ConnectToVpnOnLaunch] [-ContactSyncBlocked] [-CreatedDateTime <DateTime>]
  [-CustomBrowserDisplayName <String>] [-CustomBrowserPackageId <String>]
@@ -55,7 +55,9 @@ New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>
  [-MinimumWarningCompanyPortalVersion <String>] [-MinimumWarningOSVersion <String>]
  [-MinimumWarningPatchVersion <String>] [-MinimumWipeAppVersion <String>]
  [-MinimumWipeCompanyPortalVersion <String>] [-MinimumWipeOSVersion <String>]
- [-MinimumWipePatchVersion <String>] [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
+ [-MinimumWipePatchVersion <String>]
+ [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
+ [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
  [-NotificationRestriction <ManagedAppNotificationRestriction>] [-OrganizationalCredentialsRequired]
  [-PeriodBeforePinReset <TimeSpan>] [-PeriodOfflineBeforeAccessCheck <TimeSpan>]
  [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>] [-PeriodOnlineBeforeAccessCheck <TimeSpan>]
@@ -73,7 +75,7 @@ New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>
 
 ### Create
 ```
-New-MgDeviceAppMgtAndroidManagedAppProtection -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection>
+New-MgDeviceAppMgtAndroidManagedAppProtection -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -439,7 +441,7 @@ Navigation property to list of inclusion and exclusion groups to which the polic
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -500,7 +502,7 @@ Policy used to configure detailed management settings targeted to specific secur
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 Parameter Sets: Create
 Aliases:
 
@@ -846,7 +848,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -1196,6 +1199,21 @@ Android security patch level less than or equal to the specified value will wipe
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MobileThreatDefensePartnerPriority
+Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Support.MobileThreatDefensePartnerPriority
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1617,11 +1635,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 
 ## NOTES
 
@@ -1639,28 +1657,28 @@ APPROVEDKEYBOARDS <IMicrosoftGraphKeyValuePair[]>: If Keyboard Restriction is en
   - `[Value <String>]`: Value for this key-value pair
 
 APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is deployed.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Version <String>]`: Version of the entity.
 
-ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-  - `[Id <String>]`: 
+ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
-BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
+BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AppGroupType <TargetedManagedAppGroupType?>]`: Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
-  - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    - `[Id <String>]`: 
+  - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: Identifier for resource used for deployment to a group
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
@@ -1697,6 +1715,7 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to confi
   - `[MinimumWarningOSVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data.
   - `[MinimumWipeAppVersion <String>]`: Versions less than or equal to the specified version will wipe the managed app and the associated company data.
   - `[MinimumWipeOSVersion <String>]`: Versions less than or equal to the specified version will wipe the managed app and the associated company data.
+  - `[MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority?>]`: Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.
   - `[MobileThreatDefenseRemediationAction <ManagedAppRemediationAction?>]`: An admin initiated action to be applied on a managed app.
   - `[NotificationRestriction <ManagedAppNotificationRestriction?>]`: Restrict managed app notification
   - `[OrganizationalCredentialsRequired <Boolean?>]`: Indicates whether organizational credentials are required for app use.
@@ -1717,7 +1736,7 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to confi
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[Version <String>]`: Version of the entity.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowedAndroidDeviceManufacturers <String>]`: Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.
   - `[AllowedAndroidDeviceModels <String[]>]`: List of device models allowed, as a string, for the managed app to work.
   - `[AppActionIfAndroidDeviceManufacturerNotAllowed <ManagedAppRemediationAction?>]`: An admin initiated action to be applied on a managed app.
@@ -1732,7 +1751,7 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to confi
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
@@ -1746,7 +1765,7 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to confi
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
     - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
@@ -1777,7 +1796,7 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to confi
 
 DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
   - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
     - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.

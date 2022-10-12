@@ -23,7 +23,7 @@ Update-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary -ManagedDeviceMobil
 ### Update1
 ```
 Update-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary -ManagedDeviceMobileAppConfigurationId <String>
- -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1> [-PassThru] [-Confirm]
+ -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -31,7 +31,7 @@ Update-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary -ManagedDeviceMobil
 ```
 Update-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1> [-PassThru] [-Confirm]
+ -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -71,7 +71,7 @@ Contains properties, inherited properties and actions for an MDM mobile app conf
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -128,7 +128,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -286,7 +287,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary
 
 ## OUTPUTS
 
@@ -303,9 +304,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1>: Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.
+BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary>: Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
   - `[ErrorCount <Int32?>]`: Number of error Users
   - `[FailedCount <Int32?>]`: Number of failed Users

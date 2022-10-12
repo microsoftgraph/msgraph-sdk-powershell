@@ -22,13 +22,13 @@ New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment -TargetedManagedAppC
 ### Create1
 ```
 New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment -TargetedManagedAppConfigurationId <String>
- -BodyParameter <IMicrosoftGraphTargetedManagedAppPolicyAssignment1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTargetedManagedAppPolicyAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphTargetedManagedAppPolicyAssignment1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTargetedManagedAppPolicyAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
@@ -65,7 +65,7 @@ The type for deployment of groups or apps.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -77,7 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -175,11 +176,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment
 
 ## NOTES
 
@@ -192,10 +193,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphTargetedManagedAppPolicyAssignment1>: The type for deployment of groups or apps.
+BODYPARAMETER <IMicrosoftGraphTargetedManagedAppPolicyAssignment>: The type for deployment of groups or apps.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter

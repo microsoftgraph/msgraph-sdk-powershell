@@ -129,7 +129,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -350,7 +351,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceLogCollectionResponse>: Windows Log Collection request entity.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ErrorCode <Int64?>]`: The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
   - `[ExpirationDateTimeUtc <DateTime?>]`: The DateTime of the expiration of the logs
   - `[InitiatedByUserPrincipalName <String>]`: The UPN for who initiated the request

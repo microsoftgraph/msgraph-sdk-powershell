@@ -16,7 +16,7 @@ Invoke action assign
 ```
 Set-MgDeviceAppMgtMobileAppConfiguration -ManagedDeviceMobileAppConfigurationId <String>
  [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>] [-PassThru] [-Confirm]
+ [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -38,7 +38,7 @@ Set-MgDeviceAppMgtMobileAppConfiguration -InputObject <IDevicesCorporateManageme
 ```
 Set-MgDeviceAppMgtMobileAppConfiguration -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>] [-PassThru] [-Confirm]
+ [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]
 Parameter Sets: AssignExpanded1, AssignViaIdentityExpanded1
 Aliases:
 
@@ -197,16 +197,16 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ASSIGNMENTS <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>: .
-  - `[Id <String>]`: 
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
+ASSIGNMENTS <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>: .
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 BODYPARAMETER <IPaths1Pwcjs5DeviceappmanagementMobileappconfigurationsManageddevicemobileappconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>]`: 
-    - `[Id <String>]`: 
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
+  - `[Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter

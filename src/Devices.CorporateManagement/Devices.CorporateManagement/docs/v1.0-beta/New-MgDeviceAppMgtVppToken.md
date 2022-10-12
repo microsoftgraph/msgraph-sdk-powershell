@@ -25,7 +25,7 @@ New-MgDeviceAppMgtVppToken [-AdditionalProperties <Hashtable>] [-AppleId <String
 
 ### Create
 ```
-New-MgDeviceAppMgtVppToken -BodyParameter <IMicrosoftGraphVppToken> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDeviceAppMgtVppToken -BodyParameter <IMicrosoftGraphVppToken2> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,7 +88,7 @@ You can upload multiple Apple VPP Business or Education tokens.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken2
 Parameter Sets: Create
 Aliases:
 
@@ -175,7 +175,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -376,11 +377,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken2
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken2
 
 ## NOTES
 
@@ -393,9 +394,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphVppToken>: You purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.
+BODYPARAMETER <IMicrosoftGraphVppToken2>: You purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppleId <String>]`: The apple Id associated with the given Apple Volume Purchase Program Token.
   - `[AutomaticallyUpdateApps <Boolean?>]`: Whether or not apps for the VPP token will be automatically updated.
   - `[ClaimTokenManagementFromExternalMdm <Boolean?>]`: Admin consent to allow claiming token management from external MDM.

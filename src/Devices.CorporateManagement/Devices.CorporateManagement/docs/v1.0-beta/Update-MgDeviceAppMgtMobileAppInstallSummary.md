@@ -112,7 +112,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -349,7 +350,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMobileAppInstallSummary>: Contains properties for the installation summary of a mobile app.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
   - `[FailedUserCount <Int32?>]`: Number of Users that have 1 or more device that failed to install this app.
   - `[InstalledDeviceCount <Int32?>]`: Number of Devices that have successfully installed this app.

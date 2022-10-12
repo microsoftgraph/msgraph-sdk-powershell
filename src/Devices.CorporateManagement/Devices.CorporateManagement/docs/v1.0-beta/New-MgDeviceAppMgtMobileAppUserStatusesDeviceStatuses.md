@@ -15,7 +15,7 @@ Create new navigation property to deviceStatuses for deviceAppManagement
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses -MobileAppId <String> -UserAppInstallStatusId <String>
- [-AdditionalProperties <Hashtable>] [-App <IMicrosoftGraphMobileApp>] [-DeviceId <String>]
+ [-AdditionalProperties <Hashtable>] [-App <IMicrosoftGraphMobileApp1>] [-DeviceId <String>]
  [-DeviceName <String>] [-DisplayVersion <String>] [-ErrorCode <Int32>] [-Id <String>]
  [-InstallState <ResultantAppState>] [-InstallStateDetail <ResultantAppStateDetail>]
  [-LastSyncDateTime <DateTime>] [-MobileAppInstallStatusValue <ResultantAppState>] [-OSDescription <String>]
@@ -38,7 +38,7 @@ New-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses -InputObject <IDevicesCorp
 ### CreateViaIdentityExpanded
 ```
 New-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-App <IMicrosoftGraphMobileApp>] [-DeviceId <String>]
+ [-AdditionalProperties <Hashtable>] [-App <IMicrosoftGraphMobileApp1>] [-DeviceId <String>]
  [-DeviceName <String>] [-DisplayVersion <String>] [-ErrorCode <Int32>] [-Id <String>]
  [-InstallState <ResultantAppState>] [-InstallStateDetail <ResultantAppStateDetail>]
  [-LastSyncDateTime <DateTime>] [-MobileAppInstallStatusValue <ResultantAppState>] [-OSDescription <String>]
@@ -73,7 +73,7 @@ An abstract class containing the base properties for Intune mobile apps.
 To construct, please use Get-Help -Online and see NOTES section for APP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -161,7 +161,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -400,22 +401,22 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties for Intune mobile apps.
+APP <IMicrosoftGraphMobileApp1>: An abstract class containing the base properties for Intune mobile apps.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[Assignments <IMicrosoftGraphMobileAppAssignment[]>]`: The list of group assignments for this mobile app.
-    - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Assignments <IMicrosoftGraphMobileAppAssignment1[]>]`: The list of group assignments for this mobile app.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
     - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: The identifier of the source of the assignment.
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the app category.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
   - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
@@ -423,8 +424,8 @@ APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties
   - `[Description <String>]`: The description of the app.
   - `[Developer <String>]`: The developer of the app.
   - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The list of installation states for this mobile app.
-    - `[Id <String>]`: 
-    - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
     - `[DeviceId <String>]`: Device ID
     - `[DeviceName <String>]`: Device name
     - `[DisplayVersion <String>]`: Human readable version of the application
@@ -441,7 +442,7 @@ APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties
   - `[InformationUrl <String>]`: The more information Url.
   - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
     - `[FailedUserCount <Int32?>]`: Number of Users that have 1 or more device that failed to install this app.
     - `[InstalledDeviceCount <Int32?>]`: Number of Devices that have successfully installed this app.
@@ -465,7 +466,7 @@ APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties
   - `[Publisher <String>]`: The publisher of the app.
   - `[PublishingState <MobileAppPublishingState?>]`: Indicates the publishing state of an app.
   - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[TargetDisplayName <String>]`: The target mobile app's display name.
     - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
     - `[TargetId <String>]`: The target mobile app's app id.
@@ -476,8 +477,8 @@ APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties
   - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
   - `[UploadState <Int32?>]`: The upload state.
   - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
-    - `[Id <String>]`: 
-    - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
     - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The install state of the app on devices.
     - `[FailedDeviceCount <Int32?>]`: Failed Device Count.
     - `[InstalledDeviceCount <Int32?>]`: Installed Device Count.
@@ -487,23 +488,23 @@ APP <IMicrosoftGraphMobileApp>: An abstract class containing the base properties
 
 BODYPARAMETER <IMicrosoftGraphMobileAppInstallStatus>: Contains properties for the installation state of a mobile app for a device.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
-    - `[Assignments <IMicrosoftGraphMobileAppAssignment[]>]`: The list of group assignments for this mobile app.
-      - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Assignments <IMicrosoftGraphMobileAppAssignment1[]>]`: The list of group assignments for this mobile app.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
       - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
       - `[SourceId <String>]`: The identifier of the source of the assignment.
-      - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+      - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
         - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
     - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DisplayName <String>]`: The name of the app category.
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
     - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
@@ -515,7 +516,7 @@ BODYPARAMETER <IMicrosoftGraphMobileAppInstallStatus>: Contains properties for t
     - `[InformationUrl <String>]`: The more information Url.
     - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
       - `[FailedUserCount <Int32?>]`: Number of Users that have 1 or more device that failed to install this app.
       - `[InstalledDeviceCount <Int32?>]`: Number of Devices that have successfully installed this app.
@@ -539,7 +540,7 @@ BODYPARAMETER <IMicrosoftGraphMobileAppInstallStatus>: Contains properties for t
     - `[Publisher <String>]`: The publisher of the app.
     - `[PublishingState <MobileAppPublishingState?>]`: Indicates the publishing state of an app.
     - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[TargetDisplayName <String>]`: The target mobile app's display name.
       - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
       - `[TargetId <String>]`: The target mobile app's app id.
@@ -550,8 +551,8 @@ BODYPARAMETER <IMicrosoftGraphMobileAppInstallStatus>: Contains properties for t
     - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
     - `[UploadState <Int32?>]`: The upload state.
     - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
-      - `[Id <String>]`: 
-      - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
       - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The install state of the app on devices.
       - `[FailedDeviceCount <Int32?>]`: Failed Device Count.
       - `[InstalledDeviceCount <Int32?>]`: Installed Device Count.

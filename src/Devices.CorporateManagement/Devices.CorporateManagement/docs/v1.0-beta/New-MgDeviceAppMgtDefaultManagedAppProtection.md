@@ -59,6 +59,7 @@ New-MgDeviceAppMgtDefaultManagedAppProtection [-AdditionalProperties <Hashtable>
  [-MinimumWarningOSVersion <String>] [-MinimumWarningPatchVersion <String>] [-MinimumWipeAppVersion <String>]
  [-MinimumWipeCompanyPortalVersion <String>] [-MinimumWipeOSVersion <String>]
  [-MinimumWipePatchVersion <String>] [-MinimumWipeSdkVersion <String>]
+ [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
  [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
  [-NotificationRestriction <ManagedAppNotificationRestriction>] [-OrganizationalCredentialsRequired]
  [-PeriodBeforePinReset <TimeSpan>] [-PeriodOfflineBeforeAccessCheck <TimeSpan>]
@@ -77,7 +78,7 @@ New-MgDeviceAppMgtDefaultManagedAppProtection [-AdditionalProperties <Hashtable>
 
 ### Create
 ```
-New-MgDeviceAppMgtDefaultManagedAppProtection -BodyParameter <IMicrosoftGraphDefaultManagedAppProtection>
+New-MgDeviceAppMgtDefaultManagedAppProtection -BodyParameter <IMicrosoftGraphDefaultManagedAppProtection1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -505,7 +506,7 @@ Policy used to configure detailed management settings for a specified set of app
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
 Parameter Sets: Create
 Aliases:
 
@@ -969,7 +970,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -1322,6 +1324,21 @@ Versions less than the specified version will block the managed app from accessi
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MobileThreatDefensePartnerPriority
+Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Support.MobileThreatDefensePartnerPriority
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1762,11 +1779,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
 
 ## NOTES
 
@@ -1780,12 +1797,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is deployed.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Version <String>]`: Version of the entity.
 
-BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
+BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection1>: Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedDataIngestionLocations <ManagedAppDataIngestionLocation[]>]`: Data storage locations where a user may store managed data.
   - `[AllowedDataStorageLocations <ManagedAppDataStorageLocation[]>]`: Data storage locations where a user may store managed data.
@@ -1818,6 +1835,7 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to confi
   - `[MinimumWarningOSVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data.
   - `[MinimumWipeAppVersion <String>]`: Versions less than or equal to the specified version will wipe the managed app and the associated company data.
   - `[MinimumWipeOSVersion <String>]`: Versions less than or equal to the specified version will wipe the managed app and the associated company data.
+  - `[MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority?>]`: Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.
   - `[MobileThreatDefenseRemediationAction <ManagedAppRemediationAction?>]`: An admin initiated action to be applied on a managed app.
   - `[NotificationRestriction <ManagedAppNotificationRestriction?>]`: Restrict managed app notification
   - `[OrganizationalCredentialsRequired <Boolean?>]`: Indicates whether organizational credentials are required for app use.
@@ -1838,7 +1856,7 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to confi
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[Version <String>]`: Version of the entity.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowedAndroidDeviceManufacturers <String>]`: Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
   - `[AllowedAndroidDeviceModels <String[]>]`: List of device models allowed, as a string, for the managed app to work. (Android Only)
   - `[AllowedIosDeviceModels <String>]`: Semicolon seperated list of device models allowed, as a string, for the managed app to work. (iOS Only)
@@ -1853,7 +1871,7 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to confi
   - `[AppActionIfIosDeviceModelNotAllowed <ManagedAppRemediationAction?>]`: An admin initiated action to be applied on a managed app.
   - `[AppDataEncryptionType <ManagedAppDataEncryptionType?>]`: Represents the level to which app data is encrypted for managed apps
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
@@ -1872,7 +1890,7 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to confi
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
     - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
@@ -1914,7 +1932,7 @@ CUSTOMSETTINGS <IMicrosoftGraphKeyValuePair[]>: A set of string key and string v
 
 DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
   - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
     - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.

@@ -96,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -272,11 +273,11 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityBaselineState>: Security baseline state for a device.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the security baseline
   - `[SecurityBaselineTemplateId <String>]`: The security baseline template id
   - `[SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]`: The security baseline state for different settings for a device
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>]`: The policies that contribute to this setting instance
       - `[DisplayName <String>]`: Name of the policy
       - `[SourceId <String>]`: Unique identifier of the policy
@@ -364,7 +365,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
 SETTINGSTATES <IMicrosoftGraphSecurityBaselineSettingState[]>: The security baseline state for different settings for a device
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>]`: The policies that contribute to this setting instance
     - `[DisplayName <String>]`: Name of the policy
     - `[SourceId <String>]`: Unique identifier of the policy

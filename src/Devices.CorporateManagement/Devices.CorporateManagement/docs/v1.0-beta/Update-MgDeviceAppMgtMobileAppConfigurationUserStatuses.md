@@ -98,7 +98,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -290,7 +291,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus>: Contains properties, inherited properties and actions for an MDM mobile app configuration status for a user.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DevicesCount <Int32?>]`: Devices count for that user.
   - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
   - `[Status <String>]`: complianceStatus

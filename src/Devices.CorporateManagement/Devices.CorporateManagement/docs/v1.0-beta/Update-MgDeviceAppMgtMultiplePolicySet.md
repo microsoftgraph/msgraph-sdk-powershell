@@ -247,7 +247,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ADDEDPOLICYSETITEMS <IMicrosoftGraphPolicySetItem[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySetItem.
   - `[DisplayName <String>]`: DisplayName of the PolicySetItem.
   - `[ErrorCode <ErrorCode?>]`: errorCode
@@ -258,9 +258,9 @@ ADDEDPOLICYSETITEMS <IMicrosoftGraphPolicySetItem[]>: .
   - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
 
 ASSIGNMENTS <IMicrosoftGraphPolicySetAssignment[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetAssignment.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
@@ -268,7 +268,7 @@ ASSIGNMENTS <IMicrosoftGraphPolicySetAssignment[]>: .
 BODYPARAMETER <IPathsNb5PtwDeviceappmanagementPolicysetsPolicysetIdMicrosoftGraphUpdatePostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AddedPolicySetItems <IMicrosoftGraphPolicySetItem[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySetItem.
     - `[DisplayName <String>]`: DisplayName of the PolicySetItem.
     - `[ErrorCode <ErrorCode?>]`: errorCode
@@ -278,9 +278,9 @@ BODYPARAMETER <IPathsNb5PtwDeviceappmanagementPolicysetsPolicysetIdMicrosoftGrap
     - `[PayloadId <String>]`: PayloadId of the PolicySetItem.
     - `[Status <PolicySetStatus?>]`: The enum to specify the status of PolicySet.
   - `[Assignments <IMicrosoftGraphPolicySetAssignment[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetAssignment.
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
@@ -357,7 +357,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
 UPDATEDPOLICYSETITEMS <IMicrosoftGraphPolicySetItem[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySetItem.
   - `[DisplayName <String>]`: DisplayName of the PolicySetItem.
   - `[ErrorCode <ErrorCode?>]`: errorCode
