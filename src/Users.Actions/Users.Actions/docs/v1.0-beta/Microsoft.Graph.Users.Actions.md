@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 64ae617f-8a74-4c68-8b67-88b8c5ae200f
+Module Guid: c3c09d2d-df47-4136-bc57-3d9e0f143ab7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -30,6 +30,12 @@ The status of the accessReviewInstance must be `Completed` to call this method.
 
 ### [Clear-MgUserAndBlockManagedApp](Clear-MgUserAndBlockManagedApp.md)
 Blocks the managed app user from app check-in.
+
+### [Clear-MgUserChatMessageReaction](Clear-MgUserChatMessageReaction.md)
+Invoke action unsetReaction
+
+### [Clear-MgUserChatMessageReplyReaction](Clear-MgUserChatMessageReplyReaction.md)
+Invoke action unsetReaction
 
 ### [Clear-MgUserManagedAppRegistrationByAzureAdDeviceId](Clear-MgUserManagedAppRegistrationByAzureAdDeviceId.md)
 Issues a wipe operation on an app registration with specified aad device Id.
@@ -374,6 +380,9 @@ Invoke action downloadAppDiagnostics
 
 ### [Invoke-MgDownUserManagedDeviceShut](Invoke-MgDownUserManagedDeviceShut.md)
 Shut down device
+
+### [Invoke-MgEnrollUserManagedDeviceNowAction](Invoke-MgEnrollUserManagedDeviceNowAction.md)
+Trigger comanagement enrollment action on ConfigurationManager client
 
 ### [Invoke-MgExecuteUserManagedDeviceAction](Invoke-MgExecuteUserManagedDeviceAction.md)
 Invoke action executeAction
@@ -1017,6 +1026,12 @@ Send a reminder to the reviewers of a currently active accessReviewInstance.
 ### [Send-MgUserTeamworkActivityNotification](Send-MgUserTeamworkActivityNotification.md)
 Send an activity feed notification to a user.
 For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+
+### [Set-MgUserChatMessageReaction](Set-MgUserChatMessageReaction.md)
+Invoke action setReaction
+
+### [Set-MgUserChatMessageReplyReaction](Set-MgUserChatMessageReplyReaction.md)
+Invoke action setReaction
 
 ### [Set-MgUserDeviceEnrollmentConfiguration](Set-MgUserDeviceEnrollmentConfiguration.md)
 Invoke action assign

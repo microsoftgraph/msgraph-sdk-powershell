@@ -1,53 +1,46 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mguserdriverootlink
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/clear-mguserchatmessagereaction
 schema: 2.0.0
 ---
 
-# New-MgUserDriveRootLink
+# Clear-MgUserChatMessageReaction
 
 ## SYNOPSIS
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
-DriveItem resources inherit sharing permissions from their ancestors.
+Invoke action unsetReaction
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### UnsetExpanded (Default)
 ```
-New-MgUserDriveRootLink -DriveId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-RetainInheritedPermissions] [-Scope <String>]
- [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgUserDriveRootLink -DriveId <String> -UserId <String>
- -BodyParameter <IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Clear-MgUserChatMessageReaction -ChatId <String> -ChatMessageId <String> -UserId <String>
+ [-AdditionalProperties <Hashtable>] [-ReactionType <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### Unset
 ```
-New-MgUserDriveRootLink -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Clear-MgUserChatMessageReaction -ChatId <String> -ChatMessageId <String> -UserId <String>
+ -BodyParameter <IPaths1By85LjUsersUserIdChatsChatIdMessagesChatmessageIdMicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### UnsetViaIdentity
 ```
-New-MgUserDriveRootLink -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-RetainInheritedPermissions] [-Scope <String>]
- [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Clear-MgUserChatMessageReaction -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths1By85LjUsersUserIdChatsChatIdMessagesChatmessageIdMicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UnsetViaIdentityExpanded
+```
+Clear-MgUserChatMessageReaction -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-ReactionType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
-DriveItem resources inherit sharing permissions from their ancestors.
+Invoke action unsetReaction
 
 ## EXAMPLES
 
@@ -58,7 +51,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: UnsetExpanded, UnsetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -73,8 +66,8 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Create1, CreateViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IPaths1By85LjUsersUserIdChatsChatIdMessagesChatmessageIdMicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Unset, UnsetViaIdentity
 Aliases:
 
 Required: True
@@ -84,12 +77,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -DriveId
-key: id of drive
+### -ChatId
+key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Unset, UnsetExpanded
 Aliases:
 
 Required: True
@@ -99,15 +92,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpirationDateTime
-.
+### -ChatMessageId
+key: id of chatMessage
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Type: System.String
+Parameter Sets: Unset, UnsetExpanded
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -120,7 +113,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: UnsetViaIdentity, UnsetViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -130,58 +123,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Message
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Password
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Recipients
-.
-To construct, please use Get-Help -Online and see NOTES section for RECIPIENTS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RetainInheritedPermissions
-.
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -191,27 +138,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Scope
+### -ReactionType
 .
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Type
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: UnsetExpanded, UnsetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -226,7 +158,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Unset, UnsetExpanded
 Aliases:
 
 Required: True
@@ -272,13 +204,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.PowerShell.Models.IPaths1By85LjUsersUserIdChatsChatIdMessagesChatmessageIdMicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission
+### System.Boolean
 
 ## NOTES
 
@@ -289,18 +221,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1>: .
+BODYPARAMETER <IPaths1By85LjUsersUserIdChatsChatIdMessagesChatmessageIdMicrosoftGraphUnsetreactionPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ExpirationDateTime <DateTime?>]`: 
-  - `[Message <String>]`: 
-  - `[Password <String>]`: 
-  - `[Recipients <IMicrosoftGraphDriveRecipient[]>]`: 
-    - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
-    - `[Email <String>]`: The email address for the recipient, if the recipient has an associated email address.
-    - `[ObjectId <String>]`: The unique identifier for the recipient in the directory.
-  - `[RetainInheritedPermissions <Boolean?>]`: 
-  - `[Scope <String>]`: 
-  - `[Type <String>]`: 
+  - `[ReactionType <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -349,11 +272,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
   - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
-
-RECIPIENTS <IMicrosoftGraphDriveRecipient[]>: .
-  - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
-  - `[Email <String>]`: The email address for the recipient, if the recipient has an associated email address.
-  - `[ObjectId <String>]`: The unique identifier for the recipient in the directory.
 
 ## RELATED LINKS
 
