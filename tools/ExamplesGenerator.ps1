@@ -60,8 +60,8 @@ function Get-Files {
     $ModuleManifestFileContent = Get-Content -Path $ModuleManifestFile
 
     try {
-        if ((Test-Path $GraphProfilePath)) {
-            
+        if (Test-Path $GraphProfilePath) {
+
             foreach ($File in Get-ChildItem $GraphProfilePath) {
                 #Extract command over here
                 $Command = [System.IO.Path]::GetFileNameWithoutExtension($File)
