@@ -244,7 +244,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
 
 ## NOTES
 

@@ -186,7 +186,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -285,7 +286,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceAppManagementTask>: A device app management task.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AssignedTo <String>]`: The name or email of the admin this task is assigned to.
   - `[Category <DeviceAppManagementTaskCategory?>]`: Device app management task category.
   - `[CreatedDateTime <DateTime?>]`: The created date.

@@ -363,7 +363,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -768,7 +769,7 @@ ALERTDETECTIONS <IMicrosoftGraphAlertDetection[]>: .
 
 BODYPARAMETER <IMicrosoftGraphAlert>: alert
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActivityGroupName <String>]`: Name or alias of the activity group (attacker) this alert is attributed to.
   - `[AlertDetections <IMicrosoftGraphAlertDetection[]>]`: 
     - `[DetectionType <String>]`: 

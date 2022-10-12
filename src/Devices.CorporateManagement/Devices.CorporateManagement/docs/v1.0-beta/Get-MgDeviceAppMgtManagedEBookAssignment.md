@@ -244,7 +244,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1
 
 ## NOTES
 

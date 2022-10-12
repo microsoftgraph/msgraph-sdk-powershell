@@ -96,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -171,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Enum type that represent the status of log collection.
+Enum type that represent the status of log collection
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Support.MicrosoftTunnelLogCollectionStatus
@@ -238,14 +239,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse>: Entity that stores the server log collection status.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[EndDateTime <DateTime?>]`: The end time of the logs collected
   - `[ExpiryDateTime <DateTime?>]`: The time when the log collection is expired
   - `[RequestDateTime <DateTime?>]`: The time when the log collection was requested
   - `[ServerId <String>]`: ID of the server the log collection is requested upon
   - `[SizeInBytes <Int64?>]`: The size of the logs in bytes
   - `[StartDateTime <DateTime?>]`: The start time of the logs collected
-  - `[Status <MicrosoftTunnelLogCollectionStatus?>]`: Enum type that represent the status of log collection.
+  - `[Status <MicrosoftTunnelLogCollectionStatus?>]`: Enum type that represent the status of log collection
 
 ## RELATED LINKS
 

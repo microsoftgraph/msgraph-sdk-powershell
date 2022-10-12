@@ -12,7 +12,7 @@ Represents an attack simulation training campaign in a tenant.
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get3 (Default)
 ```
 Get-MgSecurityAttackSimulation [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```

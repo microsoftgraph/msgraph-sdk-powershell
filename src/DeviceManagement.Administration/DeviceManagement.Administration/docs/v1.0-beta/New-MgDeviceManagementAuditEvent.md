@@ -217,7 +217,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -317,7 +318,7 @@ ACTOR <IMicrosoftGraphAuditActor>: A class containing the properties for Audit A
 
 BODYPARAMETER <IMicrosoftGraphAuditEvent>: A class containing the properties for Audit Event.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Activity <String>]`: Friendly name of the activity.
   - `[ActivityDateTime <DateTime?>]`: The date time in UTC when the activity was performed.
   - `[ActivityOperationType <String>]`: The HTTP operation type of the activity.

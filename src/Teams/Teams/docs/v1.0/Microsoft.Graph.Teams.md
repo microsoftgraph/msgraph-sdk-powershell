@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: be27008e-c540-4a3d-b82e-73094373b2d5
+Module Guid: 30e3b946-632e-458e-be72-4330bde29ecc
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -51,6 +51,12 @@ This operation also creates a copy of the corresponding group.\nYou can specify 
 \n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'.
 \nYou should continue to GET until the status is not 'running'.
 \nThe recommended delay between GETs is 5 seconds.
+
+### [Get-MgAllGroupTeamChannel](Get-MgAllGroupTeamChannel.md)
+List of channels either hosted in or shared with the team (incoming channels).
+
+### [Get-MgAllTeamChannel](Get-MgAllTeamChannel.md)
+List of channels either hosted in or shared with the team (incoming channels).
 
 ### [Get-MgAppCatalogTeamApp](Get-MgAppCatalogTeamApp.md)
 Get teamsApps from appCatalogs
@@ -114,7 +120,7 @@ This cannot be changed after tab creation.
 The team associated with this group.
 
 ### [Get-MgGroupTeamChannel](Get-MgGroupTeamChannel.md)
-List of channels either hosted in or shared with the team (incoming channels).
+The collection of channels and messages associated with the team.
 
 ### [Get-MgGroupTeamChannelFileFolder](Get-MgGroupTeamChannelFileFolder.md)
 Get the metadata for the location where the files of a channel are stored.
@@ -257,10 +263,10 @@ The set of reasons for a time off in the schedule.
 Get timeOffRequests from groups
 
 ### [Get-MgGroupTeamTag](Get-MgGroupTeamTag.md)
-Get tags from groups
+The tags associated with the team.
 
 ### [Get-MgGroupTeamTagMember](Get-MgGroupTeamTagMember.md)
-Get members from groups
+Users assigned to the tag.
 
 ### [Get-MgGroupTeamTemplate](Get-MgGroupTeamTemplate.md)
 The template this team was created from.
@@ -270,7 +276,7 @@ See available templates.
 Retrieve the properties and relationships of the specified team.
 
 ### [Get-MgTeamChannel](Get-MgTeamChannel.md)
-List of channels either hosted in or shared with the team (incoming channels).
+The collection of channels and messages associated with the team.
 
 ### [Get-MgTeamChannelFileFolder](Get-MgTeamChannelFileFolder.md)
 Get the metadata for the location where the files of a channel are stored.
@@ -282,7 +288,9 @@ The content stream, if the item represents a file.
 A collection of membership records associated with the channel.
 
 ### [Get-MgTeamChannelMessage](Get-MgTeamChannelMessage.md)
-Invoke function getAllMessages
+A collection of all the messages in the channel.
+A navigation property.
+Nullable.
 
 ### [Get-MgTeamChannelMessageDelta](Get-MgTeamChannelMessageDelta.md)
 Invoke function delta
@@ -423,10 +431,10 @@ The set of reasons for a time off in the schedule.
 Get timeOffRequests from teams
 
 ### [Get-MgTeamTag](Get-MgTeamTag.md)
-Get tags from teams
+The tags associated with the team.
 
 ### [Get-MgTeamTagMember](Get-MgTeamTagMember.md)
-Get members from teams
+Users assigned to the tag.
 
 ### [Get-MgTeamTemplate](Get-MgTeamTemplate.md)
 The template this team was created from.
@@ -647,10 +655,10 @@ Create a new timeOffReason.
 Create new navigation property to timeOffRequests for groups
 
 ### [New-MgGroupTeamTag](New-MgGroupTeamTag.md)
-Create new navigation property to tags for groups
+Create a standard tag for members in a team.
 
 ### [New-MgGroupTeamTagMember](New-MgGroupTeamTagMember.md)
-Create new navigation property to members for groups
+Create a new teamworkTagMember object in a team.
 
 ### [New-MgTeam](New-MgTeam.md)
 Create a new team.
@@ -751,10 +759,10 @@ Create a new timeOffReason.
 Create new navigation property to timeOffRequests for teams
 
 ### [New-MgTeamTag](New-MgTeamTag.md)
-Create new navigation property to tags for teams
+Create a standard tag for members in a team.
 
 ### [New-MgTeamTagMember](New-MgTeamTagMember.md)
-Create new navigation property to members for teams
+Create a new teamworkTagMember object in a team.
 
 ### [New-MgTeamworkWorkforceIntegration](New-MgTeamworkWorkforceIntegration.md)
 Create a new workforceIntegration object.\nYou can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
@@ -1056,6 +1064,9 @@ For more details about sending notifications and the requirements for doing so, 
 ### [Send-MgTeamActivityNotification](Send-MgTeamActivityNotification.md)
 Send an activity feed notification in the scope of a team.
 For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
+
+### [Send-MgTeamworkActivityNotificationToRecipient](Send-MgTeamworkActivityNotificationToRecipient.md)
+Invoke action sendActivityNotificationToRecipients
 
 ### [Set-MgGroupTeamChannelFileFolderContent](Set-MgGroupTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
