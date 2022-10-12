@@ -9870,7 +9870,7 @@ components:
               description: Indicates additional details on the activity.
             category:
               type: string
-              description: 'Indicates which resource category that''s targeted by the activity. (For example: User Management, Group Management etc..)'
+              description: 'Indicates which resource category that''s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.'
             correlationId:
               type: string
               description: Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.

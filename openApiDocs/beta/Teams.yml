@@ -2755,10 +2755,14 @@ paths:
               parameters:
                 chat-id: $request.path.chat-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: chats.chat.messages.chatMessage.setReaction
             softDelete:
               operationId: chats.chat.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: chats.chat.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: chats.chat.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3107,6 +3111,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action setReaction
+      operationId: chats.messages_setReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -3167,6 +3213,48 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action unsetReaction
+      operationId: chats.messages_unsetReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -3466,10 +3554,14 @@ paths:
                 chat-id: $request.path.chat-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: chats.chat.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: chats.chat.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: chats.chat.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: chats.chat.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3874,6 +3966,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action setReaction
+      operationId: chats.messages.replies_setReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -3950,6 +4092,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action unsetReaction
+      operationId: chats.messages.replies_unsetReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -7901,10 +8093,14 @@ paths:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: groups.group.team.channels.channel.messages.chatMessage.setReaction
             softDelete:
               operationId: groups.group.team.channels.channel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: groups.group.team.channels.channel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: groups.group.team.channels.channel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8628,10 +8824,14 @@ paths:
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: groups.group.team.channels.channel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: groups.group.team.channels.channel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: groups.group.team.channels.channel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: groups.group.team.channels.channel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13674,10 +13874,14 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: groups.group.team.primaryChannel.messages.chatMessage.setReaction
             softDelete:
               operationId: groups.group.team.primaryChannel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: groups.group.team.primaryChannel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: groups.group.team.primaryChannel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14319,10 +14523,14 @@ paths:
                 group-id: $request.path.group-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: groups.group.team.primaryChannel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: groups.group.team.primaryChannel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: groups.group.team.primaryChannel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: groups.group.team.primaryChannel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18296,7 +18504,7 @@ paths:
       tags:
         - groups.team
       summary: List teamworkTags
-      description: Get a list of the tags objects and their properties.
+      description: Get a list of the tag objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
@@ -20770,10 +20978,14 @@ paths:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teams.team.channels.channel.messages.chatMessage.setReaction
             softDelete:
               operationId: teams.team.channels.channel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teams.team.channels.channel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teams.team.channels.channel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21178,6 +21390,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action setReaction
+      operationId: teams.channels.messages_setReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -21254,6 +21516,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unsetReaction
+      operationId: teams.channels.messages_unsetReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -21579,10 +21891,14 @@ paths:
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teams.team.channels.channel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teams.team.channels.channel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teams.team.channels.channel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teams.team.channels.channel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22043,6 +22359,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action setReaction
+      operationId: teams.channels.messages.replies_setReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -22135,6 +22509,64 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unsetReaction
+      operationId: teams.channels.messages.replies_unsetReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -28202,10 +28634,14 @@ paths:
               parameters:
                 team-id: $request.path.team-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teams.team.primaryChannel.messages.chatMessage.setReaction
             softDelete:
               operationId: teams.team.primaryChannel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teams.team.primaryChannel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teams.team.primaryChannel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28554,6 +28990,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action setReaction
+      operationId: teams.primaryChannel.messages_setReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -28614,6 +29092,48 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unsetReaction
+      operationId: teams.primaryChannel.messages_unsetReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -28913,10 +29433,14 @@ paths:
                 team-id: $request.path.team-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teams.team.primaryChannel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teams.team.primaryChannel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teams.team.primaryChannel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teams.team.primaryChannel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29321,6 +29845,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action setReaction
+      operationId: teams.primaryChannel.messages.replies_setReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -29397,6 +29971,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unsetReaction
+      operationId: teams.primaryChannel.messages.replies_unsetReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -33675,7 +34299,7 @@ paths:
       tags:
         - teams.teamworkTag
       summary: List teamworkTags
-      description: Get a list of the tags objects and their properties.
+      description: Get a list of the tag objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
@@ -36065,10 +36689,14 @@ paths:
                 deletedTeam-id: $request.path.deletedTeam-id
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.setReaction
             softDelete:
               operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36473,6 +37101,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.deletedTeams.channels.messages_setReaction
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -36549,6 +37227,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.deletedTeams.channels.messages_unsetReaction
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -36874,10 +37602,14 @@ paths:
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37338,6 +38070,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.deletedTeams.channels.messages.replies_setReaction
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -37430,6 +38220,64 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.deletedTeams.channels.messages.replies_unsetReaction
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -42574,10 +43422,14 @@ paths:
                 teamTemplateDefinition-id: $request.path.teamTemplateDefinition-id
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.setReaction
             softDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43038,6 +43890,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.channels.messages_setReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -43130,6 +44040,64 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.channels.messages_unsetReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -43481,10 +44449,14 @@ paths:
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44001,6 +44973,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.channels.messages.replies_setReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -44109,6 +45147,72 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.channels.messages.replies_unsetReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -50966,10 +52070,14 @@ paths:
                 teamTemplate-id: $request.path.teamTemplate-id
                 teamTemplateDefinition-id: $request.path.teamTemplateDefinition-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.setReaction
             softDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -51374,6 +52482,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel.messages_setReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -51450,6 +52608,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel.messages_unsetReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -51775,10 +52983,14 @@ paths:
                 teamTemplateDefinition-id: $request.path.teamTemplateDefinition-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -52239,6 +53451,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel.messages.replies_setReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -52331,6 +53601,64 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel.messages.replies_unsetReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -57247,7 +58575,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List teamworkTags
-      description: Get a list of the tags objects and their properties.
+      description: Get a list of the tag objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
@@ -59768,10 +61096,14 @@ paths:
                 user-id: $request.path.user-id
                 chat-id: $request.path.chat-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: users.user.chats.chat.messages.chatMessage.setReaction
             softDelete:
               operationId: users.user.chats.chat.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: users.user.chats.chat.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: users.user.chats.chat.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -60495,10 +61827,14 @@ paths:
                 chat-id: $request.path.chat-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: users.user.chats.chat.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: users.user.chats.chat.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: users.user.chats.chat.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: users.user.chats.chat.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -64349,7 +65685,7 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -65681,9 +67017,11 @@ components:
               nullable: true
             tenantId:
               type: string
+              description: The ID of the tenant that the tag member is a part of.
               nullable: true
             userId:
               type: string
+              description: The user ID of the member.
               nullable: true
           additionalProperties:
             type: object
@@ -80520,6 +81858,7 @@ components:
         lastUsedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when the printer was last used by the signed-in user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:

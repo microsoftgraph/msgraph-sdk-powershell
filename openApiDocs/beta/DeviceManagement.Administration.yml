@@ -16598,7 +16598,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
-      description: 'Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
+      description: 'Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
       operationId: deviceManagement.virtualEndpoint.userSettings_ListAssignments
       parameters:
         - name: cloudPcUserSetting-id
@@ -16702,7 +16702,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
-      description: 'Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
+      description: 'Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
       operationId: deviceManagement.virtualEndpoint.userSettings_GetAssignments
       parameters:
         - name: cloudPcUserSetting-id
@@ -19189,7 +19189,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
-              description: 'Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
+              description: 'Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object

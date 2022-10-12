@@ -197,6 +197,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
+    "/deviceManagement/managedDevices/{managedDevice-id}/users": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
+    },
     "/deviceManagement/notificationMessageTemplates": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
