@@ -1,30 +1,30 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportm365appusercount
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportm365appplatformusercount
 schema: 2.0.0
 ---
 
-# Get-MgReportM365AppUserCount
+# Get-MgReportM365AppPlatformUserCount
 
 ## SYNOPSIS
-Invoke function getM365AppUserCounts
+Invoke function getM365AppPlatformUserCounts
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
-Get-MgReportM365AppUserCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportM365AppPlatformUserCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
-Get-MgReportM365AppUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgReportM365AppPlatformUserCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getM365AppUserCounts
+Invoke function getM365AppPlatformUserCounts
 
 ## EXAMPLES
 
@@ -36,7 +36,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Usage: period='{period}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
