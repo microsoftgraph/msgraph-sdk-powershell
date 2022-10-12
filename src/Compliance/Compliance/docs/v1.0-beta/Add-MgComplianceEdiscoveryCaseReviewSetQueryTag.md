@@ -259,7 +259,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPathsWh2810ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdQueriesReviewsetqueryIdMicrosoftGraphEdiscoveryApplytagsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[TagsToAdd <IMicrosoftGraphEdiscoveryTag[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ChildSelectability <String>]`: childSelectability
     - `[ChildTags <IMicrosoftGraphEdiscoveryTag[]>]`: Returns the tags that are a child of a tag.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -293,7 +293,7 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[UserSourceId <String>]`: key: id of userSource
 
 TAGSTOADD <IMicrosoftGraphEdiscoveryTag[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ChildSelectability <String>]`: childSelectability
   - `[ChildTags <IMicrosoftGraphEdiscoveryTag[]>]`: Returns the tags that are a child of a tag.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -310,7 +310,7 @@ TAGSTOADD <IMicrosoftGraphEdiscoveryTag[]>: .
   - `[Parent <IMicrosoftGraphEdiscoveryTag>]`: tag
 
 TAGSTOREMOVE <IMicrosoftGraphEdiscoveryTag[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ChildSelectability <String>]`: childSelectability
   - `[ChildTags <IMicrosoftGraphEdiscoveryTag[]>]`: Returns the tags that are a child of a tag.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
