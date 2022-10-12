@@ -193,7 +193,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -418,9 +419,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTermStoreSet>: set
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
     - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
     - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -435,7 +436,7 @@ BODYPARAMETER <IMicrosoftGraphTermStoreSet>: set
       - `[Key <String>]`: Key for the key-value pair.
       - `[Value <String>]`: Value for the key-value pair.
     - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
       - `[Relationship <String>]`: 
       - `[Set <IMicrosoftGraphTermStoreSet>]`: set
@@ -448,7 +449,7 @@ BODYPARAMETER <IMicrosoftGraphTermStoreSet>: set
     - `[Name <String>]`: The name in the localized language.
   - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
     - `[Description <String>]`: Description that gives details on the term usage.
     - `[DisplayName <String>]`: Name of the group.
@@ -460,7 +461,7 @@ BODYPARAMETER <IMicrosoftGraphTermStoreSet>: set
   - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
 
 CHILDREN <IMicrosoftGraphTermStoreTerm[]>: Children terms of set in term [store].
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
   - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
   - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -475,12 +476,12 @@ CHILDREN <IMicrosoftGraphTermStoreTerm[]>: Children terms of set in term [store]
     - `[Key <String>]`: Key for the key-value pair.
     - `[Value <String>]`: Value for the key-value pair.
   - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
     - `[Relationship <String>]`: 
     - `[Set <IMicrosoftGraphTermStoreSet>]`: set
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
       - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
       - `[Description <String>]`: Description that gives details on the term usage.
@@ -489,7 +490,7 @@ CHILDREN <IMicrosoftGraphTermStoreTerm[]>: Children terms of set in term [store]
         - `[Name <String>]`: The name in the localized language.
       - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
         - `[Description <String>]`: Description that gives details on the term usage.
         - `[DisplayName <String>]`: Name of the group.
@@ -545,16 +546,16 @@ LOCALIZEDNAMES <IMicrosoftGraphTermStoreLocalizedName[]>: Name of the set for ea
 
 PARENTGROUP <IMicrosoftGraphTermStoreGroup1>: group
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
   - `[Description <String>]`: Description that gives details on the term usage.
   - `[DisplayName <String>]`: Name of the group.
   - `[ParentSiteId <String>]`: ID of the parent site of this group.
   - `[Scope <String>]`: 
   - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
       - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
       - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -569,7 +570,7 @@ PARENTGROUP <IMicrosoftGraphTermStoreGroup1>: group
         - `[Key <String>]`: Key for the key-value pair.
         - `[Value <String>]`: Value for the key-value pair.
       - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[Relationship <String>]`: 
         - `[Set <IMicrosoftGraphTermStoreSet>]`: set
@@ -590,10 +591,10 @@ PROPERTIES <IMicrosoftGraphKeyValue[]>: Custom properties for the set.
   - `[Value <String>]`: Value for the key-value pair.
 
 RELATIONS <IMicrosoftGraphTermStoreRelation1[]>: Indicates which terms have been pinned or reused directly under the set.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
     - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
     - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -610,7 +611,7 @@ RELATIONS <IMicrosoftGraphTermStoreRelation1[]>: Indicates which terms have been
     - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
     - `[Set <IMicrosoftGraphTermStoreSet>]`: set
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
       - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
       - `[Description <String>]`: Description that gives details on the term usage.
@@ -619,7 +620,7 @@ RELATIONS <IMicrosoftGraphTermStoreRelation1[]>: Indicates which terms have been
         - `[Name <String>]`: The name in the localized language.
       - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
         - `[Description <String>]`: Description that gives details on the term usage.
         - `[DisplayName <String>]`: Name of the group.
@@ -634,7 +635,7 @@ RELATIONS <IMicrosoftGraphTermStoreRelation1[]>: Indicates which terms have been
   - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
 
 TERMS <IMicrosoftGraphTermStoreTerm[]>: All the terms under the set.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
   - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
   - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -649,12 +650,12 @@ TERMS <IMicrosoftGraphTermStoreTerm[]>: All the terms under the set.
     - `[Key <String>]`: Key for the key-value pair.
     - `[Value <String>]`: Value for the key-value pair.
   - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
     - `[Relationship <String>]`: 
     - `[Set <IMicrosoftGraphTermStoreSet>]`: set
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
       - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
       - `[Description <String>]`: Description that gives details on the term usage.
@@ -663,7 +664,7 @@ TERMS <IMicrosoftGraphTermStoreTerm[]>: All the terms under the set.
         - `[Name <String>]`: The name in the localized language.
       - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
         - `[Description <String>]`: Description that gives details on the term usage.
         - `[DisplayName <String>]`: Name of the group.
