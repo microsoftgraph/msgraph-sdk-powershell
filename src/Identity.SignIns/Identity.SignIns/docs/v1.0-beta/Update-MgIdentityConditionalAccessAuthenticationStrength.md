@@ -98,7 +98,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -195,23 +196,23 @@ To create the parameters described below, construct a hash table containing the 
 
 
 AUTHENTICATIONMETHODMODES <IMicrosoftGraphAuthenticationMethodModeDetail[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AuthenticationMethod <String>]`: baseAuthenticationMethod
   - `[DisplayName <String>]`: 
 
 BODYPARAMETER <IMicrosoftGraphAuthenticationStrengthRoot>: authenticationStrengthRoot
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AuthenticationCombinations <String[]>]`: 
   - `[AuthenticationMethodModes <IMicrosoftGraphAuthenticationMethodModeDetail[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AuthenticationMethod <String>]`: baseAuthenticationMethod
     - `[DisplayName <String>]`: 
   - `[Policies <IMicrosoftGraphAuthenticationStrengthPolicy[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AllowedCombinations <String[]>]`: 
     - `[CombinationConfigurations <IMicrosoftGraphAuthenticationCombinationConfiguration[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AppliesToCombinations <String[]>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
     - `[Description <String>]`: 
@@ -221,10 +222,10 @@ BODYPARAMETER <IMicrosoftGraphAuthenticationStrengthRoot>: authenticationStrengt
     - `[RequirementsSatisfied <String>]`: authenticationStrengthRequirements
 
 POLICIES <IMicrosoftGraphAuthenticationStrengthPolicy[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowedCombinations <String[]>]`: 
   - `[CombinationConfigurations <IMicrosoftGraphAuthenticationCombinationConfiguration[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AppliesToCombinations <String[]>]`: 
   - `[CreatedDateTime <DateTime?>]`: 
   - `[Description <String>]`: 

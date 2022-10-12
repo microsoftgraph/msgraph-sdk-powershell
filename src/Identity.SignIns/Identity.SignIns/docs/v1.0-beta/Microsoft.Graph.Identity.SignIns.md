@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: a5430975-ce95-4de6-b1d6-8f2955c2187e
+Module Guid: 0294463d-935c-421b-9930-4307d03e9fb9
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -137,6 +137,11 @@ Returns a collection of the specified named locations.
 Read-only.
 Nullable.
 Returns a collection of the specified Conditional Access policies.
+
+### [Get-MgIdentityConditionalAccessTemplate](Get-MgIdentityConditionalAccessTemplate.md)
+Read-only.
+Nullable.
+Returns a collection of the specified Conditional Access templates.
 
 ### [Get-MgIdentityContinuouAccessEvaluationPolicy](Get-MgIdentityContinuouAccessEvaluationPolicy.md)
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
@@ -720,6 +725,9 @@ Named locations can be either ipNamedLocation or countryNamedLocation objects.
 ### [New-MgIdentityConditionalAccessPolicy](New-MgIdentityConditionalAccessPolicy.md)
 Create a new conditionalAccessPolicy.
 
+### [New-MgIdentityConditionalAccessTemplate](New-MgIdentityConditionalAccessTemplate.md)
+Create new navigation property to templates for identity
+
 ### [New-MgIdentityCustomAuthenticationExtension](New-MgIdentityCustomAuthenticationExtension.md)
 Create new navigation property to customAuthenticationExtensions for identity
 
@@ -1018,6 +1026,9 @@ Delete navigation property namedLocations for identity
 
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Delete navigation property policies for identity
+
+### [Remove-MgIdentityConditionalAccessTemplate](Remove-MgIdentityConditionalAccessTemplate.md)
+Delete navigation property templates for identity
 
 ### [Remove-MgIdentityContinuouAccessEvaluationPolicy](Remove-MgIdentityContinuouAccessEvaluationPolicy.md)
 Delete navigation property continuousAccessEvaluationPolicy for identity
@@ -1415,6 +1426,9 @@ Update the navigation property namedLocations in identity
 
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Update the navigation property policies in identity
+
+### [Update-MgIdentityConditionalAccessTemplate](Update-MgIdentityConditionalAccessTemplate.md)
+Update the navigation property templates in identity
 
 ### [Update-MgIdentityContinuouAccessEvaluationPolicy](Update-MgIdentityContinuouAccessEvaluationPolicy.md)
 Update the properties of a continuousAccessEvaluationPolicy object.
