@@ -324,7 +324,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.application'
           links:
             createdOnBehalfOf:
-              operationId: applications.GetCreatedOnBehalfOf
+              operationId: applications.GetCreatedOnBehalfGraphOPre
               parameters:
                 application-id: $request.path.application-id
             extensionProperties:
@@ -443,7 +443,7 @@ paths:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
       description: Supports $filter (eq when counting empty collections). Read-only.
-      operationId: applications_GetCreatedOnBehalfOf
+      operationId: applications_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: application-id
           in: path
@@ -1758,7 +1758,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Delete ref of navigation property owners for applications
-      operationId: applications_DeleteOwnersByRef
+      operationId: applications_DeleteOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1804,7 +1804,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
-      operationId: applications_ListOwnersByRef
+      operationId: applications_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1857,7 +1857,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Create new navigation property ref to owners for applications
-      operationId: applications_CreateOwnersByRef
+      operationId: applications_CreateOwnersGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -1967,7 +1967,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Delete ref of navigation property tokenIssuancePolicies for applications
-      operationId: applications_DeleteTokenIssuancePoliciesByRef
+      operationId: applications_DeleteTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2013,7 +2013,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenIssuancePoliciesByRef
+      operationId: applications_ListTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2064,7 +2064,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for applications
-      operationId: applications_CreateTokenIssuancePoliciesByRef
+      operationId: applications_CreateTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2174,7 +2174,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Delete ref of navigation property tokenLifetimePolicies for applications
-      operationId: applications_DeleteTokenLifetimePoliciesByRef
+      operationId: applications_DeleteTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2220,7 +2220,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications_ListTokenLifetimePoliciesByRef
+      operationId: applications_ListTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2271,7 +2271,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for applications
-      operationId: applications_CreateTokenLifetimePoliciesByRef
+      operationId: applications_CreateTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
           in: path
@@ -2513,7 +2513,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: applications_getByIds
+      operationId: applications_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
@@ -3523,7 +3523,7 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             memberOf:
-              operationId: servicePrincipals.ListMemberOf
+              operationId: servicePrincipals.ListMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             oauth2PermissionGrants:
@@ -3547,7 +3547,7 @@ paths:
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             transitiveMemberOf:
-              operationId: servicePrincipals.ListTransitiveMemberOf
+              operationId: servicePrincipals.ListTransitiveMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             addKey:
@@ -4270,7 +4270,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteClaimsMappingPoliciesByRef
+      operationId: servicePrincipals_DeleteClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4316,7 +4316,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListClaimsMappingPoliciesByRef
+      operationId: servicePrincipals_ListClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4367,7 +4367,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateClaimsMappingPoliciesByRef
+      operationId: servicePrincipals_CreateClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5341,7 +5341,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteHomeRealmDiscoveryPoliciesByRef
+      operationId: servicePrincipals_DeleteHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5387,7 +5387,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesByRef
+      operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5438,7 +5438,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_CreateHomeRealmDiscoveryPoliciesByRef
+      operationId: servicePrincipals_CreateHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5465,7 +5465,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0
-      operationId: servicePrincipals_ListMemberOf
+      operationId: servicePrincipals_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5545,7 +5545,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-      operationId: servicePrincipals_GetMemberOf
+      operationId: servicePrincipals_GetMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6423,7 +6423,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Delete ref of navigation property owners for servicePrincipals
-      operationId: servicePrincipals_DeleteOwnersByRef
+      operationId: servicePrincipals_DeleteOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6469,7 +6469,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
-      operationId: servicePrincipals_ListOwnersByRef
+      operationId: servicePrincipals_ListOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6522,7 +6522,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to owners for servicePrincipals
-      operationId: servicePrincipals_CreateOwnersByRef
+      operationId: servicePrincipals_CreateOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6858,7 +6858,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
-      operationId: servicePrincipals_ListTransitiveMemberOf
+      operationId: servicePrincipals_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6937,7 +6937,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_GetTransitiveMemberOf
+      operationId: servicePrincipals_GetTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7229,7 +7229,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: servicePrincipals_getByIds
+      operationId: servicePrincipals_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:

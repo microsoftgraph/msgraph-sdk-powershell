@@ -512,7 +512,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: directoryObjects_getByIds
+      operationId: directoryObjects_getGraphBPreIds
       requestBody:
         description: Action parameters
         content:
