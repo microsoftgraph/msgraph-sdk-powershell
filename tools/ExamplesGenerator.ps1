@@ -246,18 +246,18 @@ if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
 }
-$date = Get-Date -Format "dd-MM-yyyy"
-$proposedBranch = "WeeklyOpenApiDocsDownload/Examples_Update_"+$date
-$exists = git branch -l $proposedBranch
-if ([string]::IsNullOrEmpty($exists)) {
-    git checkout -b $proposedBranch
+$Date = Get-Date -Format "dd-MM-yyyy"
+$ProposedBranch = "WeeklyOpenApiDocsDownload/Examples_Update_"+$Date
+$Exists = git branch -l $ProposedBranch
+if ([string]::IsNullOrEmpty($Exists)) {
+    git checkout -b $ProposedBranch
 }else{
 	Write-Host "Branch already exists"
-    $currentBranch = git rev-parse --abbrev-ref HEAD
-    if($currentBranch -ne $proposedBranch){
-        git checkout $proposedBranch
+    $CurrentBranch = git rev-parse --abbrev-ref HEAD
+    if($CurrentBranch -ne $ProposedBranch){
+        git checkout $ProposedBranch
      }
-     git checkout $proposedBranch
+     git checkout $ProposedBranch
 }
 
 Start-Generator -ModulesToGenerate $ModulesToGenerate
