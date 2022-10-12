@@ -184,7 +184,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -410,7 +411,7 @@ BODYPARAMETER <IMicrosoftGraphSearchQna>: qna
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: Timestamp of when the search answer is created or edited. Read-only.
   - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they will go to this URL.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AvailabilityEndDateTime <DateTime?>]`: Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
   - `[AvailabilityStartDateTime <DateTime?>]`: Timestamp of when the qna will start to appear as a search result. Set as null for always available.
   - `[GroupIds <String[]>]`: List of security groups able to view this qna.
