@@ -92,7 +92,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -268,7 +269,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPrivilegedRoleSummary>: privilegedRoleSummary
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ElevatedCount <Int32?>]`: The number of users that have the role assigned and the role is activated.
   - `[ManagedCount <Int32?>]`: The number of users that have the role assigned but the role is deactivated.
   - `[MfaEnabled <Boolean?>]`: true if the role activation requires MFA. false if the role activation doesn't require MFA.
