@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 
 using System;
+using System.Security;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Microsoft.Graph.PowerShell.Authentication
@@ -24,6 +25,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public Version PSHostVersion { get; set; }
         public TimeSpan ClientTimeout { get; set; } = TimeSpan.FromSeconds(Constants.ClientTimeout);
         public string ManagedIdentityId { get; set; }
+        public SecureString ClientSecret { get; set; }
 
         public AuthContext()
         {

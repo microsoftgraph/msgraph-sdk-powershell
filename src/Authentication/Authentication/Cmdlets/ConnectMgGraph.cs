@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Graph.PowerShell.Authentication.Common;
+using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
@@ -32,36 +33,42 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 1, HelpMessage = HelpMessages.Scopes)]
         public string[] Scopes { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 1, Mandatory = true, HelpMessage = HelpMessages.ClientId)]
+        [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, Position = 1, Mandatory = true, HelpMessage = HelpMessages.ClientId)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.ClientId)]
         [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.ManagedIdentityClientId)]
         [Alias("AppId", "ApplicationId")]
         public string ClientId { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2, HelpMessage = HelpMessages.CertificateSubjectName)]
+        [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, Position = 2, HelpMessage = HelpMessages.CertificateSubjectName)]
         [Alias("CertificateSubject")]
         public string CertificateSubjectName { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 3, HelpMessage = HelpMessages.CertificateThumbprint)]
+        [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, Position = 3, HelpMessage = HelpMessages.CertificateThumbprint)]
         public string CertificateThumbprint { get; set; }
 
-        [Parameter(Mandatory = false, ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.Certificate)]
+        [Parameter(Mandatory = false, ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.Certificate)]
         public X509Certificate2 Certificate { get; set; }
+
+        [Parameter(Mandatory = false, ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.Credential)]
+        public PSCredential Credential { get; set; }
 
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, Position = 1, Mandatory = true, HelpMessage = HelpMessages.AccessToken)]
         public SecureString AccessToken { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.TenantId)]
+        [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.TenantId)]
+        [Parameter(ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.TenantId)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 4, HelpMessage = HelpMessages.TenantId)]
         [Alias("Audience", "Tenant")]
         public string TenantId { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.ContextScope)]
+        [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.ContextScope)]
+        [Parameter(ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.ContextScope)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.ContextScope)]
         [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.ContextScope)]
         public ContextScope ContextScope { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.Environment)]
+        [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.Environment)]
+        [Parameter(ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.Environment)]
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.Environment)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.Environment)]
         [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.Environment)]
@@ -73,7 +80,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Alias("UseDeviceAuthentication", "DeviceCode", "DeviceAuth", "Device")]
         public SwitchParameter UseDeviceCode { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
+        [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
+        [Parameter(ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.ClientTimeout)]
@@ -168,7 +176,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.TokenCredentialType = UseDeviceCode ? TokenCredentialType.DeviceCode : TokenCredentialType.InteractiveBrowser;
                         }
                         break;
-                    case Constants.AppParameterSet:
+                    case Constants.AppCertificateParameterSet:
                         {
                             authContext.AuthType = AuthenticationType.AppOnly;
                             authContext.ClientId = ClientId;
@@ -180,12 +188,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.TokenCredentialType = TokenCredentialType.ClientCertificate;
                         }
                         break;
-                    case Constants.AccessTokenParameterSet:
+                    case Constants.AppSecretCredentialParameterSet:
                         {
-                            authContext.AuthType = AuthenticationType.UserProvidedAccessToken;
-                            authContext.TokenCredentialType = TokenCredentialType.UserProvidedAccessToken;
-                            authContext.ContextScope = ContextScope.Process;
-                            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(new NetworkCredential(string.Empty, AccessToken).Password));
+                            authContext.AuthType = AuthenticationType.AppOnly;
+                            authContext.ClientId = Credential.UserName;
+                            authContext.ClientSecret = Credential.Password;
+                            authContext.ClientSecret.MakeReadOnly();
+                            authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
+                            authContext.TokenCredentialType = TokenCredentialType.ClientSecret;
                         }
                         break;
                     case Constants.IdentityParameterSet:
@@ -194,6 +204,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.AuthType = AuthenticationType.ManagedIdentity;
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
                             authContext.TokenCredentialType = TokenCredentialType.ManagedIdentity;
+                        }
+                        break;
+                    case Constants.AccessTokenParameterSet:
+                        {
+                            authContext.AuthType = AuthenticationType.UserProvidedAccessToken;
+                            authContext.TokenCredentialType = TokenCredentialType.UserProvidedAccessToken;
+                            authContext.ContextScope = ContextScope.Process;
+                            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(AccessToken.ConvertToString()));
                         }
                         break;
                 }
@@ -244,7 +262,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             switch (ParameterSetName)
             {
-                case Constants.AppParameterSet:
+                case Constants.AppCertificateParameterSet:
                     {
                         // Client Id
                         if (string.IsNullOrEmpty(ClientId))

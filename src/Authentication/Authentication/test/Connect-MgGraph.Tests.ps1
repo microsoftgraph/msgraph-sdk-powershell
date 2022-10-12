@@ -18,7 +18,7 @@ Describe 'Connect-MgGraph ParameterSets' {
     }
     it 'Should have three ParameterSets' {
         $ConnectMgGraphCommand | Should -Not -BeNullOrEmpty
-        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 4
+        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 5
     }
     It 'Should have UserParameterSet' {
         $UserParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'UserParameterSet'
@@ -28,13 +28,21 @@ Describe 'Connect-MgGraph ParameterSets' {
         @('ClientId', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $UserParameterSet.Parameters.Name
     }
 
-    It 'Should have AppParameterSet' {
-        $AppParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppParameterSet'
-        $AppParameterSet | Should -Not -BeNull
-        @('ClientId', 'TenantId', 'CertificateSubjectName', 'CertificateThumbprint', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppParameterSet.Parameters.Name
-        $MandatoryParameters = $AppParameterSet.Parameters | Where-Object IsMandatory
+    It 'Should have AppCertificateParameterSet' {
+        $AppCertificateParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppCertificateParameterSet'
+        $AppCertificateParameterSet | Should -Not -BeNull
+        @('ClientId', 'TenantId', 'CertificateSubjectName', 'CertificateThumbprint', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppCertificateParameterSet.Parameters.Name
+        $MandatoryParameters = $AppCertificateParameterSet.Parameters | Where-Object IsMandatory
         $MandatoryParameters | Should -HaveCount 1
         $MandatoryParameters.Name | Should -Be 'ClientId'
+    }
+
+    It 'Should have AppSecretCredentialParameterSet' {
+        $AppSecretCredentialParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppSecretCredentialParameterSet'
+        $AppSecretCredentialParameterSet | Should -Not -BeNull
+        @('Credential', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppSecretCredentialParameterSet.Parameters.Name
+        $MandatoryParameters = $AppSecretCredentialParameterSet.Parameters | Where-Object IsMandatory
+        $MandatoryParameters | Should -HaveCount 0
     }
 
     It 'Should Have AccessTokenParameterSet' {
