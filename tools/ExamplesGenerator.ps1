@@ -76,7 +76,7 @@ function Get-Files {
                 
                 }
                 if ($UriPath) {
-                    if (-not$UriPath.Contains("microsoft.graph")) {
+                    if (-not $UriPath.Contains("microsoft.graph")) {
                         $val = $UriPath.split('/')
                         $len = $val.Length
                         $buildString = ""
