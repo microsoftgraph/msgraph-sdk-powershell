@@ -3126,7 +3126,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
-          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
+          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.'
         fields:
           type: array
           items:
@@ -3145,6 +3145,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.searchAlterationOptions'
         region:
           type: string
+          description: 'Required for searches that use application permissions. Represents the geographic location for the search. For details, see Get the region value.'
           nullable: true
         resultTemplateOptions:
           $ref: '#/components/schemas/microsoft.graph.resultTemplateOption'
