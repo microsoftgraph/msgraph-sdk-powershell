@@ -8,30 +8,46 @@ schema: 2.0.0
 # Remove-MgUserMessage
 
 ## SYNOPSIS
-The messages in a mailbox or folder.
-Read-only.
-Nullable.
+Delete navigation property messages for users
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgUserMessage -MessageId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgUserMessage -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The messages in a mailbox or folder.
-Read-only.
-Nullable.
+Delete navigation property messages for users
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgUserMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Remove-MgUserMessage -UserId $userId -MessageId $messageId
+```
+
+This example shows how to use the Remove-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Remove-MgUserMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Remove-MgUserMessage -UserId $userId -MessageId $messageId
+```
+
+This example shows how to use the Remove-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -56,7 +72,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -71,7 +87,7 @@ key: id of message
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -101,7 +117,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

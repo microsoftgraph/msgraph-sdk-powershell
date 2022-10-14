@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtTargetedManagedAppConfigurationApp
 
 ## SYNOPSIS
-Get apps from deviceAppManagement
+List of apps to which the policy is deployed.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceAppMgtTargetedManagedAppConfigurationApp -InputObject <IDevicesCorpo
 ```
 
 ## DESCRIPTION
-Get apps from deviceAppManagement
+List of apps to which the policy is deployed.
 
 ## EXAMPLES
 

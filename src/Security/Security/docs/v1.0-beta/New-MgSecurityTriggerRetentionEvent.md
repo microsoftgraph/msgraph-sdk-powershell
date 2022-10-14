@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityTriggerRetentionEvent
 
 ## SYNOPSIS
-Create new navigation property to retentionEvents for security
+Create a new retentionEvent object.
 
 ## SYNTAX
 
@@ -31,9 +31,41 @@ New-MgSecurityTriggerRetentionEvent -BodyParameter <IMicrosoftGraphSecurityReten
 ```
 
 ## DESCRIPTION
-Create new navigation property to retentionEvents for security
+Create a new retentionEvent object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgSecurityTriggerRetentionEvent Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+$params = @{
+	"@odata.type" = "#microsoft.graph.security.retentionEvent"
+	DisplayName = "String"
+	Description = "String"
+	EventQueries = @(
+		@{
+			"@odata.type" = "microsoft.graph.security.eventQueries"
+		}
+	)
+	EventTriggerDateTime = [System.DateTime]::Parse("String (timestamp)")
+	CreatedBy = @{
+		"@odata.type" = "microsoft.graph.identitySet"
+	}
+	EventPropagationResults = @(
+		@{
+			"@odata.type" = "microsoft.graph.security.eventPropagationResult"
+		}
+	)
+	EventStatus = @{
+		"@odata.type" = "microsoft.graph.security.retentionEventStatus"
+	}
+	LastStatusUpdateDateTime = [System.DateTime]::Parse("String (timestamp)")
+}
+New-MgSecurityTriggerRetentionEvent -BodyParameter $params
+```
+
+This example shows how to use the New-MgSecurityTriggerRetentionEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -193,7 +225,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -322,7 +355,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityRetentionEvent>: retentionEvent
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -366,7 +399,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityRetentionEvent>: retentionEvent
   - `[LastStatusUpdateDateTime <DateTime?>]`: Last time the status of the event was updated.
   - `[RetentionEventType <IMicrosoftGraphSecurityRetentionEventType>]`: retentionEventType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date time when the retentionEventType was created.
     - `[Description <String>]`: Optional information about the event type.
@@ -423,7 +456,7 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 RETENTIONEVENTTYPE <IMicrosoftGraphSecurityRetentionEventType>: retentionEventType
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity

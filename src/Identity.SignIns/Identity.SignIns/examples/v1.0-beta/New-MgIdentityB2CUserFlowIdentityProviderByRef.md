@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgIdentityB2CUserFlowIdentityProviderByRef Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.id" = "https://graph.microsoft.com/beta/identityProviders/{id}"
+}
+New-MgIdentityB2CUserFlowIdentityProviderByRef -B2cIdentityUserFlowId $b2cIdentityUserFlowId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgIdentityB2CUserFlowIdentityProviderByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

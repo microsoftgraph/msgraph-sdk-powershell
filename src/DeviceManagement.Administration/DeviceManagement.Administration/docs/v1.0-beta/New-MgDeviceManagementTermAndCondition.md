@@ -195,7 +195,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -338,16 +339,16 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ACCEPTANCESTATUSES <IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]>: The list of acceptance statuses for this T&C policy.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AcceptedDateTime <DateTime?>]`: DateTime when the terms were last accepted by the user.
   - `[AcceptedVersion <Int32?>]`: Most recent version number of the T&C accepted by the user.
   - `[TermsAndConditions <IMicrosoftGraphTermsAndConditions>]`: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AcceptanceStatement <String>]`: Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
     - `[AcceptanceStatuses <IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]>]`: The list of acceptance statuses for this T&C policy.
     - `[Assignments <IMicrosoftGraphTermsAndConditionsAssignment1[]>]`: The list of assignments for this T&C policy.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -357,7 +358,7 @@ ACCEPTANCESTATUSES <IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]>: The li
     - `[Description <String>]`: Administrator-supplied description of the T&C policy.
     - `[DisplayName <String>]`: Administrator-supplied name for the T&C policy.
     - `[GroupAssignments <IMicrosoftGraphTermsAndConditionsGroupAssignment[]>]`: The list of group assignments for this T&C policy.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[TargetGroupId <String>]`: Unique identifier of a group that the T&C policy is assigned to.
       - `[TermsAndConditions <IMicrosoftGraphTermsAndConditions>]`: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
     - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
@@ -369,7 +370,7 @@ ACCEPTANCESTATUSES <IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]>: The li
   - `[UserPrincipalName <String>]`: The userPrincipalName of the User that accepted the term.
 
 ASSIGNMENTS <IMicrosoftGraphTermsAndConditionsAssignment1[]>: The list of assignments for this T&C policy.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -377,17 +378,17 @@ ASSIGNMENTS <IMicrosoftGraphTermsAndConditionsAssignment1[]>: The list of assign
 
 BODYPARAMETER <IMicrosoftGraphTermsAndConditions>: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AcceptanceStatement <String>]`: Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
   - `[AcceptanceStatuses <IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]>]`: The list of acceptance statuses for this T&C policy.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AcceptedDateTime <DateTime?>]`: DateTime when the terms were last accepted by the user.
     - `[AcceptedVersion <Int32?>]`: Most recent version number of the T&C accepted by the user.
     - `[TermsAndConditions <IMicrosoftGraphTermsAndConditions>]`: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
     - `[UserDisplayName <String>]`: Display name of the user whose acceptance the entity represents.
     - `[UserPrincipalName <String>]`: The userPrincipalName of the User that accepted the term.
   - `[Assignments <IMicrosoftGraphTermsAndConditionsAssignment1[]>]`: The list of assignments for this T&C policy.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -397,7 +398,7 @@ BODYPARAMETER <IMicrosoftGraphTermsAndConditions>: A termsAndConditions entity r
   - `[Description <String>]`: Administrator-supplied description of the T&C policy.
   - `[DisplayName <String>]`: Administrator-supplied name for the T&C policy.
   - `[GroupAssignments <IMicrosoftGraphTermsAndConditionsGroupAssignment[]>]`: The list of group assignments for this T&C policy.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[TargetGroupId <String>]`: Unique identifier of a group that the T&C policy is assigned to.
     - `[TermsAndConditions <IMicrosoftGraphTermsAndConditions>]`: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
   - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
@@ -407,21 +408,21 @@ BODYPARAMETER <IMicrosoftGraphTermsAndConditions>: A termsAndConditions entity r
   - `[Version <Int32?>]`: Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
 
 GROUPASSIGNMENTS <IMicrosoftGraphTermsAndConditionsGroupAssignment[]>: The list of group assignments for this T&C policy.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[TargetGroupId <String>]`: Unique identifier of a group that the T&C policy is assigned to.
   - `[TermsAndConditions <IMicrosoftGraphTermsAndConditions>]`: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AcceptanceStatement <String>]`: Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
     - `[AcceptanceStatuses <IMicrosoftGraphTermsAndConditionsAcceptanceStatus[]>]`: The list of acceptance statuses for this T&C policy.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AcceptedDateTime <DateTime?>]`: DateTime when the terms were last accepted by the user.
       - `[AcceptedVersion <Int32?>]`: Most recent version number of the T&C accepted by the user.
       - `[TermsAndConditions <IMicrosoftGraphTermsAndConditions>]`: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
       - `[UserDisplayName <String>]`: Display name of the user whose acceptance the entity represents.
       - `[UserPrincipalName <String>]`: The userPrincipalName of the User that accepted the term.
     - `[Assignments <IMicrosoftGraphTermsAndConditionsAssignment1[]>]`: The list of assignments for this T&C policy.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestDirectoryScope
 
 ## SYNOPSIS
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Read-only.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +29,9 @@ Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestDirectoryS
 ```
 
 ## DESCRIPTION
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Read-only.
+Supports $expand.
 
 ## EXAMPLES
 

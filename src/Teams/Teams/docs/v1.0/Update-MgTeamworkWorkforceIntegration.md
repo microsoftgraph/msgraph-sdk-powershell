@@ -15,10 +15,9 @@ Update the navigation property workforceIntegrations in teamwork
 ### UpdateExpanded (Default)
 ```
 Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId <String> [-AdditionalProperties <Hashtable>]
- [-ApiVersion <Int32>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
- [-Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>] [-Id <String>] [-IsActive]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-SupportedEntities <String>] [-Url <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ApiVersion <Int32>] [-DisplayName <String>] [-Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]
+ [-Id <String>] [-IsActive] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SupportedEntities <String>]
+ [-Url <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -36,16 +35,35 @@ Update-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-ApiVersion <Int32>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
- [-Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>] [-Id <String>] [-IsActive]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-SupportedEntities <String>] [-Url <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ApiVersion <Int32>] [-DisplayName <String>] [-Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]
+ [-Id <String>] [-IsActive] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SupportedEntities <String>]
+ [-Url <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Update the navigation property workforceIntegrations in teamwork
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgTeamworkWorkforceIntegration Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	DisplayName = "displayName-value"
+	ApiVersion = 99
+	Encryption = @{
+		Protocol = "protocol-value"
+		Secret = "secret-value"
+	}
+	IsActive = $true
+	Url = "url-value"
+	SupportedEntities = "supportedEntities-value"
+}
+Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgTeamworkWorkforceIntegration Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -96,22 +114,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -CreatedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DisplayName
 Name of the workforce integration.
 
@@ -144,7 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -195,22 +198,6 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -336,7 +323,6 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphWorkforceIntegration>: workforceIntegration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -345,8 +331,7 @@ BODYPARAMETER <IMicrosoftGraphWorkforceIntegration>: workforceIntegration
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ApiVersion <Int32?>]`: API version for the call back URL. Start with 1.
   - `[DisplayName <String>]`: Name of the workforce integration.
   - `[Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]`: workforceIntegrationEncryption

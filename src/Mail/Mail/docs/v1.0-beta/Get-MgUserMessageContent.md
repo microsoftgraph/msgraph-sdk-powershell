@@ -12,13 +12,13 @@ Get media content for the navigation property messages from users
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgUserMessageContent -MessageId <String> -UserId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgUserMessageContent -InputObject <IMailIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
@@ -36,7 +36,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ key: id of message
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -96,7 +96,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True

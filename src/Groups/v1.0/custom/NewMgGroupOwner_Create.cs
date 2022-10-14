@@ -21,18 +21,18 @@
         /// </summary>
         private System.Threading.CancellationTokenSource _cancellationTokenSource = new System.Threading.CancellationTokenSource();
         /// <summary>Backing field for <see cref="BodyParameter" /> property.</summary>
-        private Microsoft.Graph.PowerShell.Models.IDictionaryOfany2 _bodyParameter;
+        private Microsoft.Graph.PowerShell.Models.IReferenceCreate _bodyParameter;
 
-        /// <summary>Dictionary of <any></summary>
+        /// <summary>Entity reference body</summary>
         [global::Microsoft.Graph.PowerShell.ExportAs(typeof(global::System.Collections.Hashtable))]
-        [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Dictionary of <any>", ValueFromPipeline = true)]
+        [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Entity reference body", ValueFromPipeline = true)]
         [Microsoft.Graph.PowerShell.Runtime.Info(
         Required = true,
         ReadOnly = false,
-        Description = @"Dictionary of <any>",
+        Description = @"Entity reference body",
         SerializedName = @"body",
-        PossibleTypes = new[] { typeof(Microsoft.Graph.PowerShell.Models.IDictionaryOfany2) })]
-        public Microsoft.Graph.PowerShell.Models.IDictionaryOfany2 BodyParameter { get => this._bodyParameter; set => this._bodyParameter = value; }
+        PossibleTypes = new[] { typeof(Microsoft.Graph.PowerShell.Models.IReferenceCreate) })]
+        public Microsoft.Graph.PowerShell.Models.IReferenceCreate BodyParameter { get => this._bodyParameter; set => this._bodyParameter = value; }
 
         /// <summary>Wait for .NET debugger to attach</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]

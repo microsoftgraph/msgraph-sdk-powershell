@@ -64,7 +64,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -162,9 +163,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityLabelsRoot>: labelsRoot
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[RetentionLabels <IMicrosoftGraphSecurityRetentionLabel[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActionAfterRetentionPeriod <String>]`: actionAfterRetentionPeriod
     - `[BehaviorDuringRetentionPeriod <String>]`: behaviorDuringRetentionPeriod
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -181,7 +182,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityLabelsRoot>: labelsRoot
     - `[DescriptionForUsers <String>]`: Provides the label information for the user. Optional.
     - `[DisplayName <String>]`: Unique string that defines a label name.
     - `[DispositionReviewStages <IMicrosoftGraphSecurityDispositionReviewStage[]>]`: Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Name <String>]`: Name representing each stage within a collection.
       - `[ReviewersEmailAddresses <String[]>]`: A collection of reviewers at each stage.
       - `[StageNumber <Int32?>]`: The sequence number for each stage of the disposition review.
@@ -193,7 +194,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityLabelsRoot>: labelsRoot
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RetentionEventType <IMicrosoftGraphSecurityRetentionEventType>]`: retentionEventType
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date time when the retentionEventType was created.
       - `[Description <String>]`: Optional information about the event type.
@@ -203,7 +204,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityLabelsRoot>: labelsRoot
     - `[RetentionTrigger <String>]`: retentionTrigger
 
 RETENTIONLABELS <IMicrosoftGraphSecurityRetentionLabel[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActionAfterRetentionPeriod <String>]`: actionAfterRetentionPeriod
   - `[BehaviorDuringRetentionPeriod <String>]`: behaviorDuringRetentionPeriod
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -220,7 +221,7 @@ RETENTIONLABELS <IMicrosoftGraphSecurityRetentionLabel[]>: .
   - `[DescriptionForUsers <String>]`: Provides the label information for the user. Optional.
   - `[DisplayName <String>]`: Unique string that defines a label name.
   - `[DispositionReviewStages <IMicrosoftGraphSecurityDispositionReviewStage[]>]`: Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name representing each stage within a collection.
     - `[ReviewersEmailAddresses <String[]>]`: A collection of reviewers at each stage.
     - `[StageNumber <Int32?>]`: The sequence number for each stage of the disposition review.
@@ -232,7 +233,7 @@ RETENTIONLABELS <IMicrosoftGraphSecurityRetentionLabel[]>: .
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[RetentionEventType <IMicrosoftGraphSecurityRetentionEventType>]`: retentionEventType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date time when the retentionEventType was created.
     - `[Description <String>]`: Optional information about the event type.

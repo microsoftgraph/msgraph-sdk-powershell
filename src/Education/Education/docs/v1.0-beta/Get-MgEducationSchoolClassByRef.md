@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSchoolClassByRef
 
 ## SYNOPSIS
-Get ref of classes from education
+Retrieve a list of classes owned by a school.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgEducationSchoolClassByRef -EducationSchoolId <String> [-Filter <String>] [
 ```
 
 ## DESCRIPTION
-Get ref of classes from education
+Retrieve a list of classes owned by a school.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListItemVersion
 
 ## SYNOPSIS
-Get versions from users
+The list of previous versions of the list item.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDriveListItemVersion -InputObject <IFilesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get versions from users
+The list of previous versions of the list item.
 
 ## EXAMPLES
 

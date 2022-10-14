@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveRoot
 
 ## SYNOPSIS
-Get root from drives
+Retrieve the metadata for a driveItem in a drive by file system path or ID.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgDriveRoot -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get root from drives
+Retrieve the metadata for a driveItem in a drive by file system path or ID.
 
 ## EXAMPLES
 

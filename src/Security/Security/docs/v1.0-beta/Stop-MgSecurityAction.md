@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-MgSecurityAction
 
 ## SYNOPSIS
-Invoke action cancelSecurityAction
+Cancel a security operation.
 
 ## SYNTAX
 
@@ -23,9 +23,18 @@ Stop-MgSecurityAction -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-
 ```
 
 ## DESCRIPTION
-Invoke action cancelSecurityAction
+Cancel a security operation.
 
 ## EXAMPLES
+
+### Example 1: Using the Stop-MgSecurityAction Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Stop-MgSecurityAction -SecurityActionId $securityActionId
+```
+
+This example shows how to use the Stop-MgSecurityAction Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

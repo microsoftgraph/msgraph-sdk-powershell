@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveListColumn
 
 ## SYNOPSIS
-Get columns from drives
+The collection of field definitions for this list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDriveListColumn -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get columns from drives
+The collection of field definitions for this list.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementSetting
 
 ## SYNOPSIS
-Get settings from identityGovernance
+Retrieve the properties of an entitlementManagementSettings object.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgEntitlementManagementSetting [-ExpandProperty <String[]>] [-Property <Stri
 ```
 
 ## DESCRIPTION
-Get settings from identityGovernance
+Retrieve the properties of an entitlementManagementSettings object.
 
 ## EXAMPLES
 
@@ -72,7 +72,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings1
 
 ## NOTES
 

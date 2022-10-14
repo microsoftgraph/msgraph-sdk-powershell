@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGroupDriveItemListItemDriveItemContent
 
 ## SYNOPSIS
-Update content for the navigation property driveItem in groups
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgGroupDriveItemListItemDriveItemContent -InputObject <IFilesIdentity> -InFi
 ```
 
 ## DESCRIPTION
-Update content for the navigation property driveItem in groups
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

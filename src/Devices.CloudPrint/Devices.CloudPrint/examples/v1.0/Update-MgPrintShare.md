@@ -1,18 +1,12 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgPrintShare Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Devices.CloudPrint
+$params = @{
+	DisplayName = "PrinterShare Name"
+	"Printer@odata.bind" = "https://graph.microsoft.com/v1.0/print/printers/{printerId}"
+	AllowAllUsers = $false
+}
+Update-MgPrintShare -PrinterShareId $printerShareId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgPrintShare Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

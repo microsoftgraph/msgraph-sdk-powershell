@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupEventInstanceExtension
 
 ## SYNOPSIS
-Get extensions from groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgGroupEventInstanceExtension -InputObject <ICalendarIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get extensions from groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## EXAMPLES
 

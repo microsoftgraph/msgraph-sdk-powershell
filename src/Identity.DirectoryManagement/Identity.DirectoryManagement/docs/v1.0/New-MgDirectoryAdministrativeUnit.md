@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDirectoryAdministrativeUnit
 
 ## SYNOPSIS
-Create new navigation property to administrativeUnits for directory
+Use this API to create a new administrativeUnit.
 
 ## SYNTAX
 
@@ -27,9 +27,23 @@ New-MgDirectoryAdministrativeUnit -BodyParameter <IMicrosoftGraphAdministrativeU
 ```
 
 ## DESCRIPTION
-Create new navigation property to administrativeUnits for directory
+Use this API to create a new administrativeUnit.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgDirectoryAdministrativeUnit Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	DisplayName = "Seattle District Technical Schools"
+	Description = "Seattle district technical schools administration"
+	Visibility = "HiddenMembership"
+}
+New-MgDirectoryAdministrativeUnit -BodyParameter $params
+```
+
+This example shows how to use the New-MgDirectoryAdministrativeUnit Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -179,8 +193,8 @@ Accept wildcard characters: False
 
 ### -Visibility
 Controls whether the administrative unit and its members are hidden or public.
-Can be set to HiddenMembership or Public.
-If not set, the default behavior is Public.
+Can be set to HiddenMembership.
+If not set (value is null), the default behavior is public.
 When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
 ```yaml
@@ -265,7 +279,7 @@ BODYPARAMETER <IMicrosoftGraphAdministrativeUnit>: administrativeUnit
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
-  - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+  - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for this administrative unit. Nullable.
   - `[Id <String>]`: 

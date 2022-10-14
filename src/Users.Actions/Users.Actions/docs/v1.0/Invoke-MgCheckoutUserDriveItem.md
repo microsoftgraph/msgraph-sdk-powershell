@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgCheckoutUserDriveItem
 
 ## SYNOPSIS
-Invoke action checkout
+Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgCheckoutUserDriveItem -InputObject <IUsersActionsIdentity> [-PassThru] 
 ```
 
 ## DESCRIPTION
-Invoke action checkout
+Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
 ## EXAMPLES
 

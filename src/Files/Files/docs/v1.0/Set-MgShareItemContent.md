@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgShareItemContent
 
 ## SYNOPSIS
-Update content for the navigation property items in shares
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgShareItemContent -InputObject <IFilesIdentity> -InFile <String> [-BodyPara
 ```
 
 ## DESCRIPTION
-Update content for the navigation property items in shares
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

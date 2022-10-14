@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc
 
 ## SYNOPSIS
-Invoke action reprovision
+Reprovision a specific Cloud PC.
 
 ## SYNTAX
 
@@ -41,9 +41,22 @@ Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc -InputObject <IDevice
 ```
 
 ## DESCRIPTION
-Invoke action reprovision
+Reprovision a specific Cloud PC.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Actions
+$params = @{
+	UserAccountType = "administrator"
+	OsVersion = "windows10"
+}
+Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -213,6 +226,7 @@ BODYPARAMETER <IPaths1U4M8FzDevicemanagementVirtualendpointCloudpcsCloudpcIdMicr
   - `[UserAccountType <String>]`: cloudPcUserAccountType
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

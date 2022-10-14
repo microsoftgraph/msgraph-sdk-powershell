@@ -12,7 +12,7 @@ Create new navigation property to hostedContents for teams
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -TeamId <String> [-AdditionalProperties <Hashtable>]
@@ -20,20 +20,20 @@ New-MgTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageId <S
  [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -TeamId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgTeamChannelMessageReplyHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgTeamChannelMessageReplyHostedContent -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>] [-Confirm] [-WhatIf]
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -67,7 +67,7 @@ chatMessageHostedContent
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Create1, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -128,7 +128,7 @@ Bytes for the hosted content (such as images).)
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -140,11 +140,12 @@ Accept wildcard characters: False
 
 ### -ContentType
 Write only.
-Content type, such as image/png, image/jpg.
+Content type.
+sicj as image/png, image/jpg.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -155,11 +156,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -175,7 +177,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -190,7 +192,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True

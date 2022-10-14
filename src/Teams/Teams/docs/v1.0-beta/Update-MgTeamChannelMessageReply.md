@@ -12,7 +12,7 @@ Update the navigation property replies in teams
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgTeamChannelMessageReply -ChannelId <String> -ChatMessageId <String> -ChatMessageId1 <String>
  -TeamId <String> [-AdditionalProperties <Hashtable>] [-Attachments <IMicrosoftGraphChatMessageAttachment1[]>]
@@ -27,20 +27,20 @@ Update-MgTeamChannelMessageReply -ChannelId <String> -ChatMessageId <String> -Ch
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgTeamChannelMessageReply -ChannelId <String> -ChatMessageId <String> -ChatMessageId1 <String>
  -TeamId <String> -BodyParameter <IMicrosoftGraphChatMessage> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgTeamChannelMessageReply -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphChatMessage>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgTeamChannelMessageReply -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Attachments <IMicrosoftGraphChatMessageAttachment1[]>] [-Body <IMicrosoftGraphItemBody>]
@@ -67,7 +67,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -83,7 +83,7 @@ To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTS 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageAttachment1[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -99,7 +99,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODY propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -115,7 +115,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -130,7 +130,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -146,7 +146,7 @@ To construct, please use Get-Help -Online and see NOTES section for CHANNELIDENT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChannelIdentity
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -161,7 +161,7 @@ If the message was sent in a chat, represents the identity of the chat.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -176,7 +176,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -191,7 +191,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -206,7 +206,7 @@ Timestamp of when the chat message was created.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -222,7 +222,7 @@ Timestamp at which the chat message was deleted, or null if not deleted.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -238,7 +238,7 @@ Version number of the chat message.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -253,7 +253,7 @@ eventMessageDetail
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -268,7 +268,7 @@ chatMessageFromIdentitySet
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -284,7 +284,7 @@ To construct, please use Get-Help -Online and see NOTES section for HOSTEDCONTEN
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -295,11 +295,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -314,7 +315,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -330,7 +331,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -348,7 +349,7 @@ If no edits are made the value is null.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -364,7 +365,7 @@ Timestamp when the chat message is created (initial setting) or modified, includ
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -380,7 +381,7 @@ Always set to en-us.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -397,7 +398,7 @@ To construct, please use Get-Help -Online and see NOTES section for MENTIONS pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageMention1[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -412,7 +413,7 @@ chatMessageType
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -427,7 +428,7 @@ chatMessageFromIdentitySet
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -458,7 +459,7 @@ To construct, please use Get-Help -Online and see NOTES section for POLICYVIOLAT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessagePolicyViolation
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -474,7 +475,7 @@ To construct, please use Get-Help -Online and see NOTES section for REACTIONS pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageReaction[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -491,7 +492,7 @@ To construct, please use Get-Help -Online and see NOTES section for REPLIES prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -508,7 +509,7 @@ ID of the parent chat message or root chat message of the thread.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -523,7 +524,7 @@ The subject of the chat message, in plaintext.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -539,7 +540,7 @@ Only applies to channel chat messages, not chat messages in a chat.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -554,7 +555,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -570,7 +571,7 @@ Link to the message in Microsoft Teams.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -649,7 +650,7 @@ BODY <IMicrosoftGraphItemBody>: itemBody
 
 BODYPARAMETER <IMicrosoftGraphChatMessage>: chatMessage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Attachments <IMicrosoftGraphChatMessageAttachment1[]>]`: References to attached objects like files, tabs, meetings etc.
     - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
     - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
@@ -682,8 +683,8 @@ BODYPARAMETER <IMicrosoftGraphChatMessage>: chatMessage
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
     - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-    - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
-    - `[Id <String>]`: 
+    - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Importance <String>]`: 
   - `[LastEditedDateTime <DateTime?>]`: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
   - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
@@ -739,8 +740,8 @@ CHANNELIDENTITY <IMicrosoftGraphChannelIdentity>: channelIdentity
 
 HOSTEDCONTENTS <IMicrosoftGraphChatMessageHostedContent[]>: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
   - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-  - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
-  - `[Id <String>]`: 
+  - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
@@ -827,7 +828,7 @@ REACTIONS <IMicrosoftGraphChatMessageReaction[]>: Reactions for this chat messag
     - `[User <IMicrosoftGraphIdentity>]`: identity
 
 REPLIES <IMicrosoftGraphChatMessage[]>: Replies for a specified message. Supports $expand for channel messages.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Attachments <IMicrosoftGraphChatMessageAttachment1[]>]`: References to attached objects like files, tabs, meetings etc.
     - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
     - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
@@ -860,8 +861,8 @@ REPLIES <IMicrosoftGraphChatMessage[]>: Replies for a specified message. Support
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
     - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-    - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
-    - `[Id <String>]`: 
+    - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Importance <String>]`: 
   - `[LastEditedDateTime <DateTime?>]`: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
   - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.

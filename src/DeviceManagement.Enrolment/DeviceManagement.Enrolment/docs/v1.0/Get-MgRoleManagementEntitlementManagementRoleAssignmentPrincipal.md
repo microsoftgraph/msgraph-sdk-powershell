@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleAssignmentPrincipal
 
 ## SYNOPSIS
-Get principal from roleManagement
+Referencing the assigned principal.
+Read-only.
+Supports $expand.
 
 ## SYNTAX
 
@@ -26,7 +28,9 @@ Get-MgRoleManagementEntitlementManagementRoleAssignmentPrincipal
 ```
 
 ## DESCRIPTION
-Get principal from roleManagement
+Referencing the assigned principal.
+Read-only.
+Supports $expand.
 
 ## EXAMPLES
 

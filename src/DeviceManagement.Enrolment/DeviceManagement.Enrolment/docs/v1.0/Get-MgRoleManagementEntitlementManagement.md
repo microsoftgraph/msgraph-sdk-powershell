@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagement
 
 ## SYNOPSIS
-Get entitlementManagement from roleManagement
+Container for roles and assignments for entitlement management resources.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgRoleManagementEntitlementManagement [-ExpandProperty <String[]>] [-Propert
 ```
 
 ## DESCRIPTION
-Get entitlementManagement from roleManagement
+Container for roles and assignments for entitlement management resources.
 
 ## EXAMPLES
 

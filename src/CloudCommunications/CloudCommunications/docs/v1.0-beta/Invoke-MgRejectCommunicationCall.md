@@ -8,7 +8,13 @@ schema: 2.0.0
 # Invoke-MgRejectCommunicationCall
 
 ## SYNOPSIS
-Invoke action reject
+Enable a bot to reject an incoming call.
+The incoming call request can be an invite from a participant in a group call or a peer-to-peer call.
+If an invite to a group call is received, the notification will contain the **chatInfo** and **meetingInfo** parameters.
+The bot is expected to answer or reject the call before the call times out.
+The current timeout value is 15 seconds.
+This API does not end existing calls that have already been answered.
+Use delete call to end a call.
 
 ## SYNTAX
 
@@ -40,9 +46,39 @@ Invoke-MgRejectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action reject
+Enable a bot to reject an incoming call.
+The incoming call request can be an invite from a participant in a group call or a peer-to-peer call.
+If an invite to a group call is received, the notification will contain the **chatInfo** and **meetingInfo** parameters.
+The bot is expected to answer or reject the call before the call times out.
+The current timeout value is 15 seconds.
+This API does not end existing calls that have already been answered.
+Use delete call to end a call.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgRejectCommunicationCall Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	Reason = "none"
+}
+Invoke-MgRejectCommunicationCall -CallId $callId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgRejectCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Invoke-MgRejectCommunicationCall Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	Reason = "busy"
+}
+Invoke-MgRejectCommunicationCall -CallId $callId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgRejectCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListContentTypeBaseType
 
 ## SYNOPSIS
-Get baseTypes from groups
+The collection of content types that are ancestors of this content type.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupDriveListContentTypeBaseType -InputObject <IFilesIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get baseTypes from groups
+The collection of content types that are ancestors of this content type.
 
 ## EXAMPLES
 

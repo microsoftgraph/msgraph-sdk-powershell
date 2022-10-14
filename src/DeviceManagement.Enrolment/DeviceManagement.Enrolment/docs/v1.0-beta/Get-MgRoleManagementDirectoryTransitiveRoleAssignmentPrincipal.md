@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryTransitiveRoleAssignmentPrincipal
 
 ## SYNOPSIS
-Get principal from roleManagement
+The assigned principal.
+Provided so that callers can get the principal using $expand at the same time as getting the role assignment.
+Read-only.
+Supports $expand.
 
 ## SYNTAX
 
@@ -26,7 +29,10 @@ Get-MgRoleManagementDirectoryTransitiveRoleAssignmentPrincipal
 ```
 
 ## DESCRIPTION
-Get principal from roleManagement
+The assigned principal.
+Provided so that callers can get the principal using $expand at the same time as getting the role assignment.
+Read-only.
+Supports $expand.
 
 ## EXAMPLES
 

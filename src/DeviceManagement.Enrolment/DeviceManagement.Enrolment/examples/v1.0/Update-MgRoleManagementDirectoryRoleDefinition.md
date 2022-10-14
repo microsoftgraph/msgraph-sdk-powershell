@@ -1,18 +1,18 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgRoleManagementDirectoryRoleDefinition Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+$params = @{
+	Description = "Update basic properties of application registrations"
+	DisplayName = "Application Registration Support Administrator"
+	RolePermissions = @(
+		@{
+			AllowedResourceActions = @(
+				"microsoft.directory/applications/basic/read"
+			)
+		}
+	)
+}
+Update-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgRoleManagementDirectoryRoleDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

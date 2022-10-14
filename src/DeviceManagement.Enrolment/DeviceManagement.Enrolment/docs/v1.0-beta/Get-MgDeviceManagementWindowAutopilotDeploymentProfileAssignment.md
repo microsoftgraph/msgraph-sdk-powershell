@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowAutopilotDeploymentProfileAssignment
 
 ## SYNOPSIS
-Get assignments from deviceManagement
+The list of group assignments for the profile.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgDeviceManagementWindowAutopilotDeploymentProfileAssignment
 ```
 
 ## DESCRIPTION
-Get assignments from deviceManagement
+The list of group assignments for the profile.
 
 ## EXAMPLES
 

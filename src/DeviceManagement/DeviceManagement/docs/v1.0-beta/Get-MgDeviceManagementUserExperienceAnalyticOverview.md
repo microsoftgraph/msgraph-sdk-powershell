@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticOverview
 
 ## SYNOPSIS
-Get userExperienceAnalyticsOverview from deviceManagement
+User experience analytics overview
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementUserExperienceAnalyticOverview [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get userExperienceAnalyticsOverview from deviceManagement
+User experience analytics overview
 
 ## EXAMPLES
 

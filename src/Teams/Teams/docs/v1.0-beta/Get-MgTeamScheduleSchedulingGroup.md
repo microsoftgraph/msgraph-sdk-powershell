@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamScheduleSchedulingGroup
 
 ## SYNOPSIS
-Get schedulingGroups from teams
+The logical grouping of users in the schedule (usually by role).
 
 ## SYNTAX
 
@@ -31,9 +31,27 @@ Get-MgTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-Property <Stri
 ```
 
 ## DESCRIPTION
-Get schedulingGroups from teams
+The logical grouping of users in the schedule (usually by role).
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgTeamScheduleSchedulingGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamScheduleSchedulingGroup -TeamId $teamId -SchedulingGroupId $schedulingGroupId
+```
+
+This example shows how to use the Get-MgTeamScheduleSchedulingGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgTeamScheduleSchedulingGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamScheduleSchedulingGroup -TeamId $teamId
+```
+
+This example shows how to use the Get-MgTeamScheduleSchedulingGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

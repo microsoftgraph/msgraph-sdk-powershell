@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgChatMember
 
 ## SYNOPSIS
-Get members from chats
+A collection of all the members in the chat.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +33,19 @@ Get-MgChatMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Pr
 ```
 
 ## DESCRIPTION
-Get members from chats
+A collection of all the members in the chat.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgChatMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatMember -ChatId $chatId -ConversationMemberId $conversationMemberId
+```
+
+This example shows how to use the Get-MgChatMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

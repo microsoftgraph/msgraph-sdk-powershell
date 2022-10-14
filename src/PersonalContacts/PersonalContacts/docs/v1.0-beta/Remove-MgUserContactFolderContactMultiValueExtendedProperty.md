@@ -8,29 +8,25 @@ schema: 2.0.0
 # Remove-MgUserContactFolderContactMultiValueExtendedProperty
 
 ## SYNOPSIS
-The collection of multi-value extended properties defined for the contact.
-Read-only.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgUserContactFolderContactMultiValueExtendedProperty -ContactFolderId <String> -ContactId <String>
  -MultiValueLegacyExtendedPropertyId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgUserContactFolderContactMultiValueExtendedProperty -InputObject <IPersonalContactsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of multi-value extended properties defined for the contact.
-Read-only.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ## EXAMPLES
 
@@ -41,7 +37,7 @@ key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -56,7 +52,7 @@ key: id of contact
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -87,7 +83,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -102,7 +98,7 @@ key: id of multiValueLegacyExtendedProperty
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -132,7 +128,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

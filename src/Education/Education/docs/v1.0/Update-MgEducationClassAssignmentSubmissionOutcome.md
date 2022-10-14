@@ -45,6 +45,50 @@ Update the navigation property outcomes in education
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationFeedbackOutcome"
+}
+Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationRubricOutcome"
+	RubricQualityFeedback = @(
+	)
+	RubricQualitySelectedLevels = @(
+	)
+}
+Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationPointsOutcome"
+	Points = @{
+		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGrade"
+		Points = 
+	}
+}
+Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -139,7 +183,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -272,7 +317,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationOutcome>: educationOutcome
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -281,7 +326,7 @@ BODYPARAMETER <IMicrosoftGraphEducationOutcome>: educationOutcome
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
+  - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment

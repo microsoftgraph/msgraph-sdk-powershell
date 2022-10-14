@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationMeAssignmentCategoryByRef
 
 ## SYNOPSIS
-Get ref of categories from education
+List all the categories associated with an assignment.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgEducationMeAssignmentCategoryByRef -EducationAssignmentId <String> [-Filte
 ```
 
 ## DESCRIPTION
-Get ref of categories from education
+List all the categories associated with an assignment.
 
 ## EXAMPLES
 

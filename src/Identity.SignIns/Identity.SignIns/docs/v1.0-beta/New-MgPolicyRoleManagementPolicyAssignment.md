@@ -65,7 +65,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -215,14 +216,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUnifiedRoleManagementPolicyAssignment1>: unifiedRoleManagementPolicyAssignment
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Policy <IMicrosoftGraphUnifiedRoleManagementPolicy1>]`: unifiedRoleManagementPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Description <String>]`: Description for the policy.
     - `[DisplayName <String>]`: Display name for the policy.
     - `[EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>]`: The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget1>]`: unifiedRoleManagementPolicyRuleTarget
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Caller <String>]`: The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
@@ -231,7 +232,7 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRoleManagementPolicyAssignment1>: unifiedRo
         - `[Level <String>]`: The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
         - `[Operations <String[]>]`: The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
         - `[TargetObjects <IMicrosoftGraphDirectoryObject[]>]`: 
-          - `[Id <String>]`: 
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[IsOrganizationDefault <Boolean?>]`: This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).
     - `[LastModifiedBy <IMicrosoftGraphIdentity>]`: identity
@@ -249,11 +250,11 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRoleManagementPolicyAssignment1>: unifiedRo
 
 POLICY <IMicrosoftGraphUnifiedRoleManagementPolicy1>: unifiedRoleManagementPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Description <String>]`: Description for the policy.
   - `[DisplayName <String>]`: Display name for the policy.
   - `[EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule1[]>]`: The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget1>]`: unifiedRoleManagementPolicyRuleTarget
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Caller <String>]`: The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
@@ -262,7 +263,7 @@ POLICY <IMicrosoftGraphUnifiedRoleManagementPolicy1>: unifiedRoleManagementPolic
       - `[Level <String>]`: The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
       - `[Operations <String[]>]`: The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
       - `[TargetObjects <IMicrosoftGraphDirectoryObject[]>]`: 
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[IsOrganizationDefault <Boolean?>]`: This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).
   - `[LastModifiedBy <IMicrosoftGraphIdentity>]`: identity

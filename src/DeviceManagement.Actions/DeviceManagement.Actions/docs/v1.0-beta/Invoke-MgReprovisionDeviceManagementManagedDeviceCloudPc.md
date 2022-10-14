@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
-Invoke action reprovisionCloudPc
+Reprovision a Cloud PC with an Intune managed device ID.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceMa
 ```
 
 ## DESCRIPTION
-Invoke action reprovisionCloudPc
+Reprovision a Cloud PC with an Intune managed device ID.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Actions
+Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc -ManagedDeviceId $managedDeviceId
+```
+
+This example shows how to use the Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -131,6 +140,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

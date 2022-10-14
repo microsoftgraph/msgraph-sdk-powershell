@@ -12,7 +12,7 @@ Create new navigation property to agreementAcceptances for identityGovernance
 
 ## SYNTAX
 
-### CreateExpanded2 (Default)
+### CreateExpanded (Default)
 ```
 New-MgIdentityGovernanceTermOfUseAgreementAcceptance [-AgreementId <String>]
  [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>] [-DeviceDisplayName <String>]
@@ -22,19 +22,19 @@ New-MgIdentityGovernanceTermOfUseAgreementAcceptance [-AgreementId <String>]
  [<CommonParameters>]
 ```
 
-### Create2
+### Create
 ```
 New-MgIdentityGovernanceTermOfUseAgreementAcceptance -BodyParameter <IMicrosoftGraphAgreementAcceptance>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create3
+### Create1
 ```
 New-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String>
  -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateExpanded3
+### CreateExpanded1
 ```
 New-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String> [-AdditionalProperties <Hashtable>]
  [-AgreementFileId <String>] [-AgreementId1 <String>] [-DeviceDisplayName <String>] [-DeviceId <String>]
@@ -43,13 +43,13 @@ New-MgIdentityGovernanceTermOfUseAgreementAcceptance -AgreementId <String> [-Add
  [-UserId <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgIdentityGovernanceTermOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-AgreementId <String>] [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>]
@@ -71,7 +71,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -82,11 +82,11 @@ Accept wildcard characters: False
 ```
 
 ### -AgreementFileId
-ID of the agreement file accepted by the user.
+The identifier of the agreement file accepted by the user.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -101,7 +101,7 @@ key: id of agreement
 
 ```yaml
 Type: System.String
-Parameter Sets: Create3, CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: Create1, CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -112,11 +112,11 @@ Accept wildcard characters: False
 ```
 
 ### -AgreementId1
-ID of the agreement.
+The identifier of the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded3
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -132,7 +132,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
-Parameter Sets: Create2, Create3, CreateViaIdentity1
+Parameter Sets: Create, Create1, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -147,7 +147,7 @@ The display name of the device used for accepting the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -162,7 +162,7 @@ The unique identifier of the device used for accepting the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -173,11 +173,11 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceOSType
-The operating system used for accepting the agreement.
+The operating system used to accept the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -188,11 +188,11 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceOSVersion
-The operating system version of the device used for accepting the agreement.
+The operating system version of the device used to accept the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -205,11 +205,11 @@ Accept wildcard characters: False
 ### -ExpirationDateTime
 The expiration date time of the acceptance.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -220,11 +220,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -240,7 +241,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -252,11 +253,11 @@ Accept wildcard characters: False
 
 ### -RecordedDateTime
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -271,7 +272,7 @@ agreementAcceptanceState
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -286,7 +287,7 @@ Display name of the user when the acceptance was recorded.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -301,7 +302,7 @@ Email of the user when the acceptance was recorded.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -312,11 +313,11 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-ID of the user who accepted the agreement.
+The identifier of the user who accepted the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -331,7 +332,7 @@ UPN of the user when the acceptance was recorded.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -396,19 +397,19 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAgreementAcceptance>: agreementAcceptance
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
-  - `[AgreementId <String>]`: ID of the agreement.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AgreementFileId <String>]`: The identifier of the agreement file accepted by the user.
+  - `[AgreementId <String>]`: The identifier of the agreement.
   - `[DeviceDisplayName <String>]`: The display name of the device used for accepting the agreement.
   - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement.
-  - `[DeviceOSType <String>]`: The operating system used for accepting the agreement.
-  - `[DeviceOSVersion <String>]`: The operating system version of the device used for accepting the agreement.
-  - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[DeviceOSType <String>]`: The operating system used to accept the agreement.
+  - `[DeviceOSVersion <String>]`: The operating system version of the device used to accept the agreement.
+  - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[State <String>]`: agreementAcceptanceState
   - `[UserDisplayName <String>]`: Display name of the user when the acceptance was recorded.
   - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
-  - `[UserId <String>]`: ID of the user who accepted the agreement.
+  - `[UserId <String>]`: The identifier of the user who accepted the agreement.
   - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
@@ -450,7 +451,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -471,8 +474,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 ## RELATED LINKS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses
 
 ## SYNOPSIS
-Get deviceStatuses from deviceAppManagement
+List of ManagedDeviceMobileAppConfigurationDeviceStatus.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses -InputObject <IDevicesCor
 ```
 
 ## DESCRIPTION
-Get deviceStatuses from deviceAppManagement
+List of ManagedDeviceMobileAppConfigurationDeviceStatus.
 
 ## EXAMPLES
 
@@ -245,7 +245,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus
 
 ## NOTES
 

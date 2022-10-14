@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamTag
 
 ## SYNOPSIS
-Get tags from groups
+The tags associated with the team.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupTeamTag -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Get tags from groups
+The tags associated with the team.
 
 ## EXAMPLES
 

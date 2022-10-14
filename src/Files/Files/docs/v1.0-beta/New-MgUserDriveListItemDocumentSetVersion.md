@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserDriveListItemDocumentSetVersion
 
 ## SYNOPSIS
-Create new navigation property to documentSetVersions for users
+Create a new version of a document set item in a list.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserDriveListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Create new navigation property to documentSetVersions for users
+Create a new version of a document set item in a list.
 
 ## EXAMPLES
 
@@ -159,7 +159,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -356,7 +357,7 @@ BODYPARAMETER <IMicrosoftGraphDocumentSetVersion>: documentSetVersion
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -370,7 +371,7 @@ BODYPARAMETER <IMicrosoftGraphDocumentSetVersion>: documentSetVersion
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
     - `[VersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Comment <String>]`: Comment about the captured version.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[CreatedDateTime <DateTime?>]`: Date and time when this version was created.

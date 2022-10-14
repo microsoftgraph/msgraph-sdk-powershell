@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
 
 ## SYNOPSIS
-Get groupAssignments from deviceAppManagement
+The associated group assignments.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment
 ```
 
 ## DESCRIPTION
-Get groupAssignments from deviceAppManagement
+The associated group assignments.
 
 ## EXAMPLES
 

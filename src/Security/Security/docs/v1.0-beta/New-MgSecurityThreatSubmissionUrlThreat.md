@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityThreatSubmissionUrlThreat
 
 ## SYNOPSIS
-Create new navigation property to urlThreats for security
+Create a new urlThreatSubmission object.
 
 ## SYNTAX
 
@@ -29,9 +29,23 @@ New-MgSecurityThreatSubmissionUrlThreat -BodyParameter <IMicrosoftGraphSecurityU
 ```
 
 ## DESCRIPTION
-Create new navigation property to urlThreats for security
+Create a new urlThreatSubmission object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgSecurityThreatSubmissionUrlThreat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+$params = @{
+	"@odata.type" = "#microsoft.graph.urlThreatSubmission"
+	Category = "phishing"
+	WebUrl = "http://phishing.contoso.com"
+}
+New-MgSecurityThreatSubmissionUrlThreat -BodyParameter $params
+```
+
+This example shows how to use the New-MgSecurityThreatSubmissionUrlThreat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -160,7 +174,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -337,7 +352,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityUrlThreatSubmission>: urlThreatSubmission
   - `[Source <String>]`: submissionSource
   - `[Status <String>]`: longRunningOperationStatus
   - `[TenantId <String>]`: Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[WebUrl <String>]`: Denotes the webUrl that needs to be submitted.
 
 CREATEDBY <IMicrosoftGraphSecuritySubmissionUserIdentity>: submissionUserIdentity

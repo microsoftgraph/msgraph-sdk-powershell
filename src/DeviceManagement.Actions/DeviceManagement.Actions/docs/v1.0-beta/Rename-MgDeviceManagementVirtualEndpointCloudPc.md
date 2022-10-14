@@ -8,7 +8,8 @@ schema: 2.0.0
 # Rename-MgDeviceManagementVirtualEndpointCloudPc
 
 ## SYNOPSIS
-Invoke action rename
+Rename a specific Cloud PC.
+Use this API to update the **displayName** for the Cloud PC entity.
 
 ## SYNTAX
 
@@ -40,7 +41,8 @@ Rename-MgDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementA
 ```
 
 ## DESCRIPTION
-Invoke action rename
+Rename a specific Cloud PC.
+Use this API to update the **displayName** for the Cloud PC entity.
 
 ## EXAMPLES
 
@@ -196,6 +198,7 @@ BODYPARAMETER <IPathsTb6XizDevicemanagementVirtualendpointCloudpcsCloudpcIdMicro
   - `[DisplayName <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListContentTypeColumnPosition
 
 ## SYNOPSIS
-Get columnPositions from groups
+Column order information in a content type.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupDriveListContentTypeColumnPosition -InputObject <IFilesIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get columnPositions from groups
+Column order information in a content type.
 
 ## EXAMPLES
 

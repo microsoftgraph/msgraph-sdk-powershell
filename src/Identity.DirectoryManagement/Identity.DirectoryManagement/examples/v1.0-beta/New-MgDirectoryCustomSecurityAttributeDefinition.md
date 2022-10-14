@@ -1,18 +1,65 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	AttributeSet = "Engineering"
+	Description = "Active projects for user"
+	IsCollection = $true
+	IsSearchable = $true
+	Name = "Project"
+	Status = "Available"
+	Type = "String"
+	UsePreDefinedValuesOnly = $true
+	AllowedValues = @(
+		@{
+			Id = "Alpine"
+			IsActive = $true
+		}
+		@{
+			Id = "Baker"
+			IsActive = $true
+		}
+		@{
+			Id = "Cascade"
+			IsActive = $true
+		}
+	)
+}
+New-MgDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	AttributeSet = "Engineering"
+	Description = "Target completion date"
+	IsCollection = $false
+	IsSearchable = $true
+	Name = "ProjectDate"
+	Status = "Available"
+	Type = "String"
+	UsePreDefinedValuesOnly = $false
+}
+New-MgDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	AttributeSet = "Engineering"
+	Description = "Active projects for user"
+	IsCollection = $true
+	IsSearchable = $true
+	Name = "Project"
+	Status = "Available"
+	Type = "String"
+	UsePreDefinedValuesOnly = $true
+}
+New-MgDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
+```
+This example shows how to use the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

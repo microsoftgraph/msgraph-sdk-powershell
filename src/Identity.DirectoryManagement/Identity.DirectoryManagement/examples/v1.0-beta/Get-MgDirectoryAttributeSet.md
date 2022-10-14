@@ -1,18 +1,28 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgDirectoryAttributeSet Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryAttributeSet -AttributeSetId $attributeSetId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgDirectoryAttributeSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgDirectoryAttributeSet Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryAttributeSet
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgDirectoryAttributeSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgDirectoryAttributeSet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryAttributeSet -Sort "id" 
+```
+This example shows how to use the Get-MgDirectoryAttributeSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 4: Using the Get-MgDirectoryAttributeSet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryAttributeSet -Top 10 
+```
+This example shows how to use the Get-MgDirectoryAttributeSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

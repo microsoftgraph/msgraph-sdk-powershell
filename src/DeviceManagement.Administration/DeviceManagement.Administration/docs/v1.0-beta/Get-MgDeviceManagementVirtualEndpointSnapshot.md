@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointSnapshot
 
 ## SYNOPSIS
-Get snapshots from deviceManagement
+Cloud PC snapshots.
 
 ## SYNTAX
 
@@ -32,9 +32,36 @@ Get-MgDeviceManagementVirtualEndpointSnapshot -InputObject <IDeviceManagementAdm
 ```
 
 ## DESCRIPTION
-Get snapshots from deviceManagement
+Cloud PC snapshots.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDeviceManagementVirtualEndpointSnapshot Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointSnapshot -CloudPcSnapshotId $cloudPcSnapshotId
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointSnapshot Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgDeviceManagementVirtualEndpointSnapshot Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointSnapshot -CloudPcSnapshotId $cloudPcSnapshotId
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointSnapshot Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgDeviceManagementVirtualEndpointSnapshot Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointSnapshot
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointSnapshot Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -245,6 +272,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

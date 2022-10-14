@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgUserContact
 
 ## SYNOPSIS
-The user's contacts.
-Read-only.
-Nullable.
+Delete navigation property contacts for users
 
 ## SYNTAX
 
@@ -27,11 +25,19 @@ Remove-MgUserContact -InputObject <IPersonalContactsIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-The user's contacts.
-Read-only.
-Nullable.
+Delete navigation property contacts for users
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgUserContact Cmdlet
+```powershell
+Import-Module Microsoft.Graph.PersonalContacts
+# A UPN can also be used as -UserId.
+Remove-MgUserContact -UserId $userId -ContactId $contactId
+```
+
+This example shows how to use the Remove-MgUserContact Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

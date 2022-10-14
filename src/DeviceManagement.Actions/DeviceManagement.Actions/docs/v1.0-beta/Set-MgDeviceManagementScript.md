@@ -236,6 +236,7 @@ DEVICEMANAGEMENTSCRIPTGROUPASSIGNMENTS <IMicrosoftGraphDeviceManagementScriptGro
   - `[TargetGroupId <String>]`: The Id of the Azure Active Directory group we are targeting the script to.
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

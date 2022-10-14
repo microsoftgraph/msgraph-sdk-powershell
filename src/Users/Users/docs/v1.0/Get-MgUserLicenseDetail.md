@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserLicenseDetail
 
 ## SYNOPSIS
-Get licenseDetails from users
+A collection of this user's license details.
+Read-only.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgUserLicenseDetail -InputObject <IUsersIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get licenseDetails from users
+A collection of this user's license details.
+Read-only.
 
 ## EXAMPLES
 

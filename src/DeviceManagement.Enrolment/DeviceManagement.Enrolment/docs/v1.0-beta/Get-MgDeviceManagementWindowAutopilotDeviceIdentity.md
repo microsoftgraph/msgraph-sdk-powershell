@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowAutopilotDeviceIdentity
 
 ## SYNOPSIS
-Get windowsAutopilotDeviceIdentities from deviceManagement
+The Windows autopilot device identities contained collection.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementWindowAutopilotDeviceIdentity -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-Get windowsAutopilotDeviceIdentities from deviceManagement
+The Windows autopilot device identities contained collection.
 
 ## EXAMPLES
 

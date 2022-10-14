@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserCreatedObject
 
 ## SYNOPSIS
-Get createdObjects from users
+Directory objects that were created by the user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgUserCreatedObject -InputObject <IUsersIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get createdObjects from users
+Directory objects that were created by the user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

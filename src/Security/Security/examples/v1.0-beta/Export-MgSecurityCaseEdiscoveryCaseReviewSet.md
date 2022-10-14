@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Export-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Security
+$params = @{
+	OutputName = "Export via API"
+	Description = "Export for the Contoso investigation"
+	ExportOptions = "originalFiles,fileInfo,tags"
+	ExportStructure = "directory"
+}
+Export-MgSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Export-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

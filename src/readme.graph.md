@@ -89,6 +89,7 @@ directive:
     - MicrosoftGraphTaskViewpoint
     - MicrosoftGraphSecurityEdiscoveryReviewTag
     - MicrosoftGraphSecurityEdiscoverySearch
+    - MicrosoftGraphManagedTenantsManagementTemplateStep
   # Set parameter alias
   - where:
       parameter-name: OrderBy

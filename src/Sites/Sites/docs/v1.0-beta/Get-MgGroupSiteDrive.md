@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupSiteDrive
 
 ## SYNOPSIS
-Get drive from groups
+Retrieve the properties and relationships of a Drive resource.
+A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
 ## SYNTAX
 
@@ -44,7 +45,8 @@ Get-MgGroupSiteDrive -GroupId <String> -SiteId <String> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get drive from groups
+Retrieve the properties and relationships of a Drive resource.
+A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
 ## EXAMPLES
 

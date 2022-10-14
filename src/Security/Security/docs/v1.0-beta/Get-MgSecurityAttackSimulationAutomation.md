@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityAttackSimulationAutomation
 
 ## SYNOPSIS
-Get simulationAutomations from security
+Represents simulation automation created to run on a tenant.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Get simulationAutomations from security
+Represents simulation automation created to run on a tenant.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityAttackSimulationAutomation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityAttackSimulationAutomation
+```
+
+This example shows how to use the Get-MgSecurityAttackSimulationAutomation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

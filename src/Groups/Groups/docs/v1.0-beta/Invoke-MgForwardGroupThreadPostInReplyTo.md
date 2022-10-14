@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgForwardGroupThreadPostInReplyTo
 
 ## SYNOPSIS
-Invoke action forward
+Forward a post to a recipient.
+You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Invoke-MgForwardGroupThreadPostInReplyTo -InputObject <IGroupsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Invoke action forward
+Forward a post to a recipient.
+You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
 
 ## EXAMPLES
 
@@ -244,8 +246,8 @@ BODYPARAMETER <IPaths1J2I8RdGroupsGroupIdThreadsConversationthreadIdPostsPostIdI
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
@@ -293,8 +295,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
 TORECIPIENTS <IMicrosoftGraphRecipient[]>: .
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of an entity instance.
-    - `[Name <String>]`: The display name of an entity instance.
+    - `[Address <String>]`: The email address of the person or entity.
+    - `[Name <String>]`: The display name of the person or entity.
 
 ## RELATED LINKS
 

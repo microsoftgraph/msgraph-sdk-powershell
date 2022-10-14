@@ -143,7 +143,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -175,7 +176,7 @@ Accept wildcard characters: False
 
 ### -Members
 A member added to an externalGroup.
-You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
@@ -260,11 +261,11 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalGroup>: externalGroup
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Description <String>]`: The description of the external group. Optional.
   - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
-    - `[Id <String>]`: 
+  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Type <String>]`: identityType
 
 INPUTOBJECT <ISearchIdentity>: Identity Parameter
@@ -278,8 +279,8 @@ INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[IdentityId <String>]`: key: id of identity
   - `[QnaId <String>]`: key: id of qna
 
-MEMBERS <IMicrosoftGraphExternalConnectorsIdentity[]>: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
-  - `[Id <String>]`: 
+MEMBERS <IMicrosoftGraphExternalConnectorsIdentity[]>: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Type <String>]`: identityType
 
 ## RELATED LINKS

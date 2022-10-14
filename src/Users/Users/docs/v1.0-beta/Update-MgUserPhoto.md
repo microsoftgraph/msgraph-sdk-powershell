@@ -24,37 +24,13 @@ Update-MgUserPhoto -UserId <String> -BodyParameter <IMicrosoftGraphProfilePhoto>
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Update1
-```
-Update-MgUserPhoto -ProfilePhotoId <String> -UserId <String> -BodyParameter <IMicrosoftGraphProfilePhoto>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateExpanded1
-```
-Update-MgUserPhoto -ProfilePhotoId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ### UpdateViaIdentity
 ```
 Update-MgUserPhoto -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
-```
-Update-MgUserPhoto -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ### UpdateViaIdentityExpanded
-```
-Update-MgUserPhoto -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Height <Int32>]
- [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded1
 ```
 Update-MgUserPhoto -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Height <Int32>]
  [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -72,7 +48,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -88,7 +64,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
-Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -104,7 +80,7 @@ Read-only.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -115,11 +91,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -135,7 +112,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -160,27 +137,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProfilePhotoId
-key: id of profilePhoto
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -196,7 +158,7 @@ Read-only.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -261,7 +223,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphProfilePhoto>: profilePhoto
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Height <Int32?>]`: The height of the photo. Read-only.
   - `[Width <Int32?>]`: The width of the photo. Read-only.
 

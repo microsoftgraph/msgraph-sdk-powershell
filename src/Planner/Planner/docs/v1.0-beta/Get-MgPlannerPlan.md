@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgPlannerPlan
 
 ## SYNOPSIS
-Get plans from planner
+Read-only.
+Nullable.
+Returns a collection of the specified plans
 
 ## SYNTAX
 
@@ -32,9 +34,29 @@ Get-MgPlannerPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get plans from planner
+Read-only.
+Nullable.
+Returns a collection of the specified plans
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPlannerPlan Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+Get-MgPlannerPlan -PlannerPlanId $plannerPlanId
+```
+
+This example shows how to use the Get-MgPlannerPlan Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPlannerPlan Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+Get-MgPlannerPlan
+```
+
+This example shows how to use the Get-MgPlannerPlan Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -1,18 +1,15 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgUserProfileCertification Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.People
+$params = @{
+	CertificationId = "KB-1235466333663322"
+	Description = "Blackbelt in Marketing - Brand Management"
+	DisplayName = "Marketing Blackbelt - Brand Management"
+	ThumbnailUrl = "https://iame.io/dfhdfdfd334.jpg"
+	WebUrl = "https://www.iame.io/blackbelt"
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfileCertification -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgUserProfileCertification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

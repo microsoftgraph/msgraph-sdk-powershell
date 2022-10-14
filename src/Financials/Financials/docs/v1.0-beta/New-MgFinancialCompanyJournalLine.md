@@ -247,7 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -407,7 +407,7 @@ To create the parameters described below, construct a hash table containing the 
 
 ACCOUNT <IMicrosoftGraphAccount>: account
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Blocked <Boolean?>]`: 
   - `[Category <String>]`: 
   - `[DisplayName <String>]`: 
@@ -417,10 +417,10 @@ ACCOUNT <IMicrosoftGraphAccount>: account
 
 BODYPARAMETER <IMicrosoftGraphJournalLine>: journalLine
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Account <IMicrosoftGraphAccount>]`: account
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Blocked <Boolean?>]`: 
     - `[Category <String>]`: 
     - `[DisplayName <String>]`: 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveItemVersionContent
 
 ## SYNOPSIS
-Get content for the navigation property versions from groups
+The content stream for this version of the item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupDriveItemVersionContent -InputObject <IFilesIdentity> -OutFile <Strin
 ```
 
 ## DESCRIPTION
-Get content for the navigation property versions from groups
+The content stream for this version of the item.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseReviewSetFileTag
 
 ## SYNOPSIS
-Get tags from security
+Tags associated with the file.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgSecurityCaseEdiscoveryCaseReviewSetFileTag -InputObject <ISecurityIdentity
 ```
 
 ## DESCRIPTION
-Get tags from security
+Tags associated with the file.
 
 ## EXAMPLES
 

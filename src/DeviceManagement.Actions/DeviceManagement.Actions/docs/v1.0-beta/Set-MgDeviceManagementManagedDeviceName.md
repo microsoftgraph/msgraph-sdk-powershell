@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementManagedDeviceName
 
 ## SYNOPSIS
-Invoke action setDeviceName
+Set device name of the device.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Set-MgDeviceManagementManagedDeviceName -InputObject <IDeviceManagementActionsId
 ```
 
 ## DESCRIPTION
-Invoke action setDeviceName
+Set device name of the device.
 
 ## EXAMPLES
 
@@ -196,6 +196,7 @@ BODYPARAMETER <IPathsRe3VslDevicemanagementManageddevicesManageddeviceIdMicrosof
   - `[DeviceName <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

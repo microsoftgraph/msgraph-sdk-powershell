@@ -141,7 +141,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -268,7 +269,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphRemoteActionAudit>: Report of remote actions initiated on the devices belonging to a certain tenant.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Action <RemoteAction?>]`: Remote actions Intune supports.
   - `[ActionState <String>]`: actionState
   - `[DeviceDisplayName <String>]`: Intune device name.

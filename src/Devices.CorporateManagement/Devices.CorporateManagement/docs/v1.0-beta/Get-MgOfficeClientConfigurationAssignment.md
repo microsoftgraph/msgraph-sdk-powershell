@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgOfficeClientConfigurationAssignment
 
 ## SYNOPSIS
-Get assignments from officeConfiguration
+The list of group assignments for the policy.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgOfficeClientConfigurationAssignment -InputObject <IDevicesCorporateManagem
 ```
 
 ## DESCRIPTION
-Get assignments from officeConfiguration
+The list of group assignments for the policy.
 
 ## EXAMPLES
 

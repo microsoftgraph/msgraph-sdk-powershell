@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgGroupAppRoleAssignment
 
 ## SYNOPSIS
-Create new navigation property to appRoleAssignments for groups
+Use this API to assign an app role to a group.
+All direct members of the group will be considered assigned.
+To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
 
 ## SYNTAX
 
@@ -41,7 +43,9 @@ New-MgGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Create new navigation property to appRoleAssignments for groups
+Use this API to assign an app role to a group.
+All direct members of the group will be considered assigned.
+To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
 
 ## EXAMPLES
 

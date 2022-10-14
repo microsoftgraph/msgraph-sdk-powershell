@@ -12,7 +12,7 @@ Update the navigation property agreements in identityGovernance
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgIdentityGovernanceTermOfUseAgreement -AgreementId <String>
  [-Acceptances <IMicrosoftGraphAgreementAcceptance[]>] [-AdditionalProperties <Hashtable>]
@@ -22,19 +22,19 @@ Update-MgIdentityGovernanceTermOfUseAgreement -AgreementId <String>
  [-UserReacceptRequiredFrequency <TimeSpan>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgIdentityGovernanceTermOfUseAgreement -AgreementId <String> -BodyParameter <IMicrosoftGraphAgreement>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAgreement> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgIdentityGovernanceTermOfUseAgreement -InputObject <IIdentityGovernanceIdentity>
  [-Acceptances <IMicrosoftGraphAgreementAcceptance[]>] [-AdditionalProperties <Hashtable>]
@@ -49,6 +49,19 @@ Update the navigation property agreements in identityGovernance
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgIdentityGovernanceTermOfUseAgreement Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	DisplayName = "All Contoso volunteers - Terms of use"
+	IsViewingBeforeAcceptanceRequired = $true
+}
+Update-MgIdentityGovernanceTermOfUseAgreement -AgreementId $agreementId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -Acceptances
@@ -58,7 +71,7 @@ To construct, please use Get-Help -Online and see NOTES section for ACCEPTANCES 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementAcceptance[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -73,7 +86,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -88,7 +101,7 @@ key: id of agreement
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -104,7 +117,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -121,7 +134,7 @@ Supports $filter (eq).
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -137,7 +150,7 @@ To construct, please use Get-Help -Online and see NOTES section for FILE propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFile
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -149,13 +162,14 @@ Accept wildcard characters: False
 
 ### -Files
 PDFs linked to this agreement.
-Note: This property is in the process of being deprecated.
+This property is in the process of being deprecated.
 Use the file property instead.
+Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for FILES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -166,11 +180,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -186,7 +201,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -197,13 +212,13 @@ Accept wildcard characters: False
 ```
 
 ### -IsPerDeviceAcceptanceRequired
-This setting enables you to require end users to accept this agreement on every device that they are accessing it from.
-The end user will be required to register their device in Azure AD, if they haven't already done so.
+Indicates whether end users are required to accept this agreement on every device that they access it from.
+The end user is required to register their device in Azure AD, if they haven't already done so.
 Supports $filter (eq).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -219,7 +234,7 @@ Supports $filter (eq).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -250,7 +265,7 @@ To construct, please use Get-Help -Online and see NOTES section for TERMSEXPIRAT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsExpiration
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -263,10 +278,11 @@ Accept wildcard characters: False
 ### -UserReacceptRequiredFrequency
 The duration after which the user must re-accept the terms of use.
 The value is represented in ISO 8601 format for durations.
+Supports $filter (eq).
 
 ```yaml
 Type: System.TimeSpan
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -330,38 +346,38 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ACCEPTANCES <IMicrosoftGraphAgreementAcceptance[]>: Read-only. Information about acceptances of this agreement.
-  - `[Id <String>]`: 
-  - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
-  - `[AgreementId <String>]`: ID of the agreement.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AgreementFileId <String>]`: The identifier of the agreement file accepted by the user.
+  - `[AgreementId <String>]`: The identifier of the agreement.
   - `[DeviceDisplayName <String>]`: The display name of the device used for accepting the agreement.
   - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement.
-  - `[DeviceOSType <String>]`: The operating system used for accepting the agreement.
-  - `[DeviceOSVersion <String>]`: The operating system version of the device used for accepting the agreement.
-  - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[DeviceOSType <String>]`: The operating system used to accept the agreement.
+  - `[DeviceOSVersion <String>]`: The operating system version of the device used to accept the agreement.
+  - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[State <String>]`: agreementAcceptanceState
   - `[UserDisplayName <String>]`: Display name of the user when the acceptance was recorded.
   - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
-  - `[UserId <String>]`: ID of the user who accepted the agreement.
+  - `[UserId <String>]`: The identifier of the user who accepted the agreement.
   - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
 
 BODYPARAMETER <IMicrosoftGraphAgreement>: agreement
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Acceptances <IMicrosoftGraphAgreementAcceptance[]>]`: Read-only. Information about acceptances of this agreement.
-    - `[Id <String>]`: 
-    - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
-    - `[AgreementId <String>]`: ID of the agreement.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AgreementFileId <String>]`: The identifier of the agreement file accepted by the user.
+    - `[AgreementId <String>]`: The identifier of the agreement.
     - `[DeviceDisplayName <String>]`: The display name of the device used for accepting the agreement.
     - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement.
-    - `[DeviceOSType <String>]`: The operating system used for accepting the agreement.
-    - `[DeviceOSVersion <String>]`: The operating system version of the device used for accepting the agreement.
-    - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[DeviceOSType <String>]`: The operating system used to accept the agreement.
+    - `[DeviceOSVersion <String>]`: The operating system version of the device used to accept the agreement.
+    - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[State <String>]`: agreementAcceptanceState
     - `[UserDisplayName <String>]`: Display name of the user when the acceptance was recorded.
     - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
-    - `[UserId <String>]`: ID of the user who accepted the agreement.
+    - `[UserId <String>]`: The identifier of the user who accepted the agreement.
     - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
   - `[DisplayName <String>]`: Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
   - `[File <IMicrosoftGraphAgreementFile>]`: agreementFile
@@ -370,12 +386,12 @@ BODYPARAMETER <IMicrosoftGraphAgreement>: agreement
     - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
     - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only. Note: You can use the .NET Convert.ToBase64String method to convert your file to binary data for uploading using the Create agreements API. A sample syntax using this method in PowerShell is [convert]::ToBase64String((Get-Content -path 'your_file_path' -Encoding byte)).
+      - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
     - `[FileName <String>]`: Name of the agreement file (for example, TOU.pdf). Read-only.
     - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
     - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
     - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Localizations <IMicrosoftGraphAgreementFileLocalization[]>]`: The localized version of the terms of use agreement files attached to the agreement.
       - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
@@ -384,7 +400,7 @@ BODYPARAMETER <IMicrosoftGraphAgreement>: agreement
       - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
       - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
       - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Versions <IMicrosoftGraphAgreementFileVersion[]>]`: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
         - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
@@ -393,15 +409,15 @@ BODYPARAMETER <IMicrosoftGraphAgreement>: agreement
         - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
         - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
         - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
-        - `[Id <String>]`: 
-  - `[Files <IMicrosoftGraphAgreementFileLocalization[]>]`: PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
-  - `[IsPerDeviceAcceptanceRequired <Boolean?>]`: This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Files <IMicrosoftGraphAgreementFileLocalization[]>]`: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
+  - `[IsPerDeviceAcceptanceRequired <Boolean?>]`: Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
   - `[IsViewingBeforeAcceptanceRequired <Boolean?>]`: Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
   - `[TermsExpiration <IMicrosoftGraphTermsExpiration>]`: termsExpiration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Frequency <TimeSpan?>]`: Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.
     - `[StartDateTime <DateTime?>]`: The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[UserReacceptRequiredFrequency <TimeSpan?>]`: The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
+  - `[UserReacceptRequiredFrequency <TimeSpan?>]`: The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
 
 FILE <IMicrosoftGraphAgreementFile>: agreementFile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -409,12 +425,12 @@ FILE <IMicrosoftGraphAgreementFile>: agreementFile
   - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
   - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only. Note: You can use the .NET Convert.ToBase64String method to convert your file to binary data for uploading using the Create agreements API. A sample syntax using this method in PowerShell is [convert]::ToBase64String((Get-Content -path 'your_file_path' -Encoding byte)).
+    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
   - `[FileName <String>]`: Name of the agreement file (for example, TOU.pdf). Read-only.
   - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
   - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
   - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Localizations <IMicrosoftGraphAgreementFileLocalization[]>]`: The localized version of the terms of use agreement files attached to the agreement.
     - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
@@ -423,7 +439,7 @@ FILE <IMicrosoftGraphAgreementFile>: agreementFile
     - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
     - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
     - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Versions <IMicrosoftGraphAgreementFileVersion[]>]`: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
@@ -432,19 +448,19 @@ FILE <IMicrosoftGraphAgreementFile>: agreementFile
       - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
       - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
       - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
-FILES <IMicrosoftGraphAgreementFileLocalization[]>: PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the file property instead.
+FILES <IMicrosoftGraphAgreementFileLocalization[]>: PDFs linked to this agreement. This property is in the process of being deprecated. Use the file property instead. Supports $expand.
   - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
   - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only. Note: You can use the .NET Convert.ToBase64String method to convert your file to binary data for uploading using the Create agreements API. A sample syntax using this method in PowerShell is [convert]::ToBase64String((Get-Content -path 'your_file_path' -Encoding byte)).
+    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
   - `[FileName <String>]`: Name of the agreement file (for example, TOU.pdf). Read-only.
   - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
   - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
   - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Versions <IMicrosoftGraphAgreementFileVersion[]>]`: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
     - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
@@ -453,7 +469,7 @@ FILES <IMicrosoftGraphAgreementFileLocalization[]>: PDFs linked to this agreemen
     - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
     - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
     - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: key: id of accessPackageAssignment
@@ -494,7 +510,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -515,8 +533,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 TERMSEXPIRATION <IMicrosoftGraphTermsExpiration>: termsExpiration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

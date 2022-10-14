@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseReviewSet
 
 ## SYNOPSIS
-Get reviewSets from security
+Returns a list of eDiscoveryReviewSet objects in the case.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgSecurityCaseEdiscoveryCaseReviewSet -InputObject <ISecurityIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get reviewSets from security
+Returns a list of eDiscoveryReviewSet objects in the case.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

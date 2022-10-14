@@ -1,18 +1,28 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgUserProfilePosition Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.People
+$params = @{
+	Detail = @{
+		Company = @{
+			DisplayName = "Adventureworks Ltd."
+			Department = "Consulting"
+			OfficeLocation = "AW23/344"
+			Address = @{
+				Type = "business"
+				Street = "123 Patriachy Ponds"
+				City = "Moscow"
+				CountryOrRegion = "Russian Federation"
+				PostalCode = "RU-34621"
+			}
+			WebUrl = "https://www.adventureworks.com"
+		}
+		JobTitle = "Senior Product Branding Manager II"
+		Role = "consulting"
+	}
+	IsCurrent = $true
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfilePosition -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgUserProfilePosition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroup
 
 ## SYNOPSIS
-Get group from security
+Represents a group.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroup -InputObject <I
 ```
 
 ## DESCRIPTION
-Get group from security
+Represents a group.
 
 ## EXAMPLES
 

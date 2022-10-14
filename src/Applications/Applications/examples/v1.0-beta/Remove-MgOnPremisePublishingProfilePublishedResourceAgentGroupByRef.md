@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Applications
+Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Applications
+Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

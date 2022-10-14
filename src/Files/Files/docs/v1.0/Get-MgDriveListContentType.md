@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveListContentType
 
 ## SYNOPSIS
-Get contentTypes from drives
+The collection of content types present in this list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDriveListContentType -InputObject <IFilesIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get contentTypes from drives
+The collection of content types present in this list.
 
 ## EXAMPLES
 

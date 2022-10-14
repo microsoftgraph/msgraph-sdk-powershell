@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValue
 
 ## SYNOPSIS
-Get definitionValues from deviceManagement
+The list of enabled or disabled group policy definition values for the configuration.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValue -InputObject <IDev
 ```
 
 ## DESCRIPTION
-Get definitionValues from deviceManagement
+The list of enabled or disabled group policy definition values for the configuration.
 
 ## EXAMPLES
 
@@ -343,6 +343,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

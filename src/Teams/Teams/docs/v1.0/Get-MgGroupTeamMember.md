@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamMember
 
 ## SYNOPSIS
-Get members from groups
+Members and owners of the team.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupTeamMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get members from groups
+Members and owners of the team.
 
 ## EXAMPLES
 

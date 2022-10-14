@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementCloudPcResourceNamespaceResourceAction
 
 ## SYNOPSIS
-Get resourceActions from roleManagement
+Operations that an authorized principal are allowed to perform.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgRoleManagementCloudPcResourceNamespaceResourceAction -InputObject <IDevice
 ```
 
 ## DESCRIPTION
-Get resourceActions from roleManagement
+Operations that an authorized principal are allowed to perform.
 
 ## EXAMPLES
 

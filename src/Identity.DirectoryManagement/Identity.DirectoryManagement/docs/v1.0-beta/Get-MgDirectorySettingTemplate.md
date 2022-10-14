@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDirectorySettingTemplate
 
 ## SYNOPSIS
-Get a directory setting template
+A directory setting template represents a template of settings from which settings may be created within a tenant.
+This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.
 
 ## SYNTAX
 
@@ -32,9 +33,28 @@ Get-MgDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIdentit
 ```
 
 ## DESCRIPTION
-Get a directory setting template
+A directory setting template represents a template of settings from which settings may be created within a tenant.
+This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDirectorySettingTemplate Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectorySettingTemplate -DirectorySettingTemplateId $directorySettingTemplateId
+```
+
+This example shows how to use the Get-MgDirectorySettingTemplate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgDirectorySettingTemplate Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectorySettingTemplate
+```
+
+This example shows how to use the Get-MgDirectorySettingTemplate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

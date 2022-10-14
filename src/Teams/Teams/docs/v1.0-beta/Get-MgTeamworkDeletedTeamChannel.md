@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannel
 
 ## SYNOPSIS
-Get channels from teamwork
+The channels those are either shared with this deleted team or created in this deleted team.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgTeamworkDeletedTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get channels from teamwork
+The channels those are either shared with this deleted team or created in this deleted team.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStoreSetParentGroupSetRelation
 
 ## SYNOPSIS
-Get relations from groups
+Indicates which terms have been pinned or reused directly under the set.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgGroupSiteTermStoreSetParentGroupSetRelation -InputObject <ISitesIdentity> 
 ```
 
 ## DESCRIPTION
-Get relations from groups
+Indicates which terms have been pinned or reused directly under the set.
 
 ## EXAMPLES
 

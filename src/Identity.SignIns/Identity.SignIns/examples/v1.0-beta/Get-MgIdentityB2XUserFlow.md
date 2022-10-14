@@ -1,18 +1,21 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgIdentityB2XUserFlow Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2XUserFlow -B2xIdentityUserFlowId $b2xIdentityUserFlowId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgIdentityB2XUserFlow Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgIdentityB2XUserFlow Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2XUserFlow -ExpandProperty "identityProviders" 
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgIdentityB2XUserFlow Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgIdentityB2XUserFlow Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2XUserFlow
+```
+This example shows how to use the Get-MgIdentityB2XUserFlow Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

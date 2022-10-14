@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSearchAcronym
 
 ## SYNOPSIS
-Get acronyms from search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgSearchAcronym -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get acronyms from search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSearchAcronym Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Search
+Get-MgSearchAcronym -AcronymId $acronymId
+```
+
+This example shows how to use the Get-MgSearchAcronym Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSearchAcronym Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Search
+Get-MgSearchAcronym
+```
+
+This example shows how to use the Get-MgSearchAcronym Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityAlert
 
 ## SYNOPSIS
-Get alerts from security
+Notifications for suspicious or potential security issues in a customer’s tenant.
 
 ## SYNTAX
 
@@ -31,9 +31,27 @@ Get-MgSecurityAlert -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get alerts from security
+Notifications for suspicious or potential security issues in a customer’s tenant.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityAlert Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityAlert -AlertId $alertId
+```
+
+This example shows how to use the Get-MgSecurityAlert Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSecurityAlert Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityAlert
+```
+
+This example shows how to use the Get-MgSecurityAlert Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

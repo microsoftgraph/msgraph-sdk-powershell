@@ -8,7 +8,8 @@ schema: 2.0.0
 # Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest
 
 ## SYNOPSIS
-Invoke action cancel
+Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest
 ```
 
 ## DESCRIPTION
-Invoke action cancel
+Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
 
 ## EXAMPLES
 

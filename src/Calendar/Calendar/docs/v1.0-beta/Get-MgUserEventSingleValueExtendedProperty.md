@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserEventSingleValueExtendedProperty
 
 ## SYNOPSIS
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgUserEventSingleValueExtendedProperty -InputObject <ICalendarIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

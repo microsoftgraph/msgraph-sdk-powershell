@@ -8,31 +8,33 @@ schema: 2.0.0
 # Get-MgGroupAppRoleAssignment
 
 ## SYNOPSIS
-Get appRoleAssignments from groups
+Represents the app roles a group has been granted for an application.
+Supports $expand.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
 Get-MgGroupAppRoleAssignment -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get appRoleAssignments from groups
+Represents the app roles a group has been granted for an application.
+Supports $expand.
 
 ## EXAMPLES
 
@@ -81,6 +83,22 @@ Parameter Sets: Get1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

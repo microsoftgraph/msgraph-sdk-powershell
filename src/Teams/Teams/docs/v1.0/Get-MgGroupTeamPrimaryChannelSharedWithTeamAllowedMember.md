@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamPrimaryChannelSharedWithTeamAllowedMember
 
 ## SYNOPSIS
-Get allowedMembers from groups
+A collection of team members who have access to the shared channel.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgGroupTeamPrimaryChannelSharedWithTeamAllowedMember -InputObject <ITeamsIde
 ```
 
 ## DESCRIPTION
-Get allowedMembers from groups
+A collection of team members who have access to the shared channel.
 
 ## EXAMPLES
 

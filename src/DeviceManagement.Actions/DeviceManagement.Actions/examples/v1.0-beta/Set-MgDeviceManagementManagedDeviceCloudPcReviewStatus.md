@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Set-MgDeviceManagementManagedDeviceCloudPcReviewStatus Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Actions
+$params = @{
+	ReviewStatus = @{
+		InReview = $true
+		UserAccessLevel = "restricted"
+		AzureStorageAccountId = "/subscriptions/f68bd846-16ad-4b51-a7c6-c84944a3367c/resourceGroups/Review/providers/Microsoft.Storage/storageAccounts/snapshotsUnderReview"
+	}
+}
+Set-MgDeviceManagementManagedDeviceCloudPcReviewStatus -ManagedDeviceId $managedDeviceId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Set-MgDeviceManagementManagedDeviceCloudPcReviewStatus Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

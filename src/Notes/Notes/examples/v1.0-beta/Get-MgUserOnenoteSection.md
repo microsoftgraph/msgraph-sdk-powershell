@@ -1,18 +1,16 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgUserOnenoteSection Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Notes
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteSection -UserId $userId -OnenoteSectionId $onenoteSectionId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgUserOnenoteSection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgUserOnenoteSection Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Notes
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteSection -UserId $userId
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgUserOnenoteSection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

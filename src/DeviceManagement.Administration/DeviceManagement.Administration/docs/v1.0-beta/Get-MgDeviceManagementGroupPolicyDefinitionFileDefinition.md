@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyDefinitionFileDefinition
 
 ## SYNOPSIS
-Get definitions from deviceManagement
+The group policy definitions associated with the file.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceManagementGroupPolicyDefinitionFileDefinition
 ```
 
 ## DESCRIPTION
-Get definitions from deviceManagement
+The group policy definitions associated with the file.
 
 ## EXAMPLES
 
@@ -261,6 +261,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

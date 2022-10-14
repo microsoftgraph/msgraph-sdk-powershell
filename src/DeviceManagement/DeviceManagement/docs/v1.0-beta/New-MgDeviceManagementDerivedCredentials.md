@@ -96,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -208,7 +209,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementDerivedCredentialSettings>: Entity that describes tenant level settings for derived credentials
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name for the profile.
   - `[HelpUrl <String>]`: The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
   - `[Issuer <DeviceManagementDerivedCredentialIssuer?>]`: Supported values for the derived credential issuer.

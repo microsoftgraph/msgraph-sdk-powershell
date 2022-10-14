@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserOnenoteNotebook
 
 ## SYNOPSIS
-Get notebooks from users
+The collection of OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +34,41 @@ Get-MgUserOnenoteNotebook -InputObject <INotesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get notebooks from users
+The collection of OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserOnenoteNotebook Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Notes
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
+```
+
+This example shows how to use the Get-MgUserOnenoteNotebook Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserOnenoteNotebook Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Notes
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteNotebook -UserId $userId
+```
+
+This example shows how to use the Get-MgUserOnenoteNotebook Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgUserOnenoteNotebook Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Notes
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
+```
+
+This example shows how to use the Get-MgUserOnenoteNotebook Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

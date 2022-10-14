@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingRegistration
 
 ## SYNOPSIS
-Get registration from communications
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicationsI
 ```
 
 ## DESCRIPTION
-Get registration from communications
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ## EXAMPLES
 

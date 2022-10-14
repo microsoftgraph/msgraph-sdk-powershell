@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListContentType
 
 ## SYNOPSIS
-Get contentTypes from groups
+The collection of content types present in this list.
 
 ## SYNTAX
 
@@ -19,20 +19,20 @@ Get-MgGroupSiteListContentType -GroupId <String> -ListId <String> -SiteId <Strin
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgGroupSiteListContentType -ContentTypeId <String> -GroupId <String> -ListId <String> -SiteId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgGroupSiteListContentType -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get contentTypes from groups
+The collection of content types present in this list.
 
 ## EXAMPLES
 
@@ -58,7 +58,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -119,7 +119,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -135,7 +135,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -150,7 +150,7 @@ key: id of list
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -210,7 +210,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True

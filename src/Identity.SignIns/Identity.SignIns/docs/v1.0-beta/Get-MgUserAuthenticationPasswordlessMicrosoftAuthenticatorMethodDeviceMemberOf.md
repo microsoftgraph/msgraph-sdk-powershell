@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberOf
 
 ## SYNOPSIS
-Get memberOf from users
+Groups and administrative units that this device is a member of.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -17,25 +20,29 @@ Get memberOf from users
 Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberOf
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberOf -DirectoryObjectId <String>
  -PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String> -UserId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDeviceMemberOf
  -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+ [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get memberOf from users
+Groups and administrative units that this device is a member of.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 
@@ -47,6 +54,22 @@ List all pages.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -276,10 +299,14 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -288,6 +315,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

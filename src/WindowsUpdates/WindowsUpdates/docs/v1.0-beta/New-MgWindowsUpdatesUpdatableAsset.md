@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Create new navigation property to updatableAssets for admin
+Create a new updatableAssetGroup object.
+The **updatableAssetGroup** resource inherits from updatableAsset.
 
 ## SYNTAX
 
@@ -24,9 +25,22 @@ New-MgWindowsUpdatesUpdatableAsset -BodyParameter <Hashtable> [-Confirm] [-WhatI
 ```
 
 ## DESCRIPTION
-Create new navigation property to updatableAssets for admin
+Create a new updatableAssetGroup object.
+The **updatableAssetGroup** resource inherits from updatableAsset.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgWindowsUpdatesUpdatableAsset Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+$params = @{
+	"@odata.type" = "#microsoft.graph.windowsUpdates.updatableAssetGroup"
+}
+New-MgWindowsUpdatesUpdatableAsset -BodyParameter $params
+```
+
+This example shows how to use the New-MgWindowsUpdatesUpdatableAsset Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

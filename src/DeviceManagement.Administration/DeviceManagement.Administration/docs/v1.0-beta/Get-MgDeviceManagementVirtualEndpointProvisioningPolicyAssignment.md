@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 
 ## SYNOPSIS
-Get assignments from deviceManagement
+A defined collection of provisioning policy assignments.
+Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned.
+Returned only on $expand.
+See an example of getting the assignments relationship.
 
 ## SYNTAX
 
@@ -34,7 +37,10 @@ Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 ```
 
 ## DESCRIPTION
-Get assignments from deviceManagement
+A defined collection of provisioning policy assignments.
+Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned.
+Returned only on $expand.
+See an example of getting the assignments relationship.
 
 ## EXAMPLES
 
@@ -262,6 +268,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

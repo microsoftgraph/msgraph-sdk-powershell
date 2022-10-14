@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition
 
 ## SYNOPSIS
-Get termsAndConditions from deviceManagement
+Navigation link to the terms and conditions that are assigned.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition
 ```
 
 ## DESCRIPTION
-Get termsAndConditions from deviceManagement
+Navigation link to the terms and conditions that are assigned.
 
 ## EXAMPLES
 
@@ -134,6 +134,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

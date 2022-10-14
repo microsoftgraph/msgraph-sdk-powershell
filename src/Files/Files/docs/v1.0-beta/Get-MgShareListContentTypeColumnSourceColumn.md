@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListContentTypeColumnSourceColumn
 
 ## SYNOPSIS
-Get sourceColumn from shares
+The source column for content type column.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgShareListContentTypeColumnSourceColumn -InputObject <IFilesIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get sourceColumn from shares
+The source column for content type column.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgWindowsUpdatesDeploymentAudienceMember
 
 ## SYNOPSIS
-Get members from admin
+Specifies the assets to include in the audience.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgWindowsUpdatesDeploymentAudienceMember -InputObject <IWindowsUpdatesIdenti
 ```
 
 ## DESCRIPTION
-Get members from admin
+Specifies the assets to include in the audience.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgWindowsUpdatesDeploymentAudienceMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesDeploymentAudienceMember -DeploymentId $deploymentId
+```
+
+This example shows how to use the Get-MgWindowsUpdatesDeploymentAudienceMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

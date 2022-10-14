@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementComplianceManagementPartner
 
 ## SYNOPSIS
-Get complianceManagementPartners from deviceManagement
+The list of Compliance Management Partners configured by the tenant.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementComplianceManagementPartner -InputObject <IDeviceManagemen
 ```
 
 ## DESCRIPTION
-Get complianceManagementPartners from deviceManagement
+The list of Compliance Management Partners configured by the tenant.
 
 ## EXAMPLES
 
@@ -245,6 +245,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

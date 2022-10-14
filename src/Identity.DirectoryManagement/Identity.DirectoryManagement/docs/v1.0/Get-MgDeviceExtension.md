@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgDeviceExtension
 
 ## SYNOPSIS
-Get extensions from devices
+The collection of open extensions defined for the device.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgDeviceExtension -InputObject <IIdentityDirectoryManagementIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Get extensions from devices
+The collection of open extensions defined for the device.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgCommunicationOnlineMeetingRecording
 
 ## SYNOPSIS
-Update recording for the navigation property onlineMeetings in communications
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgCommunicationOnlineMeetingRecording -InputObject <ICloudCommunicationsIden
 ```
 
 ## DESCRIPTION
-Update recording for the navigation property onlineMeetings in communications
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## EXAMPLES
 

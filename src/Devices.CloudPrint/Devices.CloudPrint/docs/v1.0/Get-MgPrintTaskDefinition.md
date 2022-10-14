@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintTaskDefinition
 
 ## SYNOPSIS
-Get taskDefinitions from print
+List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 
 ## SYNTAX
 
@@ -44,9 +44,27 @@ Get-MgPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity> [-ExpandProp
 ```
 
 ## DESCRIPTION
-Get taskDefinitions from print
+List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPrintTaskDefinition Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId
+```
+
+This example shows how to use the Get-MgPrintTaskDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPrintTaskDefinition Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintTaskDefinition
+```
+
+This example shows how to use the Get-MgPrintTaskDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

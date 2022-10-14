@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveFollowingContent
 
 ## SYNOPSIS
-Get content for the navigation property following from drives
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgDriveFollowingContent -InputObject <IFilesIdentity> -OutFile <String> [-Pa
 ```
 
 ## DESCRIPTION
-Get content for the navigation property following from drives
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamInstalledAppTeamAppDefinition
 
 ## SYNOPSIS
-Get teamsAppDefinition from teams
+The details of this version of the app.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgTeamInstalledAppTeamAppDefinition -InputObject <ITeamsIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get teamsAppDefinition from teams
+The details of this version of the app.
 
 ## EXAMPLES
 

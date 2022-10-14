@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupEventMultiValueExtendedProperty
 
 ## SYNOPSIS
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -33,7 +35,9 @@ Get-MgGroupEventMultiValueExtendedProperty -InputObject <ICalendarIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

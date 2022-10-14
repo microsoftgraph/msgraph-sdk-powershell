@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBulkReprovisionUserManagedDeviceCloudPc
 
 ## SYNOPSIS
-Invoke action bulkReprovisionCloudPc
+Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgBulkReprovisionUserManagedDeviceCloudPc -InputObject <IUsersActionsIden
 ```
 
 ## DESCRIPTION
-Invoke action bulkReprovisionCloudPc
+Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
 
 ## EXAMPLES
 

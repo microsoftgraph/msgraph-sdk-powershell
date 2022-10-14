@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveRoot
 
 ## SYNOPSIS
-Get root from groups
+Retrieve the metadata for a driveItem in a drive by file system path or ID.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupDriveRoot -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get root from groups
+Retrieve the metadata for a driveItem in a drive by file system path or ID.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListContentType
 
 ## SYNOPSIS
-Get contentTypes from shares
+The collection of content types present in this list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgShareListContentType -InputObject <IFilesIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get contentTypes from shares
+The collection of content types present in this list.
 
 ## EXAMPLES
 

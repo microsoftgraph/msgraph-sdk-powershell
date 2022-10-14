@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgPrintTaskDefinitionTask
 
 ## SYNOPSIS
-Get tasks from print
+A list of tasks that have been created based on this definition.
+The list includes currently running tasks and recently completed tasks.
+Read-only.
 
 ## SYNTAX
 
@@ -32,9 +34,29 @@ Get-MgPrintTaskDefinitionTask -InputObject <IDevicesCloudPrintIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get tasks from print
+A list of tasks that have been created based on this definition.
+The list includes currently running tasks and recently completed tasks.
+Read-only.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPrintTaskDefinitionTask Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId
+```
+
+This example shows how to use the Get-MgPrintTaskDefinitionTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPrintTaskDefinitionTask Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId
+```
+
+This example shows how to use the Get-MgPrintTaskDefinitionTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

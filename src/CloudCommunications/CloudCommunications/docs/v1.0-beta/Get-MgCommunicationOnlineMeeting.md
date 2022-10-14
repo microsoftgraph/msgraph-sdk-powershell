@@ -50,6 +50,15 @@ Get onlineMeetings from communications
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgCommunicationOnlineMeeting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+Get-MgCommunicationOnlineMeeting -Filter "VideoTeleconferenceId eq '123456789'" 
+```
+
+This example shows how to use the Get-MgCommunicationOnlineMeeting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -414,7 +423,7 @@ BODYPARAMETER <IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorge
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+    - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
     - `[ReplyChainMessageId <String>]`: The ID of the reply message.
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[EndDateTime <DateTime?>]`: 
@@ -440,7 +449,7 @@ BODYPARAMETER <IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorge
 
 CHATINFO <IMicrosoftGraphChatInfo>: chatInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+  - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
   - `[ReplyChainMessageId <String>]`: The ID of the reply message.
   - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
 

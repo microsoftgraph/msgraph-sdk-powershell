@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserOnlineMeetingRecording
 
 ## SYNOPSIS
-Get recording for the navigation property onlineMeetings from users
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -25,9 +26,20 @@ Get-MgUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity> -Ou
 ```
 
 ## DESCRIPTION
-Get recording for the navigation property onlineMeetings from users
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserOnlineMeetingRecording Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeetingRecording -UserId $userId -OnlineMeetingId $onlineMeetingId
+```
+
+This example shows how to use the Get-MgUserOnlineMeetingRecording Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

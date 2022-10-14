@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgCreateOrGetCommunicationOnlineMeeting
 
 ## SYNOPSIS
-Invoke action createOrGet
+Create an onlineMeeting object with a custom specified external ID.
+If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 
 ## SYNTAX
 
@@ -28,7 +29,8 @@ Invoke-MgCreateOrGetCommunicationOnlineMeeting
 ```
 
 ## DESCRIPTION
-Invoke action createOrGet
+Create an onlineMeeting object with a custom specified external ID.
+If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 
 ## EXAMPLES
 
@@ -212,14 +214,14 @@ BODYPARAMETER <IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorge
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+    - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
     - `[ReplyChainMessageId <String>]`: The ID of the reply message.
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[EndDateTime <DateTime?>]`: 
   - `[ExternalId <String>]`: 
   - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+    - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
       - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -236,13 +238,13 @@ BODYPARAMETER <IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorge
 
 CHATINFO <IMicrosoftGraphChatInfo>: chatInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+  - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
   - `[ReplyChainMessageId <String>]`: The ID of the reply message.
   - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
 
 PARTICIPANTS <IMicrosoftGraphMeetingParticipants>: meetingParticipants
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+  - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
     - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserEventExceptionOccurrenceInstanceExtension
 
 ## SYNOPSIS
-Get extensions from users
+The collection of open extensions defined for the event.
+Nullable.
 
 ## SYNTAX
 
@@ -33,7 +34,8 @@ Get-MgUserEventExceptionOccurrenceInstanceExtension -InputObject <ICalendarIdent
 ```
 
 ## DESCRIPTION
-Get extensions from users
+The collection of open extensions defined for the event.
+Nullable.
 
 ## EXAMPLES
 

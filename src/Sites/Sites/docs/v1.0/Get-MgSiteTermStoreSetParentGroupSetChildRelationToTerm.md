@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSiteTermStoreSetParentGroupSetChildRelationToTerm
 
 ## SYNOPSIS
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Get-MgSiteTermStoreSetParentGroupSetChildRelationToTerm -InputObject <ISitesIden
 ```
 
 ## DESCRIPTION
-Get toTerm from sites
+The to [term] of the relation.
+The term to which the relationship is defined.
 
 ## EXAMPLES
 

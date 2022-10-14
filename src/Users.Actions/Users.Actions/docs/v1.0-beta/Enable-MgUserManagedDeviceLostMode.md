@@ -8,7 +8,7 @@ schema: 2.0.0
 # Enable-MgUserManagedDeviceLostMode
 
 ## SYNOPSIS
-Invoke action enableLostMode
+Enable lost mode
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Enable-MgUserManagedDeviceLostMode -InputObject <IUsersActionsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Invoke action enableLostMode
+Enable lost mode
 
 ## EXAMPLES
 

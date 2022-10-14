@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBookingBusiness
 
 ## SYNOPSIS
-Get bookingBusiness
+Get the properties and relationships of a bookingBusiness object.
 
 ## SYNTAX
 
@@ -32,9 +32,36 @@ Get-MgBookingBusiness -InputObject <IBookingsIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get bookingBusiness
+Get the properties and relationships of a bookingBusiness object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgBookingBusiness Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusiness -BookingBusinessId $bookingBusinessId
+```
+
+This example shows how to use the Get-MgBookingBusiness Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgBookingBusiness Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusiness
+```
+
+This example shows how to use the Get-MgBookingBusiness Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgBookingBusiness Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusiness -Query "Adventure" 
+```
+
+This example shows how to use the Get-MgBookingBusiness Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

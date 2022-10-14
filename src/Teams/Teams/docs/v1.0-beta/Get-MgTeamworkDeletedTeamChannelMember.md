@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelMember
 
 ## SYNOPSIS
-Get members from teamwork
+A collection of membership records associated with the channel.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Get members from teamwork
+A collection of membership records associated with the channel.
 
 ## EXAMPLES
 

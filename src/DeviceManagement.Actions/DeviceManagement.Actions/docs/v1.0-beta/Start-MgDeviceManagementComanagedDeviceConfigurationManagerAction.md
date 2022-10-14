@@ -8,7 +8,7 @@ schema: 2.0.0
 # Start-MgDeviceManagementComanagedDeviceConfigurationManagerAction
 
 ## SYNOPSIS
-Invoke action triggerConfigurationManagerAction
+Trigger action on ConfigurationManager client
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Start-MgDeviceManagementComanagedDeviceConfigurationManagerAction
 ```
 
 ## DESCRIPTION
-Invoke action triggerConfigurationManagerAction
+Trigger action on ConfigurationManager client
 
 ## EXAMPLES
 
@@ -206,6 +206,7 @@ CONFIGURATIONMANAGERACTION <IMicrosoftGraphConfigurationManagerAction>: Paramete
   - `[Action <ConfigurationManagerActionType?>]`: Action type on Configuration Manager client
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

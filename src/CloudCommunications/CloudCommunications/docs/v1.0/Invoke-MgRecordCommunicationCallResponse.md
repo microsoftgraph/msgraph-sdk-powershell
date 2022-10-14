@@ -8,7 +8,11 @@ schema: 2.0.0
 # Invoke-MgRecordCommunicationCallResponse
 
 ## SYNOPSIS
-Invoke action recordResponse
+Records a short audio response from the caller.\nA bot can utilize this to capture a voice response from a caller after they are prompted for a response.
+For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call.
+The maximum length of recording is 2 minutes.
+The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends.
+The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
 
 ## SYNTAX
 
@@ -44,9 +48,40 @@ Invoke-MgRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdent
 ```
 
 ## DESCRIPTION
-Invoke action recordResponse
+Records a short audio response from the caller.\nA bot can utilize this to capture a voice response from a caller after they are prompted for a response.
+For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call.
+The maximum length of recording is 2 minutes.
+The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends.
+The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgRecordCommunicationCallResponse Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	BargeInAllowed = $true
+	ClientContext = "d45324c1-fcb5-430a-902c-f20af696537c"
+	Prompts = @(
+		@{
+			"@odata.type" = "#microsoft.graph.mediaPrompt"
+		}
+	)
+	MaxRecordDurationInSeconds = 10
+	InitialSilenceTimeoutInSeconds = 5
+	MaxSilenceTimeoutInSeconds = 2
+	PlayBeep = $true
+	StopTones = @(
+		"#"
+		"1"
+		"*"
+	)
+}
+Invoke-MgRecordCommunicationCallResponse -CallId $callId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgRecordCommunicationCallResponse Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

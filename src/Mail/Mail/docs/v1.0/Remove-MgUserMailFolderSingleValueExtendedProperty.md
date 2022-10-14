@@ -8,29 +8,25 @@ schema: 2.0.0
 # Remove-MgUserMailFolderSingleValueExtendedProperty
 
 ## SYNOPSIS
-The collection of single-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Delete navigation property singleValueExtendedProperties for users
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgUserMailFolderSingleValueExtendedProperty -MailFolderId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgUserMailFolderSingleValueExtendedProperty -InputObject <IMailIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of single-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Delete navigation property singleValueExtendedProperties for users
 
 ## EXAMPLES
 
@@ -57,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -72,7 +68,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -102,7 +98,7 @@ key: id of singleValueLegacyExtendedProperty
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -117,7 +113,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

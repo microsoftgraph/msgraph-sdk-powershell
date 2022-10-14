@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBookingBusiness
 
 ## SYNOPSIS
-Delete bookingBusiness
+Delete a bookingBusiness object.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Remove-MgBookingBusiness -InputObject <IBookingsIdentity> [-IfMatch <String>] [-
 ```
 
 ## DESCRIPTION
-Delete bookingBusiness
+Delete a bookingBusiness object.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgBookingBusiness Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Remove-MgBookingBusiness -BookingBusinessId $bookingBusinessId
+```
+
+This example shows how to use the Remove-MgBookingBusiness Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

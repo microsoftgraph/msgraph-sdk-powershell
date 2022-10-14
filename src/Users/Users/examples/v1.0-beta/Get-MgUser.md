@@ -2,7 +2,7 @@
 
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser  | Format-List  ID, DisplayName, Mail, UserPrincipalName
+Get-MgUser -All | Format-List  ID, DisplayName, Mail, UserPrincipalName
 
 Id                : e4e2b110-8d4f-434f-a990-7cd63e23aed6
 DisplayName       : Kristi Laar

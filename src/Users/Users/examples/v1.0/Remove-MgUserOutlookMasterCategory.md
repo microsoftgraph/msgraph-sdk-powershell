@@ -1,18 +1,8 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Remove-MgUserOutlookMasterCategory Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Users
+# A UPN can also be used as -UserId.
+Remove-MgUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Remove-MgUserOutlookMasterCategory Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

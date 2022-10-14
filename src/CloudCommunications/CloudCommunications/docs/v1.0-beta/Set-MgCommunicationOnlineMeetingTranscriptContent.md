@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgCommunicationOnlineMeetingTranscriptContent
 
 ## SYNOPSIS
-Update content for the navigation property transcripts in communications
+A field representing the content of the transcript.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgCommunicationOnlineMeetingTranscriptContent -InputObject <ICloudCommunicat
 ```
 
 ## DESCRIPTION
-Update content for the navigation property transcripts in communications
+A field representing the content of the transcript.
+Read-only.
 
 ## EXAMPLES
 

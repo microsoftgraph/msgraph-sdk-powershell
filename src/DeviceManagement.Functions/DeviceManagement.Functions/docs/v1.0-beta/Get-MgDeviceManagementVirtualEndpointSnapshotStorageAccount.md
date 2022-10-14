@@ -14,13 +14,14 @@ Invoke function getStorageAccounts
 
 ### Get (Default)
 ```
-Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount -SubscriptionId <String> [<CommonParameters>]
+Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount -SubscriptionId <String> [-Count]
+ [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount -InputObject <IDeviceManagementFunctionsIdentity>
- [<CommonParameters>]
+ [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,6 +30,36 @@ Invoke function getStorageAccounts
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -46,6 +77,36 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SubscriptionId
 Usage: subscriptionId='{subscriptionId}'
 
@@ -55,6 +116,21 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Limit
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -103,6 +179,7 @@ INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
   - `[ResourceOperationId <String>]`: key: id of resourceOperation
   - `[Scope <String>]`: Usage: scope='{scope}'
   - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId='{secretReferenceValueId}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[SubscriptionId <String>]`: Usage: subscriptionId='{subscriptionId}'
   - `[SummarizeBy <String>]`: Usage: summarizeBy='{summarizeBy}'
   - `[TemplateId <String>]`: Usage: templateId='{templateId}'

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileWebAccount
 
 ## SYNOPSIS
-Get webAccounts from users
+Represents web accounts the user has indicated they use or has added to their user profile.
 
 ## SYNTAX
 
@@ -32,9 +32,29 @@ Get-MgUserProfileWebAccount -InputObject <IPeopleIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get webAccounts from users
+Represents web accounts the user has indicated they use or has added to their user profile.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserProfileWebAccount Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileWebAccount -UserId $userId -WebAccountId $webAccountId
+```
+
+This example shows how to use the Get-MgUserProfileWebAccount Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserProfileWebAccount Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileWebAccount -UserId $userId
+```
+
+This example shows how to use the Get-MgUserProfileWebAccount Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

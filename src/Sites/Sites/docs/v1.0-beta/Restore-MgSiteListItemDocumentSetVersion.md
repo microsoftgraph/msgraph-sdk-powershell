@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgSiteListItemDocumentSetVersion
 
 ## SYNOPSIS
-Invoke action restore
+Restore a document set version.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Restore-MgSiteListItemDocumentSetVersion -InputObject <ISitesIdentity> [-PassThr
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a document set version.
 
 ## EXAMPLES
+
+### Example 1: Using the Restore-MgSiteListItemDocumentSetVersion Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Restore-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -DocumentSetVersionId $documentSetVersionId
+```
+
+This example shows how to use the Restore-MgSiteListItemDocumentSetVersion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

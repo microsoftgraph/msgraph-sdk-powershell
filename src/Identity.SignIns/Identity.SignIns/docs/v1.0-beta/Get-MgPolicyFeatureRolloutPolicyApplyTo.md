@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgPolicyFeatureRolloutPolicyApplyTo
 
 ## SYNOPSIS
-Get appliesTo from policies
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgPolicyFeatureRolloutPolicyApplyTo -FeatureRolloutPolicyId <String> [-Expan
 ```
 
 ## DESCRIPTION
-Get appliesTo from policies
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ## EXAMPLES
 

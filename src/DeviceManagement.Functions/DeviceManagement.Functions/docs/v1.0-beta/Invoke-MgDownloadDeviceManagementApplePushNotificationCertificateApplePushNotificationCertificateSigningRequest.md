@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest
 
 ## SYNOPSIS
-Invoke function downloadApplePushNotificationCertificateSigningRequest
+Download Apple push notification certificate signing request
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotifi
 ```
 
 ## DESCRIPTION
-Invoke function downloadApplePushNotificationCertificateSigningRequest
+Download Apple push notification certificate signing request
 
 ## EXAMPLES
 

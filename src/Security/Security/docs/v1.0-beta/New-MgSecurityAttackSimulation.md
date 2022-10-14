@@ -190,7 +190,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -205,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsAutomated
-Flag representing if the attack simulation and training campaign was created from a simulation automation flow.
+Flag that represents if the attack simulation and training campaign was created from a simulation automation flow.
 Supports $filter and $orderby.
 
 ```yaml
@@ -366,7 +367,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AttackTechnique <String>]`: simulationAttackTechnique
   - `[AttackType <String>]`: simulationAttackType
   - `[AutomationId <String>]`: Unique identifier for the attack simulation automation.
@@ -379,7 +380,7 @@ BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
   - `[CreatedDateTime <DateTime?>]`: Date and time of creation of the attack simulation and training campaign.
   - `[Description <String>]`: Description of the attack simulation and training campaign.
   - `[DisplayName <String>]`: Display name of the attack simulation and training campaign. Supports $filter and $orderby.
-  - `[IsAutomated <Boolean?>]`: Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+  - `[IsAutomated <Boolean?>]`: Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
   - `[LastModifiedDateTime <DateTime?>]`: Date and time of the most recent modification of the attack simulation and training campaign.
   - `[LaunchDateTime <DateTime?>]`: Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
@@ -390,14 +391,14 @@ BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[RecommendedActions <IMicrosoftGraphRecommendedAction[]>]`: List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
         - `[ActionWebUrl <String>]`: Web URL to the recommended action.
-        - `[PotentialScoreImpact <Double?>]`: Potential improvement in security score of the tenant from the recommended action.
+        - `[PotentialScoreImpact <Double?>]`: Potential improvement in the tenant security score from the recommended action.
         - `[Title <String>]`: Title of the recommended action.
       - `[ResolvedTargetsCount <Int32?>]`: Number of valid users in the attack simulation and training campaign.
       - `[SimulationEventsContent <IMicrosoftGraphSimulationEventsContent>]`: simulationEventsContent
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CompromisedRate <Double?>]`: Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
         - `[Events <IMicrosoftGraphSimulationEvent[]>]`: List of simulation events in an attack simulation and training campaign.
-          - `[Count <Int32?>]`: Count of occurence of the simulation event in an attack simulation and training campaign.
+          - `[Count <Int32?>]`: Count of the simulation event occurrence in an attack simulation and training campaign.
           - `[EventName <String>]`: Name of the simulation event in an attack simulation and training campaign.
       - `[TrainingEventsContent <IMicrosoftGraphTrainingEventsContent>]`: trainingEventsContent
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -406,13 +407,13 @@ BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
           - `[CompletedUserCount <Int32?>]`: Number of users who completed the training in an attack simulation and training campaign.
           - `[DisplayName <String>]`: Display name of the training in an attack simulation and training campaign.
         - `[TrainingsAssignedUserCount <Int32?>]`: Number of users who were assigned trainings in an attack simulation and training campaign.
-    - `[SimulationUsers <IMicrosoftGraphUserSimulationDetails[]>]`: Represents users of a tenant and their online actions in an attack simulation and training campaign.
+    - `[SimulationUsers <IMicrosoftGraphUserSimulationDetails[]>]`: The tenant users and their online actions in an attack simulation and training campaign.
       - `[AssignedTrainingsCount <Int32?>]`: Number of trainings assigned to a user in an attack simulation and training campaign.
       - `[CompletedTrainingsCount <Int32?>]`: Number of trainings completed by a user in an attack simulation and training campaign.
       - `[CompromisedDateTime <DateTime?>]`: Date and time of the compromising online action by a user in an attack simulation and training campaign.
       - `[InProgressTrainingsCount <Int32?>]`: Number of trainings in progress by a user in an attack simulation and training campaign.
-      - `[IsCompromised <Boolean?>]`: Flag representing if user was compromised in an attack simulation and training campaign.
-      - `[ReportedPhishDateTime <DateTime?>]`: Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+      - `[IsCompromised <Boolean?>]`: Indicates whether a user was compromised in an attack simulation and training campaign.
+      - `[ReportedPhishDateTime <DateTime?>]`: Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
       - `[SimulationEvents <IMicrosoftGraphUserSimulationEventInfo[]>]`: List of simulation events of a user in the attack simulation and training campaign.
         - `[Browser <String>]`: Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.
         - `[EventDateTime <DateTime?>]`: Date and time of the simulation event by a user in an attack simulation and training campaign.
@@ -423,7 +424,7 @@ BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DisplayName <String>]`: Display name of the user.
         - `[Email <String>]`: Email address of the user.
-        - `[UserId <String>]`: This is the id property value of the user resource that represents the user in the Azure AD tenant.
+        - `[UserId <String>]`: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
       - `[TrainingEvents <IMicrosoftGraphUserTrainingEventInfo[]>]`: List of training events of a user in the attack simulation and training campaign.
         - `[DisplayName <String>]`: Display name of the training.
         - `[LatestTrainingStatus <String>]`: trainingStatus
@@ -433,7 +434,7 @@ BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
           - `[ContentDateTime <DateTime?>]`: Date and time of the training content playback by the user.
           - `[IPAddress <String>]`: IP address of the user for the training event.
           - `[OSPlatformDeviceDetails <String>]`: The operating system, platform, and device details of the user for the training event.
-          - `[PotentialScoreImpact <Double?>]`: Potential improvement in security posture of the tenant after completion of the training by the user.
+          - `[PotentialScoreImpact <Double?>]`: Potential improvement in the tenant security posture after completion of the training by the user.
         - `[TrainingCompletedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
         - `[TrainingUpdatedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
   - `[Status <String>]`: simulationStatus
@@ -456,14 +457,14 @@ REPORT <IMicrosoftGraphSimulationReport>: simulationReport
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RecommendedActions <IMicrosoftGraphRecommendedAction[]>]`: List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
       - `[ActionWebUrl <String>]`: Web URL to the recommended action.
-      - `[PotentialScoreImpact <Double?>]`: Potential improvement in security score of the tenant from the recommended action.
+      - `[PotentialScoreImpact <Double?>]`: Potential improvement in the tenant security score from the recommended action.
       - `[Title <String>]`: Title of the recommended action.
     - `[ResolvedTargetsCount <Int32?>]`: Number of valid users in the attack simulation and training campaign.
     - `[SimulationEventsContent <IMicrosoftGraphSimulationEventsContent>]`: simulationEventsContent
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CompromisedRate <Double?>]`: Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
       - `[Events <IMicrosoftGraphSimulationEvent[]>]`: List of simulation events in an attack simulation and training campaign.
-        - `[Count <Int32?>]`: Count of occurence of the simulation event in an attack simulation and training campaign.
+        - `[Count <Int32?>]`: Count of the simulation event occurrence in an attack simulation and training campaign.
         - `[EventName <String>]`: Name of the simulation event in an attack simulation and training campaign.
     - `[TrainingEventsContent <IMicrosoftGraphTrainingEventsContent>]`: trainingEventsContent
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -472,13 +473,13 @@ REPORT <IMicrosoftGraphSimulationReport>: simulationReport
         - `[CompletedUserCount <Int32?>]`: Number of users who completed the training in an attack simulation and training campaign.
         - `[DisplayName <String>]`: Display name of the training in an attack simulation and training campaign.
       - `[TrainingsAssignedUserCount <Int32?>]`: Number of users who were assigned trainings in an attack simulation and training campaign.
-  - `[SimulationUsers <IMicrosoftGraphUserSimulationDetails[]>]`: Represents users of a tenant and their online actions in an attack simulation and training campaign.
+  - `[SimulationUsers <IMicrosoftGraphUserSimulationDetails[]>]`: The tenant users and their online actions in an attack simulation and training campaign.
     - `[AssignedTrainingsCount <Int32?>]`: Number of trainings assigned to a user in an attack simulation and training campaign.
     - `[CompletedTrainingsCount <Int32?>]`: Number of trainings completed by a user in an attack simulation and training campaign.
     - `[CompromisedDateTime <DateTime?>]`: Date and time of the compromising online action by a user in an attack simulation and training campaign.
     - `[InProgressTrainingsCount <Int32?>]`: Number of trainings in progress by a user in an attack simulation and training campaign.
-    - `[IsCompromised <Boolean?>]`: Flag representing if user was compromised in an attack simulation and training campaign.
-    - `[ReportedPhishDateTime <DateTime?>]`: Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+    - `[IsCompromised <Boolean?>]`: Indicates whether a user was compromised in an attack simulation and training campaign.
+    - `[ReportedPhishDateTime <DateTime?>]`: Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
     - `[SimulationEvents <IMicrosoftGraphUserSimulationEventInfo[]>]`: List of simulation events of a user in the attack simulation and training campaign.
       - `[Browser <String>]`: Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.
       - `[EventDateTime <DateTime?>]`: Date and time of the simulation event by a user in an attack simulation and training campaign.
@@ -489,7 +490,7 @@ REPORT <IMicrosoftGraphSimulationReport>: simulationReport
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: Display name of the user.
       - `[Email <String>]`: Email address of the user.
-      - `[UserId <String>]`: This is the id property value of the user resource that represents the user in the Azure AD tenant.
+      - `[UserId <String>]`: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
     - `[TrainingEvents <IMicrosoftGraphUserTrainingEventInfo[]>]`: List of training events of a user in the attack simulation and training campaign.
       - `[DisplayName <String>]`: Display name of the training.
       - `[LatestTrainingStatus <String>]`: trainingStatus
@@ -499,7 +500,7 @@ REPORT <IMicrosoftGraphSimulationReport>: simulationReport
         - `[ContentDateTime <DateTime?>]`: Date and time of the training content playback by the user.
         - `[IPAddress <String>]`: IP address of the user for the training event.
         - `[OSPlatformDeviceDetails <String>]`: The operating system, platform, and device details of the user for the training event.
-        - `[PotentialScoreImpact <Double?>]`: Potential improvement in security posture of the tenant after completion of the training by the user.
+        - `[PotentialScoreImpact <Double?>]`: Potential improvement in the tenant security posture after completion of the training by the user.
       - `[TrainingCompletedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
       - `[TrainingUpdatedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
 

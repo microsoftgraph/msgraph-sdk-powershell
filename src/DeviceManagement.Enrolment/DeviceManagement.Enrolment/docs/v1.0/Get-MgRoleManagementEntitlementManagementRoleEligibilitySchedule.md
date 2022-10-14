@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleEligibilitySchedule
 
 ## SYNOPSIS
-Get roleEligibilitySchedules from roleManagement
+Schedules for role eligibility operations.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgRoleManagementEntitlementManagementRoleEligibilitySchedule
 ```
 
 ## DESCRIPTION
-Get roleEligibilitySchedules from roleManagement
+Schedules for role eligibility operations.
 
 ## EXAMPLES
 

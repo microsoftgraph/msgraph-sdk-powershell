@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDevice
 
 ## SYNOPSIS
-Delete device
+Delete a registered device.
 
 ## SYNTAX
 
@@ -24,9 +24,18 @@ Remove-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <S
 ```
 
 ## DESCRIPTION
-Delete device
+Delete a registered device.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgDevice Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Remove-MgDevice -DeviceId $deviceId
+```
+
+This example shows how to use the Remove-MgDevice Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

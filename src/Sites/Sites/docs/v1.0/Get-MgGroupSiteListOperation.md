@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListOperation
 
 ## SYNOPSIS
-Get operations from groups
+The collection of long-running operations on the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupSiteListOperation -InputObject <ISitesIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get operations from groups
+The collection of long-running operations on the list.
 
 ## EXAMPLES
 

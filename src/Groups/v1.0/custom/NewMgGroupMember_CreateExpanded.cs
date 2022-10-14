@@ -23,7 +23,7 @@
         private System.Threading.CancellationTokenSource _cancellationTokenSource = new System.Threading.CancellationTokenSource();
 
         /// <summary>Dictionary of <any></summary>
-        private Microsoft.Graph.PowerShell.Models.IDictionaryOfany1 _bodyParameter = new Microsoft.Graph.PowerShell.Models.DictionaryOfany1();
+        private Microsoft.Graph.PowerShell.Models.IReferenceCreate _bodyParameter = new Microsoft.Graph.PowerShell.Models.ReferenceCreate();
 
         /// <summary>Wait for .NET debugger to attach</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
@@ -262,7 +262,7 @@
                 try
                 {
                     await ((Runtime.IEventListener)this).Signal(Microsoft.Graph.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-                    _bodyParameter.Add("@odata.id", $"https://graph.microsoft.com/v1.0/directoryObjects/{DirectoryObjectId}");
+                    _bodyParameter.OdataId = $"https://graph.microsoft.com/v1.0/directoryObjects/{DirectoryObjectId}";
                     await this.Client.GroupsCreateMembersGraphBPreRef(GroupId, _bodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Microsoft.Graph.PowerShell.Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }

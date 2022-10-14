@@ -15,26 +15,35 @@ Get directReports from contacts
 ### List1 (Default)
 ```
 Get-MgContactDirectReport -OrgContactId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgContactDirectReport -DirectoryObjectId <String> -OrgContactId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgContactDirectReport -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Get directReports from contacts
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgContactDirectReport Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgContactDirectReport -OrgContactId $orgContactId
+```
+
+This example shows how to use the Get-MgContactDirectReport Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -44,6 +53,22 @@ List all pages.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False

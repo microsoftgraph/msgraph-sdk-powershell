@@ -13,8 +13,9 @@ Invoke function roleScheduleInstances
 ## SYNTAX
 
 ```
-Invoke-MgScheduleRoleManagementDirectory [-AppScopeId <String>] [-DirectoryScopeId <String>]
- [-PrincipalId <String>] [-RoleDefinitionId <String>] [<CommonParameters>]
+Invoke-MgScheduleRoleManagementDirectory [-AppScopeId <String>] [-Count] [-DirectoryScopeId <String>]
+ [-Filter <String>] [-PrincipalId <String>] [-Property <String[]>] [-RoleDefinitionId <String>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,7 +26,7 @@ Invoke function roleScheduleInstances
 ## PARAMETERS
 
 ### -AppScopeId
-Usage: appScopeId='{appScopeId}'
+Usage: appScopeId='@appScopeId'
 
 ```yaml
 Type: System.String
@@ -39,8 +40,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DirectoryScopeId
-Usage: directoryScopeId='{directoryScopeId}'
+Usage: directoryScopeId='@directoryScopeId'
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
 
 ```yaml
 Type: System.String
@@ -55,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -PrincipalId
-Usage: principalId='{principalId}'
+Usage: principalId='@principalId'
 
 ```yaml
 Type: System.String
@@ -69,13 +100,88 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Property
+Select properties to be returned
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RoleDefinitionId
-Usage: roleDefinitionId='{roleDefinitionId}'
+Usage: roleDefinitionId='@roleDefinitionId'
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sort
+Order items by property values
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Limit
 
 Required: False
 Position: Named

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveRootVersionContent
 
 ## SYNOPSIS
-Get content for the navigation property versions from drives
+The content stream for this version of the item.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgDriveRootVersionContent -InputObject <IFilesIdentity> -OutFile <String> [-
 ```
 
 ## DESCRIPTION
-Get content for the navigation property versions from drives
+The content stream for this version of the item.
 
 ## EXAMPLES
 

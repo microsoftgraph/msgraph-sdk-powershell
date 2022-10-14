@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListOperation
 
 ## SYNOPSIS
-Get operations from shares
+The collection of long-running operations on the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgShareListOperation -InputObject <IFilesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get operations from shares
+The collection of long-running operations on the list.
 
 ## EXAMPLES
 

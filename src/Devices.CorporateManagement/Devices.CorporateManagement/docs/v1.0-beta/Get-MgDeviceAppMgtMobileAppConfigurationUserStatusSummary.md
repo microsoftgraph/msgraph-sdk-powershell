@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary
 
 ## SYNOPSIS
-Get userStatusSummary from deviceAppManagement
+App configuration user status summary.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary -InputObject <IDevices
 ```
 
 ## DESCRIPTION
-Get userStatusSummary from deviceAppManagement
+App configuration user status summary.
 
 ## EXAMPLES
 
@@ -101,7 +101,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1
 
 ## NOTES
 

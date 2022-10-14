@@ -18,9 +18,9 @@ Update-MgTeamSchedule -TeamId <String> [-AdditionalProperties <Hashtable>] [-Ena
  [-OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>] [-OfferShiftRequestsEnabled]
  [-OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]
  [-OpenShifts <IMicrosoftGraphOpenShift[]>] [-OpenShiftsEnabled] [-ProvisionStatus <String>]
- [-ProvisionStatusCode <String>] [-SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]
- [-Shifts <IMicrosoftGraphShift[]>] [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]
- [-SwapShiftsRequestsEnabled] [-TimeClockEnabled] [-TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]
+ [-SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>] [-Shifts <IMicrosoftGraphShift[]>]
+ [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>] [-SwapShiftsRequestsEnabled]
+ [-TimeClockEnabled] [-TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]
  [-TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>] [-TimeOffRequestsEnabled]
  [-TimesOff <IMicrosoftGraphTimeOff[]>] [-TimeZone <String>] [-WorkforceIntegrationIds <String[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -44,9 +44,9 @@ Update-MgTeamSchedule -InputObject <ITeamsIdentity> [-AdditionalProperties <Hash
  [-Id <String>] [-OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>] [-OfferShiftRequestsEnabled]
  [-OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]
  [-OpenShifts <IMicrosoftGraphOpenShift[]>] [-OpenShiftsEnabled] [-ProvisionStatus <String>]
- [-ProvisionStatusCode <String>] [-SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]
- [-Shifts <IMicrosoftGraphShift[]>] [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]
- [-SwapShiftsRequestsEnabled] [-TimeClockEnabled] [-TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]
+ [-SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>] [-Shifts <IMicrosoftGraphShift[]>]
+ [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>] [-SwapShiftsRequestsEnabled]
+ [-TimeClockEnabled] [-TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]
  [-TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>] [-TimeOffRequestsEnabled]
  [-TimesOff <IMicrosoftGraphTimeOff[]>] [-TimeZone <String>] [-WorkforceIntegrationIds <String[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -107,7 +107,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -232,21 +233,6 @@ Accept wildcard characters: False
 
 ### -ProvisionStatus
 operationStatus
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProvisionStatusCode
-Additional information about why schedule provisioning failed.
 
 ```yaml
 Type: System.String
@@ -502,18 +488,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
   - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: 
     - `[AssignedTo <String>]`: scheduleChangeRequestActor
-    - `[ManagerActionDateTime <DateTime?>]`: 
     - `[ManagerActionMessage <String>]`: 
-    - `[ManagerUserId <String>]`: 
-    - `[SenderDateTime <DateTime?>]`: 
     - `[SenderMessage <String>]`: 
-    - `[SenderUserId <String>]`: 
     - `[State <String>]`: scheduleChangeState
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -522,32 +503,22 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
-    - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
-    - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
-    - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
+    - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
+    - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
   - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
   - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: 
     - `[AssignedTo <String>]`: scheduleChangeRequestActor
-    - `[ManagerActionDateTime <DateTime?>]`: 
     - `[ManagerActionMessage <String>]`: 
-    - `[ManagerUserId <String>]`: 
-    - `[SenderDateTime <DateTime?>]`: 
     - `[SenderMessage <String>]`: 
-    - `[SenderUserId <String>]`: 
     - `[State <String>]`: scheduleChangeState
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[OpenShiftId <String>]`: ID for the open shift.
   - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: 
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Activities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
@@ -567,20 +538,14 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
     - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
   - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
   - `[ProvisionStatus <String>]`: operationStatus
-  - `[ProvisionStatusCode <String>]`: Additional information about why schedule provisioning failed.
   - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-    - `[IsActive <Boolean?>]`: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
     - `[UserIds <String[]>]`: The list of user IDs that are a member of the schedulingGroup. Required.
   - `[Shifts <IMicrosoftGraphShift[]>]`: The shifts in the schedule.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DraftShift <IMicrosoftGraphShiftItem>]`: shiftItem
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[EndDateTime <DateTime?>]`: 
@@ -593,56 +558,39 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
     - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
     - `[UserId <String>]`: ID of the user assigned to the shift. Required.
   - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: 
-    - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
-    - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
-    - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
+    - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
+    - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
     - `[AssignedTo <String>]`: scheduleChangeRequestActor
-    - `[ManagerActionDateTime <DateTime?>]`: 
     - `[ManagerActionMessage <String>]`: 
-    - `[ManagerUserId <String>]`: 
-    - `[SenderDateTime <DateTime?>]`: 
     - `[SenderMessage <String>]`: 
-    - `[SenderUserId <String>]`: 
     - `[State <String>]`: scheduleChangeState
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
-    - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[RecipientShiftId <String>]`: ShiftId for the recipient user with whom the request is to swap.
   - `[SwapShiftsRequestsEnabled <Boolean?>]`: Indicates whether swap shifts requests are enabled for the schedule.
   - `[TimeClockEnabled <Boolean?>]`: Indicates whether time clock is enabled for the schedule.
   - `[TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]`: The set of reasons for a time off in the schedule.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the timeOffReason. Required.
     - `[IconType <String>]`: timeOffReasonIconType
     - `[IsActive <Boolean?>]`: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
   - `[TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>]`: 
     - `[AssignedTo <String>]`: scheduleChangeRequestActor
-    - `[ManagerActionDateTime <DateTime?>]`: 
     - `[ManagerActionMessage <String>]`: 
-    - `[ManagerUserId <String>]`: 
-    - `[SenderDateTime <DateTime?>]`: 
     - `[SenderMessage <String>]`: 
-    - `[SenderUserId <String>]`: 
     - `[State <String>]`: scheduleChangeState
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[EndDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[StartDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[TimeOffReasonId <String>]`: The reason for the time off.
   - `[TimeOffRequestsEnabled <Boolean?>]`: Indicates whether time off requests are enabled for the schedule.
   - `[TimeZone <String>]`: Indicates the time zone of the schedule team using tz database format. Required.
   - `[TimesOff <IMicrosoftGraphTimeOff[]>]`: The instances of times off in the schedule.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DraftTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[EndDateTime <DateTime?>]`: 
@@ -694,14 +642,9 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
 
 OFFERSHIFTREQUESTS <IMicrosoftGraphOfferShiftRequest[]>: .
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
-  - `[ManagerActionDateTime <DateTime?>]`: 
   - `[ManagerActionMessage <String>]`: 
-  - `[ManagerUserId <String>]`: 
-  - `[SenderDateTime <DateTime?>]`: 
   - `[SenderMessage <String>]`: 
-  - `[SenderUserId <String>]`: 
   - `[State <String>]`: scheduleChangeState
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -710,23 +653,16 @@ OFFERSHIFTREQUESTS <IMicrosoftGraphOfferShiftRequest[]>: .
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
-  - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
-  - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
-  - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
+  - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
+  - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
 
 OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest[]>: .
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
-  - `[ManagerActionDateTime <DateTime?>]`: 
   - `[ManagerActionMessage <String>]`: 
-  - `[ManagerUserId <String>]`: 
-  - `[SenderDateTime <DateTime?>]`: 
   - `[SenderMessage <String>]`: 
-  - `[SenderUserId <String>]`: 
   - `[State <String>]`: scheduleChangeState
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -735,12 +671,10 @@ OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest[]>: .
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[OpenShiftId <String>]`: ID for the open shift.
 
 OPENSHIFTS <IMicrosoftGraphOpenShift[]>: .
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -749,8 +683,7 @@ OPENSHIFTS <IMicrosoftGraphOpenShift[]>: .
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Activities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
@@ -770,7 +703,6 @@ OPENSHIFTS <IMicrosoftGraphOpenShift[]>: .
   - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
 
 SCHEDULINGGROUPS <IMicrosoftGraphSchedulingGroup[]>: The logical grouping of users in the schedule (usually by role).
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -779,14 +711,11 @@ SCHEDULINGGROUPS <IMicrosoftGraphSchedulingGroup[]>: The logical grouping of use
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-  - `[IsActive <Boolean?>]`: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
   - `[UserIds <String[]>]`: The list of user IDs that are a member of the schedulingGroup. Required.
 
 SHIFTS <IMicrosoftGraphShift[]>: The shifts in the schedule.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -795,8 +724,7 @@ SHIFTS <IMicrosoftGraphShift[]>: The shifts in the schedule.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DraftShift <IMicrosoftGraphShiftItem>]`: shiftItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EndDateTime <DateTime?>]`: 
@@ -816,19 +744,13 @@ SHIFTS <IMicrosoftGraphShift[]>: The shifts in the schedule.
   - `[UserId <String>]`: ID of the user assigned to the shift. Required.
 
 SWAPSHIFTSCHANGEREQUESTS <IMicrosoftGraphSwapShiftsChangeRequest[]>: .
-  - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
-  - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
-  - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
+  - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
+  - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
-  - `[ManagerActionDateTime <DateTime?>]`: 
   - `[ManagerActionMessage <String>]`: 
-  - `[ManagerUserId <String>]`: 
-  - `[SenderDateTime <DateTime?>]`: 
   - `[SenderMessage <String>]`: 
-  - `[SenderUserId <String>]`: 
   - `[State <String>]`: scheduleChangeState
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -837,12 +759,10 @@ SWAPSHIFTSCHANGEREQUESTS <IMicrosoftGraphSwapShiftsChangeRequest[]>: .
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
-  - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[RecipientShiftId <String>]`: ShiftId for the recipient user with whom the request is to swap.
 
 TIMEOFFREASONS <IMicrosoftGraphTimeOffReason[]>: The set of reasons for a time off in the schedule.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -851,22 +771,16 @@ TIMEOFFREASONS <IMicrosoftGraphTimeOffReason[]>: The set of reasons for a time o
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The name of the timeOffReason. Required.
   - `[IconType <String>]`: timeOffReasonIconType
   - `[IsActive <Boolean?>]`: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
 
 TIMEOFFREQUESTS <IMicrosoftGraphTimeOffRequest[]>: .
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
-  - `[ManagerActionDateTime <DateTime?>]`: 
   - `[ManagerActionMessage <String>]`: 
-  - `[ManagerUserId <String>]`: 
-  - `[SenderDateTime <DateTime?>]`: 
   - `[SenderMessage <String>]`: 
-  - `[SenderUserId <String>]`: 
   - `[State <String>]`: scheduleChangeState
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -875,14 +789,12 @@ TIMEOFFREQUESTS <IMicrosoftGraphTimeOffRequest[]>: .
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[EndDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[StartDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[TimeOffReasonId <String>]`: The reason for the time off.
 
 TIMESOFF <IMicrosoftGraphTimeOff[]>: The instances of times off in the schedule.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -891,8 +803,7 @@ TIMESOFF <IMicrosoftGraphTimeOff[]>: The instances of times off in the schedule.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DraftTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EndDateTime <DateTime?>]`: 

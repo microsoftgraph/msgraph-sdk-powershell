@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAppleUserInitiatedEnrollmentProfile
 
 ## SYNOPSIS
-Get appleUserInitiatedEnrollmentProfiles from deviceManagement
+Apple user initiated enrollment profiles
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementAppleUserInitiatedEnrollmentProfile -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Get appleUserInitiatedEnrollmentProfiles from deviceManagement
+Apple user initiated enrollment profiles
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintOperation
 
 ## SYNOPSIS
-Get operations from print
+The list of print long running operations.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgPrintOperation -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get operations from print
+The list of print long running operations.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPrintOperation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintOperation -PrintOperationId $printOperationId
+```
+
+This example shows how to use the Get-MgPrintOperation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

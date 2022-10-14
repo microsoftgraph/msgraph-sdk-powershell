@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListContentTypeBase
 
 ## SYNOPSIS
-Get base from groups
+Parent contentType from which this content type is derived.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupDriveListContentTypeBase -InputObject <IFilesIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get base from groups
+Parent contentType from which this content type is derived.
 
 ## EXAMPLES
 

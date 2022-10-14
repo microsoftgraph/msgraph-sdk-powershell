@@ -8,27 +8,39 @@ schema: 2.0.0
 # Update-MgEntitlementManagementSetting
 
 ## SYNOPSIS
-Update the navigation property settings in identityGovernance
+Update an existing entitlementManagementSettings object to change one or more of its properties.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgEntitlementManagementSetting [-AdditionalProperties <Hashtable>]
  [-DaysUntilExternalUserDeletedAfterBlocked <Int32>] [-ExternalUserLifecycleAction <String>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
-Update-MgEntitlementManagementSetting -BodyParameter <IMicrosoftGraphEntitlementManagementSettings>
+Update-MgEntitlementManagementSetting -BodyParameter <IMicrosoftGraphEntitlementManagementSettings1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property settings in identityGovernance
+Update an existing entitlementManagementSettings object to change one or more of its properties.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgEntitlementManagementSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	ExternalUserLifecycleAction = "None"
+}
+Update-MgEntitlementManagementSetting -BodyParameter $params
+```
+
+This example shows how to use the Update-MgEntitlementManagementSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -37,7 +49,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False
@@ -52,8 +64,8 @@ entitlementManagementSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings
-Parameter Sets: Update
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings1
+Parameter Sets: Update1
 Aliases:
 
 Required: True
@@ -68,7 +80,7 @@ If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False
@@ -83,7 +95,7 @@ One of None, BlockSignIn, or BlockSignInAndDelete.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False
@@ -94,11 +106,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False
@@ -159,7 +172,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEntitlementManagementSettings1
 
 ## OUTPUTS
 
@@ -174,9 +187,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphEntitlementManagementSettings>: entitlementManagementSettings
+BODYPARAMETER <IMicrosoftGraphEntitlementManagementSettings1>: entitlementManagementSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DaysUntilExternalUserDeletedAfterBlocked <Int32?>]`: If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
   - `[ExternalUserLifecycleAction <String>]`: One of None, BlockSignIn, or BlockSignInAndDelete.
 

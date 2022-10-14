@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -495,7 +495,7 @@ ADDRESS <IMicrosoftGraphPostalAddressType>: postalAddressType
 
 BODYPARAMETER <IMicrosoftGraphEmployee>: employee
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: 
@@ -516,7 +516,7 @@ BODYPARAMETER <IMicrosoftGraphEmployee>: employee
   - `[PersonalEmail <String>]`: 
   - `[PhoneNumber <String>]`: 
   - `[Picture <IMicrosoftGraphPicture[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Content <Byte[]>]`: 
     - `[ContentType <String>]`: 
     - `[Height <Int32?>]`: 
@@ -565,7 +565,7 @@ INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
   - `[VendorId <String>]`: key: id of vendor
 
 PICTURE <IMicrosoftGraphPicture[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Content <Byte[]>]`: 
   - `[ContentType <String>]`: 
   - `[Height <Int32?>]`: 

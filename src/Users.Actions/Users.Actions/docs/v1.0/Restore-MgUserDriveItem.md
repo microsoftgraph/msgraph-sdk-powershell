@@ -8,7 +8,8 @@ schema: 2.0.0
 # Restore-MgUserDriveItem
 
 ## SYNOPSIS
-Invoke action restore
+Restore a driveItem that has been deleted and is currently in the recycle bin.
+**NOTE**: This functionality is currently only available for OneDrive Personal.
 
 ## SYNTAX
 
@@ -40,7 +41,8 @@ Restore-MgUserDriveItem -InputObject <IUsersActionsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a driveItem that has been deleted and is currently in the recycle bin.
+**NOTE**: This functionality is currently only available for OneDrive Personal.
 
 ## EXAMPLES
 

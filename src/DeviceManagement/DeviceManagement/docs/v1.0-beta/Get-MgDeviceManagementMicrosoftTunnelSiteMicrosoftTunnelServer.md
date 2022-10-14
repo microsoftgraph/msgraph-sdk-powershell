@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer
 
 ## SYNOPSIS
-Get microsoftTunnelServers from deviceManagement
+A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer -InputObject <IDe
 ```
 
 ## DESCRIPTION
-Get microsoftTunnelServers from deviceManagement
+A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 
 ## EXAMPLES
 
@@ -342,6 +342,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBookingCurrency
 
 ## SYNOPSIS
-Get bookingCurrency
+Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
+Use the **id** property, which is the currency code, to specify the currency.
 
 ## SYNTAX
 
@@ -32,9 +33,28 @@ Get-MgBookingCurrency -InputObject <IBookingsIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get bookingCurrency
+Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
+Use the **id** property, which is the currency code, to specify the currency.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgBookingCurrency Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingCurrency
+```
+
+This example shows how to use the Get-MgBookingCurrency Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgBookingCurrency Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingCurrency -BookingCurrencyId $bookingCurrencyId
+```
+
+This example shows how to use the Get-MgBookingCurrency Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

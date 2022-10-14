@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteListItemVersionField
 
 ## SYNOPSIS
-Get fields from sites
+A collection of the fields and values for this version of the list item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSiteListItemVersionField -InputObject <ISitesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get fields from sites
+A collection of the fields and values for this version of the list item.
 
 ## EXAMPLES
 

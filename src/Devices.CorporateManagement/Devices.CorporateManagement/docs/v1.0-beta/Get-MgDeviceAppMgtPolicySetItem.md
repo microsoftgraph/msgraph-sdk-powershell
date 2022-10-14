@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtPolicySetItem
 
 ## SYNOPSIS
-Get items from deviceAppManagement
+Items of the PolicySet with maximum count 100.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtPolicySetItem -InputObject <IDevicesCorporateManagementIdentit
 ```
 
 ## DESCRIPTION
-Get items from deviceAppManagement
+Items of the PolicySet with maximum count 100.
 
 ## EXAMPLES
 

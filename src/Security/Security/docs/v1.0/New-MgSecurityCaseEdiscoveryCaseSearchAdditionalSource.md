@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource
 
 ## SYNOPSIS
-Create new navigation property to additionalSources for security
+Create a new additional source associated with an eDiscovery search.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -InputObject <ISecurityId
 ```
 
 ## DESCRIPTION
-Create new navigation property to additionalSources for security
+Create a new additional source associated with an eDiscovery search.
 
 ## EXAMPLES
 
@@ -169,7 +169,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -254,7 +255,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityDataSource>: dataSource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity

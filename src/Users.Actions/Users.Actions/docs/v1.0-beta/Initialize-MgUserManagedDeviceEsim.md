@@ -8,7 +8,7 @@ schema: 2.0.0
 # Initialize-MgUserManagedDeviceEsim
 
 ## SYNOPSIS
-Invoke action activateDeviceEsim
+Activate eSIM on the device.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Initialize-MgUserManagedDeviceEsim -InputObject <IUsersActionsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Invoke action activateDeviceEsim
+Activate eSIM on the device.
 
 ## EXAMPLES
 

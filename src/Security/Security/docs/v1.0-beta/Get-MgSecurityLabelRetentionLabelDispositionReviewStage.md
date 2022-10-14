@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityLabelRetentionLabelDispositionReviewStage
 
 ## SYNOPSIS
-Get dispositionReviewStages from security
+Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityLabelRetentionLabelDispositionReviewStage -InputObject <ISecurityI
 ```
 
 ## DESCRIPTION
-Get dispositionReviewStages from security
+Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
 
 ## EXAMPLES
 

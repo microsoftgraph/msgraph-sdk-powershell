@@ -8,13 +8,17 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelMessage
 
 ## SYNOPSIS
-Get messages from teamwork
+A collection of all the messages in the channel.
+A navigation property.
+Nullable.
 
 ## SYNTAX
 
 ### Get1 (Default)
 ```
-Get-MgTeamworkDeletedTeamChannelMessage -DeletedTeamId <String> [<CommonParameters>]
+Get-MgTeamworkDeletedTeamChannelMessage -DeletedTeamId <String> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get
@@ -31,7 +35,9 @@ Get-MgTeamworkDeletedTeamChannelMessage -InputObject <ITeamsIdentity> [-ExpandPr
 
 ### GetViaIdentity1
 ```
-Get-MgTeamworkDeletedTeamChannelMessage -InputObject <ITeamsIdentity> [<CommonParameters>]
+Get-MgTeamworkDeletedTeamChannelMessage -InputObject <ITeamsIdentity> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### List
@@ -42,7 +48,9 @@ Get-MgTeamworkDeletedTeamChannelMessage -ChannelId <String> -DeletedTeamId <Stri
 ```
 
 ## DESCRIPTION
-Get messages from teamwork
+A collection of all the messages in the channel.
+A navigation property.
+Nullable.
 
 ## EXAMPLES
 
@@ -87,6 +95,21 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Get1, GetViaIdentity1
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -144,7 +167,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases:
 
 Required: False
@@ -190,7 +213,7 @@ Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, GetViaIdentity, List
+Parameter Sets: (All)
 Aliases: Select
 
 Required: False
@@ -205,7 +228,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases:
 
 Required: False
@@ -220,7 +243,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases:
 
 Required: False
@@ -235,7 +258,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases: OrderBy
 
 Required: False
@@ -250,7 +273,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: Get1, GetViaIdentity1, List
 Aliases: Limit
 
 Required: False

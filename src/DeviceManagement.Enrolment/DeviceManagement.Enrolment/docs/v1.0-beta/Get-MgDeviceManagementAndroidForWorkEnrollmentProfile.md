@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAndroidForWorkEnrollmentProfile
 
 ## SYNOPSIS
-Get androidForWorkEnrollmentProfiles from deviceManagement
+Android for Work enrollment profile entities.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementAndroidForWorkEnrollmentProfile -InputObject <IDeviceManag
 ```
 
 ## DESCRIPTION
-Get androidForWorkEnrollmentProfiles from deviceManagement
+Android for Work enrollment profile entities.
 
 ## EXAMPLES
 

@@ -8,28 +8,24 @@ schema: 2.0.0
 # Remove-MgUserContactFolderContactExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the contact.
-Read-only.
-Nullable.
+Delete navigation property extensions for users
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgUserContactFolderContactExtension -ContactFolderId <String> -ContactId <String> -ExtensionId <String>
  -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgUserContactFolderContactExtension -InputObject <IPersonalContactsIdentity> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the contact.
-Read-only.
-Nullable.
+Delete navigation property extensions for users
 
 ## EXAMPLES
 
@@ -40,7 +36,7 @@ key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -55,7 +51,7 @@ key: id of contact
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -70,7 +66,7 @@ key: id of extension
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -101,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -131,7 +127,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True

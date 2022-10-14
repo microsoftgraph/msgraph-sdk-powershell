@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamPhoto
 
 ## SYNOPSIS
-Get photo from teams
+The team photo.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgTeamPhoto -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get photo from teams
+The team photo.
 
 ## EXAMPLES
 

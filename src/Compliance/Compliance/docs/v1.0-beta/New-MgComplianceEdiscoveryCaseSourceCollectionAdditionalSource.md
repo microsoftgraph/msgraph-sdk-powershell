@@ -43,6 +43,43 @@ Create new navigation property to additionalSources for compliance
 
 ## EXAMPLES
 
+### Example 1: Using the New-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+$params = @{
+	"@odata.type" = "microsoft.graph.ediscovery.siteSource"
+}
+New-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource -CaseId $caseId -SourceCollectionId $sourceCollectionId -BodyParameter $params
+```
+
+This example shows how to use the New-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+$params = @{
+	"@odata.type" = "microsoft.graph.ediscovery.userSource"
+	Email = "badguy@contoso.com"
+}
+New-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource -CaseId $caseId -SourceCollectionId $sourceCollectionId -BodyParameter $params
+```
+
+This example shows how to use the New-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+$params = @{
+	"@odata.type" = "microsoft.graph.ediscovery.siteSource"
+}
+New-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource -CaseId $caseId -SourceCollectionId $sourceCollectionId -BodyParameter $params
+```
+
+This example shows how to use the New-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -154,7 +191,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -254,13 +292,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEdiscoveryDataSource>: dataSource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
@@ -271,8 +309,8 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

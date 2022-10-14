@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtTargetedManagedAppConfiguration
 
 ## SYNOPSIS
-Get targetedManagedAppConfigurations from deviceAppManagement
+Targeted managed app configurations.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtTargetedManagedAppConfiguration -InputObject <IDevicesCorporat
 ```
 
 ## DESCRIPTION
-Get targetedManagedAppConfigurations from deviceAppManagement
+Targeted managed app configurations.
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration
 
 ## NOTES
 

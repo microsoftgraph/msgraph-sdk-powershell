@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserManagedDeviceSecurityBaselineState
 
 ## SYNOPSIS
-Get securityBaselineStates from users
+Security baseline states for this device.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateMana
 ```
 
 ## DESCRIPTION
-Get securityBaselineStates from users
+Security baseline states for this device.
 
 ## EXAMPLES
 

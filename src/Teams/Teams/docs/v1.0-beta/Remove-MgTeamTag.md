@@ -12,13 +12,13 @@ Delete navigation property tags for teams
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgTeamTag -TeamId <String> -TeamworkTagId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgTeamTag -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -28,6 +28,15 @@ Remove-MgTeamTag -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [
 Delete navigation property tags for teams
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgTeamTag Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Remove-MgTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
+```
+
+This example shows how to use the Remove-MgTeamTag Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -52,7 +61,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -82,7 +91,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -97,7 +106,7 @@ key: id of teamworkTag
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

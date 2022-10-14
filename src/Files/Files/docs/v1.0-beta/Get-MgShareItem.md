@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgShareItem
 
 ## SYNOPSIS
-Get items from shares
+All driveItems contained in the sharing root.
+This collection cannot be enumerated.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgShareItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get items from shares
+All driveItems contained in the sharing root.
+This collection cannot be enumerated.
 
 ## EXAMPLES
 

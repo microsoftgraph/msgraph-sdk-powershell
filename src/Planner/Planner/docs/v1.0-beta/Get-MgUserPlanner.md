@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserPlanner
 
 ## SYNOPSIS
-Get planner from users
+Retrieve the properties and relationships of a plannerUser object.
+The returned properties include the user's favorite plans and recently viewed plans.
 
 ## SYNTAX
 
@@ -43,9 +44,20 @@ Get-MgUserPlanner -UserId <String> [-ExpandProperty <String[]>] [-Filter <String
 ```
 
 ## DESCRIPTION
-Get planner from users
+Retrieve the properties and relationships of a plannerUser object.
+The returned properties include the user's favorite plans and recently viewed plans.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserPlanner Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+# A UPN can also be used as -UserId.
+Get-MgUserPlanner -UserId $userId
+```
+
+This example shows how to use the Get-MgUserPlanner Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey
 
 ## SYNOPSIS
-Invoke function getEncryptionPublicKey
+Get a public key to use to encrypt the Apple device enrollment program token
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey
 ```
 
 ## DESCRIPTION
-Invoke function getEncryptionPublicKey
+Get a public key to use to encrypt the Apple device enrollment program token
 
 ## EXAMPLES
 
@@ -104,6 +104,7 @@ INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
   - `[ResourceOperationId <String>]`: key: id of resourceOperation
   - `[Scope <String>]`: Usage: scope='{scope}'
   - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId='{secretReferenceValueId}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[SubscriptionId <String>]`: Usage: subscriptionId='{subscriptionId}'
   - `[SummarizeBy <String>]`: Usage: summarizeBy='{summarizeBy}'
   - `[TemplateId <String>]`: Usage: templateId='{templateId}'

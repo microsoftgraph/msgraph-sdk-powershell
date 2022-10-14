@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupDriveSpecial
 
 ## SYNOPSIS
-Get special from groups
+Collection of common folders available in OneDrive.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgGroupDriveSpecial -InputObject <IFilesIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get special from groups
+Collection of common folders available in OneDrive.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

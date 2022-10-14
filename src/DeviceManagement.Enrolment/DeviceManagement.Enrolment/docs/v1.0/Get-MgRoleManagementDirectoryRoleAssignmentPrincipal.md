@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryRoleAssignmentPrincipal
 
 ## SYNOPSIS
-Get principal from roleManagement
+Referencing the assigned principal.
+Read-only.
+Supports $expand.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgRoleManagementDirectoryRoleAssignmentPrincipal -InputObject <IDeviceManage
 ```
 
 ## DESCRIPTION
-Get principal from roleManagement
+Referencing the assigned principal.
+Read-only.
+Supports $expand.
 
 ## EXAMPLES
 

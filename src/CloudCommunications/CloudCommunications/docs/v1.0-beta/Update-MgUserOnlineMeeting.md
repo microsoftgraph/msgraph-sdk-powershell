@@ -16,10 +16,10 @@ Update the navigation property onlineMeetings in users
 ```
 Update-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic] [-AllowedPresenters <String>]
- [-AllowMeetingChat <String>] [-AllowTeamworkReactions] [-AlternativeRecordingInputFile <String>]
- [-AnonymizeIdentityForRoles <String[]>] [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]
- [-AttendeeReportInputFile <String>] [-AudioConferencing <IMicrosoftGraphAudioConferencing>]
- [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>] [-Capabilities <String[]>]
+ [-AllowTeamworkReactions] [-AlternativeRecordingInputFile <String>] [-AnonymizeIdentityForRoles <String[]>]
+ [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>] [-AttendeeReportInputFile <String>]
+ [-AudioConferencing <IMicrosoftGraphAudioConferencing>]
+ [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>] [-Capabilities <String[]>]
  [-ChatInfo <IMicrosoftGraphChatInfo>] [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>]
  [-ExternalId <String>] [-Id <String>] [-IsBroadcast] [-IsEntryExitAnnounced]
  [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]
@@ -48,10 +48,10 @@ Update-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
 ```
 Update-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic] [-AllowedPresenters <String>]
- [-AllowMeetingChat <String>] [-AllowTeamworkReactions] [-AlternativeRecordingInputFile <String>]
- [-AnonymizeIdentityForRoles <String[]>] [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]
- [-AttendeeReportInputFile <String>] [-AudioConferencing <IMicrosoftGraphAudioConferencing>]
- [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>] [-Capabilities <String[]>]
+ [-AllowTeamworkReactions] [-AlternativeRecordingInputFile <String>] [-AnonymizeIdentityForRoles <String[]>]
+ [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>] [-AttendeeReportInputFile <String>]
+ [-AudioConferencing <IMicrosoftGraphAudioConferencing>]
+ [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>] [-Capabilities <String[]>]
  [-ChatInfo <IMicrosoftGraphChatInfo>] [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>]
  [-ExternalId <String>] [-Id <String>] [-IsBroadcast] [-IsEntryExitAnnounced]
  [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]
@@ -68,6 +68,36 @@ Update-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-Additio
 Update the navigation property onlineMeetings in users
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgUserOnlineMeeting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	LobbyBypassSettings = @{
+		IsDialInBypassEnabled = $true
+	}
+}
+# A UPN can also be used as -UserId.
+Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgUserOnlineMeeting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Update-MgUserOnlineMeeting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	StartDateTime = [System.DateTime]::Parse("2020-09-09T14:33:30.8546353-07:00")
+	EndDateTime = [System.DateTime]::Parse("2020-09-09T15:03:30.8566356-07:00")
+	Subject = "Patch Meeting Subject"
+}
+# A UPN can also be used as -UserId.
+Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgUserOnlineMeeting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -118,21 +148,6 @@ Accept wildcard characters: False
 
 ### -AllowedPresenters
 onlineMeetingPresenters
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllowMeetingChat
-meetingChatMode
 
 ```yaml
 Type: System.String
@@ -262,7 +277,7 @@ broadcastMeetingSettings
 To construct, please use Get-Help -Online and see NOTES section for BROADCASTSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBroadcastMeetingSettings1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBroadcastMeetingSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -782,7 +797,6 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
   - `[Id <String>]`: 
   - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
   - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
-  - `[AllowMeetingChat <String>]`: meetingChatMode
   - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
   - `[AllowedPresenters <String>]`: onlineMeetingPresenters
   - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
@@ -815,12 +829,12 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
     - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
     - `[TollNumber <String>]`: 
     - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
-  - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>]`: broadcastMeetingSettings
+  - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedAudience <String>]`: broadcastMeetingAudience
     - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsCaptionEnabled <Boolean?>]`: Indicates whether caption is enabled for this Teams live event.
+      - `[IsCaptionEnabled <Boolean?>]`: Indicates whether captions are enabled for this Teams live event.
       - `[SpokenLanguage <String>]`: The spoken language.
       - `[TranslationLanguages <String[]>]`: The translation languages (choose up to 6).
     - `[IsAttendeeReportEnabled <Boolean?>]`: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -830,7 +844,7 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
   - `[Capabilities <String[]>]`: 
   - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+    - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
     - `[ReplyChainMessageId <String>]`: The ID of the reply message.
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
@@ -912,12 +926,12 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowClientToJoinUsingBrowser <Boolean?>]`: Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
 
-BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings1>: broadcastMeetingSettings
+BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings>: broadcastMeetingSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedAudience <String>]`: broadcastMeetingAudience
   - `[Captions <IMicrosoftGraphBroadcastMeetingCaptionSettings>]`: broadcastMeetingCaptionSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsCaptionEnabled <Boolean?>]`: Indicates whether caption is enabled for this Teams live event.
+    - `[IsCaptionEnabled <Boolean?>]`: Indicates whether captions are enabled for this Teams live event.
     - `[SpokenLanguage <String>]`: The spoken language.
     - `[TranslationLanguages <String[]>]`: The translation languages (choose up to 6).
   - `[IsAttendeeReportEnabled <Boolean?>]`: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -927,7 +941,7 @@ BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings1>: broadcastMeetingSe
 
 CHATINFO <IMicrosoftGraphChatInfo>: chatInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+  - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
   - `[ReplyChainMessageId <String>]`: The ID of the reply message.
   - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
 

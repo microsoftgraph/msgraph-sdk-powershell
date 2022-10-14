@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerTask
 
 ## SYNOPSIS
-Create new navigation property to tasks for planner
+Create a new **plannerTask**.
 
 ## SYNTAX
 
@@ -34,9 +34,29 @@ New-MgPlannerTask -BodyParameter <IMicrosoftGraphPlannerTask1> [-Confirm] [-What
 ```
 
 ## DESCRIPTION
-Create new navigation property to tasks for planner
+Create a new **plannerTask**.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgPlannerTask Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	PlanId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"
+	BucketId = "hsOf2dhOJkqyYYZEtdzDe2QAIUCR"
+	Title = "Update client list"
+	Assignments = @{
+		"Fbab97d0-4932-4511-b675-204639209557" = @{
+			"@odata.type" = "#microsoft.graph.plannerAssignment"
+			OrderHint = " !"
+		}
+	}
+}
+New-MgPlannerTask -BodyParameter $params
+```
+
+This example shows how to use the New-MgPlannerTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -610,6 +630,10 @@ BODYPARAMETER <IMicrosoftGraphPlannerTask1>: plannerTask
     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Description <String>]`: Description of the task.
+    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Content <String>]`: The content of the item.
+      - `[ContentType <String>]`: bodyType
     - `[PreviewType <String>]`: plannerPreviewType
     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -667,6 +691,10 @@ DETAILS <IMicrosoftGraphPlannerTaskDetails1>: plannerTaskDetails
   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description of the task.
+  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Content <String>]`: The content of the item.
+    - `[ContentType <String>]`: bodyType
   - `[PreviewType <String>]`: plannerPreviewType
   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

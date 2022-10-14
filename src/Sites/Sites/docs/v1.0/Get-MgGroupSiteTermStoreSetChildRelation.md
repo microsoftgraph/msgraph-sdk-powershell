@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStoreSetChildRelation
 
 ## SYNOPSIS
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ## SYNTAX
 
@@ -55,7 +55,7 @@ Get-MgGroupSiteTermStoreSetChildRelation -GroupId <String> -SetId <String> -Site
 ```
 
 ## DESCRIPTION
-Get relations from groups
+To indicate which terms are related to the current term as either pinned or reused.
 
 ## EXAMPLES
 

@@ -164,7 +164,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -402,12 +403,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementTemplate>: Entity that represents a defined collection of device settings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Categories <IMicrosoftGraphDeviceManagementTemplateSettingCategory[]>]`: Collection of setting categories within the template
     - `[DisplayName <String>]`: The category name
     - `[HasRequiredSetting <Boolean?>]`: The category contains top level required setting
     - `[SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>]`: The setting definitions this category contains
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Constraints <IMicrosoftGraphDeviceManagementConstraint[]>]`: Collection of constraints for the setting value
       - `[Dependencies <IMicrosoftGraphDeviceManagementSettingDependency[]>]`: Collection of dependencies on other settings
         - `[Constraints <IMicrosoftGraphDeviceManagementConstraint[]>]`: Collection of constraints for the dependency setting value
@@ -421,9 +422,9 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementTemplate>: Entity that represents 
       - `[Keywords <String[]>]`: Keywords associated with the setting
       - `[PlaceholderText <String>]`: Placeholder text as an example of valid input
       - `[ValueType <DeviceManangementIntentValueType?>]`: deviceManangementIntentValueType
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[RecommendedSettings <IMicrosoftGraphDeviceManagementSettingInstance[]>]`: The settings this category contains
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DefinitionId <String>]`: The ID of the setting definition for this instance
       - `[ValueJson <String>]`: JSON representation of the value
   - `[Description <String>]`: The template's description
@@ -442,7 +443,7 @@ CATEGORIES <IMicrosoftGraphDeviceManagementTemplateSettingCategory[]>: Collectio
   - `[DisplayName <String>]`: The category name
   - `[HasRequiredSetting <Boolean?>]`: The category contains top level required setting
   - `[SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>]`: The setting definitions this category contains
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Constraints <IMicrosoftGraphDeviceManagementConstraint[]>]`: Collection of constraints for the setting value
     - `[Dependencies <IMicrosoftGraphDeviceManagementSettingDependency[]>]`: Collection of dependencies on other settings
       - `[Constraints <IMicrosoftGraphDeviceManagementConstraint[]>]`: Collection of constraints for the dependency setting value
@@ -456,9 +457,9 @@ CATEGORIES <IMicrosoftGraphDeviceManagementTemplateSettingCategory[]>: Collectio
     - `[Keywords <String[]>]`: Keywords associated with the setting
     - `[PlaceholderText <String>]`: Placeholder text as an example of valid input
     - `[ValueType <DeviceManangementIntentValueType?>]`: deviceManangementIntentValueType
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[RecommendedSettings <IMicrosoftGraphDeviceManagementSettingInstance[]>]`: The settings this category contains
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DefinitionId <String>]`: The ID of the setting definition for this instance
     - `[ValueJson <String>]`: JSON representation of the value
 
@@ -549,6 +550,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
@@ -590,12 +593,12 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[WindowsMalwareInformationId <String>]`: key: id of windowsMalwareInformation
 
 MIGRATABLETO <IMicrosoftGraphDeviceManagementTemplate[]>: Collection of templates this template can migrate to
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Categories <IMicrosoftGraphDeviceManagementTemplateSettingCategory[]>]`: Collection of setting categories within the template
     - `[DisplayName <String>]`: The category name
     - `[HasRequiredSetting <Boolean?>]`: The category contains top level required setting
     - `[SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>]`: The setting definitions this category contains
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Constraints <IMicrosoftGraphDeviceManagementConstraint[]>]`: Collection of constraints for the setting value
       - `[Dependencies <IMicrosoftGraphDeviceManagementSettingDependency[]>]`: Collection of dependencies on other settings
         - `[Constraints <IMicrosoftGraphDeviceManagementConstraint[]>]`: Collection of constraints for the dependency setting value
@@ -609,9 +612,9 @@ MIGRATABLETO <IMicrosoftGraphDeviceManagementTemplate[]>: Collection of template
       - `[Keywords <String[]>]`: Keywords associated with the setting
       - `[PlaceholderText <String>]`: Placeholder text as an example of valid input
       - `[ValueType <DeviceManangementIntentValueType?>]`: deviceManangementIntentValueType
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[RecommendedSettings <IMicrosoftGraphDeviceManagementSettingInstance[]>]`: The settings this category contains
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DefinitionId <String>]`: The ID of the setting definition for this instance
       - `[ValueJson <String>]`: JSON representation of the value
   - `[Description <String>]`: The template's description
@@ -627,7 +630,7 @@ MIGRATABLETO <IMicrosoftGraphDeviceManagementTemplate[]>: Collection of template
   - `[VersionInfo <String>]`: The template's version information
 
 SETTINGS <IMicrosoftGraphDeviceManagementSettingInstance[]>: Collection of all settings this template has
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DefinitionId <String>]`: The ID of the setting definition for this instance
   - `[ValueJson <String>]`: JSON representation of the value
 

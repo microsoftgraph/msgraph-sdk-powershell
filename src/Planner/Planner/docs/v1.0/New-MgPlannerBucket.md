@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerBucket
 
 ## SYNOPSIS
-Create new navigation property to buckets for planner
+Use this API to create a new **plannerBucket**.
 
 ## SYNTAX
 
@@ -24,9 +24,23 @@ New-MgPlannerBucket -BodyParameter <IMicrosoftGraphPlannerBucket> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Create new navigation property to buckets for planner
+Use this API to create a new **plannerBucket**.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgPlannerBucket Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	Name = "Advertising"
+	PlanId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"
+	OrderHint = " !"
+}
+New-MgPlannerBucket -BodyParameter $params
+```
+
+This example shows how to use the New-MgPlannerBucket Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -244,7 +258,7 @@ BODYPARAMETER <IMicrosoftGraphPlannerBucket>: plannerBucket
     - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
     - `[PlanId <String>]`: Plan ID to which the task belongs.
     - `[PreviewType <String>]`: plannerPreviewType
-    - `[Priority <Int32?>]`: Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+    - `[Priority <Int32?>]`: Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2, 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Additionally, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
     - `[ProgressTaskBoardFormat <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat>]`: plannerProgressTaskBoardTaskFormat
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: 
@@ -300,7 +314,7 @@ TASKS <IMicrosoftGraphPlannerTask[]>: Read-only. Nullable. The collection of tas
   - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
   - `[PlanId <String>]`: Plan ID to which the task belongs.
   - `[PreviewType <String>]`: plannerPreviewType
-  - `[Priority <Int32?>]`: Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+  - `[Priority <Int32?>]`: Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2, 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Additionally, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
   - `[ProgressTaskBoardFormat <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat>]`: plannerProgressTaskBoardTaskFormat
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 

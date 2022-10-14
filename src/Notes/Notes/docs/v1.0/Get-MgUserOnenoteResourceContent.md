@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserOnenoteResourceContent
 
 ## SYNOPSIS
-Get content for the navigation property resources from users
+The content stream
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserOnenoteResourceContent -InputObject <INotesIdentity> -OutFile <String>
 ```
 
 ## DESCRIPTION
-Get content for the navigation property resources from users
+The content stream
 
 ## EXAMPLES
 

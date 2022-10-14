@@ -8,24 +8,24 @@ schema: 2.0.0
 # Invoke-MgUnfollowUserDriveRoot
 
 ## SYNOPSIS
-Invoke action unfollow
+Unfollow a driveItem.
 
 ## SYNTAX
 
-### Unfollow (Default)
+### Unfollow1 (Default)
 ```
 Invoke-MgUnfollowUserDriveRoot -DriveId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UnfollowViaIdentity
+### UnfollowViaIdentity1
 ```
 Invoke-MgUnfollowUserDriveRoot -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action unfollow
+Unfollow a driveItem.
 
 ## EXAMPLES
 
@@ -36,7 +36,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Unfollow
+Parameter Sets: Unfollow1
 Aliases:
 
 Required: True
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: UnfollowViaIdentity
+Parameter Sets: UnfollowViaIdentity1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Unfollow
+Parameter Sets: Unfollow1
 Aliases:
 
 Required: True

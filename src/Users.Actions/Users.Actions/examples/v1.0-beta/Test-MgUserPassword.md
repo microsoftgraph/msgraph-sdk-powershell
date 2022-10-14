@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Test-MgUserPassword Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	Password = "1234567890"
+}
+Test-MgUserPassword -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Test-MgUserPassword Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

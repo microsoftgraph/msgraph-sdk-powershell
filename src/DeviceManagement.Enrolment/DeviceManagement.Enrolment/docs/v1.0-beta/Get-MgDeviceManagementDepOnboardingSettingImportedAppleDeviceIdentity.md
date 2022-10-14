@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentity
 
 ## SYNOPSIS
-Get importedAppleDeviceIdentities from deviceManagement
+The imported Apple device identities.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentity
 ```
 
 ## DESCRIPTION
-Get importedAppleDeviceIdentities from deviceManagement
+The imported Apple device identities.
 
 ## EXAMPLES
 

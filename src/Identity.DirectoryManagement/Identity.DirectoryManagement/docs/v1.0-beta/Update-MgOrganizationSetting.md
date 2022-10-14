@@ -14,7 +14,8 @@ Update the navigation property settings in organization
 
 ### UpdateExpanded (Default)
 ```
-Update-MgOrganizationSetting -OrganizationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+Update-MgOrganizationSetting -OrganizationId <String> [-AdditionalProperties <Hashtable>]
+ [-ContactInsights <IMicrosoftGraphInsightsSettings>] [-Id <String>]
  [-ItemInsights <IMicrosoftGraphInsightsSettings>]
  [-MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]
  [-PeopleInsights <IMicrosoftGraphInsightsSettings>]
@@ -37,7 +38,8 @@ Update-MgOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-ItemInsights <IMicrosoftGraphInsightsSettings>]
+ [-AdditionalProperties <Hashtable>] [-ContactInsights <IMicrosoftGraphInsightsSettings>] [-Id <String>]
+ [-ItemInsights <IMicrosoftGraphInsightsSettings>]
  [-MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]
  [-PeopleInsights <IMicrosoftGraphInsightsSettings>]
  [-ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -79,6 +81,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ContactInsights
+insightsSettings
+To construct, please use Get-Help -Online and see NOTES section for CONTACTINSIGHTS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -264,11 +282,12 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphOrganizationSettings>: organizationSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[ItemInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
+  - `[ContactInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
     - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
     - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
+  - `[ItemInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
   - `[MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]`: microsoftApplicationDataAccessSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
@@ -283,6 +302,12 @@ BODYPARAMETER <IMicrosoftGraphOrganizationSettings>: organizationSettings
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
     - `[DirectoryPropertyName <String>]`: Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
+
+CONTACTINSIGHTS <IMicrosoftGraphInsightsSettings>: insightsSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: 
+  - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+  - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit

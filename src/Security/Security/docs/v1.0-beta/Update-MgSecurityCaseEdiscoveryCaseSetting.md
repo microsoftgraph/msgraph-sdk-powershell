@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityCaseEdiscoveryCaseSetting
 
 ## SYNOPSIS
-Update the navigation property settings in security
+Update the properties of an ediscoveryCaseSettings object.
 
 ## SYNTAX
 
@@ -45,9 +45,30 @@ Update-MgSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property settings in security
+Update the properties of an ediscoveryCaseSettings object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgSecurityCaseEdiscoveryCaseSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+$params = @{
+	"@odata.type" = "#microsoft.graph.security.ediscoveryCaseSettings"
+	RedundancyDetection = @{
+		"@odata.type" = "microsoft.graph.security.redundancyDetectionSettings"
+	}
+	TopicModeling = @{
+		"@odata.type" = "microsoft.graph.security.topicModelingSettings"
+	}
+	Ocr = @{
+		"@odata.type" = "microsoft.graph.security.ocrSettings"
+	}
+}
+Update-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgSecurityCaseEdiscoveryCaseSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -98,7 +119,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -246,7 +268,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryCaseSettings>: ediscoveryCaseSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Ocr <IMicrosoftGraphSecurityOcrSettings>]`: ocrSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Indicates whether or not OCR is enabled for the case.

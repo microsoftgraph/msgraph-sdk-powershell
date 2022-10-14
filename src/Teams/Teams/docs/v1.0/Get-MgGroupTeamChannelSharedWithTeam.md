@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamChannelSharedWithTeam
 
 ## SYNOPSIS
-Get sharedWithTeams from groups
+A collection of teams with which a channel is shared.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgGroupTeamChannelSharedWithTeam -InputObject <ITeamsIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get sharedWithTeams from groups
+A collection of teams with which a channel is shared.
 
 ## EXAMPLES
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgChatLastMessagePreview
 
 ## SYNOPSIS
-Get lastMessagePreview from chats
+Preview of the last message sent in the chat.
+Null if no messages have been sent in the chat.
+Currently, only the list chats operation supports this property.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgChatLastMessagePreview -InputObject <ITeamsIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get lastMessagePreview from chats
+Preview of the last message sent in the chat.
+Null if no messages have been sent in the chat.
+Currently, only the list chats operation supports this property.
 
 ## EXAMPLES
 

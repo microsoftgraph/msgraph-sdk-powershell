@@ -48,6 +48,19 @@ Update the navigation property queries in security
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+$params = @{
+	DisplayName = "My Query 1 (update)"
+	ContentQuery = "(Author="edisons")"
+}
+Update-MgSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -EdiscoveryReviewSetQueryId $ediscoveryReviewSetQueryId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -202,7 +215,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String

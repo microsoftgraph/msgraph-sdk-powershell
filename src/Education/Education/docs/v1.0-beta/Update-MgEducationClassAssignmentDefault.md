@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgEducationClassAssignmentDefault
 
 ## SYNOPSIS
-Update the navigation property assignmentDefaults in education
+Update the properties of an educationAssignmentDefaults object.
+Only teachers can update these settings.
 
 ## SYNTAX
 
@@ -41,9 +42,24 @@ Update-MgEducationClassAssignmentDefault -InputObject <IEducationIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Update the navigation property assignmentDefaults in education
+Update the properties of an educationAssignmentDefaults object.
+Only teachers can update these settings.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgEducationClassAssignmentDefault Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	AddedStudentAction = "assignIfOpen"
+	AddToCalendarAction = "studentsAndTeamOwners"
+	NotificationChannelUrl = "https://graph.microsoft.com/beta/teams('id')/channels('id')"
+}
+Update-MgEducationClassAssignmentDefault -EducationClassId $educationClassId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgEducationClassAssignmentDefault Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -140,7 +156,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -256,7 +273,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationAssignmentDefaults>: educationAssignmentDefaults
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AddToCalendarAction <String>]`: educationAddToCalendarOptions
   - `[AddedStudentAction <String>]`: educationAddedStudentAction
   - `[DueTime <String>]`: Class-level default value for due time field. Default value is 23:59:00.

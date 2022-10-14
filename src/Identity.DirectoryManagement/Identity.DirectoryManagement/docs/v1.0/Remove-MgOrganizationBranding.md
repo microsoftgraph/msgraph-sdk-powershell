@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgOrganizationBranding
 
 ## SYNOPSIS
-Delete navigation property branding for organization
+Delete the default organizational branding object.
+To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgOrganizationBranding -InputObject <IIdentityDirectoryManagementIdentity
 ```
 
 ## DESCRIPTION
-Delete navigation property branding for organization
+Delete the default organizational branding object.
+To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 
 ## EXAMPLES
 

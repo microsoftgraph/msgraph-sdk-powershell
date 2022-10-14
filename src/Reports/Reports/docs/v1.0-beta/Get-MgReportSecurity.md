@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportSecurity
 
 ## SYNOPSIS
-Get security from reports
+Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgReportSecurity [-ExpandProperty <String[]>] [-Property <String[]>] [<Commo
 ```
 
 ## DESCRIPTION
-Get security from reports
+Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtTaskStatus
 
 ## SYNOPSIS
-Invoke action updateStatus
+Set the task's status and attach a note.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceAppMgtTaskStatus -InputObject <IDevicesCorporateManagementIdentit
 ```
 
 ## DESCRIPTION
-Invoke action updateStatus
+Set the task's status and attach a note.
 
 ## EXAMPLES
 

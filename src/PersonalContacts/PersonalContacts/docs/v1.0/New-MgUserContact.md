@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgUserContact
 
 ## SYNOPSIS
-The user's contacts.
-Read-only.
-Nullable.
+Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 
 ## SYNTAX
 
@@ -65,11 +63,32 @@ New-MgUserContact -InputObject <IPersonalContactsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-The user's contacts.
-Read-only.
-Nullable.
+Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserContact Cmdlet
+```powershell
+Import-Module Microsoft.Graph.PersonalContacts
+$params = @{
+	GivenName = "Pavel"
+	Surname = "Bansky"
+	EmailAddresses = @(
+		@{
+			Address = "pavelb@fabrikam.onmicrosoft.com"
+			Name = "Pavel Bansky"
+		}
+	)
+	BusinessPhones = @(
+		"+1 732 555 0102"
+	)
+}
+# A UPN can also be used as -UserId.
+New-MgUserContact -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserContact Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -405,7 +424,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -848,7 +867,7 @@ BODYPARAMETER <IMicrosoftGraphContact>: contact
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AssistantName <String>]`: The name of the contact's assistant.
   - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
@@ -868,7 +887,7 @@ BODYPARAMETER <IMicrosoftGraphContact>: contact
     - `[Address <String>]`: The email address of the person or entity.
     - `[Name <String>]`: The display name of the person or entity.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the contact. Read-only. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[FileAs <String>]`: The name the contact is filed under.
   - `[Generation <String>]`: The contact's generation.
   - `[GivenName <String>]`: The contact's given name.
@@ -881,7 +900,7 @@ BODYPARAMETER <IMicrosoftGraphContact>: contact
   - `[MiddleName <String>]`: 
   - `[MobilePhone <String>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Value <String[]>]`: A collection of property values.
   - `[NickName <String>]`: 
   - `[OfficeLocation <String>]`: 
@@ -890,12 +909,12 @@ BODYPARAMETER <IMicrosoftGraphContact>: contact
   - `[PersonalNotes <String>]`: 
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Height <Int32?>]`: The height of the photo. Read-only.
     - `[Width <Int32?>]`: The width of the photo. Read-only.
   - `[Profession <String>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Value <String>]`: A property value.
   - `[SpouseName <String>]`: 
   - `[Surname <String>]`: 
@@ -917,7 +936,7 @@ EMAILADDRESSES <IMicrosoftGraphEmailAddress[]>: The contact's email addresses.
   - `[Name <String>]`: The display name of the person or entity.
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the contact. Read-only. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
 
 HOMEADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -937,7 +956,7 @@ INPUTOBJECT <IPersonalContactsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Value <String[]>]`: A collection of property values.
 
 OTHERADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
@@ -950,12 +969,12 @@ OTHERADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
 
 PHOTO <IMicrosoftGraphProfilePhoto>: profilePhoto
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Height <Int32?>]`: The height of the photo. Read-only.
   - `[Width <Int32?>]`: The width of the photo. Read-only.
 
 SINGLEVALUEEXTENDEDPROPERTIES <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Value <String>]`: A property value.
 
 ## RELATED LINKS

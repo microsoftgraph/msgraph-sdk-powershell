@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintService
 
 ## SYNOPSIS
-Get services from print
+The list of available Universal Print service endpoints.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgPrintService -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get services from print
+The list of available Universal Print service endpoints.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPrintService Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintService -PrintServiceId $printServiceId
+```
+
+This example shows how to use the Get-MgPrintService Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPrintService Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintService
+```
+
+This example shows how to use the Get-MgPrintService Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

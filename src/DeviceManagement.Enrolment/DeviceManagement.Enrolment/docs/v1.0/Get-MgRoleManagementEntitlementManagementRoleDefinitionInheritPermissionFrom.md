@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom
 
 ## SYNOPSIS
-Get inheritsPermissionsFrom from roleManagement
+Read-only collection of role definitions that the given role definition inherits from.
+Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
+Supports $expand.
 
 ## SYNTAX
 
@@ -33,7 +35,9 @@ Get-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom
 ```
 
 ## DESCRIPTION
-Get inheritsPermissionsFrom from roleManagement
+Read-only collection of role definitions that the given role definition inherits from.
+Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
+Supports $expand.
 
 ## EXAMPLES
 

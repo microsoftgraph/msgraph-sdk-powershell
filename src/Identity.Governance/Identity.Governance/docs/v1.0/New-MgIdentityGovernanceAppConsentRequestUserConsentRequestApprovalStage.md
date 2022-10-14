@@ -24,15 +24,15 @@ New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage -AppCon
 ### Create
 ```
 New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage -AppConsentRequestId <String>
- -UserConsentRequestId <String> -BodyParameter <IMicrosoftGraphApprovalStage1> [-Confirm] [-WhatIf]
+ -UserConsentRequestId <String> -BodyParameter <IMicrosoftGraphApprovalStage> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage
- -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphApprovalStage1> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphApprovalStage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -102,7 +102,7 @@ approvalStage
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStage1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStage
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -130,7 +130,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -295,11 +296,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStage1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStage
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStage1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStage
 
 ## NOTES
 
@@ -310,9 +311,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphApprovalStage1>: approvalStage
+BODYPARAMETER <IMicrosoftGraphApprovalStage>: approvalStage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AssignedToMe <Boolean?>]`: Indicates whether the stage is assigned to the calling user to review. Read-only.
   - `[DisplayName <String>]`: The label provided by the policy creator to identify an approval stage. Read-only.
   - `[Justification <String>]`: The justification associated with the approval stage decision.
@@ -363,7 +364,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -384,8 +387,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 REVIEWEDBY <IMicrosoftGraphIdentity>: identity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

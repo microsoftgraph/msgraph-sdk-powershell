@@ -141,7 +141,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -286,7 +287,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAppLogCollectionRequest>: AppLogCollectionRequest Entity.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a terminal state
   - `[CustomLogFolders <String[]>]`: List of log folders.
   - `[ErrorMessage <String>]`: Error message if any during the upload process

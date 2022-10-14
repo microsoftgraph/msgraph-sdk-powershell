@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgPolicyPermissionGrantPolicyExclude
 
 ## SYNOPSIS
-Get excludes from policies
+Condition sets which are excluded in this permission grant policy.
+Automatically expanded on GET.
 
 ## SYNTAX
 
@@ -32,9 +33,42 @@ Get-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Get excludes from policies
+Condition sets which are excluded in this permission grant policy.
+Automatically expanded on GET.
 
 ## EXAMPLES
+
+### Example 1: Get a permission grant policy exclude by ID
+```powershell
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant" 
+Get-MgPolicyPermissionGrantPolicyExclude -PermissionGrantPolicyId "microsoft-application-admin" | fl  
+
+CertifiedClientApplicationsOnly             : False
+ClientApplicationIds                        : {all}
+ClientApplicationPublisherIds               : {all}
+ClientApplicationTenantIds                  : {all}
+ClientApplicationsFromVerifiedPublisherOnly : False
+Id                                          : c85b029f-4abf-47d8-ae61-d2a38299033a
+PermissionClassification                    : all
+PermissionType                              : application
+Permissions                                 : {all}
+ResourceApplication                         : 00000003-0000-0000-c000-000000000000
+AdditionalProperties                        : {[scopeSensitivityLabels, System.Collections.Generic.Dictionary`2[System.String,System.Object]]}
+
+CertifiedClientApplicationsOnly             : False
+ClientApplicationIds                        : {all}
+ClientApplicationPublisherIds               : {all}
+ClientApplicationTenantIds                  : {all}
+ClientApplicationsFromVerifiedPublisherOnly : False
+Id                                          : 2a1fbb36-9d9a-42d8-8804-de2aa45aca80
+PermissionClassification                    : all
+PermissionType                              : application
+Permissions                                 : {all}
+ResourceApplication                         : 00000002-0000-0000-c000-000000000000
+AdditionalProperties                        : {[scopeSensitivityLabels, System.Collections.Generic.Dictionary`2[System.String,System.Object]]}
+```
+
+This command retrieves a specified permission grant policy exclude configuration in Azure AD.
 
 ## PARAMETERS
 
@@ -258,10 +292,14 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -270,6 +308,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

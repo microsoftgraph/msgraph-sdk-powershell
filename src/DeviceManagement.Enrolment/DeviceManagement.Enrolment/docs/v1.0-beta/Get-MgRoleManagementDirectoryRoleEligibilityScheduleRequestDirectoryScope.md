@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestDirectoryScope
 
 ## SYNOPSIS
-Get directoryScope from roleManagement
+The directory object that is the scope of the role eligibility.
+Read-only.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +29,9 @@ Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestDirectoryScope
 ```
 
 ## DESCRIPTION
-Get directoryScope from roleManagement
+The directory object that is the scope of the role eligibility.
+Read-only.
+Supports $expand.
 
 ## EXAMPLES
 

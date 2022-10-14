@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgBookingBusinessAppointment
 
 ## SYNOPSIS
-Get appointments from solutions
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +34,29 @@ Get-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get appointments from solutions
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgBookingBusinessAppointment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BookingAppointmentId $bookingAppointmentId
+```
+
+This example shows how to use the Get-MgBookingBusinessAppointment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgBookingBusinessAppointment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusinessAppointment -BookingBusinessId $bookingBusinessId
+```
+
+This example shows how to use the Get-MgBookingBusinessAppointment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

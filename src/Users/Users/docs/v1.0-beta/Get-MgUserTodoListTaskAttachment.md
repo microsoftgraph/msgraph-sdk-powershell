@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserTodoListTaskAttachment
 
 ## SYNOPSIS
-Get attachments from users
+A collection of file attachments for the task.
 
 ## SYNTAX
 
@@ -31,9 +31,29 @@ Get-MgUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-Property <Strin
 ```
 
 ## DESCRIPTION
-Get attachments from users
+A collection of file attachments for the task.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserTodoListTaskAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+# A UPN can also be used as -UserId.
+Get-MgUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -AttachmentBaseId $attachmentBaseId
+```
+
+This example shows how to use the Get-MgUserTodoListTaskAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserTodoListTaskAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+# A UPN can also be used as -UserId.
+Get-MgUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
+```
+
+This example shows how to use the Get-MgUserTodoListTaskAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

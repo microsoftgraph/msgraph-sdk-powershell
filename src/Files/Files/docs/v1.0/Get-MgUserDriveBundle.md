@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserDriveBundle
 
 ## SYNOPSIS
-Get bundles from users
+Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
+Only in personal OneDrive.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgUserDriveBundle -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get bundles from users
+Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
+Only in personal OneDrive.
 
 ## EXAMPLES
 

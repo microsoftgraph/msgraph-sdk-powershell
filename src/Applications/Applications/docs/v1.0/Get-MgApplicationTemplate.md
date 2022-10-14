@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationTemplate
 
 ## SYNOPSIS
-Get applicationTemplate
+Retrieve the properties of an applicationTemplate object.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgApplicationTemplate -InputObject <IApplicationsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get applicationTemplate
+Retrieve the properties of an applicationTemplate object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgApplicationTemplate Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgApplicationTemplate -ApplicationTemplateId $applicationTemplateId
+```
+
+This example shows how to use the Get-MgApplicationTemplate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgApplicationTemplate Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgApplicationTemplate
+```
+
+This example shows how to use the Get-MgApplicationTemplate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

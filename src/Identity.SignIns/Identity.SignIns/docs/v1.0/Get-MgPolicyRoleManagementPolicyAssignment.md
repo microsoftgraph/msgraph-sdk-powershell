@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyRoleManagementPolicyAssignment
 
 ## SYNOPSIS
-Get roleManagementPolicyAssignments from policies
+The assignment of a role management policy to a role definition object.
 
 ## SYNTAX
 
@@ -32,9 +32,45 @@ Get-MgPolicyRoleManagementPolicyAssignment -InputObject <IIdentitySignInsIdentit
 ```
 
 ## DESCRIPTION
-Get roleManagementPolicyAssignments from policies
+The assignment of a role management policy to a role definition object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPolicyRoleManagementPolicyAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssignmentId $unifiedRoleManagementPolicyAssignmentId -ExpandProperty "policy(`$expand=rules)" 
+```
+
+This example shows how to use the Get-MgPolicyRoleManagementPolicyAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPolicyRoleManagementPolicyAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssignmentId $unifiedRoleManagementPolicyAssignmentId
+```
+
+This example shows how to use the Get-MgPolicyRoleManagementPolicyAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgPolicyRoleManagementPolicyAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyRoleManagementPolicyAssignment -Filter "scopeId eq '/' and scopeType eq 'DirectoryRole' and roleDefinitionId eq '62e90394-69f5-4237-9190-012177145e10'" -ExpandProperty "policy(`$expand=rules)" 
+```
+
+This example shows how to use the Get-MgPolicyRoleManagementPolicyAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgPolicyRoleManagementPolicyAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyRoleManagementPolicyAssignment -Filter "scopeId eq '/' and scopeType eq 'Directory'" 
+```
+
+This example shows how to use the Get-MgPolicyRoleManagementPolicyAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -243,10 +279,14 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -255,6 +295,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

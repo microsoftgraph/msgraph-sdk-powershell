@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtVppToken
 
 ## SYNOPSIS
-Get vppTokens from deviceAppManagement
+List of Vpp tokens for this organization.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtVppToken -InputObject <IDevicesCorporateManagementIdentity> [-
 ```
 
 ## DESCRIPTION
-Get vppTokens from deviceAppManagement
+List of Vpp tokens for this organization.
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken2
 
 ## NOTES
 

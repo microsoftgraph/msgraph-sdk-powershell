@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -AverageBlueScreens
-Average (mean) number of Blue Screens per device in the last 14 days.
+Average (mean) number of Blue Screens per device in the last 30 days.
 Valid values 0 to 9999999
 
 ```yaml
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -AverageRestarts
-Average (mean) number of Restarts per device in the last 14 days.
+Average (mean) number of Restarts per device in the last 30 days.
 Valid values 0 to 9999999
 
 ```yaml
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -BlueScreenCount
-Number of Blue Screens in the last 14 days.
+Number of Blue Screens in the last 30 days.
 Valid values 0 to 9999999
 
 ```yaml
@@ -274,7 +274,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -411,7 +412,7 @@ Accept wildcard characters: False
 ```
 
 ### -RestartCount
-Number of Restarts in the last 14 days.
+Number of Restarts in the last 30 days.
 Valid values 0 to 9999999
 
 ```yaml
@@ -512,10 +513,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance>: The user experience analytics device performance entity contains device boot performance details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[AverageBlueScreens <Double?>]`: Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
-  - `[AverageRestarts <Double?>]`: Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
-  - `[BlueScreenCount <Int32?>]`: Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AverageBlueScreens <Double?>]`: Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
+  - `[AverageRestarts <Double?>]`: Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
+  - `[BlueScreenCount <Int32?>]`: Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
   - `[BootScore <Int32?>]`: The user experience analytics device boot score.
   - `[CoreBootTimeInMS <Int32?>]`: The user experience analytics device core boot time in milliseconds.
   - `[CoreLoginTimeInMS <Int32?>]`: The user experience analytics device core login time in milliseconds.
@@ -531,7 +532,7 @@ BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance>: The use
   - `[ModelStartupPerformanceScore <Double?>]`: The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[OperatingSystemVersion <String>]`: The user experience analytics device Operating System version.
   - `[ResponsiveDesktopTimeInMS <Int32?>]`: The user experience analytics responsive desktop time in milliseconds.
-  - `[RestartCount <Int32?>]`: Number of Restarts in the last 14 days. Valid values 0 to 9999999
+  - `[RestartCount <Int32?>]`: Number of Restarts in the last 30 days. Valid values 0 to 9999999
   - `[StartupPerformanceScore <Double?>]`: The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
@@ -621,6 +622,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

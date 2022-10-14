@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgGroupDriveItemChild
 
 ## SYNOPSIS
-Get children from groups
+Collection containing Item objects for the immediate children of Item.
+Only items representing folders have children.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgGroupDriveItemChild -InputObject <IFilesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get children from groups
+Collection containing Item objects for the immediate children of Item.
+Only items representing folders have children.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

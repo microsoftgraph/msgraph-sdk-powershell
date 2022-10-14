@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtManagedAppPolicy
 
 ## SYNOPSIS
-Get managedAppPolicies from deviceAppManagement
+Managed app policies.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtManagedAppPolicy -InputObject <IDevicesCorporateManagementIden
 ```
 
 ## DESCRIPTION
-Get managedAppPolicies from deviceAppManagement
+Managed app policies.
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## NOTES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtWdacSupplementalPolicyAssignment
 
 ## SYNOPSIS
-Get assignments from deviceAppManagement
+The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgDeviceAppMgtWdacSupplementalPolicyAssignment -InputObject <IDevicesCorpora
 ```
 
 ## DESCRIPTION
-Get assignments from deviceAppManagement
+The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
 
 ## EXAMPLES
 

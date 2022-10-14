@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserChatTab
 
 ## SYNOPSIS
-Get tabs from users
+A collection of all the tabs in the chat.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgUserChatTab -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-P
 ```
 
 ## DESCRIPTION
-Get tabs from users
+A collection of all the tabs in the chat.
+Nullable.
 
 ## EXAMPLES
 

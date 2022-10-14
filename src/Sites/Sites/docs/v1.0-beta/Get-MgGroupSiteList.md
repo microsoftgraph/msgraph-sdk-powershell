@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteList
 
 ## SYNOPSIS
-Get lists from groups
+The collection of lists under this site.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupSiteList -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get lists from groups
+The collection of lists under this site.
 
 ## EXAMPLES
 

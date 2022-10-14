@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementTelecomExpenseManagementPartner
 
 ## SYNOPSIS
-Get telecomExpenseManagementPartners from deviceManagement
+The telecom expense management partners.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementTelecomExpenseManagementPartner -InputObject <IDeviceManag
 ```
 
 ## DESCRIPTION
-Get telecomExpenseManagementPartners from deviceManagement
+The telecom expense management partners.
 
 ## EXAMPLES
 
@@ -245,6 +245,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

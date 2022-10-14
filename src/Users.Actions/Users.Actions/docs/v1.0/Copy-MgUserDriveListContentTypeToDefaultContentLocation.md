@@ -8,7 +8,8 @@ schema: 2.0.0
 # Copy-MgUserDriveListContentTypeToDefaultContentLocation
 
 ## SYNOPSIS
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ## SYNTAX
 
@@ -42,7 +43,8 @@ Copy-MgUserDriveListContentTypeToDefaultContentLocation -InputObject <IUsersActi
 ```
 
 ## DESCRIPTION
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ## EXAMPLES
 

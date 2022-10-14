@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtSideLoadingKey
 
 ## SYNOPSIS
-Get sideLoadingKeys from deviceAppManagement
+Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtSideLoadingKey -InputObject <IDevicesCorporateManagementIdenti
 ```
 
 ## DESCRIPTION
-Get sideLoadingKeys from deviceAppManagement
+Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 
 ## EXAMPLES
 

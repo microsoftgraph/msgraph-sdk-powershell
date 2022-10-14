@@ -45,6 +45,21 @@ Update the navigation property tasks in print
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgPrintTaskDefinitionTask Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+$params = @{
+	Status = @{
+		State = "completed"
+		Description = "completed"
+	}
+}
+Update-MgPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPrintTaskDefinitionTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -95,7 +110,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -127,7 +143,7 @@ Accept wildcard characters: False
 
 ### -ParentUrl
 The URL for the print entity that triggered this task.
-For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}.
+For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}.
 Read-only.
 
 ```yaml
@@ -274,50 +290,50 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPrintTask1>: printTask
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Azure Active Directory.
+      - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
       - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
-      - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+      - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
       - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
     - `[DisplayName <String>]`: The name of the printTaskDefinition.
     - `[Tasks <IMicrosoftGraphPrintTask1[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-  - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
+  - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
   - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
     - `[State <String>]`: printTaskProcessingState
   - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[Event <String>]`: printEvent
 
 DEFINITION <IMicrosoftGraphPrintTaskDefinition>: printTaskDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Azure Active Directory.
+    - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
     - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
-    - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+    - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
     - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
   - `[DisplayName <String>]`: The name of the printTaskDefinition.
   - `[Tasks <IMicrosoftGraphPrintTask1[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
-    - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
+    - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
     - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
       - `[State <String>]`: printTaskProcessingState
     - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
       - `[Event <String>]`: printEvent
 
@@ -341,21 +357,21 @@ STATUS <IMicrosoftGraphPrintTaskStatus>: printTaskStatus
 
 TRIGGER <IMicrosoftGraphPrintTaskTrigger>: printTaskTrigger
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Azure Active Directory.
+      - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
       - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
-      - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+      - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
       - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
     - `[DisplayName <String>]`: The name of the printTaskDefinition.
     - `[Tasks <IMicrosoftGraphPrintTask1[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
-      - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
+      - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
       - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Description <String>]`: A human-readable description of the current processing state of the printTask.

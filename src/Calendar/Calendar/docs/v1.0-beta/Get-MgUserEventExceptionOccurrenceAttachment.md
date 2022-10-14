@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgUserEventExceptionOccurrenceAttachment
 
 ## SYNOPSIS
-Get attachments from users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgUserEventExceptionOccurrenceAttachment -InputObject <ICalendarIdentity> [-
 ```
 
 ## DESCRIPTION
-Get attachments from users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

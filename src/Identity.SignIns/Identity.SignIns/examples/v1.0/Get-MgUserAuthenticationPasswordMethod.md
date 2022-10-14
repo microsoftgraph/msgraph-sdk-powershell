@@ -1,18 +1,16 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgUserAuthenticationPasswordMethod Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+# A UPN can also be used as -UserId.
+Get-MgUserAuthenticationPasswordMethod -UserId $userId -PasswordAuthenticationMethodId $passwordAuthenticationMethodId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgUserAuthenticationPasswordMethod Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgUserAuthenticationPasswordMethod Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+# A UPN can also be used as -UserId.
+Get-MgUserAuthenticationPasswordMethod -UserId $userId
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgUserAuthenticationPasswordMethod Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

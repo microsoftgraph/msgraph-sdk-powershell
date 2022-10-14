@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListContentTypeColumnPosition
 
 ## SYNOPSIS
-Get columnPositions from groups
+Column order information in a content type.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgGroupSiteListContentTypeColumnPosition -InputObject <ISitesIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get columnPositions from groups
+Column order information in a content type.
 
 ## EXAMPLES
 

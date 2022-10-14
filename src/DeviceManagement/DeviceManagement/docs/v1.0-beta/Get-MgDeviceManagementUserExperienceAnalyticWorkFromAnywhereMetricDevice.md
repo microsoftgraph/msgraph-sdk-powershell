@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
 
 ## SYNOPSIS
-Get metricDevices from deviceManagement
+The work from anywhere metric devices.
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice
 ```
 
 ## DESCRIPTION
-Get metricDevices from deviceManagement
+The work from anywhere metric devices.
 
 ## EXAMPLES
 
@@ -346,6 +346,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CloudPrint
-Module Guid: 17c71296-7dbf-4df1-ab18-b7fe5852d6c9
+Module Guid: 1a89b875-8dba-4b38-9c12-000edd73e312
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,58 +15,67 @@ Microsoft Graph PowerShell Cmdlets
 Get print
 
 ### [Get-MgPrintConnector](Get-MgPrintConnector.md)
-Get connectors from print
+The list of available print connectors.
 
 ### [Get-MgPrintOperation](Get-MgPrintOperation.md)
-Get operations from print
+The list of print long running operations.
 
 ### [Get-MgPrintPrinter](Get-MgPrintPrinter.md)
-Get printers from print
+The list of printers registered in the tenant.
 
 ### [Get-MgPrintPrinterConnector](Get-MgPrintPrinterConnector.md)
-Get connectors from print
+The connectors that are associated with the printer.
 
 ### [Get-MgPrintPrinterShare](Get-MgPrintPrinterShare.md)
-Get shares from print
+The list of printerShares that are associated with the printer.
+Currently, only one printerShare can be associated with the printer.
+Read-only.
+Nullable.
 
 ### [Get-MgPrintPrinterTaskTrigger](Get-MgPrintPrinterTaskTrigger.md)
-Get taskTriggers from print
+A list of task triggers that are associated with the printer.
 
 ### [Get-MgPrintPrinterTaskTriggerDefinition](Get-MgPrintPrinterTaskTriggerDefinition.md)
-Get definition from print
+An abstract definition that will be used to create a printTask when triggered by a print event.
+Read-only.
 
 ### [Get-MgPrintService](Get-MgPrintService.md)
-Get services from print
+The list of available Universal Print service endpoints.
 
 ### [Get-MgPrintServiceEndpoint](Get-MgPrintServiceEndpoint.md)
-Get endpoints from print
+Endpoints that can be used to access the service.
+Read-only.
+Nullable.
 
 ### [Get-MgPrintShare](Get-MgPrintShare.md)
-Get shares from print
+The list of printer shares registered in the tenant.
 
 ### [Get-MgPrintShareAllowedGroup](Get-MgPrintShareAllowedGroup.md)
-Get allowedGroups from print
+Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 
 ### [Get-MgPrintShareAllowedGroupByRef](Get-MgPrintShareAllowedGroupByRef.md)
-Get ref of allowedGroups from print
+Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 
 ### [Get-MgPrintShareAllowedUser](Get-MgPrintShareAllowedUser.md)
-Get allowedUsers from print
+Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 
 ### [Get-MgPrintShareAllowedUserByRef](Get-MgPrintShareAllowedUserByRef.md)
-Get ref of allowedUsers from print
+Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 
 ### [Get-MgPrintSharePrinter](Get-MgPrintSharePrinter.md)
-Get printer from print
+The printer that this printer share is related to.
 
 ### [Get-MgPrintTaskDefinition](Get-MgPrintTaskDefinition.md)
-Get taskDefinitions from print
+List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 
 ### [Get-MgPrintTaskDefinitionTask](Get-MgPrintTaskDefinitionTask.md)
-Get tasks from print
+A list of tasks that have been created based on this definition.
+The list includes currently running tasks and recently completed tasks.
+Read-only.
 
 ### [Get-MgPrintTaskDefinitionTaskTrigger](Get-MgPrintTaskDefinitionTaskTrigger.md)
-Get trigger from print
+The printTaskTrigger that triggered this task's execution.
+Read-only.
 
 ### [New-MgPrintConnector](New-MgPrintConnector.md)
 Create new navigation property to connectors for print
@@ -75,7 +84,8 @@ Create new navigation property to connectors for print
 Create new navigation property to operations for print
 
 ### [New-MgPrintPrinterTaskTrigger](New-MgPrintPrinterTaskTrigger.md)
-Create new navigation property to taskTriggers for print
+Create a new task trigger on the specified printer.
+Currently, only **one** task trigger can be specified per printer, but this limit might be removed in the future.
 
 ### [New-MgPrintService](New-MgPrintService.md)
 Create new navigation property to services for print
@@ -84,7 +94,7 @@ Create new navigation property to services for print
 Create new navigation property to endpoints for print
 
 ### [New-MgPrintShare](New-MgPrintShare.md)
-Create new navigation property to shares for print
+Create a new **printerShare** for the specified printer.
 
 ### [New-MgPrintShareAllowedGroupByRef](New-MgPrintShareAllowedGroupByRef.md)
 Create new navigation property ref to allowedGroups for print
@@ -93,7 +103,8 @@ Create new navigation property ref to allowedGroups for print
 Create new navigation property ref to allowedUsers for print
 
 ### [New-MgPrintTaskDefinition](New-MgPrintTaskDefinition.md)
-Create new navigation property to taskDefinitions for print
+Create a new task definition.
+For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 
 ### [New-MgPrintTaskDefinitionTask](New-MgPrintTaskDefinitionTask.md)
 Create new navigation property to tasks for print
@@ -132,7 +143,7 @@ Delete navigation property taskDefinitions for print
 Delete navigation property tasks for print
 
 ### [Restore-MgPrintPrinterFactoryDefault](Restore-MgPrintPrinterFactoryDefault.md)
-Invoke action restoreFactoryDefaults
+Restore a printer's default settings to the values specified by the manufacturer.
 
 ### [Update-MgPrint](Update-MgPrint.md)
 Update print

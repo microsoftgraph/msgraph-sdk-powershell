@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSubscribedSku
 
 ## SYNOPSIS
-Get subscribedSku
+Get entity from subscribedSkus by key
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Get-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-Proper
 ```
 
 ## DESCRIPTION
-Get subscribedSku
+Get entity from subscribedSkus by key
 
 ## EXAMPLES
 

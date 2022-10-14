@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupAcceptedSender
 
 ## SYNOPSIS
-Get acceptedSenders from groups
+Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
 ## SYNTAX
 
@@ -18,9 +18,18 @@ Get-MgGroupAcceptedSender -GroupId <String> [-Filter <String>] [-Property <Strin
 ```
 
 ## DESCRIPTION
-Get acceptedSenders from groups
+Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupAcceptedSender Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupAcceptedSender -GroupId $groupId
+```
+
+This example shows how to use the Get-MgGroupAcceptedSender Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

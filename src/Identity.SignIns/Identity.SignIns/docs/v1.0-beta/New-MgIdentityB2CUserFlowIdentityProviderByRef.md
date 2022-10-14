@@ -12,16 +12,28 @@ Create new navigation property ref to identityProviders for identity
 
 ## SYNTAX
 
-### Create (Default)
+### CreateExpanded (Default)
 ```
-New-MgIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String>
+ [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Create
+```
+New-MgIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String>
+ -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
+ -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-MgIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
+ [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,14 +41,41 @@ Create new navigation property ref to identityProviders for identity
 
 ## EXAMPLES
 
+### Example 1: Using the New-MgIdentityB2CUserFlowIdentityProviderByRef Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.id" = "https://graph.microsoft.com/beta/identityProviders/{id}"
+}
+New-MgIdentityB2CUserFlowIdentityProviderByRef -B2cIdentityUserFlowId $b2cIdentityUserFlowId -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityB2CUserFlowIdentityProviderByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -B2CIdentityUserFlowId
 key: id of b2cIdentityUserFlow
 
 ```yaml
 Type: System.String
-Parameter Sets: Create
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -46,19 +85,50 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
+### -BodyParameter
+.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: CreateViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -OdataId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -115,6 +185,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
+### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+
 ## OUTPUTS
 
 ### System.Boolean
@@ -128,13 +200,21 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+BODYPARAMETER <IReferenceCreate>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[OdataId <String>]`: 
+
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -143,6 +223,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

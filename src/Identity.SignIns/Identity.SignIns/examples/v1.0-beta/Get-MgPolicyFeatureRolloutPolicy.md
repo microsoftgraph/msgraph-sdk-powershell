@@ -1,18 +1,21 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgPolicyFeatureRolloutPolicy Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyFeatureRolloutPolicy
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgPolicyFeatureRolloutPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgPolicyFeatureRolloutPolicy Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -ExpandProperty "appliesTo" 
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgPolicyFeatureRolloutPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgPolicyFeatureRolloutPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId
+```
+This example shows how to use the Get-MgPolicyFeatureRolloutPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

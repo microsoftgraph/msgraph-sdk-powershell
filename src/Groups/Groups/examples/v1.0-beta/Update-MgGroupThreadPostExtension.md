@@ -1,18 +1,19 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgGroupThreadPostExtension Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	"@odata.type" = "#microsoft.outlookServices.openTypeExtension"
+	ExtensionName = "Com.Contoso.Estimate"
+	CompanyName = "Contoso"
+	ExpirationDate = "2016-07-30T11:00:00.000Z"
+	DealValue = 
+	TopPicks = @(
+		"Employees only"
+		"Add spouse or guest"
+		"Add family"
+	)
+}
+Update-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgGroupThreadPostExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyMobileAppManagementPolicyIncludedGroupByRef
 
 ## SYNOPSIS
-Get ref of includedGroups from policies
+Get the list of groups that are included in a mobile app management policy.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgPolicyMobileAppManagementPolicyIncludedGroupByRef -MobilityManagementPolic
 ```
 
 ## DESCRIPTION
-Get ref of includedGroups from policies
+Get the list of groups that are included in a mobile app management policy.
 
 ## EXAMPLES
 

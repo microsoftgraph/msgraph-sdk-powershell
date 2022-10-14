@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent
 
 ## SYNOPSIS
-Get hostedContent from appCatalogs
+Retrieve the hosted content in an app's icon.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Get-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent -InputObject <ITeamsId
 ```
 
 ## DESCRIPTION
-Get hostedContent from appCatalogs
+Retrieve the hosted content in an app's icon.
 
 ## EXAMPLES
 

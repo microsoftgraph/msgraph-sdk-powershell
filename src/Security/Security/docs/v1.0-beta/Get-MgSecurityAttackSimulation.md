@@ -8,11 +8,11 @@ schema: 2.0.0
 # Get-MgSecurityAttackSimulation
 
 ## SYNOPSIS
-Get simulations from security
+Represents an attack simulation training campaign in a tenant.
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get3 (Default)
 ```
 Get-MgSecurityAttackSimulation [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
@@ -37,9 +37,18 @@ Get-MgSecurityAttackSimulation [-ExpandProperty <String[]>] [-Filter <String>] [
 ```
 
 ## DESCRIPTION
-Get simulations from security
+Represents an attack simulation training campaign in a tenant.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityAttackSimulation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityAttackSimulation
+```
+
+This example shows how to use the Get-MgSecurityAttackSimulation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

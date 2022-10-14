@@ -8,33 +8,51 @@ schema: 2.0.0
 # Get-MgTeamChannelSharedWithTeam
 
 ## SYNOPSIS
-Get sharedWithTeams from teams
+A collection of teams with which a channel is shared.
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgTeamChannelSharedWithTeam -ChannelId <String> -TeamId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgTeamChannelSharedWithTeam -ChannelId <String> -SharedWithChannelTeamInfoId <String> -TeamId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgTeamChannelSharedWithTeam -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get sharedWithTeams from teams
+A collection of teams with which a channel is shared.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgTeamChannelSharedWithTeam Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
+```
+
+This example shows how to use the Get-MgTeamChannelSharedWithTeam Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgTeamChannelSharedWithTeam Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the Get-MgTeamChannelSharedWithTeam Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -43,7 +61,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -58,7 +76,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -74,7 +92,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -104,7 +122,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -120,7 +138,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -135,7 +153,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -165,7 +183,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -180,7 +198,7 @@ key: id of sharedWithChannelTeamInfo
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -195,7 +213,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -210,7 +228,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -225,7 +243,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -240,7 +258,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False

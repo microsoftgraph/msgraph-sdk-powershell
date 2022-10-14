@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationTokenLifetimePolicy
 
 ## SYNOPSIS
-Get tokenLifetimePolicies from applications
+List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 
 ## SYNTAX
 
@@ -19,9 +19,18 @@ Get-MgApplicationTokenLifetimePolicy -ApplicationId <String> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get tokenLifetimePolicies from applications
+List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgApplicationTokenLifetimePolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgApplicationTokenLifetimePolicy -ApplicationId $applicationId
+```
+
+This example shows how to use the Get-MgApplicationTokenLifetimePolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

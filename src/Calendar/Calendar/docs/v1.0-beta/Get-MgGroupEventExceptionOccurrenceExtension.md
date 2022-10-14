@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupEventExceptionOccurrenceExtension
 
 ## SYNOPSIS
-Get extensions from groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgGroupEventExceptionOccurrenceExtension -InputObject <ICalendarIdentity> [-
 ```
 
 ## DESCRIPTION
-Get extensions from groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## EXAMPLES
 

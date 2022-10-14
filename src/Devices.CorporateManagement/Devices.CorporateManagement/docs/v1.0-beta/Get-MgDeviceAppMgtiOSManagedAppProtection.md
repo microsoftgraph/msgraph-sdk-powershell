@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtiOSManagedAppProtection
 
 ## SYNOPSIS
-Get iosManagedAppProtections from deviceAppManagement
+iOS managed app policies.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtiOSManagedAppProtection -InputObject <IDevicesCorporateManagem
 ```
 
 ## DESCRIPTION
-Get iosManagedAppProtections from deviceAppManagement
+iOS managed app policies.
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection1
 
 ## NOTES
 

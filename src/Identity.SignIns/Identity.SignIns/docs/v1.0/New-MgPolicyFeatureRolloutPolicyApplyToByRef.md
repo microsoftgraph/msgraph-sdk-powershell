@@ -12,16 +12,28 @@ Create new navigation property ref to appliesTo for policies
 
 ## SYNTAX
 
-### Create1 (Default)
+### CreateExpanded1 (Default)
 ```
-New-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
+ [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Create1
+```
+New-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId <String>
+ -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsIdentity> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsIdentity>
+ -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded1
+```
+New-MgPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsIdentity>
+ [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,14 +41,57 @@ Create new navigation property ref to appliesTo for policies
 
 ## EXAMPLES
 
+### Example 1: Using the New-MgPolicyFeatureRolloutPolicyApplyToByRef Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/2441b489-4f12-4882-b039-8f6006bd66da"
+}
+New-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
+```
+
+This example shows how to use the New-MgPolicyFeatureRolloutPolicyApplyToByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Parameter Sets: Create1, CreateViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -FeatureRolloutPolicyId
 key: id of featureRolloutPolicy
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -52,13 +107,28 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: CreateViaIdentity1
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -OdataId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -115,6 +185,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
+### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+
 ## OUTPUTS
 
 ### System.Boolean
@@ -128,13 +200,21 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+BODYPARAMETER <IReferenceCreate>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[OdataId <String>]`: 
+
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -143,6 +223,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

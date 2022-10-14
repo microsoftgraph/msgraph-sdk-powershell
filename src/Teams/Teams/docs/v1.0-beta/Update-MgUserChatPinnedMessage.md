@@ -12,26 +12,26 @@ Update the navigation property pinnedMessages in users
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgUserChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Message <IMicrosoftGraphChatMessage>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgUserChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgUserChatPinnedMessage -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgUserChatPinnedMessage -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Message <IMicrosoftGraphChatMessage>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -49,7 +49,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -64,8 +64,8 @@ pinnedChatMessageInfo
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo
-Parameter Sets: Update, UpdateViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -80,7 +80,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -91,11 +91,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -111,7 +112,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -127,7 +128,7 @@ To construct, please use Get-Help -Online and see NOTES section for MESSAGE prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -157,7 +158,7 @@ key: id of pinnedChatMessageInfo
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -172,7 +173,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -218,7 +219,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
@@ -235,12 +236,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPinnedChatMessageInfo>: pinnedChatMessageInfo
+BODYPARAMETER <IMicrosoftGraphPinnedChatMessageInfo1>: pinnedChatMessageInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Attachments <IMicrosoftGraphChatMessageAttachment1[]>]`: References to attached objects like files, tabs, meetings etc.
       - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
       - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
@@ -273,8 +274,8 @@ BODYPARAMETER <IMicrosoftGraphPinnedChatMessageInfo>: pinnedChatMessageInfo
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
       - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-      - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
-      - `[Id <String>]`: 
+      - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Importance <String>]`: 
     - `[LastEditedDateTime <DateTime?>]`: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
     - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
@@ -364,7 +365,7 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
 
 MESSAGE <IMicrosoftGraphChatMessage>: chatMessage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Attachments <IMicrosoftGraphChatMessageAttachment1[]>]`: References to attached objects like files, tabs, meetings etc.
     - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
     - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
@@ -397,8 +398,8 @@ MESSAGE <IMicrosoftGraphChatMessage>: chatMessage
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: Content in a message hosted by Microsoft Teams - for example, images or code snippets.
     - `[ContentBytes <Byte[]>]`: Write only. Bytes for the hosted content (such as images).
-    - `[ContentType <String>]`: Write only. Content type, such as image/png, image/jpg.
-    - `[Id <String>]`: 
+    - `[ContentType <String>]`: Write only. Content type. sicj as image/png, image/jpg.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Importance <String>]`: 
   - `[LastEditedDateTime <DateTime?>]`: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
   - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.

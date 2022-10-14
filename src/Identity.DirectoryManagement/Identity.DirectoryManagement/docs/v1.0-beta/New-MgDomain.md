@@ -8,7 +8,13 @@ schema: 2.0.0
 # New-MgDomain
 
 ## SYNOPSIS
-Create domain
+Adds a domain to the tenant.
+**Important**: You cannot use an associated domain with your Azure AD tenant until ownership is verified.
+See List verificationDnsRecords for details.
+Root domains require verification.
+For example, contoso.com requires verification.
+If a root domain is verified, subdomains of the root domain are automatically verified.
+For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
 
 ## SYNTAX
 
@@ -30,9 +36,27 @@ New-MgDomain -BodyParameter <IMicrosoftGraphDomain> [-Confirm] [-WhatIf] [<Commo
 ```
 
 ## DESCRIPTION
-Create domain
+Adds a domain to the tenant.
+**Important**: You cannot use an associated domain with your Azure AD tenant until ownership is verified.
+See List verificationDnsRecords for details.
+Root domains require verification.
+For example, contoso.com requires verification.
+If a root domain is verified, subdomains of the root domain are automatically verified.
+For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgDomain Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	Id = "contoso.com"
+}
+New-MgDomain -BodyParameter $params
+```
+
+This example shows how to use the New-MgDomain Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

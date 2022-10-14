@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgContact
 
 ## SYNOPSIS
-Get orgContact
+Get the properties and relationships of an organizational contact.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgContact -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get orgContact
+Get the properties and relationships of an organizational contact.
 
 ## EXAMPLES
 

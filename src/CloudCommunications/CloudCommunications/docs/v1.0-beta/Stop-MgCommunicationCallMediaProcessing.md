@@ -8,7 +8,11 @@ schema: 2.0.0
 # Stop-MgCommunicationCallMediaProcessing
 
 ## SYNOPSIS
-Invoke action cancelMediaProcessing
+Cancels processing for any in-progress media operations.
+Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order.
+The **cancelMediaProcessing** method cancels any operation that is in-process as well as operations that are queued.
+For example, this API can be used to clean up the IVR operation queue for a new media operation.
+However, it will not cancel a **ubscribeToTone** operation because it operates independent of any operation queue.
 
 ## SYNTAX
 
@@ -21,14 +25,14 @@ Stop-MgCommunicationCallMediaProcessing -CallId <String> [-AdditionalProperties 
 ### Cancel1
 ```
 Stop-MgCommunicationCallMediaProcessing -CallId <String>
- -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity1
 ```
 Stop-MgCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -39,9 +43,25 @@ Stop-MgCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdenti
 ```
 
 ## DESCRIPTION
-Invoke action cancelMediaProcessing
+Cancels processing for any in-progress media operations.
+Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order.
+The **cancelMediaProcessing** method cancels any operation that is in-process as well as operations that are queued.
+For example, this API can be used to clean up the IVR operation queue for a new media operation.
+However, it will not cancel a **ubscribeToTone** operation because it operates independent of any operation queue.
 
 ## EXAMPLES
+
+### Example 1: Using the Stop-MgCommunicationCallMediaProcessing Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	ClientContext = "clientContext-value"
+}
+Stop-MgCommunicationCallMediaProcessing -CallId $callId -BodyParameter $params
+```
+
+This example shows how to use the Stop-MgCommunicationCallMediaProcessing Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -65,7 +85,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Cancel1, CancelViaIdentity1
 Aliases:
 
@@ -160,7 +180,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -175,7 +195,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema1>: .
+BODYPARAMETER <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ClientContext <String>]`: 
 

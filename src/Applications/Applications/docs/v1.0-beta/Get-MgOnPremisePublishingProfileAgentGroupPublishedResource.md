@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgOnPremisePublishingProfileAgentGroupPublishedResource
 
 ## SYNOPSIS
-Get publishedResources from onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -34,7 +36,9 @@ Get-MgOnPremisePublishingProfileAgentGroupPublishedResource -InputObject <IAppli
 ```
 
 ## DESCRIPTION
-Get publishedResources from onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -52,7 +54,9 @@ Get-MgUserCalendarSingleValueExtendedProperty -CalendarId <String> -UserId <Stri
 ```
 
 ## DESCRIPTION
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

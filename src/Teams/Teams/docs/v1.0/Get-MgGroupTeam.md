@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeam
 
 ## SYNOPSIS
-Get team from groups
+The team associated with this group.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgGroupTeam -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get team from groups
+The team associated with this group.
 
 ## EXAMPLES
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserDriveRootListItem
 
 ## SYNOPSIS
-Get listItem from users
+For drives in SharePoint, the associated document library list item.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgUserDriveRootListItem -InputObject <IFilesIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get listItem from users
+For drives in SharePoint, the associated document library list item.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

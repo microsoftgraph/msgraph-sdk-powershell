@@ -8,7 +8,9 @@ schema: 2.0.0
 # Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation
 
 ## SYNOPSIS
-Invoke action acceptRecommendations
+Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
+Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
+If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
 
 ## SYNTAX
 
@@ -25,9 +27,21 @@ Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation -InputObject <IUser
 ```
 
 ## DESCRIPTION
-Invoke action acceptRecommendations
+Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
+Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
+If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+# A UPN can also be used as -UserId.
+Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation -UserId $userId -AccessReviewInstanceId $accessReviewInstanceId
+```
+
+This example shows how to use the Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

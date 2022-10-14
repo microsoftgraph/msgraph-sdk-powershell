@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation
 
 ## SYNOPSIS
-Get addToReviewSetOperation from security
+Adds the results of the eDiscovery search to the specified reviewSet.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSecurityCaseEdiscoveryCaseSearchAddToReviewSetOperation -InputObject <ISec
 ```
 
 ## DESCRIPTION
-Get addToReviewSetOperation from security
+Adds the results of the eDiscovery search to the specified reviewSet.
 
 ## EXAMPLES
 

@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgDomainNameReference
 
 ## SYNOPSIS
-Get domainNameReferences from domains
+The objects such as users and groups that reference the domain ID.
+Read-only, Nullable.
+Supports $expand and $filter by the OData type of objects returned.
+For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 
 ## SYNTAX
 
@@ -32,9 +35,21 @@ Get-MgDomainNameReference -InputObject <IIdentityDirectoryManagementIdentity> [-
 ```
 
 ## DESCRIPTION
-Get domainNameReferences from domains
+The objects such as users and groups that reference the domain ID.
+Read-only, Nullable.
+Supports $expand and $filter by the OData type of objects returned.
+For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDomainNameReference Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDomainNameReference -DomainId $domainId
+```
+
+This example shows how to use the Get-MgDomainNameReference Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

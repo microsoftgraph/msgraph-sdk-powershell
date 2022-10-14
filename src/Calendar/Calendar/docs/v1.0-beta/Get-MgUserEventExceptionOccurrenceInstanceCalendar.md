@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserEventExceptionOccurrenceInstanceCalendar
 
 ## SYNOPSIS
-Get calendar from users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgUserEventExceptionOccurrenceInstanceCalendar -InputObject <ICalendarIdenti
 ```
 
 ## DESCRIPTION
-Get calendar from users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ## EXAMPLES
 

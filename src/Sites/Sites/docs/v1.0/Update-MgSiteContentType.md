@@ -55,6 +55,57 @@ Update the navigation property contentTypes in sites
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgSiteContentType Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	Name = "updatedCt"
+	DocumentSet = @{
+		ShouldPrefixNameToFile = $true
+		AllowedContentTypes = @(
+			@{
+				Id = "0x0101"
+				Name = "Document"
+			}
+		)
+		DefaultContents = @(
+			@{
+				FileName = "a.txt"
+				ContentType = @{
+					Id = "0x0101"
+				}
+			}
+			@{
+				FileName = "b.txt"
+				ContentType = @{
+					Id = "0x0101"
+				}
+			}
+		)
+		SharedColumns = @(
+			@{
+				Name = "Description"
+				Id = "cbb92da4-fd46-4c7d-af6c-3128c2a5576e"
+			}
+			@{
+				Name = "Address"
+				Id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
+			}
+		)
+		WelcomePageColumns = @(
+			@{
+				Name = "Address"
+				Id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
+			}
+		)
+	}
+}
+Update-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgSiteContentType Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -74,7 +125,7 @@ Accept wildcard characters: False
 
 ### -AssociatedHubsUrls
 List of canonical URLs for hub sites with which this content type is associated to.
-This will contain all hubsites where this content type is queued to be enforced or is already enforced.
+This will contain all hub sites where this content type is queued to be enforced or is already enforced.
 Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
 
 ```yaml
@@ -138,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -ColumnLinks
-The collection of columns that are required by this content type
+The collection of columns that are required by this content type.
 To construct, please use Get-Help -Online and see NOTES section for COLUMNLINKS properties and create a hash table.
 
 ```yaml
@@ -279,7 +330,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -417,7 +469,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReadOnly
-If true, the content type cannot be modified unless this value is first set to false.
+If true, the content type can't be modified unless this value is first set to false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -432,7 +484,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sealed
-If true, the content type cannot be modified by users or through push-down operations.
+If true, the content type can't be modified by users or through push-down operations.
 Only site collection administrators can seal or unseal content types.
 
 ```yaml
@@ -517,15 +569,15 @@ To create the parameters described below, construct a hash table containing the 
 
 BASE <IMicrosoftGraphContentType>: contentType
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
   - `[Base <IMicrosoftGraphContentType>]`: contentType
   - `[BaseTypes <IMicrosoftGraphContentType[]>]`: The collection of content types that are ancestors of this content type.
-  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
-    - `[Id <String>]`: 
+  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: The name of the column  in this content type.
   - `[ColumnPositions <IMicrosoftGraphColumnDefinition1[]>]`: Column order information in a content type.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
@@ -561,7 +613,7 @@ BASE <IMicrosoftGraphContentType>: contentType
     - `[HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>]`: hyperlinkOrPictureColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsPicture <Boolean?>]`: Specifies whether the display format used for URL columns is an image or a hyperlink.
-    - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
+    - `[Indexed <Boolean?>]`: Specifies whether the column values can be used for sorting and searching.
     - `[IsDeletable <Boolean?>]`: Indicates whether this column can be deleted.
     - `[IsReorderable <Boolean?>]`: Indicates whether values in the column can be reordered. Read-only.
     - `[IsSealed <Boolean?>]`: Specifies whether the column can be changed.
@@ -584,7 +636,7 @@ BASE <IMicrosoftGraphContentType>: contentType
       - `[AllowMultipleSelection <Boolean?>]`: Indicates whether multiple values can be selected from the source.
       - `[ChooseFromType <String>]`: Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
       - `[DisplayAs <String>]`: How to display the information about the person or group chosen. See below.
-    - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
+    - `[PropagateChanges <Boolean?>]`: If 'true', changes to this column will be propagated to lists that implement the column.
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
@@ -594,10 +646,10 @@ BASE <IMicrosoftGraphContentType>: contentType
       - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
       - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
         - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
         - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -609,24 +661,24 @@ BASE <IMicrosoftGraphContentType>: contentType
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
         - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-          - `[Id <String>]`: 
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
           - `[Relationship <String>]`: 
           - `[Set <IMicrosoftGraphTermStoreSet>]`: set
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
             - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-            - `[Description <String>]`: Description giving details on the term usage.
+            - `[Description <String>]`: Description that gives details on the term usage.
             - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
               - `[LanguageTag <String>]`: The language tag for the label.
               - `[Name <String>]`: The name in the localized language.
             - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Id <String>]`: 
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
               - `[Description <String>]`: Description that gives details on the term usage.
               - `[DisplayName <String>]`: Name of the group.
@@ -656,7 +708,7 @@ BASE <IMicrosoftGraphContentType>: contentType
       - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-      - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+      - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
   - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions for this contentType.
   - `[Description <String>]`: The descriptive text for the item.
   - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
@@ -664,11 +716,11 @@ BASE <IMicrosoftGraphContentType>: contentType
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-      - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
+      - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
       - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
-    - `[PropagateWelcomePageChanges <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
+    - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
     - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-    - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the Document Set to each file name.
+    - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
     - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
     - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
   - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -700,19 +752,19 @@ BASE <IMicrosoftGraphContentType>: contentType
     - `[Position <Int32?>]`: Specifies the position in which the Content Type appears in the selection UI.
   - `[ParentId <String>]`: The unique identifier of the content type.
   - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
-  - `[ReadOnly <Boolean?>]`: If true, the content type cannot be modified unless this value is first set to false.
-  - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+  - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
+  - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 
 BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that are ancestors of this content type.
-  - `[Id <String>]`: 
-  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
   - `[Base <IMicrosoftGraphContentType>]`: contentType
   - `[BaseTypes <IMicrosoftGraphContentType[]>]`: The collection of content types that are ancestors of this content type.
-  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
-    - `[Id <String>]`: 
+  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: The name of the column  in this content type.
   - `[ColumnPositions <IMicrosoftGraphColumnDefinition1[]>]`: Column order information in a content type.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
@@ -748,7 +800,7 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
     - `[HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>]`: hyperlinkOrPictureColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsPicture <Boolean?>]`: Specifies whether the display format used for URL columns is an image or a hyperlink.
-    - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
+    - `[Indexed <Boolean?>]`: Specifies whether the column values can be used for sorting and searching.
     - `[IsDeletable <Boolean?>]`: Indicates whether this column can be deleted.
     - `[IsReorderable <Boolean?>]`: Indicates whether values in the column can be reordered. Read-only.
     - `[IsSealed <Boolean?>]`: Specifies whether the column can be changed.
@@ -771,7 +823,7 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
       - `[AllowMultipleSelection <Boolean?>]`: Indicates whether multiple values can be selected from the source.
       - `[ChooseFromType <String>]`: Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
       - `[DisplayAs <String>]`: How to display the information about the person or group chosen. See below.
-    - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
+    - `[PropagateChanges <Boolean?>]`: If 'true', changes to this column will be propagated to lists that implement the column.
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
@@ -781,10 +833,10 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
       - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
       - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
         - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
         - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -796,24 +848,24 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
         - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-          - `[Id <String>]`: 
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
           - `[Relationship <String>]`: 
           - `[Set <IMicrosoftGraphTermStoreSet>]`: set
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
             - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-            - `[Description <String>]`: Description giving details on the term usage.
+            - `[Description <String>]`: Description that gives details on the term usage.
             - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
               - `[LanguageTag <String>]`: The language tag for the label.
               - `[Name <String>]`: The name in the localized language.
             - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Id <String>]`: 
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
               - `[Description <String>]`: Description that gives details on the term usage.
               - `[DisplayName <String>]`: Name of the group.
@@ -843,7 +895,7 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
       - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-      - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+      - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
   - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions for this contentType.
   - `[Description <String>]`: The descriptive text for the item.
   - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
@@ -851,11 +903,11 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-      - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
+      - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
       - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
-    - `[PropagateWelcomePageChanges <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
+    - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
     - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-    - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the Document Set to each file name.
+    - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
     - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
     - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
   - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -887,20 +939,20 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
     - `[Position <Int32?>]`: Specifies the position in which the Content Type appears in the selection UI.
   - `[ParentId <String>]`: The unique identifier of the content type.
   - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
-  - `[ReadOnly <Boolean?>]`: If true, the content type cannot be modified unless this value is first set to false.
-  - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+  - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
+  - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 
 BODYPARAMETER <IMicrosoftGraphContentType>: contentType
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
   - `[Base <IMicrosoftGraphContentType>]`: contentType
   - `[BaseTypes <IMicrosoftGraphContentType[]>]`: The collection of content types that are ancestors of this content type.
-  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
-    - `[Id <String>]`: 
+  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: The name of the column  in this content type.
   - `[ColumnPositions <IMicrosoftGraphColumnDefinition1[]>]`: Column order information in a content type.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
@@ -936,7 +988,7 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
     - `[HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>]`: hyperlinkOrPictureColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsPicture <Boolean?>]`: Specifies whether the display format used for URL columns is an image or a hyperlink.
-    - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
+    - `[Indexed <Boolean?>]`: Specifies whether the column values can be used for sorting and searching.
     - `[IsDeletable <Boolean?>]`: Indicates whether this column can be deleted.
     - `[IsReorderable <Boolean?>]`: Indicates whether values in the column can be reordered. Read-only.
     - `[IsSealed <Boolean?>]`: Specifies whether the column can be changed.
@@ -959,7 +1011,7 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
       - `[AllowMultipleSelection <Boolean?>]`: Indicates whether multiple values can be selected from the source.
       - `[ChooseFromType <String>]`: Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
       - `[DisplayAs <String>]`: How to display the information about the person or group chosen. See below.
-    - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
+    - `[PropagateChanges <Boolean?>]`: If 'true', changes to this column will be propagated to lists that implement the column.
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
@@ -969,10 +1021,10 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
       - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
       - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
         - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
         - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -984,24 +1036,24 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
         - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-          - `[Id <String>]`: 
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
           - `[Relationship <String>]`: 
           - `[Set <IMicrosoftGraphTermStoreSet>]`: set
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
             - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-            - `[Description <String>]`: Description giving details on the term usage.
+            - `[Description <String>]`: Description that gives details on the term usage.
             - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
               - `[LanguageTag <String>]`: The language tag for the label.
               - `[Name <String>]`: The name in the localized language.
             - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Id <String>]`: 
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
               - `[Description <String>]`: Description that gives details on the term usage.
               - `[DisplayName <String>]`: Name of the group.
@@ -1031,7 +1083,7 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
       - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-      - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+      - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
   - `[Columns <IMicrosoftGraphColumnDefinition1[]>]`: The collection of column definitions for this contentType.
   - `[Description <String>]`: The descriptive text for the item.
   - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
@@ -1039,11 +1091,11 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-      - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
+      - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
       - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
-    - `[PropagateWelcomePageChanges <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
+    - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
     - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-    - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the Document Set to each file name.
+    - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
     - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
     - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
   - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -1075,15 +1127,15 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
     - `[Position <Int32?>]`: Specifies the position in which the Content Type appears in the selection UI.
   - `[ParentId <String>]`: The unique identifier of the content type.
   - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
-  - `[ReadOnly <Boolean?>]`: If true, the content type cannot be modified unless this value is first set to false.
-  - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+  - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
+  - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 
-COLUMNLINKS <IMicrosoftGraphColumnLink[]>: The collection of columns that are required by this content type
-  - `[Id <String>]`: 
+COLUMNLINKS <IMicrosoftGraphColumnLink[]>: The collection of columns that are required by this content type.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Name <String>]`: The name of the column  in this content type.
 
 COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition1[]>: Column order information in a content type.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
@@ -1119,7 +1171,7 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition1[]>: Column order information i
   - `[HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>]`: hyperlinkOrPictureColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsPicture <Boolean?>]`: Specifies whether the display format used for URL columns is an image or a hyperlink.
-  - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
+  - `[Indexed <Boolean?>]`: Specifies whether the column values can be used for sorting and searching.
   - `[IsDeletable <Boolean?>]`: Indicates whether this column can be deleted.
   - `[IsReorderable <Boolean?>]`: Indicates whether values in the column can be reordered. Read-only.
   - `[IsSealed <Boolean?>]`: Specifies whether the column can be changed.
@@ -1142,7 +1194,7 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition1[]>: Column order information i
     - `[AllowMultipleSelection <Boolean?>]`: Indicates whether multiple values can be selected from the source.
     - `[ChooseFromType <String>]`: Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
     - `[DisplayAs <String>]`: How to display the information about the person or group chosen. See below.
-  - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
+  - `[PropagateChanges <Boolean?>]`: If 'true', changes to this column will be propagated to lists that implement the column.
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
@@ -1152,10 +1204,10 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition1[]>: Column order information i
     - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
     - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
       - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
       - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -1167,24 +1219,24 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition1[]>: Column order information i
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-        - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
       - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[Relationship <String>]`: 
         - `[Set <IMicrosoftGraphTermStoreSet>]`: set
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Id <String>]`: 
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
           - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-          - `[Description <String>]`: Description giving details on the term usage.
+          - `[Description <String>]`: Description that gives details on the term usage.
           - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
             - `[LanguageTag <String>]`: The language tag for the label.
             - `[Name <String>]`: The name in the localized language.
           - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
             - `[Description <String>]`: Description that gives details on the term usage.
             - `[DisplayName <String>]`: Name of the group.
@@ -1214,10 +1266,10 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition1[]>: Column order information i
     - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
       - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
       - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
 
 COLUMNS <IMicrosoftGraphColumnDefinition1[]>: The collection of column definitions for this contentType.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
@@ -1253,7 +1305,7 @@ COLUMNS <IMicrosoftGraphColumnDefinition1[]>: The collection of column definitio
   - `[HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>]`: hyperlinkOrPictureColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsPicture <Boolean?>]`: Specifies whether the display format used for URL columns is an image or a hyperlink.
-  - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
+  - `[Indexed <Boolean?>]`: Specifies whether the column values can be used for sorting and searching.
   - `[IsDeletable <Boolean?>]`: Indicates whether this column can be deleted.
   - `[IsReorderable <Boolean?>]`: Indicates whether values in the column can be reordered. Read-only.
   - `[IsSealed <Boolean?>]`: Specifies whether the column can be changed.
@@ -1276,7 +1328,7 @@ COLUMNS <IMicrosoftGraphColumnDefinition1[]>: The collection of column definitio
     - `[AllowMultipleSelection <Boolean?>]`: Indicates whether multiple values can be selected from the source.
     - `[ChooseFromType <String>]`: Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
     - `[DisplayAs <String>]`: How to display the information about the person or group chosen. See below.
-  - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
+  - `[PropagateChanges <Boolean?>]`: If 'true', changes to this column will be propagated to lists that implement the column.
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
@@ -1286,10 +1338,10 @@ COLUMNS <IMicrosoftGraphColumnDefinition1[]>: The collection of column definitio
     - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
     - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
       - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
       - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -1301,24 +1353,24 @@ COLUMNS <IMicrosoftGraphColumnDefinition1[]>: The collection of column definitio
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-        - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
       - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[Relationship <String>]`: 
         - `[Set <IMicrosoftGraphTermStoreSet>]`: set
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Id <String>]`: 
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
           - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-          - `[Description <String>]`: Description giving details on the term usage.
+          - `[Description <String>]`: Description that gives details on the term usage.
           - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
             - `[LanguageTag <String>]`: The language tag for the label.
             - `[Name <String>]`: The name in the localized language.
           - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
             - `[Description <String>]`: Description that gives details on the term usage.
             - `[DisplayName <String>]`: Name of the group.
@@ -1348,7 +1400,7 @@ COLUMNS <IMicrosoftGraphColumnDefinition1[]>: The collection of column definitio
     - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
       - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
       - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
 
 DOCUMENTSET <IMicrosoftGraphDocumentSet1>: documentSet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1357,11 +1409,11 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet1>: documentSet
     - `[Name <String>]`: The name of the content type.
   - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
     - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-    - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
+    - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
     - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
-  - `[PropagateWelcomePageChanges <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
+  - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
   - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
@@ -1397,7 +1449,7 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet1>: documentSet
     - `[HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>]`: hyperlinkOrPictureColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsPicture <Boolean?>]`: Specifies whether the display format used for URL columns is an image or a hyperlink.
-    - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
+    - `[Indexed <Boolean?>]`: Specifies whether the column values can be used for sorting and searching.
     - `[IsDeletable <Boolean?>]`: Indicates whether this column can be deleted.
     - `[IsReorderable <Boolean?>]`: Indicates whether values in the column can be reordered. Read-only.
     - `[IsSealed <Boolean?>]`: Specifies whether the column can be changed.
@@ -1420,17 +1472,17 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet1>: documentSet
       - `[AllowMultipleSelection <Boolean?>]`: Indicates whether multiple values can be selected from the source.
       - `[ChooseFromType <String>]`: Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
       - `[DisplayAs <String>]`: How to display the information about the person or group chosen. See below.
-    - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
+    - `[PropagateChanges <Boolean?>]`: If 'true', changes to this column will be propagated to lists that implement the column.
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
     - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
       - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
         - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
         - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
@@ -1442,24 +1494,24 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet1>: documentSet
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
         - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-          - `[Id <String>]`: 
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
           - `[Relationship <String>]`: 
           - `[Set <IMicrosoftGraphTermStoreSet>]`: set
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: 
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
             - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-            - `[Description <String>]`: Description giving details on the term usage.
+            - `[Description <String>]`: Description that gives details on the term usage.
             - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
               - `[LanguageTag <String>]`: The language tag for the label.
               - `[Name <String>]`: The name in the localized language.
             - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Id <String>]`: 
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
               - `[Description <String>]`: Description that gives details on the term usage.
               - `[DisplayName <String>]`: Name of the group.
@@ -1489,8 +1541,8 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet1>: documentSet
       - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-      - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
-  - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the Document Set to each file name.
+      - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
+  - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
   - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
   - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
 
@@ -1500,7 +1552,7 @@ DOCUMENTTEMPLATE <IMicrosoftGraphDocumentSetContent>: documentSetContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The id of the content type.
     - `[Name <String>]`: The name of the content type.
-  - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set
+  - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
   - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
 
 INHERITEDFROM <IMicrosoftGraphItemReference>: itemReference

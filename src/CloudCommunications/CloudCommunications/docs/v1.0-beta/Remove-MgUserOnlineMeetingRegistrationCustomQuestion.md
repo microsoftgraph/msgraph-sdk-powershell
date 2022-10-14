@@ -30,6 +30,16 @@ Delete navigation property customQuestions for users
 
 ## EXAMPLES
 
+### Example 1: Using the Remove-MgUserOnlineMeetingRegistrationCustomQuestion Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+# A UPN can also be used as -UserId.
+Remove-MgUserOnlineMeetingRegistrationCustomQuestion -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingRegistrationQuestionId $meetingRegistrationQuestionId
+```
+
+This example shows how to use the Remove-MgUserOnlineMeetingRegistrationCustomQuestion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -IfMatch

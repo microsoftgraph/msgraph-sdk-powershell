@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleAssignmentSchedule
 
 ## SYNOPSIS
-Get roleAssignmentSchedules from roleManagement
+Schedules for active role assignment operations.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgRoleManagementEntitlementManagementRoleAssignmentSchedule
 ```
 
 ## DESCRIPTION
-Get roleAssignmentSchedules from roleManagement
+Schedules for active role assignment operations.
 
 ## EXAMPLES
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgGroupCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> 
 ```
 
 ## DESCRIPTION
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

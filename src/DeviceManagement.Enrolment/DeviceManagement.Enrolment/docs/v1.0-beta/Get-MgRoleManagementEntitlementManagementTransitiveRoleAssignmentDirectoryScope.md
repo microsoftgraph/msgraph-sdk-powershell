@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementTransitiveRoleAssignmentDirectoryScope
 
 ## SYNOPSIS
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Provided so that callers can get the directory object using $expand at the same time as getting the role assignment.
+Read-only.
+Supports $expand.
 
 ## SYNTAX
 
@@ -26,7 +29,10 @@ Get-MgRoleManagementEntitlementManagementTransitiveRoleAssignmentDirectoryScope
 ```
 
 ## DESCRIPTION
-Get directoryScope from roleManagement
+The directory object that is the scope of the assignment.
+Provided so that callers can get the directory object using $expand at the same time as getting the role assignment.
+Read-only.
+Supports $expand.
 
 ## EXAMPLES
 

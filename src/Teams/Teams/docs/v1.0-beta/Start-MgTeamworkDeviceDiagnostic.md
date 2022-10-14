@@ -8,7 +8,8 @@ schema: 2.0.0
 # Start-MgTeamworkDeviceDiagnostic
 
 ## SYNOPSIS
-Invoke action runDiagnostics
+Run and generate diagnostic logs for the specified Microsoft Teams-enabled device.
+This API triggers a long-running operation used to generate logs for a device.
 
 ## SYNTAX
 
@@ -25,9 +26,19 @@ Start-MgTeamworkDeviceDiagnostic -InputObject <ITeamsIdentity> [-PassThru] [-Con
 ```
 
 ## DESCRIPTION
-Invoke action runDiagnostics
+Run and generate diagnostic logs for the specified Microsoft Teams-enabled device.
+This API triggers a long-running operation used to generate logs for a device.
 
 ## EXAMPLES
+
+### Example 1: Using the Start-MgTeamworkDeviceDiagnostic Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Start-MgTeamworkDeviceDiagnostic -TeamworkDeviceId $teamworkDeviceId
+```
+
+This example shows how to use the Start-MgTeamworkDeviceDiagnostic Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

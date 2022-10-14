@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteOnenoteNotebookSection
 
 ## SYNOPSIS
-Get sections from sites
+Retrieve a list of section objects from the specified notebook.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgSiteOnenoteNotebookSection -NotebookId <String> -SiteId <String> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get sections from sites
+Retrieve a list of section objects from the specified notebook.
 
 ## EXAMPLES
 

@@ -120296,6 +120296,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceOwnerType'
             managementAgent:
               $ref: '#/components/schemas/microsoft.graph.managementAgentType'
+            managementCertificateExpirationDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Reports device management certificate expiration date. This property is read-only.
+              format: date-time
+              readOnly: true
             manufacturer:
               type: string
               description: Manufacturer of the device. This property is read-only.
@@ -120345,6 +120351,11 @@ components:
             remoteAssistanceSessionUrl:
               type: string
               description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              nullable: true
+              readOnly: true
+            requireUserEnrollmentApproval:
+              type: boolean
+              description: Reports if the managed iOS device is user approval enrollment. This property is read-only.
               nullable: true
               readOnly: true
             serialNumber:
@@ -120401,6 +120412,12 @@ components:
               x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+            users:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.user'
+              description: The primary users associated with the managed device.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Devices that are managed or pre-enrolled through Intune
@@ -120985,6 +121002,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+              description: The tags associated with the team.
               x-ms-navigationProperty: true
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
@@ -123795,7 +123813,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -124096,25 +124114,30 @@ components:
           properties:
             description:
               type: string
+              description: The description of the tag as it will appear to the user in Microsoft Teams.
               nullable: true
             displayName:
               type: string
+              description: The name of the tag as it will appear to the user in Microsoft Teams.
               nullable: true
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of users assigned to the tag.
               format: int32
               nullable: true
             tagType:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagType'
             teamId:
               type: string
+              description: ID of the team in which the tag is defined.
               nullable: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+              description: Users assigned to the tag.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -126139,12 +126162,15 @@ components:
           properties:
             displayName:
               type: string
+              description: The member's display name.
               nullable: true
             tenantId:
               type: string
+              description: The ID of the tenant that the tag member is a part of.
               nullable: true
             userId:
               type: string
+              description: The user ID of the member.
               nullable: true
           additionalProperties:
             type: object

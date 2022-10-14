@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAutopilotEventPolicyStatusDetail
 
 ## SYNOPSIS
-Get policyStatusDetails from deviceManagement
+Policy and application status details for this device.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceManagementAutopilotEventPolicyStatusDetail -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Get policyStatusDetails from deviceManagement
+Policy and application status details for this device.
 
 ## EXAMPLES
 

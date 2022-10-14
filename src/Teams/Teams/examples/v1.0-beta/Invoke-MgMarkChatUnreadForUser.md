@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Invoke-MgMarkChatUnreadForUser Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	User = @{
+		Id = "d864e79f-a516-4d0f-9fee-0eeb4d61fdc2"
+	}
+	TenantId = "2a690434-97d9-4eed-83a6-f5f13600199a"
+	LastMessageReadDateTime = [System.DateTime]::Parse("2021-05-27T22:13:01.577Z")
+}
+Invoke-MgMarkChatUnreadForUser -ChatId $chatId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Invoke-MgMarkChatUnreadForUser Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

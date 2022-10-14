@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointOnPremisesConnection
 
 ## SYNOPSIS
-Get onPremisesConnections from deviceManagement
+A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 
 ## SYNTAX
 
@@ -33,9 +33,36 @@ Get-MgDeviceManagementVirtualEndpointOnPremisesConnection
 ```
 
 ## DESCRIPTION
-Get onPremisesConnections from deviceManagement
+A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesConnectionId $cloudPcOnPremisesConnectionId -Property "id,displayName,healthCheckStatus,healthCheckStatusDetails,inUse" 
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointOnPremisesConnection
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -246,6 +273,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

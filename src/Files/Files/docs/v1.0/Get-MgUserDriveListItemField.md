@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListItemField
 
 ## SYNOPSIS
-Get fields from users
+The values of the columns set on this list item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserDriveListItemField -InputObject <IFilesIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get fields from users
+The values of the columns set on this list item.
 
 ## EXAMPLES
 

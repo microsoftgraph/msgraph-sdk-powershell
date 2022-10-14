@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowAutopilotDeploymentProfile
 
 ## SYNOPSIS
-Get windowsAutopilotDeploymentProfiles from deviceManagement
+Windows auto pilot deployment profiles
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementWindowAutopilotDeploymentProfile -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Get windowsAutopilotDeploymentProfiles from deviceManagement
+Windows auto pilot deployment profiles
 
 ## EXAMPLES
 

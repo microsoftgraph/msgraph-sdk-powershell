@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty
 
 ## SYNOPSIS
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -34,7 +36,9 @@ Get-MgUserEventInstanceExceptionOccurrenceMultiValueExtendedProperty -InputObjec
 ```
 
 ## DESCRIPTION
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

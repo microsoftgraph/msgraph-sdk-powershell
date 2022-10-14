@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDepOnboardingSettingEnrollmentProfile
 
 ## SYNOPSIS
-Get enrollmentProfiles from deviceManagement
+The enrollment profiles.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDepOnboardingSettingEnrollmentProfile -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Get enrollmentProfiles from deviceManagement
+The enrollment profiles.
 
 ## EXAMPLES
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgUserContactExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the contact.
-Read-only.
-Nullable.
+Create new navigation property to extensions for users
 
 ## SYNTAX
 
@@ -39,9 +37,7 @@ New-MgUserContactExtension -InputObject <IPersonalContactsIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the contact.
-Read-only.
-Nullable.
+Create new navigation property to extensions for users
 
 ## EXAMPLES
 
@@ -93,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String

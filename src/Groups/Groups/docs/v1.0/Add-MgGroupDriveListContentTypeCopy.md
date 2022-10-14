@@ -8,7 +8,7 @@ schema: 2.0.0
 # Add-MgGroupDriveListContentTypeCopy
 
 ## SYNOPSIS
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Add-MgGroupDriveListContentTypeCopy -InputObject <IGroupsIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ## EXAMPLES
 

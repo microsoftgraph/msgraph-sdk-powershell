@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationTokenLifetimePolicyByRef
 
 ## SYNOPSIS
-Get ref of tokenLifetimePolicies from applications
+List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgApplicationTokenLifetimePolicyByRef -ApplicationId <String> [-Filter <Stri
 ```
 
 ## DESCRIPTION
-Get ref of tokenLifetimePolicies from applications
+List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 
 ## EXAMPLES
 

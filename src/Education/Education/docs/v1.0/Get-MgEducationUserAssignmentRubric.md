@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationUserAssignmentRubric
 
 ## SYNOPSIS
-Get rubric from education
+Get the educationRubric object attached to an educationAssignment, if one exists.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgEducationUserAssignmentRubric -InputObject <IEducationIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get rubric from education
+Get the educationRubric object attached to an educationAssignment, if one exists.
 
 ## EXAMPLES
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupOnenotePage
 
 ## SYNOPSIS
-Get pages from groups
+The pages in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgGroupOnenotePage -InputObject <INotesIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get pages from groups
+The pages in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

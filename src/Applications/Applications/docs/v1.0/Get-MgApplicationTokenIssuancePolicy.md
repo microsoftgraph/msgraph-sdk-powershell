@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationTokenIssuancePolicy
 
 ## SYNOPSIS
-Get tokenIssuancePolicies from applications
+List the tokenIssuancePolicy objects that are assigned to an application.
 
 ## SYNTAX
 
@@ -19,9 +19,18 @@ Get-MgApplicationTokenIssuancePolicy -ApplicationId <String> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get tokenIssuancePolicies from applications
+List the tokenIssuancePolicy objects that are assigned to an application.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgApplicationTokenIssuancePolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgApplicationTokenIssuancePolicy -ApplicationId $applicationId
+```
+
+This example shows how to use the Get-MgApplicationTokenIssuancePolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

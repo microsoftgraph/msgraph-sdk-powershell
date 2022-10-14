@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareRootContent
 
 ## SYNOPSIS
-Get content for the navigation property root from shares
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Get-MgShareRootContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThr
 ```
 
 ## DESCRIPTION
-Get content for the navigation property root from shares
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

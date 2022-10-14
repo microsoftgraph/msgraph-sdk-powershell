@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityUserFlowAttribute
 
 ## SYNOPSIS
-Create new navigation property to userFlowAttributes for identity
+Create a new identityUserFlowAttribute object.
 
 ## SYNTAX
 
@@ -26,9 +26,23 @@ New-MgIdentityUserFlowAttribute -BodyParameter <IMicrosoftGraphIdentityUserFlowA
 ```
 
 ## DESCRIPTION
-Create new navigation property to userFlowAttributes for identity
+Create a new identityUserFlowAttribute object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgIdentityUserFlowAttribute Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	DisplayName = "Hobby"
+	Description = "Your hobby"
+	DataType = "string"
+}
+New-MgIdentityUserFlowAttribute -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityUserFlowAttribute Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -109,7 +123,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -191,7 +206,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphIdentityUserFlowAttribute>: identityUserFlowAttribute
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DataType <String>]`: identityUserFlowAttributeDataType
   - `[Description <String>]`: The description of the user flow attribute that's shown to the user at the time of sign-up.
   - `[DisplayName <String>]`: The display name of the user flow attribute.

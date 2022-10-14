@@ -27,6 +27,16 @@ Invoke function getCloudPcLaunchInfo
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgUserCloudPcLaunchInfo Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Functions
+# A UPN can also be used as -UserId.
+Get-MgUserCloudPcLaunchInfo -UserId $userId -CloudPCId $cloudPCId
+```
+
+This example shows how to use the Get-MgUserCloudPcLaunchInfo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -CloudPcId
@@ -121,6 +131,7 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'

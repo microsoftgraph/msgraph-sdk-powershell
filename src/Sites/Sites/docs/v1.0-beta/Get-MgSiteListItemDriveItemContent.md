@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteListItemDriveItemContent
 
 ## SYNOPSIS
-Get content for the navigation property driveItem from sites
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSiteListItemDriveItemContent -InputObject <ISitesIdentity> -OutFile <Strin
 ```
 
 ## DESCRIPTION
-Get content for the navigation property driveItem from sites
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

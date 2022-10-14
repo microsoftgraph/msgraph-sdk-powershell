@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgDriveItemPermission
 
 ## SYNOPSIS
-Get permissions from drives
+The set of permissions for the item.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgDriveItemPermission -InputObject <IFilesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get permissions from drives
+The set of permissions for the item.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

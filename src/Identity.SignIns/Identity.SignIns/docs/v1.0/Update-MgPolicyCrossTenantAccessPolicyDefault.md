@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyCrossTenantAccessPolicyDefault
 
 ## SYNOPSIS
-Update the navigation property default in policies
+Update the default configuration of a cross-tenant access policy.
 
 ## SYNTAX
 
@@ -31,9 +31,40 @@ Update-MgPolicyCrossTenantAccessPolicyDefault
 ```
 
 ## DESCRIPTION
-Update the navigation property default in policies
+Update the default configuration of a cross-tenant access policy.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	B2bCollaborationOutbound = @{
+		UsersAndGroups = @{
+			AccessType = "blocked"
+			Targets = @(
+				@{
+					Target = "0be493dc-cb56-4a53-936f-9cf64410b8b0"
+					TargetType = "group"
+				}
+			)
+		}
+		Applications = @{
+			AccessType = "blocked"
+			Targets = @(
+				@{
+					Target = "AllApplications"
+					TargetType = "application"
+				}
+			)
+		}
+	}
+}
+Update-MgPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -133,7 +164,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -287,7 +319,7 @@ B2BDIRECTCONNECTOUTBOUND <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>: cro
 
 BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault>: crossTenantAccessPolicyConfigurationDefault
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration

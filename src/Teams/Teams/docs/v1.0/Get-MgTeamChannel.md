@@ -8,32 +8,20 @@ schema: 2.0.0
 # Get-MgTeamChannel
 
 ## SYNOPSIS
-Get allChannels from teams
+The collection of channels and messages associated with the team.
 
 ## SYNTAX
 
-### List2 (Default)
+### List3 (Default)
 ```
 Get-MgTeamChannel -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get2
-```
-Get-MgTeamChannel -ChannelId <String> -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
-```
-
 ### Get3
 ```
 Get-MgTeamChannel -ChannelId <String> -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
-```
-
-### GetViaIdentity2
-```
-Get-MgTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
@@ -43,17 +31,55 @@ Get-MgTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-P
  [<CommonParameters>]
 ```
 
-### List3
-```
-Get-MgTeamChannel -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Get allChannels from teams
+The collection of channels and messages associated with the team.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgTeamChannel Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannel -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the Get-MgTeamChannel Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgTeamChannel Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannel -TeamId $teamId
+```
+
+This example shows how to use the Get-MgTeamChannel Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgTeamChannel Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannel -TeamId $teamId -Filter "membershipType eq 'shared'" 
+```
+
+This example shows how to use the Get-MgTeamChannel Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgTeamChannel Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannel -TeamId $teamId
+```
+
+This example shows how to use the Get-MgTeamChannel Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Using the Get-MgTeamChannel Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamChannel -TeamId $teamId -Filter "membershipType eq 'private'" 
+```
+
+This example shows how to use the Get-MgTeamChannel Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -62,7 +88,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List2, List3
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -77,7 +103,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, Get3
+Parameter Sets: Get3
 Aliases:
 
 Required: True
@@ -93,7 +119,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List2, List3
+Parameter Sets: List3
 Aliases: CV
 
 Required: False
@@ -123,7 +149,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List2, List3
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -139,7 +165,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity3
+Parameter Sets: GetViaIdentity3
 Aliases:
 
 Required: True
@@ -154,7 +180,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List2, List3
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -184,7 +210,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List2, List3
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -199,7 +225,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List2, List3
+Parameter Sets: List3
 Aliases:
 
 Required: False
@@ -214,7 +240,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List2, List3
+Parameter Sets: List3
 Aliases: OrderBy
 
 Required: False
@@ -229,7 +255,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, Get3, List2, List3
+Parameter Sets: Get3, List3
 Aliases:
 
 Required: True
@@ -244,7 +270,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List2, List3
+Parameter Sets: List3
 Aliases: Limit
 
 Required: False

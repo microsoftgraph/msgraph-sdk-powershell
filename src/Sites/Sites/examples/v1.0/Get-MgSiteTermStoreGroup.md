@@ -1,18 +1,21 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Get-MgSiteTermStoreGroup Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteTermStoreGroup -SiteId $siteId -OutFile $outFileId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Get-MgSiteTermStoreGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Get-MgSiteTermStoreGroup Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteTermStoreGroup -SiteId $siteId -GroupId $groupId
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Get-MgSiteTermStoreGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Get-MgSiteTermStoreGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteTermStoreGroup -SiteId $siteId -GroupId $groupId -Property "*,parentSiteId" 
+```
+This example shows how to use the Get-MgSiteTermStoreGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

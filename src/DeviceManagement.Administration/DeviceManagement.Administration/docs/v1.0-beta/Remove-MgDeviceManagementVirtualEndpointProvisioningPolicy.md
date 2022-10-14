@@ -30,6 +30,15 @@ Delete navigation property provisioningPolicies for deviceManagement
 
 ## EXAMPLES
 
+### Example 1: Using the Remove-MgDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Remove-MgDeviceManagementVirtualEndpointProvisioningPolicy -CloudPcProvisioningPolicyId $cloudPcProvisioningPolicyId
+```
+
+This example shows how to use the Remove-MgDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -CloudPcProvisioningPolicyId
@@ -149,6 +158,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

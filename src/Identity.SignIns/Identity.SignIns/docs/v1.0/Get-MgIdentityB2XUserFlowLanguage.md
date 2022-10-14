@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgIdentityB2XUserFlowLanguage
 
 ## SYNOPSIS
-Get languages from identity
+The languages supported for customization within the user flow.
+Language customization is enabled by default in self-service sign-up user flow.
+You cannot create custom languages in self-service sign-up user flows.
 
 ## SYNTAX
 
@@ -19,22 +21,42 @@ Get-MgIdentityB2XUserFlowLanguage -B2XIdentityUserFlowId <String> [-ExpandProper
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgIdentityB2XUserFlowLanguage -B2XIdentityUserFlowId <String> -UserFlowLanguageConfigurationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgIdentityB2XUserFlowLanguage -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get languages from identity
+The languages supported for customization within the user flow.
+Language customization is enabled by default in self-service sign-up user flow.
+You cannot create custom languages in self-service sign-up user flows.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgIdentityB2XUserFlowLanguage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2XUserFlowLanguage -B2xIdentityUserFlowId $b2xIdentityUserFlowId
+```
+
+This example shows how to use the Get-MgIdentityB2XUserFlowLanguage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgIdentityB2XUserFlowLanguage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgIdentityB2XUserFlowLanguage -B2xIdentityUserFlowId $b2xIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
+```
+
+This example shows how to use the Get-MgIdentityB2XUserFlowLanguage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -58,7 +80,7 @@ key: id of b2xIdentityUserFlow
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -120,7 +142,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -225,7 +247,7 @@ key: id of userFlowLanguageConfiguration
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -258,10 +280,14 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -270,6 +296,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

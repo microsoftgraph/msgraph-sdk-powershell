@@ -8,26 +8,83 @@ schema: 2.0.0
 # Invoke-MgRecentUserActivity
 
 ## SYNOPSIS
-Invoke function recent
+Get recent activities for a given user.
+This OData function has some default behaviors included to make it operate like a 'most recently used' API.
+The service will query for the most recent historyItems, and then pull those related activities.
+Activities will be sorted according to the most recent **lastModified** on the **historyItem**.
+This means that activities without **historyItems** will not be included in the response.
+The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned.
+This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities.
+To get your application's activities, use the **nextLink** property to paginate.
 
 ## SYNTAX
 
 ### Recent1 (Default)
 ```
-Invoke-MgRecentUserActivity -UserId <String> [<CommonParameters>]
+Invoke-MgRecentUserActivity -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### RecentViaIdentity1
 ```
-Invoke-MgRecentUserActivity -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Invoke-MgRecentUserActivity -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function recent
+Get recent activities for a given user.
+This OData function has some default behaviors included to make it operate like a 'most recently used' API.
+The service will query for the most recent historyItems, and then pull those related activities.
+Activities will be sorted according to the most recent **lastModified** on the **historyItem**.
+This means that activities without **historyItems** will not be included in the response.
+The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned.
+This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities.
+To get your application's activities, use the **nextLink** property to paginate.
 
 ## EXAMPLES
 
+### Example 1: Using the Invoke-MgRecentUserActivity Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Functions
+# A UPN can also be used as -UserId.
+Invoke-MgRecentUserActivity -UserId $userId
+```
+
+This example shows how to use the Invoke-MgRecentUserActivity Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -42,6 +99,81 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Property
+Select properties to be returned
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sort
+Order items by property values
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -69,7 +201,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity
 
 ## NOTES
 
@@ -106,6 +238,7 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'

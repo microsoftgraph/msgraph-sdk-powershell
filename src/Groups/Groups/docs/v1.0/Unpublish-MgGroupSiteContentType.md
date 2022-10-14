@@ -8,7 +8,7 @@ schema: 2.0.0
 # Unpublish-MgGroupSiteContentType
 
 ## SYNOPSIS
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Unpublish-MgGroupSiteContentType -InputObject <IGroupsIdentity> [-PassThru] [-Co
 ```
 
 ## DESCRIPTION
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ## EXAMPLES
 

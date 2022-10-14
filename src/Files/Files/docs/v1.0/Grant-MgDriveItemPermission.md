@@ -8,7 +8,7 @@ schema: 2.0.0
 # Grant-MgDriveItemPermission
 
 ## SYNOPSIS
-Invoke action grant
+Grant users access to a link represented by a [permission][].
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Grant-MgDriveItemPermission -InputObject <IFilesIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Invoke action grant
+Grant users access to a link represented by a [permission][].
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportAuthenticationMethod
 
 ## SYNOPSIS
-Get authenticationMethods from reports
+Container for navigation properties for Azure AD authentication methods resources.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgReportAuthenticationMethod [-ExpandProperty <String[]>] [-Property <String
 ```
 
 ## DESCRIPTION
-Get authenticationMethods from reports
+Container for navigation properties for Azure AD authentication methods resources.
 
 ## EXAMPLES
 

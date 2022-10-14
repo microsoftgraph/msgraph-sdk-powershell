@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgApplicationFederatedIdentityCredential
 
 ## SYNOPSIS
-Get federatedIdentityCredentials from applications
+Federated identities for applications.
+Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
 
 ## SYNTAX
 
@@ -32,9 +33,28 @@ Get-MgApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity
 ```
 
 ## DESCRIPTION
-Get federatedIdentityCredentials from applications
+Federated identities for applications.
+Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgApplicationFederatedIdentityCredential Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId
+```
+
+This example shows how to use the Get-MgApplicationFederatedIdentityCredential Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgApplicationFederatedIdentityCredential Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId
+```
+
+This example shows how to use the Get-MgApplicationFederatedIdentityCredential Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

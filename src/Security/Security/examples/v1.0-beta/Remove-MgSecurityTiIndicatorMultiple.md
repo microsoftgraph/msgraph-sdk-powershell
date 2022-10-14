@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Remove-MgSecurityTiIndicatorMultiple Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Security
+$params = @{
+	Value = @(
+		"id-value1"
+		"id-value2"
+	)
+}
+Remove-MgSecurityTiIndicatorMultiple -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Remove-MgSecurityTiIndicatorMultiple Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

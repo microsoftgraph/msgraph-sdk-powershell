@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDirectoryFeatureRolloutPolicyApplyTo
 
 ## SYNOPSIS
-Get appliesTo from directory
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgDirectoryFeatureRolloutPolicyApplyTo -FeatureRolloutPolicyId <String> [-Ex
 ```
 
 ## DESCRIPTION
-Get appliesTo from directory
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ## EXAMPLES
 

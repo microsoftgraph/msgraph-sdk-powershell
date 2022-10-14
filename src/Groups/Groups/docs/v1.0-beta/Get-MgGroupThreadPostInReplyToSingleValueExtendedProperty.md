@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupThreadPostInReplyToSingleValueExtendedProperty
 
 ## SYNOPSIS
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -34,7 +36,9 @@ Get-MgGroupThreadPostInReplyToSingleValueExtendedProperty -InputObject <IGroupsI
 ```
 
 ## DESCRIPTION
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

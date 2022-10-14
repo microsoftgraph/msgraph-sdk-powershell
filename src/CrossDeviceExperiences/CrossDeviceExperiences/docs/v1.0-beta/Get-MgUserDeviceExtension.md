@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserDeviceExtension
 
 ## SYNOPSIS
-Get extensions from users
+The collection of open extensions defined for the device.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgUserDeviceExtension -InputObject <ICrossDeviceExperiencesIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get extensions from users
+The collection of open extensions defined for the device.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

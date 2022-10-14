@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgOnPremisePublishingProfileConnector
 
 ## SYNOPSIS
-Get connectors from onPremisesPublishingProfiles
+List of existing connector objects for applications published through Application Proxy.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +34,29 @@ Get-MgOnPremisePublishingProfileConnector -InputObject <IApplicationsIdentity> [
 ```
 
 ## DESCRIPTION
-Get connectors from onPremisesPublishingProfiles
+List of existing connector objects for applications published through Application Proxy.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgOnPremisePublishingProfileConnector Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgOnPremisePublishingProfileConnector -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorId $connectorId
+```
+
+This example shows how to use the Get-MgOnPremisePublishingProfileConnector Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgOnPremisePublishingProfileConnector Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgOnPremisePublishingProfileConnector -OnPremisesPublishingProfileId $onPremisesPublishingProfileId
+```
+
+This example shows how to use the Get-MgOnPremisePublishingProfileConnector Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

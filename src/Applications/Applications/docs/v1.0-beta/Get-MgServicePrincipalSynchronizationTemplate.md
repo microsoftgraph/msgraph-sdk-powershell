@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalSynchronizationTemplate
 
 ## SYNOPSIS
-Get templates from servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentit
 ```
 
 ## DESCRIPTION
-Get templates from servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgServicePrincipalSynchronizationTemplate Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId $servicePrincipalId
+```
+
+This example shows how to use the Get-MgServicePrincipalSynchronizationTemplate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

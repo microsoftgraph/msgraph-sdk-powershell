@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamOperation
 
 ## SYNOPSIS
-Get operations from groups
+The async operations that ran or are running on this team.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupTeamOperation -InputObject <ITeamsIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get operations from groups
+The async operations that ran or are running on this team.
 
 ## EXAMPLES
 

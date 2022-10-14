@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListContentTypeColumnLink
 
 ## SYNOPSIS
-Get columnLinks from groups
+The collection of columns that are required by this content type.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupDriveListContentTypeColumnLink -InputObject <IFilesIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get columnLinks from groups
+The collection of columns that are required by this content type.
 
 ## EXAMPLES
 

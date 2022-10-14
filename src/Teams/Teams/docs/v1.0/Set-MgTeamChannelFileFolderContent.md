@@ -8,24 +8,24 @@ schema: 2.0.0
 # Set-MgTeamChannelFileFolderContent
 
 ## SYNOPSIS
-Update content for the navigation property filesFolder in teams
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
-### Set1 (Default)
+### Set (Default)
 ```
 Set-MgTeamChannelFileFolderContent -ChannelId <String> -TeamId <String> -InFile <String>
  [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity1
+### SetViaIdentity
 ```
 Set-MgTeamChannelFileFolderContent -InputObject <ITeamsIdentity> -InFile <String> [-BodyParameter <Stream>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update content for the navigation property filesFolder in teams
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 
@@ -51,7 +51,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: SetViaIdentity1
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -114,7 +114,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
+Parameter Sets: Set
 Aliases:
 
 Required: True

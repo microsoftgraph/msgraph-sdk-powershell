@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgInviteGroupDriveItem
 
 ## SYNOPSIS
-Invoke action invite
+Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
 
 ## SYNTAX
 
@@ -23,14 +23,14 @@ Invoke-MgInviteGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <
 ### Invite1
 ```
 Invoke-MgInviteGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String>
- -BodyParameter <IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema>
+ -BodyParameter <IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InviteViaIdentity1
 ```
 Invoke-MgInviteGroupDriveItem -InputObject <IGroupsIdentity>
- -BodyParameter <IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema>
+ -BodyParameter <IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,7 +43,7 @@ Invoke-MgInviteGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Invoke action invite
+Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
 
 ## EXAMPLES
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.PowerShell.Models.IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Invite1, InviteViaIdentity1
 Aliases:
 
@@ -300,7 +300,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1
 
 ## OUTPUTS
 
@@ -315,7 +315,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPathsLx1Fn7GroupsGroupIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ExpirationDateTime <String>]`: 
   - `[Message <String>]`: 

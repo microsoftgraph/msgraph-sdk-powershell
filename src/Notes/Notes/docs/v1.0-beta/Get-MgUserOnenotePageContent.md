@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserOnenotePageContent
 
 ## SYNOPSIS
-Get content for the navigation property pages from users
+The page's HTML content.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgUserOnenotePageContent -InputObject <INotesIdentity> -OutFile <String> [-P
 ```
 
 ## DESCRIPTION
-Get content for the navigation property pages from users
+The page's HTML content.
 
 ## EXAMPLES
 

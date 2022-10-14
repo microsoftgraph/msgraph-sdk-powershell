@@ -29,6 +29,15 @@ Delete navigation property userSettings for deviceManagement
 
 ## EXAMPLES
 
+### Example 1: Using the Remove-MgDeviceManagementVirtualEndpointUserSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Remove-MgDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId $cloudPcUserSettingId
+```
+
+This example shows how to use the Remove-MgDeviceManagementVirtualEndpointUserSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -CloudPcUserSettingId
@@ -148,6 +157,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

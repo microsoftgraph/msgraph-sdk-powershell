@@ -17,6 +17,7 @@ paths:
           in: path
           description: 'key: id of androidDeviceOwnerEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
@@ -52,6 +53,7 @@ paths:
           in: path
           description: 'key: id of androidDeviceOwnerEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
@@ -72,6 +74,7 @@ paths:
           in: path
           description: 'key: id of androidForWorkEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidForWorkEnrollmentProfile
@@ -107,6 +110,7 @@ paths:
           in: path
           description: 'key: id of androidForWorkEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: androidForWorkEnrollmentProfile
@@ -260,6 +264,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createGooglePlayWebToken
+      description: Generates a web token that is used in an embeddable component.
       operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_createGooglePlayWebToken
       requestBody:
         description: Action parameters
@@ -330,6 +335,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setAndroidDeviceOwnerFullyManagedEnrollmentState
+      description: Sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
       operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_setAndroidDeviceOwnerFullyManagedEnrollmentState
       requestBody:
         description: Action parameters
@@ -379,6 +385,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action generateApplePushNotificationCertificateSigningRequest
+      description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_generateApplePushNotificationCertificateSigningRequest
       responses:
         '200':
@@ -407,6 +414,7 @@ paths:
           in: path
           description: 'key: id of appleUserInitiatedEnrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
@@ -495,6 +503,7 @@ paths:
           in: path
           description: 'key: id of certificateConnectorDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: certificateConnectorDetails
@@ -519,7 +528,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of certificateConnectorDetails
                 type: object
                 properties:
                   value:
@@ -531,6 +539,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/certificateConnectorDetails/{certificateConnectorDetails-id}/microsoft.graph.getHealthMetricTimeSeries':
     post:
       tags:
@@ -542,6 +553,7 @@ paths:
           in: path
           description: 'key: id of certificateConnectorDetails'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: certificateConnectorDetails
@@ -563,7 +575,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of certificateConnectorDetails
                 type: object
                 properties:
                   value:
@@ -575,6 +586,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/chromeOSOnboardingSettings/microsoft.graph.connect:
     post:
       tags:
@@ -634,6 +648,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -641,6 +656,7 @@ paths:
           in: path
           description: 'key: id of deviceLogCollectionResponse'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceLogCollectionResponse
@@ -665,12 +681,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
       operationId: deviceManagement.comanagedDevices_activateDeviceEsim
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -698,12 +716,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.comanagedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -718,12 +738,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.comanagedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -757,6 +779,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -782,17 +805,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.createRemoteHelpSession':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createRemoteHelpSession
+      description: Remote help - Create session with a specific device
+      operationId: deviceManagement.comanagedDevices_createRemoteHelpSession
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.createRemoteHelpSessionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.comanagedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -826,6 +890,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -858,6 +923,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -872,12 +938,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.comanagedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -892,12 +960,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.comanagedDevices_enableLostMode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -926,17 +996,41 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.enrollNowAction':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action enrollNowAction
+      description: Trigger comanagement enrollment action on ConfigurationManager client
+      operationId: deviceManagement.comanagedDevices_enrollNowAction
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.locateDevice':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.comanagedDevices_locateDevice
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -951,12 +1045,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.comanagedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -977,6 +1073,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1006,12 +1103,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Play lost mode sound
       operationId: deviceManagement.comanagedDevices_playLostModeSound
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1039,12 +1138,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.comanagedDevices_rebootNow
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1059,12 +1160,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.comanagedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1085,6 +1188,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1099,12 +1203,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.comanagedDevices_remoteLock
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1119,12 +1225,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+      description: Remove device from Device Firmware Configuration Interface management
       operationId: deviceManagement.comanagedDevices_removeDeviceFirmwareConfigurationInterfaceManagement
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1139,12 +1247,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovisionCloudPc
+      description: Reprovision a Cloud PC with an Intune managed device ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1159,12 +1272,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.comanagedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1174,17 +1289,61 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.requestRemoteHelpSessionAccess':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action requestRemoteHelpSessionAccess
+      description: Remote help - Request Remote help session access permission for an existing session
+      operationId: deviceManagement.comanagedDevices_requestRemoteHelpSessionAccess
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionKey:
+                  type: string
+                  nullable: true
+                pubSubConnectionId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.requestRemoteHelpSessionAccessResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.resetPasscode':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.comanagedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1199,12 +1358,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resizeCloudPc
+      description: Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_resizeCloudPc
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1232,12 +1396,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action restoreCloudPc
+      description: Restore a Cloud PC device to a previous state with an Intune managed device ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_restoreCloudPc
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1265,12 +1434,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.comanagedDevices_retire
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1285,12 +1456,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.comanagedDevices_revokeAppleVppLicenses
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1305,12 +1478,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.comanagedDevices_rotateBitLockerKeys
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1331,6 +1506,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1351,6 +1527,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1379,12 +1556,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setCloudPcReviewStatus
+      description: 'Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1411,12 +1593,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.comanagedDevices_setDeviceName
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1444,12 +1628,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.comanagedDevices_shutDown
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1470,6 +1656,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1484,12 +1671,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.comanagedDevices_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1522,6 +1711,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1554,6 +1744,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1587,6 +1778,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1601,12 +1793,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.comanagedDevices_wipe
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -1650,6 +1844,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkReprovisionCloudPc
+      description: Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
@@ -1681,6 +1879,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkRestoreCloudPc
+      description: Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
@@ -1719,6 +1921,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkSetCloudPcReviewStatus
+      description: Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
@@ -1887,6 +2093,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementCompliancePolicy
@@ -1910,7 +2117,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementCompliancePolicy
+                title: Collection of deviceManagementConfigurationPolicyAssignment
                 type: object
                 properties:
                   value:
@@ -1922,6 +2129,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy-id}/microsoft.graph.setScheduledActions':
     post:
       tags:
@@ -1933,6 +2143,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementCompliancePolicy
@@ -1956,7 +2167,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementCompliancePolicy
+                title: Collection of deviceManagementComplianceScheduledActionForRule
                 type: object
                 properties:
                   value:
@@ -1968,6 +2179,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.assign':
     post:
       tags:
@@ -1979,6 +2193,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementConfigurationPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementConfigurationPolicy
@@ -2002,7 +2217,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementConfigurationPolicy
+                title: Collection of deviceManagementConfigurationPolicyAssignment
                 type: object
                 properties:
                   value:
@@ -2014,6 +2229,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.createCopy':
     post:
       tags:
@@ -2025,6 +2243,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementConfigurationPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementConfigurationPolicy
@@ -2065,6 +2284,7 @@ paths:
           in: path
           description: 'key: id of dataSharingConsent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: dataSharingConsent
@@ -2089,6 +2309,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2096,6 +2317,7 @@ paths:
           in: path
           description: 'key: id of enrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentProfile
@@ -2116,6 +2338,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2123,6 +2346,7 @@ paths:
           in: path
           description: 'key: id of enrollmentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: enrollmentProfile
@@ -2158,6 +2382,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2184,7 +2409,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of importedAppleDeviceIdentity
+                title: Collection of importedAppleDeviceIdentityResult
                 type: object
                 properties:
                   value:
@@ -2196,17 +2421,22 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.generateEncryptionPublicKey':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action generateEncryptionPublicKey
+      description: Generate a public key to use to encrypt the Apple device enrollment program token
       operationId: deviceManagement.depOnboardingSettings_generateEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2237,6 +2467,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2251,12 +2482,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncWithAppleDeviceEnrollmentProgram
+      description: Synchronizes between Apple Device Enrollment Program and Intune
       operationId: deviceManagement.depOnboardingSettings_syncGraphWPreAppleDeviceEnrollmentProgram
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2277,6 +2510,7 @@ paths:
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2291,12 +2525,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action uploadDepToken
+      description: Uploads a new Device Enrollment Program token
       operationId: deviceManagement.depOnboardingSettings_uploadDepToken
       parameters:
         - name: depOnboardingSetting-id
           in: path
           description: 'key: id of depOnboardingSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
@@ -2333,6 +2569,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2356,7 +2593,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceCompliancePolicy
+                title: Collection of deviceCompliancePolicyAssignment
                 type: object
                 properties:
                   value:
@@ -2368,6 +2605,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.scheduleActionsForRules':
     post:
       tags:
@@ -2379,6 +2619,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -2399,6 +2640,78 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/deviceCompliancePolicies/microsoft.graph.getNoncompliantDevicesToRetire:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getNoncompliantDevicesToRetire
+      operationId: deviceManagement.deviceCompliancePolicies_getNoncompliantDevicesToRetire
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -2429,7 +2742,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceCompliancePolicy
                 type: object
                 properties:
                   value:
@@ -2441,6 +2753,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/deviceCompliancePolicies/microsoft.graph.refreshDeviceComplianceReportSummarization:
     post:
       tags:
@@ -2521,6 +2836,7 @@ paths:
           in: path
           description: 'key: id of deviceComplianceScript'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScript
@@ -2555,6 +2871,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -2582,7 +2899,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceConfiguration
+                title: Collection of deviceConfigurationAssignment
                 type: object
                 properties:
                   value:
@@ -2594,6 +2911,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.assignedAccessMultiModeProfiles':
     post:
       tags:
@@ -2605,6 +2925,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -2639,6 +2960,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -2689,7 +3011,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceConfiguration
                 type: object
                 properties:
                   value:
@@ -2701,6 +3022,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/deviceConfigurations/microsoft.graph.hasPayloadLinks:
     post:
       tags:
@@ -2728,7 +3052,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceConfiguration
                 type: object
                 properties:
                   value:
@@ -2740,6 +3063,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/microsoft.graph.assign':
     post:
       tags:
@@ -2751,6 +3077,7 @@ paths:
           in: path
           description: 'key: id of deviceCustomAttributeShellScript'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCustomAttributeShellScript
@@ -2789,6 +3116,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -2823,6 +3151,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -2900,7 +3229,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceEnrollmentConfiguration
                 type: object
                 properties:
                   value:
@@ -2912,6 +3240,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/microsoft.graph.assign':
     post:
       tags:
@@ -2923,6 +3254,7 @@ paths:
           in: path
           description: 'key: id of deviceHealthScript'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceHealthScript
@@ -2951,12 +3283,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getGlobalScriptHighestAvailableVersion
+      description: Update the Proprietary Device Health Script
       operationId: deviceManagement.deviceHealthScripts_getGlobalScriptHighestAvailableVersion
       parameters:
         - name: deviceHealthScript-id
           in: path
           description: 'key: id of deviceHealthScript'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceHealthScript
@@ -2981,12 +3315,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateGlobalScript
+      description: Update the Proprietary Device Health Script
       operationId: deviceManagement.deviceHealthScripts_updateGlobalScript
       parameters:
         - name: deviceHealthScript-id
           in: path
           description: 'key: id of deviceHealthScript'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceHealthScript
@@ -3042,6 +3378,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementScript'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementScript
@@ -3096,7 +3433,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementScript
                 type: object
                 properties:
                   value:
@@ -3108,6 +3444,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/microsoft.graph.assign':
     post:
       tags:
@@ -3119,6 +3458,7 @@ paths:
           in: path
           description: 'key: id of deviceShellScript'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceShellScript
@@ -3157,6 +3497,7 @@ paths:
           in: path
           description: 'key: id of embeddedSIMActivationCodePool'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: embeddedSIMActivationCodePool
@@ -3180,7 +3521,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of embeddedSIMActivationCodePool
+                title: Collection of embeddedSIMActivationCodePoolAssignment
                 type: object
                 properties:
                   value:
@@ -3192,6 +3533,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector-id}/microsoft.graph.sync':
     post:
       tags:
@@ -3203,6 +3547,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeConnector
@@ -3235,6 +3580,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyConfiguration
@@ -3258,7 +3604,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of groupPolicyConfiguration
+                title: Collection of groupPolicyConfigurationAssignment
                 type: object
                 properties:
                   value:
@@ -3270,6 +3616,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/microsoft.graph.updateDefinitionValues':
     post:
       tags:
@@ -3281,6 +3630,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyConfiguration
@@ -3358,6 +3708,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -3392,6 +3743,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -3412,6 +3764,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -3446,6 +3799,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -3480,6 +3834,7 @@ paths:
           in: path
           description: 'key: id of groupPolicyUploadedDefinitionFile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyUploadedDefinitionFile
@@ -3535,7 +3890,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of importedDeviceIdentity
+                title: Collection of importedDeviceIdentityResult
                 type: object
                 properties:
                   value:
@@ -3547,6 +3902,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/importedDeviceIdentities/microsoft.graph.searchExistingIdentities:
     post:
       tags:
@@ -3585,6 +3943,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/importedWindowsAutopilotDeviceIdentities/microsoft.graph.import:
     post:
       tags:
@@ -3623,6 +3984,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/intents/{deviceManagementIntent-id}/microsoft.graph.assign':
     post:
       tags:
@@ -3634,6 +3998,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementIntent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementIntent
@@ -3668,6 +4033,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementIntent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementIntent
@@ -3708,6 +4074,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementIntent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementIntent
@@ -3744,6 +4111,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementIntent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementIntent
@@ -3778,6 +4146,7 @@ paths:
           in: path
           description: 'key: id of intuneBrandingProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: intuneBrandingProfile
@@ -3812,6 +4181,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -3819,6 +4189,7 @@ paths:
           in: path
           description: 'key: id of deviceLogCollectionResponse'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceLogCollectionResponse
@@ -3843,12 +4214,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
       operationId: deviceManagement.managedDevices_activateDeviceEsim
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -3876,12 +4249,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.managedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -3896,12 +4271,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.managedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -3935,6 +4312,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -3960,17 +4338,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.createRemoteHelpSession':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createRemoteHelpSession
+      description: Remote help - Create session with a specific device
+      operationId: deviceManagement.managedDevices_createRemoteHelpSession
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.createRemoteHelpSessionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4004,6 +4423,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4036,6 +4456,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4050,12 +4471,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.managedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4070,12 +4493,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.managedDevices_enableLostMode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4104,17 +4529,41 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.enrollNowAction':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action enrollNowAction
+      description: Trigger comanagement enrollment action on ConfigurationManager client
+      operationId: deviceManagement.managedDevices_enrollNowAction
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.managedDevices_locateDevice
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4129,12 +4578,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4155,6 +4606,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4184,12 +4636,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Play lost mode sound
       operationId: deviceManagement.managedDevices_playLostModeSound
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4217,12 +4671,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.managedDevices_rebootNow
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4237,12 +4693,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.managedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4263,6 +4721,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4277,12 +4736,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.managedDevices_remoteLock
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4297,12 +4758,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+      description: Remove device from Device Firmware Configuration Interface management
       operationId: deviceManagement.managedDevices_removeDeviceFirmwareConfigurationInterfaceManagement
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4317,12 +4780,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovisionCloudPc
+      description: Reprovision a Cloud PC with an Intune managed device ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4337,12 +4805,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.managedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4352,17 +4822,61 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteHelpSessionAccess':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action requestRemoteHelpSessionAccess
+      description: Remote help - Request Remote help session access permission for an existing session
+      operationId: deviceManagement.managedDevices_requestRemoteHelpSessionAccess
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionKey:
+                  type: string
+                  nullable: true
+                pubSubConnectionId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.requestRemoteHelpSessionAccessResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.resetPasscode':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.managedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4377,12 +4891,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resizeCloudPc
+      description: Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_resizeCloudPc
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4410,12 +4929,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action restoreCloudPc
+      description: Restore a Cloud PC device to a previous state with an Intune managed device ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_restoreCloudPc
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4443,12 +4967,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.managedDevices_retire
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4463,12 +4989,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.managedDevices_revokeAppleVppLicenses
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4483,12 +5011,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.managedDevices_rotateBitLockerKeys
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4509,6 +5039,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4529,6 +5060,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4557,12 +5089,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setCloudPcReviewStatus
+      description: 'Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4589,12 +5126,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.managedDevices_setDeviceName
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4622,12 +5161,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.managedDevices_shutDown
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4648,6 +5189,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4662,12 +5204,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.managedDevices_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4700,6 +5244,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4732,6 +5277,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4765,6 +5311,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4779,12 +5326,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.managedDevices_wipe
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -4828,6 +5377,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkReprovisionCloudPc
+      description: Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
@@ -4859,6 +5412,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkRestoreCloudPc
+      description: Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
@@ -4897,6 +5454,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkSetCloudPcReviewStatus
+      description: Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
@@ -5083,6 +5644,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableUnlicensedAdminstrators
+      description: 'Upon enabling, users assigned as administrators via Role Assignment Memberships will no longer require an assigned Intune license. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators will continue to function as-is in that transitive memberships apply and are not subject to the 350 member limit.'
       operationId: deviceManagement_enableUnlicensedAdminstrators
       responses:
         '204':
@@ -5177,6 +5739,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/microsoft.graph.postOrganizationalMessageTenantConsent:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action postOrganizationalMessageTenantConsent
+      operationId: deviceManagement_postOrganizationalMessageTenantConsent
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstPartyMessageAllowed:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.organizationalMessageTenantConsent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/microsoft.graph.sendCustomNotificationToCompanyPortal:
     post:
       tags:
@@ -5210,6 +5801,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/microsoft.graph.updateOrganizationalMessageTenantConsent:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action updateOrganizationalMessageTenantConsent
+      operationId: deviceManagement_updateOrganizationalMessageTenantConsent
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstPartyMessageAllowed:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.organizationalMessageTenantConsent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/microsoftTunnelServerLogCollectionResponses/{microsoftTunnelServerLogCollectionResponse-id}/microsoft.graph.createDownloadUrl':
     post:
       tags:
@@ -5221,6 +5841,38 @@ paths:
           in: path
           description: 'key: id of microsoftTunnelServerLogCollectionResponse'
           required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftTunnelServerLogCollectionResponse
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/microsoftTunnelServerLogCollectionResponses/{microsoftTunnelServerLogCollectionResponse-id}/microsoft.graph.generateDownloadUrl':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action generateDownloadUrl
+      operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses_generateDownloadUrl
+      parameters:
+        - name: microsoftTunnelServerLogCollectionResponse-id
+          in: path
+          description: 'key: id of microsoftTunnelServerLogCollectionResponse'
+          required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: microsoftTunnelServerLogCollectionResponse
@@ -5251,6 +5903,7 @@ paths:
           in: path
           description: 'key: id of microsoftTunnelSite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: microsoftTunnelSite
@@ -5271,6 +5924,7 @@ paths:
           in: path
           description: 'key: id of microsoftTunnelSite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: microsoftTunnelSite
@@ -5278,6 +5932,58 @@ paths:
           in: path
           description: 'key: id of microsoftTunnelServer'
           required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftTunnelServer
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                startDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                endDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.microsoftTunnelServerLogCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite-id}/microsoftTunnelServers/{microsoftTunnelServer-id}/microsoft.graph.generateServerLogCollectionRequest':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action generateServerLogCollectionRequest
+      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_generateServerLogCollectionRequest
+      parameters:
+        - name: microsoftTunnelSite-id
+          in: path
+          description: 'key: id of microsoftTunnelSite'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftTunnelSite
+        - name: microsoftTunnelServer-id
+          in: path
+          description: 'key: id of microsoftTunnelServer'
+          required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: microsoftTunnelServer
@@ -5320,6 +6026,7 @@ paths:
           in: path
           description: 'key: id of microsoftTunnelSite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: microsoftTunnelSite
@@ -5327,6 +6034,7 @@ paths:
           in: path
           description: 'key: id of microsoftTunnelServer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: microsoftTunnelServer
@@ -5351,7 +6059,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of microsoftTunnelServer
                 type: object
                 properties:
                   value:
@@ -5363,6 +6070,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite-id}/microsoftTunnelServers/{microsoftTunnelServer-id}/microsoft.graph.getHealthMetricTimeSeries':
     post:
       tags:
@@ -5374,6 +6084,7 @@ paths:
           in: path
           description: 'key: id of microsoftTunnelSite'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: microsoftTunnelSite
@@ -5381,6 +6092,7 @@ paths:
           in: path
           description: 'key: id of microsoftTunnelServer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: microsoftTunnelServer
@@ -5411,7 +6123,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of microsoftTunnelServer
                 type: object
                 properties:
                   value:
@@ -5423,6 +6134,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}/microsoft.graph.createDownloadUrl':
     post:
       tags:
@@ -5434,6 +6148,7 @@ paths:
           in: path
           description: 'key: id of mobileAppTroubleshootingEvent'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileAppTroubleshootingEvent
@@ -5441,6 +6156,7 @@ paths:
           in: path
           description: 'key: id of appLogCollectionRequest'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: appLogCollectionRequest
@@ -5454,17 +6170,40 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/monitoring/alertRecords/{alertRecord-id}/microsoft.graph.deviceManagement.setPortalNotificationAsSent':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action setPortalNotificationAsSent
+      operationId: deviceManagement.monitoring.alertRecords_setPortalNotificationAsSent
+      parameters:
+        - name: alertRecord-id
+          in: path
+          description: 'key: id of alertRecord'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: alertRecord
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate-id}/microsoft.graph.sendTestMessage':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
+      description: Sends test message using the specified notificationMessageTemplate in the default locale
       operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
@@ -5485,6 +6224,7 @@ paths:
           in: path
           description: 'key: id of oemWarrantyInformationOnboarding'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: oemWarrantyInformationOnboarding
@@ -5505,6 +6245,7 @@ paths:
           in: path
           description: 'key: id of oemWarrantyInformationOnboarding'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: oemWarrantyInformationOnboarding
@@ -5519,12 +6260,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
+      description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
       operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
@@ -5539,12 +6282,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
+      description: A request to remove the active TeamViewer connector
       operationId: deviceManagement.remoteAssistancePartners_disconnect
       parameters:
         - name: remoteAssistancePartner-id
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
@@ -8206,6 +8951,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getMobileApplicationManagementAppRegistrationSummaryReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getMobileApplicationManagementAppRegistrationSummaryReport
+      operationId: deviceManagement.reports_getMobileApplicationManagementAppRegistrationSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getNoncompliantDevicesAndSettingsReport:
     post:
       tags:
@@ -9550,10 +10367,8 @@ paths:
                   type: integer
                   format: int32
                 sessionId:
-                  maximum: 2147483647
-                  minimum: -2147483648
-                  type: integer
-                  format: int32
+                  type: string
+                  nullable: true
                 filter:
                   type: string
                   nullable: true
@@ -9588,6 +10403,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementResourceAccessProfileBase'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementResourceAccessProfileBase
@@ -9611,7 +10427,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementResourceAccessProfileBase
+                title: Collection of deviceManagementResourceAccessProfileAssignment
                 type: object
                 properties:
                   value:
@@ -9623,6 +10439,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/resourceAccessProfiles/microsoft.graph.queryByPlatformType:
     post:
       tags:
@@ -9659,6 +10478,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/microsoft.graph.clone':
     post:
       tags:
@@ -9670,6 +10492,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementReusablePolicySetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementReusablePolicySetting
@@ -9694,6 +10517,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementReusablePolicySetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementReusablePolicySetting
@@ -9701,6 +10525,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementConfigurationPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementConfigurationPolicy
@@ -9724,7 +10549,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementConfigurationPolicy
+                title: Collection of deviceManagementConfigurationPolicyAssignment
                 type: object
                 properties:
                   value:
@@ -9736,6 +10561,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.createCopy':
     post:
       tags:
@@ -9747,6 +10575,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementReusablePolicySetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementReusablePolicySetting
@@ -9754,6 +10583,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementConfigurationPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementConfigurationPolicy
@@ -9794,6 +10624,7 @@ paths:
           in: path
           description: 'key: id of roleScopeTag'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleScopeTag
@@ -9817,7 +10648,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of roleScopeTag
+                title: Collection of roleScopeTagAutoAssignment
                 type: object
                 properties:
                   value:
@@ -9829,6 +10660,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/roleScopeTags/microsoft.graph.getRoleScopeTagsById:
     post:
       tags:
@@ -9868,6 +10702,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/templates/{deviceManagementTemplate-id}/microsoft.graph.createInstance':
     post:
       tags:
@@ -9879,6 +10716,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTemplate
@@ -9928,6 +10766,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTemplate
@@ -9935,6 +10774,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTemplate
@@ -9984,6 +10824,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementTemplate
@@ -9993,7 +10834,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementTemplate
+                title: Collection of deviceManagementIntent
                 type: object
                 properties:
                   value:
@@ -10005,6 +10846,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/templates/microsoft.graph.importOffice365DeviceConfigurationPolicies:
     post:
       tags:
@@ -10017,7 +10861,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceManagementTemplate
+                title: Collection of deviceManagementIntent
                 type: object
                 properties:
                   value:
@@ -10029,6 +10873,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/tenantAttachRBAC/microsoft.graph.enable:
     post:
       tags:
@@ -10095,6 +10942,7 @@ paths:
           in: path
           description: 'key: id of userExperienceAnalyticsDeviceScope'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: userExperienceAnalyticsDeviceScope
@@ -10127,12 +10975,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action changeUserAccountType
+      description: Change the account type of the user on a specific Cloud PC.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_changeUserAccountType
       parameters:
         - name: cloudPC-id
           in: path
           description: 'key: id of cloudPC'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
@@ -10159,12 +11012,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action endGracePeriod
+      description: End the grace period for a specific Cloud PC. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before de-provisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_endGracePeriod
       parameters:
         - name: cloudPC-id
           in: path
           description: 'key: id of cloudPC'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
@@ -10179,12 +11037,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reboot
+      description: Reboot a specific Cloud PC.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_reboot
       parameters:
         - name: cloudPC-id
           in: path
           description: 'key: id of cloudPC'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
@@ -10199,12 +11062,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rename
+      description: Rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_rename
       parameters:
         - name: cloudPC-id
           in: path
           description: 'key: id of cloudPC'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
@@ -10232,12 +11100,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovision
+      description: Reprovision a specific Cloud PC.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_reprovision
       parameters:
         - name: cloudPC-id
           in: path
           description: 'key: id of cloudPC'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
@@ -10261,17 +11134,60 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restore
+      description: Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_restore
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action troubleshoot
+      description: Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_troubleshoot
       parameters:
         - name: cloudPC-id
           in: path
           description: 'key: id of cloudPC'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
@@ -10286,12 +11202,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reupload
+      description: Reupload a cloudPcDeviceImage object that failed to upload.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.deviceImages_reupload
       parameters:
         - name: cloudPcDeviceImage-id
           in: path
           description: 'key: id of cloudPcDeviceImage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcDeviceImage
@@ -10306,12 +11227,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action runHealthChecks
+      description: Run health checks on the cloudPcOnPremisesConnection object. This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.onPremisesConnections_runHealthChecks
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
           description: 'key: id of cloudPcOnPremisesConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcOnPremisesConnection
@@ -10326,12 +11252,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateAdDomainPassword
+      description: Update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.onPremisesConnections_updateAdDomainPassword
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
           description: 'key: id of cloudPcOnPremisesConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcOnPremisesConnection
@@ -10359,12 +11290,17 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
+      description: Assign cloudPcProvisioningPolicy to user groups.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.provisioningPolicies_assign
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
           description: 'key: id of cloudPcProvisioningPolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicy
@@ -10388,17 +11324,220 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/virtualEndpoint/reports/microsoft.graph.getDailyAggregatedRemoteConnectionReports:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDailyAggregatedRemoteConnectionReports
+      operationId: deviceManagement.virtualEndpoint.reports_getDailyAggregatedRemoteConnectionReports
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/virtualEndpoint/reports/microsoft.graph.getRemoteConnectionHistoricalReports:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getRemoteConnectionHistoricalReports
+      operationId: deviceManagement.virtualEndpoint.reports_getRemoteConnectionHistoricalReports
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/virtualEndpoint/reports/microsoft.graph.getTotalAggregatedRemoteConnectionReports:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getTotalAggregatedRemoteConnectionReports
+      operationId: deviceManagement.virtualEndpoint.reports_getTotalAggregatedRemoteConnectionReports
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}/microsoft.graph.assign':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
+      description: Assign a cloudPcUserSetting to user groups.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.userSettings_assign
       parameters:
         - name: cloudPcUserSetting-id
           in: path
           description: 'key: id of cloudPcUserSetting'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: cloudPcUserSetting
@@ -10427,12 +11566,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
+      description: Assigns resource account to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -10440,6 +11581,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10473,12 +11615,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -10486,6 +11630,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10516,12 +11661,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
+      description: Unassigns the resource account from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -10529,6 +11676,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10543,12 +11691,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -10556,6 +11706,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10570,12 +11721,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -10583,6 +11736,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10634,6 +11788,7 @@ paths:
           in: path
           description: 'key: id of windowsAutopilotDeploymentProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeploymentProfile
@@ -10685,7 +11840,6 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of windowsAutopilotDeploymentProfile
                 type: object
                 properties:
                   value:
@@ -10697,17 +11851,22 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.assignResourceAccountToDevice':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
+      description: Assigns resource account to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10741,12 +11900,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10777,12 +11938,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
+      description: Unassigns the resource account from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10797,12 +11960,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10817,12 +11982,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -10868,6 +12035,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sync
+      description: 'Initiates a sync of all AutoPilot registered devices from Store for Business and other portals. If the sync successful, this action returns a 204 No Content response code. If a sync is already in progress, the action returns a 409 Conflict response code.  If this sync action is called within 10 minutes of the previous sync, the action returns a 429 Too Many Requests response code.'
       operationId: deviceManagement.windowsAutopilotSettings_sync
       responses:
         '204':
@@ -10886,6 +12054,7 @@ paths:
           in: path
           description: 'key: id of windowsDriverUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsDriverUpdateProfile
@@ -10920,6 +12089,7 @@ paths:
           in: path
           description: 'key: id of windowsDriverUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsDriverUpdateProfile
@@ -10960,12 +12130,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncInventory
+      description: Sync the driver inventory of a WindowsDriverUpdateProfile.
       operationId: deviceManagement.windowsDriverUpdateProfiles_syncInventory
       parameters:
         - name: windowsDriverUpdateProfile-id
           in: path
           description: 'key: id of windowsDriverUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsDriverUpdateProfile
@@ -10986,6 +12158,7 @@ paths:
           in: path
           description: 'key: id of windowsFeatureUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfile
@@ -11020,6 +12193,7 @@ paths:
           in: path
           description: 'key: id of windowsQualityUpdateProfile'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsQualityUpdateProfile
@@ -11142,6 +12316,7 @@ paths:
           in: path
           description: 'key: id of zebraFotaDeployment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: zebraFotaDeployment
@@ -11186,6 +12361,11 @@ components:
               type: string
               description: Last modified time of the Assignment Filter.
               format: date-time
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.payloadByFilter'
+              description: Associated assignments for a specific filter
             platform:
               $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
             roleScopeTags:
@@ -11360,6 +12540,16 @@ components:
           additionalProperties:
             type: object
           description: Windows Log Collection request entity.
+    microsoft.graph.createRemoteHelpSessionResponse:
+      title: createRemoteHelpSessionResponse
+      type: object
+      properties:
+        sessionKey:
+          type: string
+          description: The unique identifier for a session
+      additionalProperties:
+        type: object
+      description: Remote help - response we provide back to the helper after successfully creating an ACS session
     microsoft.graph.administratorConfiguredDeviceComplianceState:
       title: administratorConfiguredDeviceComplianceState
       enum:
@@ -11377,6 +12567,22 @@ components:
           - value: nonCompliant
             description: Set compliance to nonCompliant
             name: nonCompliant
+    microsoft.graph.requestRemoteHelpSessionAccessResponse:
+      title: requestRemoteHelpSessionAccessResponse
+      type: object
+      properties:
+        pubSubEncryption:
+          type: string
+          description: AES encryption Initialization Vector for encrypting client messages sent to PubSub
+        pubSubEncryptionKey:
+          type: string
+          description: The unique identifier for encrypting client messages sent to PubSub
+        sessionKey:
+          type: string
+          description: The unique identifier for a session
+      additionalProperties:
+        type: object
+      description: Remote help - response we provide back to the helper after getting response from pubSub
     microsoft.graph.cloudPcReviewStatus:
       title: cloudPcReviewStatus
       type: object
@@ -11388,6 +12594,10 @@ components:
         azureStorageAccountName:
           type: string
           description: The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
+          nullable: true
+        azureStorageContainerName:
+          type: string
+          description: The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.
           nullable: true
         inReview:
           type: boolean
@@ -11613,6 +12823,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -11638,6 +12849,7 @@ components:
             isAssigned:
               type: boolean
               description: Policy assignment status. This property is read-only.
+              readOnly: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -11649,6 +12861,8 @@ components:
               nullable: true
             platforms:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+            priorityMetaData:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementPriorityMetaData'
             roleScopeTagIds:
               type: array
               items:
@@ -11670,11 +12884,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
               description: Policy assignments
+              x-ms-navigationProperty: true
             settings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSetting'
               description: Policy settings
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Device Management Configuration Policy
@@ -11805,6 +13021,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -11845,10 +13062,10 @@ components:
         modelAsString: false
         values:
           - value: cancelRetire
-            description: Cancel retire.
+            description: CancelRetire
             name: cancelRetire
           - value: confirmRetire
-            description: Retire these devices.
+            description: ConfirmRetire
             name: confirmRetire
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
@@ -11937,6 +13154,7 @@ components:
               type: string
               description: The identifier of the source of the assignment. This property is read-only.
               nullable: true
+              readOnly: true
             target:
               $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
           additionalProperties:
@@ -12122,6 +13340,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
               description: The list of group assignments for the device configuration profile
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -12197,6 +13416,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentationValue'
               description: The associated group policy presentation values with the definition value.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The definition value entity stores the value for a single group policy definition.
@@ -12392,21 +13612,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentAssignment'
               description: Collection of assignments
+              x-ms-navigationProperty: true
             categories:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentSettingCategory'
               description: Collection of setting categories within the intent
+              x-ms-navigationProperty: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentDeviceSettingStateSummary'
               description: Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
+              x-ms-navigationProperty: true
             deviceStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentDeviceState'
               description: Collection of states of all devices that the intent is applied to
+              x-ms-navigationProperty: true
             deviceStateSummary:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentDeviceStateSummary'
             settings:
@@ -12414,11 +13638,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingInstance'
               description: Collection of all settings to be applied
+              x-ms-navigationProperty: true
             userStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentUserState'
               description: Collection of states of all users that the intent is applied to
+              x-ms-navigationProperty: true
             userStateSummary:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentUserStateSummary'
           additionalProperties:
@@ -12514,6 +13740,16 @@ components:
       additionalProperties:
         type: object
       description: Represent status details for device and payload and all associated applied filters.
+    microsoft.graph.organizationalMessageTenantConsent:
+      title: organizationalMessageTenantConsent
+      type: object
+      properties:
+        firstPartyMessageAllowed:
+          type: boolean
+          description: Indicates if first party message is allowed
+      additionalProperties:
+        type: object
+      description: This will allow the admin to see tenant consent info for specific tenant
     microsoft.graph.microsoftTunnelServerLogCollectionResponse:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12697,6 +13933,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementResourceAccessProfileAssignment'
               description: The list of assignments for the device configuration profile.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Base Profile Type for Resource Access
@@ -12711,6 +13948,7 @@ components:
               type: string
               description: reusable setting creation date and time. This property is read-only.
               format: date-time
+              readOnly: true
             description:
               type: string
               description: reusable setting description supplied by user.
@@ -12723,12 +13961,14 @@ components:
               type: string
               description: date and time when reusable setting was last modified. This property is read-only.
               format: date-time
+              readOnly: true
             referencingConfigurationPolicyCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
               description: count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
               format: int32
+              readOnly: true
             settingDefinitionId:
               type: string
               description: setting definition id associated with this reusable setting.
@@ -12741,11 +13981,13 @@ components:
               type: integer
               description: version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
               format: int32
+              readOnly: true
             referencingConfigurationPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
               description: configuration policies referencing the current reusable setting. This property is read-only.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Graph model for a reusable setting
@@ -12777,11 +14019,13 @@ components:
             isBuiltIn:
               type: boolean
               description: Description of the Role Scope Tag. This property is read-only.
+              readOnly: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
               description: The list of assignments for this Role Scope Tag.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Role Scope Tag
@@ -12933,8 +14177,28 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.payloadByFilter:
+      title: payloadByFilter
+      type: object
+      properties:
+        assignmentFilterType:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
+        groupId:
+          type: string
+          description: The Azure AD security group ID
+          nullable: true
+        payloadId:
+          type: string
+          description: The policy identifier
+          nullable: true
+        payloadType:
+          $ref: '#/components/schemas/microsoft.graph.associatedAssignmentPayloadType'
+      additionalProperties:
+        type: object
+      description: This entity represents a single payload with requested assignment filter Id
     microsoft.graph.devicePlatformType:
       title: devicePlatformType
       enum:
@@ -12997,6 +14261,11 @@ components:
           - value: predefined
             description: Predefined template for what will be collected
             name: predefined
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.cloudPcUserAccessLevel:
       title: cloudPcUserAccessLevel
       enum:
@@ -13149,6 +14418,11 @@ components:
           - value: unknownFutureValue
             description: Sentinel member for cases where the client cannot handle the new enum values.
             name: unknownFutureValue
+    microsoft.graph.deviceManagementPriorityMetaData:
+      title: deviceManagementPriorityMetaData
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.deviceManagementConfigurationTechnologies:
       title: deviceManagementConfigurationTechnologies
       enum:
@@ -13206,10 +14480,12 @@ components:
           type: string
           description: Template Display Name of the referenced template. This property is read-only.
           nullable: true
+          readOnly: true
         templateDisplayVersion:
           type: string
           description: Template Display Version of the referenced Template. This property is read-only.
           nullable: true
+          readOnly: true
         templateFamily:
           $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTemplateFamily'
         templateId:
@@ -13232,6 +14508,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
               description: List of related Setting Definitions. This property is read-only.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Setting instance within policy
@@ -13445,6 +14722,7 @@ components:
             supportsScopeTags:
               type: boolean
               description: Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
+              readOnly: true
             version:
               maximum: 2147483647
               minimum: -2147483648
@@ -13456,16 +14734,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
               description: The list of assignments for the device configuration profile.
+              x-ms-navigationProperty: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
               description: Device Configuration Setting State Device Summary
+              x-ms-navigationProperty: true
             deviceStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
               description: Device configuration installation status by device.
+              x-ms-navigationProperty: true
             deviceStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceOverview'
             groupAssignments:
@@ -13473,11 +14754,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationGroupAssignment'
               description: The list of group assignments for the device configuration profile.
+              x-ms-navigationProperty: true
             userStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
               description: Device configuration installation status by user.
+              x-ms-navigationProperty: true
             userStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserOverview'
           additionalProperties:
@@ -13750,6 +15033,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
               description: The group policy presentations associated with the definition.
+              x-ms-navigationProperty: true
             previousVersionDefinition:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
           additionalProperties:
@@ -13831,6 +15115,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingInstance'
               description: The settings this category contains
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Entity representing an intent setting category
@@ -14084,21 +15369,25 @@ components:
         - pending
         - completed
         - failed
+        - unknownFutureValue
       type: string
-      description: Enum type that represent the status of log collection.
+      description: Enum type that represent the status of log collection
       x-ms-enum:
         name: microsoftTunnelLogCollectionStatus
         modelAsString: false
         values:
           - value: pending
-            description: Log collection is in progress
+            description: Indicates that the log collection is in progress
             name: pending
           - value: completed
-            description: Log collection is completed
+            description: Indicates that the log collection is completed
             name: completed
           - value: failed
-            description: Log collection has failed
+            description: Indicates that the log collection has failed
             name: failed
+          - value: unknownFutureValue
+            description: Placeholder value for future expansion enums
+            name: unknownFutureValue
     microsoft.graph.appLogDecryptionAlgorithm:
       title: appLogDecryptionAlgorithm
       enum:
@@ -14189,6 +15478,63 @@ components:
           - value: exclude
             description: 'Indicates out-filter, rule matching will not offer the payload to devices.'
             name: exclude
+    microsoft.graph.associatedAssignmentPayloadType:
+      title: associatedAssignmentPayloadType
+      enum:
+        - unknown
+        - deviceConfigurationAndCompliance
+        - application
+        - androidEnterpriseApp
+        - enrollmentConfiguration
+        - groupPolicyConfiguration
+        - zeroTouchDeploymentDeviceConfigProfile
+        - androidEnterpriseConfiguration
+        - deviceFirmwareConfigurationInterfacePolicy
+        - resourceAccessPolicy
+        - win32app
+        - deviceManagmentConfigurationAndCompliancePolicy
+      type: string
+      description: This enum represents associated assignment payload type
+      x-ms-enum:
+        name: associatedAssignmentPayloadType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Invalid payload type
+            name: unknown
+          - value: deviceConfigurationAndCompliance
+            description: Indicates that this filter is associated with a configuration or compliance policy payload type
+            name: deviceConfigurationAndCompliance
+          - value: application
+            description: Indicates that this assignment filter is associated with an application payload type
+            name: application
+          - value: androidEnterpriseApp
+            description: Indicates that this filter is associated with a Android Enterprise application payload type
+            name: androidEnterpriseApp
+          - value: enrollmentConfiguration
+            description: Indicates that this filter is associated with an enrollment restriction or enrollment status page policy payload type
+            name: enrollmentConfiguration
+          - value: groupPolicyConfiguration
+            description: Indicates that this filter is associated with an Administrative Template policy payload type
+            name: groupPolicyConfiguration
+          - value: zeroTouchDeploymentDeviceConfigProfile
+            description: Indicates that this assignment filter is associated with Zero touch deployment Device Configuration Profile payload type
+            name: zeroTouchDeploymentDeviceConfigProfile
+          - value: androidEnterpriseConfiguration
+            description: Indicates that this filter is associated with an Android Enterprise Configuration policy payload type
+            name: androidEnterpriseConfiguration
+          - value: deviceFirmwareConfigurationInterfacePolicy
+            description: Indicates that this assignment filter is associated with Device Firmware Configuration Interface(DCFI) payload type
+            name: deviceFirmwareConfigurationInterfacePolicy
+          - value: resourceAccessPolicy
+            description: 'Indicates that this filter is associated with a resource access policy (Wifi, VPN, Certificate) payload type'
+            name: resourceAccessPolicy
+          - value: win32app
+            description: Indicates that this filter is associated with a Win32 app payload type
+            name: win32app
+          - value: deviceManagmentConfigurationAndCompliancePolicy
+            description: Indicates that this filter is associated with a configuration or compliance policy on Device Configuration v2 Infrastructure payload type
+            name: deviceManagmentConfigurationAndCompliancePolicy
     microsoft.graph.deviceManagementComplianceActionType:
       title: deviceManagementComplianceActionType
       enum:
@@ -14241,6 +15587,7 @@ components:
         - endpointSecurityAttackSurfaceReduction
         - endpointSecurityAccountProtection
         - endpointSecurityApplicationControl
+        - enrollmentConfiguration
         - baseline
       type: string
       description: Describes the TemplateFamily for the Template entity
@@ -14272,6 +15619,9 @@ components:
           - value: endpointSecurityApplicationControl
             description: Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
             name: endpointSecurityApplicationControl
+          - value: enrollmentConfiguration
+            description: Template Family for EnrollmentConfiguration
+            name: enrollmentConfiguration
           - value: baseline
             description: Template Family for Baseline
             name: baseline
@@ -15375,6 +16725,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
               description: The children categories
+              x-ms-navigationProperty: true
             definitionFile:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
             definitions:
@@ -15382,6 +16733,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The immediate GroupPolicyDefinition children of the category
+              x-ms-navigationProperty: true
             parent:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
           additionalProperties:
@@ -15435,6 +16787,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The group policy definitions associated with the file.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
@@ -15505,6 +16858,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingDefinition'
               description: The setting definitions this category contains
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Entity representing a setting category

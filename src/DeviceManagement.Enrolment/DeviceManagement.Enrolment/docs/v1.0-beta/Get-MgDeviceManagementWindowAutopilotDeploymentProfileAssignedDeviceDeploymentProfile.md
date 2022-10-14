@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceDeploymentProfile
 
 ## SYNOPSIS
-Get deploymentProfile from deviceManagement
+Deployment profile currently assigned to the Windows autopilot device.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceDeploymentPr
 ```
 
 ## DESCRIPTION
-Get deploymentProfile from deviceManagement
+Deployment profile currently assigned to the Windows autopilot device.
 
 ## EXAMPLES
 

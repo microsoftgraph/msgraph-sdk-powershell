@@ -107,7 +107,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -238,10 +239,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalActivity>: externalActivity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Type <String>]`: identityType
   - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
   - `[Type <String>]`: externalActivityType
@@ -259,7 +260,7 @@ INPUTOBJECT <ISearchIdentity>: Identity Parameter
 
 PERFORMEDBY <IMicrosoftGraphExternalConnectorsIdentity>: identity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Type <String>]`: identityType
 
 ## RELATED LINKS

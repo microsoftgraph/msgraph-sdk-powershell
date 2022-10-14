@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryTransitiveRoleAssignmentRoleDefinition
 
 ## SYNOPSIS
-Get roleDefinition from roleManagement
+The roleDefinition the assignment is for.
+Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
+roleDefinition.id will be auto expanded.
+Supports $expand.
 
 ## SYNTAX
 
@@ -26,7 +29,10 @@ Get-MgRoleManagementDirectoryTransitiveRoleAssignmentRoleDefinition
 ```
 
 ## DESCRIPTION
-Get roleDefinition from roleManagement
+The roleDefinition the assignment is for.
+Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
+roleDefinition.id will be auto expanded.
+Supports $expand.
 
 ## EXAMPLES
 

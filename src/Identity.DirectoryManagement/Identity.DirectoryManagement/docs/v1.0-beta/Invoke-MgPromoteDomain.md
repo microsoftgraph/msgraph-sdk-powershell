@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgPromoteDomain
 
 ## SYNOPSIS
-Invoke action promote
+Promote a verified subdomain to the root domain.
+A verified domain has its **isVerified** property set to `true`.
 
 ## SYNTAX
 
@@ -24,9 +25,19 @@ Invoke-MgPromoteDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Con
 ```
 
 ## DESCRIPTION
-Invoke action promote
+Promote a verified subdomain to the root domain.
+A verified domain has its **isVerified** property set to `true`.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgPromoteDomain Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Invoke-MgPromoteDomain -DomainId $domainId
+```
+
+This example shows how to use the Invoke-MgPromoteDomain Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

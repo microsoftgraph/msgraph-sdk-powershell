@@ -17,6 +17,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -40,7 +41,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceCompliancePolicy
+                title: Collection of deviceCompliancePolicyAssignment
                 type: object
                 properties:
                   value:
@@ -52,6 +53,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.scheduleActionsForRules':
     post:
       tags:
@@ -63,6 +67,7 @@ paths:
           in: path
           description: 'key: id of deviceCompliancePolicy'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceCompliancePolicy
@@ -97,6 +102,7 @@ paths:
           in: path
           description: 'key: id of deviceConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceConfiguration
@@ -120,7 +126,7 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of deviceConfiguration
+                title: Collection of deviceConfigurationAssignment
                 type: object
                 properties:
                   value:
@@ -132,6 +138,9 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.assign':
     post:
       tags:
@@ -143,6 +152,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -177,6 +187,7 @@ paths:
           in: path
           description: 'key: id of deviceEnrollmentConfiguration'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceEnrollmentConfiguration
@@ -212,6 +223,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeConnector
@@ -271,17 +283,22 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.managedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -296,12 +313,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.managedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -329,12 +348,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -362,12 +383,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.managedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -382,12 +405,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.managedDevices_locateDevice
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -402,12 +427,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -422,12 +449,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.managedDevices_rebootNow
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -442,12 +471,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.managedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -462,12 +493,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.managedDevices_remoteLock
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -482,12 +515,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.managedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -502,12 +537,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.managedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -522,12 +559,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.managedDevices_retire
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -542,12 +581,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.managedDevices_shutDown
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -568,6 +609,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -588,6 +630,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -620,6 +663,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -653,6 +697,7 @@ paths:
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -667,12 +712,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.managedDevices_wipe
       parameters:
         - name: managedDevice-id
           in: path
           description: 'key: id of managedDevice'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
@@ -712,12 +759,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
+      description: Sends test message using the specified notificationMessageTemplate in the default locale
       operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
           in: path
           description: 'key: id of notificationMessageTemplate'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
@@ -732,12 +781,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
+      description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
       operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
@@ -752,12 +803,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
+      description: A request to remove the active TeamViewer connector
       operationId: deviceManagement.remoteAssistancePartners_disconnect
       parameters:
         - name: remoteAssistancePartner-id
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
@@ -1987,12 +2040,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -2023,12 +2078,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -2043,12 +2100,14 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
           description: 'key: id of windowsAutopilotDeviceIdentity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
@@ -2108,6 +2167,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -2220,6 +2280,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentTarget:

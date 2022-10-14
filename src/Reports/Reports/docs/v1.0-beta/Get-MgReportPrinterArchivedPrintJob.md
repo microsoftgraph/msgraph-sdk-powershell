@@ -15,12 +15,13 @@ Invoke function getPrinterArchivedPrintJobs
 ### Get1 (Default)
 ```
 Get-MgReportPrinterArchivedPrintJob -EndDateTime <DateTime> -PrinterId <String> -StartDateTime <DateTime>
- [<CommonParameters>]
+ [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgReportPrinterArchivedPrintJob -InputObject <IReportsIdentity> [<CommonParameters>]
+Get-MgReportPrinterArchivedPrintJob -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+ [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,8 +31,23 @@ Invoke function getPrinterArchivedPrintJobs
 
 ## PARAMETERS
 
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -EndDateTime
-Usage: endDateTime='{endDateTime}'
+Usage: endDateTime={endDateTime}
 
 ```yaml
 Type: System.DateTime
@@ -39,6 +55,21 @@ Parameter Sets: Get1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -76,8 +107,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -StartDateTime
-Usage: startDateTime='{startDateTime}'
+Usage: startDateTime={startDateTime}
 
 ```yaml
 Type: System.DateTime
@@ -85,6 +146,21 @@ Parameter Sets: Get1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Limit
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -118,7 +194,7 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
   - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
   - `[DirectoryAuditId <String>]`: key: id of directoryAudit
-  - `[EndDateTime <DateTime?>]`: Usage: endDateTime='{endDateTime}'
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[Filter <String>]`: Usage: filter='{filter}'
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
@@ -128,11 +204,10 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
   - `[PrinterId <String>]`: Usage: printerId='{printerId}'
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
-  - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[SkipToken <String>]`: Usage: skipToken='{skipToken}'
-  - `[StartDateTime <DateTime?>]`: Usage: startDateTime='{startDateTime}'
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
   - `[Top <Int32?>]`: Usage: top={top}
   - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
   - `[UserId <String>]`: Usage: userId='{userId}'

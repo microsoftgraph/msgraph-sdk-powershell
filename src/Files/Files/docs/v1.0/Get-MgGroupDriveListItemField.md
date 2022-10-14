@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListItemField
 
 ## SYNOPSIS
-Get fields from groups
+The values of the columns set on this list item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupDriveListItemField -InputObject <IFilesIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get fields from groups
+The values of the columns set on this list item.
 
 ## EXAMPLES
 

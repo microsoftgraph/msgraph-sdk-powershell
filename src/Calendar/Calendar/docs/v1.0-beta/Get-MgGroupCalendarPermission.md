@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupCalendarPermission
 
 ## SYNOPSIS
-Get calendarPermissions from groups
+The permissions of the users with whom the calendar is shared.
 
 ## SYNTAX
 
@@ -18,19 +18,19 @@ Get-MgGroupCalendarPermission -GroupId <String> [-Filter <String>] [-Property <S
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String> [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgGroupCalendarPermission -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get calendarPermissions from groups
+The permissions of the users with whom the calendar is shared.
 
 ## EXAMPLES
 
@@ -56,7 +56,7 @@ key: id of calendarPermission
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -102,7 +102,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -118,7 +118,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True

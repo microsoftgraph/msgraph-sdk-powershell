@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListItemVersionField
 
 ## SYNOPSIS
-Get fields from groups
+A collection of the fields and values for this version of the list item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupDriveListItemVersionField -InputObject <IFilesIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get fields from groups
+A collection of the fields and values for this version of the list item.
 
 ## EXAMPLES
 

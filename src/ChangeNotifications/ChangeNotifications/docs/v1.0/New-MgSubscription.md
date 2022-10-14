@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-MgSubscription
 
 ## SYNOPSIS
-Add new entity to subscriptions
+Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph.
+See the table in the Permissions section for the list of resources that support subscribing to change notifications.
+Some resources support the option to include encrypted resource data in change notifications.
+These resources include chatMessage, contact, event, message, and presence.
+For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.
 
 ## SYNTAX
 
@@ -24,13 +28,34 @@ New-MgSubscription [-AdditionalProperties <Hashtable>] [-ApplicationId <String>]
 
 ### Create1
 ```
-New-MgSubscription -BodyParameter <IMicrosoftGraphSubscription1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSubscription -BodyParameter <IMicrosoftGraphSubscription> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Add new entity to subscriptions
+Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph.
+See the table in the Permissions section for the list of resources that support subscribing to change notifications.
+Some resources support the option to include encrypted resource data in change notifications.
+These resources include chatMessage, contact, event, message, and presence.
+For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgSubscription Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ChangeNotifications
+$params = @{
+	ChangeType = "created"
+	NotificationUrl = "https://webhook.azurewebsites.net/api/send/myNotifyClient"
+	Resource = "me/mailFolders('Inbox')/messages"
+	ExpirationDateTime = [System.DateTime]::Parse("2016-11-20T18:23:45.9356913Z")
+	ClientState = "secretClientValue"
+	LatestSupportedTlsVersion = "v1_2"
+}
+New-MgSubscription -BodyParameter $params
+```
+
+This example shows how to use the New-MgSubscription Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -71,7 +96,7 @@ subscription
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
 Parameter Sets: Create1
 Aliases:
 
@@ -191,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -366,11 +391,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
 
 ## NOTES
 
@@ -381,9 +406,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphSubscription1>: subscription
+BODYPARAMETER <IMicrosoftGraphSubscription>: subscription
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
   - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
   - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.

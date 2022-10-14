@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAutopilotEvent
 
 ## SYNOPSIS
-Get autopilotEvents from deviceManagement
+The list of autopilot events for the tenant.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementAutopilotEvent -InputObject <IDeviceManagementEnrolmentIde
 ```
 
 ## DESCRIPTION
-Get autopilotEvents from deviceManagement
+The list of autopilot events for the tenant.
 
 ## EXAMPLES
 

@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgUserDriveItemVersion
 
 ## SYNOPSIS
-Get versions from users
+The list of previous versions of the item.
+For more info, see [getting previous versions][].
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgUserDriveItemVersion -InputObject <IFilesIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get versions from users
+The list of previous versions of the item.
+For more info, see [getting previous versions][].
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

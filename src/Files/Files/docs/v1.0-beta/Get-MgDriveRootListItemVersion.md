@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveRootListItemVersion
 
 ## SYNOPSIS
-Get versions from drives
+The list of previous versions of the list item.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDriveRootListItemVersion -InputObject <IFilesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get versions from drives
+The list of previous versions of the list item.
 
 ## EXAMPLES
 

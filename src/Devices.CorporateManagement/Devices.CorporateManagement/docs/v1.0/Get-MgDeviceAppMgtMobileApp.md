@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtMobileApp
 
 ## SYNOPSIS
-Get mobileApps from deviceAppManagement
+The mobile apps.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity> [
 ```
 
 ## DESCRIPTION
-Get mobileApps from deviceAppManagement
+The mobile apps.
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
 
 ## NOTES
 

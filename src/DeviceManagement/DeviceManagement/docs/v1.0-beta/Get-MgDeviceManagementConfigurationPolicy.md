@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementConfigurationPolicy
 
 ## SYNOPSIS
-Get configurationPolicies from deviceManagement
+List of all Configuration policies
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementConfigurationPolicy -InputObject <IDeviceManagementIdentit
 ```
 
 ## DESCRIPTION
-Get configurationPolicies from deviceManagement
+List of all Configuration policies
 
 ## EXAMPLES
 
@@ -327,6 +327,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

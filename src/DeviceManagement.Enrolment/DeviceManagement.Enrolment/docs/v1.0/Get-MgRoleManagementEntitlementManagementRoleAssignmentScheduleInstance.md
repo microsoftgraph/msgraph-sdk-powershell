@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance
 
 ## SYNOPSIS
-Get roleAssignmentScheduleInstances from roleManagement
+Instances for active role assignments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance
 ```
 
 ## DESCRIPTION
-Get roleAssignmentScheduleInstances from roleManagement
+Instances for active role assignments.
 
 ## EXAMPLES
 

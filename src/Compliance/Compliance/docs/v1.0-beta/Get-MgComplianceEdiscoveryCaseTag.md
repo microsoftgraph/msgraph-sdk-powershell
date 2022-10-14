@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseTag
 
 ## SYNOPSIS
-Get tags from compliance
+Returns a list of tag objects associated to this case.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Get tags from compliance
+Returns a list of tag objects associated to this case.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgComplianceEdiscoveryCaseTag Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseTag -CaseId $caseId -TagId $tagId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseTag Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgComplianceEdiscoveryCaseTag Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseTag -CaseId $caseId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseTag Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

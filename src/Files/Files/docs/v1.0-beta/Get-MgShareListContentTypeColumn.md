@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListContentTypeColumn
 
 ## SYNOPSIS
-Get columns from shares
+The collection of column definitions for this contentType.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgShareListContentTypeColumn -InputObject <IFilesIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get columns from shares
+The collection of column definitions for this contentType.
 
 ## EXAMPLES
 

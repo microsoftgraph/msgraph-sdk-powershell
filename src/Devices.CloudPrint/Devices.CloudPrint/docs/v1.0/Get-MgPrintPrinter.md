@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintPrinter
 
 ## SYNOPSIS
-Get printers from print
+The list of printers registered in the tenant.
 
 ## SYNTAX
 
@@ -32,9 +32,36 @@ Get-MgPrintPrinter -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get printers from print
+The list of printers registered in the tenant.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPrintPrinter Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintPrinter -PrinterId $printerId -Property "id,displayName,capabilities" 
+```
+
+This example shows how to use the Get-MgPrintPrinter Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPrintPrinter Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintPrinter -PrinterId $printerId
+```
+
+This example shows how to use the Get-MgPrintPrinter Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgPrintPrinter Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintPrinter
+```
+
+This example shows how to use the Get-MgPrintPrinter Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

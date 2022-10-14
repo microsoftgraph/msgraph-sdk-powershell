@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveBundleContent
 
 ## SYNOPSIS
-Get content for the navigation property bundles from groups
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgGroupDriveBundleContent -InputObject <IFilesIdentity> -OutFile <String> [-
 ```
 
 ## DESCRIPTION
-Get content for the navigation property bundles from groups
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

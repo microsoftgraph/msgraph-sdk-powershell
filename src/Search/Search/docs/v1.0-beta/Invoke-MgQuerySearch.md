@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgQuerySearch
 
 ## SYNOPSIS
-Invoke action query
+Run a specified search query.
+Search results are provided in the response.
 
 ## SYNTAX
 
@@ -26,9 +27,40 @@ Invoke-MgQuerySearch
 ```
 
 ## DESCRIPTION
-Invoke action query
+Run a specified search query.
+Search results are provided in the response.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgQuerySearch Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Search
+$params = @{
+	Requests = @(
+		@{
+			EntityTypes = @(
+				"externalItem"
+			)
+			ContentSources = @(
+				"/external/connections/connectionfriendlyname"
+			)
+			Query = @{
+				QueryString = "contoso product"
+			}
+			From = 0
+			Size = 25
+			Fields = @(
+				"title"
+				"description"
+			)
+		}
+	)
+}
+Invoke-MgQuerySearch -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgQuerySearch Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -148,7 +180,7 @@ BODYPARAMETER <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentAppli
       - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
     - `[ContentSources <String[]>]`: Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
     - `[EnableTopResults <Boolean?>]`: This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
-    - `[EntityTypes <String[]>]`: One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+    - `[EntityTypes <String[]>]`: One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
     - `[Fields <String[]>]`: Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
     - `[From <Int32?>]`: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
     - `[Query <IMicrosoftGraphSearchQuery1>]`: searchQuery
@@ -160,12 +192,15 @@ BODYPARAMETER <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentAppli
       - `[QueryTemplate <String>]`: Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
     - `[QueryAlterationOptions <IMicrosoftGraphSearchAlterationOptions>]`: searchAlterationOptions
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[EnableModification <Boolean?>]`: Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.
+      - `[EnableModification <Boolean?>]`: Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.
       - `[EnableSuggestion <Boolean?>]`: Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
-    - `[Region <String>]`: 
+    - `[Region <String>]`: Required for searches that use application permissions. Represents the geographic location for the search. For details, see Get the region value.
     - `[ResultTemplateOptions <IMicrosoftGraphResultTemplateOption>]`: resultTemplateOption
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[EnableResultTemplate <Boolean?>]`: Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.
+      - `[EnableResultTemplate <Boolean?>]`: Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
+    - `[SharePointOneDriveOptions <IMicrosoftGraphSharePointOneDriveOptions>]`: sharePointOneDriveOptions
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IncludeContent <String>]`: searchContent
     - `[Size <Int32?>]`: The size of the page to be retrieved. Optional.
     - `[SortProperties <IMicrosoftGraphSortProperty[]>]`: Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
       - `[IsDescending <Boolean?>]`: True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
@@ -189,7 +224,7 @@ REQUESTS <IMicrosoftGraphSearchRequest[]>: .
     - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
   - `[ContentSources <String[]>]`: Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
   - `[EnableTopResults <Boolean?>]`: This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
-  - `[EntityTypes <String[]>]`: One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+  - `[EntityTypes <String[]>]`: One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
   - `[Fields <String[]>]`: Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
   - `[From <Int32?>]`: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
   - `[Query <IMicrosoftGraphSearchQuery1>]`: searchQuery
@@ -201,12 +236,15 @@ REQUESTS <IMicrosoftGraphSearchRequest[]>: .
     - `[QueryTemplate <String>]`: Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
   - `[QueryAlterationOptions <IMicrosoftGraphSearchAlterationOptions>]`: searchAlterationOptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[EnableModification <Boolean?>]`: Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.
+    - `[EnableModification <Boolean?>]`: Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.
     - `[EnableSuggestion <Boolean?>]`: Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
-  - `[Region <String>]`: 
+  - `[Region <String>]`: Required for searches that use application permissions. Represents the geographic location for the search. For details, see Get the region value.
   - `[ResultTemplateOptions <IMicrosoftGraphResultTemplateOption>]`: resultTemplateOption
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[EnableResultTemplate <Boolean?>]`: Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.
+    - `[EnableResultTemplate <Boolean?>]`: Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
+  - `[SharePointOneDriveOptions <IMicrosoftGraphSharePointOneDriveOptions>]`: sharePointOneDriveOptions
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IncludeContent <String>]`: searchContent
   - `[Size <Int32?>]`: The size of the page to be retrieved. Optional.
   - `[SortProperties <IMicrosoftGraphSortProperty[]>]`: Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
     - `[IsDescending <Boolean?>]`: True if the sort order is descending. Default is false, with the sort order as ascending. Optional.

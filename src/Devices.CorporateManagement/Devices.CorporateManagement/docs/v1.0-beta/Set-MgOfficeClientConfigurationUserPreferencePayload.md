@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgOfficeClientConfigurationUserPreferencePayload
 
 ## SYNOPSIS
-Update userPreferencePayload for the navigation property clientConfigurations in officeConfiguration
+Preference settings JSON string in binary format, these values can be overridden by the user.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgOfficeClientConfigurationUserPreferencePayload -InputObject <IDevicesCorpo
 ```
 
 ## DESCRIPTION
-Update userPreferencePayload for the navigation property clientConfigurations in officeConfiguration
+Preference settings JSON string in binary format, these values can be overridden by the user.
 
 ## EXAMPLES
 

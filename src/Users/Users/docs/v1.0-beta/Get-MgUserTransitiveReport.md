@@ -8,31 +8,33 @@ schema: 2.0.0
 # Get-MgUserTransitiveReport
 
 ## SYNOPSIS
-Get transitiveReports from users
+The transitive reports for a user.
+Read-only.
 
 ## SYNTAX
 
 ### List (Default)
 ```
 Get-MgUserTransitiveReport -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgUserTransitiveReport -DirectoryObjectId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgUserTransitiveReport -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+ [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get transitiveReports from users
+The transitive reports for a user.
+Read-only.
 
 ## EXAMPLES
 
@@ -44,6 +46,22 @@ List all pages.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False

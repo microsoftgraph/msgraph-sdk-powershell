@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteListContentTypeColumnLink
 
 ## SYNOPSIS
-Get columnLinks from sites
+The collection of columns that are required by this content type
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSiteListContentTypeColumnLink -InputObject <ISitesIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get columnLinks from sites
+The collection of columns that are required by this content type
 
 ## EXAMPLES
 

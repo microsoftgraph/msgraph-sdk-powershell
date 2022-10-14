@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgApplicationExtensionProperty
 
 ## SYNOPSIS
-Get extensionProperties from applications
+Read-only.
+Nullable.
+Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 
 ## SYNTAX
 
@@ -32,9 +34,29 @@ Get-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get extensionProperties from applications
+Read-only.
+Nullable.
+Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgApplicationExtensionProperty Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgApplicationExtensionProperty -ApplicationId $applicationId
+```
+
+This example shows how to use the Get-MgApplicationExtensionProperty Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgApplicationExtensionProperty Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
+```
+
+This example shows how to use the Get-MgApplicationExtensionProperty Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

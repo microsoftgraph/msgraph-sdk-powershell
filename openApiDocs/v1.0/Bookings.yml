@@ -115,6 +115,8 @@ paths:
                 - email desc
                 - isPublished
                 - isPublished desc
+                - languageTag
+                - languageTag desc
                 - phone
                 - phone desc
                 - publicUrl
@@ -142,6 +144,7 @@ paths:
                 - displayName
                 - email
                 - isPublished
+                - languageTag
                 - phone
                 - publicUrl
                 - schedulingPolicy
@@ -239,6 +242,7 @@ paths:
                 - displayName
                 - email
                 - isPublished
+                - languageTag
                 - phone
                 - publicUrl
                 - schedulingPolicy
@@ -400,6 +404,8 @@ paths:
                 - id desc
                 - additionalInformation
                 - additionalInformation desc
+                - anonymousJoinWebUrl
+                - anonymousJoinWebUrl desc
                 - customers
                 - customers desc
                 - customerTimeZone
@@ -457,6 +463,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customers
                 - customerTimeZone
                 - duration
@@ -572,6 +579,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customers
                 - customerTimeZone
                 - duration
@@ -773,6 +781,8 @@ paths:
                 - id desc
                 - additionalInformation
                 - additionalInformation desc
+                - anonymousJoinWebUrl
+                - anonymousJoinWebUrl desc
                 - customers
                 - customers desc
                 - customerTimeZone
@@ -830,6 +840,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customers
                 - customerTimeZone
                 - duration
@@ -941,6 +952,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customers
                 - customerTimeZone
                 - duration
@@ -1741,10 +1753,14 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - isAnonymousJoinEnabled
+                - isAnonymousJoinEnabled desc
                 - isHiddenFromCustomers
                 - isHiddenFromCustomers desc
                 - isLocationOnline
                 - isLocationOnline desc
+                - languageTag
+                - languageTag desc
                 - maximumAttendeesCount
                 - maximumAttendeesCount desc
                 - notes
@@ -1782,8 +1798,10 @@ paths:
                 - defaultReminders
                 - description
                 - displayName
+                - isAnonymousJoinEnabled
                 - isHiddenFromCustomers
                 - isLocationOnline
+                - languageTag
                 - maximumAttendeesCount
                 - notes
                 - postBuffer
@@ -1893,8 +1911,10 @@ paths:
                 - defaultReminders
                 - description
                 - displayName
+                - isAnonymousJoinEnabled
                 - isHiddenFromCustomers
                 - isLocationOnline
+                - languageTag
                 - maximumAttendeesCount
                 - notes
                 - postBuffer
@@ -2468,6 +2488,9 @@ components:
               description: The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
               nullable: true
               readOnly: true
+            languageTag:
+              type: string
+              nullable: true
             phone:
               type: string
               description: 'The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.'
@@ -2531,6 +2554,9 @@ components:
             additionalInformation:
               type: string
               description: Additional information that is sent to the customer when an appointment is confirmed.
+              nullable: true
+            anonymousJoinWebUrl:
+              type: string
               nullable: true
             customers:
               type: array
@@ -2720,12 +2746,16 @@ components:
             displayName:
               type: string
               description: A service name.
+            isAnonymousJoinEnabled:
+              type: boolean
             isHiddenFromCustomers:
               type: boolean
               description: True means this service is not available to customers for booking.
             isLocationOnline:
               type: boolean
               description: True indicates that the appointments for the service will be held online. Default value is false.
+            languageTag:
+              type: string
             maximumAttendeesCount:
               maximum: 2147483647
               minimum: -2147483648

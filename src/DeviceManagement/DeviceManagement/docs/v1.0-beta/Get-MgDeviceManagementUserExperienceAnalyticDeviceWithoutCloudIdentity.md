@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
 
 ## SYNOPSIS
-Get userExperienceAnalyticsDevicesWithoutCloudIdentity from deviceManagement
+User experience analytics devices without cloud identity.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity
 ```
 
 ## DESCRIPTION
-Get userExperienceAnalyticsDevicesWithoutCloudIdentity from deviceManagement
+User experience analytics devices without cloud identity.
 
 ## EXAMPLES
 
@@ -329,6 +329,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

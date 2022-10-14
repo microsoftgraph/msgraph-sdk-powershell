@@ -15,7 +15,7 @@ Update the navigation property windowsInformationProtectionPolicies in deviceApp
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceAppMgtWindowInformationProtectionPolicy -WindowsInformationProtectionPolicyId <String>
- [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]
+ [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]
  [-AzureRightsManagementServicesAllowed] [-CreatedDateTime <DateTime>]
  [-DataRecoveryCertificate <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>]
  [-DaysWithoutContactBeforeUnenroll <Int32>] [-Description <String>] [-DisplayName <String>]
@@ -48,21 +48,21 @@ Update-MgDeviceAppMgtWindowInformationProtectionPolicy -WindowsInformationProtec
 ### Update
 ```
 Update-MgDeviceAppMgtWindowInformationProtectionPolicy -WindowsInformationProtectionPolicyId <String>
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionPolicy> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionPolicy1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppMgtWindowInformationProtectionPolicy -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionPolicy> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionPolicy1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceAppMgtWindowInformationProtectionPolicy -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]
+ [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]
  [-AzureRightsManagementServicesAllowed] [-CreatedDateTime <DateTime>]
  [-DataRecoveryCertificate <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>]
  [-DaysWithoutContactBeforeUnenroll <Int32>] [-Description <String>] [-DisplayName <String>]
@@ -119,7 +119,7 @@ Navigation property to list of security groups targeted for policy.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ Policy for Windows information protection without MDM
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -456,7 +456,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -922,7 +923,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy1
 
 ## OUTPUTS
 
@@ -939,22 +940,22 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation property to list of security groups targeted for policy.
-  - `[Id <String>]`: 
+ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation property to list of security groups targeted for policy.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
-BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy>: Policy for Windows information protection without MDM
+BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy1>: Policy for Windows information protection without MDM
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]`: Navigation property to list of security groups targeted for policy.
-    - `[Id <String>]`: 
+  - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of security groups targeted for policy.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: Identifier for resource used for deployment to a group
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
@@ -984,7 +985,7 @@ BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy>: Policy for Wi
   - `[EnterpriseProxyServers <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]`: This is a list of proxy servers. Any server not on this list is considered non-enterprise
   - `[EnterpriseProxyServersAreAuthoritative <Boolean?>]`: Boolean value that tells the client to accept the configured list of proxies and not try to detect other work proxies. Default is false
   - `[ExemptAppLockerFiles <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>]`: Another way to input exempt apps through xml files
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The friendly name
     - `[File <Byte[]>]`: File as a byte array
     - `[FileHash <String>]`: SHA256 hash of the file
@@ -1011,7 +1012,7 @@ BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy>: Policy for Wi
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[Version <String>]`: Version of the entity.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DaysWithoutContactBeforeUnenroll <Int32?>]`: Offline interval before app data is wiped (days)
   - `[MdmEnrollmentUrl <String>]`: Enrollment url for the MDM
   - `[MinutesOfInactivityBeforeDeviceLock <Int32?>]`: Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999.
@@ -1059,7 +1060,7 @@ ENTERPRISEPROXYSERVERS <IMicrosoftGraphWindowsInformationProtectionResourceColle
   - `[Resources <String[]>]`: Collection of resources
 
 EXEMPTAPPLOCKERFILES <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>: Another way to input exempt apps through xml files
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The friendly name
   - `[File <Byte[]>]`: File as a byte array
   - `[FileHash <String>]`: SHA256 hash of the file
@@ -1146,7 +1147,7 @@ NEUTRALDOMAINRESOURCES <IMicrosoftGraphWindowsInformationProtectionResourceColle
   - `[Resources <String[]>]`: Collection of resources
 
 PROTECTEDAPPLOCKERFILES <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>: Another way to input protected apps through xml files
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The friendly name
   - `[File <Byte[]>]`: File as a byte array
   - `[FileHash <String>]`: SHA256 hash of the file

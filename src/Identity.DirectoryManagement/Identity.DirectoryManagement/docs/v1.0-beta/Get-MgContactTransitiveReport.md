@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgContactTransitiveReport
 
 ## SYNOPSIS
-Get transitiveReports from contacts
+The transitive reports for a contact.
+Read-only.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgContactTransitiveReport -InputObject <IIdentityDirectoryManagementIdentity
 ```
 
 ## DESCRIPTION
-Get transitiveReports from contacts
+The transitive reports for a contact.
+Read-only.
 
 ## EXAMPLES
 

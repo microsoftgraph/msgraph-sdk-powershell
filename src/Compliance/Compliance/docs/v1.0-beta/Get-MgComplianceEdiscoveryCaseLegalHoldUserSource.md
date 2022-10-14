@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseLegalHoldUserSource
 
 ## SYNOPSIS
-Get userSources from compliance
+Data source entity for a the legal hold.
+This is the container for a mailbox and OneDrive for Business site.
 
 ## SYNTAX
 
@@ -32,9 +33,19 @@ Get-MgComplianceEdiscoveryCaseLegalHoldUserSource -InputObject <IComplianceIdent
 ```
 
 ## DESCRIPTION
-Get userSources from compliance
+Data source entity for a the legal hold.
+This is the container for a mailbox and OneDrive for Business site.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgComplianceEdiscoveryCaseLegalHoldUserSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseLegalHoldUserSource -CaseId $caseId -LegalHoldId $legalHoldId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseLegalHoldUserSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

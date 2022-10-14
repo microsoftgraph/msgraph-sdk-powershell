@@ -8,11 +8,11 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseCustodian
 
 ## SYNOPSIS
-Get custodians from security
+Returns a list of case ediscoveryCustodian objects for this case.
 
 ## SYNTAX
 
-### List (Default)
+### List1 (Default)
 ```
 Get-MgSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
@@ -32,9 +32,27 @@ Get-MgSecurityCaseEdiscoveryCaseCustodian -InputObject <ISecurityIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get custodians from security
+Returns a list of case ediscoveryCustodian objects for this case.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseCustodian Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseCustodian Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSecurityCaseEdiscoveryCaseCustodian Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId $ediscoveryCaseId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseCustodian Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -43,7 +61,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -59,7 +77,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: CV
 
 Required: False
@@ -74,7 +92,7 @@ key: id of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get, List1
 Aliases:
 
 Required: True
@@ -119,7 +137,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -150,7 +168,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -180,7 +198,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -195,7 +213,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -210,7 +228,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: OrderBy
 
 Required: False
@@ -225,7 +243,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: Limit
 
 Required: False

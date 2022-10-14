@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserManagedDeviceUserFromSharedAppleDevice
 
 ## SYNOPSIS
-Invoke action deleteUserFromSharedAppleDevice
+Delete user from shared Apple device
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Remove-MgUserManagedDeviceUserFromSharedAppleDevice -InputObject <IUsersActionsI
 ```
 
 ## DESCRIPTION
-Invoke action deleteUserFromSharedAppleDevice
+Delete user from shared Apple device
 
 ## EXAMPLES
 

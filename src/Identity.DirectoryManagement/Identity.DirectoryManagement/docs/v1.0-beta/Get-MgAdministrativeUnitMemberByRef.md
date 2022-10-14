@@ -8,18 +8,20 @@ schema: 2.0.0
 # Get-MgAdministrativeUnitMemberByRef
 
 ## SYNOPSIS
-Get ref of members from administrativeUnits
+Users and groups that are members of this administrative unit.
+Supports $expand.
 
 ## SYNTAX
 
 ```
 Get-MgAdministrativeUnitMemberByRef -AdministrativeUnitId <String> [-Filter <String>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
- [<CommonParameters>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get ref of members from administrativeUnits
+Users and groups that are members of this administrative unit.
+Supports $expand.
 
 ## EXAMPLES
 
@@ -45,6 +47,22 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

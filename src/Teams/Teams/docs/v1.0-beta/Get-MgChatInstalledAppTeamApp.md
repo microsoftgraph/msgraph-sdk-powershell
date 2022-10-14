@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgChatInstalledAppTeamApp
 
 ## SYNOPSIS
-Get teamsApp from chats
+The app that is installed.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgChatInstalledAppTeamApp -InputObject <ITeamsIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get teamsApp from chats
+The app that is installed.
 
 ## EXAMPLES
 
