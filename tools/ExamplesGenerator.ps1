@@ -247,7 +247,7 @@ if ($ModulesToGenerate.Count -eq 0) {
     $ModulesToGenerate = $ModuleMapping.Keys
 }
 $Date = Get-Date -Format "dd-MM-yyyy"
-$ProposedBranch = "WeeklyOpenApiDocsDownload/Examples_Update_"+$Date
+$ProposedBranch = "Weekly_examples_update_"+$Date
 $Exists = git branch -l $ProposedBranch
 if ([string]::IsNullOrEmpty($Exists)) {
     git checkout -b $ProposedBranch

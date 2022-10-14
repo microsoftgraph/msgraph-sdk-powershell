@@ -1,0 +1,59 @@
+# Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+trigger: none # disable triggers based on commits.
+pr: none # disable as a PR gate.
+name: 'PowerShellExamplesUpdate Check'
+schedules:
+  - cron: "0 3 * * FRI"  # every Friday at 3AM UTC (off hours for Redmond, Nairobi and Montréal)
+    displayName: 'PowerShellExamplesUpdate Check'
+    branches:
+      include:
+      - dev
+    always: true
+parameters:
+- name: PipelineTimeout
+  displayName: PipelineTimeout
+  type: number
+  default: 1200
+- name: BuildAgent
+  displayName: Build Agent
+  default: 1es-windows-ps-compute
+
+resources:
+ repositories:     
+   - repository: msgraph-sdk-powershell
+     type: github
+     endpoint: microsoftgraph
+     name: microsoftgraph/msgraph-sdk-powershell
+     ref: dev
+
+jobs:
+- job: PowerShellExamplesUpdate
+  pool: 
+    name: ${{ parameters.BuildAgent }}
+  timeoutInMinutes: ${{ parameters.PipelineTimeout }}
+  steps:
+  - template: ./common-templates/update-sdkversion.yml
+
+  - task: PowerShell@2
+    displayName: 'Update Examples From Graph Reference'
+    continueOnError: false
+    inputs:
+      targetType: 'filePath'
+      pwsh: true
+      filePath: tools\ExamplesGenerator.ps1
+
+  - task: PowerShell@2
+    displayName: Pushing to github
+    env:
+      GITHUB_TOKEN: ${env:GITHUB_TOKEN}
+    inputs:
+      targetType: inline
+      script: |
+        git config --global user.email "timwamalwa@gmail.com"
+        git config --global user.name "Timothy Wamalwa"
+        $date = Get-Date -Format "dd-MM-yyyy"
+        $proposedBranch = "Weekly_examples_update_"+$date
+        git add .
+        git commit -m "Updating examples "+$date
+        git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
+        git status
