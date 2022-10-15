@@ -52,7 +52,7 @@ jobs:
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
         $date = Get-Date -Format "dd-MM-yyyy"
-        $proposedBranch = "Weekly_examples_update_"+$date
+        $proposedBranch = "WeeklyExamplesUpdate/"+$date
         git add .
         git commit -m "Updating examples "+$date
         git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch

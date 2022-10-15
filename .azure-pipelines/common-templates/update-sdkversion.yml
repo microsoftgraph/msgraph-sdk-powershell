@@ -11,4 +11,4 @@ steps:
           Update-Module Microsoft.Graph -Scope CurrentUser
           Import-Module Microsoft.Graph -Global -Force  
 
-- template: ../common-templates/checkout-sdk.yml
+- template: ../common-templates/checkout.yml
