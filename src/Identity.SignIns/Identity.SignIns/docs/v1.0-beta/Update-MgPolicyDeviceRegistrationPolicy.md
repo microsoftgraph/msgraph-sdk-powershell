@@ -132,7 +132,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -260,7 +261,7 @@ AZUREADREGISTRATION <IMicrosoftGraphAzureAdRegistrationPolicy>: azureADRegistrat
 
 BODYPARAMETER <IMicrosoftGraphDeviceRegistrationPolicy>: deviceRegistrationPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AzureAdJoin <IMicrosoftGraphAzureAdJoinPolicy>]`: azureAdJoinPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedGroups <String[]>]`: The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.

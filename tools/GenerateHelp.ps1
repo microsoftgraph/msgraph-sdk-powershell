@@ -57,8 +57,8 @@ $ModulesToGenerate | ForEach-Object {
     else {
         Write-Warning "v1.0 Docs for $ModuleName not Found"
     }
-    git status
-    git commit -m "Docs Generation for $ModuleName [run ci]"
 }
+git status
+git commit -m "Docs Generation for $(Get-Date -Format "MM-dd-yyyy") [run ci]"
 
 Write-Host -ForegroundColor Green "-------------Done-------------"

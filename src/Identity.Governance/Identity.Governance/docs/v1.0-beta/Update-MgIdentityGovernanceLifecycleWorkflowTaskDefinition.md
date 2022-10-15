@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the taskDefinition.
+The display name of the taskDefinition`.
 
 ```yaml
 Type: System.String
@@ -141,7 +141,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -172,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-The parameters that must be supplied when creating a task.
+The parameters that must be supplied when creating a workflow task object.
 To construct, please use Get-Help -Online and see NOTES section for PARAMETERS properties and create a hash table.
 
 ```yaml
@@ -288,12 +289,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphIdentityGovernanceTaskDefinition>: taskDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Category <String>]`: lifecycleTaskCategory
   - `[ContinueOnError <Boolean?>]`: 
   - `[Description <String>]`: The description of the taskDefinition.
-  - `[DisplayName <String>]`: The display name of the taskDefinition.
-  - `[Parameters <IMicrosoftGraphIdentityGovernanceParameter[]>]`: The parameters that must be supplied when creating a task.
+  - `[DisplayName <String>]`: The display name of the taskDefinition`.
+  - `[Parameters <IMicrosoftGraphIdentityGovernanceParameter[]>]`: The parameters that must be supplied when creating a workflow task object.
     - `[Name <String>]`: The name of the parameter.
     - `[ValueType <String>]`: valueType
     - `[Values <String[]>]`: The values of the parameter.
@@ -374,7 +375,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
   - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
-PARAMETERS <IMicrosoftGraphIdentityGovernanceParameter[]>: The parameters that must be supplied when creating a task.
+PARAMETERS <IMicrosoftGraphIdentityGovernanceParameter[]>: The parameters that must be supplied when creating a workflow task object.
   - `[Name <String>]`: The name of the parameter.
   - `[ValueType <String>]`: valueType
   - `[Values <String[]>]`: The values of the parameter.

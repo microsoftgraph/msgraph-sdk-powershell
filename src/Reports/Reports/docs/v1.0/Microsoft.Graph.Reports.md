@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: 875bd338-10f6-4955-8129-29cfe351dcb5
+Module Guid: c593fdca-3b9b-4c0b-884b-d345e82befac
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -61,6 +61,15 @@ Invoke function getEmailAppUsageVersionsUserCounts
 
 ### [Get-MgReportGroupArchivedPrintJob](Get-MgReportGroupArchivedPrintJob.md)
 Invoke function getGroupArchivedPrintJobs
+
+### [Get-MgReportM365AppPlatformUserCount](Get-MgReportM365AppPlatformUserCount.md)
+Invoke function getM365AppPlatformUserCounts
+
+### [Get-MgReportM365AppUserCount](Get-MgReportM365AppUserCount.md)
+Invoke function getM365AppUserCounts
+
+### [Get-MgReportM365AppUserDetail](Get-MgReportM365AppUserDetail.md)
+Invoke function getM365AppUserDetail
 
 ### [Get-MgReportMailboxUsageDetail](Get-MgReportMailboxUsageDetail.md)
 Invoke function getMailboxUsageDetail
@@ -142,6 +151,18 @@ Invoke function getOneDriveUsageStorage
 
 ### [Get-MgReportPrinterArchivedPrintJob](Get-MgReportPrinterArchivedPrintJob.md)
 Invoke function getPrinterArchivedPrintJobs
+
+### [Get-MgReportSecurity](Get-MgReportSecurity.md)
+Get security from reports
+
+### [Get-MgReportSecurityAttackSimulationRepeatOffender](Get-MgReportSecurityAttackSimulationRepeatOffender.md)
+Invoke function getAttackSimulationRepeatOffenders
+
+### [Get-MgReportSecurityAttackSimulationTrainingUserCoverage](Get-MgReportSecurityAttackSimulationTrainingUserCoverage.md)
+Invoke function getAttackSimulationTrainingUserCoverage
+
+### [Get-MgReportSecurityAttackSimulationUserCoverage](Get-MgReportSecurityAttackSimulationUserCoverage.md)
+Invoke function getAttackSimulationSimulationUserCoverage
 
 ### [Get-MgReportSharePointActivityFileCount](Get-MgReportSharePointActivityFileCount.md)
 Invoke function getSharePointActivityFileCounts

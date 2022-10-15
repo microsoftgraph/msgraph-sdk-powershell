@@ -167,7 +167,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths1Ehzqn7SecurityAlertsMicrosoftGraphUpdatealertsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Value <IMicrosoftGraphAlert[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActivityGroupName <String>]`: Name or alias of the activity group (attacker) this alert is attributed to.
     - `[AlertDetections <IMicrosoftGraphAlertDetection[]>]`: 
       - `[DetectionType <String>]`: 
@@ -329,7 +329,7 @@ BODYPARAMETER <IPaths1Ehzqn7SecurityAlertsMicrosoftGraphUpdatealertsPostRequestb
       - `[WasRunning <Boolean?>]`: Indicates whether the detected vulnerability (file) was running at the time of detection or was the file detected at rest on the disk.
 
 VALUE <IMicrosoftGraphAlert[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActivityGroupName <String>]`: Name or alias of the activity group (attacker) this alert is attributed to.
   - `[AlertDetections <IMicrosoftGraphAlertDetection[]>]`: 
     - `[DetectionType <String>]`: 

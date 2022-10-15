@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: f0c3c4c7-0c23-43f7-ab48-36383d83b5d9
+Module Guid: 17694a43-d54c-48f4-848e-5c25b83e053c
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -49,8 +49,27 @@ Get assignmentPolicies from identityGovernance
 ### [Get-MgEntitlementManagementAccessPackageCatalog](Get-MgEntitlementManagementAccessPackageCatalog.md)
 Get catalog from identityGovernance
 
+### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage.md)
+Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+
+### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
+Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+
+### [Get-MgEntitlementManagementAccessPackageIncompatibleGroup](Get-MgEntitlementManagementAccessPackageIncompatibleGroup.md)
+Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+
+### [Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
+Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+
+### [Get-MgEntitlementManagementAccessPackageIncompatibleWith](Get-MgEntitlementManagementAccessPackageIncompatibleWith.md)
+The access packages that are incompatible with this package.
+Read-only.
+
 ### [Get-MgEntitlementManagementAssignment](Get-MgEntitlementManagementAssignment.md)
 The assignment of an access package to a subject for a period of time.
+
+### [Get-MgEntitlementManagementAssignmentAdditional](Get-MgEntitlementManagementAssignmentAdditional.md)
+Invoke function additionalAccess
 
 ### [Get-MgEntitlementManagementAssignmentPolicy](Get-MgEntitlementManagementAssignmentPolicy.md)
 Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
@@ -82,6 +101,22 @@ Read-only.
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyCatalog](Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyCatalog.md)
 Catalog of the access package containing this policy.
+Read-only.
+
+### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackage](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackage.md)
+Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+
+### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef.md)
+Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+
+### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroup](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroup.md)
+Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+
+### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroupByRef](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroupByRef.md)
+Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+
+### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleWith](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleWith.md)
+The access packages that are incompatible with this package.
 Read-only.
 
 ### [Get-MgEntitlementManagementConnectedOrganization](Get-MgEntitlementManagementConnectedOrganization.md)
@@ -251,6 +286,12 @@ Create new navigation property to stages for identityGovernance
 ### [New-MgEntitlementManagementAccessPackageAssignmentPolicy](New-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
 Create new navigation property to assignmentPolicies for identityGovernance
 
+### [New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
+Create new navigation property ref to incompatibleAccessPackages for identityGovernance
+
+### [New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
+Create new navigation property ref to incompatibleGroups for identityGovernance
+
 ### [New-MgEntitlementManagementAssignment](New-MgEntitlementManagementAssignment.md)
 Create new navigation property to assignments for identityGovernance
 
@@ -267,6 +308,12 @@ Create a new accessPackageCatalog object.
 
 ### [New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
 Create new navigation property to assignmentPolicies for identityGovernance
+
+### [New-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef](New-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef.md)
+Create new navigation property ref to incompatibleAccessPackages for identityGovernance
+
+### [New-MgEntitlementManagementCatalogAccessPackageIncompatibleGroupByRef](New-MgEntitlementManagementCatalogAccessPackageIncompatibleGroupByRef.md)
+Create new navigation property ref to incompatibleGroups for identityGovernance
 
 ### [New-MgEntitlementManagementConnectedOrganization](New-MgEntitlementManagementConnectedOrganization.md)
 Create new navigation property to connectedOrganizations for identityGovernance
@@ -354,6 +401,12 @@ Delete navigation property stages for identityGovernance
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentPolicy](Remove-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
 Delete navigation property assignmentPolicies for identityGovernance
 
+### [Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
+Delete ref of navigation property incompatibleAccessPackages for identityGovernance
+
+### [Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
+Delete ref of navigation property incompatibleGroups for identityGovernance
+
 ### [Remove-MgEntitlementManagementAssignment](Remove-MgEntitlementManagementAssignment.md)
 Delete navigation property assignments for identityGovernance
 
@@ -368,6 +421,12 @@ Delete navigation property catalogs for identityGovernance
 
 ### [Remove-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](Remove-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
 Delete navigation property assignmentPolicies for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef](Remove-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef.md)
+Delete ref of navigation property incompatibleAccessPackages for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogAccessPackageIncompatibleGroupByRef](Remove-MgEntitlementManagementCatalogAccessPackageIncompatibleGroupByRef.md)
+Delete ref of navigation property incompatibleGroups for identityGovernance
 
 ### [Remove-MgEntitlementManagementConnectedOrganization](Remove-MgEntitlementManagementConnectedOrganization.md)
 Delete navigation property connectedOrganizations for identityGovernance
