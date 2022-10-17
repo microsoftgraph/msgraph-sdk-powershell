@@ -43,13 +43,6 @@ stages:
           BuildAgent: $(BuildAgent)
           SkipForceRefresh: $(SkipForceRefresh)
 
-  - stage: UpdateExamples
-    displayName: Update Examples From Reference Docs
-    jobs:
-      - template: common-templates/weekly-examples-update.yml
-        parameters:
-          BuildAgent: $(BuildAgent)
-
   - stage: GenerateServiceModules
     displayName: Generate service modules
     condition: succeeded()
