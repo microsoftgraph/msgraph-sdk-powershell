@@ -97,7 +97,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -335,7 +336,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphRiskyUser1>: riskyUser
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: 
     - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: 
     - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
@@ -346,7 +347,7 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser1>: riskyUser
     - `[RiskState <String>]`: riskState
     - `[UserDisplayName <String>]`: Risky user display name.
     - `[UserPrincipalName <String>]`: Risky user principal name.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Activity <IMicrosoftGraphRiskUserActivity1>]`: riskUserActivity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Detail <String>]`: 
@@ -373,7 +374,7 @@ HISTORY <IMicrosoftGraphRiskyUserHistoryItem1[]>: .
   - `[RiskState <String>]`: riskState
   - `[UserDisplayName <String>]`: Risky user display name.
   - `[UserPrincipalName <String>]`: Risky user principal name.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Activity <IMicrosoftGraphRiskUserActivity1>]`: riskUserActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Detail <String>]`: 
@@ -401,6 +402,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

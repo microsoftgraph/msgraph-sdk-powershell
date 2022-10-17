@@ -142,7 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -293,7 +294,7 @@ ACCOUNTS <IMicrosoftGraphUserAccount[]>: .
 
 BODYPARAMETER <IMicrosoftGraphUserSecurityProfile>: userSecurityProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Accounts <IMicrosoftGraphUserAccount[]>]`: 
     - `[DisplayName <String>]`: 
     - `[LastSeenDateTime <DateTime?>]`: 

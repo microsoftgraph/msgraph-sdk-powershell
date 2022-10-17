@@ -66,7 +66,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -225,7 +226,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionWipeAction>: Represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[LastCheckInDateTime <DateTime?>]`: Last checkin time of the device that was targeted by this wipe action.
   - `[Status <String>]`: actionState
   - `[TargetedDeviceMacAddress <String>]`: Targeted device Mac address.

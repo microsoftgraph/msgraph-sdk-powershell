@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: f0c3c4c7-0c23-43f7-ab48-36383d83b5d9
+Module Guid: 17694a43-d54c-48f4-848e-5c25b83e053c
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -330,7 +330,7 @@ Deleted workflows in your lifecycle workflows instance.
 Deleted workflows that end up in the deletedItemsContainer.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope.md)
-The unique identifier of the Azure AD identity that last modified the workflow object..
+The unique identifier of the Azure AD identity that last modified the workflow object.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
 Get runs from identityGovernance
@@ -345,7 +345,7 @@ Get userProcessingResults from identityGovernance
 The workflow versions that are available.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope](Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope.md)
-The unique identifier of the Azure AD identity that last modified the workflow object..
+The unique identifier of the Azure AD identity that last modified the workflow object.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowRun.md)
 Get runs from identityGovernance
@@ -670,10 +670,16 @@ Read-only.
 Nullable.
 
 ### [Initialize-MgIdentityGovernanceLifecycleWorkflow](Initialize-MgIdentityGovernanceLifecycleWorkflow.md)
-Activate (run on-demand) a workflow object.
+Run a workflow object on-demand.
+You can run any workflow on-demand, including scheduled workflows.
+Workflows created from the 'Real-time employee termination' template are run on-demand only.
+When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
 
 ### [Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
-Activate (run on-demand) a workflow object.
+Run a workflow object on-demand.
+You can run any workflow on-demand, including scheduled workflows.
+Workflows created from the 'Real-time employee termination' template are run on-demand only.
+When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
 
 ### [Invoke-MgAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation](Invoke-MgAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation.md)
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
@@ -873,7 +879,7 @@ Create new navigation property ref to incompatibleAccessPackages for identityGov
 Create new navigation property ref to incompatibleGroups for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageResourceRequest](New-MgEntitlementManagementAccessPackageResourceRequest.md)
-Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, or the removal of a resource from a catalog.
+Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.
 A resource must be included in an access package catalog before a role of that resource can be added to an access package.
 
 ### [New-MgEntitlementManagementAccessPackageResourceRoleScope](New-MgEntitlementManagementAccessPackageResourceRoleScope.md)
@@ -960,6 +966,7 @@ Create new navigation property to steps for identityGovernance
 
 ### [New-MgIdentityGovernanceLifecycleWorkflow](New-MgIdentityGovernanceLifecycleWorkflow.md)
 Create a new workflow object.
+You can create up to 50 workflows in a tenant.
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Create a new customTaskExtension object.

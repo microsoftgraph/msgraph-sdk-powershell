@@ -64,7 +64,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -162,9 +163,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityTriggersRoot>: triggersRoot
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[RetentionEvents <IMicrosoftGraphSecurityRetentionEvent[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -208,7 +209,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityTriggersRoot>: triggersRoot
     - `[LastStatusUpdateDateTime <DateTime?>]`: Last time the status of the event was updated.
     - `[RetentionEventType <IMicrosoftGraphSecurityRetentionEventType>]`: retentionEventType
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date time when the retentionEventType was created.
       - `[Description <String>]`: Optional information about the event type.
@@ -217,7 +218,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityTriggersRoot>: triggersRoot
       - `[LastModifiedDateTime <DateTime?>]`: The latest date time when the retentionEventType was modified.
 
 RETENTIONEVENTS <IMicrosoftGraphSecurityRetentionEvent[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -261,7 +262,7 @@ RETENTIONEVENTS <IMicrosoftGraphSecurityRetentionEvent[]>: .
   - `[LastStatusUpdateDateTime <DateTime?>]`: Last time the status of the event was updated.
   - `[RetentionEventType <IMicrosoftGraphSecurityRetentionEventType>]`: retentionEventType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date time when the retentionEventType was created.
     - `[Description <String>]`: Optional information about the event type.

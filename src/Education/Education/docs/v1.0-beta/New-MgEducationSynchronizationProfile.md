@@ -147,7 +147,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -276,12 +277,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfile>: educationSynchronizationProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DataProvider <IMicrosoftGraphEducationSynchronizationDataProvider>]`: educationSynchronizationDataProvider
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: Name of the configuration profile for syncing identities.
   - `[Errors <IMicrosoftGraphEducationSynchronizationError[]>]`: All errors associated with this synchronization profile.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[EntryType <String>]`: Represents the sync entity (school, section, student, teacher).
     - `[ErrorCode <String>]`: Represents the error code for this error.
     - `[ErrorMessage <String>]`: Contains a description of the error.
@@ -297,7 +298,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfile>: educationSynchro
     - `[SkuIds <String[]>]`: Represents the SKU identifiers of the licenses to assign.
   - `[ProfileStatus <IMicrosoftGraphEducationSynchronizationProfileStatus>]`: educationSynchronizationProfileStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ErrorCount <Int64?>]`: Number of errors during synchronization.
     - `[LastActivityDateTime <DateTime?>]`: Date and time when most recent changes were observed in the profile.
     - `[LastSynchronizationDateTime <DateTime?>]`: Date and time of the most recent successful synchronization.
@@ -306,7 +307,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfile>: educationSynchro
   - `[State <String>]`: educationSynchronizationProfileState
 
 ERRORS <IMicrosoftGraphEducationSynchronizationError[]>: All errors associated with this synchronization profile.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[EntryType <String>]`: Represents the sync entity (school, section, student, teacher).
   - `[ErrorCode <String>]`: Represents the error code for this error.
   - `[ErrorMessage <String>]`: Contains a description of the error.
@@ -320,7 +321,7 @@ LICENSESTOASSIGN <IMicrosoftGraphEducationSynchronizationLicenseAssignment[]>: L
 
 PROFILESTATUS <IMicrosoftGraphEducationSynchronizationProfileStatus>: educationSynchronizationProfileStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ErrorCount <Int64?>]`: Number of errors during synchronization.
   - `[LastActivityDateTime <DateTime?>]`: Date and time when most recent changes were observed in the profile.
   - `[LastSynchronizationDateTime <DateTime?>]`: Date and time of the most recent successful synchronization.

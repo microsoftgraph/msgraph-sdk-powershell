@@ -15,7 +15,7 @@ Create new navigation property to mobileApps for deviceAppManagement
 ### CreateExpanded1 (Default)
 ```
 New-MgDeviceAppMgtMobileApp [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphMobileAppAssignment1[]>] [-Categories <IMicrosoftGraphMobileAppCategory[]>]
+ [-Assignments <IMicrosoftGraphMobileAppAssignment[]>] [-Categories <IMicrosoftGraphMobileAppCategory[]>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-Developer <String>] [-DisplayName <String>]
  [-Id <String>] [-InformationUrl <String>] [-IsFeatured] [-LargeIcon <IMicrosoftGraphMimeContent>]
  [-LastModifiedDateTime <DateTime>] [-Notes <String>] [-Owner <String>] [-PrivacyInformationUrl <String>]
@@ -24,7 +24,7 @@ New-MgDeviceAppMgtMobileApp [-AdditionalProperties <Hashtable>]
 
 ### Create1
 ```
-New-MgDeviceAppMgtMobileApp -BodyParameter <IMicrosoftGraphMobileApp1> [-Confirm] [-WhatIf]
+New-MgDeviceAppMgtMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ The list of group assignments for this mobile app.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -71,7 +71,7 @@ An abstract class containing the base properties for Intune mobile apps.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
 Parameter Sets: Create1
 Aliases:
 
@@ -159,7 +159,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -345,11 +346,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
 
 ## NOTES
 
@@ -362,26 +363,26 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ASSIGNMENTS <IMicrosoftGraphMobileAppAssignment1[]>: The list of group assignments for this mobile app.
-  - `[Id <String>]`: 
+ASSIGNMENTS <IMicrosoftGraphMobileAppAssignment[]>: The list of group assignments for this mobile app.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
   - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base properties for Intune mobile apps.
+BODYPARAMETER <IMicrosoftGraphMobileApp>: An abstract class containing the base properties for Intune mobile apps.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[Assignments <IMicrosoftGraphMobileAppAssignment1[]>]`: The list of group assignments for this mobile app.
-    - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Assignments <IMicrosoftGraphMobileAppAssignment[]>]`: The list of group assignments for this mobile app.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
     - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the app category.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
   - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
@@ -402,7 +403,7 @@ BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base
   - `[PublishingState <MobileAppPublishingState?>]`: Indicates the publishing state of an app.
 
 CATEGORIES <IMicrosoftGraphMobileAppCategory[]>: The list of categories for this app.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The name of the app category.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
 

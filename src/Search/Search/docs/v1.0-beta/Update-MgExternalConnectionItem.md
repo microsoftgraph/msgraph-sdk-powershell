@@ -181,7 +181,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -301,27 +302,27 @@ ACL <IMicrosoftGraphExternalConnectorsAcl[]>: An array of access control entries
   - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
 
 ACTIVITIES <IMicrosoftGraphExternalConnectorsExternalActivity[]>: Write-only property. Returns results.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Type <String>]`: identityType
   - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
   - `[Type <String>]`: externalActivityType
 
 BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalItem>: externalItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Acl <IMicrosoftGraphExternalConnectorsAcl[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
     - `[AccessType <String>]`: accessType
     - `[IdentitySource <String>]`: identitySourceType
     - `[Type <String>]`: aclType
     - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
   - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Write-only property. Returns results.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Type <String>]`: identityType
     - `[StartDateTime <DateTime?>]`: When the particular activity occurred.
     - `[Type <String>]`: externalActivityType

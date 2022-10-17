@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: be27008e-c540-4a3d-b82e-73094373b2d5
+Module Guid: 30e3b946-632e-458e-be72-4330bde29ecc
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -30,6 +30,30 @@ The response provides details about which memberships could and couldn't be crea
 ### [Add-MgTeamworkDeletedTeamChannelMember](Add-MgTeamworkDeletedTeamChannelMember.md)
 Add multiple members in a single request to a team.
 The response provides details about which memberships could and couldn't be created.
+
+### [Clear-MgChatMessageReaction](Clear-MgChatMessageReaction.md)
+Invoke action unsetReaction
+
+### [Clear-MgChatMessageReplyReaction](Clear-MgChatMessageReplyReaction.md)
+Invoke action unsetReaction
+
+### [Clear-MgTeamChannelMessageReaction](Clear-MgTeamChannelMessageReaction.md)
+Invoke action unsetReaction
+
+### [Clear-MgTeamChannelMessageReplyReaction](Clear-MgTeamChannelMessageReplyReaction.md)
+Invoke action unsetReaction
+
+### [Clear-MgTeamPrimaryChannelMessageReaction](Clear-MgTeamPrimaryChannelMessageReaction.md)
+Invoke action unsetReaction
+
+### [Clear-MgTeamPrimaryChannelMessageReplyReaction](Clear-MgTeamPrimaryChannelMessageReplyReaction.md)
+Invoke action unsetReaction
+
+### [Clear-MgTeamworkDeletedTeamChannelMessageReaction](Clear-MgTeamworkDeletedTeamChannelMessageReaction.md)
+Invoke action unsetReaction
+
+### [Clear-MgTeamworkDeletedTeamChannelMessageReplyReaction](Clear-MgTeamworkDeletedTeamChannelMessageReplyReaction.md)
+Invoke action unsetReaction
 
 ### [Complete-MgTeamChannelMigration](Complete-MgTeamChannelMigration.md)
 Complete the message migration process by removing `migration mode` from a channel in a team.
@@ -84,6 +108,12 @@ This operation also creates a copy of the corresponding group.\nYou can specify 
 \n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation \nreturned by the Location: header to see if it's 'running' or 'succeeded' or 'failed'.
 \nYou should continue to GET until the status is not 'running'.
 \nThe recommended delay between GETs is 5 seconds.
+
+### [Get-MgAllGroupTeamChannel](Get-MgAllGroupTeamChannel.md)
+List of channels either hosted in or shared with the team (incoming channels).
+
+### [Get-MgAllTeamChannel](Get-MgAllTeamChannel.md)
+List of channels either hosted in or shared with the team (incoming channels).
 
 ### [Get-MgAppCatalogTeamApp](Get-MgAppCatalogTeamApp.md)
 Get teamsApps from appCatalogs
@@ -183,7 +213,7 @@ The application that is linked to the tab.
 The team associated with this group.
 
 ### [Get-MgGroupTeamChannel](Get-MgGroupTeamChannel.md)
-List of channels either hosted in or shared with the team (incoming channels).
+The collection of channels and messages associated with the team.
 
 ### [Get-MgGroupTeamChannelFileFolder](Get-MgGroupTeamChannelFileFolder.md)
 Get the metadata for the location where the files of a channel are stored.
@@ -352,7 +382,7 @@ Get templateDefinition from groups
 Retrieve the properties and relationships of the specified team.
 
 ### [Get-MgTeamChannel](Get-MgTeamChannel.md)
-List of channels either hosted in or shared with the team (incoming channels).
+The collection of channels and messages associated with the team.
 
 ### [Get-MgTeamChannelFileFolder](Get-MgTeamChannelFileFolder.md)
 Get the metadata for the location where the files of a channel are stored.
@@ -1502,6 +1532,12 @@ Update media content for the navigation property hostedContent in appCatalogs
 ### [Set-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent](Set-MgAppCatalogTeamAppDefinitionOutlineIconHostedContent.md)
 Update media content for the navigation property hostedContent in appCatalogs
 
+### [Set-MgChatMessageReaction](Set-MgChatMessageReaction.md)
+Invoke action setReaction
+
+### [Set-MgChatMessageReplyReaction](Set-MgChatMessageReplyReaction.md)
+Invoke action setReaction
+
 ### [Set-MgGroupTeamChannelFileFolderContent](Set-MgGroupTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
@@ -1514,14 +1550,32 @@ The content stream, if the item represents a file.
 ### [Set-MgTeamChannelFileFolderContent](Set-MgTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgTeamChannelMessageReaction](Set-MgTeamChannelMessageReaction.md)
+Invoke action setReaction
+
+### [Set-MgTeamChannelMessageReplyReaction](Set-MgTeamChannelMessageReplyReaction.md)
+Invoke action setReaction
+
 ### [Set-MgTeamPhotoContent](Set-MgTeamPhotoContent.md)
 Update media content for the navigation property photo in teams
 
 ### [Set-MgTeamPrimaryChannelFileFolderContent](Set-MgTeamPrimaryChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgTeamPrimaryChannelMessageReaction](Set-MgTeamPrimaryChannelMessageReaction.md)
+Invoke action setReaction
+
+### [Set-MgTeamPrimaryChannelMessageReplyReaction](Set-MgTeamPrimaryChannelMessageReplyReaction.md)
+Invoke action setReaction
+
 ### [Set-MgTeamworkDeletedTeamChannelFileFolderContent](Set-MgTeamworkDeletedTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
+
+### [Set-MgTeamworkDeletedTeamChannelMessageReaction](Set-MgTeamworkDeletedTeamChannelMessageReaction.md)
+Invoke action setReaction
+
+### [Set-MgTeamworkDeletedTeamChannelMessageReplyReaction](Set-MgTeamworkDeletedTeamChannelMessageReplyReaction.md)
+Invoke action setReaction
 
 ### [Start-MgTeamScheduleTimeCardBreak](Start-MgTeamScheduleTimeCardBreak.md)
 Start a break in a specific timeCard.

@@ -18,8 +18,9 @@ Update-MgDeviceManagementConfigurationPolicy -DeviceManagementConfigurationPolic
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
  [-CreationSource <String>] [-Description <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>] [-RoleScopeTagIds <String[]>]
- [-SettingCount <Int32>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
+ [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>] [-PriorityMetaData <Hashtable>]
+ [-RoleScopeTagIds <String[]>] [-SettingCount <Int32>]
+ [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
  [-TemplateReference <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -45,8 +46,9 @@ Update-MgDeviceManagementConfigurationPolicy -InputObject <IDeviceManagementIden
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
  [-CreationSource <String>] [-Description <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>] [-RoleScopeTagIds <String[]>]
- [-SettingCount <Int32>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
+ [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>] [-PriorityMetaData <Hashtable>]
+ [-RoleScopeTagIds <String[]>] [-SettingCount <Int32>]
+ [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
  [-TemplateReference <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -167,7 +169,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -247,6 +250,21 @@ Supported platform types.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationPlatforms
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PriorityMetaData
+deviceManagementPriorityMetaData
+
+```yaml
+Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -388,7 +406,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>: Policy assignments
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: The identifier of the source of the assignment.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -398,9 +416,9 @@ ASSIGNMENTS <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>: Po
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicy>: Device Management Configuration Policy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>]`: Policy assignments
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: The identifier of the source of the assignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -413,12 +431,14 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicy>: Device Manag
   - `[LastModifiedDateTime <DateTime?>]`: Policy last modification date and time
   - `[Name <String>]`: Policy name
   - `[Platforms <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
+  - `[PriorityMetaData <IMicrosoftGraphDeviceManagementPriorityMetaData>]`: deviceManagementPriorityMetaData
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[SettingCount <Int32?>]`: Number of settings
   - `[Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]`: Policy settings
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions. This property is read-only.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AccessTypes <String>]`: deviceManagementConfigurationSettingAccessTypes
       - `[Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>]`: deviceManagementConfigurationSettingApplicability
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -545,6 +565,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion
@@ -586,9 +608,9 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[WindowsMalwareInformationId <String>]`: key: id of windowsMalwareInformation
 
 SETTINGS <IMicrosoftGraphDeviceManagementConfigurationSetting[]>: Policy settings
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions. This property is read-only.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AccessTypes <String>]`: deviceManagementConfigurationSettingAccessTypes
     - `[Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>]`: deviceManagementConfigurationSettingApplicability
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

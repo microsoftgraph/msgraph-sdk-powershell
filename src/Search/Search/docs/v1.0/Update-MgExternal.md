@@ -148,20 +148,20 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternal1>: external
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Connections <IMicrosoftGraphExternalConnectorsExternalConnection1[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]`: configuration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
     - `[Description <String>]`: Description of the connection displayed in the Microsoft 365 admin center. Optional.
     - `[Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Description <String>]`: The description of the external group. Optional.
       - `[DisplayName <String>]`: The friendly name of the external group. Optional.
       - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Type <String>]`: identityType
     - `[Items <IMicrosoftGraphExternalConnectorsExternalItem1[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Acl <IMicrosoftGraphExternalConnectorsAcl1[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
         - `[AccessType <String>]`: accessType
         - `[Type <String>]`: aclType
@@ -174,7 +174,7 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternal1>: external
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Name <String>]`: The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
     - `[Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Error <IMicrosoftGraphPublicError>]`: publicError
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Code <String>]`: Represents the error code.
@@ -193,9 +193,9 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternal1>: external
       - `[Status <String>]`: connectionOperationStatus
     - `[Schema <IMicrosoftGraphExternalConnectorsSchema1>]`: schema
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[BaseType <String>]`: Must be set to microsoft.graph.externalConnector.externalItem. Required.
-      - `[Properties <IMicrosoftGraphExternalConnectorsProperty1[]>]`: The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
+      - `[Properties <IMicrosoftGraphExternalConnectorsProperty[]>]`: The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
         - `[Aliases <String[]>]`: A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^. Optional.
         - `[IsQueryable <Boolean?>]`: Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
         - `[IsRefinable <Boolean?>]`: Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
@@ -207,20 +207,20 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternal1>: external
     - `[State <String>]`: connectionState
 
 CONNECTIONS <IMicrosoftGraphExternalConnectorsExternalConnection1[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]`: configuration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
   - `[Description <String>]`: Description of the connection displayed in the Microsoft 365 admin center. Optional.
   - `[Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Description <String>]`: The description of the external group. Optional.
     - `[DisplayName <String>]`: The friendly name of the external group. Optional.
     - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Type <String>]`: identityType
   - `[Items <IMicrosoftGraphExternalConnectorsExternalItem1[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Acl <IMicrosoftGraphExternalConnectorsAcl1[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
       - `[AccessType <String>]`: accessType
       - `[Type <String>]`: aclType
@@ -233,7 +233,7 @@ CONNECTIONS <IMicrosoftGraphExternalConnectorsExternalConnection1[]>: .
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Name <String>]`: The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
   - `[Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Error <IMicrosoftGraphPublicError>]`: publicError
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Code <String>]`: Represents the error code.
@@ -252,9 +252,9 @@ CONNECTIONS <IMicrosoftGraphExternalConnectorsExternalConnection1[]>: .
     - `[Status <String>]`: connectionOperationStatus
   - `[Schema <IMicrosoftGraphExternalConnectorsSchema1>]`: schema
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[BaseType <String>]`: Must be set to microsoft.graph.externalConnector.externalItem. Required.
-    - `[Properties <IMicrosoftGraphExternalConnectorsProperty1[]>]`: The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
+    - `[Properties <IMicrosoftGraphExternalConnectorsProperty[]>]`: The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
       - `[Aliases <String[]>]`: A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^. Optional.
       - `[IsQueryable <Boolean?>]`: Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
       - `[IsRefinable <Boolean?>]`: Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.

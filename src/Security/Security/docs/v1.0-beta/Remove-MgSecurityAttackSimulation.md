@@ -12,7 +12,7 @@ Delete navigation property simulations for security
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete3 (Default)
 ```
 Remove-MgSecurityAttackSimulation [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```

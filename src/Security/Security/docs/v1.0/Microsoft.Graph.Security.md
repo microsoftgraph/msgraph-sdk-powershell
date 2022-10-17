@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 2763508e-bd59-4642-9576-208d4f60c75a
+Module Guid: de4511f6-87e6-4cdc-b378-a4baccff0ff7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -36,6 +36,15 @@ For details, see Close a case.
 
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
 Get alerts from security
+
+### [Get-MgSecurityAttackSimulation](Get-MgSecurityAttackSimulation.md)
+Get attackSimulation from security
+
+### [Get-MgSecurityAttackSimulationAutomation](Get-MgSecurityAttackSimulationAutomation.md)
+Represents simulation automation created to run on a tenant.
+
+### [Get-MgSecurityAttackSimulationAutomationRun](Get-MgSecurityAttackSimulationAutomationRun.md)
+A collection of simulation automation runs.
 
 ### [Get-MgSecurityCase](Get-MgSecurityCase.md)
 Get cases from security
@@ -134,6 +143,15 @@ For details, see Reopen a closed case.
 ### [New-MgSecurityAlert](New-MgSecurityAlert.md)
 Create new navigation property to alerts for security
 
+### [New-MgSecurityAttackSimulation](New-MgSecurityAttackSimulation.md)
+Create new navigation property to simulations for security
+
+### [New-MgSecurityAttackSimulationAutomation](New-MgSecurityAttackSimulationAutomation.md)
+Create new navigation property to simulationAutomations for security
+
+### [New-MgSecurityAttackSimulationAutomationRun](New-MgSecurityAttackSimulationAutomationRun.md)
+Create new navigation property to runs for security
+
 ### [New-MgSecurityCaseEdiscoveryCase](New-MgSecurityCaseEdiscoveryCase.md)
 Create a new ediscoveryCase object.
 
@@ -182,6 +200,15 @@ For details, see Release a custodian from a case.
 
 ### [Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Release the non-custodial data source from the case.
+
+### [Remove-MgSecurityAttackSimulation](Remove-MgSecurityAttackSimulation.md)
+Delete navigation property attackSimulation for security
+
+### [Remove-MgSecurityAttackSimulationAutomation](Remove-MgSecurityAttackSimulationAutomation.md)
+Delete navigation property simulationAutomations for security
+
+### [Remove-MgSecurityAttackSimulationAutomationRun](Remove-MgSecurityAttackSimulationAutomationRun.md)
+Delete navigation property runs for security
 
 ### [Remove-MgSecurityCase](Remove-MgSecurityCase.md)
 Delete navigation property cases for security
@@ -246,6 +273,12 @@ Reset a caseSettings object to the default values.
 
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
 Update the navigation property alerts in security
+
+### [Update-MgSecurityAttackSimulationAutomation](Update-MgSecurityAttackSimulationAutomation.md)
+Update the navigation property simulationAutomations in security
+
+### [Update-MgSecurityAttackSimulationAutomationRun](Update-MgSecurityAttackSimulationAutomationRun.md)
+Update the navigation property runs in security
 
 ### [Update-MgSecurityCase](Update-MgSecurityCase.md)
 Update the navigation property cases in security

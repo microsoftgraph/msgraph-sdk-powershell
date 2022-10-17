@@ -64,7 +64,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -96,6 +97,7 @@ Accept wildcard characters: False
 ### -WorkflowScheduleIntervalInHours
 The interval in hours at which all workflows running in the tenant should be scheduled for execution.
 This interval has a minimum value of 1 and a maximum value of 24.
+The default value is 3 hours.
 
 ```yaml
 Type: System.Int32
@@ -162,8 +164,8 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings>: lifecycleManagementSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[WorkflowScheduleIntervalInHours <Int32?>]`: The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[WorkflowScheduleIntervalInHours <Int32?>]`: The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
 
 ## RELATED LINKS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: 8e3d9e93-fc23-4c22-8fb5-418cbb1d6b0f
+Module Guid: 2d60e5c6-1e17-418c-83bb-6160900f2e76
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -463,6 +463,12 @@ Collection of all settings this template has
 
 ### [Get-MgDeviceManagementTroubleshootingEvent](Get-MgDeviceManagementTroubleshootingEvent.md)
 The list of troubleshooting events for the tenant.
+
+### [Get-MgDeviceManagementUserExperienceAnalyticAnomaly](Get-MgDeviceManagementUserExperienceAnalyticAnomaly.md)
+The user experience analytics anomaly entity contains anomaly details.
+
+### [Get-MgDeviceManagementUserExperienceAnalyticAnomalyDevice](Get-MgDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
+The user experience analytics anomaly entity contains device details.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance](Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance.md)
 User experience analytics appHealth Application Performance
@@ -970,6 +976,12 @@ Create new navigation property to settings for deviceManagement
 
 ### [New-MgDeviceManagementTroubleshootingEvent](New-MgDeviceManagementTroubleshootingEvent.md)
 Create new navigation property to troubleshootingEvents for deviceManagement
+
+### [New-MgDeviceManagementUserExperienceAnalyticAnomaly](New-MgDeviceManagementUserExperienceAnalyticAnomaly.md)
+Create new navigation property to userExperienceAnalyticsAnomaly for deviceManagement
+
+### [New-MgDeviceManagementUserExperienceAnalyticAnomalyDevice](New-MgDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
+Create new navigation property to userExperienceAnalyticsAnomalyDevice for deviceManagement
 
 ### [New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance](New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance.md)
 Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformance for deviceManagement
@@ -1498,6 +1510,12 @@ Delete navigation property settings for deviceManagement
 
 ### [Remove-MgDeviceManagementTroubleshootingEvent](Remove-MgDeviceManagementTroubleshootingEvent.md)
 Delete navigation property troubleshootingEvents for deviceManagement
+
+### [Remove-MgDeviceManagementUserExperienceAnalyticAnomaly](Remove-MgDeviceManagementUserExperienceAnalyticAnomaly.md)
+Delete navigation property userExperienceAnalyticsAnomaly for deviceManagement
+
+### [Remove-MgDeviceManagementUserExperienceAnalyticAnomalyDevice](Remove-MgDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
+Delete navigation property userExperienceAnalyticsAnomalyDevice for deviceManagement
 
 ### [Remove-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance](Remove-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance.md)
 Delete navigation property userExperienceAnalyticsAppHealthApplicationPerformance for deviceManagement
@@ -2044,6 +2062,12 @@ Update the navigation property settings in deviceManagement
 
 ### [Update-MgDeviceManagementTroubleshootingEvent](Update-MgDeviceManagementTroubleshootingEvent.md)
 Update the navigation property troubleshootingEvents in deviceManagement
+
+### [Update-MgDeviceManagementUserExperienceAnalyticAnomaly](Update-MgDeviceManagementUserExperienceAnalyticAnomaly.md)
+Update the navigation property userExperienceAnalyticsAnomaly in deviceManagement
+
+### [Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice](Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
+Update the navigation property userExperienceAnalyticsAnomalyDevice in deviceManagement
 
 ### [Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance](Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance.md)
 Update the navigation property userExperienceAnalyticsAppHealthApplicationPerformance in deviceManagement

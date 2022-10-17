@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamTagMember
 
 ## SYNOPSIS
-Get members from teams
+Users assigned to the tag.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgTeamTagMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get members from teams
+Users assigned to the tag.
 
 ## EXAMPLES
 

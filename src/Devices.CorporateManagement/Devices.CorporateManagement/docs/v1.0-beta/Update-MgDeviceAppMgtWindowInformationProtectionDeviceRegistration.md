@@ -145,7 +145,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -292,7 +293,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionDeviceRegistration>: Represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeviceMacAddress <String>]`: Device Mac address.
   - `[DeviceName <String>]`: Device name.
   - `[DeviceRegistrationId <String>]`: Device identifier for this device registration record.

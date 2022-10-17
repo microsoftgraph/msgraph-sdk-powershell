@@ -21,7 +21,7 @@ New-MgDeviceAppMgtManagedAppPolicy [-AdditionalProperties <Hashtable>] [-Created
 
 ### Create1
 ```
-New-MgDeviceAppMgtManagedAppPolicy -BodyParameter <IMicrosoftGraphManagedAppPolicy> [-Confirm] [-WhatIf]
+New-MgDeviceAppMgtManagedAppPolicy -BodyParameter <IMicrosoftGraphManagedAppPolicy1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ The ManagedAppPolicy resource represents a base type for platform specific polic
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 Parameter Sets: Create1
 Aliases:
 
@@ -109,7 +109,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -204,11 +205,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## NOTES
 
@@ -221,9 +222,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphManagedAppPolicy>: The ManagedAppPolicy resource represents a base type for platform specific policies.
+BODYPARAMETER <IMicrosoftGraphManagedAppPolicy1>: The ManagedAppPolicy resource represents a base type for platform specific policies.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.
   - `[DisplayName <String>]`: Policy display name.

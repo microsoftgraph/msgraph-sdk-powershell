@@ -190,7 +190,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -355,7 +356,7 @@ AVERAGECOMPARATIVESCORES <IMicrosoftGraphAverageComparativeScore[]>: Average sco
 
 BODYPARAMETER <IMicrosoftGraphSecureScore>: secureScore
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActiveUserCount <Int32?>]`: Active user count of the given tenant.
   - `[AverageComparativeScores <IMicrosoftGraphAverageComparativeScore[]>]`: Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
     - `[AverageScore <Double?>]`: Average score within specified basis.

@@ -15,7 +15,8 @@ Update the navigation property applePushNotificationCertificate in deviceManagem
 ### UpdateExpanded1 (Default)
 ```
 Update-MgDeviceManagementApplePushNotificationCertificate [-AdditionalProperties <Hashtable>]
- [-AppleIdentifier <String>] [-Certificate <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
+ [-AppleIdentifier <String>] [-Certificate <String>] [-CertificateUploadFailureReason <String>]
+ [-CertificateUploadStatus <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-TopicIdentifier <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -23,7 +24,7 @@ Update-MgDeviceManagementApplePushNotificationCertificate [-AdditionalProperties
 ### Update1
 ```
 Update-MgDeviceManagementApplePushNotificationCertificate
- -BodyParameter <IMicrosoftGraphApplePushNotificationCertificate1> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphApplePushNotificationCertificate> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -69,7 +70,7 @@ Apple push notification certificate.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
 Parameter Sets: Update1
 Aliases:
 
@@ -82,6 +83,36 @@ Accept wildcard characters: False
 
 ### -Certificate
 Not yet documented
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CertificateUploadFailureReason
+The reason the certificate upload failed.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CertificateUploadStatus
+The certificate upload status.
 
 ```yaml
 Type: System.String
@@ -111,7 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -206,7 +238,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
 
 ## OUTPUTS
 
@@ -221,11 +253,13 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphApplePushNotificationCertificate1>: Apple push notification certificate.
+BODYPARAMETER <IMicrosoftGraphApplePushNotificationCertificate>: Apple push notification certificate.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppleIdentifier <String>]`: Apple Id of the account used to create the MDM push certificate.
   - `[Certificate <String>]`: Not yet documented
+  - `[CertificateUploadFailureReason <String>]`: The reason the certificate upload failed.
+  - `[CertificateUploadStatus <String>]`: The certificate upload status.
   - `[ExpirationDateTime <DateTime?>]`: The expiration date and time for Apple push notification certificate.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time for Apple push notification certificate.
   - `[TopicIdentifier <String>]`: Topic Id.

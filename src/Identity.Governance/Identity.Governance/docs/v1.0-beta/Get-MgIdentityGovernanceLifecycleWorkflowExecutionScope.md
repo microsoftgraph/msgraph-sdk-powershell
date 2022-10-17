@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope
 
 ## SYNOPSIS
-The unique identifier of the Azure AD identity that last modified the workflow object..
+The unique identifier of the Azure AD identity that last modified the workflow object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope -InputObject <IIdentityG
 ```
 
 ## DESCRIPTION
-The unique identifier of the Azure AD identity that last modified the workflow object..
+The unique identifier of the Azure AD identity that last modified the workflow object.
 
 ## EXAMPLES
 

@@ -82,7 +82,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -229,7 +230,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment>: Contains the properties used to assign an App provisioning configuration to a group.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[TargetGroupId <String>]`: The ID of the AAD group in which the app provisioning configuration is being targeted.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
