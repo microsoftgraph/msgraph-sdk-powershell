@@ -45,9 +45,10 @@ jobs:
   - task: PowerShell@2
     displayName: Pushing to github
     env:
-      GITHUB_TOKEN: ${env:GITHUB_TOKEN}
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
     inputs:
       targetType: inline
+      pwsh: true
       script: |
         git config --global user.email "timwamalwa@gmail.com"
         git config --global user.name "Timothy Wamalwa"
@@ -55,5 +56,5 @@ jobs:
         $proposedBranch = "WeeklyExamplesUpdate/"+$date
         git add .
         git commit -m "Updating examples "+$date
-        git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
+        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $proposedBranch
         git status
