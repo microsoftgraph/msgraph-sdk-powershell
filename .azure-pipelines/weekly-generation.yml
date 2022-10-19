@@ -60,39 +60,39 @@ stages:
         displayName: Microsoft Graph PowerShell SDK Generation
         timeoutInMinutes: 840
         steps:
-      - template: ./common-templates/install-tools.yml
-      - template: ./common-templates/security-pre-checks.yml
-      - template: ./generation-templates/authentication-module.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
-      - template: ./generation-templates/workload-modules.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
-      - template: ./generation-templates/meta-module.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
-      - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-          - template: ./common-templates/esrp/codesign-nuget.yml
+          - template: ./common-templates/install-tools.yml
+          - template: ./common-templates/security-pre-checks.yml
+          - template: ./generation-templates/authentication-module.yml
             parameters:
-              FolderPath: "$(Build.ArtifactStagingDirectory)"
-              Pattern: "Microsoft.Graph*.nupkg"
-          - task: PublishBuildArtifacts@1
-            displayName: Publish Module Artifacts
-            inputs:
-              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
-              ArtifactName: "drop"
-              publishLocation: "Container"
-          - task: NuGetCommand@2
-            displayName: Publish NuGet to preview feed
-            inputs:
-              command: push
-              packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: $(PROJECT_NAME)/$(PREVIEW_FEED_NAME)
-              allowPackageConflicts: true
-      - template: ./common-templates/security-post-checks.yml
+              Test: ${{ parameters.Test }}
+              Pack: ${{ parameters.Pack }}
+              Sign: ${{ parameters.Sign }}
+          - template: ./generation-templates/workload-modules.yml
+            parameters:
+              Test: ${{ parameters.Test }}
+              Pack: ${{ parameters.Pack }}
+              Sign: ${{ parameters.Sign }}
+          - template: ./generation-templates/meta-module.yml
+            parameters:
+              Test: ${{ parameters.Test }}
+              Pack: ${{ parameters.Pack }}
+              Sign: ${{ parameters.Sign }}
+          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+              - template: ./common-templates/esrp/codesign-nuget.yml
+                parameters:
+                  FolderPath: "$(Build.ArtifactStagingDirectory)"
+                  Pattern: "Microsoft.Graph*.nupkg"
+              - task: PublishBuildArtifacts@1
+                displayName: Publish Module Artifacts
+                inputs:
+                  PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+                  ArtifactName: "drop"
+                  publishLocation: "Container"
+              - task: NuGetCommand@2
+                displayName: Publish NuGet to preview feed
+                inputs:
+                  command: push
+                  packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
+                  publishVstsFeed: $(PROJECT_NAME)/$(PREVIEW_FEED_NAME)
+                  allowPackageConflicts: true
+          - template: ./common-templates/security-post-checks.yml
