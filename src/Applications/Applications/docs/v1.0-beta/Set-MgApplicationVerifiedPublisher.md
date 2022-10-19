@@ -15,15 +15,16 @@ For more information, including prerequisites to setting a verified publisher, s
 
 ### SetExpanded1 (Default)
 ```
-Set-MgApplicationVerifiedPublisher -ApplicationId <String> [-AdditionalProperties <Hashtable>]
- [-VerifiedPublisherId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgApplicationVerifiedPublisher -ApplicationId <String> [-AppId <String>]
+ [-AdditionalProperties <Hashtable>] [-VerifiedPublisherId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Set1
 ```
 Set-MgApplicationVerifiedPublisher -ApplicationId <String>
  -BodyParameter <IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
@@ -65,6 +66,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: False
@@ -209,6 +225,7 @@ BODYPARAMETER <IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpu
   - `[VerifiedPublisherId <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

@@ -14,17 +14,19 @@ Update the navigation property subjects in identityGovernance
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEntitlementManagementSubject -AccessPackageSubjectId <String> [-AdditionalProperties <Hashtable>]
- [-AltSecId <String>] [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization1>]
- [-ConnectedOrganizationId <String>] [-DisplayName <String>] [-Email <String>] [-Id <String>]
- [-ObjectId <String>] [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>]
- [-SubjectLifecycle <String>] [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgEntitlementManagementSubject -AccessPackageSubjectId <String> [-ObjectId <String>]
+ [-AdditionalProperties <Hashtable>] [-AltSecId <String>]
+ [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization1>] [-ConnectedOrganizationId <String>]
+ [-DisplayName <String>] [-Email <String>] [-Id <String>] [-ObjectId1 <String>]
+ [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>] [-SubjectLifecycle <String>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEntitlementManagementSubject -AccessPackageSubjectId <String>
- -BodyParameter <IMicrosoftGraphAccessPackageSubject1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageSubject1> [-ObjectId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -35,12 +37,12 @@ Update-MgEntitlementManagementSubject -InputObject <IIdentityGovernanceIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEntitlementManagementSubject -InputObject <IIdentityGovernanceIdentity>
+Update-MgEntitlementManagementSubject -InputObject <IIdentityGovernanceIdentity> [-ObjectId <String>]
  [-AdditionalProperties <Hashtable>] [-AltSecId <String>]
  [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization1>] [-ConnectedOrganizationId <String>]
- [-DisplayName <String>] [-Email <String>] [-Id <String>] [-ObjectId <String>]
- [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>] [-SubjectLifecycle <String>]
- [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Email <String>] [-Id <String>] [-OnPremisesSecurityIdentifier <String>]
+ [-PrincipalName <String>] [-SubjectLifecycle <String>] [-Type <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -205,12 +207,27 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
+Alternate key: objectId of accessPackageSubject
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ObjectId1
 The object identifier of the subject.
 null if the subject is not yet a user in the tenant.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -442,6 +459,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
   - `[GroupId <String>]`: key: id of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[ObjectId <String>]`: Alternate key: objectId of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval

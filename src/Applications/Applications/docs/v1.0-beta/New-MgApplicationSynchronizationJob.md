@@ -16,9 +16,9 @@ Call Start job to start synchronization.
 
 ### CreateExpanded (Default)
 ```
-New-MgApplicationSynchronizationJob -ApplicationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Schedule <IMicrosoftGraphSynchronizationSchedule>] [-Schema <IMicrosoftGraphSynchronizationSchema>]
- [-Status <IMicrosoftGraphSynchronizationStatus>]
+New-MgApplicationSynchronizationJob -ApplicationId <String> [-AppId <String>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Schedule <IMicrosoftGraphSynchronizationSchedule>]
+ [-Schema <IMicrosoftGraphSynchronizationSchema>] [-Status <IMicrosoftGraphSynchronizationStatus>]
  [-SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>] [-TemplateId <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -26,7 +26,7 @@ New-MgApplicationSynchronizationJob -ApplicationId <String> [-AdditionalProperti
 ### Create
 ```
 New-MgApplicationSynchronizationJob -ApplicationId <String> -BodyParameter <IMicrosoftGraphSynchronizationJob>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
@@ -68,6 +68,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ApplicationId
 key: id of application
 
@@ -100,7 +115,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -265,7 +281,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSynchronizationJob>: synchronizationJob
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Schedule <IMicrosoftGraphSynchronizationSchedule>]`: synchronizationSchedule
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Expiration <DateTime?>]`: Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -273,9 +289,9 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationJob>: synchronizationJob
     - `[State <String>]`: synchronizationScheduleState
   - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: Contains the collection of directories and all of their objects.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
       - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
@@ -399,6 +415,7 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationJob>: synchronizationJob
   - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
@@ -436,9 +453,9 @@ SCHEDULE <IMicrosoftGraphSynchronizationSchedule>: synchronizationSchedule
 
 SCHEMA <IMicrosoftGraphSynchronizationSchema>: synchronizationSchema
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: Contains the collection of directories and all of their objects.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
     - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.

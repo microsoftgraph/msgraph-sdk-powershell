@@ -15,7 +15,7 @@ Validate that the credentials are valid in the tenant.
 ### ValidateExpanded (Default)
 ```
 Test-MgApplicationSynchronizationJobCredentials -ApplicationId <String> -SynchronizationJobId <String>
- [-AdditionalProperties <Hashtable>] [-ApplicationIdentifier <String>]
+ [-AppId <String>] [-AdditionalProperties <Hashtable>] [-ApplicationIdentifier <String>]
  [-Credentials <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>] [-TemplateId <String>]
  [-UseSavedCredentials] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -24,7 +24,7 @@ Test-MgApplicationSynchronizationJobCredentials -ApplicationId <String> -Synchro
 ```
 Test-MgApplicationSynchronizationJobCredentials -ApplicationId <String> -SynchronizationJobId <String>
  -BodyParameter <IPathsAjp903ApplicationsApplicationIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphValidatecredentialsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentity
@@ -55,6 +55,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: ValidateExpanded, ValidateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Validate, ValidateExpanded
 Aliases:
 
 Required: False
@@ -269,6 +284,7 @@ CREDENTIALS <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>: .
   - `[Value <String>]`: The value of the secret.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

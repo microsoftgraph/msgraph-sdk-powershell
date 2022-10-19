@@ -21,15 +21,16 @@ The **endDateTime** can be up to three years after the certificate is created.
 
 ### AddExpanded (Default)
 ```
-Add-MgServicePrincipalTokenSigningCertificate -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-EndDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-MgServicePrincipalTokenSigningCertificate -ServicePrincipalId <String> [-AppId <String>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EndDateTime <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Add
 ```
 Add-MgServicePrincipalTokenSigningCertificate -ServicePrincipalId <String>
  -BodyParameter <IPathsEyijssServiceprincipalsServiceprincipalIdMicrosoftGraphAddtokensigningcertificatePostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
@@ -79,6 +80,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: AddExpanded, AddViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Add, AddExpanded
 Aliases:
 
 Required: False
@@ -224,6 +240,7 @@ BODYPARAMETER <IPathsEyijssServiceprincipalsServiceprincipalIdMicrosoftGraphAddt
   - `[EndDateTime <DateTime?>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

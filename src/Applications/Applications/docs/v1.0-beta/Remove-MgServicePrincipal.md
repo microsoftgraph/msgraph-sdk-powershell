@@ -14,8 +14,8 @@ Delete a servicePrincipal object.
 
 ### Delete (Default)
 ```
-Remove-MgServicePrincipal -ServicePrincipalId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgServicePrincipal -ServicePrincipalId <String> [-AppId <String>] [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
@@ -39,6 +39,21 @@ This example shows how to use the Remove-MgServicePrincipal Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -IfMatch
 ETag
@@ -153,6 +168,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

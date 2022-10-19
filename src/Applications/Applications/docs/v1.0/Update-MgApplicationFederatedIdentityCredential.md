@@ -15,16 +15,16 @@ Update the navigation property federatedIdentityCredentials in applications
 ### UpdateExpanded1 (Default)
 ```
 Update-MgApplicationFederatedIdentityCredential -ApplicationId <String>
- -FederatedIdentityCredentialId <String> [-AdditionalProperties <Hashtable>] [-Audiences <String[]>]
- [-Description <String>] [-Id <String>] [-Issuer <String>] [-Name <String>] [-Subject <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -FederatedIdentityCredentialId <String> [-AppId <String>] [-AdditionalProperties <Hashtable>]
+ [-Audiences <String[]>] [-Description <String>] [-Id <String>] [-Issuer <String>] [-Name <String>]
+ [-Subject <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgApplicationFederatedIdentityCredential -ApplicationId <String>
  -FederatedIdentityCredentialId <String> -BodyParameter <IMicrosoftGraphFederatedIdentityCredential>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
@@ -72,6 +72,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: False
@@ -165,7 +180,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -323,7 +339,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphFederatedIdentityCredential>: federatedIdentityCredential
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
   - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
   - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
@@ -331,6 +347,7 @@ BODYPARAMETER <IMicrosoftGraphFederatedIdentityCredential>: federatedIdentityCre
   - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

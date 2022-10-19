@@ -16,15 +16,16 @@ The rate limit for this API is 5 requests per 10 seconds.
 ### ProvisionExpanded (Default)
 ```
 New-MgApplicationSynchronizationJobOnDemand -ApplicationId <String> -SynchronizationJobId <String>
- [-AdditionalProperties <Hashtable>] [-Parameters <IMicrosoftGraphSynchronizationJobApplicationParameters[]>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-AdditionalProperties <Hashtable>]
+ [-Parameters <IMicrosoftGraphSynchronizationJobApplicationParameters[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Provision
 ```
 New-MgApplicationSynchronizationJobOnDemand -ApplicationId <String> -SynchronizationJobId <String>
  -BodyParameter <IPaths1A5O87GApplicationsApplicationIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphProvisionondemandPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ProvisionViaIdentity
@@ -55,6 +56,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: ProvisionExpanded, ProvisionViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Provision, ProvisionExpanded
 Aliases:
 
 Required: False
@@ -209,6 +225,7 @@ BODYPARAMETER <IPaths1A5O87GApplicationsApplicationIdSynchronizationJobsSynchron
       - `[ObjectTypeName <String>]`: The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

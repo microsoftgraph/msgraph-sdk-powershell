@@ -146,7 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -282,7 +283,7 @@ APPOINTMENTCLIENTS <IMicrosoftGraphVirtualAppointmentUser[]>: The client informa
 
 BODYPARAMETER <IMicrosoftGraphVirtualAppointment>: virtualAppointment
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppointmentClientJoinWebUrl <String>]`: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
   - `[AppointmentClients <IMicrosoftGraphVirtualAppointmentUser[]>]`: The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
     - `[DisplayName <String>]`: The display name of the user who participates in a virtual appointment. Optional.

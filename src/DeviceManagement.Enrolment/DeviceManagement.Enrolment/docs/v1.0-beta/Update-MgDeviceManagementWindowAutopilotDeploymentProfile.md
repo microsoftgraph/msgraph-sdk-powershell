@@ -246,7 +246,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -436,16 +437,16 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNEDDEVICES <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>: The list of assigned devices for the profile.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AddressableUserName <String>]`: Addressable user name.
   - `[AzureActiveDirectoryDeviceId <String>]`: AAD Device ID - to be deprecated
   - `[AzureAdDeviceId <String>]`: AAD Device ID
   - `[DeploymentProfile <IMicrosoftGraphWindowsAutopilotDeploymentProfile>]`: Windows Autopilot Deployment Profile
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AssignedDevices <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>]`: The list of assigned devices for the profile.
     - `[Assignments <IMicrosoftGraphWindowsAutopilotDeploymentProfileAssignment[]>]`: The list of group assignments for the profile.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
       - `[SourceId <String>]`: Identifier for resource used for deployment to a group
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -505,7 +506,7 @@ ASSIGNEDDEVICES <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>: The list of a
   - `[UserPrincipalName <String>]`: User Principal Name.
 
 ASSIGNMENTS <IMicrosoftGraphWindowsAutopilotDeploymentProfileAssignment[]>: The list of group assignments for the profile.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -515,9 +516,9 @@ ASSIGNMENTS <IMicrosoftGraphWindowsAutopilotDeploymentProfileAssignment[]>: The 
 
 BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeploymentProfile>: Windows Autopilot Deployment Profile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AssignedDevices <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>]`: The list of assigned devices for the profile.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AddressableUserName <String>]`: Addressable user name.
     - `[AzureActiveDirectoryDeviceId <String>]`: AAD Device ID - to be deprecated
     - `[AzureAdDeviceId <String>]`: AAD Device ID
@@ -546,7 +547,7 @@ BODYPARAMETER <IMicrosoftGraphWindowsAutopilotDeploymentProfile>: Windows Autopi
     - `[SystemFamily <String>]`: System Family
     - `[UserPrincipalName <String>]`: User Principal Name.
   - `[Assignments <IMicrosoftGraphWindowsAutopilotDeploymentProfileAssignment[]>]`: The list of group assignments for the profile.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: Identifier for resource used for deployment to a group
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.

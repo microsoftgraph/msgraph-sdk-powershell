@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 97454772-2908-461c-b3a5-2f32b26493fb
+Module Guid: 6280d889-4551-4272-9b59-4924245e4b4e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -382,7 +382,7 @@ This function is transitive.
 **Note:** Only users and role-enabled groups can be members of directory roles.
 
 ### [Get-MgSubscribedSku](Get-MgSubscribedSku.md)
-Get entity from subscribedSkus by key
+Get a specific commercial subscription that an organization has acquired.
 
 ### [Get-MgUserScopedRoleMemberOf](Get-MgUserScopedRoleMemberOf.md)
 Get scopedRoleMemberOf from users

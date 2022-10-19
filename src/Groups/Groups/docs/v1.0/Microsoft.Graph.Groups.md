@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: c6bea60a-6062-4b9f-8ab5-028d4626e924
+Module Guid: b7187176-18c2-4bf9-939b-5de419f67bec
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -969,9 +969,6 @@ Update the properties of a group object.
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
 Update the navigation property threads in groups
 
-### [Update-MgGroupConversationThreadPost](Update-MgGroupConversationThreadPost.md)
-Update the navigation property inReplyTo in groups
-
 ### [Update-MgGroupConversationThreadPostExtension](Update-MgGroupConversationThreadPostExtension.md)
 Update the navigation property extensions in groups
 
@@ -1007,9 +1004,6 @@ Update the navigation property photo in groups
 
 ### [Update-MgGroupThread](Update-MgGroupThread.md)
 Update the navigation property threads in groups
-
-### [Update-MgGroupThreadPost](Update-MgGroupThreadPost.md)
-Update the navigation property inReplyTo in groups
 
 ### [Update-MgGroupThreadPostExtension](Update-MgGroupThreadPostExtension.md)
 Update the navigation property extensions in groups

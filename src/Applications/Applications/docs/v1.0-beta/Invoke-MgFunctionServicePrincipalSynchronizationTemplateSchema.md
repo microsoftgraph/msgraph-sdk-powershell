@@ -15,8 +15,8 @@ Invoke function functions
 ### Functions (Default)
 ```
 Invoke-MgFunctionServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
- -SynchronizationTemplateId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
+ -SynchronizationTemplateId <String> [-AppId <String>] [-Count] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FunctionsViaIdentity
@@ -32,6 +32,21 @@ Invoke function functions
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Functions
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Count
 Include count of items
@@ -205,6 +220,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

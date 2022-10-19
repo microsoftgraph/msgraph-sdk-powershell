@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: c81c26be-0144-4022-a4fe-b62128c54ad4
+Module Guid: f37a220e-3876-41d0-b6c5-739e65868ebc
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -233,6 +233,9 @@ Cloud PC audit event.
 
 ### [Get-MgDeviceManagementVirtualEndpointCloudPC](Get-MgDeviceManagementVirtualEndpointCloudPC.md)
 Cloud managed virtual desktops.
+
+### [Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
+Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
 
 ### [Get-MgDeviceManagementVirtualEndpointDeviceImage](Get-MgDeviceManagementVirtualEndpointDeviceImage.md)
 The image resource on Cloud PC.
@@ -583,6 +586,9 @@ Delete navigation property groupAssignments for deviceManagement
 ### [Remove-MgDeviceManagementUserPfxCertificate](Remove-MgDeviceManagementUserPfxCertificate.md)
 Delete navigation property userPfxCertificates for deviceManagement
 
+### [Remove-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Remove-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
+Delete navigation property crossCloudGovernmentOrganizationMapping for deviceManagement
+
 ### [Remove-MgDeviceManagementVirtualEndpointDeviceImage](Remove-MgDeviceManagementVirtualEndpointDeviceImage.md)
 Delete navigation property deviceImages for deviceManagement
 
@@ -768,6 +774,9 @@ Update the navigation property groupAssignments in deviceManagement
 
 ### [Update-MgDeviceManagementUserPfxCertificate](Update-MgDeviceManagementUserPfxCertificate.md)
 Update the navigation property userPfxCertificates in deviceManagement
+
+### [Update-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Update-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
+Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointDeviceImage](Update-MgDeviceManagementVirtualEndpointDeviceImage.md)
 Update the navigation property deviceImages in deviceManagement

@@ -16,7 +16,7 @@ This function is transitive.
 
 ### GetExpanded1 (Default)
 ```
-Get-MgApplicationMemberObject -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+Get-MgApplicationMemberObject -ApplicationId <String> [-AppId <String>] [-AdditionalProperties <Hashtable>]
  [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -24,7 +24,7 @@ Get-MgApplicationMemberObject -ApplicationId <String> [-AdditionalProperties <Ha
 ```
 Get-MgApplicationMemberObject -ApplicationId <String>
  -BodyParameter <IPathsLcqfowApplicationsApplicationIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
@@ -55,6 +55,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Get1, GetExpanded1
 Aliases:
 
 Required: False
@@ -184,6 +199,7 @@ BODYPARAMETER <IPathsLcqfowApplicationsApplicationIdMicrosoftGraphGetmemberobjec
   - `[SecurityEnabledOnly <Boolean?>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityConditionalAccessAuthenticationStrengthPolicy
 
 ## SYNOPSIS
-Get policies from identity
+A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgIdentityConditionalAccessAuthenticationStrengthPolicy -InputObject <IIdent
 ```
 
 ## DESCRIPTION
-Get policies from identity
+A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 
 ## EXAMPLES
 

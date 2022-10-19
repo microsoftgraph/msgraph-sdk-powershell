@@ -14,7 +14,7 @@ Delete single sign-on credentials using a password for a user or group.
 
 ### DeleteExpanded (Default)
 ```
-Remove-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
+Remove-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String> [-AppId <String>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -22,7 +22,7 @@ Remove-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <St
 ```
 Remove-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
  -BodyParameter <IPathsB2Zp6SServiceprincipalsServiceprincipalIdMicrosoftGraphDeletepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
@@ -63,6 +63,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: DeleteExpanded, DeleteViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Delete, DeleteExpanded
 Aliases:
 
 Required: False
@@ -207,6 +222,7 @@ BODYPARAMETER <IPathsB2Zp6SServiceprincipalsServiceprincipalIdMicrosoftGraphDele
   - `[Id <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

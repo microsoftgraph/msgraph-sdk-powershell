@@ -17,7 +17,7 @@ Create new navigation property to devices for teamwork
 New-MgTeamworkDevice [-Activity <IMicrosoftGraphTeamworkDeviceActivity>] [-ActivityState <String>]
  [-AdditionalProperties <Hashtable>] [-CompanyAssetTag <String>]
  [-Configuration <IMicrosoftGraphTeamworkDeviceConfiguration>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedDateTime <DateTime>] [-CurrentUser <IMicrosoftGraphTeamworkUserIdentity>] [-DeviceType <String>]
+ [-CreatedDateTime <DateTime>] [-CurrentUser <IMicrosoftGraphTeamworkUserIdentity1>] [-DeviceType <String>]
  [-HardwareDetail <IMicrosoftGraphTeamworkHardwareDetail>] [-Health <IMicrosoftGraphTeamworkDeviceHealth>]
  [-HealthStatus <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Notes <String>] [-Operations <IMicrosoftGraphTeamworkDeviceOperation[]>]
@@ -165,7 +165,7 @@ teamworkUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for CURRENTUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -529,11 +529,11 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDevice>: teamworkDevice
         - `[IsSendLogsAndFeedbackEnabled <Boolean?>]`: True if sending logs and feedback is enabled.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[CreatedDateTime <DateTime?>]`: The UTC date and time when the device was enrolled to the tenant.
-  - `[CurrentUser <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+  - `[CurrentUser <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
-    - `[UserIdentityType <String>]`: teamworkUserIdentityType
+    - `[UserIdentityType <String>]`: 
   - `[DeviceType <String>]`: teamworkDeviceType
   - `[HardwareDetail <IMicrosoftGraphTeamworkHardwareDetail>]`: teamworkHardwareDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -728,11 +728,11 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-CURRENTUSER <IMicrosoftGraphTeamworkUserIdentity>: teamworkUserIdentity
+CURRENTUSER <IMicrosoftGraphTeamworkUserIdentity1>: teamworkUserIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
-  - `[UserIdentityType <String>]`: teamworkUserIdentityType
+  - `[UserIdentityType <String>]`: 
 
 HARDWAREDETAIL <IMicrosoftGraphTeamworkHardwareDetail>: teamworkHardwareDetail
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

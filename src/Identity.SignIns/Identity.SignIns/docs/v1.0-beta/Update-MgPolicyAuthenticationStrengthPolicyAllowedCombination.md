@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgPolicyAuthenticationStrengthPolicyAllowedCombination
 
 ## SYNOPSIS
-Invoke action updateAllowedCombinations
+Update the allowedCombinations property of an authenticationStrengthPolicy object.
+To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Update-MgPolicyAuthenticationStrengthPolicyAllowedCombination -InputObject <IIde
 ```
 
 ## DESCRIPTION
-Invoke action updateAllowedCombinations
+Update the allowedCombinations property of an authenticationStrengthPolicy object.
+To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.
 
 ## EXAMPLES
 

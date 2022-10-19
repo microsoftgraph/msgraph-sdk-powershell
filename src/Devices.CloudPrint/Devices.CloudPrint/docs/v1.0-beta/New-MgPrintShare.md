@@ -1390,12 +1390,12 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup1[]>: The groups whose users have access to p
         - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-          - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
+          - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
           - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             - `[Id <String>]`: Unique identifier for the identity.
-            - `[UserIdentityType <String>]`: teamworkUserIdentityType
+            - `[UserIdentityType <String>]`: 
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -5843,12 +5843,12 @@ ALLOWEDUSERS <IMicrosoftGraphUser1[]>: The users who have access to print using 
     - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-      - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
+      - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
       - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
-        - `[UserIdentityType <String>]`: teamworkUserIdentityType
+        - `[UserIdentityType <String>]`: 
     - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -10646,12 +10646,12 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare>: printerShare
           - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-            - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
+            - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
             - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
               - `[Id <String>]`: Unique identifier for the identity.
-              - `[UserIdentityType <String>]`: teamworkUserIdentityType
+              - `[UserIdentityType <String>]`: 
           - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -15399,12 +15399,12 @@ PRINTER <IMicrosoftGraphPrinter1>: printer
             - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-              - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
+              - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
               - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
-                - `[UserIdentityType <String>]`: teamworkUserIdentityType
+                - `[UserIdentityType <String>]`: 
             - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.

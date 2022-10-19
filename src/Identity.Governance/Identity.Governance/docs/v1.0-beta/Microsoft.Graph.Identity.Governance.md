@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 17694a43-d54c-48f4-848e-5c25b83e053c
+Module Guid: 8f131a95-14bd-451f-9c17-db60ed0b53c1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1506,13 +1506,16 @@ Restore a workflow that has been deleted.
 You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
-Invoke action resume
+Resume a task processing result that's `inProgress`.
+An Azure Logic Apps system-assigned managed identity calls this API.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
-Invoke action resume
+Resume a task processing result that's `inProgress`.
+An Azure Logic Apps system-assigned managed identity calls this API.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
-Invoke action resume
+Resume a task processing result that's `inProgress`.
+An Azure Logic Apps system-assigned managed identity calls this API.
 
 ### [Select-MgEntitlementManagementAccessPackage](Select-MgEntitlementManagementAccessPackage.md)
 Select matching entitlement management accessPackage

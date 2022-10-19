@@ -36,6 +36,33 @@ The workflow templates in the lifecycle workflow instance.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgIdentityGovernanceLifecycleWorkflowTemplate -WorkflowTemplateId $workflowTemplateId
+```
+
+This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgIdentityGovernanceLifecycleWorkflowTemplate -Filter "category eq 'leaver'" 
+```
+
+This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgIdentityGovernanceLifecycleWorkflowTemplate
+```
+
+This example shows how to use the Get-MgIdentityGovernanceLifecycleWorkflowTemplate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -All
@@ -290,6 +317,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
   - `[GroupId <String>]`: key: id of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[ObjectId <String>]`: Alternate key: objectId of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval

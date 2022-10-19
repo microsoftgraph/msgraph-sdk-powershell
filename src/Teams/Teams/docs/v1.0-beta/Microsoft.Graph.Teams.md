@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 30e3b946-632e-458e-be72-4330bde29ecc
+Module Guid: 57518b43-6859-4c06-815e-b2e63582be38
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -138,6 +138,8 @@ Retrieve the hosted content in an app's icon.
 
 ### [Get-MgChat](Get-MgChat.md)
 Retrieve a single chat (without its messages).
+This method supports federation.
+To access a chat, at least one chat member must belong to the tenant the request initiated from.
 
 ### [Get-MgChatInstalledApp](Get-MgChatInstalledApp.md)
 A collection of all the apps in the chat.
@@ -834,8 +836,7 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgChatMessage](New-MgChatMessage.md)
-Send a new chatMessage in the specified chat.
-This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgChatMessageHostedContent](New-MgChatMessageHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1124,8 +1125,7 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgUserChatMessage](New-MgUserChatMessage.md)
-Send a new chatMessage in the specified chat.
-This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgUserChatMessageHostedContent](New-MgUserChatMessageHostedContent.md)
 Create new navigation property to hostedContents for users
@@ -1547,6 +1547,9 @@ Update media content for the navigation property photo in groups
 ### [Set-MgGroupTeamPrimaryChannelFileFolderContent](Set-MgGroupTeamPrimaryChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgGroupTeamSchedule](Set-MgGroupTeamSchedule.md)
+Update the navigation property schedule in groups
+
 ### [Set-MgTeamChannelFileFolderContent](Set-MgTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
 
@@ -1567,6 +1570,9 @@ Invoke action setReaction
 
 ### [Set-MgTeamPrimaryChannelMessageReplyReaction](Set-MgTeamPrimaryChannelMessageReplyReaction.md)
 Invoke action setReaction
+
+### [Set-MgTeamSchedule](Set-MgTeamSchedule.md)
+Update the navigation property schedule in teams
 
 ### [Set-MgTeamworkDeletedTeamChannelFileFolderContent](Set-MgTeamworkDeletedTeamChannelFileFolderContent.md)
 The content stream, if the item represents a file.
@@ -1752,9 +1758,6 @@ Update the navigation property sharedWithTeams in groups
 ### [Update-MgGroupTeamPrimaryChannelTab](Update-MgGroupTeamPrimaryChannelTab.md)
 Update the navigation property tabs in groups
 
-### [Update-MgGroupTeamSchedule](Update-MgGroupTeamSchedule.md)
-Update the navigation property schedule in groups
-
 ### [Update-MgGroupTeamScheduleOfferShiftRequest](Update-MgGroupTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in groups
 
@@ -1850,9 +1853,6 @@ Update the navigation property sharedWithTeams in teams
 
 ### [Update-MgTeamPrimaryChannelTab](Update-MgTeamPrimaryChannelTab.md)
 Update the navigation property tabs in teams
-
-### [Update-MgTeamSchedule](Update-MgTeamSchedule.md)
-Update the navigation property schedule in teams
 
 ### [Update-MgTeamScheduleOfferShiftRequest](Update-MgTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in teams

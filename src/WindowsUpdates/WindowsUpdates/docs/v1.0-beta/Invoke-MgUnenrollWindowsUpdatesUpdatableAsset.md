@@ -182,12 +182,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSETS <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 BODYPARAMETER <IPathsP6Z74XAdminWindowsUpdatesUpdatableassetsMicrosoftGraphWindowsupdatesUnenrollassetsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[UpdateCategory <String>]`: updateCategory
 
 ## RELATED LINKS

@@ -14,14 +14,14 @@ Create new navigation property ref to tokenIssuancePolicies for applications
 
 ### CreateExpanded (Default)
 ```
-New-MgApplicationTokenIssuancePolicyByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
- [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgApplicationTokenIssuancePolicyByRef -ApplicationId <String> [-AppId <String>]
+ [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgApplicationTokenIssuancePolicyByRef -ApplicationId <String> -BodyParameter <IReferenceCreate>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
@@ -61,6 +61,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: False
@@ -205,6 +220,7 @@ BODYPARAMETER <IReferenceCreate>: .
   - `[OdataId <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult
 
 ## SYNOPSIS
-Invoke action resume
+Resume a task processing result that's `inProgress`.
+An Azure Logic Apps system-assigned managed identity calls this API.
 
 ## SYNTAX
 
@@ -44,7 +45,8 @@ Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult -InputObject
 ```
 
 ## DESCRIPTION
-Invoke action resume
+Resume a task processing result that's `inProgress`.
+An Azure Logic Apps system-assigned managed identity calls this API.
 
 ## EXAMPLES
 
@@ -318,6 +320,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
   - `[GroupId <String>]`: key: id of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[ObjectId <String>]`: Alternate key: objectId of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval

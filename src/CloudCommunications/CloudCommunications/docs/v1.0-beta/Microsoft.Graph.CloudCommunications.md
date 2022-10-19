@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 67dc5682-f2b6-49ef-b7ff-938e51c7f46e
+Module Guid: 859c880a-b729-459f-9548-2f3b14d9e167
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -70,7 +70,7 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgCommunicationOnlineMeetingRegistration](Get-MgCommunicationOnlineMeetingRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion](Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
@@ -116,7 +116,7 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgUserOnlineMeetingRegistration](Get-MgUserOnlineMeetingRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgUserOnlineMeetingRegistrationCustomQuestion](Get-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
@@ -148,11 +148,8 @@ Create an onlineMeeting object with a custom specified external ID.
 If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 
 ### [Invoke-MgInviteCommunicationCallParticipant](Invoke-MgInviteCommunicationCallParticipant.md)
-Delete a specific participant in a call.
-In some situations, it is appropriate for an application to remove a participant from an active call.
-This action can be done before or after the participant answers the call.
-When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
-When an invited participant is removed, any outstanding add participant request is canceled.
+Invite participants to the active call.
+For more information about how to handle operations, see commsOperation.
 
 ### [Invoke-MgKeepCommunicationCallAlive](Invoke-MgKeepCommunicationCallAlive.md)
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.

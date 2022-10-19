@@ -16,7 +16,7 @@ Nullable.
 
 ### Get (Default)
 ```
-Get-MgEntitlementManagementSubjectConnectedOrganization -AccessPackageSubjectId <String>
+Get-MgEntitlementManagementSubjectConnectedOrganization -AccessPackageSubjectId <String> [-ObjectId <String>]
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -78,6 +78,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ObjectId
+Alternate key: objectId of accessPackageSubject
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -166,6 +181,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
   - `[GroupId <String>]`: key: id of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+  - `[ObjectId <String>]`: Alternate key: objectId of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval

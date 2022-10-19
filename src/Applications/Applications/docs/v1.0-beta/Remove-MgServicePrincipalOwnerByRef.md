@@ -14,8 +14,8 @@ Delete ref of navigation property owners for servicePrincipals
 
 ### Delete (Default)
 ```
-Remove-MgServicePrincipalOwnerByRef -DirectoryObjectId <String> -ServicePrincipalId <String> [-Id <String>]
- [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgServicePrincipalOwnerByRef -DirectoryObjectId <String> -ServicePrincipalId <String> [-AppId <String>]
+ [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
@@ -29,7 +29,34 @@ Delete ref of navigation property owners for servicePrincipals
 
 ## EXAMPLES
 
+### Example 1: Using the Remove-MgServicePrincipalOwnerByRef Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/{id}"
+}
+Remove-MgServicePrincipalOwnerByRef -ServicePrincipalId $servicePrincipalId -DirectoryObjectId $directoryObjectId -BodyParameter $params
+```
+
+This example shows how to use the Remove-MgServicePrincipalOwnerByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DirectoryObjectId
 key: id of directoryObject
@@ -174,6 +201,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

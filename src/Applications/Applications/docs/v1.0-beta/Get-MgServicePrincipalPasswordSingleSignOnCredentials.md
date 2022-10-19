@@ -14,7 +14,7 @@ Get a list of single sign-on credentials using a password for a user or group.
 
 ### GetExpanded (Default)
 ```
-Get-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
+Get-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String> [-AppId <String>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -22,7 +22,7 @@ Get-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <Strin
 ```
 Get-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
  -BodyParameter <IPathsY2DqcyServiceprincipalsServiceprincipalIdMicrosoftGraphGetpasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -63,6 +63,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: GetExpanded, GetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Get, GetExpanded
 Aliases:
 
 Required: False
@@ -192,6 +207,7 @@ BODYPARAMETER <IPathsY2DqcyServiceprincipalsServiceprincipalIdMicrosoftGraphGetp
   - `[Id <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

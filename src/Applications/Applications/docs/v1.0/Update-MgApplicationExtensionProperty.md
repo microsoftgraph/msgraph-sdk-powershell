@@ -14,7 +14,7 @@ Update the navigation property extensionProperties in applications
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
+Update-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String> [-AppId <String>]
  [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>] [-DataType <String>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-IsSyncedFromOnPremises] [-Name <String>]
  [-TargetObjects <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,7 +23,8 @@ Update-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionProperty
 ### Update1
 ```
 Update-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
- -BodyParameter <IMicrosoftGraphExtensionProperty> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExtensionProperty> [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
@@ -69,6 +70,21 @@ Read-only.
 ```yaml
 Type: System.String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: False
@@ -160,7 +176,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -311,7 +328,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphExtensionProperty>: extensionProperty
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
   - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
   - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
@@ -319,6 +336,7 @@ BODYPARAMETER <IMicrosoftGraphExtensionProperty>: extensionProperty
   - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

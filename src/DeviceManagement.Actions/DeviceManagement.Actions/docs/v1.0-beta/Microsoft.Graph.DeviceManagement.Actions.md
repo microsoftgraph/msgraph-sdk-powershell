@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 488ea4d2-2d4b-4aa3-9edd-3e764d57a0e7
+Module Guid: b337cc7a-186e-4c6f-9a26-96958a205eea
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -108,6 +108,9 @@ Invoke action getHealthMetrics
 
 ### [Get-MgDeviceManagementCertificateConnectorDetailHealthMetricTimeSeries](Get-MgDeviceManagementCertificateConnectorDetailHealthMetricTimeSeries.md)
 Invoke action getHealthMetricTimeSeries
+
+### [Get-MgDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire](Get-MgDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire.md)
+Invoke action getNoncompliantDevicesToRetire
 
 ### [Get-MgDeviceManagementDeviceConfigurationTargetedUserAndDevice](Get-MgDeviceManagementDeviceConfigurationTargetedUserAndDevice.md)
 Invoke action getTargetedUsersAndDevices
@@ -229,6 +232,9 @@ Invoke action getHistoricalReport
 ### [Get-MgDeviceManagementReportMalwareSummaryReport](Get-MgDeviceManagementReportMalwareSummaryReport.md)
 Invoke action getMalwareSummaryReport
 
+### [Get-MgDeviceManagementReportMobileApplicationManagementAppRegistrationSummaryReport](Get-MgDeviceManagementReportMobileApplicationManagementAppRegistrationSummaryReport.md)
+Invoke action getMobileApplicationManagementAppRegistrationSummaryReport
+
 ### [Get-MgDeviceManagementReportNoncompliantDeviceAndSettingReport](Get-MgDeviceManagementReportNoncompliantDeviceAndSettingReport.md)
 Invoke action getNoncompliantDevicesAndSettingsReport
 
@@ -285,6 +291,15 @@ Invoke action getZebraFotaDeploymentReport
 
 ### [Get-MgDeviceManagementRoleScopeTagRoleScopeTagById](Get-MgDeviceManagementRoleScopeTagRoleScopeTagById.md)
 Invoke action getRoleScopeTagsById
+
+### [Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport](Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport.md)
+Invoke action getDailyAggregatedRemoteConnectionReports
+
+### [Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport](Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport.md)
+Invoke action getRemoteConnectionHistoricalReports
+
+### [Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport](Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport.md)
+Invoke action getTotalAggregatedRemoteConnectionReports
 
 ### [Import-MgDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentityAppleDeviceIdentityList](Import-MgDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentityAppleDeviceIdentityList.md)
 Invoke action importAppleDeviceIdentityList
@@ -353,6 +368,9 @@ Invoke action assignedAccessMultiModeProfiles
 ### [Invoke-MgDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl](Invoke-MgDeviceManagementDeviceConfigurationWindowsPrivacyAccessControl.md)
 Invoke action windowsPrivacyAccessControls
 
+### [Invoke-MgDeviceManagementOrganizationalMessageTenantConsent](Invoke-MgDeviceManagementOrganizationalMessageTenantConsent.md)
+Invoke action postOrganizationalMessageTenantConsent
+
 ### [Invoke-MgDownDeviceManagementComanagedDeviceShut](Invoke-MgDownDeviceManagementComanagedDeviceShut.md)
 Shut down device
 
@@ -364,6 +382,12 @@ Invoke action downloadAppDiagnostics
 
 ### [Invoke-MgDownloadDeviceManagementManagedDeviceAppDiagnostic](Invoke-MgDownloadDeviceManagementManagedDeviceAppDiagnostic.md)
 Invoke action downloadAppDiagnostics
+
+### [Invoke-MgEnrollDeviceManagementComanagedDeviceNowAction](Invoke-MgEnrollDeviceManagementComanagedDeviceNowAction.md)
+Trigger comanagement enrollment action on ConfigurationManager client
+
+### [Invoke-MgEnrollDeviceManagementManagedDeviceNowAction](Invoke-MgEnrollDeviceManagementManagedDeviceNowAction.md)
+Trigger comanagement enrollment action on ConfigurationManager client
 
 ### [Invoke-MgExecuteDeviceManagementComanagedDeviceAction](Invoke-MgExecuteDeviceManagementComanagedDeviceAction.md)
 Invoke action executeAction
@@ -745,7 +769,7 @@ After the review is completed, use this API again to set the Cloud PC back to a 
 Set device name of the device.
 
 ### [Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent](Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent.md)
-Invoke action setPortalNotificationAsSent
+Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
 
 ### [Set-MgDeviceManagementResourceAccessProfile](Set-MgDeviceManagementResourceAccessProfile.md)
 Invoke action assign
@@ -864,6 +888,9 @@ Invoke action updateSettings
 
 ### [Update-MgDeviceManagementManagedDeviceWindowDeviceAccount](Update-MgDeviceManagementManagedDeviceWindowDeviceAccount.md)
 Invoke action updateWindowsDeviceAccount
+
+### [Update-MgDeviceManagementOrganizationalMessageTenantConsent](Update-MgDeviceManagementOrganizationalMessageTenantConsent.md)
+Invoke action updateOrganizationalMessageTenantConsent
 
 ### [Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword](Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword.md)
 Update the Active Directory domain password for a cloudPcOnPremisesConnection object.

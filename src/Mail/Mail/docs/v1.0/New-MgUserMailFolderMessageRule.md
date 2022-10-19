@@ -192,7 +192,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -370,7 +371,7 @@ ACTIONS <IMicrosoftGraphMessageRuleActions>: messageRuleActions
 
 BODYPARAMETER <IMicrosoftGraphMessageRule>: messageRule
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Actions <IMicrosoftGraphMessageRuleActions>]`: messageRuleActions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AssignCategories <String[]>]`: A list of categories to be assigned to a message.

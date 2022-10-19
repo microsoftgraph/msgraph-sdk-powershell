@@ -16,7 +16,7 @@ For more information about expressions, see Writing Expressions for Attribute Ma
 ### ParseExpanded (Default)
 ```
 Invoke-MgParseApplicationSynchronizationJobSchemaExpression -ApplicationId <String>
- -SynchronizationJobId <String> [-AdditionalProperties <Hashtable>] [-Expression <String>]
+ -SynchronizationJobId <String> [-AppId <String>] [-AdditionalProperties <Hashtable>] [-Expression <String>]
  [-TargetAttributeDefinition <IMicrosoftGraphAttributeDefinition>]
  [-TestInputObject <IMicrosoftGraphExpressionInputObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -26,7 +26,7 @@ Invoke-MgParseApplicationSynchronizationJobSchemaExpression -ApplicationId <Stri
 Invoke-MgParseApplicationSynchronizationJobSchemaExpression -ApplicationId <String>
  -SynchronizationJobId <String>
  -BodyParameter <IPaths14L6Pq1ApplicationsApplicationIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ParseViaIdentity
@@ -58,6 +58,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: ParseExpanded, ParseViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Parse, ParseExpanded
 Aliases:
 
 Required: False
@@ -264,6 +279,7 @@ BODYPARAMETER <IPaths14L6Pq1ApplicationsApplicationIdSynchronizationJobsSynchron
       - `[Key <String>]`: Key.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

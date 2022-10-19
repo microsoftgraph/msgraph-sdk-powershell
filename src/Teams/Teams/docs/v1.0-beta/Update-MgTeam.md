@@ -12,7 +12,7 @@ Update the properties of the specified team.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgTeam -TeamId <String> [-AdditionalProperties <Hashtable>] [-AllChannels <IMicrosoftGraphChannel[]>]
  [-Channels <IMicrosoftGraphChannel[]>] [-Classification <String>] [-CreatedDateTime <DateTime>]
@@ -31,19 +31,19 @@ Update-MgTeam -TeamId <String> [-AdditionalProperties <Hashtable>] [-AllChannels
  [-WebUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgTeam -TeamId <String> -BodyParameter <IMicrosoftGraphTeam> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgTeam -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeam> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AllChannels <IMicrosoftGraphChannel[]>] [-Channels <IMicrosoftGraphChannel[]>] [-Classification <String>]
@@ -101,7 +101,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -117,7 +117,7 @@ To construct, please use Get-Help -Online and see NOTES section for ALLCHANNELS 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChannel[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -133,7 +133,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeam
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -149,7 +149,7 @@ To construct, please use Get-Help -Online and see NOTES section for CHANNELS pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChannel[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -166,7 +166,7 @@ Must match one of a pre-configured set in the tenant's directory.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -181,7 +181,7 @@ Timestamp at which the team was created.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -197,7 +197,7 @@ Maximum length: 1024 characters.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -213,7 +213,7 @@ To construct, please use Get-Help -Online and see NOTES section for DISCOVERYSET
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamDiscoverySettings
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -228,7 +228,7 @@ The name of the team.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -244,7 +244,7 @@ To construct, please use Get-Help -Online and see NOTES section for FUNSETTINGS 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamFunSettings
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -260,7 +260,7 @@ To construct, please use Get-Help -Online and see NOTES section for GROUP proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroup1
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -276,7 +276,7 @@ To construct, please use Get-Help -Online and see NOTES section for GUESTSETTING
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamGuestSettings
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -292,7 +292,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -308,7 +308,7 @@ To construct, please use Get-Help -Online and see NOTES section for INCOMINGCHAN
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChannel[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -324,7 +324,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -340,7 +340,7 @@ To construct, please use Get-Help -Online and see NOTES section for INSTALLEDAPP
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation1[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -355,7 +355,7 @@ A unique ID for the team that has been used in a few places such as the audit lo
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -370,7 +370,7 @@ Whether this team is in read-only mode.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -385,7 +385,7 @@ If set to true, the team is currently in the owner-only team membership state an
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -401,7 +401,7 @@ To construct, please use Get-Help -Online and see NOTES section for MEMBERS prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -417,7 +417,7 @@ To construct, please use Get-Help -Online and see NOTES section for MEMBERSETTIN
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamMemberSettings
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -433,7 +433,7 @@ To construct, please use Get-Help -Online and see NOTES section for MESSAGINGSET
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamMessagingSettings
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -449,7 +449,7 @@ To construct, please use Get-Help -Online and see NOTES section for OPERATIONS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -468,7 +468,7 @@ To construct, please use Get-Help -Online and see NOTES section for OWNERS prope
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser1[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -499,7 +499,7 @@ To construct, please use Get-Help -Online and see NOTES section for PERMISSIONGR
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -515,7 +515,7 @@ To construct, please use Get-Help -Online and see NOTES section for PHOTO proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -531,7 +531,7 @@ To construct, please use Get-Help -Online and see NOTES section for PRIMARYCHANN
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChannel
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -547,7 +547,7 @@ To construct, please use Get-Help -Online and see NOTES section for SCHEDULE pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedule1
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -562,7 +562,7 @@ teamSpecialization
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -578,7 +578,7 @@ To construct, please use Get-Help -Online and see NOTES section for SUMMARY prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamSummary
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -594,7 +594,7 @@ To construct, please use Get-Help -Online and see NOTES section for TAGS propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTag[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -609,7 +609,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -624,7 +624,7 @@ teamsTemplate
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -640,7 +640,7 @@ To construct, please use Get-Help -Online and see NOTES section for TEMPLATEDEFI
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamTemplateDefinition
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -655,7 +655,7 @@ The ID of the Azure Active Directory tenant.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -670,7 +670,7 @@ teamVisibilityType
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -687,7 +687,7 @@ This URL should be treated as an opaque blob, and not parsed.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -1678,15 +1678,15 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
           - `[Subject <String>]`: The subject of the chat message, in plaintext.
           - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
           - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-          - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+          - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             - `[Id <String>]`: Unique identifier for the identity.
-            - `[UserIdentityType <String>]`: teamworkUserIdentityType
+            - `[UserIdentityType <String>]`: 
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -6207,15 +6207,15 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
             - `[Subject <String>]`: The subject of the chat message, in plaintext.
             - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
             - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-          - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+          - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-            - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-            - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+            - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+            - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
               - `[Id <String>]`: Unique identifier for the identity.
-              - `[UserIdentityType <String>]`: teamworkUserIdentityType
+              - `[UserIdentityType <String>]`: 
           - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -10730,15 +10730,15 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
           - `[Subject <String>]`: The subject of the chat message, in plaintext.
           - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
           - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-          - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+          - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             - `[Id <String>]`: Unique identifier for the identity.
-            - `[UserIdentityType <String>]`: teamworkUserIdentityType
+            - `[UserIdentityType <String>]`: 
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -15329,15 +15329,15 @@ GROUP <IMicrosoftGraphGroup1>: group
           - `[Subject <String>]`: The subject of the chat message, in plaintext.
           - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
           - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-          - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+          - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             - `[Id <String>]`: Unique identifier for the identity.
-            - `[UserIdentityType <String>]`: teamworkUserIdentityType
+            - `[UserIdentityType <String>]`: 
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -19797,15 +19797,15 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
           - `[Subject <String>]`: The subject of the chat message, in plaintext.
           - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
           - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-          - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+          - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             - `[Id <String>]`: Unique identifier for the identity.
-            - `[UserIdentityType <String>]`: teamworkUserIdentityType
+            - `[UserIdentityType <String>]`: 
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -24431,15 +24431,15 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
       - `[Subject <String>]`: The subject of the chat message, in plaintext.
       - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
       - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-    - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+    - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-      - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-      - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+      - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+      - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
-        - `[UserIdentityType <String>]`: teamworkUserIdentityType
+        - `[UserIdentityType <String>]`: 
     - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -28982,15 +28982,15 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
           - `[Subject <String>]`: The subject of the chat message, in plaintext.
           - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
           - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-          - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+          - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             - `[Id <String>]`: Unique identifier for the identity.
-            - `[UserIdentityType <String>]`: teamworkUserIdentityType
+            - `[UserIdentityType <String>]`: 
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -33705,15 +33705,15 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
               - `[Subject <String>]`: The subject of the chat message, in plaintext.
               - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
               - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-            - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+            - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-              - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-              - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+              - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+              - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
-                - `[UserIdentityType <String>]`: teamworkUserIdentityType
+                - `[UserIdentityType <String>]`: 
             - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.

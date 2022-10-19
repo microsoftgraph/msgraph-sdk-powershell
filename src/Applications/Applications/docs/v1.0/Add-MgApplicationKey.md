@@ -18,7 +18,7 @@ You can use the Update application operation to perform an update instead.
 
 ### AddExpanded1 (Default)
 ```
-Add-MgApplicationKey -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+Add-MgApplicationKey -ApplicationId <String> [-AppId <String>] [-AdditionalProperties <Hashtable>]
  [-KeyCredential <IMicrosoftGraphKeyCredential>] [-PasswordCredential <IMicrosoftGraphPasswordCredential>]
  [-Proof <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -27,7 +27,7 @@ Add-MgApplicationKey -ApplicationId <String> [-AdditionalProperties <Hashtable>]
 ```
 Add-MgApplicationKey -ApplicationId <String>
  -BodyParameter <IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity1
@@ -99,6 +99,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Add1, AddExpanded1
 Aliases:
 
 Required: False
@@ -279,6 +294,7 @@ BODYPARAMETER <IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostReq
   - `[Proof <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

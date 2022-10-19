@@ -14,7 +14,7 @@ Create single sign-on credentials using a password for a user or group.
 
 ### CreateExpanded (Default)
 ```
-New-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
+New-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String> [-AppId <String>]
  [-AdditionalProperties <Hashtable>] [-Credentials <IMicrosoftGraphCredential[]>] [-Id <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -23,7 +23,7 @@ New-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <Strin
 ```
 New-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
  -BodyParameter <IPaths1J7V6DuServiceprincipalsServiceprincipalIdMicrosoftGraphCreatepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
@@ -77,6 +77,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: False
@@ -231,6 +246,7 @@ CREDENTIALS <IMicrosoftGraphCredential[]>: .
   - `[Value <String>]`: The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

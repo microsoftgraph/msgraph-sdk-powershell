@@ -15,8 +15,8 @@ Create new navigation property to directories for servicePrincipals
 ### CreateExpanded (Default)
 ```
 New-MgServicePrincipalSynchronizationJobSchemaDirectory -ServicePrincipalId <String>
- -SynchronizationJobId <String> [-AdditionalProperties <Hashtable>] [-Discoverabilities <String>]
- [-DiscoveryDateTime <DateTime>] [-Id <String>] [-Name <String>]
+ -SynchronizationJobId <String> [-AppId <String>] [-AdditionalProperties <Hashtable>]
+ [-Discoverabilities <String>] [-DiscoveryDateTime <DateTime>] [-Id <String>] [-Name <String>]
  [-Objects <IMicrosoftGraphObjectDefinition[]>] [-ReadOnly] [-Version <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -24,8 +24,8 @@ New-MgServicePrincipalSynchronizationJobSchemaDirectory -ServicePrincipalId <Str
 ### Create
 ```
 New-MgServicePrincipalSynchronizationJobSchemaDirectory -ServicePrincipalId <String>
- -SynchronizationJobId <String> -BodyParameter <IMicrosoftGraphDirectoryDefinition> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -SynchronizationJobId <String> -BodyParameter <IMicrosoftGraphDirectoryDefinition> [-AppId <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
@@ -55,6 +55,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: False
@@ -112,7 +127,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -291,7 +307,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDirectoryDefinition>: directoryDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
   - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
@@ -322,6 +338,7 @@ BODYPARAMETER <IMicrosoftGraphDirectoryDefinition>: directoryDefinition
   - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

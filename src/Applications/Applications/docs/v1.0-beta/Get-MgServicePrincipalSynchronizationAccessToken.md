@@ -14,7 +14,7 @@ Acquire an OAuth Access token to authorize the Azure AD provisioning service to 
 
 ### AcquireExpanded (Default)
 ```
-Get-MgServicePrincipalSynchronizationAccessToken -ServicePrincipalId <String>
+Get-MgServicePrincipalSynchronizationAccessToken -ServicePrincipalId <String> [-AppId <String>]
  [-AdditionalProperties <Hashtable>] [-Credentials <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -23,7 +23,7 @@ Get-MgServicePrincipalSynchronizationAccessToken -ServicePrincipalId <String>
 ```
 Get-MgServicePrincipalSynchronizationAccessToken -ServicePrincipalId <String>
  -BodyParameter <IPathsNrfoirServiceprincipalsServiceprincipalIdSynchronizationMicrosoftGraphAcquireaccesstokenPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcquireViaIdentity
@@ -53,6 +53,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: AcquireExpanded, AcquireViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Acquire, AcquireExpanded
 Aliases:
 
 Required: False
@@ -204,6 +219,7 @@ CREDENTIALS <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>: .
   - `[Value <String>]`: The value of the secret.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

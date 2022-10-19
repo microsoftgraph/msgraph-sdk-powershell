@@ -14,7 +14,7 @@ Adds a strong password or secret to an application.
 
 ### AddExpanded1 (Default)
 ```
-Add-MgApplicationPassword -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+Add-MgApplicationPassword -ApplicationId <String> [-AppId <String>] [-AdditionalProperties <Hashtable>]
  [-PasswordCredential <IMicrosoftGraphPasswordCredential>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -22,7 +22,7 @@ Add-MgApplicationPassword -ApplicationId <String> [-AdditionalProperties <Hashta
 ```
 Add-MgApplicationPassword -ApplicationId <String>
  -BodyParameter <IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity1
@@ -113,6 +113,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Add1, AddExpanded1
 Aliases:
 
 Required: False
@@ -251,6 +266,7 @@ BODYPARAMETER <IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPo
     - `[StartDateTime <DateTime?>]`: The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

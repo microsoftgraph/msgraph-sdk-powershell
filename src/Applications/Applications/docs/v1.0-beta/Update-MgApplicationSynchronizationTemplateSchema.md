@@ -15,15 +15,16 @@ Update the navigation property schema in applications
 ### UpdateExpanded (Default)
 ```
 Update-MgApplicationSynchronizationTemplateSchema -ApplicationId <String> -SynchronizationTemplateId <String>
- [-AdditionalProperties <Hashtable>] [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>]
- [-SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-Version <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-AdditionalProperties <Hashtable>] [-Directories <IMicrosoftGraphDirectoryDefinition[]>]
+ [-Id <String>] [-SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-Version <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgApplicationSynchronizationTemplateSchema -ApplicationId <String> -SynchronizationTemplateId <String>
- -BodyParameter <IMicrosoftGraphSynchronizationSchema> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSynchronizationSchema> [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -53,6 +54,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: False
@@ -110,7 +126,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -256,9 +273,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSynchronizationSchema>: synchronizationSchema
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: Contains the collection of directories and all of their objects.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
     - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
@@ -332,7 +349,7 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationSchema>: synchronizationSchema
   - `[Version <String>]`: The version of the schema, updated automatically with every schema change.
 
 DIRECTORIES <IMicrosoftGraphDirectoryDefinition[]>: Contains the collection of directories and all of their objects.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
   - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
@@ -363,6 +380,7 @@ DIRECTORIES <IMicrosoftGraphDirectoryDefinition[]>: Contains the collection of d
   - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

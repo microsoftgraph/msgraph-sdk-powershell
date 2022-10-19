@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: 504a5f49-d3e6-4e82-b405-8a4e5af4f8a4
+Module Guid: 32bf641c-8641-492b-a010-36167aa8f497
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -755,6 +755,9 @@ Update education
 
 ### [Update-MgEducationSchool](Update-MgEducationSchool.md)
 Update the navigation property schools in education
+
+### [Update-MgEducationSchoolAdministrativeUnit](Update-MgEducationSchoolAdministrativeUnit.md)
+Update the navigation property administrativeUnit in education
 
 ### [Update-MgEducationSynchronizationProfile](Update-MgEducationSynchronizationProfile.md)
 Update the navigation property synchronizationProfiles in education

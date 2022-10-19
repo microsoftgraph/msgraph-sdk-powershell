@@ -18,7 +18,7 @@ Because Microsoft 365 groups cannot contain other groups, membership in a Micros
 
 ### CheckExpanded (Default)
 ```
-Confirm-MgApplicationMemberGroup -ApplicationId <String> [-AdditionalProperties <Hashtable>]
+Confirm-MgApplicationMemberGroup -ApplicationId <String> [-AppId <String>] [-AdditionalProperties <Hashtable>]
  [-GroupIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -26,7 +26,7 @@ Confirm-MgApplicationMemberGroup -ApplicationId <String> [-AdditionalProperties 
 ```
 Confirm-MgApplicationMemberGroup -ApplicationId <String>
  -BodyParameter <IPaths1HnzvnpApplicationsApplicationIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentity
@@ -59,6 +59,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: CheckExpanded, CheckViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Check, CheckExpanded
 Aliases:
 
 Required: False
@@ -188,6 +203,7 @@ BODYPARAMETER <IPaths1HnzvnpApplicationsApplicationIdMicrosoftGraphCheckmembergr
   - `[GroupIds <String[]>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

@@ -112,7 +112,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -279,7 +280,7 @@ ATTENDANCEINTERVALS <IMicrosoftGraphAttendanceInterval[]>: List of time periods 
 
 BODYPARAMETER <IMicrosoftGraphAttendanceRecord>: attendanceRecord
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
     - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
     - `[JoinDateTime <DateTime?>]`: The time the attendee joined in UTC.

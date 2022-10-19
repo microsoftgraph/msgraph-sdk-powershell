@@ -14,14 +14,15 @@ Update the ref of navigation property connectorGroup in applications
 
 ### SetExpanded (Default)
 ```
-Set-MgApplicationConnectorGroupByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
- [-OdataId <String>] [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgApplicationConnectorGroupByRef -ApplicationId <String> [-AppId <String>]
+ [-AdditionalProperties <Hashtable>] [-OdataId <String>] [-OdataType <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgApplicationConnectorGroupByRef -ApplicationId <String> -BodyParameter <IReferenceUpdate> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgApplicationConnectorGroupByRef -ApplicationId <String> -BodyParameter <IReferenceUpdate>
+ [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
@@ -61,6 +62,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: False
@@ -221,6 +237,7 @@ BODYPARAMETER <IReferenceUpdate>: .
   - `[OdataType <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

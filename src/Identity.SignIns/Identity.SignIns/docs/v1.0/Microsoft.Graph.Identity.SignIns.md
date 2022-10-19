@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 0294463d-935c-421b-9930-4307d03e9fb9
+Module Guid: d47d78fe-3a88-4aa3-aa44-6ee9de38f079
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -72,6 +72,11 @@ Returns a collection of the specified named locations.
 Read-only.
 Nullable.
 Returns a collection of the specified Conditional Access (CA) policies.
+
+### [Get-MgIdentityConditionalAccessTemplate](Get-MgIdentityConditionalAccessTemplate.md)
+Read-only.
+Nullable.
+Returns a collection of the specified Conditional Access templates.
 
 ### [Get-MgIdentityProvider](Get-MgIdentityProvider.md)
 Get identityProviders from identity
@@ -374,6 +379,9 @@ Named locations can be either ipNamedLocation or countryNamedLocation objects.
 ### [New-MgIdentityConditionalAccessPolicy](New-MgIdentityConditionalAccessPolicy.md)
 Create a new conditionalAccessPolicy.
 
+### [New-MgIdentityConditionalAccessTemplate](New-MgIdentityConditionalAccessTemplate.md)
+Create new navigation property to templates for identity
+
 ### [New-MgIdentityProvider](New-MgIdentityProvider.md)
 Create an identity provider resource that is of the type specified in the request body.
 Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD.
@@ -463,7 +471,9 @@ Create new navigation property to riskyUsers for identityProtection
 Create new navigation property to history for identityProtection
 
 ### [New-MgUserAuthenticationEmailMethod](New-MgUserAuthenticationEmailMethod.md)
-Create new navigation property to emailMethods for users
+Set a user's emailAuthenticationMethod object.
+Email authentication is a self-service password reset method.
+A user may only have one email authentication method.
 
 ### [New-MgUserAuthenticationFido2Method](New-MgUserAuthenticationFido2Method.md)
 Create new navigation property to fido2Methods for users
@@ -537,6 +547,9 @@ Delete navigation property namedLocations for identity
 
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Delete navigation property policies for identity
+
+### [Remove-MgIdentityConditionalAccessTemplate](Remove-MgIdentityConditionalAccessTemplate.md)
+Delete navigation property templates for identity
 
 ### [Remove-MgIdentityProvider](Remove-MgIdentityProvider.md)
 Delete navigation property identityProviders for identity
@@ -732,6 +745,9 @@ Update the navigation property namedLocations in identity
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Update the navigation property policies in identity
 
+### [Update-MgIdentityConditionalAccessTemplate](Update-MgIdentityConditionalAccessTemplate.md)
+Update the navigation property templates in identity
+
 ### [Update-MgIdentityProvider](Update-MgIdentityProvider.md)
 Update the navigation property identityProviders in identity
 
@@ -740,9 +756,6 @@ Update the navigation property userFlowAttributes in identity
 
 ### [Update-MgInformationProtection](Update-MgInformationProtection.md)
 Update informationProtection
-
-### [Update-MgInformationProtectionBitlocker](Update-MgInformationProtectionBitlocker.md)
-Update the navigation property bitlocker in informationProtection
 
 ### [Update-MgInformationProtectionThreatAssessmentRequest](Update-MgInformationProtectionThreatAssessmentRequest.md)
 Update the navigation property threatAssessmentRequests in informationProtection

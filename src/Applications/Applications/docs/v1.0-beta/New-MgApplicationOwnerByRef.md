@@ -14,14 +14,14 @@ Create new navigation property ref to owners for applications
 
 ### CreateExpanded1 (Default)
 ```
-New-MgApplicationOwnerByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgApplicationOwnerByRef -ApplicationId <String> [-AppId <String>] [-AdditionalProperties <Hashtable>]
+ [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgApplicationOwnerByRef -ApplicationId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgApplicationOwnerByRef -ApplicationId <String> -BodyParameter <IReferenceCreate> [-AppId <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
@@ -61,6 +61,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: False
@@ -205,6 +220,7 @@ BODYPARAMETER <IReferenceCreate>: .
   - `[OdataId <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

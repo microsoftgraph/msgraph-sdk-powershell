@@ -14,15 +14,15 @@ Remove a password from an application.
 
 ### RemoveExpanded (Default)
 ```
-Remove-MgApplicationPassword -ApplicationId <String> [-AdditionalProperties <Hashtable>] [-KeyId <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgApplicationPassword -ApplicationId <String> [-AppId <String>] [-AdditionalProperties <Hashtable>]
+ [-KeyId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Remove
 ```
 Remove-MgApplicationPassword -ApplicationId <String>
  -BodyParameter <IPathsHv033BApplicationsApplicationIdMicrosoftGraphRemovepasswordPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity
@@ -63,6 +63,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: RemoveExpanded, RemoveViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Remove, RemoveExpanded
 Aliases:
 
 Required: False
@@ -207,6 +222,7 @@ BODYPARAMETER <IPathsHv033BApplicationsApplicationIdMicrosoftGraphRemovepassword
   - `[KeyId <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

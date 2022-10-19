@@ -279,6 +279,7 @@ BODYPARAMETER <IPathsN3Fx9GServiceprincipalsServiceprincipalIdMicrosoftGraphAddk
   - `[Proof <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

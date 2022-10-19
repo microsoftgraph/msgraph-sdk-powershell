@@ -15,7 +15,7 @@ Nullable.
 
 ### Get (Default)
 ```
-Get-MgApplicationConnectorGroupByRef -ApplicationId <String> [<CommonParameters>]
+Get-MgApplicationConnectorGroupByRef -ApplicationId <String> [-AppId <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -30,6 +30,21 @@ Nullable.
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -AppId
+Alternate key: appId of application
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -ApplicationId
 key: id of application
@@ -83,6 +98,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

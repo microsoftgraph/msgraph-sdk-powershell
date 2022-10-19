@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgOrganizationSettingContactInsight
 
 ## SYNOPSIS
-Update the navigation property contactInsights in organization
+Update the privacy settings to display or return the specified type of insights in an organization.
+The type of settings can be contact insights, item insights, or people insights.
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ## SYNTAX
 
@@ -39,9 +41,24 @@ Update-MgOrganizationSettingContactInsight -InputObject <IIdentityDirectoryManag
 ```
 
 ## DESCRIPTION
-Update the navigation property contactInsights in organization
+Update the privacy settings to display or return the specified type of insights in an organization.
+The type of settings can be contact insights, item insights, or people insights.
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgOrganizationSettingContactInsight Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	IsEnabledInOrganization = $true
+	DisabledForGroup = "edbfe4fb-ec70-4300-928f-dbb2ae86c981"
+}
+Update-MgOrganizationSettingContactInsight -OrganizationId $organizationId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgOrganizationSettingContactInsight Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -94,7 +111,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -226,7 +244,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphInsightsSettings>: insightsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
   - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 

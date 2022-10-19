@@ -14,7 +14,7 @@ Classify a delegated permission by adding a delegatedPermissionClassification to
 
 ### CreateExpanded (Default)
 ```
-New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <String>
+New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <String> [-AppId <String>]
  [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>] [-PermissionId <String>]
  [-PermissionName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -22,7 +22,8 @@ New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <Str
 ### Create
 ```
 New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-AppId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
@@ -74,6 +75,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 delegatedPermissionClassification
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -106,7 +122,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -239,12 +256,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDelegatedPermissionClassification>: delegatedPermissionClassification
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Classification <String>]`: permissionClassificationType
   - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
   - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

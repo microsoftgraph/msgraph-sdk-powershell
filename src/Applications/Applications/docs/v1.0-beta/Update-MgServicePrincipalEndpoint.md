@@ -14,7 +14,7 @@ Update the navigation property endpoints in servicePrincipals
 
 ### UpdateExpanded (Default)
 ```
-Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String>
+Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String> [-AppId <String>]
  [-AdditionalProperties <Hashtable>] [-Capability <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
  [-ProviderId <String>] [-ProviderName <String>] [-ProviderResourceId <String>] [-Uri <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,7 +23,8 @@ Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <Stri
 ### Update
 ```
 Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphEndpoint> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEndpoint> [-AppId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -53,6 +54,21 @@ Additional Parameters
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: False
@@ -125,7 +141,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -301,7 +318,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEndpoint>: endpoint
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Capability <String>]`: 
   - `[ProviderId <String>]`: 
   - `[ProviderName <String>]`: 
@@ -309,6 +326,7 @@ BODYPARAMETER <IMicrosoftGraphEndpoint>: endpoint
   - `[Uri <String>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppId <String>]`: Alternate key: appId of application
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application

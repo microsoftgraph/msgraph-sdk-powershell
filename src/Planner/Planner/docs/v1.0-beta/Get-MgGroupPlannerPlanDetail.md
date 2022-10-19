@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPlannerPlanDetail
 
 ## SYNOPSIS
-Retrieve the properties and relationships of **plannerplandetails** object.
+Retrieve the properties and relationships of a **plannerPlanDetails** object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of **plannerplandetails** object.
+Retrieve the properties and relationships of a **plannerPlanDetails** object.
 
 ## EXAMPLES
 

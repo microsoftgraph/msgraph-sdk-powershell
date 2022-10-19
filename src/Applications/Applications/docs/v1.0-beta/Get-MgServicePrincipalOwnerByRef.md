@@ -17,8 +17,8 @@ Supports $expand.
 ## SYNTAX
 
 ```
-Get-MgServicePrincipalOwnerByRef -ServicePrincipalId <String> [-Filter <String>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
+Get-MgServicePrincipalOwnerByRef -ServicePrincipalId <String> [-AppId <String>] [-Filter <String>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
@@ -38,6 +38,21 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppId
+Alternate key: appId of servicePrincipal
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
