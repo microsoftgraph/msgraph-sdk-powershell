@@ -5290,6 +5290,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5328,6 +5331,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5366,6 +5372,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5449,6 +5458,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.applicationSignInSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5616,6 +5628,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.credentialUsageSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5684,6 +5699,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6018,6 +6036,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6421,6 +6442,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ActiveUserCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6560,6 +6584,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6697,6 +6724,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6783,6 +6813,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6907,6 +6940,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7029,6 +7065,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7109,6 +7148,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityFileCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7189,6 +7231,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityGroupCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7269,6 +7314,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityStorage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7382,6 +7430,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ServicesUserCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7716,6 +7767,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7814,6 +7868,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9298,6 +9355,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10838,6 +10898,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10870,6 +10933,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10902,6 +10968,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -31884,11 +31953,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -36724,6 +36793,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:

@@ -863,6 +863,10 @@ paths:
                 - appliedConditionalAccessPolicies desc
                 - appliedEventListeners
                 - appliedEventListeners desc
+                - authenticationAppDeviceDetails
+                - authenticationAppDeviceDetails desc
+                - authenticationAppPolicyEvaluationDetails
+                - authenticationAppPolicyEvaluationDetails desc
                 - authenticationContextClassReferences
                 - authenticationContextClassReferences desc
                 - authenticationDetails
@@ -993,6 +997,8 @@ paths:
                 - appId
                 - appliedConditionalAccessPolicies
                 - appliedEventListeners
+                - authenticationAppDeviceDetails
+                - authenticationAppPolicyEvaluationDetails
                 - authenticationContextClassReferences
                 - authenticationDetails
                 - authenticationMethodsUsed
@@ -1124,6 +1130,8 @@ paths:
                 - appId
                 - appliedConditionalAccessPolicies
                 - appliedEventListeners
+                - authenticationAppDeviceDetails
+                - authenticationAppPolicyEvaluationDetails
                 - authenticationContextClassReferences
                 - authenticationDetails
                 - authenticationMethodsUsed
@@ -3986,6 +3994,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4024,6 +4035,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4062,6 +4076,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4145,6 +4162,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.applicationSignInSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4312,6 +4332,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.credentialUsageSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4380,6 +4403,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4714,6 +4740,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5117,6 +5146,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ActiveUserCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5256,6 +5288,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5393,6 +5428,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5479,6 +5517,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5603,6 +5644,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5725,6 +5769,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5805,6 +5852,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityFileCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5885,6 +5935,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityGroupCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5965,6 +6018,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityStorage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6078,6 +6134,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ServicesUserCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6412,6 +6471,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6510,6 +6572,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7994,6 +8059,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9534,6 +9602,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9566,6 +9637,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9598,6 +9672,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9992,6 +10069,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedAuthenticationEventListener'
+            authenticationAppDeviceDetails:
+              $ref: '#/components/schemas/microsoft.graph.authenticationAppDeviceDetails'
+            authenticationAppPolicyEvaluationDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationAppPolicyDetails'
             authenticationContextClassReferences:
               type: array
               items:
@@ -11420,11 +11503,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -11644,6 +11727,39 @@ components:
           nullable: true
         handlerResult:
           $ref: '#/components/schemas/microsoft.graph.authenticationEventHandlerResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationAppDeviceDetails:
+      title: authenticationAppDeviceDetails
+      type: object
+      properties:
+        appVersion:
+          type: string
+          nullable: true
+        clientApp:
+          type: string
+          nullable: true
+        deviceId:
+          type: string
+          nullable: true
+        operatingSystem:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationAppPolicyDetails:
+      title: authenticationAppPolicyDetails
+      type: object
+      properties:
+        adminConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.authenticationAppAdminConfiguration'
+        authenticationEvaluation:
+          $ref: '#/components/schemas/microsoft.graph.authenticationAppEvaluation'
+        policyName:
+          type: string
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.authenticationAppPolicyStatus'
       additionalProperties:
         type: object
     microsoft.graph.authenticationContext:
@@ -12569,6 +12685,43 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.authenticationAppAdminConfiguration:
+      title: authenticationAppAdminConfiguration
+      enum:
+        - notApplicable
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationAppEvaluation:
+      title: authenticationAppEvaluation
+      enum:
+        - success
+        - failure
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationAppPolicyStatus:
+      title: authenticationAppPolicyStatus
+      enum:
+        - unknown
+        - appLockOutOfDate
+        - appLockEnabled
+        - appLockDisabled
+        - appContextOutOfDate
+        - appContextShown
+        - appContextNotShown
+        - locationContextOutOfDate
+        - locationContextShown
+        - locationContextNotShown
+        - numberMatchOutOfDate
+        - numberMatchCorrectNumberEntered
+        - numberMatchIncorrectNumberEntered
+        - numberMatchDeny
+        - tamperResistantHardwareOutOfDate
+        - tamperResistantHardwareUsed
+        - tamperResistantHardwareNotUsed
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationContextDetail:
       title: authenticationContextDetail
       enum:

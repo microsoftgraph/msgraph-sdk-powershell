@@ -1641,6 +1641,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.staffAvailabilityItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:

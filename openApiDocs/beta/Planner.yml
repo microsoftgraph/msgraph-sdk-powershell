@@ -1870,7 +1870,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of **plannerplandetails** object.
+      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -5759,7 +5759,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of **plannerplandetails** object.
+      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -10460,7 +10460,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of **plannerplandetails** object.
+      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0

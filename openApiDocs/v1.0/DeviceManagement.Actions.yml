@@ -48,6 +48,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -133,6 +136,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -278,6 +284,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:

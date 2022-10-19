@@ -6522,11 +6522,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      summary: List unifiedRoleAssignmentMultiple
+      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7918,6 +7918,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8009,6 +8012,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8734,11 +8740,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      summary: List unifiedRoleAssignmentMultiple
+      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10130,6 +10136,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10221,6 +10230,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10453,6 +10465,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleScheduleInstanceBase'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10571,6 +10586,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleScheduleBase'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11709,6 +11727,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.approval'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -12682,6 +12703,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13527,6 +13551,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13986,6 +14013,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -14587,6 +14617,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -14678,6 +14711,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -15022,6 +15058,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -15766,6 +15805,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16124,6 +16166,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16876,6 +16921,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleScheduleInstanceBase'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16994,6 +17042,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleScheduleBase'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -18132,6 +18183,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.approval'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -19105,6 +19159,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -19950,6 +20007,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -20409,6 +20469,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -21010,6 +21073,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -21101,6 +21167,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -21445,6 +21514,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -22189,6 +22261,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -22547,6 +22622,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:

@@ -87,33 +87,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - groups.calendar
-      summary: Update the navigation property calendar in groups
-      operationId: groups_UpdateCalendar
-      parameters:
-        - name: group-id
-          in: path
-          description: 'key: id of group'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.calendar'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/groups/{group-id}/calendar/calendarPermissions':
     get:
       tags:

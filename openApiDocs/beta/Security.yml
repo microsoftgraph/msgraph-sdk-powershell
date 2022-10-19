@@ -511,6 +511,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.alert'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7895,6 +7898,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.ediscoveryFile'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9826,6 +9832,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11397,8 +11406,11 @@ paths:
     get:
       tags:
         - security.informationProtection
-      summary: Get labelPolicySettings from security
-      description: Read the Microsoft Purview Information Protection policy settings for the user or organization.
+      summary: Get informationProtectionPolicySetting
+      description: 'Read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-informationprotectionpolicysetting-get?view=graph-rest-1.0
       operationId: security.informationProtection_GetLabelPolicySettings
       parameters:
         - name: $select
@@ -11479,8 +11491,11 @@ paths:
     get:
       tags:
         - security.informationProtection
-      summary: Get sensitivityLabels from security
-      description: Read the Microsoft Purview Information Protection labels for the user or organization.
+      summary: List sensitivityLabels
+      description: Get a list of sensitivityLabel objects associated with a user or organization.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-informationprotection-list-sensitivitylabels?view=graph-rest-1.0
       operationId: security.informationProtection_ListSensitivityLabels
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11855,6 +11870,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11897,6 +11915,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11937,6 +11958,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16125,6 +16149,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.resultInfo'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16170,6 +16197,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.resultInfo'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16215,6 +16245,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16260,6 +16293,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -19360,10 +19396,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.huntingRowResult'
+          description: The results of the hunting query.
         schema:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.singlePropertySchema'
+          description: The schema for the response.
       additionalProperties:
         type: object
     microsoft.graph.providerTenantSetting:
@@ -23026,9 +23064,11 @@ components:
       properties:
         name:
           type: string
+          description: The name of the property.
           nullable: true
         type:
           type: string
+          description: The type of the property.
           nullable: true
       additionalProperties:
         type: object
@@ -31866,11 +31906,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -43232,6 +43272,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.attachmentBase:
       allOf:

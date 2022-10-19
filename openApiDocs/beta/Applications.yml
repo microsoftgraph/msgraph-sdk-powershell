@@ -254,6 +254,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -347,42 +354,52 @@ paths:
               operationId: applications.ListAppManagementPolicies
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             createdOnBehalfOf:
               operationId: applications.GetCreatedOnBehalfGraphOPre
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             extensionProperties:
               operationId: applications.ListExtensionProperties
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             federatedIdentityCredentials:
               operationId: applications.ListFederatedIdentityCredentials
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             homeRealmDiscoveryPolicies:
               operationId: applications.ListHomeRealmDiscoveryPolicies
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             owners:
               operationId: applications.ListOwners
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             tokenIssuancePolicies:
               operationId: applications.ListTokenIssuancePolicies
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             tokenLifetimePolicies:
               operationId: applications.ListTokenLifetimePolicies
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             connectorGroup:
               operationId: applications.GetConnectorGroup
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             synchronization:
               operationId: applications.GetSynchronization
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             addKey:
               operationId: applications.application.addKey
             addPassword:
@@ -426,6 +443,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New property values
         content:
@@ -457,6 +481,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: If-Match
           in: header
           description: ETag
@@ -485,6 +516,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -568,6 +606,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: appManagementPolicy-id
           in: path
           description: 'key: id of appManagementPolicy'
@@ -611,6 +656,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -662,6 +714,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -686,6 +745,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -730,10 +796,12 @@ paths:
               operationId: applications.ConnectorGroup.ListApplications
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             members:
               operationId: applications.ConnectorGroup.ListMembers
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -753,6 +821,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       responses:
         '200':
           description: Retrieved navigation property link
@@ -765,10 +840,12 @@ paths:
               operationId: applications.ConnectorGroup.ListApplications
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             members:
               operationId: applications.ConnectorGroup.ListMembers
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -786,6 +863,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         $ref: '#/components/requestBodies/refPutBody'
       responses:
@@ -808,6 +892,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: If-Match
           in: header
           description: ETag
@@ -836,6 +927,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -890,6 +988,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -977,6 +1082,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -1010,6 +1122,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: extensionProperty-id
           in: path
           description: 'key: id of extensionProperty'
@@ -1072,6 +1191,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: extensionProperty-id
           in: path
           description: 'key: id of extensionProperty'
@@ -1107,6 +1233,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: extensionProperty-id
           in: path
           description: 'key: id of extensionProperty'
@@ -1146,6 +1279,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1230,6 +1370,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -1263,6 +1410,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: federatedIdentityCredential-id
           in: path
           description: 'key: id of federatedIdentityCredential'
@@ -1324,6 +1478,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: federatedIdentityCredential-id
           in: path
           description: 'key: id of federatedIdentityCredential'
@@ -1359,6 +1520,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: federatedIdentityCredential-id
           in: path
           description: 'key: id of federatedIdentityCredential'
@@ -1394,6 +1562,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1477,6 +1652,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: homeRealmDiscoveryPolicy-id
           in: path
           description: 'key: id of homeRealmDiscoveryPolicy'
@@ -1528,6 +1710,7 @@ paths:
               operationId: applications.HomeRealmDiscoveryPolicies.ListAppliesTo
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
                 homeRealmDiscoveryPolicy-id: $request.path.homeRealmDiscoveryPolicy-id
         default:
           $ref: '#/components/responses/error'
@@ -1548,6 +1731,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       responses:
         '200':
           description: Retrieved media content
@@ -1574,6 +1764,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New media content.
         content:
@@ -1607,6 +1804,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -1652,6 +1856,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -1693,6 +1904,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -1719,6 +1937,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1742,6 +1963,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -1768,6 +1996,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1795,6 +2026,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -1821,6 +2059,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1844,6 +2085,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -1870,6 +2118,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1897,6 +2148,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -1938,6 +2196,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -1977,6 +2242,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       responses:
         '200':
           description: Success
@@ -2006,6 +2278,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -2043,6 +2322,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       responses:
         '204':
           description: Success
@@ -2068,6 +2354,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
@@ -2147,6 +2440,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
@@ -2193,6 +2493,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
@@ -2246,6 +2553,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -2269,6 +2583,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2310,10 +2631,12 @@ paths:
               operationId: applications.Synchronization.ListJobs
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             templates:
               operationId: applications.Synchronization.ListTemplates
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             acquireAccessToken:
               operationId: applications.application.synchronization.acquireAccessToken
             Ping:
@@ -2335,6 +2658,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property values
         content:
@@ -2362,6 +2692,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: If-Match
           in: header
           description: ETag
@@ -2393,6 +2730,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2476,6 +2820,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -2509,6 +2860,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2559,6 +2917,7 @@ paths:
               operationId: applications.synchronization.Jobs.GetSchema
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
                 synchronizationJob-id: $request.path.synchronizationJob-id
             pause:
               operationId: applications.application.synchronization.jobs.synchronizationJob.pause
@@ -2589,6 +2948,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2624,6 +2990,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2663,6 +3036,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2696,6 +3076,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2747,6 +3134,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2792,6 +3186,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2821,6 +3222,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2854,6 +3262,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2911,6 +3326,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -2959,6 +3381,7 @@ paths:
               operationId: applications.synchronization.jobs.Schema.ListDirectories
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
                 synchronizationJob-id: $request.path.synchronizationJob-id
             filterOperators:
               operationId: applications.application.synchronization.jobs.synchronizationJob.schema.filterOperators
@@ -2987,6 +3410,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3022,6 +3452,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3058,6 +3495,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3149,6 +3593,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3190,6 +3641,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3263,6 +3721,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3306,6 +3771,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3353,6 +3825,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3394,6 +3873,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3454,6 +3940,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.filterOperatorSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3477,6 +3966,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3531,6 +4027,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attributeMappingFunctionSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3558,6 +4057,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -3608,6 +4114,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -3657,6 +4170,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -3692,6 +4212,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       responses:
         '200':
           description: Success
@@ -3727,6 +4254,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3812,6 +4346,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -3845,6 +4386,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -3897,6 +4445,7 @@ paths:
               operationId: applications.synchronization.Templates.GetSchema
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
                 synchronizationTemplate-id: $request.path.synchronizationTemplate-id
         default:
           $ref: '#/components/responses/error'
@@ -3915,6 +4464,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -3950,6 +4506,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -3986,6 +4549,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4034,6 +4604,7 @@ paths:
               operationId: applications.synchronization.templates.Schema.ListDirectories
               parameters:
                 application-id: $request.path.application-id
+                appId: $request.path.appId
                 synchronizationTemplate-id: $request.path.synchronizationTemplate-id
             filterOperators:
               operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.filterOperators
@@ -4058,6 +4629,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4093,6 +4671,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4129,6 +4714,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4220,6 +4812,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4261,6 +4860,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4334,6 +4940,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4377,6 +4990,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4424,6 +5044,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4465,6 +5092,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4525,6 +5159,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.filterOperatorSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4548,6 +5185,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4602,6 +5246,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attributeMappingFunctionSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4629,6 +5276,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -4683,6 +5337,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4766,6 +5427,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: tokenIssuancePolicy-id
           in: path
           description: 'key: id of tokenIssuancePolicy'
@@ -4812,6 +5480,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4863,6 +5538,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -4890,6 +5572,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4973,6 +5662,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: tokenLifetimePolicy-id
           in: path
           description: 'key: id of tokenLifetimePolicy'
@@ -5019,6 +5715,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5074,6 +5777,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -5253,6 +5963,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.application'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5303,6 +6019,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8555,6 +9274,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -8650,60 +9376,70 @@ paths:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             createdOnBehalfOf:
               operationId: onPremisesPublishingProfiles.connectorGroups.Applications.GetCreatedOnBehalfGraphOPre
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             extensionProperties:
               operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListExtensionProperties
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             federatedIdentityCredentials:
               operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListFederatedIdentityCredentials
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             homeRealmDiscoveryPolicies:
               operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListHomeRealmDiscoveryPolicies
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             owners:
               operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListOwners
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             tokenIssuancePolicies:
               operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListTokenIssuancePolicies
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             tokenLifetimePolicies:
               operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListTokenLifetimePolicies
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             connectorGroup:
               operationId: onPremisesPublishingProfiles.connectorGroups.Applications.GetConnectorGroup
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
             synchronization:
               operationId: onPremisesPublishingProfiles.connectorGroups.Applications.GetSynchronization
               parameters:
                 onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
                 connectorGroup-id: $request.path.connectorGroup-id
                 application-id: $request.path.application-id
+                appId: $request.path.appId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8739,6 +9475,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       responses:
         '200':
           description: Retrieved media content
@@ -8781,6 +9524,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of application'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New media content.
         content:
@@ -10284,6 +11034,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -10395,74 +11152,92 @@ paths:
               operationId: servicePrincipals.ListAppManagementPolicies
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             appRoleAssignedTo:
               operationId: servicePrincipals.ListAppRoleAssignedTo
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             appRoleAssignments:
               operationId: servicePrincipals.ListAppRoleAssignments
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             claimsMappingPolicies:
               operationId: servicePrincipals.ListClaimsMappingPolicies
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             createdObjects:
               operationId: servicePrincipals.ListCreatedObjects
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             delegatedPermissionClassifications:
               operationId: servicePrincipals.ListDelegatedPermissionClassifications
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             endpoints:
               operationId: servicePrincipals.ListEndpoints
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             federatedIdentityCredentials:
               operationId: servicePrincipals.ListFederatedIdentityCredentials
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             homeRealmDiscoveryPolicies:
               operationId: servicePrincipals.ListHomeRealmDiscoveryPolicies
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             licenseDetails:
               operationId: servicePrincipals.ListLicenseDetails
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             memberOf:
               operationId: servicePrincipals.ListMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             oauth2PermissionGrants:
               operationId: servicePrincipals.ListOauth2PermissionGrants
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             ownedObjects:
               operationId: servicePrincipals.ListOwnedObjects
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             owners:
               operationId: servicePrincipals.ListOwners
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             tokenIssuancePolicies:
               operationId: servicePrincipals.ListTokenIssuancePolicies
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             tokenLifetimePolicies:
               operationId: servicePrincipals.ListTokenLifetimePolicies
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             transitiveMemberOf:
               operationId: servicePrincipals.ListTransitiveMemberGraphOPre
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             synchronization:
               operationId: servicePrincipals.GetSynchronization
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             addTokenSigningCertificate:
               operationId: servicePrincipals.servicePrincipal.addTokenSigningCertificate
             checkMemberGroups:
@@ -10504,6 +11279,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New property values
         content:
@@ -10535,6 +11317,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: If-Match
           in: header
           description: ETag
@@ -10563,6 +11352,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -10647,6 +11443,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: appManagementPolicy-id
           in: path
           description: 'key: id of appManagementPolicy'
@@ -10698,6 +11501,7 @@ paths:
               operationId: servicePrincipals.AppManagementPolicies.ListAppliesTo
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
                 appManagementPolicy-id: $request.path.appManagementPolicy-id
         default:
           $ref: '#/components/responses/error'
@@ -10721,6 +11525,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -10811,6 +11622,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -10844,6 +11662,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: appRoleAssignment-id
           in: path
           description: 'key: id of appRoleAssignment'
@@ -10907,6 +11732,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: appRoleAssignment-id
           in: path
           description: 'key: id of appRoleAssignment'
@@ -10942,6 +11774,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: appRoleAssignment-id
           in: path
           description: 'key: id of appRoleAssignment'
@@ -10981,6 +11820,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
@@ -11081,6 +11927,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -11114,6 +11967,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: appRoleAssignment-id
           in: path
           description: 'key: id of appRoleAssignment'
@@ -11187,6 +12047,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: appRoleAssignment-id
           in: path
           description: 'key: id of appRoleAssignment'
@@ -11222,6 +12089,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: appRoleAssignment-id
           in: path
           description: 'key: id of appRoleAssignment'
@@ -11261,6 +12135,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -11344,6 +12225,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: claimsMappingPolicy-id
           in: path
           description: 'key: id of claimsMappingPolicy'
@@ -11390,6 +12278,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -11441,6 +12336,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -11468,6 +12370,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -11538,6 +12447,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
@@ -11600,6 +12516,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -11678,6 +12601,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -11711,6 +12641,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: delegatedPermissionClassification-id
           in: path
           description: 'key: id of delegatedPermissionClassification'
@@ -11770,6 +12707,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: delegatedPermissionClassification-id
           in: path
           description: 'key: id of delegatedPermissionClassification'
@@ -11805,6 +12749,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: delegatedPermissionClassification-id
           in: path
           description: 'key: id of delegatedPermissionClassification'
@@ -11841,6 +12792,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -11924,6 +12882,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -11957,6 +12922,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: endpoint-id
           in: path
           description: 'key: id of endpoint'
@@ -12019,6 +12991,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: endpoint-id
           in: path
           description: 'key: id of endpoint'
@@ -12054,6 +13033,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: endpoint-id
           in: path
           description: 'key: id of endpoint'
@@ -12089,6 +13075,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -12169,6 +13162,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -12201,6 +13201,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: federatedIdentityCredential-id
           in: path
           description: 'key: id of federatedIdentityCredential'
@@ -12262,6 +13269,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: federatedIdentityCredential-id
           in: path
           description: 'key: id of federatedIdentityCredential'
@@ -12297,6 +13311,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: federatedIdentityCredential-id
           in: path
           description: 'key: id of federatedIdentityCredential'
@@ -12336,6 +13357,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -12419,6 +13447,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: homeRealmDiscoveryPolicy-id
           in: path
           description: 'key: id of homeRealmDiscoveryPolicy'
@@ -12465,6 +13500,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -12516,6 +13558,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -12539,6 +13588,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -12613,6 +13669,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -12645,6 +13708,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: licenseDetails-id
           in: path
           description: 'key: id of licenseDetails'
@@ -12704,6 +13774,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: licenseDetails-id
           in: path
           description: 'key: id of licenseDetails'
@@ -12739,6 +13816,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: licenseDetails-id
           in: path
           description: 'key: id of licenseDetails'
@@ -12778,6 +13862,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
@@ -12858,6 +13949,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
@@ -12930,6 +14028,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -12977,6 +14082,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -13003,6 +14115,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13026,6 +14141,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -13052,6 +14174,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13079,6 +14204,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -13124,6 +14256,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -13161,6 +14300,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -13187,6 +14333,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13210,6 +14359,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -13236,6 +14392,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13263,6 +14422,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -13304,6 +14470,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       responses:
         '200':
           description: Success
@@ -13333,6 +14506,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -13374,6 +14554,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -13462,6 +14649,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: oAuth2PermissionGrant-id
           in: path
           description: 'key: id of oAuth2PermissionGrant'
@@ -13530,6 +14724,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -13600,6 +14801,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
@@ -13662,6 +14870,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
@@ -13741,6 +14956,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
@@ -13787,6 +15009,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
@@ -13840,6 +15069,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -13863,6 +15099,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -13904,10 +15147,12 @@ paths:
               operationId: servicePrincipals.Synchronization.ListJobs
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             templates:
               operationId: servicePrincipals.Synchronization.ListTemplates
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
             acquireAccessToken:
               operationId: servicePrincipals.servicePrincipal.synchronization.acquireAccessToken
             Ping:
@@ -13929,6 +15174,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property values
         content:
@@ -13956,6 +15208,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: If-Match
           in: header
           description: ETag
@@ -13987,6 +15246,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -14070,6 +15336,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -14103,6 +15376,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14153,6 +15433,7 @@ paths:
               operationId: servicePrincipals.synchronization.Jobs.GetSchema
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
                 synchronizationJob-id: $request.path.synchronizationJob-id
             pause:
               operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.pause
@@ -14183,6 +15464,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14218,6 +15506,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14257,6 +15552,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14290,6 +15592,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14341,6 +15650,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14386,6 +15702,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14415,6 +15738,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14448,6 +15778,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14505,6 +15842,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14553,6 +15897,7 @@ paths:
               operationId: servicePrincipals.synchronization.jobs.Schema.ListDirectories
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
                 synchronizationJob-id: $request.path.synchronizationJob-id
             filterOperators:
               operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.filterOperators
@@ -14581,6 +15926,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14616,6 +15968,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14652,6 +16011,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14743,6 +16109,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14784,6 +16157,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14857,6 +16237,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14900,6 +16287,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14947,6 +16341,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -14988,6 +16389,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -15048,6 +16456,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.filterOperatorSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -15071,6 +16482,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -15125,6 +16543,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attributeMappingFunctionSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -15152,6 +16573,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationJob-id
           in: path
           description: 'key: id of synchronizationJob'
@@ -15202,6 +16630,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -15251,6 +16686,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: Action parameters
         content:
@@ -15286,6 +16728,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       responses:
         '200':
           description: Success
@@ -15321,6 +16770,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -15406,6 +16862,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New navigation property
         content:
@@ -15439,6 +16902,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15491,6 +16961,7 @@ paths:
               operationId: servicePrincipals.synchronization.Templates.GetSchema
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
                 synchronizationTemplate-id: $request.path.synchronizationTemplate-id
         default:
           $ref: '#/components/responses/error'
@@ -15509,6 +16980,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15544,6 +17022,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15580,6 +17065,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15628,6 +17120,7 @@ paths:
               operationId: servicePrincipals.synchronization.templates.Schema.ListDirectories
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
                 synchronizationTemplate-id: $request.path.synchronizationTemplate-id
             filterOperators:
               operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.filterOperators
@@ -15652,6 +17145,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15687,6 +17187,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15723,6 +17230,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15814,6 +17328,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15855,6 +17376,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15928,6 +17456,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -15971,6 +17506,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -16018,6 +17560,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -16059,6 +17608,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -16119,6 +17675,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.filterOperatorSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16142,6 +17701,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -16196,6 +17762,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attributeMappingFunctionSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16223,6 +17792,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: synchronizationTemplate-id
           in: path
           description: 'key: id of synchronizationTemplate'
@@ -16274,6 +17850,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -16358,6 +17941,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: tokenIssuancePolicy-id
           in: path
           description: 'key: id of tokenIssuancePolicy'
@@ -16409,6 +17999,7 @@ paths:
               operationId: servicePrincipals.TokenIssuancePolicies.ListAppliesTo
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
                 tokenIssuancePolicy-id: $request.path.tokenIssuancePolicy-id
         default:
           $ref: '#/components/responses/error'
@@ -16429,6 +18020,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -16513,6 +18111,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: tokenLifetimePolicy-id
           in: path
           description: 'key: id of tokenLifetimePolicy'
@@ -16564,6 +18169,7 @@ paths:
               operationId: servicePrincipals.TokenLifetimePolicies.ListAppliesTo
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
+                appId: $request.path.appId
                 tokenLifetimePolicy-id: $request.path.tokenLifetimePolicy-id
         default:
           $ref: '#/components/responses/error'
@@ -16586,6 +18192,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
@@ -16665,6 +18278,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: appId
+          in: path
+          description: 'Alternate key: appId of servicePrincipal'
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
@@ -16903,6 +18523,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16953,6 +18579,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -20523,11 +22152,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

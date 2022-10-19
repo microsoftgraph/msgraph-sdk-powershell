@@ -41760,11 +41760,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Search for sites
-      description: 'Search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.'
+      summary: Enumerate sites
+      description: 'List all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/site-search?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/site-list?view=graph-rest-1.0
       operationId: sites.site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -44774,6 +44774,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contentType'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -48828,6 +48831,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contentType'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -51321,6 +51327,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -51990,6 +51999,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -52116,6 +52131,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -52900,6 +52921,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -53020,6 +53044,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contentType'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -53891,6 +53918,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.recentNotebook'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -55318,6 +55348,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.permission'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -74272,6 +74305,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.site'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -74391,6 +74427,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.site'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -74436,6 +74478,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.site'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -78283,11 +78328,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -95409,6 +95454,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod

@@ -1337,7 +1337,7 @@ paths:
       tags:
         - chats.chat
       summary: List chats
-      description: Retrieve the list of chats that the user is part of.
+      description: 'Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0
@@ -1465,7 +1465,7 @@ paths:
       tags:
         - chats.chat
       summary: Get chat
-      description: Retrieve a single chat (without its messages).
+      description: 'Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
@@ -2196,7 +2196,7 @@ paths:
       tags:
         - chats.conversationMember
       summary: List members of a chat
-      description: List all conversation members in a chat.
+      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
@@ -2480,6 +2480,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2493,7 +2496,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: List messages in a chat
-      description: Retrieve the list of messages in a chat.
+      description: 'Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0
@@ -2631,11 +2634,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -4282,6 +4285,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4416,6 +4425,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5217,6 +5232,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5274,6 +5292,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5335,6 +5356,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5392,6 +5416,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5488,6 +5515,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6376,6 +6406,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6502,6 +6535,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6950,7 +6986,7 @@ paths:
       tags:
         - groups.team
       summary: List channels
-      description: Retrieve the list of channels in this team.
+      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -7521,7 +7557,7 @@ paths:
       tags:
         - groups.team
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -7805,7 +7841,7 @@ paths:
       tags:
         - groups.team
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -13368,7 +13404,7 @@ paths:
       tags:
         - groups.team
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -13612,7 +13648,7 @@ paths:
       tags:
         - groups.team
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -15808,14 +15844,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - groups.team
       summary: Update the navigation property schedule in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
-      operationId: groups.team_UpdateSchedule
+      operationId: groups.team_SetSchedule
       parameters:
         - name: group-id
           in: path
@@ -19774,7 +19807,7 @@ paths:
       tags:
         - teams.channel
       summary: List channels
-      description: Retrieve the list of channels in this team.
+      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -20345,7 +20378,7 @@ paths:
       tags:
         - teams.channel
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -20677,6 +20710,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -20690,7 +20726,7 @@ paths:
       tags:
         - teams.channel
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -22715,6 +22751,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -22857,6 +22899,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -24011,6 +24059,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -24145,6 +24196,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -25366,6 +25420,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -27174,6 +27231,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -27231,6 +27291,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -27292,6 +27355,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -27349,6 +27415,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -27445,6 +27514,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -28075,7 +28147,7 @@ paths:
       tags:
         - teams.channel
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -28359,6 +28431,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -28372,7 +28447,7 @@ paths:
       tags:
         - teams.channel
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -30161,6 +30236,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -30295,6 +30376,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -31310,14 +31397,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - teams.schedule
       summary: Update the navigation property schedule in teams
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
-      operationId: teams_UpdateSchedule
+      operationId: teams_SetSchedule
       parameters:
         - name: team-id
           in: path
@@ -35075,6 +35159,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -35201,6 +35288,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -36056,7 +36146,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -36388,6 +36478,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -36401,7 +36494,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -38426,6 +38519,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -38568,6 +38667,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -39722,6 +39827,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -39856,6 +39964,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -39982,6 +40093,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -41096,11 +41210,11 @@ paths:
     get:
       tags:
         - teamwork.teamTemplate
-      summary: List definitions
-      description: 'List the teamTemplateDefinition objects associated with a teamTemplate. '
+      summary: List teamTemplates
+      description: 'Get the list of teamTemplate objects that are available for a tenant. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0
       operationId: teamwork_ListTeamTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -42064,7 +42178,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List channels
-      description: Retrieve the list of channels in this team.
+      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -42715,7 +42829,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -43095,6 +43209,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -43108,7 +43225,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -45369,6 +45486,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -45519,6 +45642,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -46821,6 +46950,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -46963,6 +47095,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -48359,6 +48494,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -50376,6 +50514,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -50441,6 +50582,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -50510,6 +50654,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -50575,6 +50722,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -50687,6 +50837,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -51437,7 +51590,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -51769,6 +51922,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -51782,7 +51938,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -53807,6 +53963,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -53949,6 +54111,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -55122,14 +55290,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - teamwork.teamTemplate
       summary: Update the navigation property schedule in teamwork
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
-      operationId: teamwork.teamTemplates.definitions.teamDefinition_UpdateSchedule
+      operationId: teamwork.teamTemplates.definitions.teamDefinition_SetSchedule
       parameters:
         - name: teamTemplate-id
           in: path
@@ -59575,7 +59740,7 @@ paths:
       tags:
         - users.chat
       summary: List chats
-      description: Retrieve the list of chats that the user is part of.
+      description: 'Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0
@@ -60524,7 +60689,7 @@ paths:
       tags:
         - users.chat
       summary: List members of a chat
-      description: List all conversation members in a chat.
+      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
@@ -60808,7 +60973,7 @@ paths:
       tags:
         - users.chat
       summary: List messages in a chat
-      description: Retrieve the list of messages in a chat.
+      description: 'Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0
@@ -60954,11 +61119,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: users.chats_CreateMessages
       parameters:
         - name: user-id
@@ -67722,6 +67887,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.teamworkActivityTopicSource:
       title: teamworkActivityTopicSource
@@ -82151,11 +82317,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

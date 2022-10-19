@@ -13295,6 +13295,7 @@ paths:
                 - id
                 - auditEvents
                 - cloudPCs
+                - crossCloudGovernmentOrganizationMapping
                 - deviceImages
                 - externalPartnerSettings
                 - galleryImages
@@ -13320,6 +13321,7 @@ paths:
                 - '*'
                 - auditEvents
                 - cloudPCs
+                - crossCloudGovernmentOrganizationMapping
                 - deviceImages
                 - externalPartnerSettings
                 - galleryImages
@@ -13344,6 +13346,8 @@ paths:
               operationId: deviceManagement.VirtualEndpoint.ListAuditEvents
             cloudPCs:
               operationId: deviceManagement.VirtualEndpoint.ListCloudPCs
+            crossCloudGovernmentOrganizationMapping:
+              operationId: deviceManagement.VirtualEndpoint.GetCrossCloudGovernmentOrganizationMapping
             deviceImages:
               operationId: deviceManagement.VirtualEndpoint.ListDeviceImages
             externalPartnerSettings:
@@ -13920,6 +13924,88 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get cloudPcCrossCloudGovernmentOrganizationMapping
+      description: Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-1.0
+      operationId: deviceManagement.virtualEndpoint_GetCrossCloudGovernmentOrganizationMapping
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - organizationIdsInUSGovCloud
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
+      operationId: deviceManagement.virtualEndpoint_UpdateCrossCloudGovernmentOrganizationMapping
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Delete navigation property crossCloudGovernmentOrganizationMapping for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_DeleteCrossCloudGovernmentOrganizationMapping
+      parameters:
         - name: If-Match
           in: header
           description: ETag
@@ -18559,6 +18645,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
               description: Cloud managed virtual desktops.
               x-ms-navigationProperty: true
+            crossCloudGovernmentOrganizationMapping:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping'
             deviceImages:
               type: array
               items:
@@ -18740,6 +18828,20 @@ components:
               type: string
               description: The user principal name (UPN) of the user assigned to the Cloud PC.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcCrossCloudGovernmentOrganizationMapping
+          type: object
+          properties:
+            organizationIdsInUSGovCloud:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcDeviceImage:
@@ -20959,6 +21061,7 @@ components:
         - notStarted
         - inProgress
         - completed
+        - failed
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcReportName:

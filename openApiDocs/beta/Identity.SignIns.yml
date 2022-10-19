@@ -4945,6 +4945,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get authenticationStrengths from identity
+      description: 'Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .'
       operationId: identity.conditionalAccess_GetAuthenticationStrengths
       parameters:
         - name: $select
@@ -5031,7 +5032,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get authenticationMethodModes from identity
+      summary: List authenticationMethodModes
+      description: 'Get a list of all supported authentication methods, or all supported authentication method combinations as a list of **authenticationMethodModes** objects and their properties.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0
       operationId: identity.conditionalAccess.authenticationStrengths_ListAuthenticationMethodModes
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5118,6 +5123,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get authenticationMethodModes from identity
+      description: Names and descriptions of all valid authentication method modes in the system.
       operationId: identity.conditionalAccess.authenticationStrengths_GetAuthenticationMethodModes
       parameters:
         - name: authenticationMethodModeDetail-id
@@ -5222,6 +5228,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get policies from identity
+      description: 'A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.'
       operationId: identity.conditionalAccess.authenticationStrengths_ListPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5325,6 +5332,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get policies from identity
+      description: 'A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.'
       operationId: identity.conditionalAccess.authenticationStrengths_GetPolicies
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -5444,7 +5452,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get combinationConfigurations from identity
+      summary: List combinationConfigurations
+      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
       operationId: identity.conditionalAccess.authenticationStrengths.policies_ListCombinationConfigurations
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -5512,7 +5524,11 @@ paths:
     post:
       tags:
         - identity.conditionalAccessRoot
-      summary: Create new navigation property to combinationConfigurations for identity
+      summary: Create combinationConfiguration
+      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
       operationId: identity.conditionalAccess.authenticationStrengths.policies_CreateCombinationConfigurations
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -5545,6 +5561,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get combinationConfigurations from identity
+      description: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
       operationId: identity.conditionalAccess.authenticationStrengths.policies_GetCombinationConfigurations
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -5672,6 +5689,10 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action updateAllowedCombinations
+      description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0
       operationId: identity.conditionalAccess.authenticationStrengths.policies_updateAllowedCombinations
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -5812,6 +5833,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7020,6 +7044,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9496,6 +9523,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9645,24 +9675,6 @@ paths:
           links:
             recoveryKeys:
               operationId: informationProtection.Bitlocker.ListRecoveryKeys
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - informationProtection.bitlocker
-      summary: Update the navigation property bitlocker in informationProtection
-      operationId: informationProtection_UpdateBitlocker
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.bitlocker'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10545,6 +10557,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10597,6 +10612,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10647,6 +10665,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -12891,6 +12912,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -14324,7 +14351,11 @@ paths:
     get:
       tags:
         - policies.authenticationStrengthPolicy
-      summary: Get authenticationStrengthPolicies from policies
+      summary: List authenticationStrengthPolicies
+      description: Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0
       operationId: policies_ListAuthenticationStrengthPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14404,7 +14435,11 @@ paths:
     post:
       tags:
         - policies.authenticationStrengthPolicy
-      summary: Create new navigation property to authenticationStrengthPolicies for policies
+      summary: Create authenticationStrengthPolicy
+      description: Create a new custom authenticationStrengthPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationstrengthroot-post-policies?view=graph-rest-1.0
       operationId: policies_CreateAuthenticationStrengthPolicies
       requestBody:
         description: New navigation property
@@ -14428,6 +14463,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Get authenticationStrengthPolicies from policies
+      description: The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
       operationId: policies_GetAuthenticationStrengthPolicies
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -14547,7 +14583,11 @@ paths:
     get:
       tags:
         - policies.authenticationStrengthPolicy
-      summary: Get combinationConfigurations from policies
+      summary: List combinationConfigurations
+      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
       operationId: policies.authenticationStrengthPolicies_ListCombinationConfigurations
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -14615,7 +14655,11 @@ paths:
     post:
       tags:
         - policies.authenticationStrengthPolicy
-      summary: Create new navigation property to combinationConfigurations for policies
+      summary: Create combinationConfiguration
+      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
       operationId: policies.authenticationStrengthPolicies_CreateCombinationConfigurations
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -14648,6 +14692,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Get combinationConfigurations from policies
+      description: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
       operationId: policies.authenticationStrengthPolicies_GetCombinationConfigurations
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -14775,6 +14820,10 @@ paths:
       tags:
         - policies.Actions
       summary: Invoke action updateAllowedCombinations
+      description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0
       operationId: policies.authenticationStrengthPolicies_updateAllowedCombinations
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -14915,6 +14964,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16494,24 +16546,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - policies.deviceRegistrationPolicy
-      summary: Update the navigation property deviceRegistrationPolicy in policies
-      operationId: policies_UpdateDeviceRegistrationPolicy
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /policies/directoryRoleAccessReviewPolicy:
     get:
       tags:
@@ -17161,6 +17195,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -30856,33 +30893,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.informationProtection
-      summary: Update the navigation property bitlocker in users
-      operationId: users.informationProtection_UpdateBitlocker
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.bitlocker'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection/bitlocker/recoveryKeys':
     get:
       tags:
@@ -33314,15 +33324,18 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodModes'
+              description: A collection of all valid authentication method combinations in the system.
             authenticationMethodModes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
+              description: Names and descriptions of all valid authentication method modes in the system.
               x-ms-navigationProperty: true
             policies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
+              description: 'A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -33336,6 +33349,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.baseAuthenticationMethod'
             displayName:
               type: string
+              description: The display name of this mode
           additionalProperties:
             type: object
     microsoft.graph.authenticationStrengthPolicy:
@@ -33348,18 +33362,23 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodModes'
+              description: A collection of authentication method modes that are required be used to satify this authentication strength.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The datetime when this policy was created.
               format: date-time
             description:
               type: string
+              description: The human-readable description of this policy.
               nullable: true
             displayName:
               type: string
+              description: 'The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).'
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The datetime when this policy was last modified.
               format: date-time
             policyType:
               $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicyType'
@@ -33369,6 +33388,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
+              description: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -33382,6 +33402,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodModes'
+              description: Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethodModes:
@@ -33411,20 +33432,24 @@ components:
       properties:
         additionalInformation:
           type: string
+          description: Information about why the updateAllowedCombinations action was successful or failed.
           nullable: true
         conditionalAccessReferences:
           type: array
           items:
             type: string
             nullable: true
+          description: References to existing Conditional Access policies that use this authentication strength.
         currentCombinations:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.authenticationMethodModes'
+          description: The list of current authentication method combinations allowed by the authentication strength.
         previousCombinations:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.authenticationMethodModes'
+          description: The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.
       additionalProperties:
         type: object
     microsoft.graph.authenticationStrengthUsage:
@@ -33673,7 +33698,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
             riskEventType:
               type: string
-              description: 'The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue.  For more information about each value, see riskEventType values.'
+              description: 'The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and anomalousUserActivity.  For more information about each value, see riskEventType values.'
               nullable: true
             riskLevel:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
@@ -35123,6 +35148,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
+          description: The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
           x-ms-navigationProperty: true
         authenticationFlowsPolicy:
           $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
@@ -35411,10 +35437,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.allowInvitesFrom'
             allowUserConsentForRiskyApps:
               type: boolean
+              description: Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
               nullable: true
             blockMsolPowerShell:
               type: boolean
-              description: To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+              description: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
               nullable: true
             defaultUserRolePermissions:
               $ref: '#/components/schemas/microsoft.graph.defaultUserRolePermissions'
@@ -49982,11 +50009,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -57181,6 +57208,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod

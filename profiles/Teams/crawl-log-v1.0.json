@@ -49,6 +49,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
+    "/chats/{chat-id}/lastMessagePreview": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
     "/chats/{chat-id}/members": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
@@ -101,7 +105,23 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
+    "/chats/{chat-id}/microsoft.graph.hideForUser": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/chats/{chat-id}/microsoft.graph.markChatReadForUser": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/chats/{chat-id}/microsoft.graph.markChatUnreadForUser": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
     "/chats/{chat-id}/microsoft.graph.sendActivityNotification": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/chats/{chat-id}/microsoft.graph.unhideForUser": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
@@ -918,6 +938,10 @@
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },
     "/users/{user-id}/chats/{chat-id}/installedApps/{teamsAppInstallation-id}/teamsAppDefinition": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml"
+    },
+    "/users/{user-id}/chats/{chat-id}/lastMessagePreview": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Teams.yml"
     },

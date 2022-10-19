@@ -2184,6 +2184,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2997,6 +3000,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3980,6 +3986,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4914,6 +4923,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4946,6 +4958,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4978,6 +4993,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:

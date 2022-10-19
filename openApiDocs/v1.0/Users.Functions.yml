@@ -108,6 +108,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.userActivity'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -312,6 +315,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -508,6 +517,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -712,6 +727,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -908,6 +929,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -955,6 +982,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1175,6 +1205,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1387,6 +1423,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1607,6 +1649,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1819,6 +1867,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1882,6 +1936,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2094,6 +2151,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2298,6 +2361,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2510,6 +2579,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2714,6 +2789,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2769,6 +2850,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2973,6 +3057,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3169,6 +3259,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3316,6 +3412,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3455,6 +3557,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3586,6 +3694,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3787,6 +3898,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contact'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3875,6 +3992,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contactFolder'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4068,6 +4191,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contact'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4148,6 +4277,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contactFolder'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4333,6 +4468,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contact'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4443,6 +4584,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4577,6 +4721,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4768,6 +4915,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4967,6 +5120,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5077,6 +5236,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5211,6 +5373,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5410,6 +5575,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5578,6 +5746,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contentType'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5688,6 +5859,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5822,6 +5996,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6445,6 +6622,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6571,6 +6751,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6754,6 +6937,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6945,6 +7134,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7047,6 +7242,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7173,6 +7371,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7364,6 +7565,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7568,6 +7772,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7764,6 +7974,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7919,6 +8135,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8066,6 +8288,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8276,6 +8504,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8423,6 +8654,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8562,6 +8799,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8756,6 +8999,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8936,6 +9182,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.message'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9037,6 +9289,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mailFolder'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9209,6 +9467,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.message'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9302,6 +9566,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mailFolder'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9466,6 +9736,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.message'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9764,6 +10040,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.recentNotebook'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9931,6 +10210,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.localeInfo'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9971,6 +10253,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.timeZoneInformation'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10018,6 +10303,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.timeZoneInformation'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10142,6 +10430,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.todoTask'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10222,6 +10516,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10545,6 +10845,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.user'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -15522,6 +15828,8 @@ components:
               type: string
               description: (Optional) Subject or topic for the chat. Only available for group chats.
               nullable: true
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.chatViewpoint'
             webUrl:
               type: string
               description: 'The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.'
@@ -15532,6 +15840,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
               description: A collection of all the apps in the chat. Nullable.
               x-ms-navigationProperty: true
+            lastMessagePreview:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
             members:
               type: array
               items:
@@ -18878,6 +19188,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
       additionalProperties:
         type: object
+    microsoft.graph.chatViewpoint:
+      title: chatViewpoint
+      type: object
+      properties:
+        isHidden:
+          type: boolean
+          description: Indicates whether the chat is hidden for the current user.
+          nullable: true
+        lastMessageReadDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18888,6 +19214,32 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessageInfo
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date time object representing the time at which message was created.
+              format: date-time
+              nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
+            from:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            isDeleted:
+              type: boolean
+              description: 'If set to true, the original message has been deleted.'
+              nullable: true
+            messageType:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
           additionalProperties:
             type: object
     microsoft.graph.conversationMember:
@@ -22800,6 +23152,9 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.driveItem'
+              '@odata.nextLink':
+                type: string
+                nullable: true
             additionalProperties:
               type: object
     searchResponse:
@@ -22814,6 +23169,9 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.driveItem'
+              '@odata.nextLink':
+                type: string
+                nullable: true
             additionalProperties:
               type: object
     sharedWithMeResponse:
@@ -22828,6 +23186,9 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.driveItem'
+              '@odata.nextLink':
+                type: string
+                nullable: true
             additionalProperties:
               type: object
     getManagedAppDiagnosticStatusesResponse:
@@ -22841,6 +23202,9 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+              '@odata.nextLink':
+                type: string
+                nullable: true
             additionalProperties:
               type: object
     getManagedAppPoliciesResponse:
@@ -22855,6 +23219,9 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+              '@odata.nextLink':
+                type: string
+                nullable: true
             additionalProperties:
               type: object
     reminderViewResponse:
@@ -22868,6 +23235,9 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.reminder'
+              '@odata.nextLink':
+                type: string
+                nullable: true
             additionalProperties:
               type: object
   parameters:
