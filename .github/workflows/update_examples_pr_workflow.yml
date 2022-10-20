@@ -33,7 +33,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MESSAGE_TITLE: "Examples Update"
         MESSAGE_BODY: "This pull request was automatically created by the GitHub Action,\n\n Contains examples update"
-        REVIEWERS: msewaweru
+        REVIEWERS: timayabi2020,ddyett,peombwa,mairissi,shemogumbe
         ASSIGNEDTO: timayabi2020
         LABELS: generated
         BASE: dev
