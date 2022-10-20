@@ -50,9 +50,9 @@ jobs:
 
   - job: MsGraphPsSdkCiBuild
     displayName: Microsoft Graph PowerShell SDK Generation
+    condition: succeeded()
     timeoutInMinutes: 840
     steps:
-      - template: ./common-templates/install-tools.yml
       - template: ./common-templates/security-pre-checks.yml
       - template: ./generation-templates/authentication-module.yml
         parameters:

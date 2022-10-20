@@ -33,8 +33,4 @@ steps:
         git pull
         git status
 
-
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: "Run CredScan"
-    inputs:
-      debugMode: false
+  - template: ./security-pre-checks.yml
