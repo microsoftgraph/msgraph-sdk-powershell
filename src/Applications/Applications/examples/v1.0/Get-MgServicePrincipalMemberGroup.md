@@ -1,18 +1,27 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Check group memberships for a directory object
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.DirectoryObjects
+
+$params = @{
+	SecurityEnabledOnly = $false
+}
+
+Get-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
+This example shows how to use the Get-MgServicePrincipalMemberGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Check group memberships for the signed-in user
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Users.Actions
 
-{{ Add output here }}
+$params = @{
+	SecurityEnabledOnly = $true
+}
+
+# A UPN can also be used as -UserId.
+Get-MgUserMemberGroup -UserId $userId -BodyParameter $params
 ```
-
-{{ Add description here }}
+This example shows how to use the Get-MgServicePrincipalMemberGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
