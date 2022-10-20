@@ -92,14 +92,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <returns></returns>
         public static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider, TimeSpan clientTimeout)
         {
-            IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
-
-            // Register NationalCloudHandler after AuthHandler.
-            defaultHandlers.Insert(1, new NationalCloudHandler());
-            // Register ODataQueryOptionsHandler after NationalCloudHandler.
-            defaultHandlers.Insert(2, new ODataQueryOptionsHandler());
-
-            HttpClient httpClient = GraphClientFactory.Create(defaultHandlers);
+            IList<DelegatingHandler> delegatingHandlers = new List<DelegatingHandler> {
+                new AuthenticationHandler(authProvider),
+                new NationalCloudHandler(),
+                new ODataQueryOptionsHandler(),
+                new CompressionHandler(),
+                new RetryHandler(new RetryHandlerOption{ MaxRetry = 10 }),
+                new RedirectHandler()
+            };
+            HttpClient httpClient = GraphClientFactory.Create(delegatingHandlers);
             httpClient.Timeout = clientTimeout;
 
             // Prepend SDKVersion header
