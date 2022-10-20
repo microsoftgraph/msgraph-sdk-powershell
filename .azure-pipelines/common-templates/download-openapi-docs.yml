@@ -21,7 +21,7 @@ jobs:
         parameters:
           TargetBranch: ${{ parameters.BaseBranch }}
 
-      - template: ./install-tools-template.yml
+      - template: ./install-tools.yml
 
       - task: PowerShell@2
         name: "ComputeBranch"

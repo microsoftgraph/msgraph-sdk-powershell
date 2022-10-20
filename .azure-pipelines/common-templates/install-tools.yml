@@ -34,7 +34,7 @@ steps:
 
     - task: PowerShell@2
       displayName: Register PS Repository
-      enabled: false
+      enabled: true
       inputs:
         targetType: inline
         pwsh: true
