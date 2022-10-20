@@ -186,7 +186,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             using (NoSynchronizationContext)
             {
                 IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version };
-                if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout))) { authContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout); }
+                if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout))) { GraphSession.Instance.RequestContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout); }
                 // Set selected environment to the session object.
                 GraphSession.Instance.Environment = environment;
                 GraphSession.Instance.GraphHttpClient = null;

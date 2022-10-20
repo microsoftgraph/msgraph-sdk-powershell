@@ -3,13 +3,13 @@
 // ------------------------------------------------------------------------------
 
 using Microsoft.Graph.PowerShell.Authentication.Core.Interfaces;
+using System;
 
-namespace Microsoft.Graph.PowerShell.Authentication.Interfaces
+namespace Microsoft.Graph.PowerShell.Authentication.Models
 {
-    public interface IGraphSession
+    internal class RequestContext : IRequestContext
     {
-        IAuthContext AuthContext { get; set; }
-        IDataStore DataStore { get; set; }
-        IRequestContext RequestContext { get; set; }
+        public RetryHandlerOption RetryOptions { get; set; } = new RetryHandlerOption();
+        public TimeSpan ClientTimeout { get; set; } = TimeSpan.FromSeconds(Constants.ClientTimeout);
     }
 }

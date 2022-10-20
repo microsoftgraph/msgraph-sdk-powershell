@@ -12,6 +12,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using Microsoft.Graph.PowerShell.Authentication.Handlers;
     using System.Management.Automation;
     using System;
+    using Microsoft.Graph.PowerShell.Authentication.Core.Interfaces;
 
     /// <summary>
     /// A HTTP helper class.
@@ -79,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
 
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
-            var newHttpClient = GetGraphHttpClient(authProvider, authContext.ClientTimeout);
+            var newHttpClient = GetGraphHttpClient(authProvider, GraphSession.Instance.RequestContext);
             GraphSession.Instance.GraphHttpClient = newHttpClient;
             return newHttpClient;
         }
@@ -90,18 +91,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// </summary>
         /// <param name="authProvider">Custom AuthProvider</param>
         /// <returns></returns>
-        public static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider, TimeSpan clientTimeout)
+        public static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider, IRequestContext requestContext)
         {
             IList<DelegatingHandler> delegatingHandlers = new List<DelegatingHandler> {
                 new AuthenticationHandler(authProvider),
                 new NationalCloudHandler(),
                 new ODataQueryOptionsHandler(),
                 new CompressionHandler(),
-                new RetryHandler(new RetryHandlerOption{ MaxRetry = 10 }),
+                new RetryHandler(requestContext.RetryOptions),
                 new RedirectHandler()
             };
             HttpClient httpClient = GraphClientFactory.Create(delegatingHandlers);
-            httpClient.Timeout = clientTimeout;
+            httpClient.Timeout = requestContext.ClientTimeout;
 
             // Prepend SDKVersion header
             PrependSDKHeader(httpClient, CoreConstants.Headers.SdkVersionHeaderName, AuthModuleVersionHeaderValue);

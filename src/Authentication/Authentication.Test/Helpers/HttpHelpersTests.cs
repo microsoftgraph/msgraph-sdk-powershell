@@ -8,6 +8,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
     using Microsoft.Graph.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using Xunit;
 
     public class HttpHelpersTests
@@ -24,8 +25,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
             HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
 
-            Assert.Equal(GraphSession.Instance.AuthContext.ClientTimeout, TimeSpan.FromSeconds(Constants.ClientTimeout));
-            Assert.Equal(httpClient.Timeout, GraphSession.Instance.AuthContext.ClientTimeout);
+            Assert.Equal(GraphSession.Instance.RequestContext.ClientTimeout, TimeSpan.FromSeconds(Constants.ClientTimeout));
+            Assert.Equal(httpClient.Timeout, GraphSession.Instance.RequestContext.ClientTimeout);
 
             // reset static instance.
             GraphSession.Reset();
@@ -43,9 +44,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             };
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
 
-            HttpClient httpClient = HttpHelpers.GetGraphHttpClient(authProvider, timeSpan);
+            HttpClient httpClient = HttpHelpers.GetGraphHttpClient(authProvider, new RequestContext { ClientTimeout = timeSpan });
 
-            Assert.Equal(authContext.ClientTimeout, TimeSpan.FromSeconds(Constants.ClientTimeout));
             Assert.Equal(httpClient.Timeout, timeSpan);
 
             // reset static instance.
@@ -61,12 +61,12 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process,
-                ClientTimeout = timeSpan
             };
+            GraphSession.Instance.RequestContext.ClientTimeout = timeSpan;
 
             HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
 
-            Assert.Equal(GraphSession.Instance.AuthContext.ClientTimeout, timeSpan);
+            Assert.Equal(GraphSession.Instance.RequestContext.ClientTimeout, timeSpan);
             Assert.Equal(httpClient.Timeout, timeSpan);
 
             // reset static instance.
