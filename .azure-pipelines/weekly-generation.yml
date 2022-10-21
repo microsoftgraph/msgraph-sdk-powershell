@@ -58,10 +58,12 @@ jobs:
     displayName: Microsoft Graph PowerShell SDK Generation
     condition: succeeded()
     timeoutInMinutes: 840
+    variables:
+      WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
     steps:
       - template: ./common-templates/checkout.yml
         parameters:
-          TargetBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+          TargetBranch: $(WeeklyBranch)
       - template: ./common-templates/security-pre-checks.yml
       - template: ./generation-templates/authentication-module.yml
         parameters:
