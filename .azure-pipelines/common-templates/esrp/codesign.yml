@@ -2,58 +2,58 @@
 # Licensed under the MIT License.
 
 parameters:
-  - name: FolderPath
-    type: string
-    default: $(System.DefaultWorkingDirectory)
-  - name: Pattern
-    type: string
-    default: '.*.dll'
+    - name: FolderPath
+      type: string
+      default: $(System.DefaultWorkingDirectory)
+    - name: Pattern
+      type: string
+      default: ".*.dll"
 
 steps:
-  - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
-    displayName: ESRP DLL CodeSigning
-    enabled: true
-    inputs:
-      ConnectedServiceName: microsoftgraph ESRP CodeSign DLL and NuGet (AKV)
-      FolderPath: ${{ parameters.FolderPath }}
-      Pattern: ${{ parameters.Pattern }}
-      signConfigType: inlineSignParams
-      inlineOperation: |
-        [
-            {
-                "keyCode": "CP-230012",
-                "operationSetCode": "SigntoolSign",
-                "parameters": [
-                    {
-                        "parameterName": "OpusName",
-                        "parameterValue": "Microsoft"
-                    },
-                    {
-                        "parameterName": "OpusInfo",
-                        "parameterValue": "http://www.microsoft.com"
-                    },
-                    {
-                        "parameterName": "FileDigest",
-                        "parameterValue": "/fd \"SHA256\""
-                    },
-                    {
-                        "parameterName": "PageHash",
-                        "parameterValue": "/NPH"
-                    },
-                    {
-                        "parameterName": "TimeStamp",
-                        "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
-                    }
-                ],
-                "toolName": "sign",
-                "toolVersion": "1.0"
-            },
-            {
-                "keyCode": "CP-230012",
-                "operationSetCode": "SigntoolVerify",
-                "parameters": [],
-                "toolName": "sign",
-                "toolVersion": "1.0"
-            }
-        ]
-      SessionTimeout: 160
+    - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+      displayName: ESRP DLL CodeSigning
+      enabled: true
+      inputs:
+          ConnectedServiceName: microsoftgraph ESRP CodeSign DLL and NuGet (AKV)
+          FolderPath: ${{ parameters.FolderPath }}
+          Pattern: ${{ parameters.Pattern }}
+          signConfigType: inlineSignParams
+          inlineOperation: |
+              [
+                  {
+                      "keyCode": "CP-230012",
+                      "operationSetCode": "SigntoolSign",
+                      "parameters": [
+                          {
+                              "parameterName": "OpusName",
+                              "parameterValue": "Microsoft"
+                          },
+                          {
+                              "parameterName": "OpusInfo",
+                              "parameterValue": "http://www.microsoft.com"
+                          },
+                          {
+                              "parameterName": "FileDigest",
+                              "parameterValue": "/fd \"SHA256\""
+                          },
+                          {
+                              "parameterName": "PageHash",
+                              "parameterValue": "/NPH"
+                          },
+                          {
+                              "parameterName": "TimeStamp",
+                              "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                          }
+                      ],
+                      "toolName": "sign",
+                      "toolVersion": "1.0"
+                  },
+                  {
+                      "keyCode": "CP-230012",
+                      "operationSetCode": "SigntoolVerify",
+                      "parameters": [],
+                      "toolName": "sign",
+                      "toolVersion": "1.0"
+                  }
+              ]
+          SessionTimeout: 160

@@ -4,7 +4,7 @@
 parameters:
   - name: TargetBranch
     type: string
-    default: ''
+    default: ""
 
 steps:
   - checkout: self

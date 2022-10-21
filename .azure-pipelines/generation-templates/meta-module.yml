@@ -14,7 +14,7 @@ parameters:
 
 steps:
   - task: PowerShell@2
-    displayName: 'Generate Meta-Module'
+    displayName: "Generate Meta-Module"
     enabled: false
     inputs:
       targetType: inline
@@ -23,16 +23,16 @@ steps:
         $(System.DefaultWorkingDirectory)/tools/GenerateMetaModule.ps1
 
   - ${{ if eq(parameters.Sign, true) }}:
-    - template: ../common-templates/esrp/codesign.yml
-      parameters:
-        FolderPath: '$(System.DefaultWorkingDirectory)/src/Graph'
-        Pattern: 'Microsoft.Graph.psm1, Microsoft.Graph.*.format.ps1xml, *.ps1'
+      - template: ../common-templates/esrp/codesign.yml
+        parameters:
+          FolderPath: "$(System.DefaultWorkingDirectory)/src/Graph"
+          Pattern: "Microsoft.Graph.psm1, Microsoft.Graph.*.format.ps1xml, *.ps1"
 
   - ${{ if eq(parameters.Pack, true) }}:
-    - task: PowerShell@2
-      displayName: Pack Meta-Module
-      inputs:
-        targetType: inline
-        pwsh: true
-        script: |
-          . $(System.DefaultWorkingDirectory)/tools/GenerateMetaModule.ps1 -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+      - task: PowerShell@2
+        displayName: Pack Meta-Module
+        inputs:
+          targetType: inline
+          pwsh: true
+          script: |
+            . $(System.DefaultWorkingDirectory)/tools/GenerateMetaModule.ps1 -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)
