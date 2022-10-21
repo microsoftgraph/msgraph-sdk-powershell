@@ -59,7 +59,7 @@ jobs:
     condition: succeeded()
     timeoutInMinutes: 840
     steps:
-      - template: ./checkout.yml
+      - template: ./common-templates/checkout.yml
         parameters:
           TargetBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
       - template: ./common-templates/security-pre-checks.yml
