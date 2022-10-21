@@ -1,18 +1,26 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Synchronous pull
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Sites
+
+$params = @{
+	ContentTypeId = "0x0101"
+}
+
+Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
+This example shows how to use the Add-MgGroupSiteContentTypeCopyFromContentTypeHub Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Asynchronous pull
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Sites
 
-{{ Add output here }}
+$params = @{
+	ContentTypeId = "0x0101"
+}
+
+Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
-
-{{ Add description here }}
+This example shows how to use the Add-MgGroupSiteContentTypeCopyFromContentTypeHub Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
