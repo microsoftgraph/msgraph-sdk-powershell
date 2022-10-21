@@ -47,6 +47,6 @@ steps:
           $user = '$(NUGETBUILDUSER)'
           $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
           Unregister-PSRepository -Name $nugetFeedName -ErrorAction Continue
-          Register-PSRepository -Name $nugetFeedName -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices -PackageManagementProvider 'Nuget'
+          Register-PSRepository -Name $nugetFeedName -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices
           Get-PSRepository
           Find-Module -Name Microsoft.Graph.Authentication -AllowPrerelease -Repository $nugetFeedName
