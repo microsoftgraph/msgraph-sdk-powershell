@@ -35,24 +35,33 @@ trigger: none
 pr: none
 schedules:
   - cron: "0 12 * * TUE" # Run every Tuesday at noon UTC
-    displayName: "Weekly PS SDK Preview Refresh"
+    displayName: "PS SDK Preview Weekly Refresh"
     branches:
       include:
         - features/2.0
     always: true
 jobs:
-  - template: common-templates/download-openapi-docs.yml
-    parameters:
-      Branch: $(Branch)
-      BaseBranch: $(BaseBranch)
-      BuildAgent: $(BuildAgent)
-      SkipForceRefresh: $(SkipForceRefresh)
+  - job: RefreshOpenAPIDocuments
+    displayName: Refresh OpenApi documents
+    timeoutInMinutes: 240
+    pool: $(BuildAgent)
+    steps:
+      - template: common-templates/download-openapi-docs.yml
+        parameters:
+          Branch: $(Branch)
+          BaseBranch: $(BaseBranch)
+          BuildAgent: $(BuildAgent)
+          SkipForceRefresh: $(SkipForceRefresh)
 
-  - job: MsGraphPsSdkCiBuild
+  - job: MsGraphPsSdkWeeklyGeneration
+    dependsOn: RefreshOpenAPIDocuments
     displayName: Microsoft Graph PowerShell SDK Generation
     condition: succeeded()
     timeoutInMinutes: 840
     steps:
+      - template: ./checkout.yml
+        parameters:
+          TargetBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
       - template: ./common-templates/security-pre-checks.yml
       - template: ./generation-templates/authentication-module.yml
         parameters:
