@@ -1,18 +1,81 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Include a file attachment
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Groups
+
+$params = @{
+	Post = @{
+		Body = @{
+			ContentType = "text"
+			Content = "Which quarter does that file cover? See my attachment."
+		}
+		Attachments = @(
+			@{
+				"@odata.type" = "#microsoft.graph.fileAttachment"
+				Name = "Another file as attachment"
+				ContentBytes = "VGhpcyBpcyBhIGZpbGUgdG8gYmUgYXR0YWNoZWQu"
+			}
+		)
+	}
+}
+
+Invoke-MgReplyGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 ```
+This example shows how to use the Invoke-MgReplyGroupConversationThread Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Include an item attachment
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Groups
 
-{{ Add output here }}
+$params = @{
+	Post = @{
+		Body = @{
+			ContentType = "text"
+			Content = "I attached an event."
+		}
+		Attachments = @(
+			@{
+				"@odata.type" = "#microsoft.graph.itemAttachment"
+				Name = "Holiday event"
+				Item = @{
+					"@odata.type" = "microsoft.graph.event"
+					Subject = "Discuss gifts for children"
+				}
+			}
+		)
+	}
+}
+
+Invoke-MgReplyGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 ```
+This example shows how to use the Invoke-MgReplyGroupConversationThread Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 3: Include a reference attachment
+
+```powershellImport-Module Microsoft.Graph.Groups
+
+$params = @{
+	Post = @{
+		Body = @{
+			ContentType = "text"
+			Content = "I attached a reference to a file on OneDrive."
+		}
+		Attachments = @(
+			@{
+				"@odata.type" = "#microsoft.graph.referenceAttachment"
+				Name = "Personal pictures"
+				SourceUrl = "https://contoso.com/personal/mario_contoso_net/Documents/Pics"
+				ProviderType = "oneDriveConsumer"
+				Permission = "Edit"
+				IsFolder = "True"
+			}
+		)
+	}
+}
+
+Invoke-MgReplyGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
+```
+This example shows how to use the Invoke-MgReplyGroupConversationThread Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
