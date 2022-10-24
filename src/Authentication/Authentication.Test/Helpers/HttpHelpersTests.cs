@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process
             };
+            GraphSession.Instance.RequestContext = new RequestContext();
 
             HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
 
@@ -62,7 +63,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process,
             };
-            GraphSession.Instance.RequestContext.ClientTimeout = timeSpan;
+            GraphSession.Instance.RequestContext = new RequestContext { ClientTimeout = timeSpan };
 
             HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
 
@@ -86,6 +87,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             {
                 BaseAddress = new Uri("https://test.contoso.com/v1.0/")
             };
+            GraphSession.Instance.RequestContext = new RequestContext();
 
             HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
 
@@ -107,6 +109,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 ContextScope = ContextScope.Process,
             };
             GraphSession.Instance.GraphHttpClient = null;
+            GraphSession.Instance.RequestContext = new RequestContext();
 
             HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
 
@@ -127,6 +130,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process,
             };
+            GraphSession.Instance.RequestContext = new RequestContext();
 
             HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
 
@@ -153,6 +157,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 BaseAddress = new Uri("https://test.contoso.com/v1.0/")
             };
             GraphSession.Instance.GraphHttpClient = dummyClient;
+            GraphSession.Instance.RequestContext = new RequestContext();
             HttpClient httpClientAttempt1 = HttpHelpers.GetGraphHttpClient();
 
             // Mock sign out.
