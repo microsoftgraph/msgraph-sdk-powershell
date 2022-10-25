@@ -623,7 +623,7 @@ paths:
       tags:
         - chats.chat
       summary: List chats
-      description: Retrieve the list of chats that the user is part of.
+      description: 'Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0
@@ -658,6 +658,8 @@ paths:
                 - tenantId desc
                 - topic
                 - topic desc
+                - viewpoint
+                - viewpoint desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -678,8 +680,10 @@ paths:
                 - onlineMeetingInfo
                 - tenantId
                 - topic
+                - viewpoint
                 - webUrl
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -697,6 +701,7 @@ paths:
               enum:
                 - '*'
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -742,7 +747,7 @@ paths:
       tags:
         - chats.chat
       summary: Get chat
-      description: Retrieve a single chat (without its messages).
+      description: 'Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
@@ -773,8 +778,10 @@ paths:
                 - onlineMeetingInfo
                 - tenantId
                 - topic
+                - viewpoint
                 - webUrl
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -792,6 +799,7 @@ paths:
               enum:
                 - '*'
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -807,6 +815,10 @@ paths:
           links:
             installedApps:
               operationId: chats.ListInstalledApps
+              parameters:
+                chat-id: $request.path.chat-id
+            lastMessagePreview:
+              operationId: chats.GetLastMessagePreview
               parameters:
                 chat-id: $request.path.chat-id
             members:
@@ -825,8 +837,16 @@ paths:
               operationId: chats.ListTabs
               parameters:
                 chat-id: $request.path.chat-id
+            hideForUser:
+              operationId: chats.chat.hideGraphFPreUser
+            markChatReadForUser:
+              operationId: chats.chat.markChatReadGraphFPreUser
+            markChatUnreadForUser:
+              operationId: chats.chat.markChatUnreadGraphFPreUser
             sendActivityNotification:
               operationId: chats.chat.sendActivityNotification
+            unhideForUser:
+              operationId: chats.chat.unhideGraphFPreUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1316,12 +1336,121 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/lastMessagePreview':
+    get:
+      tags:
+        - chats.chatMessageInfo
+      summary: Get lastMessagePreview from chats
+      description: 'Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.'
+      operationId: chats_GetLastMessagePreview
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - body
+                - createdDateTime
+                - eventDetail
+                - from
+                - isDeleted
+                - messageType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - chats.chatMessageInfo
+      summary: Update the navigation property lastMessagePreview in chats
+      operationId: chats_UpdateLastMessagePreview
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.chatMessageInfo
+      summary: Delete navigation property lastMessagePreview for chats
+      operationId: chats_DeleteLastMessagePreview
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/chats/{chat-id}/members':
     get:
       tags:
         - chats.conversationMember
       summary: List members of a chat
-      description: List all conversation members in a chat.
+      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
@@ -1605,6 +1734,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1618,7 +1750,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: List messages in a chat
-      description: Retrieve the list of messages in a chat.
+      description: 'Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0
@@ -1753,11 +1885,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -2372,11 +2504,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: chats.messages_CreateReplies
       parameters:
         - name: chat-id
@@ -3048,6 +3180,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3179,6 +3317,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3187,6 +3331,122 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/chats/{chat-id}/microsoft.graph.hideForUser':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action hideForUser
+      description: Hide a chat for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
+      operationId: chats_hideGraphFPreUser
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/microsoft.graph.markChatReadForUser':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action markChatReadForUser
+      description: Mark a chat as read for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
+      operationId: chats_markChatReadGraphFPreUser
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/microsoft.graph.markChatUnreadForUser':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action markChatUnreadForUser
+      description: Mark a chat as unread for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
+      operationId: chats_markChatUnreadGraphFPreUser
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
+                lastMessageReadDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/microsoft.graph.sendActivityNotification':
     post:
       tags:
@@ -3230,6 +3490,43 @@ paths:
                     $ref: '#/components/schemas/microsoft.graph.keyValuePair'
                 recipient:
                   $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/microsoft.graph.unhideForUser':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action unhideForUser
+      description: Unhide a chat for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
+      operationId: chats_unhideGraphFPreUser
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
               additionalProperties:
                 type: object
         required: true
@@ -4013,6 +4310,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4437,7 +4737,7 @@ paths:
       tags:
         - groups.team
       summary: List channels
-      description: Retrieve the list of channels in this team.
+      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -4995,7 +5295,7 @@ paths:
       tags:
         - groups.team
       summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -5080,11 +5380,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: groups.team.channels_CreateMembers
       parameters:
         - name: group-id
@@ -5279,7 +5579,7 @@ paths:
       tags:
         - groups.team
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API. '
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -6123,11 +6423,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: groups.team.channels.messages_CreateReplies
       parameters:
         - name: group-id
@@ -9461,7 +9761,7 @@ paths:
       tags:
         - groups.team
       summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -9538,11 +9838,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: groups.team.primaryChannel_CreateMembers
       parameters:
         - name: group-id
@@ -9705,7 +10005,7 @@ paths:
       tags:
         - groups.team
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API. '
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -10459,11 +10759,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: groups.team.primaryChannel.messages_CreateReplies
       parameters:
         - name: group-id
@@ -11858,14 +12158,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - groups.team
       summary: Update the navigation property schedule in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
-      operationId: groups.team_UpdateSchedule
+      operationId: groups.team_SetSchedule
       parameters:
         - name: group-id
           in: path
@@ -15386,7 +15683,7 @@ paths:
       tags:
         - teams.channel
       summary: List channels
-      description: Retrieve the list of channels in this team.
+      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -15944,7 +16241,7 @@ paths:
       tags:
         - teams.channel
       summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -16029,11 +16326,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: teams.channels_CreateMembers
       parameters:
         - name: team-id
@@ -16276,6 +16573,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16289,7 +16589,7 @@ paths:
       tags:
         - teams.channel
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API. '
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -17133,11 +17433,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teams.channels.messages_CreateReplies
       parameters:
         - name: team-id
@@ -17891,6 +18191,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -18030,6 +18336,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -19169,6 +19481,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -20352,6 +20667,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -21332,7 +21650,7 @@ paths:
       tags:
         - teams.channel
       summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -21409,11 +21727,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: teams.primaryChannel_CreateMembers
       parameters:
         - name: team-id
@@ -21616,6 +21934,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -21629,7 +21950,7 @@ paths:
       tags:
         - teams.channel
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API. '
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -22383,11 +22704,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teams.primaryChannel.messages_CreateReplies
       parameters:
         - name: team-id
@@ -23059,6 +23380,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -23190,6 +23517,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -24186,14 +24519,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - teams.schedule
       summary: Update the navigation property schedule in teams
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
-      operationId: teams_UpdateSchedule
+      operationId: teams_SetSchedule
       parameters:
         - name: team-id
           in: path
@@ -27305,6 +27635,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -27654,7 +27987,7 @@ paths:
       tags:
         - users.chat
       summary: List chats
-      description: Retrieve the list of chats that the user is part of.
+      description: 'Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0
@@ -27697,6 +28030,8 @@ paths:
                 - tenantId desc
                 - topic
                 - topic desc
+                - viewpoint
+                - viewpoint desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -27717,8 +28052,10 @@ paths:
                 - onlineMeetingInfo
                 - tenantId
                 - topic
+                - viewpoint
                 - webUrl
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -27736,6 +28073,7 @@ paths:
               enum:
                 - '*'
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -27821,8 +28159,10 @@ paths:
                 - onlineMeetingInfo
                 - tenantId
                 - topic
+                - viewpoint
                 - webUrl
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -27840,6 +28180,7 @@ paths:
               enum:
                 - '*'
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -27855,6 +28196,11 @@ paths:
           links:
             installedApps:
               operationId: users.Chats.ListInstalledApps
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+            lastMessagePreview:
+              operationId: users.Chats.GetLastMessagePreview
               parameters:
                 user-id: $request.path.user-id
                 chat-id: $request.path.chat-id
@@ -27878,8 +28224,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 chat-id: $request.path.chat-id
+            hideForUser:
+              operationId: users.user.chats.chat.hideGraphFPreUser
+            markChatReadForUser:
+              operationId: users.user.chats.chat.markChatReadGraphFPreUser
+            markChatUnreadForUser:
+              operationId: users.user.chats.chat.markChatUnreadGraphFPreUser
             sendActivityNotification:
               operationId: users.user.chats.chat.sendActivityNotification
+            unhideForUser:
+              operationId: users.user.chats.chat.unhideGraphFPreUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28408,12 +28762,145 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/lastMessagePreview':
+    get:
+      tags:
+        - users.chat
+      summary: Get lastMessagePreview from users
+      description: 'Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.'
+      operationId: users.chats_GetLastMessagePreview
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - body
+                - createdDateTime
+                - eventDetail
+                - from
+                - isDeleted
+                - messageType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.chat
+      summary: Update the navigation property lastMessagePreview in users
+      operationId: users.chats_UpdateLastMessagePreview
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.chat
+      summary: Delete navigation property lastMessagePreview for users
+      operationId: users.chats_DeleteLastMessagePreview
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/chats/{chat-id}/members':
     get:
       tags:
         - users.chat
       summary: List members of a chat
-      description: List all conversation members in a chat.
+      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
@@ -28697,7 +29184,7 @@ paths:
       tags:
         - users.chat
       summary: List messages in a chat
-      description: Retrieve the list of messages in a chat.
+      description: 'Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0
@@ -28840,11 +29327,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: users.chats_CreateMessages
       parameters:
         - name: user-id
@@ -29541,11 +30028,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: users.chats.messages_CreateReplies
       parameters:
         - name: user-id
@@ -31558,7 +32045,7 @@ paths:
       tags:
         - users.team
       summary: List channels
-      description: Retrieve the list of channels in this team.
+      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -32195,7 +32682,7 @@ paths:
       tags:
         - users.team
       summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -32288,11 +32775,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_CreateMembers
       parameters:
         - name: user-id
@@ -32519,7 +33006,7 @@ paths:
       tags:
         - users.team
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API. '
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -33453,11 +33940,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: users.joinedTeams.channels.messages_CreateReplies
       parameters:
         - name: user-id
@@ -37272,7 +37759,7 @@ paths:
       tags:
         - users.team
       summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -37357,11 +37844,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_CreateMembers
       parameters:
         - name: user-id
@@ -37556,7 +38043,7 @@ paths:
       tags:
         - users.team
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API. '
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -38400,11 +38887,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel.messages_CreateReplies
       parameters:
         - name: user-id
@@ -39998,14 +40485,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - users.team
       summary: Update the navigation property schedule in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
-      operationId: users.joinedTeams_UpdateSchedule
+      operationId: users.joinedTeams_SetSchedule
       parameters:
         - name: user-id
           in: path
@@ -44085,8 +44569,10 @@ paths:
                 - onlineMeetingInfo
                 - tenantId
                 - topic
+                - viewpoint
                 - webUrl
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -44104,6 +44590,7 @@ paths:
               enum:
                 - '*'
                 - installedApps
+                - lastMessagePreview
                 - members
                 - messages
                 - pinnedMessages
@@ -44119,6 +44606,11 @@ paths:
           links:
             installedApps:
               operationId: users.teamwork.installedApps.Chat.ListInstalledApps
+              parameters:
+                user-id: $request.path.user-id
+                userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
+            lastMessagePreview:
+              operationId: users.teamwork.installedApps.Chat.GetLastMessagePreview
               parameters:
                 user-id: $request.path.user-id
                 userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
@@ -44247,6 +44739,8 @@ components:
               type: string
               description: (Optional) Subject or topic for the chat. Only available for group chats.
               nullable: true
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.chatViewpoint'
             webUrl:
               type: string
               description: 'The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.'
@@ -44257,6 +44751,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
               description: A collection of all the apps in the chat. Nullable.
               x-ms-navigationProperty: true
+            lastMessagePreview:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
             members:
               type: array
               items:
@@ -44293,6 +44789,32 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessageInfo
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date time object representing the time at which message was created.
+              format: date-time
+              nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
+            from:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            isDeleted:
+              type: boolean
+              description: 'If set to true, the original message has been deleted.'
+              nullable: true
+            messageType:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
           additionalProperties:
             type: object
     microsoft.graph.conversationMember:
@@ -44432,6 +44954,16 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
         - title: chatMessageHostedContent
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.teamworkUserIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: teamworkUserIdentity
+          type: object
+          properties:
+            userIdentityType:
+              $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
           additionalProperties:
             type: object
     microsoft.graph.teamworkActivityTopic:
@@ -45664,6 +46196,43 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
       additionalProperties:
         type: object
+    microsoft.graph.chatViewpoint:
+      title: chatViewpoint
+      type: object
+      properties:
+        isHidden:
+          type: boolean
+          description: Indicates whether the chat is hidden for the current user.
+          nullable: true
+        lastMessageReadDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageFromIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: chatMessageFromIdentitySet
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageType:
+      title: chatMessageType
+      enum:
+        - message
+        - chatEvent
+        - typing
+        - unknownFutureValue
+        - systemEventMessage
+      type: string
     microsoft.graph.publicError:
       title: publicError
       type: object
@@ -45733,18 +46302,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.eventMessageDetail:
-      title: eventMessageDetail
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageFromIdentitySet:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identitySet'
-        - title: chatMessageFromIdentitySet
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -45772,15 +46329,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.chatMessageType:
-      title: chatMessageType
-      enum:
-        - message
-        - chatEvent
-        - typing
-        - unknownFutureValue
-        - systemEventMessage
-      type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
       type: object
@@ -45832,6 +46380,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamworkUserIdentityType:
+      title: teamworkUserIdentityType
+      enum:
+        - aadUser
+        - onPremiseAadUser
+        - anonymousGuest
+        - federatedUser
+        - personalMicrosoftAccountUser
+        - skypeUser
+        - phoneUser
+        - unknownFutureValue
+        - emailUser
+      type: string
     microsoft.graph.teamworkActivityTopicSource:
       title: teamworkActivityTopicSource
       enum:
@@ -48079,30 +48654,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.teamworkUserIdentity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: teamworkUserIdentity
-          type: object
-          properties:
-            userIdentityType:
-              $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
-          additionalProperties:
-            type: object
     microsoft.graph.publicErrorDetail:
       title: publicErrorDetail
       type: object
@@ -50294,19 +50845,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    microsoft.graph.teamworkUserIdentityType:
-      title: teamworkUserIdentityType
-      enum:
-        - aadUser
-        - onPremiseAadUser
-        - anonymousGuest
-        - federatedUser
-        - personalMicrosoftAccountUser
-        - skypeUser
-        - phoneUser
-        - unknownFutureValue
-        - emailUser
-      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'

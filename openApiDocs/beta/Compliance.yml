@@ -7741,6 +7741,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -29036,6 +29039,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.attachmentBase:
       allOf:

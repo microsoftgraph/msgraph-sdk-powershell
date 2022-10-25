@@ -3024,6 +3024,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.presence'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:

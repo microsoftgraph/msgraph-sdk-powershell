@@ -685,6 +685,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationCategory'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1495,6 +1501,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationCategory'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3789,6 +3801,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5195,6 +5213,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationClass'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5928,6 +5952,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationCategory'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7899,6 +7929,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9517,6 +9553,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - education.educationSchool
+      summary: Update the navigation property administrativeUnit in education
+      operationId: education.schools_UpdateAdministrativeUnit
+      parameters:
+        - name: educationSchool-id
+          in: path
+          description: 'key: id of educationSchool'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSchool
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/education/schools/{educationSchool-id}/classes':
     get:
       tags:
@@ -10223,6 +10286,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSchool'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10830,6 +10899,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationFileSynchronizationVerificationMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -12031,6 +12103,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationCategory'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -14325,6 +14403,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -15989,6 +16073,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationUser'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -37307,6 +37397,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
