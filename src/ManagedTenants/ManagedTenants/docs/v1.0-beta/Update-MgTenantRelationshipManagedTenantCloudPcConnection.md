@@ -131,7 +131,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -282,7 +283,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsCloudPcConnection>: cloudPcConnection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the cloud PC connection. Required. Read-only.
   - `[HealthCheckStatus <String>]`: The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
   - `[LastRefreshedDateTime <DateTime?>]`: Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
@@ -300,6 +301,13 @@ INPUTOBJECT <IManagedTenantsIdentity>: Identity Parameter
   - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: key: id of deviceCompliancePolicySettingStateSummary
   - `[ManagedDeviceComplianceId <String>]`: key: id of managedDeviceCompliance
   - `[ManagedDeviceComplianceTrendId <String>]`: key: id of managedDeviceComplianceTrend
+  - `[ManagedTenantAlertId <String>]`: key: id of managedTenantAlert
+  - `[ManagedTenantAlertLogId <String>]`: key: id of managedTenantAlertLog
+  - `[ManagedTenantAlertRuleDefinitionId <String>]`: key: id of managedTenantAlertRuleDefinition
+  - `[ManagedTenantAlertRuleId <String>]`: key: id of managedTenantAlertRule
+  - `[ManagedTenantApiNotificationId <String>]`: key: id of managedTenantApiNotification
+  - `[ManagedTenantEmailNotificationId <String>]`: key: id of managedTenantEmailNotification
+  - `[ManagedTenantTicketingEndpointId <String>]`: key: id of managedTenantTicketingEndpoint
   - `[ManagementActionId <String>]`: key: id of managementAction
   - `[ManagementActionTenantDeploymentStatusId <String>]`: key: id of managementActionTenantDeploymentStatus
   - `[ManagementIntentId <String>]`: key: id of managementIntent

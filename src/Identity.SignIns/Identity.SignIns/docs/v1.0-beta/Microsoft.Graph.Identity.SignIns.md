@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 0294463d-935c-421b-9930-4307d03e9fb9
+Module Guid: dd688160-4e30-482d-8153-8257922e17a1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -117,16 +117,16 @@ Nullable.
 Returns a collection of the specified authentication context class references.
 
 ### [Get-MgIdentityConditionalAccessAuthenticationStrength](Get-MgIdentityConditionalAccessAuthenticationStrength.md)
-Get authenticationStrengths from identity
+Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
 
 ### [Get-MgIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode](Get-MgIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode.md)
-Get authenticationMethodModes from identity
+Names and descriptions of all valid authentication method modes in the system.
 
 ### [Get-MgIdentityConditionalAccessAuthenticationStrengthPolicy](Get-MgIdentityConditionalAccessAuthenticationStrengthPolicy.md)
-Get policies from identity
+A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 
 ### [Get-MgIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration](Get-MgIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration.md)
-Get combinationConfigurations from identity
+Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 
 ### [Get-MgIdentityConditionalAccessNamedLocation](Get-MgIdentityConditionalAccessNamedLocation.md)
 Read-only.
@@ -224,10 +224,10 @@ Represents the settings for each authentication method.
 Automatically expanded on GET /policies/authenticationMethodsPolicy.
 
 ### [Get-MgPolicyAuthenticationStrengthPolicy](Get-MgPolicyAuthenticationStrengthPolicy.md)
-Get authenticationStrengthPolicies from policies
+The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
 
 ### [Get-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration](Get-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration.md)
-Get combinationConfigurations from policies
+Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 
 ### [Get-MgPolicyAuthorizationPolicy](Get-MgPolicyAuthorizationPolicy.md)
 The policy that controls Azure AD authorization settings.
@@ -716,7 +716,8 @@ Create new navigation property to authenticationMethodModes for identity
 Create new navigation property to policies for identity
 
 ### [New-MgIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration](New-MgIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration.md)
-Create new navigation property to combinationConfigurations for identity
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
 
 ### [New-MgIdentityConditionalAccessNamedLocation](New-MgIdentityConditionalAccessNamedLocation.md)
 Create a new namedLocation object.
@@ -774,10 +775,11 @@ Create an appManagementPolicy object.
 Create new navigation property to authenticationMethodConfigurations for policies
 
 ### [New-MgPolicyAuthenticationStrengthPolicy](New-MgPolicyAuthenticationStrengthPolicy.md)
-Create new navigation property to authenticationStrengthPolicies for policies
+Create a new custom authenticationStrengthPolicy object.
 
 ### [New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration](New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration.md)
-Create new navigation property to combinationConfigurations for policies
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
 
 ### [New-MgPolicyAuthorizationPolicy](New-MgPolicyAuthorizationPolicy.md)
 Create new navigation property to authorizationPolicy for policies
@@ -1416,7 +1418,8 @@ Update the navigation property authenticationMethodModes in identity
 Update the navigation property policies in identity
 
 ### [Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination](Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination.md)
-Invoke action updateAllowedCombinations
+Update the allowedCombinations property of an authenticationStrengthPolicy object.
+To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.
 
 ### [Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration](Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration.md)
 Update the navigation property combinationConfigurations in identity
@@ -1447,9 +1450,6 @@ Update the navigation property userFlowAttributes in identity
 
 ### [Update-MgInformationProtection](Update-MgInformationProtection.md)
 Update informationProtection
-
-### [Update-MgInformationProtectionBitlocker](Update-MgInformationProtectionBitlocker.md)
-Update the navigation property bitlocker in informationProtection
 
 ### [Update-MgInformationProtectionDataLossPreventionPolicy](Update-MgInformationProtectionDataLossPreventionPolicy.md)
 Update the navigation property dataLossPreventionPolicies in informationProtection
@@ -1499,7 +1499,8 @@ Update the navigation property authenticationMethodConfigurations in policies
 Update the navigation property authenticationStrengthPolicies in policies
 
 ### [Update-MgPolicyAuthenticationStrengthPolicyAllowedCombination](Update-MgPolicyAuthenticationStrengthPolicyAllowedCombination.md)
-Invoke action updateAllowedCombinations
+Update the allowedCombinations property of an authenticationStrengthPolicy object.
+To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.
 
 ### [Update-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration](Update-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration.md)
 Update the navigation property combinationConfigurations in policies
@@ -1527,9 +1528,6 @@ Update the navigation property partners in policies
 
 ### [Update-MgPolicyDefaultAppManagementPolicy](Update-MgPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.
-
-### [Update-MgPolicyDeviceRegistrationPolicy](Update-MgPolicyDeviceRegistrationPolicy.md)
-Update the navigation property deviceRegistrationPolicy in policies
 
 ### [Update-MgPolicyDirectoryRoleAccessReviewPolicy](Update-MgPolicyDirectoryRoleAccessReviewPolicy.md)
 Update the navigation property directoryRoleAccessReviewPolicy in policies
@@ -1662,9 +1660,6 @@ Update the navigation property usageRights in users
 
 ### [Update-MgUserInformationProtection](Update-MgUserInformationProtection.md)
 Update the navigation property informationProtection in users
-
-### [Update-MgUserInformationProtectionBitlocker](Update-MgUserInformationProtectionBitlocker.md)
-Update the navigation property bitlocker in users
 
 ### [Update-MgUserInformationProtectionDataLossPreventionPolicy](Update-MgUserInformationProtectionDataLossPreventionPolicy.md)
 Update the navigation property dataLossPreventionPolicies in users

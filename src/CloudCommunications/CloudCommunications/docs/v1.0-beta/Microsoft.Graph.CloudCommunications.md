@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 67dc5682-f2b6-49ef-b7ff-938e51c7f46e
+Module Guid: 5e714881-5b1c-4882-9675-63bdcafe3473
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -70,7 +70,7 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgCommunicationOnlineMeetingRegistration](Get-MgCommunicationOnlineMeetingRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion](Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
@@ -116,7 +116,7 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgUserOnlineMeetingRegistration](Get-MgUserOnlineMeetingRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgUserOnlineMeetingRegistrationCustomQuestion](Get-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSubscribedSku
 
 ## SYNOPSIS
-Get entity from subscribedSkus by key
+Get a specific commercial subscription that an organization has acquired.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Get-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-Proper
 ```
 
 ## DESCRIPTION
-Get entity from subscribedSkus by key
+Get a specific commercial subscription that an organization has acquired.
 
 ## EXAMPLES
 

@@ -170,7 +170,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -383,7 +384,7 @@ BODYPARAMETER <IMicrosoftGraphItemEmail>: itemEmail
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Address <String>]`: The email address itself.
   - `[DisplayName <String>]`: The name or label a user has associated with a particular email address.
   - `[Type <String>]`: emailType

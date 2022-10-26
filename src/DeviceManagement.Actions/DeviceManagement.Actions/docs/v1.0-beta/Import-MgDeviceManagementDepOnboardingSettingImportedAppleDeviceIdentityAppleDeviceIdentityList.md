@@ -200,7 +200,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths1Ad4X1ZDevicemanagementDeponboardingsettingsDeponboardingsettingIdImportedappledeviceidentitiesMicrosoftGraphImportappledeviceidentitylistPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ImportedAppleDeviceIdentities <IMicrosoftGraphImportedAppleDeviceIdentity[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedDateTime <DateTime?>]`: Created Date Time of the device
     - `[Description <String>]`: The description of the device
     - `[DiscoverySource <DiscoverySource?>]`: discoverySource
@@ -215,7 +215,7 @@ BODYPARAMETER <IPaths1Ad4X1ZDevicemanagementDeponboardingsettingsDeponboardingse
   - `[OverwriteImportedDeviceIdentities <Boolean?>]`: 
 
 IMPORTEDAPPLEDEVICEIDENTITIES <IMicrosoftGraphImportedAppleDeviceIdentity[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Created Date Time of the device
   - `[Description <String>]`: The description of the device
   - `[DiscoverySource <DiscoverySource?>]`: discoverySource

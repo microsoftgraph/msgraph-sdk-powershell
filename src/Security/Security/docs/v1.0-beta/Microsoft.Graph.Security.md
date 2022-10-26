@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: de4511f6-87e6-4cdc-b378-a4baccff0ff7
+Module Guid: 88b1c6b0-7bf4-42b7-9d5c-992ab12b6c72
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -187,7 +187,8 @@ Supports $expand.
 Get informationProtection from security
 
 ### [Get-MgSecurityInformationProtectionLabelPolicySetting](Get-MgSecurityInformationProtectionLabelPolicySetting.md)
-Read the Microsoft Purview Information Protection policy settings for the user or organization.
+Read the properties and relationships of an informationProtectionPolicySetting object.
+The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
 
 ### [Get-MgSecurityInformationProtectionSensitivityLabel](Get-MgSecurityInformationProtectionSensitivityLabel.md)
 Read the Microsoft Purview Information Protection labels for the user or organization.

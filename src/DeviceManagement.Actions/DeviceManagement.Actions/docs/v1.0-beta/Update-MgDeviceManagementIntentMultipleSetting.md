@@ -196,7 +196,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths1E7Oxr6DevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphUpdatesettingsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Settings <IMicrosoftGraphDeviceManagementSettingInstance[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DefinitionId <String>]`: The ID of the setting definition for this instance
     - `[ValueJson <String>]`: JSON representation of the value
 
@@ -253,7 +253,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[ZebraFotaDeploymentId <String>]`: key: id of zebraFotaDeployment
 
 SETTINGS <IMicrosoftGraphDeviceManagementSettingInstance[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DefinitionId <String>]`: The ID of the setting definition for this instance
   - `[ValueJson <String>]`: JSON representation of the value
 

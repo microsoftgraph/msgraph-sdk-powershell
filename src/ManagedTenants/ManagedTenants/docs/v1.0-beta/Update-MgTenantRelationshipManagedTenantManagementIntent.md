@@ -98,7 +98,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -248,7 +249,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementIntent>: managementIntent
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name for the management intent. Optional. Read-only.
   - `[IsGlobal <Boolean?>]`: A flag indicating whether the management intent is global. Required. Read-only.
   - `[ManagementTemplates <IMicrosoftGraphManagedTenantsManagementTemplateDetailedInfo[]>]`: The collection of management templates associated with the management intent. Optional. Read-only.
@@ -268,6 +269,13 @@ INPUTOBJECT <IManagedTenantsIdentity>: Identity Parameter
   - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: key: id of deviceCompliancePolicySettingStateSummary
   - `[ManagedDeviceComplianceId <String>]`: key: id of managedDeviceCompliance
   - `[ManagedDeviceComplianceTrendId <String>]`: key: id of managedDeviceComplianceTrend
+  - `[ManagedTenantAlertId <String>]`: key: id of managedTenantAlert
+  - `[ManagedTenantAlertLogId <String>]`: key: id of managedTenantAlertLog
+  - `[ManagedTenantAlertRuleDefinitionId <String>]`: key: id of managedTenantAlertRuleDefinition
+  - `[ManagedTenantAlertRuleId <String>]`: key: id of managedTenantAlertRule
+  - `[ManagedTenantApiNotificationId <String>]`: key: id of managedTenantApiNotification
+  - `[ManagedTenantEmailNotificationId <String>]`: key: id of managedTenantEmailNotification
+  - `[ManagedTenantTicketingEndpointId <String>]`: key: id of managedTenantTicketingEndpoint
   - `[ManagementActionId <String>]`: key: id of managementAction
   - `[ManagementActionTenantDeploymentStatusId <String>]`: key: id of managementActionTenantDeploymentStatus
   - `[ManagementIntentId <String>]`: key: id of managementIntent

@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration
 
 ## SYNOPSIS
-Create new navigation property to combinationConfigurations for policies
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration -InputObject <I
 ```
 
 ## DESCRIPTION
-Create new navigation property to combinationConfigurations for policies
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
 
 ## EXAMPLES
 
@@ -63,7 +65,9 @@ Accept wildcard characters: False
 ```
 
 ### -AppliesToCombinations
-.
+Which authentication method combinations this configuration applies to.
+Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy.
+The only possible value for fido2combinationConfigurations is 'fido2'.
 
 ```yaml
 Type: System.String[]
@@ -196,7 +200,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAuthenticationCombinationConfiguration>: authenticationCombinationConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AppliesToCombinations <String[]>]`: 
+  - `[AppliesToCombinations <String[]>]`: Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration
 
 ## SYNOPSIS
-Get combinationConfigurations from policies
+Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration -InputObject <I
 ```
 
 ## DESCRIPTION
-Get combinationConfigurations from policies
+Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 
 ## EXAMPLES
 

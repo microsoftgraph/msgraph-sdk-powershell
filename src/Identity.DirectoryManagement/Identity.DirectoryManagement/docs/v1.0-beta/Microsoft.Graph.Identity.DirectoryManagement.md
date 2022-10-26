@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 97454772-2908-461c-b3a5-2f32b26493fb
+Module Guid: d92a6d25-f1e1-4c74-800b-c50afe314a78
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -586,7 +586,7 @@ This operation does not return microsoftApplicationDataAccessSettings.
 To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
 
 ### [Get-MgOrganizationSettingContactInsight](Get-MgOrganizationSettingContactInsight.md)
-Get contactInsights from organization
+Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
 
 ### [Get-MgOrganizationSettingItemInsight](Get-MgOrganizationSettingItemInsight.md)
 Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
@@ -1290,11 +1290,13 @@ Update the navigation property extensions in organization
 Update the navigation property settings in organization
 
 ### [Update-MgOrganizationSettingContactInsight](Update-MgOrganizationSettingContactInsight.md)
-Update the navigation property contactInsights in organization
+Update the privacy settings to display or return the specified type of insights in an organization.
+The type of settings can be contact insights, item insights, or people insights.
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ### [Update-MgOrganizationSettingItemInsight](Update-MgOrganizationSettingItemInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be item insights or people insights.
+The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ### [Update-MgOrganizationSettingMicrosoftApplicationDataAccess](Update-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
@@ -1302,7 +1304,7 @@ Update the settings in a microsoftApplicationDataAccessSettings object that spec
 
 ### [Update-MgOrganizationSettingPersonInsight](Update-MgOrganizationSettingPersonInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be item insights or people insights.
+The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ### [Update-MgOrganizationSettingProfileCardProperty](Update-MgOrganizationSettingProfileCardProperty.md)

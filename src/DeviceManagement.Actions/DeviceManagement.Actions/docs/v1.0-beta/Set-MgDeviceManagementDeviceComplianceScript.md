@@ -198,7 +198,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPathsQg6Va1DevicemanagementDevicecompliancescriptsDevicecompliancescriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeviceHealthScriptAssignments <IMicrosoftGraphDeviceHealthScriptAssignment[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[RunRemediationScript <Boolean?>]`: Determine whether we want to run detection script only or run both detection script and remediation script
     - `[RunSchedule <IMicrosoftGraphDeviceHealthScriptRunSchedule>]`: Base type of Device health script run schedule.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -209,7 +209,7 @@ BODYPARAMETER <IPathsQg6Va1DevicemanagementDevicecompliancescriptsDevicecomplian
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 DEVICEHEALTHSCRIPTASSIGNMENTS <IMicrosoftGraphDeviceHealthScriptAssignment[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[RunRemediationScript <Boolean?>]`: Determine whether we want to run detection script only or run both detection script and remediation script
   - `[RunSchedule <IMicrosoftGraphDeviceHealthScriptRunSchedule>]`: Base type of Device health script run schedule.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

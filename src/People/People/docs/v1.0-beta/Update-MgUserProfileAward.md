@@ -174,7 +174,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -462,7 +463,7 @@ BODYPARAMETER <IMicrosoftGraphPersonAward>: personAward
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Description <String>]`: Descpription of the award or honor.
   - `[DisplayName <String>]`: Name of the award or honor.
   - `[IssuedDate <DateTime?>]`: The date that the award or honor was granted.

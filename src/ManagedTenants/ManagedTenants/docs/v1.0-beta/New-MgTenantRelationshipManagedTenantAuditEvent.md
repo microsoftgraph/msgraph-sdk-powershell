@@ -151,7 +151,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -356,7 +357,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsAuditEvent>: auditEvent
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Activity <String>]`: A string which uniquely represents the operation that occurred. Required. Read-only.
   - `[ActivityDateTime <DateTime?>]`: The time when the activity ocurred. Required. Read-only.
   - `[ActivityId <String>]`: The identifier of the activity request that made the audit event. Required. Read-only.

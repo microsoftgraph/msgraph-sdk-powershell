@@ -326,8 +326,8 @@ BODYPARAMETER <IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequ
   - `[AcceptedModalities <String[]>]`: 
   - `[CallOptions <IMicrosoftGraphIncomingCallOptions>]`: incomingCallOptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[HideBotAfterEscalation <Boolean?>]`: 
-    - `[IsContentSharingNotificationEnabled <Boolean?>]`: 
+    - `[HideBotAfterEscalation <Boolean?>]`: Indicates whether to hide the app after the call is escalated.
+    - `[IsContentSharingNotificationEnabled <Boolean?>]`: Indicates whether content sharing notifications should be enabled for the call.
   - `[CallbackUri <String>]`: 
   - `[MediaConfig <IMicrosoftGraphMediaConfig>]`: mediaConfig
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

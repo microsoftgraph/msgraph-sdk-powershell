@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointReportExportJob
 
 ## SYNOPSIS
-Get exportJobs from deviceManagement
+The export jobs created for downloading reports.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementVirtualEndpointReportExportJob -InputObject <IDeviceManage
 ```
 
 ## DESCRIPTION
-Get exportJobs from deviceManagement
+The export jobs created for downloading reports.
 
 ## EXAMPLES
 

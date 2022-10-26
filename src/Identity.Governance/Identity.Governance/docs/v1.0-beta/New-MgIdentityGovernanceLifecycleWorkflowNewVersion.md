@@ -44,6 +44,55 @@ Create a new version of the workflow object.
 
 ## EXAMPLES
 
+### Example 1: Using the New-MgIdentityGovernanceLifecycleWorkflowNewVersion Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	Workflow = @{
+		Description = "Configure new hire tasks for onboarding employees on their first day"
+		DisplayName = "Global onboard new hire employee"
+		IsEnabled = $true
+		IsSchedulingEnabled = $false
+		ExecutionConditions = @{
+			"@odata.type" = "#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions"
+			Scope = @{
+				"@odata.type" = "#microsoft.graph.identityGovernance.ruleBasedSubjectSet"
+				Rule = "(department eq 'Marketing')"
+			}
+			Trigger = @{
+				"@odata.type" = "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger"
+				TimeBasedAttribute = "employeeHireDate"
+				OffsetInDays = 
+			}
+		}
+		Tasks = @(
+			@{
+				ContinueOnError = $false
+				Description = "Enable user account in the directory"
+				DisplayName = "Enable User Account"
+				IsEnabled = $true
+				TaskDefinitionId = "6fc52c9d-398b-4305-9763-15f42c1676fc"
+				Arguments = @(
+				)
+			}
+			@{
+				ContinueOnError = $false
+				Description = "Send welcome email to new hire"
+				DisplayName = "Send Welcome Email"
+				IsEnabled = $true
+				TaskDefinitionId = "70b29d51-b59a-4773-9280-8841dfd3f2ea"
+				Arguments = @(
+				)
+			}
+		)
+	}
+}
+New-MgIdentityGovernanceLifecycleWorkflowNewVersion -WorkflowId $workflowId -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityGovernanceLifecycleWorkflowNewVersion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -1101,15 +1150,15 @@ BODYPARAMETER <IPaths1Fqilt9IdentitygovernanceLifecycleworkflowsWorkflowsWorkflo
           - `[Subject <String>]`: The subject of the chat message, in plaintext.
           - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
           - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+        - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-          - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+          - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+          - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             - `[Id <String>]`: Unique identifier for the identity.
-            - `[UserIdentityType <String>]`: teamworkUserIdentityType
+            - `[UserIdentityType <String>]`: 
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -5805,15 +5854,15 @@ WORKFLOW <IMicrosoftGraphIdentityGovernanceWorkflow>: workflow
         - `[Subject <String>]`: The subject of the chat message, in plaintext.
         - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
         - `[WebUrl <String>]`: Read-only. Link to the message in Microsoft Teams.
-      - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo>]`: teamworkOnlineMeetingInfo
+      - `[OnlineMeetingInfo <IMicrosoftGraphTeamworkOnlineMeetingInfo1>]`: teamworkOnlineMeetingInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CalendarEventId <String>]`: The identifier of the calendar event associated with the meeting.
-        - `[JoinWebUrl <String>]`: The URL that users click to join or uniquely identify the meeting.
-        - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+        - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
+        - `[Organizer <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
           - `[Id <String>]`: Unique identifier for the identity.
-          - `[UserIdentityType <String>]`: teamworkUserIdentityType
+          - `[UserIdentityType <String>]`: 
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation1[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
