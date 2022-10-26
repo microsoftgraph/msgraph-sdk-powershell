@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 67dc5682-f2b6-49ef-b7ff-938e51c7f46e
+Module Guid: 5e714881-5b1c-4882-9675-63bdcafe3473
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.CloudCommunications Cmdlets
 ### [Add-MgCommunicationCallLargeGalleryView](Add-MgCommunicationCallLargeGalleryView.md)
-Invoke action addLargeGalleryView
+Add the large gallery view to a call.
 
 ### [Clear-MgCommunicationPresence](Clear-MgCommunicationPresence.md)
 Clear the application's presence session for a user.

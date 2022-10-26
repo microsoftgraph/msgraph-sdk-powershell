@@ -72,7 +72,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -357,7 +358,9 @@ Accept wildcard characters: False
 ```
 
 ### -TotalBusinessLicenses
-.
+The total number of cloud PC devices that have the Business SKU.
+Optional.
+Read-only.
 
 ```yaml
 Type: System.Int32
@@ -406,7 +409,9 @@ Accept wildcard characters: False
 ```
 
 ### -TotalEnterpriseLicenses
-.
+The total number of cloud PC devices that have the Enterprise SKU.
+Optional.
+Read-only.
 
 ```yaml
 Type: System.Int32
@@ -473,7 +478,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsCloudPcOverview>: cloudPcOverview
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[LastRefreshedDateTime <DateTime?>]`: Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
   - `[NumberOfCloudPcConnectionStatusFailed <Int32?>]`: The number of cloud PC connections that have a status of failed. Optional. Read-only.
   - `[NumberOfCloudPcConnectionStatusPassed <Int32?>]`: The number of cloud PC connections that have a status of passed. Optional. Read-only.
@@ -490,10 +495,10 @@ BODYPARAMETER <IMicrosoftGraphManagedTenantsCloudPcOverview>: cloudPcOverview
   - `[NumberOfCloudPcStatusUpgrading <Int32?>]`: The number of cloud PCs that have a status of upgrading. Optional. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Optional. Read-only.
   - `[TenantId <String>]`: 
-  - `[TotalBusinessLicenses <Int32?>]`: 
+  - `[TotalBusinessLicenses <Int32?>]`: The total number of cloud PC devices that have the Business SKU. Optional. Read-only.
   - `[TotalCloudPcConnectionStatus <Int32?>]`: The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
   - `[TotalCloudPcStatus <Int32?>]`: The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
-  - `[TotalEnterpriseLicenses <Int32?>]`: 
+  - `[TotalEnterpriseLicenses <Int32?>]`: The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
 
 ## RELATED LINKS
 

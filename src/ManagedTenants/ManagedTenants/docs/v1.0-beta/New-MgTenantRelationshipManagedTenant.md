@@ -116,7 +116,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -233,7 +234,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsTenant>: tenant
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Contract <IMicrosoftGraphManagedTenantsTenantContract>]`: tenantContract
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ContractType <Int32?>]`: The type of relationship that exists between the managing entity and tenant. Optional. Read-only.

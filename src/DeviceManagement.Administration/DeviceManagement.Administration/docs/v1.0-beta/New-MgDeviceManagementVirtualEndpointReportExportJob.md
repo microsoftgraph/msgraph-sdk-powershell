@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointReportExportJob
 
 ## SYNOPSIS
-Create new navigation property to exportJobs for deviceManagement
+Create a new cloudPcExportJob object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementVirtualEndpointReportExportJob -BodyParameter <IMicrosoftG
 ```
 
 ## DESCRIPTION
-Create new navigation property to exportJobs for deviceManagement
+Create a new cloudPcExportJob object.
 
 ## EXAMPLES
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpirationDateTime
-.
+The date time when the export job expires.
 
 ```yaml
 Type: System.DateTime
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExportUrl
-.
+The storage account url of the exported report, it can be used to download the file.
 
 ```yaml
 Type: System.String
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
-.
+The filter applied on the report.
 
 ```yaml
 Type: System.String
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -Format
-.
+The format of the exported report.
 
 ```yaml
 Type: System.String
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
-.
+The selected columns of the report.
 
 ```yaml
 Type: System.String[]
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestDateTime
-.
+The date time when the export job was requested.
 
 ```yaml
 Type: System.DateTime
@@ -254,14 +254,14 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphCloudPcExportJob>: cloudPcExportJob
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ExpirationDateTime <DateTime?>]`: 
+  - `[ExpirationDateTime <DateTime?>]`: The date time when the export job expires.
   - `[ExportJobStatus <String>]`: cloudPcExportJobStatus
-  - `[ExportUrl <String>]`: 
-  - `[Filter <String>]`: 
-  - `[Format <String>]`: 
+  - `[ExportUrl <String>]`: The storage account url of the exported report, it can be used to download the file.
+  - `[Filter <String>]`: The filter applied on the report.
+  - `[Format <String>]`: The format of the exported report.
   - `[ReportName <String>]`: cloudPcReportName
-  - `[RequestDateTime <DateTime?>]`: 
-  - `[Select <String[]>]`: 
+  - `[RequestDateTime <DateTime?>]`: The date time when the export job was requested.
+  - `[Select <String[]>]`: The selected columns of the report.
 
 ## RELATED LINKS
 

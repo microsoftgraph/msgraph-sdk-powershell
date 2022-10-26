@@ -66,7 +66,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -184,7 +185,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementActionTenantDeploymentStatus>: managementActionTenantDeploymentStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Statuses <IMicrosoftGraphManagedTenantsManagementActionDeploymentStatus[]>]`: The collection of deployment status for each instance of a management action. Optional.
     - `[ManagementActionId <String>]`: The identifier for the management action. Required. Read-only.
     - `[ManagementTemplateId <String>]`: The management template identifier that was used to generate the management action. Required. Read-only.

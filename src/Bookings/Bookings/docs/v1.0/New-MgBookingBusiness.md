@@ -545,7 +545,7 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness1>: Represents a Microsot Bookings 
     - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[BusinessHours <IMicrosoftGraphBookingWorkHours1[]>]`: The hours of operation for the business.
     - `[Day <String>]`: dayOfWeek
-    - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot1[]>]`: A list of start/end times during a day.
+    - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
       - `[EndTime <String>]`: The time of the day when work stops. For example, 17:00:00.0000000.
       - `[StartTime <String>]`: The time of the day when work starts. For example, 08:00:00.0000000.
   - `[BusinessType <String>]`: The type of business.
@@ -599,7 +599,7 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness1>: Represents a Microsot Bookings 
 
 BUSINESSHOURS <IMicrosoftGraphBookingWorkHours1[]>: The hours of operation for the business.
   - `[Day <String>]`: dayOfWeek
-  - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot1[]>]`: A list of start/end times during a day.
+  - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
     - `[EndTime <String>]`: The time of the day when work stops. For example, 17:00:00.0000000.
     - `[StartTime <String>]`: The time of the day when work starts. For example, 08:00:00.0000000.
 

@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The display name of this mode
 
 ```yaml
 Type: System.String
@@ -228,7 +228,7 @@ BODYPARAMETER <IMicrosoftGraphAuthenticationMethodModeDetail>: authenticationMet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AuthenticationMethod <String>]`: baseAuthenticationMethod
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: The display name of this mode
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy

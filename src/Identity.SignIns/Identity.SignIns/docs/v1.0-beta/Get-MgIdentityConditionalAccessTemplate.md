@@ -233,7 +233,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessTemplate
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessTemplate1
 
 ## NOTES
 

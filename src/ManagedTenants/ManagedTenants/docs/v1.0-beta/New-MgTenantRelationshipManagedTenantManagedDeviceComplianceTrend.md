@@ -135,7 +135,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -287,7 +288,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend>: managedDeviceComplianceTrend
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CompliantDeviceCount <Int32?>]`: The number of devices with a compliant status. Required. Read-only.
   - `[ConfigManagerDeviceCount <Int32?>]`: The number of devices manged by Configuration Manager. Required. Read-only.
   - `[CountDateTime <String>]`: The date and time compliance snapshot was performed. Required. Read-only.

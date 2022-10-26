@@ -141,7 +141,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -284,7 +285,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAndroidForWorkEnrollmentProfile>: Enrollment Profile used to enroll COSU devices using Google's Cloud Management.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AccountId <String>]`: Tenant GUID the enrollment profile belongs to.
   - `[CreatedDateTime <DateTime?>]`: Date time the enrollment profile was created.
   - `[Description <String>]`: Description for the enrollment profile.

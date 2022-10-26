@@ -8,7 +8,8 @@ schema: 2.0.0
 # Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult
 
 ## SYNOPSIS
-Invoke action resume
+Resume a task processing result that's `inProgress`.
+An Azure Logic Apps system-assigned managed identity calls this API.
 
 ## SYNTAX
 
@@ -44,7 +45,8 @@ Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult -InputObject
 ```
 
 ## DESCRIPTION
-Invoke action resume
+Resume a task processing result that's `inProgress`.
+An Azure Logic Apps system-assigned managed identity calls this API.
 
 ## EXAMPLES
 

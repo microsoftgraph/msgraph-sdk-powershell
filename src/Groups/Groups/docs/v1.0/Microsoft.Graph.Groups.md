@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: c6bea60a-6062-4b9f-8ab5-028d4626e924
+Module Guid: 99137112-c275-4ae8-ad64-7e4db5d4b9de
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -587,10 +587,7 @@ To get properties that are _not_ returned by default, do a GET operation and spe
 Create new navigation property ref to acceptedSenders for groups
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Use reply thread or reply post to further post to that conversation.
 
 ### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
 Create a new thread in the specified conversation.
@@ -964,13 +961,11 @@ Unpublish a [contentType][] from a content type hub site.
 Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Update the properties of a group object.
+Add a member to a security or Microsoft 365 group through the **members** navigation property.
+The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
 Update the navigation property threads in groups
-
-### [Update-MgGroupConversationThreadPost](Update-MgGroupConversationThreadPost.md)
-Update the navigation property inReplyTo in groups
 
 ### [Update-MgGroupConversationThreadPostExtension](Update-MgGroupConversationThreadPostExtension.md)
 Update the navigation property extensions in groups
@@ -1007,9 +1002,6 @@ Update the navigation property photo in groups
 
 ### [Update-MgGroupThread](Update-MgGroupThread.md)
 Update the navigation property threads in groups
-
-### [Update-MgGroupThreadPost](Update-MgGroupThreadPost.md)
-Update the navigation property inReplyTo in groups
 
 ### [Update-MgGroupThreadPostExtension](Update-MgGroupThreadPostExtension.md)
 Update the navigation property extensions in groups

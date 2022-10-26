@@ -146,7 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -304,16 +305,16 @@ To create the parameters described below, construct a hash table containing the 
 
 ACCEPTEDFOR <IMicrosoftGraphManagedTenantsManagementTemplateStep>: managementTemplateStep
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AcceptedVersion <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>]`: managementTemplateStepVersion
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AcceptedFor <IMicrosoftGraphManagedTenantsManagementTemplateStep>]`: managementTemplateStep
     - `[ContentMarkdown <String>]`: 
     - `[CreatedByUserId <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
     - `[Deployments <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedByUserId <String>]`: 
       - `[CreatedDateTime <DateTime?>]`: 
       - `[Error <IMicrosoftGraphManagedTenantsGraphApiErrorDetails>]`: graphAPIErrorDetails
@@ -340,7 +341,7 @@ ACCEPTEDFOR <IMicrosoftGraphManagedTenantsManagementTemplateStep>: managementTem
   - `[LastActionDateTime <DateTime?>]`: 
   - `[ManagementTemplate <IMicrosoftGraphManagedTenantsManagementTemplate>]`: managementTemplate
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Category <String>]`: managementCategory
     - `[CreatedByUserId <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
@@ -352,7 +353,7 @@ ACCEPTEDFOR <IMicrosoftGraphManagedTenantsManagementTemplateStep>: managementTem
     - `[LastActionByUserId <String>]`: 
     - `[LastActionDateTime <DateTime?>]`: 
     - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedByUserId <String>]`: 
       - `[CreatedDateTime <DateTime?>]`: 
       - `[Description <String>]`: 
@@ -390,10 +391,10 @@ ACCEPTEDFOR <IMicrosoftGraphManagedTenantsManagementTemplateStep>: managementTem
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>: managementTemplateStepVersion
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AcceptedFor <IMicrosoftGraphManagedTenantsManagementTemplateStep>]`: managementTemplateStep
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AcceptedVersion <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>]`: managementTemplateStepVersion
     - `[Category <String>]`: managementCategory
     - `[CreatedByUserId <String>]`: 
@@ -404,7 +405,7 @@ BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>: mana
     - `[LastActionDateTime <DateTime?>]`: 
     - `[ManagementTemplate <IMicrosoftGraphManagedTenantsManagementTemplate>]`: managementTemplate
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Category <String>]`: managementCategory
       - `[CreatedByUserId <String>]`: 
       - `[CreatedDateTime <DateTime?>]`: 
@@ -416,7 +417,7 @@ BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>: mana
       - `[LastActionByUserId <String>]`: 
       - `[LastActionDateTime <DateTime?>]`: 
       - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[CreatedByUserId <String>]`: 
         - `[CreatedDateTime <DateTime?>]`: 
         - `[Description <String>]`: 
@@ -455,7 +456,7 @@ BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>: mana
   - `[CreatedByUserId <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: 
   - `[Deployments <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedByUserId <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
     - `[Error <IMicrosoftGraphManagedTenantsGraphApiErrorDetails>]`: graphAPIErrorDetails
@@ -475,7 +476,7 @@ BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>: mana
   - `[VersionInformation <String>]`: 
 
 DEPLOYMENTS <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedByUserId <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: 
   - `[Error <IMicrosoftGraphManagedTenantsGraphApiErrorDetails>]`: graphAPIErrorDetails
@@ -487,10 +488,10 @@ DEPLOYMENTS <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>: .
   - `[Status <String>]`: managementTemplateDeploymentStatus
   - `[TemplateStepVersion <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>]`: managementTemplateStepVersion
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AcceptedFor <IMicrosoftGraphManagedTenantsManagementTemplateStep>]`: managementTemplateStep
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AcceptedVersion <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>]`: managementTemplateStepVersion
       - `[Category <String>]`: managementCategory
       - `[CreatedByUserId <String>]`: 
@@ -501,7 +502,7 @@ DEPLOYMENTS <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>: .
       - `[LastActionDateTime <DateTime?>]`: 
       - `[ManagementTemplate <IMicrosoftGraphManagedTenantsManagementTemplate>]`: managementTemplate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Category <String>]`: managementCategory
         - `[CreatedByUserId <String>]`: 
         - `[CreatedDateTime <DateTime?>]`: 
@@ -513,7 +514,7 @@ DEPLOYMENTS <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>: .
         - `[LastActionByUserId <String>]`: 
         - `[LastActionDateTime <DateTime?>]`: 
         - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
-          - `[Id <String>]`: 
+          - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[CreatedByUserId <String>]`: 
           - `[CreatedDateTime <DateTime?>]`: 
           - `[Description <String>]`: 
@@ -562,16 +563,16 @@ DEPLOYMENTS <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>: .
 
 TEMPLATESTEP <IMicrosoftGraphManagedTenantsManagementTemplateStep>: managementTemplateStep
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AcceptedVersion <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>]`: managementTemplateStepVersion
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AcceptedFor <IMicrosoftGraphManagedTenantsManagementTemplateStep>]`: managementTemplateStep
     - `[ContentMarkdown <String>]`: 
     - `[CreatedByUserId <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
     - `[Deployments <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedByUserId <String>]`: 
       - `[CreatedDateTime <DateTime?>]`: 
       - `[Error <IMicrosoftGraphManagedTenantsGraphApiErrorDetails>]`: graphAPIErrorDetails
@@ -598,7 +599,7 @@ TEMPLATESTEP <IMicrosoftGraphManagedTenantsManagementTemplateStep>: managementTe
   - `[LastActionDateTime <DateTime?>]`: 
   - `[ManagementTemplate <IMicrosoftGraphManagedTenantsManagementTemplate>]`: managementTemplate
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Category <String>]`: managementCategory
     - `[CreatedByUserId <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
@@ -610,7 +611,7 @@ TEMPLATESTEP <IMicrosoftGraphManagedTenantsManagementTemplateStep>: managementTe
     - `[LastActionByUserId <String>]`: 
     - `[LastActionDateTime <DateTime?>]`: 
     - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedByUserId <String>]`: 
       - `[CreatedDateTime <DateTime?>]`: 
       - `[Description <String>]`: 

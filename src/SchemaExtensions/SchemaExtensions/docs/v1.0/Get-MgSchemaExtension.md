@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSchemaExtension
 
 ## SYNOPSIS
-Get entity from schemaExtensions by key
+Get schemaExtension
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get entity from schemaExtensions by key
+Get schemaExtension
 
 ## EXAMPLES
 

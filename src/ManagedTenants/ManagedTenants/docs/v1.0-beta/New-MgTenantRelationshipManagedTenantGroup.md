@@ -100,7 +100,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -220,7 +221,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsTenantGroup>: tenantGroup
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AllTenantsIncluded <Boolean?>]`: A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
   - `[DisplayName <String>]`: The display name for the tenant group. Optional. Read-only.
   - `[ManagementActions <IMicrosoftGraphManagedTenantsManagementActionInfo[]>]`: The collection of management action associated with the tenant group. Optional. Read-only.

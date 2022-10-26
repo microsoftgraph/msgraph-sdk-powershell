@@ -31,6 +31,19 @@ Create a new tenantTag object.
 
 ## EXAMPLES
 
+### Example 1: Using the New-MgTenantRelationshipManagedTenantTag Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ManagedTenants
+$params = @{
+	DisplayName = "Support"
+	Description = "Tenants that have purchased extended support"
+}
+New-MgTenantRelationshipManagedTenantTag -BodyParameter $params
+```
+
+This example shows how to use the New-MgTenantRelationshipManagedTenantTag Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -150,7 +163,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -268,7 +282,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsTenantTag>: tenantTag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedByUserId <String>]`: The identifier for the account that created the tenant tag. Required. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the tenant tag was created. Required. Read-only.
   - `[DeletedDateTime <DateTime?>]`: The date and time when the tenant tag was deleted. Required. Read-only.

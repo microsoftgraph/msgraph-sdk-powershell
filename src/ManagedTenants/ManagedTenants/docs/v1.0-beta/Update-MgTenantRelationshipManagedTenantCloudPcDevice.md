@@ -118,7 +118,9 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceSpecification
-.
+The specification of the cloud PC device.
+Required.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -133,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name for the cloud PC.
+The display name of the cloud PC device.
 Required.
 Read-only.
 
@@ -150,7 +152,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -198,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedDeviceId
-The managed device identifier for the cloud PC.
+The managed device identifier of the cloud PC device.
 Optional.
 Read-only.
 
@@ -215,7 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedDeviceName
-The managed device display name for the cloud PC.
+The managed device display name of the cloud PC device.
 Optional.
 Read-only.
 
@@ -247,7 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProvisioningPolicyId
-The provisioning policy identifier for the cloud PC.
+The provisioning policy identifier for the cloud PC device.
 Required.
 Read-only.
 
@@ -264,7 +267,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePlanName
-The service plan name for the cloud PC.
+The service plan name of the cloud PC device.
 Required.
 Read-only.
 
@@ -281,7 +284,9 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePlanType
-.
+The service plan type of the cloud PC device.
+Required.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -330,7 +335,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-The user principal name (UPN) of the user assigned to the cloud PC.
+The user principal name (UPN) of the user assigned to the cloud PC device.
 Required.
 Read-only.
 
@@ -401,19 +406,19 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsCloudPcDevice>: cloudPcDevice
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CloudPcStatus <String>]`: The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
-  - `[DeviceSpecification <String>]`: 
-  - `[DisplayName <String>]`: The display name for the cloud PC. Required. Read-only.
+  - `[DeviceSpecification <String>]`: The specification of the cloud PC device. Required. Read-only.
+  - `[DisplayName <String>]`: The display name  of the cloud PC device. Required. Read-only.
   - `[LastRefreshedDateTime <DateTime?>]`: Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
-  - `[ManagedDeviceId <String>]`: The managed device identifier for the cloud PC. Optional. Read-only.
-  - `[ManagedDeviceName <String>]`: The managed device display name for the cloud PC. Optional. Read-only.
-  - `[ProvisioningPolicyId <String>]`: The provisioning policy identifier for the cloud PC. Required. Read-only.
-  - `[ServicePlanName <String>]`: The service plan name for the cloud PC. Required. Read-only.
-  - `[ServicePlanType <String>]`: 
+  - `[ManagedDeviceId <String>]`: The managed device identifier of the cloud PC device. Optional. Read-only.
+  - `[ManagedDeviceName <String>]`: The managed device display name of the cloud PC device. Optional. Read-only.
+  - `[ProvisioningPolicyId <String>]`: The provisioning policy identifier for the cloud PC device. Required. Read-only.
+  - `[ServicePlanName <String>]`: The service plan name of the cloud PC device. Required. Read-only.
+  - `[ServicePlanType <String>]`: The service plan type of the cloud PC device. Required. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Required. Read-only.
   - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-  - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user assigned to the cloud PC. Required. Read-only.
+  - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user assigned to the cloud PC device. Required. Read-only.
 
 INPUTOBJECT <IManagedTenantsIdentity>: Identity Parameter
   - `[AggregatedPolicyComplianceId <String>]`: key: id of aggregatedPolicyCompliance
@@ -426,6 +431,13 @@ INPUTOBJECT <IManagedTenantsIdentity>: Identity Parameter
   - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: key: id of deviceCompliancePolicySettingStateSummary
   - `[ManagedDeviceComplianceId <String>]`: key: id of managedDeviceCompliance
   - `[ManagedDeviceComplianceTrendId <String>]`: key: id of managedDeviceComplianceTrend
+  - `[ManagedTenantAlertId <String>]`: key: id of managedTenantAlert
+  - `[ManagedTenantAlertLogId <String>]`: key: id of managedTenantAlertLog
+  - `[ManagedTenantAlertRuleDefinitionId <String>]`: key: id of managedTenantAlertRuleDefinition
+  - `[ManagedTenantAlertRuleId <String>]`: key: id of managedTenantAlertRule
+  - `[ManagedTenantApiNotificationId <String>]`: key: id of managedTenantApiNotification
+  - `[ManagedTenantEmailNotificationId <String>]`: key: id of managedTenantEmailNotification
+  - `[ManagedTenantTicketingEndpointId <String>]`: key: id of managedTenantTicketingEndpoint
   - `[ManagementActionId <String>]`: key: id of managementAction
   - `[ManagementActionTenantDeploymentStatusId <String>]`: key: id of managementActionTenantDeploymentStatus
   - `[ManagementIntentId <String>]`: key: id of managementIntent

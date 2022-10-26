@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: c3c09d2d-df47-4136-bc57-3d9e0f143ab7
+Module Guid: c79abece-1aa6-4d75-a5e3-34c1f0673714
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -184,6 +184,9 @@ Grant users access to a link represented by a [permission][].
 ### [Grant-MgUserDriveRootPermission](Grant-MgUserDriveRootPermission.md)
 Grant users access to a link represented by a [permission][].
 
+### [Hide-MgUserChatForUser](Hide-MgUserChatForUser.md)
+Hide a chat for a user.
+
 ### [Invoke-MgAcceptUserEvent](Invoke-MgAcceptUserEvent.md)
 Accept the specified event in a user calendar.
 
@@ -281,6 +284,9 @@ When using MIME format:\n- Provide the applicable Internet message headers and t
 This method saves the message in the **Sent Items** folder.
 Alternatively, create a draft to forward a message, and send it later.
 
+### [Invoke-MgGraphUserChat](Invoke-MgGraphUserChat.md)
+Unhide a chat for a user.
+
 ### [Invoke-MgInviteUserDriveItem](Invoke-MgInviteUserDriveItem.md)
 Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
 
@@ -294,6 +300,12 @@ Also see Identify and resolve license assignment problems for a group in Azure A
 
 ### [Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser](Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser.md)
 Logout shared Apple device active user
+
+### [Invoke-MgMarkUserChatReadForUser](Invoke-MgMarkUserChatReadForUser.md)
+Mark a chat as read for a user.
+
+### [Invoke-MgMarkUserChatUnreadForUser](Invoke-MgMarkUserChatUnreadForUser.md)
+Mark a chat as unread for a user.
 
 ### [Invoke-MgPreviewUserDriveItem](Invoke-MgPreviewUserDriveItem.md)
 Invoke action preview

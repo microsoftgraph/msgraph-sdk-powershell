@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
 
 ## SYNOPSIS
-Get authenticationMethodModes from identity
+Names and descriptions of all valid authentication method modes in the system.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
 ```
 
 ## DESCRIPTION
-Get authenticationMethodModes from identity
+Names and descriptions of all valid authentication method modes in the system.
 
 ## EXAMPLES
 

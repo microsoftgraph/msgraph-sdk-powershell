@@ -38,6 +38,24 @@ The tenant level status of management actions across managed tenants.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ManagedTenants
+Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses -ManagementActionTenantDeploymentStatusId $managementActionTenantDeploymentStatusId
+```
+
+This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ManagedTenants
+Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses
+```
+
+This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementActionTenantDeploymentStatuses Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -All
@@ -253,6 +271,13 @@ INPUTOBJECT <IManagedTenantsIdentity>: Identity Parameter
   - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: key: id of deviceCompliancePolicySettingStateSummary
   - `[ManagedDeviceComplianceId <String>]`: key: id of managedDeviceCompliance
   - `[ManagedDeviceComplianceTrendId <String>]`: key: id of managedDeviceComplianceTrend
+  - `[ManagedTenantAlertId <String>]`: key: id of managedTenantAlert
+  - `[ManagedTenantAlertLogId <String>]`: key: id of managedTenantAlertLog
+  - `[ManagedTenantAlertRuleDefinitionId <String>]`: key: id of managedTenantAlertRuleDefinition
+  - `[ManagedTenantAlertRuleId <String>]`: key: id of managedTenantAlertRule
+  - `[ManagedTenantApiNotificationId <String>]`: key: id of managedTenantApiNotification
+  - `[ManagedTenantEmailNotificationId <String>]`: key: id of managedTenantEmailNotification
+  - `[ManagedTenantTicketingEndpointId <String>]`: key: id of managedTenantTicketingEndpoint
   - `[ManagementActionId <String>]`: key: id of managementAction
   - `[ManagementActionTenantDeploymentStatusId <String>]`: key: id of managementActionTenantDeploymentStatus
   - `[ManagementIntentId <String>]`: key: id of managementIntent

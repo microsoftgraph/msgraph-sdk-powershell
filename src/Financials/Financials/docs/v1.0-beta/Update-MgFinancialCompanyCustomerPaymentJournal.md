@@ -203,7 +203,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -318,7 +319,7 @@ To create the parameters described below, construct a hash table containing the 
 
 ACCOUNT <IMicrosoftGraphAccount>: account
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Blocked <Boolean?>]`: 
   - `[Category <String>]`: 
   - `[DisplayName <String>]`: 
@@ -328,10 +329,10 @@ ACCOUNT <IMicrosoftGraphAccount>: account
 
 BODYPARAMETER <IMicrosoftGraphCustomerPaymentJournal>: customerPaymentJournal
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Account <IMicrosoftGraphAccount>]`: account
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Blocked <Boolean?>]`: 
     - `[Category <String>]`: 
     - `[DisplayName <String>]`: 
@@ -342,7 +343,7 @@ BODYPARAMETER <IMicrosoftGraphCustomerPaymentJournal>: customerPaymentJournal
   - `[BalancingAccountNumber <String>]`: 
   - `[Code <String>]`: 
   - `[CustomerPayments <IMicrosoftGraphCustomerPayment[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Amount <Decimal?>]`: 
     - `[AppliesToInvoiceId <String>]`: 
     - `[AppliesToInvoiceNumber <String>]`: 
@@ -350,7 +351,7 @@ BODYPARAMETER <IMicrosoftGraphCustomerPaymentJournal>: customerPaymentJournal
     - `[ContactId <String>]`: 
     - `[Customer <IMicrosoftGraphCustomer>]`: customer
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[City <String>]`: 
@@ -361,7 +362,7 @@ BODYPARAMETER <IMicrosoftGraphCustomerPaymentJournal>: customerPaymentJournal
       - `[Blocked <String>]`: 
       - `[Currency <IMicrosoftGraphCurrency>]`: currency
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[AmountDecimalPlaces <String>]`: 
         - `[AmountRoundingPrecision <Decimal?>]`: 
         - `[Code <String>]`: 
@@ -376,14 +377,14 @@ BODYPARAMETER <IMicrosoftGraphCustomerPaymentJournal>: customerPaymentJournal
       - `[Number <String>]`: 
       - `[PaymentMethod <IMicrosoftGraphPaymentMethod>]`: paymentMethod
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Code <String>]`: 
         - `[DisplayName <String>]`: 
         - `[LastModifiedDateTime <DateTime?>]`: 
       - `[PaymentMethodId <String>]`: 
       - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
         - `[Code <String>]`: 
         - `[DiscountDateCalculation <String>]`: 
@@ -394,14 +395,14 @@ BODYPARAMETER <IMicrosoftGraphCustomerPaymentJournal>: customerPaymentJournal
       - `[PaymentTermsId <String>]`: 
       - `[PhoneNumber <String>]`: 
       - `[Picture <IMicrosoftGraphPicture[]>]`: 
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Content <Byte[]>]`: 
         - `[ContentType <String>]`: 
         - `[Height <Int32?>]`: 
         - `[Width <Int32?>]`: 
       - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Code <String>]`: 
         - `[DisplayName <String>]`: 
         - `[LastModifiedDateTime <DateTime?>]`: 
@@ -425,7 +426,7 @@ BODYPARAMETER <IMicrosoftGraphCustomerPaymentJournal>: customerPaymentJournal
   - `[LastModifiedDateTime <DateTime?>]`: 
 
 CUSTOMERPAYMENTS <IMicrosoftGraphCustomerPayment[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Amount <Decimal?>]`: 
   - `[AppliesToInvoiceId <String>]`: 
   - `[AppliesToInvoiceNumber <String>]`: 
@@ -433,7 +434,7 @@ CUSTOMERPAYMENTS <IMicrosoftGraphCustomerPayment[]>: .
   - `[ContactId <String>]`: 
   - `[Customer <IMicrosoftGraphCustomer>]`: customer
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: 
@@ -444,7 +445,7 @@ CUSTOMERPAYMENTS <IMicrosoftGraphCustomerPayment[]>: .
     - `[Blocked <String>]`: 
     - `[Currency <IMicrosoftGraphCurrency>]`: currency
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AmountDecimalPlaces <String>]`: 
       - `[AmountRoundingPrecision <Decimal?>]`: 
       - `[Code <String>]`: 
@@ -459,14 +460,14 @@ CUSTOMERPAYMENTS <IMicrosoftGraphCustomerPayment[]>: .
     - `[Number <String>]`: 
     - `[PaymentMethod <IMicrosoftGraphPaymentMethod>]`: paymentMethod
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Code <String>]`: 
       - `[DisplayName <String>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
     - `[PaymentMethodId <String>]`: 
     - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
       - `[Code <String>]`: 
       - `[DiscountDateCalculation <String>]`: 
@@ -477,14 +478,14 @@ CUSTOMERPAYMENTS <IMicrosoftGraphCustomerPayment[]>: .
     - `[PaymentTermsId <String>]`: 
     - `[PhoneNumber <String>]`: 
     - `[Picture <IMicrosoftGraphPicture[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Content <Byte[]>]`: 
       - `[ContentType <String>]`: 
       - `[Height <Int32?>]`: 
       - `[Width <Int32?>]`: 
     - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Code <String>]`: 
       - `[DisplayName <String>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 

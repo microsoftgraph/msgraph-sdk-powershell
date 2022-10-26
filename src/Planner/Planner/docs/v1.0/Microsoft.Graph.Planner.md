@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: 9c2caa19-ac9f-4067-b12d-ec2b6b309b88
+Module Guid: 6c5edb25-e89e-46ab-b758-fc6337dcb4e7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -23,7 +23,7 @@ Returns the plannerPlans owned by the group.
 Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 
 ### [Get-MgGroupPlannerPlanDetail](Get-MgGroupPlannerPlanDetail.md)
-Retrieve the properties and relationships of **plannerplandetails** object.
+Retrieve the properties and relationships of a **plannerPlanDetails** object.
 
 ### [Get-MgGroupPlannerPlanTask](Get-MgGroupPlannerPlanTask.md)
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
@@ -37,7 +37,7 @@ Nullable.
 Returns a collection of the specified buckets
 
 ### [Get-MgPlannerBucketTask](Get-MgPlannerBucketTask.md)
-Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+Retrieve a list of plannerTask objects associated to a plannerBucket object.
 
 ### [Get-MgPlannerPlan](Get-MgPlannerPlan.md)
 Read-only.
@@ -48,7 +48,7 @@ Returns a collection of the specified plans
 Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 
 ### [Get-MgPlannerPlanDetail](Get-MgPlannerPlanDetail.md)
-Retrieve the properties and relationships of **plannerplandetails** object.
+Retrieve the properties and relationships of a **plannerPlanDetails** object.
 
 ### [Get-MgPlannerPlanTask](Get-MgPlannerPlanTask.md)
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
