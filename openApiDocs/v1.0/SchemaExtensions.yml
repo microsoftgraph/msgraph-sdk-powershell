@@ -113,7 +113,10 @@ paths:
     get:
       tags:
         - schemaExtensions.schemaExtension
-      summary: Get entity from schemaExtensions by key
+      summary: Get schemaExtension
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schemaextension-get?view=graph-rest-1.0
       operationId: schemaExtensions.schemaExtension_GetSchemaExtension
       parameters:
         - name: schemaExtension-id

@@ -85,6 +85,122 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
     },
+    "/tenantRelationships/managedTenants/managedTenantAlertLogs": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertLogs/{managedTenantAlertLog-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertLogs/{managedTenantAlertLog-id}/alert": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition-id}/alertRules": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition-id}/alertRules/{managedTenantAlertRule-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertRules": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}/alerts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}/alerts/{managedTenantAlert-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}/ruleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlerts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/alertLogs": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/alertLogs/{managedTenantAlertLog-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/alertRule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/apiNotifications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/apiNotifications/{managedTenantApiNotification-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/emailNotifications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/emailNotifications/{managedTenantEmailNotification-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantApiNotifications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantApiNotifications/{managedTenantApiNotification-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantApiNotifications/{managedTenantApiNotification-id}/alert": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantEmailNotifications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantEmailNotifications/{managedTenantEmailNotification-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantEmailNotifications/{managedTenantEmailNotification-id}/alert": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantTicketingEndpoints": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managedTenantTicketingEndpoints/{managedTenantTicketingEndpoint-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
     "/tenantRelationships/managedTenants/managementActions": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"

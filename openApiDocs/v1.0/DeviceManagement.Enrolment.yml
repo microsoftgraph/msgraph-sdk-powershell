@@ -2141,6 +2141,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2987,6 +2990,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3447,6 +3453,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4291,6 +4300,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5036,6 +5048,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5395,6 +5410,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6473,6 +6491,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7319,6 +7340,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7779,6 +7803,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8623,6 +8650,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9368,6 +9398,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9727,6 +9760,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:

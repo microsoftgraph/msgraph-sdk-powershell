@@ -1719,6 +1719,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1768,6 +1771,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1821,6 +1827,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1870,6 +1879,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3454,6 +3466,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.filterOperatorSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3531,6 +3546,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attributeMappingFunctionSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4525,6 +4543,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.filterOperatorSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4602,6 +4623,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attributeMappingFunctionSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5253,6 +5277,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.application'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5303,6 +5333,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8142,10 +8175,10 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create connectorGroup
-      description: Create a connectorGroup object.
+      description: Create a new connectorGroup.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
       operationId: onPremisesPublishingProfiles_CreateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -13003,6 +13036,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13052,6 +13088,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13187,6 +13226,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13236,6 +13278,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -15048,6 +15093,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.filterOperatorSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -15125,6 +15173,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attributeMappingFunctionSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16119,6 +16170,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.filterOperatorSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16196,6 +16250,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attributeMappingFunctionSchema'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16903,6 +16960,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16953,6 +17016,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:

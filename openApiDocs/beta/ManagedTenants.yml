@@ -35,6 +35,13 @@ paths:
                 - deviceCompliancePolicySettingStateSummaries
                 - managedDeviceCompliances
                 - managedDeviceComplianceTrends
+                - managedTenantAlertLogs
+                - managedTenantAlertRuleDefinitions
+                - managedTenantAlertRules
+                - managedTenantAlerts
+                - managedTenantApiNotifications
+                - managedTenantEmailNotifications
+                - managedTenantTicketingEndpoints
                 - managementActions
                 - managementActionTenantDeploymentStatuses
                 - managementIntents
@@ -72,6 +79,13 @@ paths:
                 - deviceCompliancePolicySettingStateSummaries
                 - managedDeviceCompliances
                 - managedDeviceComplianceTrends
+                - managedTenantAlertLogs
+                - managedTenantAlertRuleDefinitions
+                - managedTenantAlertRules
+                - managedTenantAlerts
+                - managedTenantApiNotifications
+                - managedTenantEmailNotifications
+                - managedTenantTicketingEndpoints
                 - managementActions
                 - managementActionTenantDeploymentStatuses
                 - managementIntents
@@ -116,6 +130,20 @@ paths:
               operationId: tenantRelationships.ManagedTenants.ListManagedDeviceCompliances
             managedDeviceComplianceTrends:
               operationId: tenantRelationships.ManagedTenants.ListManagedDeviceComplianceTrends
+            managedTenantAlertLogs:
+              operationId: tenantRelationships.ManagedTenants.ListManagedTenantAlertLogs
+            managedTenantAlertRuleDefinitions:
+              operationId: tenantRelationships.ManagedTenants.ListManagedTenantAlertRuleDefinitions
+            managedTenantAlertRules:
+              operationId: tenantRelationships.ManagedTenants.ListManagedTenantAlertRules
+            managedTenantAlerts:
+              operationId: tenantRelationships.ManagedTenants.ListManagedTenantAlerts
+            managedTenantApiNotifications:
+              operationId: tenantRelationships.ManagedTenants.ListManagedTenantApiNotifications
+            managedTenantEmailNotifications:
+              operationId: tenantRelationships.ManagedTenants.ListManagedTenantEmailNotifications
+            managedTenantTicketingEndpoints:
+              operationId: tenantRelationships.ManagedTenants.ListManagedTenantTicketingEndpoints
             managementActions:
               operationId: tenantRelationships.ManagedTenants.ListManagementActions
             managementActionTenantDeploymentStatuses:
@@ -2488,6 +2516,2909 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceComplianceTrend
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantAlertLogs:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantAlertLogs from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListManagedTenantAlertLogs
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertLogCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to managedTenantAlertLogs for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateManagedTenantAlertLogs
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertLogs/{managedTenantAlertLog-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantAlertLogs from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetManagedTenantAlertLogs
+      parameters:
+        - name: managedTenantAlertLog-id
+          in: path
+          description: 'key: id of managedTenantAlertLog'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertLog
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
+          links:
+            alert:
+              operationId: tenantRelationships.managedTenants.ManagedTenantAlertLogs.GetAlert
+              parameters:
+                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property managedTenantAlertLogs in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateManagedTenantAlertLogs
+      parameters:
+        - name: managedTenantAlertLog-id
+          in: path
+          description: 'key: id of managedTenantAlertLog'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertLog
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property managedTenantAlertLogs for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteManagedTenantAlertLogs
+      parameters:
+        - name: managedTenantAlertLog-id
+          in: path
+          description: 'key: id of managedTenantAlertLog'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertLog
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertLogs/{managedTenantAlertLog-id}/alert':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alert from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlertLogs_GetAlert
+      parameters:
+        - name: managedTenantAlertLog-id
+          in: path
+          description: 'key: id of managedTenantAlertLog'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertLog
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertData
+                - alertDataReferenceStrings
+                - alertRuleDisplayName
+                - assignedToUserId
+                - correlationCount
+                - correlationId
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - severity
+                - status
+                - tenantId
+                - title
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          links:
+            alertLogs:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertLogs.Alert.ListAlertLogs
+              parameters:
+                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
+            alertRule:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertLogs.Alert.GetAlertRule
+              parameters:
+                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
+            apiNotifications:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertLogs.Alert.ListApiNotifications
+              parameters:
+                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
+            emailNotifications:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertLogs.Alert.ListEmailNotifications
+              parameters:
+                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantAlertRuleDefinitions from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListManagedTenantAlertRuleDefinitions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - definitionTemplate
+                - definitionTemplate desc
+                - displayName
+                - displayName desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - definitionTemplate
+                - displayName
+                - lastActionByUserId
+                - lastActionDateTime
+                - alertRules
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertRules
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertRuleDefinitionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to managedTenantAlertRuleDefinitions for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateManagedTenantAlertRuleDefinitions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantAlertRuleDefinitions from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetManagedTenantAlertRuleDefinitions
+      parameters:
+        - name: managedTenantAlertRuleDefinition-id
+          in: path
+          description: 'key: id of managedTenantAlertRuleDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRuleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - definitionTemplate
+                - displayName
+                - lastActionByUserId
+                - lastActionDateTime
+                - alertRules
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertRules
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
+          links:
+            alertRules:
+              operationId: tenantRelationships.managedTenants.ManagedTenantAlertRuleDefinitions.ListAlertRules
+              parameters:
+                managedTenantAlertRuleDefinition-id: $request.path.managedTenantAlertRuleDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property managedTenantAlertRuleDefinitions in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateManagedTenantAlertRuleDefinitions
+      parameters:
+        - name: managedTenantAlertRuleDefinition-id
+          in: path
+          description: 'key: id of managedTenantAlertRuleDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRuleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property managedTenantAlertRuleDefinitions for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteManagedTenantAlertRuleDefinitions
+      parameters:
+        - name: managedTenantAlertRuleDefinition-id
+          in: path
+          description: 'key: id of managedTenantAlertRuleDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRuleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition-id}/alertRules':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alertRules from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlertRuleDefinitions_ListAlertRules
+      parameters:
+        - name: managedTenantAlertRuleDefinition-id
+          in: path
+          description: 'key: id of managedTenantAlertRuleDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRuleDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - alertDisplayName
+                - alertDisplayName desc
+                - alertTTL
+                - alertTTL desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - lastRunDateTime
+                - lastRunDateTime desc
+                - notificationFinalDestinations
+                - notificationFinalDestinations desc
+                - severity
+                - severity desc
+                - targets
+                - targets desc
+                - tenantIds
+                - tenantIds desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertDisplayName
+                - alertTTL
+                - createdByUserId
+                - createdDateTime
+                - description
+                - displayName
+                - lastActionByUserId
+                - lastActionDateTime
+                - lastRunDateTime
+                - notificationFinalDestinations
+                - severity
+                - targets
+                - tenantIds
+                - alerts
+                - ruleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alerts
+                - ruleDefinition
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertRuleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition-id}/alertRules/{managedTenantAlertRule-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alertRules from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlertRuleDefinitions_GetAlertRules
+      parameters:
+        - name: managedTenantAlertRuleDefinition-id
+          in: path
+          description: 'key: id of managedTenantAlertRuleDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRuleDefinition
+        - name: managedTenantAlertRule-id
+          in: path
+          description: 'key: id of managedTenantAlertRule'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRule
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertDisplayName
+                - alertTTL
+                - createdByUserId
+                - createdDateTime
+                - description
+                - displayName
+                - lastActionByUserId
+                - lastActionDateTime
+                - lastRunDateTime
+                - notificationFinalDestinations
+                - severity
+                - targets
+                - tenantIds
+                - alerts
+                - ruleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alerts
+                - ruleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+          links:
+            alerts:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertRuleDefinitions.AlertRules.ListAlerts
+              parameters:
+                managedTenantAlertRuleDefinition-id: $request.path.managedTenantAlertRuleDefinition-id
+                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
+            ruleDefinition:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertRuleDefinitions.AlertRules.GetRuleDefinition
+              parameters:
+                managedTenantAlertRuleDefinition-id: $request.path.managedTenantAlertRuleDefinition-id
+                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantAlertRules:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantAlertRules from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListManagedTenantAlertRules
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - alertDisplayName
+                - alertDisplayName desc
+                - alertTTL
+                - alertTTL desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - lastRunDateTime
+                - lastRunDateTime desc
+                - notificationFinalDestinations
+                - notificationFinalDestinations desc
+                - severity
+                - severity desc
+                - targets
+                - targets desc
+                - tenantIds
+                - tenantIds desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertDisplayName
+                - alertTTL
+                - createdByUserId
+                - createdDateTime
+                - description
+                - displayName
+                - lastActionByUserId
+                - lastActionDateTime
+                - lastRunDateTime
+                - notificationFinalDestinations
+                - severity
+                - targets
+                - tenantIds
+                - alerts
+                - ruleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alerts
+                - ruleDefinition
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertRuleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to managedTenantAlertRules for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateManagedTenantAlertRules
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantAlertRules from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetManagedTenantAlertRules
+      parameters:
+        - name: managedTenantAlertRule-id
+          in: path
+          description: 'key: id of managedTenantAlertRule'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRule
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertDisplayName
+                - alertTTL
+                - createdByUserId
+                - createdDateTime
+                - description
+                - displayName
+                - lastActionByUserId
+                - lastActionDateTime
+                - lastRunDateTime
+                - notificationFinalDestinations
+                - severity
+                - targets
+                - tenantIds
+                - alerts
+                - ruleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alerts
+                - ruleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+          links:
+            alerts:
+              operationId: tenantRelationships.managedTenants.ManagedTenantAlertRules.ListAlerts
+              parameters:
+                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
+            ruleDefinition:
+              operationId: tenantRelationships.managedTenants.ManagedTenantAlertRules.GetRuleDefinition
+              parameters:
+                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property managedTenantAlertRules in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateManagedTenantAlertRules
+      parameters:
+        - name: managedTenantAlertRule-id
+          in: path
+          description: 'key: id of managedTenantAlertRule'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRule
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property managedTenantAlertRules for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteManagedTenantAlertRules
+      parameters:
+        - name: managedTenantAlertRule-id
+          in: path
+          description: 'key: id of managedTenantAlertRule'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRule
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}/alerts':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alerts from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlertRules_ListAlerts
+      parameters:
+        - name: managedTenantAlertRule-id
+          in: path
+          description: 'key: id of managedTenantAlertRule'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRule
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - alertData
+                - alertData desc
+                - alertDataReferenceStrings
+                - alertDataReferenceStrings desc
+                - alertRuleDisplayName
+                - alertRuleDisplayName desc
+                - assignedToUserId
+                - assignedToUserId desc
+                - correlationCount
+                - correlationCount desc
+                - correlationId
+                - correlationId desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - message
+                - message desc
+                - severity
+                - severity desc
+                - status
+                - status desc
+                - tenantId
+                - tenantId desc
+                - title
+                - title desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertData
+                - alertDataReferenceStrings
+                - alertRuleDisplayName
+                - assignedToUserId
+                - correlationCount
+                - correlationId
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - severity
+                - status
+                - tenantId
+                - title
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}/alerts/{managedTenantAlert-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alerts from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlertRules_GetAlerts
+      parameters:
+        - name: managedTenantAlertRule-id
+          in: path
+          description: 'key: id of managedTenantAlertRule'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRule
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertData
+                - alertDataReferenceStrings
+                - alertRuleDisplayName
+                - assignedToUserId
+                - correlationCount
+                - correlationId
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - severity
+                - status
+                - tenantId
+                - title
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          links:
+            alertLogs:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.Alerts.ListAlertLogs
+              parameters:
+                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+            alertRule:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.Alerts.GetAlertRule
+              parameters:
+                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+            apiNotifications:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.Alerts.ListApiNotifications
+              parameters:
+                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+            emailNotifications:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.Alerts.ListEmailNotifications
+              parameters:
+                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule-id}/ruleDefinition':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get ruleDefinition from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlertRules_GetRuleDefinition
+      parameters:
+        - name: managedTenantAlertRule-id
+          in: path
+          description: 'key: id of managedTenantAlertRule'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertRule
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - definitionTemplate
+                - displayName
+                - lastActionByUserId
+                - lastActionDateTime
+                - alertRules
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertRules
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
+          links:
+            alertRules:
+              operationId: tenantRelationships.managedTenants.managedTenantAlertRules.RuleDefinition.ListAlertRules
+              parameters:
+                managedTenantAlertRule-id: $request.path.managedTenantAlertRule-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantAlerts:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantAlerts from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListManagedTenantAlerts
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - alertData
+                - alertData desc
+                - alertDataReferenceStrings
+                - alertDataReferenceStrings desc
+                - alertRuleDisplayName
+                - alertRuleDisplayName desc
+                - assignedToUserId
+                - assignedToUserId desc
+                - correlationCount
+                - correlationCount desc
+                - correlationId
+                - correlationId desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - message
+                - message desc
+                - severity
+                - severity desc
+                - status
+                - status desc
+                - tenantId
+                - tenantId desc
+                - title
+                - title desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertData
+                - alertDataReferenceStrings
+                - alertRuleDisplayName
+                - assignedToUserId
+                - correlationCount
+                - correlationId
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - severity
+                - status
+                - tenantId
+                - title
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to managedTenantAlerts for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateManagedTenantAlerts
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantAlerts from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetManagedTenantAlerts
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertData
+                - alertDataReferenceStrings
+                - alertRuleDisplayName
+                - assignedToUserId
+                - correlationCount
+                - correlationId
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - severity
+                - status
+                - tenantId
+                - title
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          links:
+            alertLogs:
+              operationId: tenantRelationships.managedTenants.ManagedTenantAlerts.ListAlertLogs
+              parameters:
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+            alertRule:
+              operationId: tenantRelationships.managedTenants.ManagedTenantAlerts.GetAlertRule
+              parameters:
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+            apiNotifications:
+              operationId: tenantRelationships.managedTenants.ManagedTenantAlerts.ListApiNotifications
+              parameters:
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+            emailNotifications:
+              operationId: tenantRelationships.managedTenants.ManagedTenantAlerts.ListEmailNotifications
+              parameters:
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+            addUserInputLog:
+              operationId: tenantRelationships.managedTenants.managedTenantAlerts.managedTenantAlert.addUserInputLog
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property managedTenantAlerts in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateManagedTenantAlerts
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property managedTenantAlerts for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteManagedTenantAlerts
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/alertLogs':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alertLogs from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlerts_ListAlertLogs
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertLogCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/alertLogs/{managedTenantAlertLog-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alertLogs from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlerts_GetAlertLogs
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - name: managedTenantAlertLog-id
+          in: path
+          description: 'key: id of managedTenantAlertLog'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlertLog
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
+          links:
+            alert:
+              operationId: tenantRelationships.managedTenants.managedTenantAlerts.AlertLogs.GetAlert
+              parameters:
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+                managedTenantAlertLog-id: $request.path.managedTenantAlertLog-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/alertRule':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alertRule from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlerts_GetAlertRule
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertDisplayName
+                - alertTTL
+                - createdByUserId
+                - createdDateTime
+                - description
+                - displayName
+                - lastActionByUserId
+                - lastActionDateTime
+                - lastRunDateTime
+                - notificationFinalDestinations
+                - severity
+                - targets
+                - tenantIds
+                - alerts
+                - ruleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alerts
+                - ruleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+          links:
+            alerts:
+              operationId: tenantRelationships.managedTenants.managedTenantAlerts.AlertRule.ListAlerts
+              parameters:
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+            ruleDefinition:
+              operationId: tenantRelationships.managedTenants.managedTenantAlerts.AlertRule.GetRuleDefinition
+              parameters:
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/apiNotifications':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get apiNotifications from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlerts_ListApiNotifications
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - isAcknowledged
+                - isAcknowledged desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - message
+                - message desc
+                - title
+                - title desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - isAcknowledged
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - title
+                - userId
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantApiNotificationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/apiNotifications/{managedTenantApiNotification-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get apiNotifications from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlerts_GetApiNotifications
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - name: managedTenantApiNotification-id
+          in: path
+          description: 'key: id of managedTenantApiNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantApiNotification
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - isAcknowledged
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - title
+                - userId
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
+          links:
+            alert:
+              operationId: tenantRelationships.managedTenants.managedTenantAlerts.ApiNotifications.GetAlert
+              parameters:
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/emailNotifications':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get emailNotifications from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlerts_ListEmailNotifications
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - emailAddresses
+                - emailAddresses desc
+                - emailBody
+                - emailBody desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - subject
+                - subject desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - emailAddresses
+                - emailBody
+                - lastActionByUserId
+                - lastActionDateTime
+                - subject
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantEmailNotificationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/emailNotifications/{managedTenantEmailNotification-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get emailNotifications from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantAlerts_GetEmailNotifications
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: 'key: id of managedTenantAlert'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+        - name: managedTenantEmailNotification-id
+          in: path
+          description: 'key: id of managedTenantEmailNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantEmailNotification
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - emailAddresses
+                - emailBody
+                - lastActionByUserId
+                - lastActionDateTime
+                - subject
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
+          links:
+            alert:
+              operationId: tenantRelationships.managedTenants.managedTenantAlerts.EmailNotifications.GetAlert
+              parameters:
+                managedTenantAlert-id: $request.path.managedTenantAlert-id
+                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantApiNotifications:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantApiNotifications from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListManagedTenantApiNotifications
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - isAcknowledged
+                - isAcknowledged desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - message
+                - message desc
+                - title
+                - title desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - isAcknowledged
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - title
+                - userId
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantApiNotificationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to managedTenantApiNotifications for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateManagedTenantApiNotifications
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantApiNotifications/{managedTenantApiNotification-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantApiNotifications from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetManagedTenantApiNotifications
+      parameters:
+        - name: managedTenantApiNotification-id
+          in: path
+          description: 'key: id of managedTenantApiNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantApiNotification
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - isAcknowledged
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - title
+                - userId
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
+          links:
+            alert:
+              operationId: tenantRelationships.managedTenants.ManagedTenantApiNotifications.GetAlert
+              parameters:
+                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property managedTenantApiNotifications in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateManagedTenantApiNotifications
+      parameters:
+        - name: managedTenantApiNotification-id
+          in: path
+          description: 'key: id of managedTenantApiNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantApiNotification
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property managedTenantApiNotifications for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteManagedTenantApiNotifications
+      parameters:
+        - name: managedTenantApiNotification-id
+          in: path
+          description: 'key: id of managedTenantApiNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantApiNotification
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantApiNotifications/{managedTenantApiNotification-id}/alert':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alert from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantApiNotifications_GetAlert
+      parameters:
+        - name: managedTenantApiNotification-id
+          in: path
+          description: 'key: id of managedTenantApiNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantApiNotification
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertData
+                - alertDataReferenceStrings
+                - alertRuleDisplayName
+                - assignedToUserId
+                - correlationCount
+                - correlationId
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - severity
+                - status
+                - tenantId
+                - title
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          links:
+            alertLogs:
+              operationId: tenantRelationships.managedTenants.managedTenantApiNotifications.Alert.ListAlertLogs
+              parameters:
+                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
+            alertRule:
+              operationId: tenantRelationships.managedTenants.managedTenantApiNotifications.Alert.GetAlertRule
+              parameters:
+                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
+            apiNotifications:
+              operationId: tenantRelationships.managedTenants.managedTenantApiNotifications.Alert.ListApiNotifications
+              parameters:
+                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
+            emailNotifications:
+              operationId: tenantRelationships.managedTenants.managedTenantApiNotifications.Alert.ListEmailNotifications
+              parameters:
+                managedTenantApiNotification-id: $request.path.managedTenantApiNotification-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantEmailNotifications:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantEmailNotifications from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListManagedTenantEmailNotifications
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - emailAddresses
+                - emailAddresses desc
+                - emailBody
+                - emailBody desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - subject
+                - subject desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - emailAddresses
+                - emailBody
+                - lastActionByUserId
+                - lastActionDateTime
+                - subject
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantEmailNotificationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to managedTenantEmailNotifications for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateManagedTenantEmailNotifications
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantEmailNotifications/{managedTenantEmailNotification-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantEmailNotifications from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetManagedTenantEmailNotifications
+      parameters:
+        - name: managedTenantEmailNotification-id
+          in: path
+          description: 'key: id of managedTenantEmailNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantEmailNotification
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - emailAddresses
+                - emailBody
+                - lastActionByUserId
+                - lastActionDateTime
+                - subject
+                - alert
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alert
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
+          links:
+            alert:
+              operationId: tenantRelationships.managedTenants.ManagedTenantEmailNotifications.GetAlert
+              parameters:
+                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property managedTenantEmailNotifications in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateManagedTenantEmailNotifications
+      parameters:
+        - name: managedTenantEmailNotification-id
+          in: path
+          description: 'key: id of managedTenantEmailNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantEmailNotification
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property managedTenantEmailNotifications for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteManagedTenantEmailNotifications
+      parameters:
+        - name: managedTenantEmailNotification-id
+          in: path
+          description: 'key: id of managedTenantEmailNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantEmailNotification
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantEmailNotifications/{managedTenantEmailNotification-id}/alert':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get alert from tenantRelationships
+      operationId: tenantRelationships.managedTenants.managedTenantEmailNotifications_GetAlert
+      parameters:
+        - name: managedTenantEmailNotification-id
+          in: path
+          description: 'key: id of managedTenantEmailNotification'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantEmailNotification
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertData
+                - alertDataReferenceStrings
+                - alertRuleDisplayName
+                - assignedToUserId
+                - correlationCount
+                - correlationId
+                - createdByUserId
+                - createdDateTime
+                - lastActionByUserId
+                - lastActionDateTime
+                - message
+                - severity
+                - status
+                - tenantId
+                - title
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alertLogs
+                - alertRule
+                - apiNotifications
+                - emailNotifications
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          links:
+            alertLogs:
+              operationId: tenantRelationships.managedTenants.managedTenantEmailNotifications.Alert.ListAlertLogs
+              parameters:
+                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
+            alertRule:
+              operationId: tenantRelationships.managedTenants.managedTenantEmailNotifications.Alert.GetAlertRule
+              parameters:
+                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
+            apiNotifications:
+              operationId: tenantRelationships.managedTenants.managedTenantEmailNotifications.Alert.ListApiNotifications
+              parameters:
+                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
+            emailNotifications:
+              operationId: tenantRelationships.managedTenants.managedTenantEmailNotifications.Alert.ListEmailNotifications
+              parameters:
+                managedTenantEmailNotification-id: $request.path.managedTenantEmailNotification-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/managedTenantTicketingEndpoints:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantTicketingEndpoints from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListManagedTenantTicketingEndpoints
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdByUserId
+                - createdByUserId desc
+                - createdDateTime
+                - createdDateTime desc
+                - displayName
+                - displayName desc
+                - emailAddress
+                - emailAddress desc
+                - lastActionByUserId
+                - lastActionByUserId desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - phoneNumber
+                - phoneNumber desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - displayName
+                - emailAddress
+                - lastActionByUserId
+                - lastActionDateTime
+                - phoneNumber
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantTicketingEndpointCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to managedTenantTicketingEndpoints for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateManagedTenantTicketingEndpoints
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantTicketingEndpoints/{managedTenantTicketingEndpoint-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get managedTenantTicketingEndpoints from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetManagedTenantTicketingEndpoints
+      parameters:
+        - name: managedTenantTicketingEndpoint-id
+          in: path
+          description: 'key: id of managedTenantTicketingEndpoint'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantTicketingEndpoint
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdByUserId
+                - createdDateTime
+                - displayName
+                - emailAddress
+                - lastActionByUserId
+                - lastActionDateTime
+                - phoneNumber
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property managedTenantTicketingEndpoints in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateManagedTenantTicketingEndpoints
+      parameters:
+        - name: managedTenantTicketingEndpoint-id
+          in: path
+          description: 'key: id of managedTenantTicketingEndpoint'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantTicketingEndpoint
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property managedTenantTicketingEndpoints for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteManagedTenantTicketingEndpoints
+      parameters:
+        - name: managedTenantTicketingEndpoint-id
+          in: path
+          description: 'key: id of managedTenantTicketingEndpoint'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantTicketingEndpoint
         - name: If-Match
           in: header
           description: ETag
@@ -7328,6 +10259,41 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
               description: Trend insights for device compliance across managed tenants.
               x-ms-navigationProperty: true
+            managedTenantAlertLogs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
+              x-ms-navigationProperty: true
+            managedTenantAlertRuleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
+              x-ms-navigationProperty: true
+            managedTenantAlertRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+              x-ms-navigationProperty: true
+            managedTenantAlerts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+              x-ms-navigationProperty: true
+            managedTenantApiNotifications:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
+              x-ms-navigationProperty: true
+            managedTenantEmailNotifications:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
+              x-ms-navigationProperty: true
+            managedTenantTicketingEndpoints:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
+              x-ms-navigationProperty: true
             managementActions:
               type: array
               items:
@@ -8075,6 +11041,313 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.managedTenants.managedTenantAlertLog:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantAlertLog
+          type: object
+          properties:
+            content:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertLogContent'
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            alert:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managedTenantAlert:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantAlert
+          type: object
+          properties:
+            alertData:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertData'
+            alertDataReferenceStrings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.alertDataReferenceString'
+            alertRuleDisplayName:
+              type: string
+              nullable: true
+            assignedToUserId:
+              type: string
+              nullable: true
+            correlationCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            correlationId:
+              type: string
+              nullable: true
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            message:
+              type: string
+              nullable: true
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertSeverity'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertStatus'
+            tenantId:
+              type: string
+              nullable: true
+            title:
+              type: string
+              nullable: true
+            alertLogs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
+              x-ms-navigationProperty: true
+            alertRule:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+            apiNotifications:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
+              x-ms-navigationProperty: true
+            emailNotifications:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managedTenantAlertRuleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantAlertRuleDefinition
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            definitionTemplate:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertRuleDefinitionTemplate'
+            displayName:
+              type: string
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            alertRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managedTenantAlertRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantAlertRule
+          type: object
+          properties:
+            alertDisplayName:
+              type: string
+              nullable: true
+            alertTTL:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastRunDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            notificationFinalDestinations:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.notificationDestination'
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertSeverity'
+            targets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.notificationTarget'
+            tenantIds:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantInfo'
+            alerts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+              x-ms-navigationProperty: true
+            ruleDefinition:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managedTenantApiNotification:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantApiNotification
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            isAcknowledged:
+              type: boolean
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            message:
+              type: string
+              nullable: true
+            title:
+              type: string
+              nullable: true
+            userId:
+              type: string
+              nullable: true
+            alert:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managedTenantEmailNotification:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantEmailNotification
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            emailAddresses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.email'
+            emailBody:
+              type: string
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            subject:
+              type: string
+              nullable: true
+            alert:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managedTenantTicketingEndpoint:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantTicketingEndpoint
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            emailAddress:
+              type: string
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            phoneNumber:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.managedTenants.managementAction:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8789,6 +12062,98 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.managedTenants.alertLogContent:
+      title: alertLogContent
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.alertData:
+      title: alertData
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.alertDataReferenceString:
+      title: alertDataReferenceString
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.alertSeverity:
+      title: alertSeverity
+      enum:
+        - unknown
+        - informational
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.alertStatus:
+      title: alertStatus
+      enum:
+        - unknown
+        - newAlert
+        - inProgress
+        - resolved
+        - dismissed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.alertRuleDefinitionTemplate:
+      title: alertRuleDefinitionTemplate
+      type: object
+      properties:
+        defaultSeverity:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.alertSeverity'
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.notificationDestination:
+      title: notificationDestination
+      enum:
+        - none
+        - api
+        - email
+        - sms
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.notificationTarget:
+      title: notificationTarget
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.tenantInfo:
+      title: tenantInfo
+      type: object
+      properties:
+        tenantId:
+          type: string
+          description: The Azure Active Directory tenant identifier for the managed tenant. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.email:
+      title: email
+      type: object
+      properties:
+        emailAddress:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.managedTenants.managementCategory:
       title: managementCategory
       enum:
@@ -9080,16 +12445,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.managedTenants.tenantInfo:
-      title: tenantInfo
-      type: object
-      properties:
-        tenantId:
-          type: string
-          description: The Azure Active Directory tenant identifier for the managed tenant. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -9224,6 +12579,97 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managedTenantAlertLogCollectionResponse:
+      title: Collection of managedTenantAlertLog
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managedTenantAlertRuleDefinitionCollectionResponse:
+      title: Collection of managedTenantAlertRuleDefinition
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managedTenantAlertRuleCollectionResponse:
+      title: Collection of managedTenantAlertRule
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managedTenantAlertCollectionResponse:
+      title: Collection of managedTenantAlert
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managedTenantApiNotificationCollectionResponse:
+      title: Collection of managedTenantApiNotification
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managedTenantEmailNotificationCollectionResponse:
+      title: Collection of managedTenantEmailNotification
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managedTenantTicketingEndpointCollectionResponse:
+      title: Collection of managedTenantTicketingEndpoint
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -9734,6 +13180,48 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrendCollectionResponse'
+    microsoft.graph.managedTenants.managedTenantAlertLogCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLogCollectionResponse'
+    microsoft.graph.managedTenants.managedTenantAlertRuleDefinitionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinitionCollectionResponse'
+    microsoft.graph.managedTenants.managedTenantAlertRuleCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleCollectionResponse'
+    microsoft.graph.managedTenants.managedTenantAlertCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertCollectionResponse'
+    microsoft.graph.managedTenants.managedTenantApiNotificationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotificationCollectionResponse'
+    microsoft.graph.managedTenants.managedTenantEmailNotificationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotificationCollectionResponse'
+    microsoft.graph.managedTenants.managedTenantTicketingEndpointCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpointCollectionResponse'
     microsoft.graph.managedTenants.managementActionCollectionResponse:
       description: Retrieved collection
       content:

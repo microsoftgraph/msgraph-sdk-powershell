@@ -1506,6 +1506,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivityResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2548,6 +2551,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.searchResponse'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:

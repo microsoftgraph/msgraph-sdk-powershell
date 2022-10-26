@@ -2033,41 +2033,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.customerPaymentJournals_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: customerPaymentJournal-id
-          in: path
-          description: 'key: id of customerPaymentJournal'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: customerPaymentJournal
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments':
     get:
       tags:
@@ -7562,41 +7527,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.generalLedgerEntries_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: generalLedgerEntry-id
-          in: path
-          description: 'key: id of generalLedgerEntry'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: generalLedgerEntry
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/itemCategories':
     get:
       tags:
@@ -8968,41 +8898,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.journalLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journalLine-id
-          in: path
-          description: 'key: id of journalLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: journalLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/journals':
     get:
       tags:
@@ -9327,41 +9222,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.journals_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journal-id
-          in: path
-          description: 'key: id of journal'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: journal
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9751,49 +9611,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.journals.journalLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journal-id
-          in: path
-          description: 'key: id of journal'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: journal
-        - name: journalLine-id
-          in: path
-          description: 'key: id of journalLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: journalLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10942,41 +10759,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.purchaseInvoiceLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12438,49 +12220,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoice-id
-          in: path
-          description: 'key: id of purchaseInvoice'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoice
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14494,41 +14233,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesCreditMemoLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17184,49 +16888,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesCreditMemos.salesCreditMemoLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemo-id
-          in: path
-          description: 'key: id of salesCreditMemo'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemo
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item':
     get:
       tags:
@@ -18308,41 +17969,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesInvoiceLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21182,49 +20808,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesInvoices.salesInvoiceLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoice-id
-          in: path
-          description: 'key: id of salesInvoice'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoice
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item':
     get:
       tags:
@@ -22451,41 +22034,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesOrderLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25169,49 +24717,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesOrders.salesOrderLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrder-id
-          in: path
-          description: 'key: id of salesOrder'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrder
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item':
     get:
       tags:
@@ -26285,41 +25790,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesQuoteLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29047,49 +28517,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesQuotes.salesQuoteLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuote-id
-          in: path
-          description: 'key: id of salesQuote'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuote
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

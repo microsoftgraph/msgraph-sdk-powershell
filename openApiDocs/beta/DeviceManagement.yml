@@ -54821,11 +54821,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRecord'
+              description: The collection of records of alert events.
               x-ms-navigationProperty: true
             alertRules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRule'
+              description: The collection of alert rules.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -54847,6 +54849,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
               description: Cloud managed virtual desktops.
               x-ms-navigationProperty: true
+            crossCloudGovernmentOrganizationMapping:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping'
             deviceImages:
               type: array
               items:
@@ -64862,25 +64866,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertImpact'
             alertRuleId:
               type: string
+              description: The corresponding ID of the alert rule.
               nullable: true
             alertRuleTemplate:
               $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRuleTemplate'
             detectedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the alert event was detected. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: The display name of the alert record.
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the alert record was last updated. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resolvedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the alert event was resolved. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             severity:
@@ -64899,15 +64908,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRuleTemplate'
             description:
               type: string
+              description: The rule description.
               nullable: true
             displayName:
               type: string
+              description: The display name of the rule.
               nullable: true
             enabled:
               type: boolean
+              description: 'The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.'
               nullable: true
             isSystemRule:
               type: boolean
+              description: 'Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only'
               nullable: true
             notificationChannels:
               type: array
@@ -65040,6 +65053,20 @@ components:
               type: string
               description: The user principal name (UPN) of the user assigned to the Cloud PC.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcCrossCloudGovernmentOrganizationMapping
+          type: object
+          properties:
+            organizationIdsInUSGovCloud:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcDeviceImage:
@@ -65327,6 +65354,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcExportJob'
+              description: The export jobs created for downloading reports.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -72115,6 +72143,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number value of the impact.
           format: int32
           nullable: true
       additionalProperties:
@@ -72153,11 +72182,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.deviceManagement.notificationReceiver'
+          description: 'Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.'
         receivers:
           type: array
           items:
             type: string
             nullable: true
+          description: 'The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.'
       additionalProperties:
         type: object
     microsoft.graph.deviceManagement.ruleThreshold:
@@ -72172,6 +72203,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The target threshold value.
           format: int32
           nullable: true
       additionalProperties:
@@ -72494,24 +72526,29 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time when the export job expires.
               format: date-time
               nullable: true
             exportJobStatus:
               $ref: '#/components/schemas/microsoft.graph.cloudPcExportJobStatus'
             exportUrl:
               type: string
+              description: 'The storage account url of the exported report, it can be used to download the file.'
               nullable: true
             filter:
               type: string
+              description: The filter applied on the report.
               nullable: true
             format:
               type: string
+              description: The format of the exported report.
               nullable: true
             reportName:
               $ref: '#/components/schemas/microsoft.graph.cloudPcReportName'
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time when the export job was requested.
               format: date-time
               nullable: true
             select:
@@ -72519,6 +72556,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The selected columns of the report.
           additionalProperties:
             type: object
     microsoft.graph.cloudPcSnapshotStatus:
@@ -78848,9 +78886,11 @@ components:
       properties:
         contactInformation:
           type: string
+          description: 'The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.'
           nullable: true
         locale:
           type: string
+          description: 'Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.'
           nullable: true
       additionalProperties:
         type: object
@@ -78990,6 +79030,7 @@ components:
         - notStarted
         - inProgress
         - completed
+        - failed
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcReportName:
@@ -85522,6 +85563,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod

@@ -534,6 +534,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.keyLongValuePair'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -581,6 +584,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.certificateConnectorHealthMetricValue'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2124,6 +2130,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2174,6 +2183,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementComplianceScheduledActionForRule'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2224,6 +2236,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2416,6 +2431,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentityResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2600,6 +2618,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2748,6 +2769,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2906,6 +2930,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3017,6 +3044,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceConfigurationTargetedUserAndDevice'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3058,6 +3088,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3235,6 +3268,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3439,6 +3475,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3528,6 +3567,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.embeddedSIMActivationCodePoolAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3611,6 +3653,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.groupPolicyConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3897,6 +3942,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentityResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3938,6 +3986,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentity'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3979,6 +4030,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6065,6 +6119,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.keyLongValuePair'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6129,6 +6186,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.metricTimeSeriesDataPoint'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6175,6 +6235,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPortalNotificationAsSent
+      description: Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-1.0
       operationId: deviceManagement.monitoring.alertRecords_setPortalNotificationAsSent
       parameters:
         - name: alertRecord-id
@@ -10434,6 +10498,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementResourceAccessProfileAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10473,6 +10540,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementResourceAccessProfileBase'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10556,6 +10626,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10655,6 +10728,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10697,6 +10773,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10841,6 +10920,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementIntent'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10868,6 +10950,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementIntent'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11329,6 +11414,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDailyAggregatedRemoteConnectionReports
+      description: 'Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.reports_getDailyAggregatedRemoteConnectionReports
       requestBody:
         description: Action parameters
@@ -11395,6 +11484,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getRemoteConnectionHistoricalReports
+      description: Get the remote connection history records of a Cloud PC during a given period.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.reports_getRemoteConnectionHistoricalReports
       requestBody:
         description: Action parameters
@@ -11461,6 +11554,10 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getTotalAggregatedRemoteConnectionReports
+      description: Get the total aggregated remote connection usage of a Cloud PC during a given time span.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpcreports-gettotalaggregatedremoteconnectionreports?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.reports_getTotalAggregatedRemoteConnectionReports
       requestBody:
         description: Action parameters
@@ -11846,6 +11943,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
