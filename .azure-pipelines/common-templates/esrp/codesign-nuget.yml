@@ -7,7 +7,7 @@ parameters:
     default: $(System.DefaultWorkingDirectory)
   - name: Pattern
     type: string
-    default: '*.nupkg'
+    default: "*.nupkg"
 
 steps:
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1

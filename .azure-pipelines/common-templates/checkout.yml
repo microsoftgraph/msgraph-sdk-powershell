@@ -4,7 +4,7 @@
 parameters:
   - name: TargetBranch
     type: string
-    default: ''
+    default: ""
 
 steps:
   - checkout: self
@@ -16,16 +16,20 @@ steps:
   - task: PowerShell@2
     displayName: "Configure user"
     inputs:
-      targetType: "inline"
+      targetType: inline
+      pwsh: true
+      errorActionPreference: stop
       script: |
         git config --global user.email "GraphTooling@service.microsoft.com"
         git config --global user.name "Microsoft Graph DevX Tooling"
 
-  - task: Bash@3
+  - task: PowerShell@2
     displayName: "Switch to target branch: ${{ parameters.TargetBranch }}"
     condition: and(succeeded(), ne('${{ parameters.TargetBranch }}', ''))
     inputs:
       targetType: inline
+      pwsh: true
+      errorActionPreference: stop
       script: |
         git status
         git fetch --all
@@ -33,8 +37,4 @@ steps:
         git pull
         git status
 
-
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: "Run CredScan"
-    inputs:
-      debugMode: false
+  - template: ./security-pre-checks.yml
