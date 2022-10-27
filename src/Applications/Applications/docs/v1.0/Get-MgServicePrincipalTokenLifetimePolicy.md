@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalTokenLifetimePolicy
 
 ## SYNOPSIS
-Get tokenLifetimePolicies from servicePrincipals
+The tokenLifetimePolicies assigned to this service principal.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgServicePrincipalTokenLifetimePolicy -InputObject <IApplicationsIdentity> [
 ```
 
 ## DESCRIPTION
-Get tokenLifetimePolicies from servicePrincipals
+The tokenLifetimePolicies assigned to this service principal.
 
 ## EXAMPLES
 

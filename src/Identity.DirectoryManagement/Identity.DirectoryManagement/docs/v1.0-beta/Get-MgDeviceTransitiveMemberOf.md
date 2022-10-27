@@ -8,33 +8,46 @@ schema: 2.0.0
 # Get-MgDeviceTransitiveMemberOf
 
 ## SYNOPSIS
-Get transitiveMemberOf from devices
+Groups and administrative units that this device is a member of.
+This operation is transitive.
+Supports $expand.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
 Get-MgDeviceTransitiveMemberOf -DeviceId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgDeviceTransitiveMemberOf -DeviceId <String> -DirectoryObjectId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgDeviceTransitiveMemberOf -InputObject <IIdentityDirectoryManagementIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get transitiveMemberOf from devices
+Groups and administrative units that this device is a member of.
+This operation is transitive.
+Supports $expand.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDeviceTransitiveMemberOf Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDeviceTransitiveMemberOf -DeviceId $deviceId
+```
+
+This example shows how to use the Get-MgDeviceTransitiveMemberOf Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -44,6 +57,22 @@ List all pages.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord
 
 ## SYNOPSIS
-Get attendanceRecords from users
+List of attendance records of an attendance report.
+Read-only.
 
 ## SYNTAX
 
@@ -34,9 +35,20 @@ Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord -InputObject <ICloudComm
 ```
 
 ## DESCRIPTION
-Get attendanceRecords from users
+List of attendance records of an attendance report.
+Read-only.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingAttendanceReportId $meetingAttendanceReportId
+```
+
+This example shows how to use the Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

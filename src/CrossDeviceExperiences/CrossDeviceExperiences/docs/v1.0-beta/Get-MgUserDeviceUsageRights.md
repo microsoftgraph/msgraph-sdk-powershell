@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDeviceUsageRights
 
 ## SYNOPSIS
-Get usageRights from users
+Represents the usage rights a device has been granted.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDeviceUsageRights -InputObject <ICrossDeviceExperiencesIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get usageRights from users
+Represents the usage rights a device has been granted.
 
 ## EXAMPLES
 

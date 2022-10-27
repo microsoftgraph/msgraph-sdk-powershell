@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserPhoto
 
 ## SYNOPSIS
-Get photo from users
+The user's profile photo.
+Read-only.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Get-MgUserPhoto -UserId <String> [-Filter <String>] [-Property <String[]>] [-Ski
 ```
 
 ## DESCRIPTION
-Get photo from users
+The user's profile photo.
+Read-only.
 
 ## EXAMPLES
 

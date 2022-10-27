@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListColumn
 
 ## SYNOPSIS
-Get columns from users
+The collection of field definitions for this list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDriveListColumn -InputObject <IFilesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get columns from users
+The collection of field definitions for this list.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Restart-MgApplicationSynchronizationJob
 
 ## SYNOPSIS
-Invoke action restart
+Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory.
+Optionally clears existing the synchronization state and previous errors.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Restart-MgApplicationSynchronizationJob -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action restart
+Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory.
+Optionally clears existing the synchronization state and previous errors.
 
 ## EXAMPLES
 

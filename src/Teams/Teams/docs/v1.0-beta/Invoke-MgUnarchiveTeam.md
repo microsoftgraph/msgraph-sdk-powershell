@@ -8,7 +8,11 @@ schema: 2.0.0
 # Invoke-MgUnarchiveTeam
 
 ## SYNOPSIS
-Invoke action unarchive
+Restore an archived team.
+This restores users' ability to send messages and edit the team, abiding by tenant and team settings.
+Teams are archived using the archive API.
+Unarchiving is an async operation.
+A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
 
 ## SYNTAX
 
@@ -23,9 +27,22 @@ Invoke-MgUnarchiveTeam -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-Wh
 ```
 
 ## DESCRIPTION
-Invoke action unarchive
+Restore an archived team.
+This restores users' ability to send messages and edit the team, abiding by tenant and team settings.
+Teams are archived using the archive API.
+Unarchiving is an async operation.
+A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgUnarchiveTeam Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Invoke-MgUnarchiveTeam -TeamId $teamId
+```
+
+This example shows how to use the Invoke-MgUnarchiveTeam Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

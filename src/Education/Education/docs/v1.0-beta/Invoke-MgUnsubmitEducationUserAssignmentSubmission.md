@@ -8,7 +8,11 @@ schema: 2.0.0
 # Invoke-MgUnsubmitEducationUserAssignmentSubmission
 
 ## SYNOPSIS
-Invoke action unsubmit
+Indicate that a student wants to work on the submitted assignment after it was turned in.
+This method changes the status of the submission from `submitted` to `working`.
+During the submit process, all the resources are copied from **submittedResources** to  **workingResources**.
+The teacher will be looking at the working resources list for grading.
+A teacher can also unsubmit a student's assignment on their behalf.
 
 ## SYNTAX
 
@@ -25,9 +29,24 @@ Invoke-MgUnsubmitEducationUserAssignmentSubmission -InputObject <IEducationIdent
 ```
 
 ## DESCRIPTION
-Invoke action unsubmit
+Indicate that a student wants to work on the submitted assignment after it was turned in.
+This method changes the status of the submission from `submitted` to `working`.
+During the submit process, all the resources are copied from **submittedResources** to  **workingResources**.
+The teacher will be looking at the working resources list for grading.
+A teacher can also unsubmit a student's assignment on their behalf.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Education
+
+Invoke-MgUnsubmitEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+```
+
+This example shows how to use the Invoke-MgUnsubmitEducationUserAssignmentSubmission Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgGroupDriveListItemDocumentSetVersion
 
 ## SYNOPSIS
-Invoke action restore
+Restore a document set version.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Restore-MgGroupDriveListItemDocumentSetVersion -InputObject <IGroupsIdentity> [-
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a document set version.
 
 ## EXAMPLES
 

@@ -2485,8 +2485,10 @@ paths:
             items:
               enum:
                 - id
+                - authenticationContextClassReferences
                 - namedLocations
                 - policies
+                - templates
               type: string
         - name: $expand
           in: query
@@ -2499,8 +2501,10 @@ paths:
             items:
               enum:
                 - '*'
+                - authenticationContextClassReferences
                 - namedLocations
                 - policies
+                - templates
               type: string
       responses:
         '200':
@@ -2510,10 +2514,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
           links:
+            authenticationContextClassReferences:
+              operationId: identity.ConditionalAccess.ListAuthenticationContextClassReferences
             namedLocations:
               operationId: identity.ConditionalAccess.ListNamedLocations
             policies:
               operationId: identity.ConditionalAccess.ListPolicies
+            templates:
+              operationId: identity.ConditionalAccess.ListTemplates
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2541,6 +2549,205 @@ paths:
       summary: Delete navigation property conditionalAccess for identity
       operationId: identity_DeleteConditionalAccess
       parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/authenticationContextClassReferences:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: List authenticationContextClassReferences
+      description: Retrieve a list of authenticationContextClassReference objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0
+      operationId: identity.conditionalAccess_ListAuthenticationContextClassReferences
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isAvailable
+                - isAvailable desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isAvailable
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.authenticationContextClassReferenceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Create new navigation property to authenticationContextClassReferences for identity
+      operationId: identity.conditionalAccess_CreateAuthenticationContextClassReferences
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/conditionalAccess/authenticationContextClassReferences/{authenticationContextClassReference-id}':
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get authenticationContextClassReferences from identity
+      description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
+      operationId: identity.conditionalAccess_GetAuthenticationContextClassReferences
+      parameters:
+        - name: authenticationContextClassReference-id
+          in: path
+          description: 'key: id of authenticationContextClassReference'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationContextClassReference
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isAvailable
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Update the navigation property authenticationContextClassReferences in identity
+      operationId: identity.conditionalAccess_UpdateAuthenticationContextClassReferences
+      parameters:
+        - name: authenticationContextClassReference-id
+          in: path
+          description: 'key: id of authenticationContextClassReference'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationContextClassReference
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Delete navigation property authenticationContextClassReferences for identity
+      operationId: identity.conditionalAccess_DeleteAuthenticationContextClassReferences
+      parameters:
+        - name: authenticationContextClassReference-id
+          in: path
+          description: 'key: id of authenticationContextClassReference'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationContextClassReference
         - name: If-Match
           in: header
           description: ETag
@@ -2979,6 +3186,209 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/templates:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: List conditionalAccessTemplates
+      description: Get a list of the conditionalAccessTemplate objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-list-templates?view=graph-rest-1.0
+      operationId: identity.conditionalAccess_ListTemplates
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - details
+                - details desc
+                - name
+                - name desc
+                - scenarios
+                - scenarios desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - details
+                - name
+                - scenarios
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.conditionalAccessTemplateCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Create new navigation property to templates for identity
+      operationId: identity.conditionalAccess_CreateTemplates
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/conditionalAccess/templates/{conditionalAccessTemplate-id}':
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get templates from identity
+      description: Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+      operationId: identity.conditionalAccess_GetTemplates
+      parameters:
+        - name: conditionalAccessTemplate-id
+          in: path
+          description: 'key: id of conditionalAccessTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conditionalAccessTemplate
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - details
+                - name
+                - scenarios
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Update the navigation property templates in identity
+      operationId: identity.conditionalAccess_UpdateTemplates
+      parameters:
+        - name: conditionalAccessTemplate-id
+          in: path
+          description: 'key: id of conditionalAccessTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conditionalAccessTemplate
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Delete navigation property templates for identity
+      operationId: identity.conditionalAccess_DeleteTemplates
+      parameters:
+        - name: conditionalAccessTemplate-id
+          in: path
+          description: 'key: id of conditionalAccessTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: conditionalAccessTemplate
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /identity/identityProviders:
     get:
       tags:
@@ -3198,6 +3608,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4584,6 +4997,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4709,24 +5125,6 @@ paths:
           links:
             recoveryKeys:
               operationId: informationProtection.Bitlocker.ListRecoveryKeys
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - informationProtection.bitlocker
-      summary: Update the navigation property bitlocker in informationProtection
-      operationId: informationProtection_UpdateBitlocker
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.bitlocker'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5358,6 +5756,8 @@ paths:
                 - inviteRedeemUrl desc
                 - inviteRedirectUrl
                 - inviteRedirectUrl desc
+                - resetRedemption
+                - resetRedemption desc
                 - sendInvitationMessage
                 - sendInvitationMessage desc
                 - status
@@ -5380,6 +5780,7 @@ paths:
                 - invitedUserType
                 - inviteRedeemUrl
                 - inviteRedirectUrl
+                - resetRedemption
                 - sendInvitationMessage
                 - status
                 - invitedUser
@@ -5464,6 +5865,7 @@ paths:
                 - invitedUserType
                 - inviteRedeemUrl
                 - inviteRedirectUrl
+                - resetRedemption
                 - sendInvitationMessage
                 - status
                 - invitedUser
@@ -5581,6 +5983,7 @@ paths:
                 - ageGroup
                 - assignedLicenses
                 - assignedPlans
+                - authorizationInfo
                 - businessPhones
                 - city
                 - companyName
@@ -6235,6 +6638,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8608,6 +9017,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8667,6 +9079,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11436,7 +11851,11 @@ paths:
     post:
       tags:
         - users.authentication
-      summary: Create new navigation property to emailMethods for users
+      summary: Create emailMethod
+      description: Set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authentication-post-emailmethods?view=graph-rest-1.0
       operationId: users.authentication_CreateEmailMethods
       parameters:
         - name: user-id
@@ -16365,6 +16784,12 @@ components:
         - title: conditionalAccessRoot
           type: object
           properties:
+            authenticationContextClassReferences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+              description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
+              x-ms-navigationProperty: true
             namedLocations:
               type: array
               items:
@@ -16377,6 +16802,32 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
               description: Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
               x-ms-navigationProperty: true
+            templates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+              description: Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.authenticationContextClassReference:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationContextClassReference
+          type: object
+          properties:
+            description:
+              type: string
+              description: 'A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user-facing admin experiences. For example, a selection UX.'
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name is the friendly name of the authenticationContextClassReference object. This value should be used to identify the authentication context class reference when building user-facing admin experiences. For example, a selection UX.'
+              nullable: true
+            isAvailable:
+              type: boolean
+              description: 'Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in authentication context selection UX, or used to protect app resources. It will be shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.namedLocation:
@@ -16434,6 +16885,24 @@ components:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControls'
             state:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicyState'
+          additionalProperties:
+            type: object
+    microsoft.graph.conditionalAccessTemplate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: conditionalAccessTemplate
+          type: object
+          properties:
+            description:
+              type: string
+              description: The user-friendly name of the template.
+            details:
+              $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicyDetail'
+            name:
+              type: string
+              description: The user-friendly name of the template.
+            scenarios:
+              $ref: '#/components/schemas/microsoft.graph.templateScenarios'
           additionalProperties:
             type: object
     microsoft.graph.identityProviderBase:
@@ -16516,7 +16985,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
             riskEventType:
               type: string
-              description: 'The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, passwordSpray, impossibleTravel, newCountry, anomalousToken, tokenIssuerAnomaly,suspiciousBrowser, riskyIPAddress, mcasSuspiciousInboxManipulationRules, suspiciousInboxForwarding, and unknownFutureValue. If the risk detection is a premium detection, will show generic. For more information about each value, see riskEventType values.'
+              description: 'The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, passwordSpray, impossibleTravel, newCountry, anomalousToken, tokenIssuerAnomaly,suspiciousBrowser, riskyIPAddress, mcasSuspiciousInboxManipulationRules, suspiciousInboxForwarding, and anomalousUserActivity. If the risk detection is a premium detection, will show generic. For more information about each value, see riskEventType values.'
               nullable: true
             riskLevel:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
@@ -16731,6 +17200,9 @@ components:
             inviteRedirectUrl:
               type: string
               description: The URL the user should be redirected to once the invitation is redeemed. Required.
+            resetRedemption:
+              type: boolean
+              nullable: true
             sendInvitationMessage:
               type: boolean
               description: Indicates whether an email should be sent to the user being invited. The default is false.
@@ -16767,6 +17239,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
               description: The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
+            authorizationInfo:
+              $ref: '#/components/schemas/microsoft.graph.authorizationInfo'
             businessPhones:
               type: array
               items:
@@ -17299,7 +17773,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
           additionalProperties:
             type: object
@@ -18278,6 +18752,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     ReferenceNumeric:
@@ -18453,6 +18928,29 @@ components:
         - enabled
         - disabled
         - enabledForReportingButNotEnforced
+      type: string
+    microsoft.graph.conditionalAccessPolicyDetail:
+      title: conditionalAccessPolicyDetail
+      type: object
+      properties:
+        conditions:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditionSet'
+        grantControls:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessGrantControls'
+        sessionControls:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControls'
+      additionalProperties:
+        type: object
+    microsoft.graph.templateScenarios:
+      title: templateScenarios
+      enum:
+        - new
+        - secureFoundation
+        - zeroTrust
+        - remoteWork
+        - protectAdmins
+        - emergingThreats
+        - unknownFutureValue
       type: string
     microsoft.graph.activityType:
       title: activityType
@@ -18676,6 +19174,17 @@ components:
           description: 'A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.'
           format: uuid
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.authorizationInfo:
+      title: authorizationInfo
+      type: object
+      properties:
+        certificateUserIds:
+          type: array
+          items:
+            type: string
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.employeeOrgData:
@@ -20073,6 +20582,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceOwnerType'
             managementAgent:
               $ref: '#/components/schemas/microsoft.graph.managementAgentType'
+            managementCertificateExpirationDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Reports device management certificate expiration date. This property is read-only.
+              format: date-time
+              readOnly: true
             manufacturer:
               type: string
               description: Manufacturer of the device. This property is read-only.
@@ -20122,6 +20637,11 @@ components:
             remoteAssistanceSessionUrl:
               type: string
               description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              nullable: true
+              readOnly: true
+            requireUserEnrollmentApproval:
+              type: boolean
+              description: Reports if the managed iOS device is user approval enrollment. This property is read-only.
               nullable: true
               readOnly: true
             serialNumber:
@@ -20178,6 +20698,12 @@ components:
               x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+            users:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.user'
+              description: The primary users associated with the managed device.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Devices that are managed or pre-enrolled through Intune
@@ -20602,6 +21128,8 @@ components:
               type: string
               description: (Optional) Subject or topic for the chat. Only available for group chats.
               nullable: true
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.chatViewpoint'
             webUrl:
               type: string
               description: 'The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.'
@@ -20612,6 +21140,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
               description: A collection of all the apps in the chat. Nullable.
               x-ms-navigationProperty: true
+            lastMessagePreview:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
             members:
               type: array
               items:
@@ -20628,6 +21158,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
               x-ms-navigationProperty: true
             tabs:
               type: array
@@ -20733,6 +21264,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
               $ref: '#/components/schemas/microsoft.graph.channel'
+            tags:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+              description: The tags associated with the team.
+              x-ms-navigationProperty: true
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
             schedule:
@@ -21079,16 +21616,14 @@ components:
     microsoft.graph.dataPolicyOperationCollectionResponse:
       title: Collection of dataPolicyOperation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -21103,676 +21638,612 @@ components:
     microsoft.graph.identityApiConnectorCollectionResponse:
       title: Collection of identityApiConnector
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.b2xIdentityUserFlowCollectionResponse:
       title: Collection of b2xIdentityUserFlow
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.identityProviderCollectionResponse:
       title: Collection of identityProvider
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identityProvider'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityProvider'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userFlowLanguageConfigurationCollectionResponse:
       title: Collection of userFlowLanguageConfiguration
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userFlowLanguagePageCollectionResponse:
       title: Collection of userFlowLanguagePage
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse:
       title: Collection of identityUserFlowAttributeAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.identityProviderBaseCollectionResponse:
       title: Collection of identityProviderBase
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     StringCollectionResponse:
       title: Collection of string
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                type: string
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationContextClassReferenceCollectionResponse:
+      title: Collection of authenticationContextClassReference
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.namedLocationCollectionResponse:
       title: Collection of namedLocation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.namedLocation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.namedLocation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessPolicyCollectionResponse:
       title: Collection of conditionalAccessPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.conditionalAccessTemplateCollectionResponse:
+      title: Collection of conditionalAccessTemplate
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.identityUserFlowAttributeCollectionResponse:
       title: Collection of identityUserFlowAttribute
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.riskDetectionCollectionResponse:
       title: Collection of riskDetection
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.riskDetection'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.riskDetection'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.riskyUserCollectionResponse:
       title: Collection of riskyUser
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.riskyUser'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.riskyUser'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.riskyUserHistoryItemCollectionResponse:
       title: Collection of riskyUserHistoryItem
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bitlockerRecoveryKeyCollectionResponse:
       title: Collection of bitlockerRecoveryKey
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.threatAssessmentRequestCollectionResponse:
       title: Collection of threatAssessmentRequest
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.threatAssessmentResultCollectionResponse:
       title: Collection of threatAssessmentResult
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.invitationCollectionResponse:
       title: Collection of invitation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.invitation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.invitation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.oAuth2PermissionGrantCollectionResponse:
       title: Collection of oAuth2PermissionGrant
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.certificateBasedAuthConfigurationCollectionResponse:
       title: Collection of certificateBasedAuthConfiguration
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.activityBasedTimeoutPolicyCollectionResponse:
       title: Collection of activityBasedTimeoutPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.authenticationMethodConfigurationCollectionResponse:
       title: Collection of authenticationMethodConfiguration
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.claimsMappingPolicyCollectionResponse:
       title: Collection of claimsMappingPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.crossTenantAccessPolicyConfigurationPartnerCollectionResponse:
       title: Collection of crossTenantAccessPolicyConfigurationPartner
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.featureRolloutPolicyCollectionResponse:
       title: Collection of featureRolloutPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.homeRealmDiscoveryPolicyCollectionResponse:
       title: Collection of homeRealmDiscoveryPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.permissionGrantPolicyCollectionResponse:
       title: Collection of permissionGrantPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.permissionGrantConditionSetCollectionResponse:
       title: Collection of permissionGrantConditionSet
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleManagementPolicyCollectionResponse:
       title: Collection of unifiedRoleManagementPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleManagementPolicyRuleCollectionResponse:
       title: Collection of unifiedRoleManagementPolicyRule
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleManagementPolicyAssignmentCollectionResponse:
       title: Collection of unifiedRoleManagementPolicyAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.tokenIssuancePolicyCollectionResponse:
       title: Collection of tokenIssuancePolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.tokenLifetimePolicyCollectionResponse:
       title: Collection of tokenLifetimePolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.emailAuthenticationMethodCollectionResponse:
       title: Collection of emailAuthenticationMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.fido2AuthenticationMethodCollectionResponse:
       title: Collection of fido2AuthenticationMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.authenticationMethodCollectionResponse:
       title: Collection of authenticationMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.microsoftAuthenticatorAuthenticationMethodCollectionResponse:
       title: Collection of microsoftAuthenticatorAuthenticationMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.extensionCollectionResponse:
       title: Collection of extension
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.extension'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.longRunningOperationCollectionResponse:
       title: Collection of longRunningOperation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.passwordAuthenticationMethodCollectionResponse:
       title: Collection of passwordAuthenticationMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.phoneAuthenticationMethodCollectionResponse:
       title: Collection of phoneAuthenticationMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.softwareOathAuthenticationMethodCollectionResponse:
       title: Collection of softwareOathAuthenticationMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.temporaryAccessPassAuthenticationMethodCollectionResponse:
       title: Collection of temporaryAccessPassAuthenticationMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsHelloForBusinessAuthenticationMethodCollectionResponse:
       title: Collection of windowsHelloForBusinessAuthenticationMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userFlowType:
@@ -24496,6 +24967,8 @@ components:
       properties:
         allowedAudience:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        captions:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingCaptionSettings'
         isAttendeeReportEnabled:
           type: boolean
           description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -24613,6 +25086,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
       additionalProperties:
         type: object
+    microsoft.graph.chatViewpoint:
+      title: chatViewpoint
+      type: object
+      properties:
+        isHidden:
+          type: boolean
+          description: Indicates whether the chat is hidden for the current user.
+          nullable: true
+        lastMessageReadDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24623,6 +25112,32 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessageInfo
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date time object representing the time at which message was created.
+              format: date-time
+              nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
+            from:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            isDeleted:
+              type: boolean
+              description: 'If set to true, the original message has been deleted.'
+              nullable: true
+            messageType:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
           additionalProperties:
             type: object
     microsoft.graph.conversationMember:
@@ -25029,7 +25544,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -25322,6 +25837,41 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamworkTag:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkTag
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description of the tag as it will appear to the user in Microsoft Teams.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the tag as it will appear to the user in Microsoft Teams.
+              nullable: true
+            memberCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The number of users assigned to the tag.
+              format: int32
+              nullable: true
+            tagType:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagType'
+            teamId:
+              type: string
+              description: ID of the team in which the tag is defined.
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+              description: Users assigned to the tag.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.teamsTemplate:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25525,15 +26075,6 @@ components:
         - renew
         - unknownFutureValue
       type: string
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -27962,6 +28503,26 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+    microsoft.graph.broadcastMeetingCaptionSettings:
+      title: broadcastMeetingCaptionSettings
+      type: object
+      properties:
+        isCaptionEnabled:
+          type: boolean
+          description: Indicates whether captions are enabled for this Teams live event.
+          nullable: true
+        spokenLanguage:
+          type: string
+          description: The spoken language.
+          nullable: true
+        translationLanguages:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The translation languages (choose up to 6).
+      additionalProperties:
+        type: object
     microsoft.graph.lobbyBypassScope:
       title: lobbyBypassScope
       enum:
@@ -28090,6 +28651,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
           additionalProperties:
             type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageFromIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: chatMessageFromIdentitySet
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageType:
+      title: chatMessageType
+      enum:
+        - message
+        - chatEvent
+        - typing
+        - unknownFutureValue
+        - systemEventMessage
+      type: string
     microsoft.graph.chatMessageAttachment:
       title: chatMessageAttachment
       type: object
@@ -28134,18 +28716,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.eventMessageDetail:
-      title: eventMessageDetail
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageFromIdentitySet:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identitySet'
-        - title: chatMessageFromIdentitySet
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -28173,15 +28743,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.chatMessageType:
-      title: chatMessageType
-      enum:
-        - message
-        - chatEvent
-        - typing
-        - unknownFutureValue
-        - systemEventMessage
-      type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
       type: object
@@ -28501,6 +29062,32 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.teamworkTagType:
+      title: teamworkTagType
+      enum:
+        - standard
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamworkTagMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkTagMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The member's display name.
+              nullable: true
+            tenantId:
+              type: string
+              description: The ID of the tenant that the tag member is a part of.
+              nullable: true
+            userId:
+              type: string
+              description: The user ID of the member.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.operationStatus:
       title: operationStatus
       enum:
@@ -30965,6 +31552,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/StringCollectionResponse'
+    microsoft.graph.authenticationContextClassReferenceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReferenceCollectionResponse'
     microsoft.graph.namedLocationCollectionResponse:
       description: Retrieved collection
       content:
@@ -30977,6 +31570,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicyCollectionResponse'
+    microsoft.graph.conditionalAccessTemplateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplateCollectionResponse'
     microsoft.graph.identityUserFlowAttributeCollectionResponse:
       description: Retrieved collection
       content:

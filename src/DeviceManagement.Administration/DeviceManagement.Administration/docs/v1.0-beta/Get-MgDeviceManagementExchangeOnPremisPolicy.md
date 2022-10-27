@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementExchangeOnPremisPolicy
 
 ## SYNOPSIS
-Get exchangeOnPremisesPolicies from deviceManagement
+The list of Exchange On Premisis policies configured by the tenant.
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ Get-MgDeviceManagementExchangeOnPremisPolicy [-ExpandProperty <String[]>] [-Filt
 ```
 
 ## DESCRIPTION
-Get exchangeOnPremisesPolicies from deviceManagement
+The list of Exchange On Premisis policies configured by the tenant.
 
 ## EXAMPLES
 
@@ -251,6 +251,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

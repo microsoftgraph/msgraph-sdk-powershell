@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserOnlineMeetingAttendeeReport
 
 ## SYNOPSIS
-Get attendeeReport for the navigation property onlineMeetings from users
+The content stream of the attendee report of a Microsoft Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgUserOnlineMeetingAttendeeReport -InputObject <ICloudCommunicationsIdentity
 ```
 
 ## DESCRIPTION
-Get attendeeReport for the navigation property onlineMeetings from users
+The content stream of the attendee report of a Microsoft Teams live event.
+Read-only.
 
 ## EXAMPLES
 

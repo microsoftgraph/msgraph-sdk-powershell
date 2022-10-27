@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListActivity
 
 ## SYNOPSIS
-Get activities from groups
+The recent activities that took place within this list.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgGroupSiteListActivity -GroupId <String> -ListId <String> -SiteId <String> 
 ```
 
 ## DESCRIPTION
-Get activities from groups
+The recent activities that took place within this list.
 
 ## EXAMPLES
 

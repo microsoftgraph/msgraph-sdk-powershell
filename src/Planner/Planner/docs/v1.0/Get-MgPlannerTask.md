@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgPlannerTask
 
 ## SYNOPSIS
-Get tasks from planner
+Read-only.
+Nullable.
+Returns a collection of the specified tasks
 
 ## SYNTAX
 
@@ -32,9 +34,29 @@ Get-MgPlannerTask -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get tasks from planner
+Read-only.
+Nullable.
+Returns a collection of the specified tasks
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPlannerTask Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+Get-MgPlannerTask -PlannerTaskId $plannerTaskId
+```
+
+This example shows how to use the Get-MgPlannerTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPlannerTask Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+Get-MgPlannerTask
+```
+
+This example shows how to use the Get-MgPlannerTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

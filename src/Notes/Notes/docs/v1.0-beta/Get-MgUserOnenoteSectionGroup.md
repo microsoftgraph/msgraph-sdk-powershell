@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserOnenoteSectionGroup
 
 ## SYNOPSIS
-Get sectionGroups from users
+The section groups in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,9 +41,31 @@ Get-MgUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-Expand
 ```
 
 ## DESCRIPTION
-Get sectionGroups from users
+The section groups in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserOnenoteSectionGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Notes
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteSectionGroup -UserId $userId -SectionGroupId $sectionGroupId
+```
+
+This example shows how to use the Get-MgUserOnenoteSectionGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserOnenoteSectionGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Notes
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteSectionGroup -UserId $userId
+```
+
+This example shows how to use the Get-MgUserOnenoteSectionGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,10 @@ schema: 2.0.0
 # New-MgGroupSetting
 
 ## SYNOPSIS
-Create new navigation property to settings for groups
+Create a new setting based on the templates available in directorySettingTemplates.
+These settings can be at the tenant-level or at the group level.
+Group settings apply to only Microsoft 365 groups.
+The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.
 
 ## SYNTAX
 
@@ -39,9 +42,30 @@ New-MgGroupSetting -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Create new navigation property to settings for groups
+Create a new setting based on the templates available in directorySettingTemplates.
+These settings can be at the tenant-level or at the group level.
+Group settings apply to only Microsoft 365 groups.
+The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgGroupSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	TemplateId = "08d542b9-071f-4e16-94b0-74abb372e3d9"
+	Values = @(
+		@{
+			Name = "AllowToAddGuests"
+			Value = "false"
+		}
+	)
+}
+New-MgGroupSetting -GroupId $groupId -BodyParameter $params
+```
+
+This example shows how to use the New-MgGroupSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -108,7 +132,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -225,11 +250,11 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDirectorySetting>: directorySetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
   - `[TemplateId <String>]`: Unique identifier for the template used to create this group of settings. Read-only.
   - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
-    - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
+    - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
     - `[Value <String>]`: Value of the setting.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
@@ -276,7 +301,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 VALUES <IMicrosoftGraphSettingValue[]>: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
-  - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
+  - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
   - `[Value <String>]`: Value of the setting.
 
 ## RELATED LINKS

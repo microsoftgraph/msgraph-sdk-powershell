@@ -8,7 +8,7 @@ schema: 2.0.0
 # Resume-MgEducationSynchronizationProfile
 
 ## SYNOPSIS
-Invoke action resume
+Resume the sync of a specific school data synchronization profile in the tenant.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Resume-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Pas
 ```
 
 ## DESCRIPTION
-Invoke action resume
+Resume the sync of a specific school data synchronization profile in the tenant.
 
 ## EXAMPLES
+
+### Example 1: Using the Resume-MgEducationSynchronizationProfile Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Resume-MgEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
+```
+
+This example shows how to use the Resume-MgEducationSynchronizationProfile Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

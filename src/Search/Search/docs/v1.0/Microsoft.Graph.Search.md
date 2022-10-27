@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 72ef0558-7117-440f-9726-3f51cd0c0905
+Module Guid: f4b0b574-8778-47eb-8e8f-3e76533ea7f8
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -21,7 +21,8 @@ Get connections from external
 Get groups from external
 
 ### [Get-MgExternalConnectionGroupMember](Get-MgExternalConnectionGroupMember.md)
-Get members from external
+A member added to an externalGroup.
+You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 
 ### [Get-MgExternalConnectionItem](Get-MgExternalConnectionItem.md)
 Get items from external
@@ -30,7 +31,7 @@ Get items from external
 Get operations from external
 
 ### [Get-MgExternalConnectionSchema](Get-MgExternalConnectionSchema.md)
-Get schema from external
+Read the properties and relationships of a schema object.
 
 ### [Get-MgSearchEntity](Get-MgSearchEntity.md)
 Get search
@@ -39,13 +40,13 @@ Get search
 Invoke action query
 
 ### [New-MgExternalConnection](New-MgExternalConnection.md)
-Create new navigation property to connections for external
+Create a new externalConnection object.
 
 ### [New-MgExternalConnectionGroup](New-MgExternalConnectionGroup.md)
-Create new navigation property to groups for external
+Create a new externalGroup object.
 
 ### [New-MgExternalConnectionGroupMember](New-MgExternalConnectionGroupMember.md)
-Create new navigation property to members for external
+Create an identity resource for a new member in an externalGroup.
 
 ### [New-MgExternalConnectionItem](New-MgExternalConnectionItem.md)
 Create new navigation property to items for external

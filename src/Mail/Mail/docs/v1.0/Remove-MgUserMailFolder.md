@@ -8,30 +8,36 @@ schema: 2.0.0
 # Remove-MgUserMailFolder
 
 ## SYNOPSIS
-The user's mail folders.
-Read-only.
-Nullable.
+Delete navigation property mailFolders for users
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgUserMailFolder -MailFolderId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgUserMailFolder -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user's mail folders.
-Read-only.
-Nullable.
+Delete navigation property mailFolders for users
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgUserMailFolder Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Remove-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId
+```
+
+This example shows how to use the Remove-MgUserMailFolder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -56,7 +62,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -71,7 +77,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -101,7 +107,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

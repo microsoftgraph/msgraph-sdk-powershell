@@ -45,6 +45,19 @@ Update the navigation property checklistItems in users
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgUserTodoListTaskChecklistItem Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+$params = @{
+	DisplayName = "buy cake"
+}
+# A UPN can also be used as -UserId.
+Update-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgUserTodoListTaskChecklistItem Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -139,7 +152,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -299,7 +313,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphChecklistItem>: checklistItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CheckedDateTime <DateTime?>]`: The date and time when the checklistItem was finished.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the checklistItem was created.
   - `[DisplayName <String>]`: Field indicating the title of checklistItem.

@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
-Create new navigation property to deviceImages for deviceManagement
+Create a new cloudPcDeviceImage object.
+Upload a custom OS image that you can later provision on Cloud PCs.
 
 ## SYNTAX
 
@@ -27,9 +28,27 @@ New-MgDeviceManagementVirtualEndpointDeviceImage -BodyParameter <IMicrosoftGraph
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceImages for deviceManagement
+Create a new cloudPcDeviceImage object.
+Upload a custom OS image that you can later provision on Cloud PCs.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+$params = @{
+	"@odata.type" = "#microsoft.graph.cloudPcDeviceImage"
+	DisplayName = "Display Name value"
+	OsBuildNumber = "OS Build Number value"
+	OperatingSystem = "Operating System value"
+	Version = "Version value"
+	SourceImageResourceId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c58ffff/resourceGroups/Example/providers/Microsoft.Compute/images/exampleImage"
+}
+New-MgDeviceManagementVirtualEndpointDeviceImage -BodyParameter $params
+```
+
+This example shows how to use the New-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -95,7 +114,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -288,7 +308,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcDeviceImage>: cloudPcDeviceImage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The image's display name.
   - `[ExpirationDate <DateTime?>]`: The date the image became unavailable.
   - `[LastModifiedDateTime <DateTime?>]`: The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.

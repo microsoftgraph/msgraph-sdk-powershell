@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgSiteListItemDriveItemContent
 
 ## SYNOPSIS
-Update content for the navigation property driveItem in sites
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgSiteListItemDriveItemContent -InputObject <ISitesIdentity> -InFile <String
 ```
 
 ## DESCRIPTION
-Update content for the navigation property driveItem in sites
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

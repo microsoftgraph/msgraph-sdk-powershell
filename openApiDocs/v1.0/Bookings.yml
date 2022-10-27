@@ -115,6 +115,8 @@ paths:
                 - email desc
                 - isPublished
                 - isPublished desc
+                - languageTag
+                - languageTag desc
                 - phone
                 - phone desc
                 - publicUrl
@@ -142,6 +144,7 @@ paths:
                 - displayName
                 - email
                 - isPublished
+                - languageTag
                 - phone
                 - publicUrl
                 - schedulingPolicy
@@ -239,6 +242,7 @@ paths:
                 - displayName
                 - email
                 - isPublished
+                - languageTag
                 - phone
                 - publicUrl
                 - schedulingPolicy
@@ -400,6 +404,8 @@ paths:
                 - id desc
                 - additionalInformation
                 - additionalInformation desc
+                - anonymousJoinWebUrl
+                - anonymousJoinWebUrl desc
                 - customers
                 - customers desc
                 - customerTimeZone
@@ -457,6 +463,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customers
                 - customerTimeZone
                 - duration
@@ -572,6 +579,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customers
                 - customerTimeZone
                 - duration
@@ -773,6 +781,8 @@ paths:
                 - id desc
                 - additionalInformation
                 - additionalInformation desc
+                - anonymousJoinWebUrl
+                - anonymousJoinWebUrl desc
                 - customers
                 - customers desc
                 - customerTimeZone
@@ -830,6 +840,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customers
                 - customerTimeZone
                 - duration
@@ -941,6 +952,7 @@ paths:
               enum:
                 - id
                 - additionalInformation
+                - anonymousJoinWebUrl
                 - customers
                 - customerTimeZone
                 - duration
@@ -1629,6 +1641,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.staffAvailabilityItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1741,10 +1756,14 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - isAnonymousJoinEnabled
+                - isAnonymousJoinEnabled desc
                 - isHiddenFromCustomers
                 - isHiddenFromCustomers desc
                 - isLocationOnline
                 - isLocationOnline desc
+                - languageTag
+                - languageTag desc
                 - maximumAttendeesCount
                 - maximumAttendeesCount desc
                 - notes
@@ -1782,8 +1801,10 @@ paths:
                 - defaultReminders
                 - description
                 - displayName
+                - isAnonymousJoinEnabled
                 - isHiddenFromCustomers
                 - isLocationOnline
+                - languageTag
                 - maximumAttendeesCount
                 - notes
                 - postBuffer
@@ -1893,8 +1914,10 @@ paths:
                 - defaultReminders
                 - description
                 - displayName
+                - isAnonymousJoinEnabled
                 - isHiddenFromCustomers
                 - isLocationOnline
+                - languageTag
                 - maximumAttendeesCount
                 - notes
                 - postBuffer
@@ -2468,6 +2491,9 @@ components:
               description: The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
               nullable: true
               readOnly: true
+            languageTag:
+              type: string
+              nullable: true
             phone:
               type: string
               description: 'The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.'
@@ -2531,6 +2557,9 @@ components:
             additionalInformation:
               type: string
               description: Additional information that is sent to the customer when an appointment is confirmed.
+              nullable: true
+            anonymousJoinWebUrl:
+              type: string
               nullable: true
             customers:
               type: array
@@ -2720,12 +2749,16 @@ components:
             displayName:
               type: string
               description: A service name.
+            isAnonymousJoinEnabled:
+              type: boolean
             isHiddenFromCustomers:
               type: boolean
               description: True means this service is not available to customers for booking.
             isLocationOnline:
               type: boolean
               description: True indicates that the appointments for the service will be held online. Default value is false.
+            languageTag:
+              type: string
             maximumAttendeesCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -2790,6 +2823,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.physicalAddress:
@@ -3006,106 +3040,92 @@ components:
     microsoft.graph.bookingBusinessCollectionResponse:
       title: Collection of bookingBusiness
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingAppointmentCollectionResponse:
       title: Collection of bookingAppointment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingCustomerBaseCollectionResponse:
       title: Collection of bookingCustomerBase
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingCustomQuestionCollectionResponse:
       title: Collection of bookingCustomQuestion
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingServiceCollectionResponse:
       title: Collection of bookingService
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bookingService'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingService'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingStaffMemberBaseCollectionResponse:
       title: Collection of bookingStaffMemberBase
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingCurrencyCollectionResponse:
       title: Collection of bookingCurrency
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.dayOfWeek:
@@ -3225,15 +3245,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ErrorDetails:

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamScheduleSchedulingGroup
 
 ## SYNOPSIS
-Get schedulingGroups from groups
+The logical grouping of users in the schedule (usually by role).
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-Property 
 ```
 
 ## DESCRIPTION
-Get schedulingGroups from groups
+The logical grouping of users in the schedule (usually by role).
 
 ## EXAMPLES
 

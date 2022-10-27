@@ -8,24 +8,28 @@ schema: 2.0.0
 # Get-MgUserChatLastMessagePreview
 
 ## SYNOPSIS
-Get lastMessagePreview from users
+Preview of the last message sent in the chat.
+Null if no messages have been sent in the chat.
+Currently, only the list chats operation supports this property.
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgUserChatLastMessagePreview -ChatId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgUserChatLastMessagePreview -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get lastMessagePreview from users
+Preview of the last message sent in the chat.
+Null if no messages have been sent in the chat.
+Currently, only the list chats operation supports this property.
 
 ## EXAMPLES
 
@@ -36,7 +40,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -67,7 +71,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -97,7 +101,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteTermStoreGroupSetRelation
 
 ## SYNOPSIS
-Get relations from sites
+Indicates which terms have been pinned or reused directly under the set.
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Get-MgSiteTermStoreGroupSetRelation -GroupId <String> -SetId <String> -SiteId <S
 ```
 
 ## DESCRIPTION
-Get relations from sites
+Indicates which terms have been pinned or reused directly under the set.
 
 ## EXAMPLES
 

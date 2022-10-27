@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-Module Guid: e8e7f9fb-31f9-4d88-a659-4a820bb00c36
+Module Guid: ab2ba671-f5f5-4fa9-beac-93366d0faeda
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -24,10 +24,10 @@ Invoke function compare
 Invoke function verifyWindowsEnrollmentAutoDiscovery
 
 ### [Export-MgDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig](Export-MgDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig.md)
-Invoke function exportMobileConfig
+Exports the mobile configuration
 
 ### [Get-MgDeviceManagementAssignedRoleDetail](Get-MgDeviceManagementAssignedRoleDetail.md)
-Invoke function getAssignedRoleDetails
+Retrieves the assigned role definitions and role assignments of the currently authenticated user.
 
 ### [Get-MgDeviceManagementAssignmentFilterPlatformSupportedProperty](Get-MgDeviceManagementAssignmentFilterPlatformSupportedProperty.md)
 Invoke function getPlatformSupportedProperties
@@ -59,6 +59,9 @@ Invoke function getNonCompliantSettings
 ### [Get-MgDeviceManagementComanagedDeviceOemWarranty](Get-MgDeviceManagementComanagedDeviceOemWarranty.md)
 Invoke function getOemWarranty
 
+### [Get-MgDeviceManagementComanagedDeviceRemoteHelpSession](Get-MgDeviceManagementComanagedDeviceRemoteHelpSession.md)
+Invoke function retrieveRemoteHelpSession
+
 ### [Get-MgDeviceManagementComanagedDeviceSummary](Get-MgDeviceManagementComanagedDeviceSummary.md)
 Invoke function getComanagedDevicesSummary
 
@@ -69,7 +72,7 @@ Invoke function getComanagementEligibleDevicesSummary
 Invoke function getPolicySummary
 
 ### [Get-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey](Get-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey.md)
-Invoke function getEncryptionPublicKey
+Get a public key to use to encrypt the Apple device enrollment program token
 
 ### [Get-MgDeviceManagementDepOnboardingSettingExpiringVppTokenCount](Get-MgDeviceManagementDepOnboardingSettingExpiringVppTokenCount.md)
 Invoke function getExpiringVppTokenCount
@@ -84,7 +87,7 @@ Invoke function getIosAvailableUpdateVersions
 Invoke function getOmaSettingPlainTextValue
 
 ### [Get-MgDeviceManagementDeviceHealthScriptRemediationHistory](Get-MgDeviceManagementDeviceHealthScriptRemediationHistory.md)
-Invoke function getRemediationHistory
+Function to get the number of remediations by a device health scripts
 
 ### [Get-MgDeviceManagementDeviceHealthScriptRemediationSummary](Get-MgDeviceManagementDeviceHealthScriptRemediationSummary.md)
 Invoke function getRemediationSummary
@@ -106,6 +109,15 @@ Invoke function getNonCompliantSettings
 
 ### [Get-MgDeviceManagementManagedDeviceOemWarranty](Get-MgDeviceManagementManagedDeviceOemWarranty.md)
 Invoke function getOemWarranty
+
+### [Get-MgDeviceManagementManagedDeviceRemoteHelpSession](Get-MgDeviceManagementManagedDeviceRemoteHelpSession.md)
+Invoke function retrieveRemoteHelpSession
+
+### [Get-MgDeviceManagementMonitoringAlertRecordPortalNotification](Get-MgDeviceManagementMonitoringAlertRecordPortalNotification.md)
+Invoke function getPortalNotifications
+
+### [Get-MgDeviceManagementOrganizationalMessageTenantConsent](Get-MgDeviceManagementOrganizationalMessageTenantConsent.md)
+Invoke function getOrganizationalMessageTenantConsent
 
 ### [Get-MgDeviceManagementResourceOperationScopeForUser](Get-MgDeviceManagementResourceOperationScopeForUser.md)
 Invoke function getScopesForUser
@@ -137,6 +149,12 @@ Invoke function getSourceImages
 ### [Get-MgDeviceManagementVirtualEndpointEffectivePermission](Get-MgDeviceManagementVirtualEndpointEffectivePermission.md)
 Invoke function getEffectivePermissions
 
+### [Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionLatency](Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionLatency.md)
+Invoke function getRealTimeRemoteConnectionLatency
+
+### [Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus](Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus.md)
+Invoke function getRealTimeRemoteConnectionStatus
+
 ### [Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount](Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount.md)
 Invoke function getStorageAccounts
 
@@ -153,7 +171,7 @@ Invoke function appDiagnostics
 Invoke function hasCustomRoleScopeTag
 
 ### [Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest](Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest.md)
-Invoke function downloadApplePushNotificationCertificateSigningRequest
+Download Apple push notification certificate signing request
 
 ### [Invoke-MgExperienceDeviceManagement](Invoke-MgExperienceDeviceManagement.md)
 Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfile
 
 ## SYNOPSIS
-Get androidDeviceOwnerEnrollmentProfiles from deviceManagement
+Android device owner enrollment profile entities.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfile -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Get androidDeviceOwnerEnrollmentProfiles from deviceManagement
+Android device owner enrollment profile entities.
 
 ## EXAMPLES
 

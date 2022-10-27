@@ -8,7 +8,7 @@ schema: 2.0.0
 # Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource
 
 ## SYNOPSIS
-Invoke action release
+Release the non-custodial data source from the case.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -InputObject <ISecuri
 ```
 
 ## DESCRIPTION
-Invoke action release
+Release the non-custodial data source from the case.
 
 ## EXAMPLES
+
+### Example 1: Using the Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryNoncustodialDataSourceId $ediscoveryNoncustodialDataSourceId
+```
+
+This example shows how to use the Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

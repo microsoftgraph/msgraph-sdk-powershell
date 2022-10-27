@@ -8,7 +8,9 @@ schema: 2.0.0
 # Invoke-MgReturnEducationUserAssignmentSubmission
 
 ## SYNOPSIS
-Invoke action return
+Make the grade and feedback associated with this submission available to the student.
+This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
+This action can only be done by the teacher.
 
 ## SYNTAX
 
@@ -25,9 +27,22 @@ Invoke-MgReturnEducationUserAssignmentSubmission -InputObject <IEducationIdentit
 ```
 
 ## DESCRIPTION
-Invoke action return
+Make the grade and feedback associated with this submission available to the student.
+This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
+This action can only be done by the teacher.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Education
+
+Invoke-MgReturnEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+```
+
+This example shows how to use the Invoke-MgReturnEducationUserAssignmentSubmission Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

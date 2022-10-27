@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgDomainServiceConfigurationRecord
 
 ## SYNOPSIS
-Get serviceConfigurationRecords from domains
+DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
+Read-only, Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -32,9 +34,20 @@ Get-MgDomainServiceConfigurationRecord -InputObject <IIdentityDirectoryManagemen
 ```
 
 ## DESCRIPTION
-Get serviceConfigurationRecords from domains
+DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
+Read-only, Nullable.
+Supports $expand.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDomainServiceConfigurationRecord Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDomainServiceConfigurationRecord -DomainId $domainId
+```
+
+This example shows how to use the Get-MgDomainServiceConfigurationRecord Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

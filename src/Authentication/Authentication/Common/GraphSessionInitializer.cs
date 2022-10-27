@@ -29,7 +29,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         {
             return new GraphSession
             {
-                DataStore = dataStore ?? new DiskDataStore()
+                DataStore = dataStore ?? new DiskDataStore(),
+                RequestContext = new RequestContext()
             };
         }
         /// <summary>

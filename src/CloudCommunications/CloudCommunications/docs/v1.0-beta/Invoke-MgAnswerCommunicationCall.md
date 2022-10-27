@@ -8,7 +8,12 @@ schema: 2.0.0
 # Invoke-MgAnswerCommunicationCall
 
 ## SYNOPSIS
-Invoke action answer
+Enable a bot to answer an incoming call.
+The incoming call request can be an invite from a participant in a group call or a peer-to-peer call.
+If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters.
+The bot is expected to answer, reject or redirect the call before the call times out.
+The current timeout value is 15 seconds.
+The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.
 
 ## SYNTAX
 
@@ -43,9 +48,57 @@ Invoke-MgAnswerCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-A
 ```
 
 ## DESCRIPTION
-Invoke action answer
+Enable a bot to answer an incoming call.
+The incoming call request can be an invite from a participant in a group call or a peer-to-peer call.
+If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters.
+The bot is expected to answer, reject or redirect the call before the call times out.
+The current timeout value is 15 seconds.
+The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgAnswerCommunicationCall Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	CallbackUri = "https://bot.contoso.com/api/calls"
+	AcceptedModalities = @(
+		"audio"
+	)
+	MediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		Blob = "<Media Session Configuration Blob>"
+	}
+}
+Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgAnswerCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Invoke-MgAnswerCommunicationCall Cmdlet
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	CallbackUri = "callbackUri-value"
+	MediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		Blob = "<Media Session Configuration Blob>"
+	}
+	AcceptedModalities = @(
+		"audio"
+	)
+	CallOptions = @{
+		"@odata.type" = "#microsoft.graph.incomingCallOptions"
+		IsContentSharingNotificationEnabled = $true
+	}
+	ParticipantCapacity = 200
+}
+Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgAnswerCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -258,9 +311,9 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AcceptedModalities <String[]>]`: 
-  - `[CallOptions <IMicrosoftGraphIncomingCallOptions1>]`: incomingCallOptions
+  - `[CallOptions <IMicrosoftGraphIncomingCallOptions>]`: incomingCallOptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[HideBotAfterEscalation <Boolean?>]`: 
+    - `[HideBotAfterEscalation <Boolean?>]`: Indicates whether to hide the app after the call is escalated.
     - `[IsContentSharingNotificationEnabled <Boolean?>]`: Indicates whether content sharing notifications should be enabled for the call.
   - `[CallbackUri <String>]`: 
   - `[MediaConfig <IMicrosoftGraphMediaConfig1>]`: mediaConfig

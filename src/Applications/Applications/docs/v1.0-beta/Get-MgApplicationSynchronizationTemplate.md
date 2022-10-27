@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationSynchronizationTemplate
 
 ## SYNOPSIS
-Get templates from applications
+Pre-configured synchronization settings for a particular application.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgApplicationSynchronizationTemplate -InputObject <IApplicationsIdentity> [-
 ```
 
 ## DESCRIPTION
-Get templates from applications
+Pre-configured synchronization settings for a particular application.
 
 ## EXAMPLES
 

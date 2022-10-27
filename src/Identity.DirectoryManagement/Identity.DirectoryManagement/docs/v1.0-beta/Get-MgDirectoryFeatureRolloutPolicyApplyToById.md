@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDirectoryFeatureRolloutPolicyApplyToById
 
 ## SYNOPSIS
-Invoke action getByIds
+Return the directory objects specified in a list of IDs.
+Some common uses for this function are to:
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Get-MgDirectoryFeatureRolloutPolicyApplyToById -InputObject <IIdentityDirectoryM
 ```
 
 ## DESCRIPTION
-Invoke action getByIds
+Return the directory objects specified in a list of IDs.
+Some common uses for this function are to:
 
 ## EXAMPLES
 

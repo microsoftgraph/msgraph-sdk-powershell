@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserChatInstalledApp
 
 ## SYNOPSIS
-Get installedApps from users
+A collection of all the apps in the chat.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgUserChatInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get installedApps from users
+A collection of all the apps in the chat.
+Nullable.
 
 ## EXAMPLES
 

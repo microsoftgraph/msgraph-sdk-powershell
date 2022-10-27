@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-Module Guid: e8e7f9fb-31f9-4d88-a659-4a820bb00c36
+Module Guid: ab2ba671-f5f5-4fa9-beac-93366d0faeda
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -18,8 +18,8 @@ Invoke function verifyWindowsEnrollmentAutoDiscovery
 Invoke function getOmaSettingPlainTextValue
 
 ### [Get-MgDeviceManagementEffectivePermission](Get-MgDeviceManagementEffectivePermission.md)
-Invoke function getEffectivePermissions
+Retrieves the effective permissions of the currently authenticated user
 
 ### [Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest](Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest.md)
-Invoke function downloadApplePushNotificationCertificateSigningRequest
+Download Apple push notification certificate signing request
 

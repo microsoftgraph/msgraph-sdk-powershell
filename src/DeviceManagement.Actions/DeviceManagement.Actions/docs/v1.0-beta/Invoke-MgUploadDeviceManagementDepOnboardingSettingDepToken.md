@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgUploadDeviceManagementDepOnboardingSettingDepToken
 
 ## SYNOPSIS
-Invoke action uploadDepToken
+Uploads a new Device Enrollment Program token
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Invoke-MgUploadDeviceManagementDepOnboardingSettingDepToken -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Invoke action uploadDepToken
+Uploads a new Device Enrollment Program token
 
 ## EXAMPLES
 
@@ -213,6 +213,7 @@ BODYPARAMETER <IPaths7Ytj24DevicemanagementDeponboardingsettingsDeponboardingset
   - `[DepToken <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

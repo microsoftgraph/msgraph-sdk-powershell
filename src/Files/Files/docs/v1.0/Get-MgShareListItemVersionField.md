@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListItemVersionField
 
 ## SYNOPSIS
-Get fields from shares
+A collection of the fields and values for this version of the list item.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Get-MgShareListItemVersionField -InputObject <IFilesIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get fields from shares
+A collection of the fields and values for this version of the list item.
 
 ## EXAMPLES
 

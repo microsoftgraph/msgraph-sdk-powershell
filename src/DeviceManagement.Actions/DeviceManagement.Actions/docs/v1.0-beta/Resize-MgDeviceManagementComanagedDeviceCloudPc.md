@@ -8,7 +8,7 @@ schema: 2.0.0
 # Resize-MgDeviceManagementComanagedDeviceCloudPc
 
 ## SYNOPSIS
-Invoke action resizeCloudPc
+Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Resize-MgDeviceManagementComanagedDeviceCloudPc -InputObject <IDeviceManagementA
 ```
 
 ## DESCRIPTION
-Invoke action resizeCloudPc
+Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 
 ## EXAMPLES
 
@@ -196,6 +196,7 @@ BODYPARAMETER <IPaths1Wn58V5DevicemanagementComanageddevicesManageddeviceIdMicro
   - `[TargetServicePlanId <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingTranscript
 
 ## SYNOPSIS
-Get transcripts from communications
+The transcripts of an online meeting.
+Read-only.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgCommunicationOnlineMeetingTranscript -InputObject <ICloudCommunicationsIde
 ```
 
 ## DESCRIPTION
-Get transcripts from communications
+The transcripts of an online meeting.
+Read-only.
 
 ## EXAMPLES
 

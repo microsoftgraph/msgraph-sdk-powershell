@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgShareSharedDriveItemSharedDriveItem
 
 ## SYNOPSIS
-Accessing shared DriveItems
+Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL.
+To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 
 ## SYNTAX
 
@@ -32,9 +33,19 @@ Get-MgShareSharedDriveItemSharedDriveItem -InputObject <IFilesIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Accessing shared DriveItems
+Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL.
+To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgShareSharedDriveItemSharedDriveItem Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Files
+Get-MgShareSharedDriveItemSharedDriveItem -SharedDriveItemId $sharedDriveItemId
+```
+
+This example shows how to use the Get-MgShareSharedDriveItemSharedDriveItem Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

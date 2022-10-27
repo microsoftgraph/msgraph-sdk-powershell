@@ -8,21 +8,15 @@ schema: 2.0.0
 # Get-MgGroupSubSite
 
 ## SYNOPSIS
-Get sites from groups
+The list of SharePoint sites in this group.
+Access the default site with /sites/root.
 
 ## SYNTAX
 
-### List1 (Default)
+### Get (Default)
 ```
-Get-MgGroupSubSite -GroupId <String> [-SiteId <String>] [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-MgGroupSubSite -GroupId <String> -SiteId1 <String> [-SiteId <String>] [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgGroupSubSite -GroupId <String> [-SiteId <String>] [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -31,8 +25,16 @@ Get-MgGroupSubSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-
  [<CommonParameters>]
 ```
 
+### List1
+```
+Get-MgGroupSubSite -GroupId <String> [-SiteId <String>] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Get sites from groups
+The list of SharePoint sites in this group.
+Access the default site with /sites/root.
 
 ## EXAMPLES
 
@@ -186,21 +188,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: "root"
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SiteId1
-key: id of site
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

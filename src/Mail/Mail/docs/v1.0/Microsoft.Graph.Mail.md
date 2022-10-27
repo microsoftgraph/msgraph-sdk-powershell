@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: e71112ef-6a3a-4d15-9582-6a2fcbff607d
+Module Guid: 89d60e28-947d-452c-a477-0a533bf7c534
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -26,6 +26,40 @@ Nullable.
 
 ### [Get-MgUserMailFolderChildFolder](Get-MgUserMailFolderChildFolder.md)
 The collection of child folders in the mailFolder.
+
+### [Get-MgUserMailFolderChildFolderMessage](Get-MgUserMailFolderChildFolderMessage.md)
+The collection of messages in the mailFolder.
+
+### [Get-MgUserMailFolderChildFolderMessageAttachment](Get-MgUserMailFolderChildFolderMessageAttachment.md)
+The fileAttachment and itemAttachment attachments for the message.
+
+### [Get-MgUserMailFolderChildFolderMessageContent](Get-MgUserMailFolderChildFolderMessageContent.md)
+Get media content for the navigation property messages from users
+
+### [Get-MgUserMailFolderChildFolderMessageExtension](Get-MgUserMailFolderChildFolderMessageExtension.md)
+The collection of open extensions defined for the message.
+Nullable.
+
+### [Get-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty](Get-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
+The collection of multi-value extended properties defined for the message.
+Nullable.
+
+### [Get-MgUserMailFolderChildFolderMessageRule](Get-MgUserMailFolderChildFolderMessageRule.md)
+The collection of rules that apply to the user's Inbox folder.
+
+### [Get-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty](Get-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
+The collection of single-value extended properties defined for the message.
+Nullable.
+
+### [Get-MgUserMailFolderChildFolderMultiValueExtendedProperty](Get-MgUserMailFolderChildFolderMultiValueExtendedProperty.md)
+The collection of multi-value extended properties defined for the mailFolder.
+Read-only.
+Nullable.
+
+### [Get-MgUserMailFolderChildFolderSingleValueExtendedProperty](Get-MgUserMailFolderChildFolderSingleValueExtendedProperty.md)
+The collection of single-value extended properties defined for the mailFolder.
+Read-only.
+Nullable.
 
 ### [Get-MgUserMailFolderMessage](Get-MgUserMailFolderMessage.md)
 The collection of messages in the mailFolder.
@@ -85,135 +119,174 @@ The collection of single-value extended properties defined for the message.
 Nullable.
 
 ### [New-MgUserInferenceClassificationOverride](New-MgUserInferenceClassificationOverride.md)
-A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
-Read-only.
-Nullable.
+Create an override for a sender identified by an SMTP address.
+Future messages from that SMTP address will be consistently classified\nas specified in the override.
+**Note**
 
 ### [New-MgUserMailFolder](New-MgUserMailFolder.md)
-The user's mail folders.
-Read-only.
-Nullable.
+Use this API to create a new mail folder in the root folder of the user's mailbox.
+If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
 ### [New-MgUserMailFolderChildFolder](New-MgUserMailFolderChildFolder.md)
-The collection of child folders in the mailFolder.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+
+### [New-MgUserMailFolderChildFolderMessage](New-MgUserMailFolderChildFolderMessage.md)
+Use this API to create a new Message in a mailfolder.
+
+### [New-MgUserMailFolderChildFolderMessageAttachment](New-MgUserMailFolderChildFolderMessageAttachment.md)
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+
+### [New-MgUserMailFolderChildFolderMessageExtension](New-MgUserMailFolderChildFolderMessageExtension.md)
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
+
+### [New-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty](New-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
+Create new navigation property to multiValueExtendedProperties for users
+
+### [New-MgUserMailFolderChildFolderMessageRule](New-MgUserMailFolderChildFolderMessageRule.md)
+Create a messageRule object by specifying a set of conditions and actions.
+Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+
+### [New-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty](New-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
+Create new navigation property to singleValueExtendedProperties for users
+
+### [New-MgUserMailFolderChildFolderMultiValueExtendedProperty](New-MgUserMailFolderChildFolderMultiValueExtendedProperty.md)
+Create new navigation property to multiValueExtendedProperties for users
+
+### [New-MgUserMailFolderChildFolderSingleValueExtendedProperty](New-MgUserMailFolderChildFolderSingleValueExtendedProperty.md)
+Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserMailFolderMessage](New-MgUserMailFolderMessage.md)
-The collection of messages in the mailFolder.
+Use this API to create a new Message in a mailfolder.
 
 ### [New-MgUserMailFolderMessageAttachment](New-MgUserMailFolderMessageAttachment.md)
-The fileAttachment and itemAttachment attachments for the message.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [New-MgUserMailFolderMessageExtension](New-MgUserMailFolderMessageExtension.md)
-The collection of open extensions defined for the message.
-Nullable.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgUserMailFolderMessageMultiValueExtendedProperty](New-MgUserMailFolderMessageMultiValueExtendedProperty.md)
-The collection of multi-value extended properties defined for the message.
-Nullable.
+Create new navigation property to multiValueExtendedProperties for users
 
 ### [New-MgUserMailFolderMessageRule](New-MgUserMailFolderMessageRule.md)
-The collection of rules that apply to the user's Inbox folder.
+Create a messageRule object by specifying a set of conditions and actions.
+Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
 
 ### [New-MgUserMailFolderMessageSingleValueExtendedProperty](New-MgUserMailFolderMessageSingleValueExtendedProperty.md)
-The collection of single-value extended properties defined for the message.
-Nullable.
+Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserMailFolderMultiValueExtendedProperty](New-MgUserMailFolderMultiValueExtendedProperty.md)
-The collection of multi-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Create new navigation property to multiValueExtendedProperties for users
 
 ### [New-MgUserMailFolderSingleValueExtendedProperty](New-MgUserMailFolderSingleValueExtendedProperty.md)
-The collection of single-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserMessage](New-MgUserMessage.md)
-The messages in a mailbox or folder.
-Read-only.
-Nullable.
+Create a draft of a new message in either JSON or MIME format.
+When using JSON format, you can:\n- Include an attachment to the **message**.\n- Update the draft later to add content to the **body** or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
+By default, this operation saves the draft in the Drafts folder.
+Send the draft message in a subsequent operation.
+Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
 
 ### [New-MgUserMessageAttachment](New-MgUserMessageAttachment.md)
-The fileAttachment and itemAttachment attachments for the message.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [New-MgUserMessageExtension](New-MgUserMessageExtension.md)
-The collection of open extensions defined for the message.
-Nullable.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgUserMessageMultiValueExtendedProperty](New-MgUserMessageMultiValueExtendedProperty.md)
-The collection of multi-value extended properties defined for the message.
-Nullable.
+Create new navigation property to multiValueExtendedProperties for users
 
 ### [New-MgUserMessageSingleValueExtendedProperty](New-MgUserMessageSingleValueExtendedProperty.md)
-The collection of single-value extended properties defined for the message.
-Nullable.
-
-### [Remove-MgUserInferenceClassification](Remove-MgUserInferenceClassification.md)
-Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+Create new navigation property to singleValueExtendedProperties for users
 
 ### [Remove-MgUserInferenceClassificationOverride](Remove-MgUserInferenceClassificationOverride.md)
-A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
-Read-only.
-Nullable.
+Delete navigation property overrides for users
 
 ### [Remove-MgUserMailFolder](Remove-MgUserMailFolder.md)
-The user's mail folders.
-Read-only.
-Nullable.
+Delete navigation property mailFolders for users
 
 ### [Remove-MgUserMailFolderChildFolder](Remove-MgUserMailFolderChildFolder.md)
-The collection of child folders in the mailFolder.
+Delete navigation property childFolders for users
+
+### [Remove-MgUserMailFolderChildFolderMessage](Remove-MgUserMailFolderChildFolderMessage.md)
+Delete navigation property messages for users
+
+### [Remove-MgUserMailFolderChildFolderMessageAttachment](Remove-MgUserMailFolderChildFolderMessageAttachment.md)
+Delete navigation property attachments for users
+
+### [Remove-MgUserMailFolderChildFolderMessageExtension](Remove-MgUserMailFolderChildFolderMessageExtension.md)
+Delete navigation property extensions for users
+
+### [Remove-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty](Remove-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
+Delete navigation property multiValueExtendedProperties for users
+
+### [Remove-MgUserMailFolderChildFolderMessageRule](Remove-MgUserMailFolderChildFolderMessageRule.md)
+Delete navigation property messageRules for users
+
+### [Remove-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty](Remove-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
+Delete navigation property singleValueExtendedProperties for users
+
+### [Remove-MgUserMailFolderChildFolderMultiValueExtendedProperty](Remove-MgUserMailFolderChildFolderMultiValueExtendedProperty.md)
+Delete navigation property multiValueExtendedProperties for users
+
+### [Remove-MgUserMailFolderChildFolderSingleValueExtendedProperty](Remove-MgUserMailFolderChildFolderSingleValueExtendedProperty.md)
+Delete navigation property singleValueExtendedProperties for users
 
 ### [Remove-MgUserMailFolderMessage](Remove-MgUserMailFolderMessage.md)
-The collection of messages in the mailFolder.
+Delete navigation property messages for users
 
 ### [Remove-MgUserMailFolderMessageAttachment](Remove-MgUserMailFolderMessageAttachment.md)
-The fileAttachment and itemAttachment attachments for the message.
+Delete navigation property attachments for users
 
 ### [Remove-MgUserMailFolderMessageExtension](Remove-MgUserMailFolderMessageExtension.md)
-The collection of open extensions defined for the message.
-Nullable.
+Delete navigation property extensions for users
 
 ### [Remove-MgUserMailFolderMessageMultiValueExtendedProperty](Remove-MgUserMailFolderMessageMultiValueExtendedProperty.md)
-The collection of multi-value extended properties defined for the message.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ### [Remove-MgUserMailFolderMessageRule](Remove-MgUserMailFolderMessageRule.md)
-The collection of rules that apply to the user's Inbox folder.
+Delete navigation property messageRules for users
 
 ### [Remove-MgUserMailFolderMessageSingleValueExtendedProperty](Remove-MgUserMailFolderMessageSingleValueExtendedProperty.md)
-The collection of single-value extended properties defined for the message.
-Nullable.
+Delete navigation property singleValueExtendedProperties for users
 
 ### [Remove-MgUserMailFolderMultiValueExtendedProperty](Remove-MgUserMailFolderMultiValueExtendedProperty.md)
-The collection of multi-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ### [Remove-MgUserMailFolderSingleValueExtendedProperty](Remove-MgUserMailFolderSingleValueExtendedProperty.md)
-The collection of single-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Delete navigation property singleValueExtendedProperties for users
 
 ### [Remove-MgUserMessage](Remove-MgUserMessage.md)
-The messages in a mailbox or folder.
-Read-only.
-Nullable.
+Delete navigation property messages for users
 
 ### [Remove-MgUserMessageAttachment](Remove-MgUserMessageAttachment.md)
-The fileAttachment and itemAttachment attachments for the message.
+Delete navigation property attachments for users
 
 ### [Remove-MgUserMessageExtension](Remove-MgUserMessageExtension.md)
-The collection of open extensions defined for the message.
-Nullable.
+Delete navigation property extensions for users
 
 ### [Remove-MgUserMessageMultiValueExtendedProperty](Remove-MgUserMessageMultiValueExtendedProperty.md)
-The collection of multi-value extended properties defined for the message.
-Nullable.
+Delete navigation property multiValueExtendedProperties for users
 
 ### [Remove-MgUserMessageSingleValueExtendedProperty](Remove-MgUserMessageSingleValueExtendedProperty.md)
-The collection of single-value extended properties defined for the message.
-Nullable.
+Delete navigation property singleValueExtendedProperties for users
+
+### [Set-MgUserMailFolderChildFolderMessageContent](Set-MgUserMailFolderChildFolderMessageContent.md)
+Update media content for the navigation property messages in users
 
 ### [Set-MgUserMailFolderMessageContent](Set-MgUserMailFolderMessageContent.md)
 Update media content for the navigation property messages in users
@@ -222,69 +295,68 @@ Update media content for the navigation property messages in users
 Update media content for the navigation property messages in users
 
 ### [Update-MgUserInferenceClassification](Update-MgUserInferenceClassification.md)
-Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+Update the navigation property inferenceClassification in users
 
 ### [Update-MgUserInferenceClassificationOverride](Update-MgUserInferenceClassificationOverride.md)
-A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
-Read-only.
-Nullable.
+Update the navigation property overrides in users
 
 ### [Update-MgUserMailFolder](Update-MgUserMailFolder.md)
-The user's mail folders.
-Read-only.
-Nullable.
+Update the navigation property mailFolders in users
 
 ### [Update-MgUserMailFolderChildFolder](Update-MgUserMailFolderChildFolder.md)
-The collection of child folders in the mailFolder.
+Update the navigation property childFolders in users
+
+### [Update-MgUserMailFolderChildFolderMessage](Update-MgUserMailFolderChildFolderMessage.md)
+Update the navigation property messages in users
+
+### [Update-MgUserMailFolderChildFolderMessageExtension](Update-MgUserMailFolderChildFolderMessageExtension.md)
+Update the navigation property extensions in users
+
+### [Update-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty](Update-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
+Update the navigation property multiValueExtendedProperties in users
+
+### [Update-MgUserMailFolderChildFolderMessageRule](Update-MgUserMailFolderChildFolderMessageRule.md)
+Update the navigation property messageRules in users
+
+### [Update-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty](Update-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
+Update the navigation property singleValueExtendedProperties in users
+
+### [Update-MgUserMailFolderChildFolderMultiValueExtendedProperty](Update-MgUserMailFolderChildFolderMultiValueExtendedProperty.md)
+Update the navigation property multiValueExtendedProperties in users
+
+### [Update-MgUserMailFolderChildFolderSingleValueExtendedProperty](Update-MgUserMailFolderChildFolderSingleValueExtendedProperty.md)
+Update the navigation property singleValueExtendedProperties in users
 
 ### [Update-MgUserMailFolderMessage](Update-MgUserMailFolderMessage.md)
-The collection of messages in the mailFolder.
-
-### [Update-MgUserMailFolderMessageAttachment](Update-MgUserMailFolderMessageAttachment.md)
-The fileAttachment and itemAttachment attachments for the message.
+Update the navigation property messages in users
 
 ### [Update-MgUserMailFolderMessageExtension](Update-MgUserMailFolderMessageExtension.md)
-The collection of open extensions defined for the message.
-Nullable.
+Update the navigation property extensions in users
 
 ### [Update-MgUserMailFolderMessageMultiValueExtendedProperty](Update-MgUserMailFolderMessageMultiValueExtendedProperty.md)
-The collection of multi-value extended properties defined for the message.
-Nullable.
+Update the navigation property multiValueExtendedProperties in users
 
 ### [Update-MgUserMailFolderMessageRule](Update-MgUserMailFolderMessageRule.md)
-The collection of rules that apply to the user's Inbox folder.
+Update the navigation property messageRules in users
 
 ### [Update-MgUserMailFolderMessageSingleValueExtendedProperty](Update-MgUserMailFolderMessageSingleValueExtendedProperty.md)
-The collection of single-value extended properties defined for the message.
-Nullable.
+Update the navigation property singleValueExtendedProperties in users
 
 ### [Update-MgUserMailFolderMultiValueExtendedProperty](Update-MgUserMailFolderMultiValueExtendedProperty.md)
-The collection of multi-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Update the navigation property multiValueExtendedProperties in users
 
 ### [Update-MgUserMailFolderSingleValueExtendedProperty](Update-MgUserMailFolderSingleValueExtendedProperty.md)
-The collection of single-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Update the navigation property singleValueExtendedProperties in users
 
 ### [Update-MgUserMessage](Update-MgUserMessage.md)
-The messages in a mailbox or folder.
-Read-only.
-Nullable.
-
-### [Update-MgUserMessageAttachment](Update-MgUserMessageAttachment.md)
-The fileAttachment and itemAttachment attachments for the message.
+Update the navigation property messages in users
 
 ### [Update-MgUserMessageExtension](Update-MgUserMessageExtension.md)
-The collection of open extensions defined for the message.
-Nullable.
+Update the navigation property extensions in users
 
 ### [Update-MgUserMessageMultiValueExtendedProperty](Update-MgUserMessageMultiValueExtendedProperty.md)
-The collection of multi-value extended properties defined for the message.
-Nullable.
+Update the navigation property multiValueExtendedProperties in users
 
 ### [Update-MgUserMessageSingleValueExtendedProperty](Update-MgUserMessageSingleValueExtendedProperty.md)
-The collection of single-value extended properties defined for the message.
-Nullable.
+Update the navigation property singleValueExtendedProperties in users
 

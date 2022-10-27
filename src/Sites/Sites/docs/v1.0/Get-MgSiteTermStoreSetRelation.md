@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteTermStoreSetRelation
 
 ## SYNOPSIS
-Get relations from sites
+Indicates which terms have been pinned or reused directly under the set.
 
 ## SYNTAX
 
@@ -51,9 +51,18 @@ Get-MgSiteTermStoreSetRelation -SetId <String> -SiteId <String> -StoreId <String
 ```
 
 ## DESCRIPTION
-Get relations from sites
+Indicates which terms have been pinned or reused directly under the set.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSiteTermStoreSetRelation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteTermStoreSetRelation -SiteId $siteId -SetId $setId
+```
+
+This example shows how to use the Get-MgSiteTermStoreSetRelation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleDefinition
 
 ## SYNOPSIS
-Get roleDefinitions from roleManagement
+Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgRoleManagementEntitlementManagementRoleDefinition -InputObject <IDeviceMan
 ```
 
 ## DESCRIPTION
-Get roleDefinitions from roleManagement
+Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgRoleManagementEntitlementManagementRoleDefinition Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Get-MgRoleManagementEntitlementManagementRoleDefinition
+```
+
+This example shows how to use the Get-MgRoleManagementEntitlementManagementRoleDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

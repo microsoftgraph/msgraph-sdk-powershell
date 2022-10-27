@@ -109,6 +109,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -166,6 +169,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -227,6 +233,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -288,6 +297,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -452,6 +464,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -509,6 +524,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -570,6 +588,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -631,6 +652,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2368,6 +2392,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.scheduleInformation'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4596,6 +4623,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.scheduleInformation'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6560,6 +6590,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.scheduleInformation'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7480,6 +7513,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7488,6 +7524,146 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/chats/{chat-id}/microsoft.graph.hideForUser':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action hideForUser
+      description: Hide a chat for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
+      operationId: users.chats_hideGraphFPreUser
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/chats/{chat-id}/microsoft.graph.markChatReadForUser':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action markChatReadForUser
+      description: Mark a chat as read for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
+      operationId: users.chats_markChatReadGraphFPreUser
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/chats/{chat-id}/microsoft.graph.markChatUnreadForUser':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action markChatUnreadForUser
+      description: Mark a chat as unread for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
+      operationId: users.chats_markChatUnreadGraphFPreUser
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
+                lastMessageReadDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/chats/{chat-id}/microsoft.graph.sendActivityNotification':
     post:
       tags:
@@ -7539,6 +7715,51 @@ paths:
                     $ref: '#/components/schemas/microsoft.graph.keyValuePair'
                 recipient:
                   $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/chats/{chat-id}/microsoft.graph.unhideForUser':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action unhideForUser
+      description: Unhide a chat for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
+      operationId: users.chats_unhideGraphFPreUser
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
               additionalProperties:
                 type: object
         required: true
@@ -8069,6 +8290,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.permission'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8363,6 +8587,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.permission'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9344,6 +9571,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.permission'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9598,6 +9828,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.permission'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10563,6 +10796,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -10792,6 +11028,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11085,6 +11324,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13879,6 +14121,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13928,6 +14173,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -14065,6 +14313,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -14118,6 +14369,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -15958,6 +16212,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16008,6 +16265,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16219,6 +16479,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.publicError'
       additionalProperties:
         type: object
+    microsoft.graph.teamworkUserIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: teamworkUserIdentity
+          type: object
+          properties:
+            userIdentityType:
+              $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
+          additionalProperties:
+            type: object
     microsoft.graph.teamworkActivityTopic:
       title: teamworkActivityTopic
       type: object
@@ -17100,6 +17370,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.attachmentType:
@@ -17211,6 +17482,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamworkUserIdentityType:
+      title: teamworkUserIdentityType
+      enum:
+        - aadUser
+        - onPremiseAadUser
+        - anonymousGuest
+        - federatedUser
+        - personalMicrosoftAccountUser
+        - skypeUser
+        - phoneUser
+        - unknownFutureValue
+        - emailUser
+      type: string
     microsoft.graph.teamworkActivityTopicSource:
       title: teamworkActivityTopicSource
       enum:
@@ -18536,6 +18834,8 @@ components:
       properties:
         allowedAudience:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        captions:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingCaptionSettings'
         isAttendeeReportEnabled:
           type: boolean
           description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -18715,6 +19015,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
               description: The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
+            authorizationInfo:
+              $ref: '#/components/schemas/microsoft.graph.authorizationInfo'
             businessPhones:
               type: array
               items:
@@ -19787,20 +20089,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
           additionalProperties:
             type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -20307,6 +20595,26 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+    microsoft.graph.broadcastMeetingCaptionSettings:
+      title: broadcastMeetingCaptionSettings
+      type: object
+      properties:
+        isCaptionEnabled:
+          type: boolean
+          description: Indicates whether captions are enabled for this Teams live event.
+          nullable: true
+        spokenLanguage:
+          type: string
+          description: The spoken language.
+          nullable: true
+        translationLanguages:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The translation languages (choose up to 6).
+      additionalProperties:
+        type: object
     microsoft.graph.lobbyBypassScope:
       title: lobbyBypassScope
       enum:
@@ -20420,6 +20728,17 @@ components:
           description: 'A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.'
           format: uuid
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.authorizationInfo:
+      title: authorizationInfo
+      type: object
+      properties:
+        certificateUserIds:
+          type: array
+          items:
+            type: string
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.employeeOrgData:
@@ -20732,7 +21051,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
           additionalProperties:
             type: object
@@ -21653,6 +21972,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceOwnerType'
             managementAgent:
               $ref: '#/components/schemas/microsoft.graph.managementAgentType'
+            managementCertificateExpirationDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Reports device management certificate expiration date. This property is read-only.
+              format: date-time
+              readOnly: true
             manufacturer:
               type: string
               description: Manufacturer of the device. This property is read-only.
@@ -21702,6 +22027,11 @@ components:
             remoteAssistanceSessionUrl:
               type: string
               description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              nullable: true
+              readOnly: true
+            requireUserEnrollmentApproval:
+              type: boolean
+              description: Reports if the managed iOS device is user approval enrollment. This property is read-only.
               nullable: true
               readOnly: true
             serialNumber:
@@ -21758,6 +22088,12 @@ components:
               x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+            users:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.user'
+              description: The primary users associated with the managed device.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Devices that are managed or pre-enrolled through Intune
@@ -22158,6 +22494,8 @@ components:
               type: string
               description: (Optional) Subject or topic for the chat. Only available for group chats.
               nullable: true
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.chatViewpoint'
             webUrl:
               type: string
               description: 'The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.'
@@ -22168,6 +22506,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
               description: A collection of all the apps in the chat. Nullable.
               x-ms-navigationProperty: true
+            lastMessagePreview:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
             members:
               type: array
               items:
@@ -22184,6 +22524,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+              description: A collection of all the pinned messages in the chat. Nullable.
               x-ms-navigationProperty: true
             tabs:
               type: array
@@ -22289,6 +22630,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
               $ref: '#/components/schemas/microsoft.graph.channel'
+            tags:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+              description: The tags associated with the team.
+              x-ms-navigationProperty: true
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
             schedule:
@@ -24819,6 +25166,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
       additionalProperties:
         type: object
+    microsoft.graph.chatViewpoint:
+      title: chatViewpoint
+      type: object
+      properties:
+        isHidden:
+          type: boolean
+          description: Indicates whether the chat is hidden for the current user.
+          nullable: true
+        lastMessageReadDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24829,6 +25192,32 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessageInfo
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date time object representing the time at which message was created.
+              format: date-time
+              nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
+            from:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            isDeleted:
+              type: boolean
+              description: 'If set to true, the original message has been deleted.'
+              nullable: true
+            messageType:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
           additionalProperties:
             type: object
     microsoft.graph.chatMessage:
@@ -25203,7 +25592,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -25494,6 +25883,41 @@ components:
               type: string
               description: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.teamworkTag:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkTag
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description of the tag as it will appear to the user in Microsoft Teams.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the tag as it will appear to the user in Microsoft Teams.
+              nullable: true
+            memberCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The number of users assigned to the tag.
+              format: int32
+              nullable: true
+            tagType:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagType'
+            teamId:
+              type: string
+              description: ID of the team in which the tag is defined.
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+              description: Users assigned to the tag.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.teamsTemplate:
@@ -26942,16 +27366,6 @@ components:
         - weak
         - unknown
       type: string
-    microsoft.graph.teamworkUserIdentity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: teamworkUserIdentity
-          type: object
-          properties:
-            userIdentityType:
-              $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
-          additionalProperties:
-            type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27015,6 +27429,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
           additionalProperties:
             type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageFromIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: chatMessageFromIdentitySet
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageType:
+      title: chatMessageType
+      enum:
+        - message
+        - chatEvent
+        - typing
+        - unknownFutureValue
+        - systemEventMessage
+      type: string
     microsoft.graph.chatMessageAttachment:
       title: chatMessageAttachment
       type: object
@@ -27059,18 +27494,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.eventMessageDetail:
-      title: eventMessageDetail
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageFromIdentitySet:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identitySet'
-        - title: chatMessageFromIdentitySet
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -27098,15 +27521,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.chatMessageType:
-      title: chatMessageType
-      enum:
-        - message
-        - chatEvent
-        - typing
-        - unknownFutureValue
-        - systemEventMessage
-      type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
       type: object
@@ -27426,6 +27840,32 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.teamworkTagType:
+      title: teamworkTagType
+      enum:
+        - standard
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamworkTagMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkTagMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The member's display name.
+              nullable: true
+            tenantId:
+              type: string
+              description: The ID of the tenant that the tag member is a part of.
+              nullable: true
+            userId:
+              type: string
+              description: The user ID of the member.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.offerShiftRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
@@ -28115,19 +28555,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.teamworkUserIdentityType:
-      title: teamworkUserIdentityType
-      enum:
-        - aadUser
-        - onPremiseAadUser
-        - anonymousGuest
-        - federatedUser
-        - personalMicrosoftAccountUser
-        - skypeUser
-        - phoneUser
-        - unknownFutureValue
-        - emailUser
-      type: string
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -28742,6 +29169,9 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.mailTips'
+              '@odata.nextLink':
+                type: string
+                nullable: true
             additionalProperties:
               type: object
     reprocessLicenseAssignmentResponse:
@@ -28774,6 +29204,9 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.convertIdResult'
+              '@odata.nextLink':
+                type: string
+                nullable: true
             additionalProperties:
               type: object
   requestBodies:

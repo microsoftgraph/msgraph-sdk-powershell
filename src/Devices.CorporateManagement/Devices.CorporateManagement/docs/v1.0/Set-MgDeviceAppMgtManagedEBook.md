@@ -15,7 +15,7 @@ Invoke action assign
 ### AssignExpanded1 (Default)
 ```
 Set-MgDeviceAppMgtManagedEBook -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
- [-ManagedEBookAssignments <IMicrosoftGraphManagedEBookAssignment1[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-ManagedEBookAssignments <IMicrosoftGraphManagedEBookAssignment[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Set-MgDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdentity
 ### AssignViaIdentityExpanded1
 ```
 Set-MgDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-ManagedEBookAssignments <IMicrosoftGraphManagedEBookAssignment1[]>]
+ [-AdditionalProperties <Hashtable>] [-ManagedEBookAssignments <IMicrosoftGraphManagedEBookAssignment[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for MANAGEDEBOOKASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment[]
 Parameter Sets: AssignExpanded1, AssignViaIdentityExpanded1
 Aliases:
 
@@ -197,10 +197,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IPathsWfdti0DeviceappmanagementManagedebooksManagedebookIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ManagedEBookAssignments <IMicrosoftGraphManagedEBookAssignment1[]>]`: 
-    - `[Id <String>]`: 
+  - `[ManagedEBookAssignments <IMicrosoftGraphManagedEBookAssignment[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[InstallIntent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
@@ -272,10 +272,10 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
   - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
-MANAGEDEBOOKASSIGNMENTS <IMicrosoftGraphManagedEBookAssignment1[]>: .
-  - `[Id <String>]`: 
+MANAGEDEBOOKASSIGNMENTS <IMicrosoftGraphManagedEBookAssignment[]>: .
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[InstallIntent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS

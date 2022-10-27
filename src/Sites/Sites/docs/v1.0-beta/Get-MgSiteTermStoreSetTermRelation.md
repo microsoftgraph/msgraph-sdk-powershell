@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteTermStoreSetTermRelation
 
 ## SYNOPSIS
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ## SYNTAX
 
@@ -19,20 +19,20 @@ Get-MgSiteTermStoreSetTermRelation -SetId <String> -SiteId <String> -TermId <Str
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get2
+### Get1
 ```
 Get-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -TermId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity1
 ```
 Get-MgSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ## EXAMPLES
 
@@ -105,7 +105,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity2
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -150,7 +150,7 @@ key: id of relation
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -180,7 +180,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List1
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -195,7 +195,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List1
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -240,7 +240,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List1
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True

@@ -8,7 +8,16 @@ schema: 2.0.0
 # Add-MgAccessReviewInstanceDecision
 
 ## SYNOPSIS
-Invoke action applyDecisions
+In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
+The target object can be either a one-time access review, or an instance of a recurring access review.
+ After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
+Until apply occurs, the decisions to remove access rights do not appear on the source resource, the users for instance retain their group memberships.
+By calling apply, the outcome of the review is implemented by updating the group or application.
+If a user's access was denied in the review, when an administrator calls this API, Azure AD removes their membership or application assignment.
+After an access review is finished, and auto-apply was configured, then the status of the review will change from Completed through intermediate states and finally will change to state Applied.
+You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
+A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
+If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
 
 ## SYNTAX
 
@@ -25,7 +34,16 @@ Add-MgAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity> [-
 ```
 
 ## DESCRIPTION
-Invoke action applyDecisions
+In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
+The target object can be either a one-time access review, or an instance of a recurring access review.
+ After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
+Until apply occurs, the decisions to remove access rights do not appear on the source resource, the users for instance retain their group memberships.
+By calling apply, the outcome of the review is implemented by updating the group or application.
+If a user's access was denied in the review, when an administrator calls this API, Azure AD removes their membership or application assignment.
+After an access review is finished, and auto-apply was configured, then the status of the review will change from Completed through intermediate states and finally will change to state Applied.
+You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
+A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
+If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
 
 ## EXAMPLES
 
@@ -182,7 +200,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -203,8 +223,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 ## RELATED LINKS
 

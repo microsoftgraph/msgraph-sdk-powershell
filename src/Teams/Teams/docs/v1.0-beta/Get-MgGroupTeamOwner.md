@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgGroupTeamOwner
 
 ## SYNOPSIS
-Get owners from groups
+The list of this team's owners.
+Currently, when creating a team using application permissions, exactly one owner must be specified.
+When using user delegated permissions, no owner can be specified (the current user is the owner).
+Owner must be specified as an object ID (GUID), not a UPN.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgGroupTeamOwner -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get owners from groups
+The list of this team's owners.
+Currently, when creating a team using application permissions, exactly one owner must be specified.
+When using user delegated permissions, no owner can be specified (the current user is the owner).
+Owner must be specified as an object ID (GUID), not a UPN.
 
 ## EXAMPLES
 

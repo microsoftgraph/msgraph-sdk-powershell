@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupDriveItem
 
 ## SYNOPSIS
-Get items from groups
+All items contained in the drive.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgGroupDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get items from groups
+All items contained in the drive.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

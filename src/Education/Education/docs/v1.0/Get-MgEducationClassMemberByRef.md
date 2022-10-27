@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassMemberByRef
 
 ## SYNOPSIS
-Get ref of members from education
+Retrieves the educationUser members of an educationClass.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgEducationClassMemberByRef -EducationClassId <String> [-Filter <String>] [-
 ```
 
 ## DESCRIPTION
-Get ref of members from education
+Retrieves the educationUser members of an educationClass.
 
 ## EXAMPLES
 

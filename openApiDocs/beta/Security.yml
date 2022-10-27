@@ -511,6 +511,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.alert'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1023,7 +1026,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get simulationAutomations from security
-      description: Represents simulation automations created to run on a tenant.
+      description: Represents simulation automation created to run on a tenant.
       operationId: security.attackSimulation_GetSimulationAutomations
       parameters:
         - name: simulationAutomation-id
@@ -7895,6 +7898,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.ediscoveryFile'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9826,6 +9832,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11397,8 +11406,11 @@ paths:
     get:
       tags:
         - security.informationProtection
-      summary: Get labelPolicySettings from security
-      description: Read the Microsoft Purview Information Protection policy settings for the user or organization.
+      summary: Get informationProtectionPolicySetting
+      description: 'Read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-informationprotectionpolicysetting-get?view=graph-rest-1.0
       operationId: security.informationProtection_GetLabelPolicySettings
       parameters:
         - name: $select
@@ -11479,8 +11491,11 @@ paths:
     get:
       tags:
         - security.informationProtection
-      summary: Get sensitivityLabels from security
-      description: Read the Microsoft Purview Information Protection labels for the user or organization.
+      summary: List sensitivityLabels
+      description: Get a list of sensitivityLabel objects associated with a user or organization.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-informationprotection-list-sensitivitylabels?view=graph-rest-1.0
       operationId: security.informationProtection_ListSensitivityLabels
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11855,6 +11870,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11897,6 +11915,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11937,6 +11958,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.security.informationProtectionAction'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16125,6 +16149,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.resultInfo'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16170,6 +16197,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.resultInfo'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16215,6 +16245,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -16260,6 +16293,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -17597,7 +17633,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
-              description: Represents simulation automations created to run on a tenant.
+              description: Represents simulation automation created to run on a tenant.
               x-ms-navigationProperty: true
             simulations:
               type: array
@@ -17723,7 +17759,7 @@ components:
               nullable: true
             isAutomated:
               type: boolean
-              description: Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+              description: Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
@@ -18041,7 +18077,7 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -19360,10 +19396,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.huntingRowResult'
+          description: The results of the hunting query.
         schema:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.singlePropertySchema'
+          description: The schema for the response.
       additionalProperties:
         type: object
     microsoft.graph.providerTenantSetting:
@@ -20378,6 +20416,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.securityProviderStatus:
@@ -21173,7 +21212,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userSimulationDetails'
-          description: Represents users of a tenant and their online actions in an attack simulation and training campaign.
+          description: The tenant users and their online actions in an attack simulation and training campaign.
       additionalProperties:
         type: object
     microsoft.graph.simulationStatus:
@@ -23025,9 +23064,11 @@ components:
       properties:
         name:
           type: string
+          description: The name of the property.
           nullable: true
         type:
           type: string
+          description: The type of the property.
           nullable: true
       additionalProperties:
         type: object
@@ -23153,11 +23194,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -24480,24 +24521,24 @@ components:
         attackSimDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Specifies the date time of the attack simulation.
+          description: The date and time of the attack simulation.
           format: date-time
           nullable: true
         attackSimDurationTime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: Specifies the duration (in time) for the attack simulation
+          description: The duration (in time) for the attack simulation.
           format: duration
           nullable: true
         attackSimId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: Specifies the activity id for the attack simulation.
+          description: The activity ID for the attack simulation.
           format: uuid
           nullable: true
         attackSimUserId:
           type: string
-          description: Specifies the user id of the user who got the attack simulation email
+          description: The unique identifier for the user who got the attack simulation email.
           nullable: true
       additionalProperties:
         type: object
@@ -24651,631 +24692,547 @@ components:
     microsoft.graph.alertCollectionResponse:
       title: Collection of alert
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.alert'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.alert'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.alertCollectionResponse:
       title: Collection of alert
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.alert'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.alert'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.simulationAutomationCollectionResponse:
       title: Collection of simulationAutomation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.simulationAutomationRunCollectionResponse:
       title: Collection of simulationAutomationRun
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.simulationCollectionResponse:
       title: Collection of simulation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.simulation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.simulation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.ediscoveryCaseCollectionResponse:
       title: Collection of ediscoveryCase
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.ediscoveryCustodianCollectionResponse:
       title: Collection of ediscoveryCustodian
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.siteSourceCollectionResponse:
       title: Collection of siteSource
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.siteSource'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.siteSource'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.unifiedGroupSourceCollectionResponse:
       title: Collection of unifiedGroupSource
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.userSourceCollectionResponse:
       title: Collection of userSource
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.userSource'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.userSource'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.ediscoveryHoldPolicyCollectionResponse:
       title: Collection of ediscoveryHoldPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryHoldPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryHoldPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.ediscoveryNoncustodialDataSourceCollectionResponse:
       title: Collection of ediscoveryNoncustodialDataSource
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.caseOperationCollectionResponse:
       title: Collection of caseOperation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.ediscoveryReviewSetCollectionResponse:
       title: Collection of ediscoveryReviewSet
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.ediscoveryFileCollectionResponse:
       title: Collection of ediscoveryFile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryFile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryFile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.ediscoveryReviewTagCollectionResponse:
       title: Collection of ediscoveryReviewTag
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.ediscoveryReviewSetQueryCollectionResponse:
       title: Collection of ediscoveryReviewSetQuery
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.ediscoverySearchCollectionResponse:
       title: Collection of ediscoverySearch
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.dataSourceCollectionResponse:
       title: Collection of dataSource
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.dataSource'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudAppSecurityProfileCollectionResponse:
       title: Collection of cloudAppSecurityProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.domainSecurityProfileCollectionResponse:
       title: Collection of domainSecurityProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.domainSecurityProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.domainSecurityProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.fileSecurityProfileCollectionResponse:
       title: Collection of fileSecurityProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.fileSecurityProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.fileSecurityProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.hostSecurityProfileCollectionResponse:
       title: Collection of hostSecurityProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.hostSecurityProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.hostSecurityProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.incidentCollectionResponse:
       title: Collection of incident
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.incident'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.incident'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.sensitivityLabelCollectionResponse:
       title: Collection of sensitivityLabel
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ipSecurityProfileCollectionResponse:
       title: Collection of ipSecurityProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.ipSecurityProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.ipSecurityProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.retentionLabelCollectionResponse:
       title: Collection of retentionLabel
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.retentionLabel'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.retentionLabel'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.dispositionReviewStageCollectionResponse:
       title: Collection of dispositionReviewStage
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.dispositionReviewStage'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.dispositionReviewStage'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.providerTenantSettingCollectionResponse:
       title: Collection of providerTenantSetting
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.secureScoreControlProfileCollectionResponse:
       title: Collection of secureScoreControlProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.secureScoreCollectionResponse:
       title: Collection of secureScore
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.secureScore'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.secureScore'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.securityActionCollectionResponse:
       title: Collection of securityAction
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.securityAction'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.securityAction'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.subjectRightsRequestCollectionResponse:
       title: Collection of subjectRightsRequest
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.subjectRightsRequest'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.subjectRightsRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.authoredNoteCollectionResponse:
       title: Collection of authoredNote
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.authoredNote'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authoredNote'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.emailThreatSubmissionCollectionResponse:
       title: Collection of emailThreatSubmission
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.emailThreatSubmission'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.emailThreatSubmission'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.emailThreatSubmissionPolicyCollectionResponse:
       title: Collection of emailThreatSubmissionPolicy
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.emailThreatSubmissionPolicy'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.emailThreatSubmissionPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.fileThreatSubmissionCollectionResponse:
       title: Collection of fileThreatSubmission
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.fileThreatSubmission'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.fileThreatSubmission'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.urlThreatSubmissionCollectionResponse:
       title: Collection of urlThreatSubmission
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.urlThreatSubmission'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.urlThreatSubmission'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.tiIndicatorCollectionResponse:
       title: Collection of tiIndicator
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tiIndicator'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.retentionEventCollectionResponse:
       title: Collection of retentionEvent
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.retentionEventTypeCollectionResponse:
       title: Collection of retentionEventType
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userSecurityProfileCollectionResponse:
       title: Collection of userSecurityProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.connectionDirection:
@@ -25509,12 +25466,12 @@ components:
           nullable: true
         isCompromised:
           type: boolean
-          description: Flag representing if user was compromised in an attack simulation and training campaign.
+          description: Indicates whether a user was compromised in an attack simulation and training campaign.
           nullable: true
         reportedPhishDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+          description: Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
           format: date-time
           nullable: true
         simulationEvents:
@@ -28071,6 +28028,7 @@ components:
               description: 'The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
             publisherName:
               type: string
+              description: The name of the Azure AD tenant that published the application.
               nullable: true
             replyUrls:
               type: array
@@ -28263,7 +28221,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -30553,6 +30511,7 @@ components:
       title: teamworkTagType
       enum:
         - standard
+        - unknownFutureValue
       type: string
     microsoft.graph.teamworkTagMember:
       allOf:
@@ -30566,9 +30525,11 @@ components:
               nullable: true
             tenantId:
               type: string
+              description: The ID of the tenant that the tag member is a part of.
               nullable: true
             userId:
               type: string
+              description: The user ID of the member.
               nullable: true
           additionalProperties:
             type: object
@@ -30967,15 +30928,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.recommendedAction:
       title: recommendedAction
       type: object
@@ -30986,7 +30938,7 @@ components:
           nullable: true
         potentialScoreImpact:
           type: number
-          description: Potential improvement in security score of the tenant from the recommended action.
+          description: Potential improvement in the tenant security score from the recommended action.
           format: double
           nullable: true
         title:
@@ -31071,7 +31023,7 @@ components:
           nullable: true
         userId:
           type: string
-          description: This is the id property value of the user resource that represents the user in the Azure AD tenant.
+          description: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
           nullable: true
       additionalProperties:
         type: object
@@ -31954,11 +31906,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -36129,6 +36081,7 @@ components:
             ageGroup:
               type: string
               description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and cannot be changed.'
+              nullable: true
             countryCode:
               type: string
               description: Contains the two-character country code associated with the users account.
@@ -37895,7 +37848,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Count of occurence of the simulation event in an attack simulation and training campaign.
+          description: Count of the simulation event occurrence in an attack simulation and training campaign.
           format: int32
           nullable: true
         eventName:
@@ -37962,7 +37915,7 @@ components:
           nullable: true
         potentialScoreImpact:
           type: number
-          description: Potential improvement in security posture of the tenant after completion of the training by the user.
+          description: Potential improvement in the tenant security posture after completion of the training by the user.
           format: double
           nullable: true
       additionalProperties:
@@ -38537,6 +38490,7 @@ components:
         - group
         - unknownFutureValue
         - roster
+        - project
       type: string
     microsoft.graph.plannerCategoryDescriptions:
       title: plannerCategoryDescriptions
@@ -38719,6 +38673,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
             references:
@@ -38883,6 +38839,7 @@ components:
         lastUsedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when the printer was last used by the signed-in user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -42240,6 +42197,9 @@ components:
               type: string
               description: The DateTimeOffset when the job was created. Read-only.
               format: date-time
+            displayName:
+              type: string
+              nullable: true
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'
@@ -43312,6 +43272,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.attachmentBase:
       allOf:

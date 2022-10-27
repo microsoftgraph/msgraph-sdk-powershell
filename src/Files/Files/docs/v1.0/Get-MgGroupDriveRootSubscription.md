@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupDriveRootSubscription
 
 ## SYNOPSIS
-Get subscriptions from groups
+The set of subscriptions on the item.
+Only supported on the root of a drive.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgGroupDriveRootSubscription -InputObject <IFilesIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get subscriptions from groups
+The set of subscriptions on the item.
+Only supported on the root of a drive.
 
 ## EXAMPLES
 

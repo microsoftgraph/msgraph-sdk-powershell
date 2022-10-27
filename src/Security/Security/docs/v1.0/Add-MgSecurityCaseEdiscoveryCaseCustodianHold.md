@@ -8,7 +8,9 @@ schema: 2.0.0
 # Add-MgSecurityCaseEdiscoveryCaseCustodianHold
 
 ## SYNOPSIS
-Invoke action applyHold
+Start the process of applying hold on eDiscovery custodians.
+After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ## SYNTAX
 
@@ -51,9 +53,29 @@ Add-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action applyHold
+Start the process of applying hold on eDiscovery custodians.
+After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ## EXAMPLES
+
+### Example 1: Using the Add-MgSecurityCaseEdiscoveryCaseCustodianHold Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Add-MgSecurityCaseEdiscoveryCaseCustodianHold -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+```
+
+This example shows how to use the Add-MgSecurityCaseEdiscoveryCaseCustodianHold Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Add-MgSecurityCaseEdiscoveryCaseCustodianHold Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Add-MgSecurityCaseEdiscoveryCaseCustodianHold -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+```
+
+This example shows how to use the Add-MgSecurityCaseEdiscoveryCaseCustodianHold Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

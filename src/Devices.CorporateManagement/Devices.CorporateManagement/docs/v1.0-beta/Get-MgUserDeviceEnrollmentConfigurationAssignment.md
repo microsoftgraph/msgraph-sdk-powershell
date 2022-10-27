@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDeviceEnrollmentConfigurationAssignment
 
 ## SYNOPSIS
-Get assignments from users
+The list of group assignments for the device configuration profile
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgUserDeviceEnrollmentConfigurationAssignment -InputObject <IDevicesCorporat
 ```
 
 ## DESCRIPTION
-Get assignments from users
+The list of group assignments for the device configuration profile
 
 ## EXAMPLES
 

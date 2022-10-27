@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingTranscriptContent
 
 ## SYNOPSIS
-Get content for the navigation property transcripts from communications
+A field representing the content of the transcript.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgCommunicationOnlineMeetingTranscriptContent -InputObject <ICloudCommunicat
 ```
 
 ## DESCRIPTION
-Get content for the navigation property transcripts from communications
+A field representing the content of the transcript.
+Read-only.
 
 ## EXAMPLES
 

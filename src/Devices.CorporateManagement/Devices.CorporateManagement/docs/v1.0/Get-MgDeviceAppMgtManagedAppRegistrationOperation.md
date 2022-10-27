@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtManagedAppRegistrationOperation
 
 ## SYNOPSIS
-Get operations from deviceAppManagement
+Zero or more long running operations triggered on the app registration.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtManagedAppRegistrationOperation -InputObject <IDevicesCorporat
 ```
 
 ## DESCRIPTION
-Get operations from deviceAppManagement
+Zero or more long running operations triggered on the app registration.
 
 ## EXAMPLES
 

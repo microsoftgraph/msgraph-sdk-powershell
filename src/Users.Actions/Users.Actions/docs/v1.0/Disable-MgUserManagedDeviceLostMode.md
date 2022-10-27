@@ -8,7 +8,7 @@ schema: 2.0.0
 # Disable-MgUserManagedDeviceLostMode
 
 ## SYNOPSIS
-Invoke action disableLostMode
+Disable lost mode
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Disable-MgUserManagedDeviceLostMode -InputObject <IUsersActionsIdentity> [-PassT
 ```
 
 ## DESCRIPTION
-Invoke action disableLostMode
+Disable lost mode
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource
 
 ## SYNOPSIS
-Get siteSources from security
+Data sources that represent SharePoint sites.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgSecurityCaseEdiscoveryCaseLegalHoldSiteSource -InputObject <ISecurityIdent
 ```
 
 ## DESCRIPTION
-Get siteSources from security
+Data sources that represent SharePoint sites.
 
 ## EXAMPLES
 

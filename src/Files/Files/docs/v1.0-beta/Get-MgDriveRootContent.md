@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveRootContent
 
 ## SYNOPSIS
-Get content for the navigation property root from drives
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Get-MgDriveRootContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThr
 ```
 
 ## DESCRIPTION
-Get content for the navigation property root from drives
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

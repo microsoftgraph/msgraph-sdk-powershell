@@ -1337,7 +1337,7 @@ paths:
       tags:
         - chats.chat
       summary: List chats
-      description: Retrieve the list of chats that the user is part of.
+      description: 'Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0
@@ -1465,7 +1465,7 @@ paths:
       tags:
         - chats.chat
       summary: Get chat
-      description: Retrieve a single chat (without its messages).
+      description: 'Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
@@ -2196,7 +2196,7 @@ paths:
       tags:
         - chats.conversationMember
       summary: List members of a chat
-      description: List all conversation members in a chat.
+      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
@@ -2480,6 +2480,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2493,7 +2496,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: List messages in a chat
-      description: Retrieve the list of messages in a chat.
+      description: 'Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0
@@ -2631,11 +2634,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -2755,10 +2758,14 @@ paths:
               parameters:
                 chat-id: $request.path.chat-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: chats.chat.messages.chatMessage.setReaction
             softDelete:
               operationId: chats.chat.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: chats.chat.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: chats.chat.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3107,6 +3114,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action setReaction
+      operationId: chats.messages_setReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -3167,6 +3216,48 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action unsetReaction
+      operationId: chats.messages_unsetReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -3466,10 +3557,14 @@ paths:
                 chat-id: $request.path.chat-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: chats.chat.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: chats.chat.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: chats.chat.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: chats.chat.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3874,6 +3969,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action setReaction
+      operationId: chats.messages.replies_setReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -3950,6 +4095,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action unsetReaction
+      operationId: chats.messages.replies_unsetReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -4090,6 +4285,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4224,6 +4425,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5025,6 +5232,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5082,6 +5292,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5143,6 +5356,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5200,6 +5416,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5296,6 +5515,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5398,7 +5620,7 @@ paths:
     get:
       tags:
         - chats.pinnedChatMessageInfo
-      summary: List pinned messages in a chat
+      summary: List pinnedChatMessages in a chat
       description: Get a list of pinnedChatMessages in a chat.
       externalDocs:
         description: Find more info here
@@ -6184,6 +6406,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6310,6 +6535,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6758,7 +6986,7 @@ paths:
       tags:
         - groups.team
       summary: List channels
-      description: Retrieve the list of channels in this team.
+      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -7329,7 +7557,7 @@ paths:
       tags:
         - groups.team
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -7613,7 +7841,7 @@ paths:
       tags:
         - groups.team
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -7759,11 +7987,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: groups.team.channels_CreateMessages
       parameters:
         - name: group-id
@@ -7901,10 +8129,14 @@ paths:
                 group-id: $request.path.group-id
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: groups.group.team.channels.channel.messages.chatMessage.setReaction
             softDelete:
               operationId: groups.group.team.channels.channel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: groups.group.team.channels.channel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: groups.group.team.channels.channel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8628,10 +8860,14 @@ paths:
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: groups.group.team.channels.channel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: groups.group.team.channels.channel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: groups.group.team.channels.channel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: groups.group.team.channels.channel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13168,7 +13404,7 @@ paths:
       tags:
         - groups.team
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -13412,7 +13648,7 @@ paths:
       tags:
         - groups.team
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -13550,11 +13786,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: groups.team.primaryChannel_CreateMessages
       parameters:
         - name: group-id
@@ -13674,10 +13910,14 @@ paths:
               parameters:
                 group-id: $request.path.group-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: groups.group.team.primaryChannel.messages.chatMessage.setReaction
             softDelete:
               operationId: groups.group.team.primaryChannel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: groups.group.team.primaryChannel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: groups.group.team.primaryChannel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14319,10 +14559,14 @@ paths:
                 group-id: $request.path.group-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: groups.group.team.primaryChannel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: groups.group.team.primaryChannel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: groups.group.team.primaryChannel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: groups.group.team.primaryChannel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15600,15 +15844,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - groups.team
-      summary: Create or replace schedule
-      description: "Create or replace a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation replaces the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
-      operationId: groups.team_UpdateSchedule
+      summary: Update the navigation property schedule in groups
+      operationId: groups.team_SetSchedule
       parameters:
         - name: group-id
           in: path
@@ -18297,7 +18537,7 @@ paths:
       tags:
         - groups.team
       summary: List teamworkTags
-      description: Get a list of the tags objects and their properties.
+      description: Get a list of the tag objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
@@ -19567,7 +19807,7 @@ paths:
       tags:
         - teams.channel
       summary: List channels
-      description: Retrieve the list of channels in this team.
+      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -20138,7 +20378,7 @@ paths:
       tags:
         - teams.channel
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -20470,6 +20710,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -20483,7 +20726,7 @@ paths:
       tags:
         - teams.channel
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -20629,11 +20872,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teams.channels_CreateMessages
       parameters:
         - name: team-id
@@ -20771,10 +21014,14 @@ paths:
                 team-id: $request.path.team-id
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teams.team.channels.channel.messages.chatMessage.setReaction
             softDelete:
               operationId: teams.team.channels.channel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teams.team.channels.channel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teams.team.channels.channel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21179,6 +21426,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action setReaction
+      operationId: teams.channels.messages_setReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -21255,6 +21552,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unsetReaction
+      operationId: teams.channels.messages_unsetReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -21580,10 +21927,14 @@ paths:
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teams.team.channels.channel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teams.team.channels.channel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teams.team.channels.channel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teams.team.channels.channel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22044,6 +22395,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action setReaction
+      operationId: teams.channels.messages.replies_setReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -22136,6 +22545,64 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unsetReaction
+      operationId: teams.channels.messages.replies_unsetReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -22284,6 +22751,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -22426,6 +22899,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -23580,6 +24059,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -23714,6 +24196,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -24935,6 +25420,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -26743,6 +27231,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -26800,6 +27291,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -26861,6 +27355,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -26918,6 +27415,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -27014,6 +27514,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -27644,7 +28147,7 @@ paths:
       tags:
         - teams.channel
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -27928,6 +28431,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -27941,7 +28447,7 @@ paths:
       tags:
         - teams.channel
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -28079,11 +28585,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teams.primaryChannel_CreateMessages
       parameters:
         - name: team-id
@@ -28203,10 +28709,14 @@ paths:
               parameters:
                 team-id: $request.path.team-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teams.team.primaryChannel.messages.chatMessage.setReaction
             softDelete:
               operationId: teams.team.primaryChannel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teams.team.primaryChannel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teams.team.primaryChannel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28555,6 +29065,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action setReaction
+      operationId: teams.primaryChannel.messages_setReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -28615,6 +29167,48 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unsetReaction
+      operationId: teams.primaryChannel.messages_unsetReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -28914,10 +29508,14 @@ paths:
                 team-id: $request.path.team-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teams.team.primaryChannel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teams.team.primaryChannel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teams.team.primaryChannel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teams.team.primaryChannel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29322,6 +29920,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action setReaction
+      operationId: teams.primaryChannel.messages.replies_setReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -29398,6 +30046,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unsetReaction
+      operationId: teams.primaryChannel.messages.replies_unsetReaction
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -29538,6 +30236,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -29672,6 +30376,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -30687,15 +31397,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - teams.schedule
-      summary: Create or replace schedule
-      description: "Create or replace a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation replaces the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
-      operationId: teams_UpdateSchedule
+      summary: Update the navigation property schedule in teams
+      operationId: teams_SetSchedule
       parameters:
         - name: team-id
           in: path
@@ -33677,7 +34383,7 @@ paths:
       tags:
         - teams.teamworkTag
       summary: List teamworkTags
-      description: Get a list of the tags objects and their properties.
+      description: Get a list of the tag objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
@@ -34453,6 +35159,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -34579,6 +35288,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -35434,7 +36146,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -35766,6 +36478,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -35779,7 +36494,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -35925,11 +36640,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teamwork.deletedTeams.channels_CreateMessages
       parameters:
         - name: deletedTeam-id
@@ -36067,10 +36782,14 @@ paths:
                 deletedTeam-id: $request.path.deletedTeam-id
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.setReaction
             softDelete:
               operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36475,6 +37194,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.deletedTeams.channels.messages_setReaction
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -36551,6 +37320,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.deletedTeams.channels.messages_unsetReaction
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -36876,10 +37695,14 @@ paths:
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.deletedTeams.deletedTeam.channels.channel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37340,6 +38163,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.deletedTeams.channels.messages.replies_setReaction
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -37432,6 +38313,64 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.deletedTeams.channels.messages.replies_unsetReaction
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: 'key: id of deletedTeam'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -37580,6 +38519,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -37722,6 +38667,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -38876,6 +39827,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -39010,6 +39964,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -39136,6 +40093,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -40250,11 +41210,11 @@ paths:
     get:
       tags:
         - teamwork.teamTemplate
-      summary: List definitions
-      description: 'List the teamTemplateDefinition objects associated with a teamTemplate. '
+      summary: List teamTemplates
+      description: 'Get the list of teamTemplate objects that are available for a tenant. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0
       operationId: teamwork_ListTeamTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -41218,7 +42178,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List channels
-      description: Retrieve the list of channels in this team.
+      description: Retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -41869,7 +42829,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -42249,6 +43209,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -42262,7 +43225,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -42416,11 +43379,11 @@ paths:
     post:
       tags:
         - teamwork.teamTemplate
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teamwork.teamTemplates.definitions.teamDefinition.channels_CreateMessages
       parameters:
         - name: teamTemplate-id
@@ -42576,10 +43539,14 @@ paths:
                 teamTemplateDefinition-id: $request.path.teamTemplateDefinition-id
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.setReaction
             softDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43040,6 +44007,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.channels.messages_setReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -43132,6 +44157,64 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.channels.messages_unsetReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -43483,10 +44566,14 @@ paths:
                 channel-id: $request.path.channel-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.channels.channel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44003,6 +45090,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.channels.messages.replies_setReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -44111,6 +45264,72 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.channels.messages.replies_unsetReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -44267,6 +45486,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -44417,6 +45642,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -45719,6 +46950,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -45861,6 +47095,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -47257,6 +48494,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -49274,6 +50514,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -49339,6 +50582,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -49408,6 +50654,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -49473,6 +50722,9 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -49585,6 +50837,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -50335,7 +51590,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List members of channel
-      description: Retrieve a list of conversationMembers from a channel.
+      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -50667,6 +51922,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.actionResultPart'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -50680,7 +51938,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API.'
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -50826,11 +52084,11 @@ paths:
     post:
       tags:
         - teamwork.teamTemplate
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel_CreateMessages
       parameters:
         - name: teamTemplate-id
@@ -50968,10 +52226,14 @@ paths:
                 teamTemplate-id: $request.path.teamTemplate-id
                 teamTemplateDefinition-id: $request.path.teamTemplateDefinition-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.setReaction
             softDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -51376,6 +52638,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel.messages_setReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/microsoft.graph.softDelete':
     post:
       tags:
@@ -51452,6 +52764,56 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel.messages_unsetReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -51777,10 +53139,14 @@ paths:
                 teamTemplateDefinition-id: $request.path.teamTemplateDefinition-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: teamwork.teamTemplates.teamTemplate.definitions.teamTemplateDefinition.teamDefinition.primaryChannel.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -52241,6 +53607,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action setReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel.messages.replies_setReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.softDelete':
     post:
       tags:
@@ -52333,6 +53757,64 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unsetReaction
+      operationId: teamwork.teamTemplates.definitions.teamDefinition.primaryChannel.messages.replies_unsetReaction
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: 'key: id of teamTemplate'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: 'key: id of teamTemplateDefinition'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -52481,6 +53963,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -52623,6 +54111,12 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -53796,15 +55290,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - teamwork.teamTemplate
-      summary: Create or replace schedule
-      description: "Create or replace a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation replaces the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
-      operationId: teamwork.teamTemplates.definitions.teamDefinition_UpdateSchedule
+      summary: Update the navigation property schedule in teamwork
+      operationId: teamwork.teamTemplates.definitions.teamDefinition_SetSchedule
       parameters:
         - name: teamTemplate-id
           in: path
@@ -57250,7 +58740,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List teamworkTags
-      description: Get a list of the tags objects and their properties.
+      description: Get a list of the tag objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
@@ -58250,7 +59740,7 @@ paths:
       tags:
         - users.chat
       summary: List chats
-      description: Retrieve the list of chats that the user is part of.
+      description: 'Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0
@@ -59199,7 +60689,7 @@ paths:
       tags:
         - users.chat
       summary: List members of a chat
-      description: List all conversation members in a chat.
+      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
@@ -59483,7 +60973,7 @@ paths:
       tags:
         - users.chat
       summary: List messages in a chat
-      description: Retrieve the list of messages in a chat.
+      description: 'Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0
@@ -59629,11 +61119,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: users.chats_CreateMessages
       parameters:
         - name: user-id
@@ -59771,10 +61261,14 @@ paths:
                 user-id: $request.path.user-id
                 chat-id: $request.path.chat-id
                 chatMessage-id: $request.path.chatMessage-id
+            setReaction:
+              operationId: users.user.chats.chat.messages.chatMessage.setReaction
             softDelete:
               operationId: users.user.chats.chat.messages.chatMessage.softDelete
             undoSoftDelete:
               operationId: users.user.chats.chat.messages.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: users.user.chats.chat.messages.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -60498,10 +61992,14 @@ paths:
                 chat-id: $request.path.chat-id
                 chatMessage-id: $request.path.chatMessage-id
                 chatMessage-id1: $request.path.chatMessage-id1
+            setReaction:
+              operationId: users.user.chats.chat.messages.chatMessage.replies.chatMessage.setReaction
             softDelete:
               operationId: users.user.chats.chat.messages.chatMessage.replies.chatMessage.softDelete
             undoSoftDelete:
               operationId: users.user.chats.chat.messages.chatMessage.replies.chatMessage.undoSoftDelete
+            unsetReaction:
+              operationId: users.user.chats.chat.messages.chatMessage.replies.chatMessage.unsetReaction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -61569,7 +63067,7 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List pinned messages in a chat
+      summary: List pinnedChatMessages in a chat
       description: Get a list of pinnedChatMessages in a chat.
       externalDocs:
         description: Find more info here
@@ -64352,7 +65850,7 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -65684,9 +67182,11 @@ components:
               nullable: true
             tenantId:
               type: string
+              description: The ID of the tenant that the tag member is a part of.
               nullable: true
             userId:
               type: string
+              description: The user ID of the member.
               nullable: true
           additionalProperties:
             type: object
@@ -66128,6 +67628,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.teamsAppDistributionMethod:
@@ -66366,11 +67867,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -66386,6 +67887,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.teamworkActivityTopicSource:
       title: teamworkActivityTopicSource
@@ -68809,6 +70311,7 @@ components:
               description: 'The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
             publisherName:
               type: string
+              description: The name of the Azure AD tenant that published the application.
               nullable: true
             replyUrls:
               type: array
@@ -69001,7 +70504,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -71406,6 +72909,7 @@ components:
       title: teamworkTagType
       enum:
         - standard
+        - unknownFutureValue
       type: string
     microsoft.graph.teamTemplateAudience:
       title: teamTemplateAudience
@@ -71804,16 +73308,14 @@ components:
     microsoft.graph.teamsAppCollectionResponse:
       title: Collection of teamsApp
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsApp'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsApp'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -71828,511 +73330,443 @@ components:
     microsoft.graph.teamsAppDefinitionCollectionResponse:
       title: Collection of teamsAppDefinition
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.chatCollectionResponse:
       title: Collection of chat
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chat'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.chat'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamsAppInstallationCollectionResponse:
       title: Collection of teamsAppInstallation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.conversationMemberCollectionResponse:
       title: Collection of conversationMember
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conversationMember'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.chatMessageCollectionResponse:
       title: Collection of chatMessage
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessage'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.chatMessageHostedContentCollectionResponse:
       title: Collection of chatMessageHostedContent
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamsAsyncOperationCollectionResponse:
       title: Collection of teamsAsyncOperation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.resourceSpecificPermissionGrantCollectionResponse:
       title: Collection of resourceSpecificPermissionGrant
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.pinnedChatMessageInfoCollectionResponse:
       title: Collection of pinnedChatMessageInfo
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamsTabCollectionResponse:
       title: Collection of teamsTab
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsTab'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.channelCollectionResponse:
       title: Collection of channel
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.channel'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.channel'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.sharedWithChannelTeamInfoCollectionResponse:
       title: Collection of sharedWithChannelTeamInfo
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userCollectionResponse:
       title: Collection of user
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.user'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.user'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.offerShiftRequestCollectionResponse:
       title: Collection of offerShiftRequest
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.openShiftChangeRequestCollectionResponse:
       title: Collection of openShiftChangeRequest
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.openShiftCollectionResponse:
       title: Collection of openShift
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.openShift'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.openShift'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.schedulingGroupCollectionResponse:
       title: Collection of schedulingGroup
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.shiftCollectionResponse:
       title: Collection of shift
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.shift'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.shift'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.swapShiftsChangeRequestCollectionResponse:
       title: Collection of swapShiftsChangeRequest
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.timeCardCollectionResponse:
       title: Collection of timeCard
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeCard'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeCard'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.timeOffReasonCollectionResponse:
       title: Collection of timeOffReason
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.timeOffRequestCollectionResponse:
       title: Collection of timeOffRequest
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.timeOffCollectionResponse:
       title: Collection of timeOff
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOff'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeOff'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamworkTagCollectionResponse:
       title: Collection of teamworkTag
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamworkTag'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamworkTagMemberCollectionResponse:
       title: Collection of teamworkTagMember
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamCollectionResponse:
       title: Collection of team
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.team'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.team'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deletedTeamCollectionResponse:
       title: Collection of deletedTeam
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deletedTeam'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deletedTeam'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamworkDeviceCollectionResponse:
       title: Collection of teamworkDevice
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamworkDevice'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamworkDevice'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamworkDeviceOperationCollectionResponse:
       title: Collection of teamworkDeviceOperation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamworkDeviceOperation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamworkDeviceOperation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamTemplateCollectionResponse:
       title: Collection of teamTemplate
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamTemplate'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamTemplate'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.teamTemplateDefinitionCollectionResponse:
       title: Collection of teamTemplateDefinition
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamTemplateDefinition'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamTemplateDefinition'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.workforceIntegrationCollectionResponse:
       title: Collection of workforceIntegration
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.associatedTeamInfoCollectionResponse:
       title: Collection of associatedTeamInfo
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userScopeTeamsAppInstallationCollectionResponse:
       title: Collection of userScopeTeamsAppInstallation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.publicErrorDetail:
@@ -77643,6 +79077,7 @@ components:
             ageGroup:
               type: string
               description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and cannot be changed.'
+              nullable: true
             countryCode:
               type: string
               description: Contains the two-character country code associated with the users account.
@@ -79297,15 +80732,6 @@ components:
         - sharedSecret
         - unknownFutureValue
       type: string
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -80598,6 +82024,7 @@ components:
         lastUsedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when the printer was last used by the signed-in user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -80890,11 +82317,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -82606,6 +84033,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
             references:
@@ -83840,6 +85269,7 @@ components:
         - group
         - unknownFutureValue
         - roster
+        - project
       type: string
     microsoft.graph.plannerCategoryDescriptions:
       title: plannerCategoryDescriptions
@@ -84400,6 +85830,9 @@ components:
               type: string
               description: The DateTimeOffset when the job was created. Read-only.
               format: date-time
+            displayName:
+              type: string
+              nullable: true
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'

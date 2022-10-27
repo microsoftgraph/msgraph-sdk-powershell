@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyCategoryDefinitionFile
 
 ## SYNOPSIS
-Get definitionFile from deviceManagement
+The id of the definition file the category came from
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementGroupPolicyCategoryDefinitionFile -InputObject <IDeviceMan
 ```
 
 ## DESCRIPTION
-Get definitionFile from deviceManagement
+The id of the definition file the category came from
 
 ## EXAMPLES
 
@@ -117,6 +117,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowFeatureUpdateProfile
 
 ## SYNOPSIS
-Get windowsFeatureUpdateProfiles from deviceManagement
+A collection of windows feature update profiles
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementWindowFeatureUpdateProfile -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-Get windowsFeatureUpdateProfiles from deviceManagement
+A collection of windows feature update profiles
 
 ## EXAMPLES
 

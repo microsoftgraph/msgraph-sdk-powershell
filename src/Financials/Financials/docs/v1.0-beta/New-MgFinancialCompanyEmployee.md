@@ -191,6 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -465,7 +466,7 @@ ADDRESS <IMicrosoftGraphPostalAddressType>: postalAddressType
 
 BODYPARAMETER <IMicrosoftGraphEmployee>: employee
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: 
@@ -486,7 +487,7 @@ BODYPARAMETER <IMicrosoftGraphEmployee>: employee
   - `[PersonalEmail <String>]`: 
   - `[PhoneNumber <String>]`: 
   - `[Picture <IMicrosoftGraphPicture[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Content <Byte[]>]`: 
     - `[ContentType <String>]`: 
     - `[Height <Int32?>]`: 
@@ -535,7 +536,7 @@ INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
   - `[VendorId <String>]`: key: id of vendor
 
 PICTURE <IMicrosoftGraphPicture[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Content <Byte[]>]`: 
   - `[ContentType <String>]`: 
   - `[Height <Int32?>]`: 

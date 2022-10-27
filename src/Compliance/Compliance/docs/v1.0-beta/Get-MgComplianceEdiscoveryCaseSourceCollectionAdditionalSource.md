@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource
 
 ## SYNOPSIS
-Get additionalSources from compliance
+Adds an additional source to the sourceCollection.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource -InputObject <ICo
 ```
 
 ## DESCRIPTION
-Get additionalSources from compliance
+Adds an additional source to the sourceCollection.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource -CaseId $caseId -SourceCollectionId $sourceCollectionId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollectionAdditionalSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

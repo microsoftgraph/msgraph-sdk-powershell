@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListSubscription
 
 ## SYNOPSIS
-Get subscriptions from groups
+The set of subscriptions on the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupSiteListSubscription -InputObject <ISitesIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get subscriptions from groups
+The set of subscriptions on the list.
 
 ## EXAMPLES
 

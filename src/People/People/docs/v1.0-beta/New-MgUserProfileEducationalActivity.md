@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileEducationalActivity
 
 ## SYNOPSIS
-Create new navigation property to educationalActivities for users
+Create a new educationalActivity in a user's profile.
 
 ## SYNTAX
 
@@ -47,9 +47,49 @@ New-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Create new navigation property to educationalActivities for users
+Create a new educationalActivity in a user's profile.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserProfileEducationalActivity Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+$params = @{
+	CompletionMonthYear = "Date"
+	EndMonthYear = "Date"
+	Institution = @{
+		Description = $null
+		DisplayName = "Colorado State University"
+		Location = @{
+			Type = "business"
+			PostOfficeBox = $null
+			Street = "12000 E Prospect Rd"
+			City = "Fort Collins"
+			State = "Colorado"
+			CountryOrRegion = "USA"
+			PostalCode = "80525"
+		}
+		WebUrl = "https://www.colostate.edu"
+	}
+	Program = @{
+		Abbreviation = "MBA"
+		Activities = $null
+		Awards = $null
+		Description = "Master of Business Administration with a major in Entreprenuership and Finance."
+		DisplayName = "Master of Business Administration"
+		FieldsOfStudy = $null
+		Grade = "3.9"
+		Notes = $null
+		WebUrl = "https://biz.colostate.edu"
+	}
+	StartMonthYear = "Date"
+}
+# A UPN can also be used as -UserId.
+New-MgUserProfileEducationalActivity -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserProfileEducationalActivity Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -161,7 +201,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -391,8 +432,8 @@ BODYPARAMETER <IMicrosoftGraphEducationalActivity>: educationalActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
@@ -406,7 +447,7 @@ BODYPARAMETER <IMicrosoftGraphEducationalActivity>: educationalActivity
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CompletionMonthYear <DateTime?>]`: The month and year the user graduated or completed the activity.
   - `[EndMonthYear <DateTime?>]`: The month and year the user completed the educational activity referenced.
   - `[Institution <IMicrosoftGraphInstitutionData>]`: institutionData
@@ -440,8 +481,8 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -496,8 +537,8 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

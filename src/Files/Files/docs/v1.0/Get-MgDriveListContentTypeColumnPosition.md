@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveListContentTypeColumnPosition
 
 ## SYNOPSIS
-Get columnPositions from drives
+Column order information in a content type.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDriveListContentTypeColumnPosition -InputObject <IFilesIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get columnPositions from drives
+Column order information in a content type.
 
 ## EXAMPLES
 

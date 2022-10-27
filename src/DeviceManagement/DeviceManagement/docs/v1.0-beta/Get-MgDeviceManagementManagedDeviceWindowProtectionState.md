@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDeviceManagementManagedDeviceWindowProtectionState
 
 ## SYNOPSIS
-Get windowsProtectionState from deviceManagement
+The device protection status.
+This property is read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgDeviceManagementManagedDeviceWindowProtectionState -InputObject <IDeviceMa
 ```
 
 ## DESCRIPTION
-Get windowsProtectionState from deviceManagement
+The device protection status.
+This property is read-only.
 
 ## EXAMPLES
 
@@ -199,6 +201,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

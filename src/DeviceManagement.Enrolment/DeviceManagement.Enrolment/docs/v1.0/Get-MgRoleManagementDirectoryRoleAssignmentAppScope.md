@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryRoleAssignmentAppScope
 
 ## SYNOPSIS
-Get appScope from roleManagement
+Read-only property with details of the app specific scope when the assignment scope is app specific.
+Containment entity.
+Supports $expand.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgRoleManagementDirectoryRoleAssignmentAppScope -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-Get appScope from roleManagement
+Read-only property with details of the app specific scope when the assignment scope is app specific.
+Containment entity.
+Supports $expand.
 
 ## EXAMPLES
 

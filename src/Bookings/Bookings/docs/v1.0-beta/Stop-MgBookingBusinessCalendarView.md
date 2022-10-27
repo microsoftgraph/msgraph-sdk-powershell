@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-MgBookingBusinessCalendarView
 
 ## SYNOPSIS
-Invoke action cancel
+Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Stop-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Invoke action cancel
+Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Sync-MgDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram
 
 ## SYNOPSIS
-Invoke action syncWithAppleDeviceEnrollmentProgram
+Synchronizes between Apple Device Enrollment Program and Intune
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Sync-MgDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram
 ```
 
 ## DESCRIPTION
-Invoke action syncWithAppleDeviceEnrollmentProgram
+Synchronizes between Apple Device Enrollment Program and Intune
 
 ## EXAMPLES
 
@@ -129,6 +129,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

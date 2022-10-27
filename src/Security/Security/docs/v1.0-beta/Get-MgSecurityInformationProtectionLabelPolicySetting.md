@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSecurityInformationProtectionLabelPolicySetting
 
 ## SYNOPSIS
-Get labelPolicySettings from security
+Read the properties and relationships of an informationProtectionPolicySetting object.
+The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
 
 ## SYNTAX
 
@@ -18,7 +19,8 @@ Get-MgSecurityInformationProtectionLabelPolicySetting [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get labelPolicySettings from security
+Read the properties and relationships of an informationProtectionPolicySetting object.
+The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
 
 ## EXAMPLES
 

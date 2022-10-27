@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationClassSchool
 
 ## SYNOPSIS
-Get schools from education
+All schools that this class is associated with.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +33,19 @@ Get-MgEducationClassSchool -InputObject <IEducationIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get schools from education
+All schools that this class is associated with.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEducationClassSchool Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationClassSchool -EducationClassId $educationClassId
+```
+
+This example shows how to use the Get-MgEducationClassSchool Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

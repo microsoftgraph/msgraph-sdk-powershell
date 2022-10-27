@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListContentTypeColumnPosition
 
 ## SYNOPSIS
-Get columnPositions from users
+Column order information in a content type.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDriveListContentTypeColumnPosition -InputObject <IFilesIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get columnPositions from users
+Column order information in a content type.
 
 ## EXAMPLES
 

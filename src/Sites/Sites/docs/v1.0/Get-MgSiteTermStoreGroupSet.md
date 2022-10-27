@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteTermStoreGroupSet
 
 ## SYNOPSIS
-Get sets from sites
+All sets under the group in a term [store].
 
 ## SYNTAX
 
@@ -51,9 +51,18 @@ Get-MgSiteTermStoreGroupSet -GroupId <String> -SiteId <String> -StoreId <String>
 ```
 
 ## DESCRIPTION
-Get sets from sites
+All sets under the group in a term [store].
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSiteTermStoreGroupSet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteTermStoreGroupSet -SiteId $siteId -GroupId $groupId
+```
+
+This example shows how to use the Get-MgSiteTermStoreGroupSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtManagedEBook
 
 ## SYNOPSIS
-Get managedEBooks from deviceAppManagement
+The Managed eBook.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdentity
 ```
 
 ## DESCRIPTION
-Get managedEBooks from deviceAppManagement
+The Managed eBook.
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook
 
 ## NOTES
 

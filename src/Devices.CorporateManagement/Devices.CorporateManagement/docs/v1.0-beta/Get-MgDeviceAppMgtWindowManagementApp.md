@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtWindowManagementApp
 
 ## SYNOPSIS
-Get windowsManagementApp from deviceAppManagement
+Windows management app.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgDeviceAppMgtWindowManagementApp [-ExpandProperty <String[]>] [-Property <S
 ```
 
 ## DESCRIPTION
-Get windowsManagementApp from deviceAppManagement
+Windows management app.
 
 ## EXAMPLES
 

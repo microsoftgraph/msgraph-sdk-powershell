@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgOrganizationBrandingLocalizationFavicon
 
 ## SYNOPSIS
-Get favicon for the navigation property localizations from organization
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgOrganizationBrandingLocalizationFavicon -InputObject <IIdentityDirectoryMa
 ```
 
 ## DESCRIPTION
-Get favicon for the navigation property localizations from organization
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ## EXAMPLES
 

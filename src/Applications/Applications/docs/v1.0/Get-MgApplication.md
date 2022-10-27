@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplication
 
 ## SYNOPSIS
-Get application
+Get the properties and relationships of an application object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgApplication -InputObject <IApplicationsIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get application
+Get the properties and relationships of an application object.
 
 ## EXAMPLES
 

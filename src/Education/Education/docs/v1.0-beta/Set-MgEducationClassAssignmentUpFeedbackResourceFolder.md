@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgEducationClassAssignmentUpFeedbackResourceFolder
 
 ## SYNOPSIS
-Invoke action setUpFeedbackResourcesFolder
+Create a SharePoint folder to upload feedback files for a given educationSubmission.
+The teacher determines the resources to upload in the feedback resources folder of a submission.
 
 ## SYNTAX
 
@@ -25,9 +26,21 @@ Set-MgEducationClassAssignmentUpFeedbackResourceFolder -InputObject <IEducationI
 ```
 
 ## DESCRIPTION
-Invoke action setUpFeedbackResourcesFolder
+Create a SharePoint folder to upload feedback files for a given educationSubmission.
+The teacher determines the resources to upload in the feedback resources folder of a submission.
 
 ## EXAMPLES
+
+### Example 1: Using the Set-MgEducationClassAssignmentUpFeedbackResourceFolder Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+}
+Set-MgEducationClassAssignmentUpFeedbackResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the Set-MgEducationClassAssignmentUpFeedbackResourceFolder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

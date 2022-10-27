@@ -8,7 +8,7 @@ schema: 2.0.0
 # Revoke-MgDeviceAppMgtVppTokenLicense
 
 ## SYNOPSIS
-Invoke action revokeLicenses
+Revoke licenses associated with a specific appleVolumePurchaseProgramToken
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Revoke-MgDeviceAppMgtVppTokenLicense -InputObject <IDevicesCorporateManagementId
 ```
 
 ## DESCRIPTION
-Invoke action revokeLicenses
+Revoke licenses associated with a specific appleVolumePurchaseProgramToken
 
 ## EXAMPLES
 

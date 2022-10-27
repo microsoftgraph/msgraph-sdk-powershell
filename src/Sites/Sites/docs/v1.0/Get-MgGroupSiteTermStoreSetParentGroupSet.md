@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStoreSetParentGroupSet
 
 ## SYNOPSIS
-Get sets from groups
+All sets under the group in a term [store].
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupSiteTermStoreSetParentGroupSet -InputObject <ISitesIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get sets from groups
+All sets under the group in a term [store].
 
 ## EXAMPLES
 

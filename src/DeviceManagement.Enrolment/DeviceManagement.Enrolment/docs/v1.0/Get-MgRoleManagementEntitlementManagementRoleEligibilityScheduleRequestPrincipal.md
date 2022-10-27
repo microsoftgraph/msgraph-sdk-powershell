@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestPrincipal
 
 ## SYNOPSIS
-Get principal from roleManagement
+The principal that's getting a role eligibility through the request.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +28,8 @@ Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestPrincipal
 ```
 
 ## DESCRIPTION
-Get principal from roleManagement
+The principal that's getting a role eligibility through the request.
+Supports $expand.
 
 ## EXAMPLES
 

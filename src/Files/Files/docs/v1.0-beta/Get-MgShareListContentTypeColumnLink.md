@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListContentTypeColumnLink
 
 ## SYNOPSIS
-Get columnLinks from shares
+The collection of columns that are required by this content type
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgShareListContentTypeColumnLink -InputObject <IFilesIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get columnLinks from shares
+The collection of columns that are required by this content type
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgIdentityB2CUserFlowUserAttributeAssignmentOrder
 
 ## SYNOPSIS
-Invoke action setOrder
+Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
 
 ## SYNTAX
 
@@ -41,9 +41,26 @@ Set-MgIdentityB2CUserFlowUserAttributeAssignmentOrder -InputObject <IIdentitySig
 ```
 
 ## DESCRIPTION
-Invoke action setOrder
+Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
 
 ## EXAMPLES
+
+### Example 1: Using the Set-MgIdentityB2CUserFlowUserAttributeAssignmentOrder Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	NewAssignmentOrder = @{
+		Order = @(
+			"City"
+			"extension_GUID_ShoeSize"
+		)
+	}
+}
+Set-MgIdentityB2CUserFlowUserAttributeAssignmentOrder -B2cIdentityUserFlowId $b2cIdentityUserFlowId -BodyParameter $params
+```
+
+This example shows how to use the Set-MgIdentityB2CUserFlowUserAttributeAssignmentOrder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -197,15 +214,19 @@ BODYPARAMETER <IPathsYr8V38IdentityB2CuserflowsB2CidentityuserflowIdUserattribut
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[NewAssignmentOrder <IMicrosoftGraphAssignmentOrder>]`: assignmentOrder
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Order <String[]>]`: A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
+    - `[Order <String[]>]`: A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -214,6 +235,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
@@ -273,7 +295,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
 
 NEWASSIGNMENTORDER <IMicrosoftGraphAssignmentOrder>: assignmentOrder
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Order <String[]>]`: A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
+  - `[Order <String[]>]`: A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
 
 ## RELATED LINKS
 

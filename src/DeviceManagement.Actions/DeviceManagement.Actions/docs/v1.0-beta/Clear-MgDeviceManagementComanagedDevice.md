@@ -8,7 +8,7 @@ schema: 2.0.0
 # Clear-MgDeviceManagementComanagedDevice
 
 ## SYNOPSIS
-Invoke action wipe
+Wipe a device
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Clear-MgDeviceManagementComanagedDevice -InputObject <IDeviceManagementActionsId
 ```
 
 ## DESCRIPTION
-Invoke action wipe
+Wipe a device
 
 ## EXAMPLES
 
@@ -261,6 +261,7 @@ BODYPARAMETER <IPaths7IuefzDevicemanagementComanageddevicesManageddeviceIdMicros
   - `[UseProtectedWipe <Boolean?>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgOfficeClientConfigurationPolicyPayload
 
 ## SYNOPSIS
-Get policyPayload for the navigation property clientConfigurations from officeConfiguration
+Policy settings JSON string in binary format, these values cannot be changed by the user.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgOfficeClientConfigurationPolicyPayload -InputObject <IDevicesCorporateMana
 ```
 
 ## DESCRIPTION
-Get policyPayload for the navigation property clientConfigurations from officeConfiguration
+Policy settings JSON string in binary format, these values cannot be changed by the user.
 
 ## EXAMPLES
 

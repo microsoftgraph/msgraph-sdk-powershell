@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
 
 ## SYNOPSIS
-Get deviceConfigurationsAllManagedDeviceCertificateStates from deviceManagement
+Summary of all certificates for all devices.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgDeviceManagementDeviceConfigurationManagedDeviceCertificateState
 ```
 
 ## DESCRIPTION
-Get deviceConfigurationsAllManagedDeviceCertificateStates from deviceManagement
+Summary of all certificates for all devices.
 
 ## EXAMPLES
 
@@ -247,6 +247,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

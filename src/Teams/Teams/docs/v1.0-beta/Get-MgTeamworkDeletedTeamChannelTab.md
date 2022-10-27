@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelTab
 
 ## SYNOPSIS
-Get tabs from teamwork
+A collection of all the tabs in the channel.
+A navigation property.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgTeamworkDeletedTeamChannelTab -InputObject <ITeamsIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get tabs from teamwork
+A collection of all the tabs in the channel.
+A navigation property.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPlannerRosterPlan
 
 ## SYNOPSIS
-Get plans from planner
+Retrieves the plans contained by the plannerRoster.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgPlannerRosterPlan -InputObject <IPlannerIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get plans from planner
+Retrieves the plans contained by the plannerRoster.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPlannerRosterPlan Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+Get-MgPlannerRosterPlan -PlannerRosterId $plannerRosterId
+```
+
+This example shows how to use the Get-MgPlannerRosterPlan Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-MgTeamScheduleTimeCardBreak
 
 ## SYNOPSIS
-Invoke action endBreak
+End the open break in a specific timeCard.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Stop-MgTeamScheduleTimeCardBreak -InputObject <ITeamsIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Invoke action endBreak
+End the open break in a specific timeCard.
 
 ## EXAMPLES
 

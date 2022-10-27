@@ -8,7 +8,7 @@ schema: 2.0.0
 # Export-MgDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig
 
 ## SYNOPSIS
-Invoke function exportMobileConfig
+Exports the mobile configuration
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Export-MgDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig
 ```
 
 ## DESCRIPTION
-Invoke function exportMobileConfig
+Exports the mobile configuration
 
 ## EXAMPLES
 
@@ -100,6 +100,7 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
   - `[Category <String>]`: Usage: category='{category}'
   - `[CloudPcId <String>]`: key: id of cloudPC
+  - `[CloudPcId1 <String>]`: Usage: cloudPcId='{cloudPcId}'
   - `[DepOnboardingSettingId <String>]`: key: id of depOnboardingSetting
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: key: id of deviceAndAppManagementAssignmentFilter
   - `[DeviceConfigurationId <String>]`: key: id of deviceConfiguration
@@ -119,6 +120,7 @@ INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
   - `[ResourceOperationId <String>]`: key: id of resourceOperation
   - `[Scope <String>]`: Usage: scope='{scope}'
   - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId='{secretReferenceValueId}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[SubscriptionId <String>]`: Usage: subscriptionId='{subscriptionId}'
   - `[SummarizeBy <String>]`: Usage: summarizeBy='{summarizeBy}'
   - `[TemplateId <String>]`: Usage: templateId='{templateId}'

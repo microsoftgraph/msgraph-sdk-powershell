@@ -29,6 +29,30 @@ Create new navigation property to federationConfigurations for directory
 
 ## EXAMPLES
 
+### Example 1: Using the New-MgDirectoryFederationConfiguration Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	"@odata.type" = "microsoft.graph.samlOrWsFedExternalDomainFederation"
+	IssuerUri = "https://contoso.com/issuerUri"
+	DisplayName = "contoso display name"
+	MetadataExchangeUri = "https://contoso.com/metadataExchangeUri"
+	PassiveSignInUri = "https://contoso.com/signin"
+	PreferredAuthenticationProtocol = "wsFed"
+	Domains = @(
+		@{
+			"@odata.type" = "microsoft.graph.externalDomainName"
+			Id = "contoso.com"
+		}
+	)
+	SigningCertificate = "MIIDADCCAeigAwIBAgIQEX41y8r6"
+}
+New-MgDirectoryFederationConfiguration -BodyParameter $params
+```
+
+This example shows how to use the New-MgDirectoryFederationConfiguration Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -78,7 +102,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -145,7 +170,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphIdentityProviderBase>: identityProviderBase
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the identity provider.
 
 ## RELATED LINKS

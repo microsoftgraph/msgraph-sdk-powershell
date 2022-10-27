@@ -29,6 +29,16 @@ Delete navigation property tasks for users
 
 ## EXAMPLES
 
+### Example 1: Using the Remove-MgUserOutlookTask Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+# A UPN can also be used as -UserId.
+Remove-MgUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
+```
+
+This example shows how to use the Remove-MgUserOutlookTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -IfMatch

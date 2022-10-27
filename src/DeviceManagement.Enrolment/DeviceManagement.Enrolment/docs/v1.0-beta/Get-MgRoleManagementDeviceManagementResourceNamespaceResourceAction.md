@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementDeviceManagementResourceNamespaceResourceAction
 
 ## SYNOPSIS
-Get resourceActions from roleManagement
+Operations that an authorized principal are allowed to perform.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgRoleManagementDeviceManagementResourceNamespaceResourceAction
 ```
 
 ## DESCRIPTION
-Get resourceActions from roleManagement
+Operations that an authorized principal are allowed to perform.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgChatMember
 
 ## SYNOPSIS
-Create new navigation property to members for chats
+Add a conversationMember to a chat.
 
 ## SYNTAX
 
@@ -38,9 +38,76 @@ New-MgChatMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-Create new navigation property to members for chats
+Add a conversationMember to a chat.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgChatMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users/jacob@contoso.com"
+	VisibleHistoryStartDateTime = [System.DateTime]::Parse("2019-04-18T23:51:43.255Z")
+	Roles = @(
+		"owner"
+	)
+}
+New-MgChatMember -ChatId $chatId -BodyParameter $params
+```
+
+This example shows how to use the New-MgChatMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgChatMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
+	VisibleHistoryStartDateTime = [System.DateTime]::Parse("0001-01-01T00:00:00Z")
+	Roles = @(
+		"owner"
+	)
+}
+New-MgChatMember -ChatId $chatId -BodyParameter $params
+```
+
+This example shows how to use the New-MgChatMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgChatMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
+	Roles = @(
+		"owner"
+	)
+}
+New-MgChatMember -ChatId $chatId -BodyParameter $params
+```
+
+This example shows how to use the New-MgChatMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the New-MgChatMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
+	VisibleHistoryStartDateTime = [System.DateTime]::Parse("2019-04-18T23:51:43.255Z")
+	Roles = @(
+		"owner"
+	)
+}
+New-MgChatMember -ChatId $chatId -BodyParameter $params
+```
+
+This example shows how to use the New-MgChatMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -106,7 +173,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -225,7 +293,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphConversationMember>: conversationMember
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the user.
   - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
   - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.

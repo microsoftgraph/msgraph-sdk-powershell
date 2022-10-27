@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveRootAnalytic
 
 ## SYNOPSIS
-Get analytics from users
+Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserDriveRootAnalytic -InputObject <IFilesIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get analytics from users
+Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ## EXAMPLES
 

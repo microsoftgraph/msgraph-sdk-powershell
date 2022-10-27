@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveRootListItemDocumentSetVersion
 
 ## SYNOPSIS
-Get documentSetVersions from users
+Version information for a document set version created by a user.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDriveRootListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get documentSetVersions from users
+Version information for a document set version created by a user.
 
 ## EXAMPLES
 

@@ -863,6 +863,10 @@ paths:
                 - appliedConditionalAccessPolicies desc
                 - appliedEventListeners
                 - appliedEventListeners desc
+                - authenticationAppDeviceDetails
+                - authenticationAppDeviceDetails desc
+                - authenticationAppPolicyEvaluationDetails
+                - authenticationAppPolicyEvaluationDetails desc
                 - authenticationContextClassReferences
                 - authenticationContextClassReferences desc
                 - authenticationDetails
@@ -993,6 +997,8 @@ paths:
                 - appId
                 - appliedConditionalAccessPolicies
                 - appliedEventListeners
+                - authenticationAppDeviceDetails
+                - authenticationAppPolicyEvaluationDetails
                 - authenticationContextClassReferences
                 - authenticationDetails
                 - authenticationMethodsUsed
@@ -1124,6 +1130,8 @@ paths:
                 - appId
                 - appliedConditionalAccessPolicies
                 - appliedEventListeners
+                - authenticationAppDeviceDetails
+                - authenticationAppPolicyEvaluationDetails
                 - authenticationContextClassReferences
                 - authenticationDetails
                 - authenticationMethodsUsed
@@ -1441,6 +1449,8 @@ paths:
               operationId: deviceManagement.reports.getHistoricalReport
             getMalwareSummaryReport:
               operationId: deviceManagement.reports.getMalwareSummaryReport
+            getMobileApplicationManagementAppRegistrationSummaryReport:
+              operationId: deviceManagement.reports.getMobileApplicationManagementAppRegistrationSummaryReport
             getNoncompliantDevicesAndSettingsReport:
               operationId: deviceManagement.reports.getNoncompliantDevicesAndSettingsReport
             getPolicyNonComplianceMetadata:
@@ -3937,9 +3947,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3954,9 +3971,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3984,6 +4008,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4022,6 +4049,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4060,6 +4090,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4143,6 +4176,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.applicationSignInSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4310,6 +4346,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.credentialUsageSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4378,6 +4417,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4660,7 +4702,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
+  '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
         - reports.Functions
@@ -4677,7 +4719,7 @@ paths:
             nullable: true
         - name: startDateTime
           in: path
-          description: 'Usage: startDateTime=''{startDateTime}'''
+          description: 'Usage: startDateTime={startDateTime}'
           required: true
           style: simple
           schema:
@@ -4687,7 +4729,7 @@ paths:
             nullable: true
         - name: endDateTime
           in: path
-          description: 'Usage: endDateTime=''{endDateTime}'''
+          description: 'Usage: endDateTime={endDateTime}'
           required: true
           style: simple
           schema:
@@ -4712,6 +4754,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5115,6 +5160,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ActiveUserCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5254,6 +5302,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5391,6 +5442,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5477,6 +5531,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5601,6 +5658,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5723,6 +5783,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5803,6 +5866,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityFileCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5883,6 +5949,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityGroupCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -5963,6 +6032,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityStorage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6076,6 +6148,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.office365ServicesUserCounts'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6358,7 +6433,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId=''{printerId}'',startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
+  '/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId=''{printerId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
         - reports.Functions
@@ -6375,7 +6450,7 @@ paths:
             nullable: true
         - name: startDateTime
           in: path
-          description: 'Usage: startDateTime=''{startDateTime}'''
+          description: 'Usage: startDateTime={startDateTime}'
           required: true
           style: simple
           schema:
@@ -6385,7 +6460,7 @@ paths:
             nullable: true
         - name: endDateTime
           in: path
-          description: 'Usage: endDateTime=''{endDateTime}'''
+          description: 'Usage: endDateTime={endDateTime}'
           required: true
           style: simple
           schema:
@@ -6410,6 +6485,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6508,6 +6586,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -7940,7 +8021,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
+  '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
         - reports.Functions
@@ -7957,7 +8038,7 @@ paths:
             nullable: true
         - name: startDateTime
           in: path
-          description: 'Usage: startDateTime=''{startDateTime}'''
+          description: 'Usage: startDateTime={startDateTime}'
           required: true
           style: simple
           schema:
@@ -7967,7 +8048,7 @@ paths:
             nullable: true
         - name: endDateTime
           in: path
-          description: 'Usage: endDateTime=''{endDateTime}'''
+          description: 'Usage: endDateTime={endDateTime}'
           required: true
           style: simple
           schema:
@@ -7992,6 +8073,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8416,9 +8500,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8472,9 +8563,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8488,9 +8586,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8543,9 +8648,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8560,9 +8672,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8576,9 +8695,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8601,9 +8727,16 @@ paths:
         '200':
           description: Success
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -9532,6 +9665,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9564,6 +9700,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9596,6 +9735,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -9868,7 +10010,7 @@ components:
               description: Indicates additional details on the activity.
             category:
               type: string
-              description: 'Indicates which resource category that''s targeted by the activity. (For example: User Management, Group Management etc..)'
+              description: 'Indicates which resource category that''s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.'
             correlationId:
               type: string
               description: Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
@@ -9990,6 +10132,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedAuthenticationEventListener'
+            authenticationAppDeviceDetails:
+              $ref: '#/components/schemas/microsoft.graph.authenticationAppDeviceDetails'
+            authenticationAppPolicyEvaluationDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationAppPolicyDetails'
             authenticationContextClassReferences:
               type: array
               items:
@@ -10581,18 +10729,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.report:
-      title: report
-      type: object
-      properties:
-        content:
-          type: string
-          description: Report content; details vary by report type.
-          format: base64url
-          nullable: true
-      additionalProperties:
-        type: object
-      description: Device Configuration profile History reports.
     microsoft.graph.attackSimulationRepeatOffender:
       title: attackSimulationRepeatOffender
       type: object
@@ -10631,7 +10767,7 @@ components:
         latestSimulationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Date and time of latest attack simulation and training campaign that the user was included in.
+          description: Date and time of the latest attack simulation and training campaign that the user was included in.
           format: date-time
           nullable: true
         simulationCount:
@@ -10653,7 +10789,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userTrainingStatusInfo'
-          description: List of assigned trainings' and their statuses for the user.
+          description: List of assigned trainings and their statuses for the user.
       additionalProperties:
         type: object
     microsoft.graph.applicationSignInSummary:
@@ -11409,6 +11545,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.keyValue:
@@ -11417,11 +11554,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -11641,6 +11778,39 @@ components:
           nullable: true
         handlerResult:
           $ref: '#/components/schemas/microsoft.graph.authenticationEventHandlerResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationAppDeviceDetails:
+      title: authenticationAppDeviceDetails
+      type: object
+      properties:
+        appVersion:
+          type: string
+          nullable: true
+        clientApp:
+          type: string
+          nullable: true
+        deviceId:
+          type: string
+          nullable: true
+        operatingSystem:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationAppPolicyDetails:
+      title: authenticationAppPolicyDetails
+      type: object
+      properties:
+        adminConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.authenticationAppAdminConfiguration'
+        authenticationEvaluation:
+          $ref: '#/components/schemas/microsoft.graph.authenticationAppEvaluation'
+        policyName:
+          type: string
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.authenticationAppPolicyStatus'
       additionalProperties:
         type: object
     microsoft.graph.authenticationContext:
@@ -12112,7 +12282,7 @@ components:
           nullable: true
         userId:
           type: string
-          description: This is the id property value of the user resource that represents the user in the Azure AD tenant.
+          description: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
           nullable: true
       additionalProperties:
         type: object
@@ -12240,166 +12410,144 @@ components:
     microsoft.graph.directoryAuditCollectionResponse:
       title: Collection of directoryAudit
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryAudit'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.provisioningObjectSummaryCollectionResponse:
       title: Collection of provisioningObjectSummary
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.signInCollectionResponse:
       title: Collection of signIn
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.signIn'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.signIn'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementCachedReportConfigurationCollectionResponse:
       title: Collection of deviceManagementCachedReportConfiguration
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfiguration'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfiguration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementExportJobCollectionResponse:
       title: Collection of deviceManagementExportJob
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.applicationSignInDetailedSummaryCollectionResponse:
       title: Collection of applicationSignInDetailedSummary
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userRegistrationDetailsCollectionResponse:
       title: Collection of userRegistrationDetails
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.credentialUserRegistrationDetailsCollectionResponse:
       title: Collection of credentialUserRegistrationDetails
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.printUsageByPrinterCollectionResponse:
       title: Collection of printUsageByPrinter
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.printUsageByUserCollectionResponse:
       title: Collection of printUsageByUser
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userCredentialUsageDetailsCollectionResponse:
       title: Collection of userCredentialUsageDetails
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.appIdentity:
@@ -12453,11 +12601,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -12588,6 +12736,43 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.authenticationAppAdminConfiguration:
+      title: authenticationAppAdminConfiguration
+      enum:
+        - notApplicable
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationAppEvaluation:
+      title: authenticationAppEvaluation
+      enum:
+        - success
+        - failure
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationAppPolicyStatus:
+      title: authenticationAppPolicyStatus
+      enum:
+        - unknown
+        - appLockOutOfDate
+        - appLockEnabled
+        - appLockDisabled
+        - appContextOutOfDate
+        - appContextShown
+        - appContextNotShown
+        - locationContextOutOfDate
+        - locationContextShown
+        - locationContextNotShown
+        - numberMatchOutOfDate
+        - numberMatchCorrectNumberEntered
+        - numberMatchIncorrectNumberEntered
+        - numberMatchDeny
+        - tamperResistantHardwareOutOfDate
+        - tamperResistantHardwareUsed
+        - tamperResistantHardwareNotUsed
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationContextDetail:
       title: authenticationContextDetail
       enum:
@@ -12710,15 +12895,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.provisioningStatusErrorCategory:

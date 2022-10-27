@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserWindowInformationProtectionDeviceRegistration
 
 ## SYNOPSIS
-Get windowsInformationProtectionDeviceRegistrations from users
+Zero or more WIP device registrations that belong to the user.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgUserWindowInformationProtectionDeviceRegistration -InputObject <IDevicesCo
 ```
 
 ## DESCRIPTION
-Get windowsInformationProtectionDeviceRegistrations from users
+Zero or more WIP device registrations that belong to the user.
 
 ## EXAMPLES
 

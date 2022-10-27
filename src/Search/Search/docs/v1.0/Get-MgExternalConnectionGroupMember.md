@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgExternalConnectionGroupMember
 
 ## SYNOPSIS
-Get members from external
+A member added to an externalGroup.
+You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgExternalConnectionGroupMember -InputObject <ISearchIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get members from external
+A member added to an externalGroup.
+You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceIntendedDeploymentProfile
 
 ## SYNOPSIS
-Get intendedDeploymentProfile from deviceManagement
+Deployment profile intended to be assigned to the Windows autopilot device.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceIntendedDepl
 ```
 
 ## DESCRIPTION
-Get intendedDeploymentProfile from deviceManagement
+Deployment profile intended to be assigned to the Windows autopilot device.
 
 ## EXAMPLES
 

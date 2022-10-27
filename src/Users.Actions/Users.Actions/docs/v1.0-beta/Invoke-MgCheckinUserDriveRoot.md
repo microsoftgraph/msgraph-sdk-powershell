@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgCheckinUserDriveRoot
 
 ## SYNOPSIS
-Invoke action checkin
+Check in a checked out **driveItem** resource, which makes the version of the document available to others.
 
 ## SYNTAX
 
@@ -39,9 +39,24 @@ Invoke-MgCheckinUserDriveRoot -InputObject <IUsersActionsIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Invoke action checkin
+Check in a checked out **driveItem** resource, which makes the version of the document available to others.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Files
+
+$params = @{
+	Comment = "Updating the latest guidelines"
+}
+
+Invoke-MgCheckinDriveItem -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgCheckinUserDriveRoot Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

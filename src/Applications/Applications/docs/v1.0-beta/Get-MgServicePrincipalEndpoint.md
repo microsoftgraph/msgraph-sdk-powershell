@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgServicePrincipalEndpoint
 
 ## SYNOPSIS
-Get endpoints from servicePrincipals
+Endpoints available for discovery.
+Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgServicePrincipalEndpoint -InputObject <IApplicationsIdentity> [-ExpandProp
 ```
 
 ## DESCRIPTION
-Get endpoints from servicePrincipals
+Endpoints available for discovery.
+Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
 
 ## EXAMPLES
 

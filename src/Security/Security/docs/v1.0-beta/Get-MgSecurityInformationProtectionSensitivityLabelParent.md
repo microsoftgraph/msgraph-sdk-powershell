@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSecurityInformationProtectionSensitivityLabelParent
 
 ## SYNOPSIS
-Get parent from security
+The parent label associated with a child label.
+Null if the label has no parent.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurit
 ```
 
 ## DESCRIPTION
-Get parent from security
+The parent label associated with a child label.
+Null if the label has no parent.
 
 ## EXAMPLES
 

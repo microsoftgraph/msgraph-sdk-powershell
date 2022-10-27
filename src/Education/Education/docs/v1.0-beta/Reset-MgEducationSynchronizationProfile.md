@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgEducationSynchronizationProfile
 
 ## SYNOPSIS
-Invoke action reset
+Reset the sync of a specific school data synchronization profile in the tenant.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Reset-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Pass
 ```
 
 ## DESCRIPTION
-Invoke action reset
+Reset the sync of a specific school data synchronization profile in the tenant.
 
 ## EXAMPLES
+
+### Example 1: Using the Reset-MgEducationSynchronizationProfile Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Reset-MgEducationSynchronizationProfile -EducationSynchronizationProfileId $educationSynchronizationProfileId
+```
+
+This example shows how to use the Reset-MgEducationSynchronizationProfile Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

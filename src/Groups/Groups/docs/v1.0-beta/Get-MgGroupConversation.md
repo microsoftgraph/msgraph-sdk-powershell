@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupConversation
 
 ## SYNOPSIS
-Get conversations from groups
+The group's conversations.
 
 ## SYNTAX
 
@@ -30,9 +30,36 @@ Get-MgGroupConversation -InputObject <IGroupsIdentity> [-Property <String[]>] [<
 ```
 
 ## DESCRIPTION
-Get conversations from groups
+The group's conversations.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupConversation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupConversation -GroupId $groupId -ConversationId $conversationId
+```
+
+This example shows how to use the Get-MgGroupConversation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgGroupConversation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupConversation -GroupId $groupId
+```
+
+This example shows how to use the Get-MgGroupConversation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgGroupConversation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupConversation -GroupId $groupId -ConversationId $conversationId
+```
+
+This example shows how to use the Get-MgGroupConversation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

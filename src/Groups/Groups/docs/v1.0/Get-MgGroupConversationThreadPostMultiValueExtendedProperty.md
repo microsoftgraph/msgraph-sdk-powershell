@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupConversationThreadPostMultiValueExtendedProperty
 
 ## SYNOPSIS
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -34,7 +36,9 @@ Get-MgGroupConversationThreadPostMultiValueExtendedProperty -InputObject <IGroup
 ```
 
 ## DESCRIPTION
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

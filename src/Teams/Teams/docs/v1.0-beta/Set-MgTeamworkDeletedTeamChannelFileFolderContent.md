@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgTeamworkDeletedTeamChannelFileFolderContent
 
 ## SYNOPSIS
-Update content for the navigation property filesFolder in teamwork
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgTeamworkDeletedTeamChannelFileFolderContent -InputObject <ITeamsIdentity> 
 ```
 
 ## DESCRIPTION
-Update content for the navigation property filesFolder in teamwork
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

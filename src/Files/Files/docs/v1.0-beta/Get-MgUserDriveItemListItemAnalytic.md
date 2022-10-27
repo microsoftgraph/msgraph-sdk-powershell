@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveItemListItemAnalytic
 
 ## SYNOPSIS
-Get analytics from users
+Analytics about the view activities that took place on this item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserDriveItemListItemAnalytic -InputObject <IFilesIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get analytics from users
+Analytics about the view activities that took place on this item.
 
 ## EXAMPLES
 

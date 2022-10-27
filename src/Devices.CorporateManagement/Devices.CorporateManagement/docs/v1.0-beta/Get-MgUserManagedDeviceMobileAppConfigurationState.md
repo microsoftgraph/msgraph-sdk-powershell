@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserManagedDeviceMobileAppConfigurationState
 
 ## SYNOPSIS
-Get managedDeviceMobileAppConfigurationStates from users
+Managed device mobile app configuration states for this device.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgUserManagedDeviceMobileAppConfigurationState -InputObject <IDevicesCorpora
 ```
 
 ## DESCRIPTION
-Get managedDeviceMobileAppConfigurationStates from users
+Managed device mobile app configuration states for this device.
 
 ## EXAMPLES
 

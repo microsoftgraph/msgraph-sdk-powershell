@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserMailFolderMessage
 
 ## SYNOPSIS
-The collection of messages in the mailFolder.
+Use this API to create a new Message in a mailfolder.
 
 ## SYNTAX
 
@@ -65,9 +65,30 @@ New-MgUserMailFolderMessage -InputObject <IMailIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-The collection of messages in the mailFolder.
+Use this API to create a new Message in a mailfolder.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserMailFolderMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	ReceivedDateTime = [System.DateTime]::Parse("datetime-value")
+	SentDateTime = [System.DateTime]::Parse("datetime-value")
+	HasAttachments = $true
+	Subject = "subject-value"
+	Body = @{
+		ContentType = ""
+		Content = "content-value"
+	}
+	BodyPreview = "bodyPreview-value"
+}
+# A UPN can also be used as -UserId.
+New-MgUserMailFolderMessage -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserMailFolderMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -328,6 +349,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+The unique idenfier for an entity.
 Read-only.
 
 ```yaml
@@ -752,7 +774,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ATTACHMENTS <IMicrosoftGraphAttachment[]>: The fileAttachment and itemAttachment attachments for the message.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ContentType <String>]`: The MIME type.
   - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -776,9 +798,9 @@ BODYPARAMETER <IMicrosoftGraphMessage>: message
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The fileAttachment and itemAttachment attachments for the message.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -798,7 +820,7 @@ BODYPARAMETER <IMicrosoftGraphMessage>: message
   - `[ConversationId <String>]`: The ID of the conversation the email belongs to.
   - `[ConversationIndex <Byte[]>]`: Indicates the position of the message within the conversation.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the message. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Flag <IMicrosoftGraphFollowupFlag>]`: followupFlag
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -821,7 +843,7 @@ BODYPARAMETER <IMicrosoftGraphMessage>: message
   - `[IsRead <Boolean?>]`: 
   - `[IsReadReceiptRequested <Boolean?>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Value <String[]>]`: A collection of property values.
   - `[ParentFolderId <String>]`: 
   - `[ReceivedDateTime <DateTime?>]`: 
@@ -829,7 +851,7 @@ BODYPARAMETER <IMicrosoftGraphMessage>: message
   - `[Sender <IMicrosoftGraphRecipient>]`: recipient
   - `[SentDateTime <DateTime?>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Value <String>]`: A property value.
   - `[Subject <String>]`: 
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
@@ -843,7 +865,7 @@ CCRECIPIENTS <IMicrosoftGraphRecipient[]>: The Cc: recipients for the message.
     - `[Name <String>]`: The display name of the person or entity.
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the message. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
 FLAG <IMicrosoftGraphFollowupFlag>: followupFlag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -881,7 +903,7 @@ INTERNETMESSAGEHEADERS <IMicrosoftGraphInternetMessageHeader[]>: .
   - `[Value <String>]`: The value in a key-value pair.
 
 MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>: The collection of multi-value extended properties defined for the message. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Value <String[]>]`: A collection of property values.
 
 REPLYTO <IMicrosoftGraphRecipient[]>: .
@@ -898,7 +920,7 @@ SENDER <IMicrosoftGraphRecipient>: recipient
     - `[Name <String>]`: The display name of the person or entity.
 
 SINGLEVALUEEXTENDEDPROPERTIES <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>: The collection of single-value extended properties defined for the message. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Value <String>]`: A property value.
 
 TORECIPIENTS <IMicrosoftGraphRecipient[]>: .

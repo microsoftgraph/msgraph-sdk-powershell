@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault
 
 ## SYNOPSIS
-Invoke action resetToSystemDefault
+Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
 
 ## SYNTAX
 
@@ -18,9 +18,18 @@ Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault [-PassThru] [-Confir
 ```
 
 ## DESCRIPTION
-Invoke action resetToSystemDefault
+Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
 
 ## EXAMPLES
+
+### Example 1: Using the Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault
+```
+
+This example shows how to use the Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -45,6 +45,19 @@ Update the navigation property lists in users
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgUserTodoList Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+$params = @{
+	DisplayName = "Vacation Plan"
+}
+# A UPN can also be used as -UserId.
+Update-MgUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgUserTodoList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -111,7 +124,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -304,50 +318,50 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTodoTaskList>: todoTaskList
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The name of the task list.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task list. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[IsOwner <Boolean?>]`: True if the user is owner of the given task list.
   - `[IsShared <Boolean?>]`: True if the task list is shared with other users
   - `[Tasks <IMicrosoftGraphTodoTask[]>]`: The tasks in this task list. Read-only. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
-      - `[Id <String>]`: 
-      - `[Content <Byte[]>]`: The content streams that are uploaded.
-      - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
-      - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
-    - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
-      - `[Id <String>]`: 
-      - `[ContentType <String>]`: The MIME type.
-      - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
-      - `[Size <Int32?>]`: The length of the attachment in bytes.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Content <Byte[]>]`: 
+      - `[ExpirationDateTime <DateTime?>]`: 
+      - `[NextExpectedRanges <String[]>]`: 
+    - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[ContentType <String>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: 
+      - `[Name <String>]`: 
+      - `[Size <Int32?>]`: 
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: The content of the item.
       - `[ContentType <String>]`: bodyType
     - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
-    - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of smaller subtasks linked to the more complex parent task.
-      - `[Id <String>]`: 
+    - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of checklistItems linked to a task.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[CheckedDateTime <DateTime?>]`: The date and time when the checklistItem was finished.
       - `[CreatedDateTime <DateTime?>]`: The date and time when the checklistItem was created.
       - `[DisplayName <String>]`: Field indicating the title of checklistItem.
       - `[IsChecked <Boolean?>]`: State indicating whether the item is checked off or not.
     - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-    - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
+    - `[HasAttachments <Boolean?>]`: 
     - `[Importance <String>]`: importance
     - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
       - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
       - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
@@ -377,7 +391,7 @@ BODYPARAMETER <IMicrosoftGraphTodoTaskList>: todoTaskList
   - `[WellknownListName <String>]`: wellknownListName
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the task list. Nullable.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentBaseId <String>]`: key: id of attachmentBase
@@ -402,44 +416,44 @@ INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 TASKS <IMicrosoftGraphTodoTask[]>: The tasks in this task list. Read-only. Nullable.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AttachmentSessions <IMicrosoftGraphAttachmentSession[]>]`: 
-    - `[Id <String>]`: 
-    - `[Content <Byte[]>]`: The content streams that are uploaded.
-    - `[ExpirationDateTime <DateTime?>]`: The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
-    - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
-  - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: A collection of file attachments for the task.
-    - `[Id <String>]`: 
-    - `[ContentType <String>]`: The MIME type.
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
-    - `[Size <Int32?>]`: The length of the attachment in bytes.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Content <Byte[]>]`: 
+    - `[ExpirationDateTime <DateTime?>]`: 
+    - `[NextExpectedRanges <String[]>]`: 
+  - `[Attachments <IMicrosoftGraphAttachmentBase[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ContentType <String>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Name <String>]`: 
+    - `[Size <Int32?>]`: 
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
   - `[BodyLastModifiedDateTime <DateTime?>]`: The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
   - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
-  - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of smaller subtasks linked to the more complex parent task.
-    - `[Id <String>]`: 
+  - `[ChecklistItems <IMicrosoftGraphChecklistItem[]>]`: A collection of checklistItems linked to a task.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CheckedDateTime <DateTime?>]`: The date and time when the checklistItem was finished.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the checklistItem was created.
     - `[DisplayName <String>]`: Field indicating the title of checklistItem.
     - `[IsChecked <Boolean?>]`: State indicating whether the item is checked off or not.
   - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
   - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the task. Nullable.
-    - `[Id <String>]`: 
-  - `[HasAttachments <Boolean?>]`: Indicates whether the task has attachments.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[HasAttachments <Boolean?>]`: 
   - `[Importance <String>]`: importance
   - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
   - `[LinkedResources <IMicrosoftGraphLinkedResource[]>]`: A collection of resources linked to the task.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
     - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
     - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.

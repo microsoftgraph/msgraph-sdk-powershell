@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupOnenoteResourceContent
 
 ## SYNOPSIS
-Get content for the navigation property resources from groups
+The content stream
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupOnenoteResourceContent -InputObject <INotesIdentity> -OutFile <String
 ```
 
 ## DESCRIPTION
-Get content for the navigation property resources from groups
+The content stream
 
 ## EXAMPLES
 

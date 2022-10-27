@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgGroupEventAttachment
 
 ## SYNOPSIS
-Get attachments from groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgGroupEventAttachment -InputObject <ICalendarIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get attachments from groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

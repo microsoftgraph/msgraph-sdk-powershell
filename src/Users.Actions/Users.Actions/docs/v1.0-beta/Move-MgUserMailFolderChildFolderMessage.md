@@ -8,7 +8,8 @@ schema: 2.0.0
 # Move-MgUserMailFolderChildFolderMessage
 
 ## SYNOPSIS
-Invoke action move
+Move a message to another folder within the specified user's mailbox.
+This creates a new copy of the message in the destination folder and removes the original message.
 
 ## SYNTAX
 
@@ -41,9 +42,26 @@ Move-MgUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action move
+Move a message to another folder within the specified user's mailbox.
+This creates a new copy of the message in the destination folder and removes the original message.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	DestinationId = "deleteditems"
+}
+
+# A UPN can also be used as -UserId.
+Move-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+```
+
+This example shows how to use the Move-MgUserMailFolderChildFolderMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

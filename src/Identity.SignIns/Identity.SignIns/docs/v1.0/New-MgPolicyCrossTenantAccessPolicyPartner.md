@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyCrossTenantAccessPolicyPartner
 
 ## SYNOPSIS
-Create new navigation property to partners for policies
+Create a new partner configuration in a cross-tenant access policy.
 
 ## SYNTAX
 
@@ -31,9 +31,43 @@ New-MgPolicyCrossTenantAccessPolicyPartner
 ```
 
 ## DESCRIPTION
-Create new navigation property to partners for policies
+Create a new partner configuration in a cross-tenant access policy.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgPolicyCrossTenantAccessPolicyPartner Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	TenantId = "3d0f5dec-5d3d-455c-8016-e2af1ae4d31a"
+	B2bDirectConnectOutbound = @{
+		UsersAndGroups = @{
+			AccessType = "blocked"
+			Targets = @(
+				@{
+					Target = "6f546279-4da5-4b53-a095-09ea0cef9971"
+					TargetType = "group"
+				}
+			)
+		}
+	}
+	B2bDirectConnectInbound = @{
+		Applications = @{
+			AccessType = "allowed"
+			Targets = @(
+				@{
+					Target = "Office365"
+					TargetType = "application"
+				}
+			)
+		}
+	}
+}
+New-MgPolicyCrossTenantAccessPolicyPartner -BodyParameter $params
+```
+
+This example shows how to use the New-MgPolicyCrossTenantAccessPolicyPartner Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

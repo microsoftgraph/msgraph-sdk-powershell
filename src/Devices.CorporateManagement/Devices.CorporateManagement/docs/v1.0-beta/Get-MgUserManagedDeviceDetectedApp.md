@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserManagedDeviceDetectedApp
 
 ## SYNOPSIS
-Get detectedApps from users
+All applications currently installed on the device
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserManagedDeviceDetectedApp -InputObject <IDevicesCorporateManagementIden
 ```
 
 ## DESCRIPTION
-Get detectedApps from users
+All applications currently installed on the device
 
 ## EXAMPLES
 

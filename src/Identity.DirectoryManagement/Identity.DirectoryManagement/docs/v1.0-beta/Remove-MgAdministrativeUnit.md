@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgAdministrativeUnit
 
 ## SYNOPSIS
-Delete administrativeUnit
+Delete an administrativeUnit.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity> 
 ```
 
 ## DESCRIPTION
-Delete administrativeUnit
+Delete an administrativeUnit.
 
 ## EXAMPLES
 

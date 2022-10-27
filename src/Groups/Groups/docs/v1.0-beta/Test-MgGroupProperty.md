@@ -8,7 +8,12 @@ schema: 2.0.0
 # Test-MgGroupProperty
 
 ## SYNOPSIS
-Invoke action validateProperties
+Validate if a Microsoft 365 group's display name or mail nickname complies with naming policies.
+Clients can use the API to determine if a display name or mail nickname is valid before trying to **update** a Microsoft 365 group.
+For validating properties before creating a group, use the validateProperties function for directory objects.
+The following validations are performed for the display name and mail nickname properties: This API returns with the first failure encountered.
+If one or more properties fail multiple validations, only the property with the first validation failure is returned.
+However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
 ## SYNTAX
 
@@ -40,9 +45,28 @@ Test-MgGroupProperty -InputObject <IGroupsIdentity> [-AdditionalProperties <Hash
 ```
 
 ## DESCRIPTION
-Invoke action validateProperties
+Validate if a Microsoft 365 group's display name or mail nickname complies with naming policies.
+Clients can use the API to determine if a display name or mail nickname is valid before trying to **update** a Microsoft 365 group.
+For validating properties before creating a group, use the validateProperties function for directory objects.
+The following validations are performed for the display name and mail nickname properties: This API returns with the first failure encountered.
+If one or more properties fail multiple validations, only the property with the first validation failure is returned.
+However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
 ## EXAMPLES
+
+### Example 1: Using the Test-MgGroupProperty Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	DisplayName = "Myprefix_test_mysuffix"
+	MailNickname = "Myprefix_test_mysuffix"
+	OnBehalfOfUserId = "onBehalfOfUserId-value"
+}
+Test-MgGroupProperty -GroupId $groupId -BodyParameter $params
+```
+
+This example shows how to use the Test-MgGroupProperty Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

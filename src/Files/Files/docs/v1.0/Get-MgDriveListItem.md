@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveListItem
 
 ## SYNOPSIS
-Get items from drives
+All items contained in the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDriveListItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get items from drives
+All items contained in the list.
 
 ## EXAMPLES
 

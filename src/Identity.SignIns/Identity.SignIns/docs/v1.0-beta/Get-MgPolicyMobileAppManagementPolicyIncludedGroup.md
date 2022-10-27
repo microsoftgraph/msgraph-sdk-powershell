@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyMobileAppManagementPolicyIncludedGroup
 
 ## SYNOPSIS
-Get includedGroups from policies
+Get the list of groups that are included in a mobile app management policy.
 
 ## SYNTAX
 
@@ -19,9 +19,27 @@ Get-MgPolicyMobileAppManagementPolicyIncludedGroup -MobilityManagementPolicyId <
 ```
 
 ## DESCRIPTION
-Get includedGroups from policies
+Get the list of groups that are included in a mobile app management policy.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPolicyMobileAppManagementPolicyIncludedGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyMobileAppManagementPolicyIncludedGroup -MobilityManagementPolicyId $mobilityManagementPolicyId -OutFile $outFileId
+```
+
+This example shows how to use the Get-MgPolicyMobileAppManagementPolicyIncludedGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPolicyMobileAppManagementPolicyIncludedGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyMobileAppManagementPolicyIncludedGroup -MobilityManagementPolicyId $mobilityManagementPolicyId
+```
+
+This example shows how to use the Get-MgPolicyMobileAppManagementPolicyIncludedGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

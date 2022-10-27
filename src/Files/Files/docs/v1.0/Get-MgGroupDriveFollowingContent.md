@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveFollowingContent
 
 ## SYNOPSIS
-Get content for the navigation property following from groups
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupDriveFollowingContent -InputObject <IFilesIdentity> -OutFile <String>
 ```
 
 ## DESCRIPTION
-Get content for the navigation property following from groups
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

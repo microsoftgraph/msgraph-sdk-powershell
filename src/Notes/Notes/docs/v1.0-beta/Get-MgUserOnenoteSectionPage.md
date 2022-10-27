@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserOnenoteSectionPage
 
 ## SYNOPSIS
-Get pages from users
+The collection of pages in the section.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +21,9 @@ Get-MgUserOnenoteSectionPage -OnenoteSectionId <String> -UserId <String> [-Expan
 ```
 
 ## DESCRIPTION
-Get pages from users
+The collection of pages in the section.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

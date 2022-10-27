@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecuritySubjectRightsRequestTeam
 
 ## SYNOPSIS
-Get team from security
+Information about the Microsoft Teams team that was created for the request.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSecuritySubjectRightsRequestTeam -InputObject <ISecurityIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get team from security
+Information about the Microsoft Teams team that was created for the request.
 
 ## EXAMPLES
 

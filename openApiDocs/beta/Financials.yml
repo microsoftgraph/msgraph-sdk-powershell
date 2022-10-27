@@ -2033,41 +2033,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.customerPaymentJournals_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: customerPaymentJournal-id
-          in: path
-          description: 'key: id of customerPaymentJournal'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: customerPaymentJournal
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments':
     get:
       tags:
@@ -7562,41 +7527,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.generalLedgerEntries_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: generalLedgerEntry-id
-          in: path
-          description: 'key: id of generalLedgerEntry'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: generalLedgerEntry
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/itemCategories':
     get:
       tags:
@@ -8968,41 +8898,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.journalLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journalLine-id
-          in: path
-          description: 'key: id of journalLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: journalLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/journals':
     get:
       tags:
@@ -9327,41 +9222,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.journals_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journal-id
-          in: path
-          description: 'key: id of journal'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: journal
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9751,49 +9611,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.journals.journalLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: journal-id
-          in: path
-          description: 'key: id of journal'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: journal
-        - name: journalLine-id
-          in: path
-          description: 'key: id of journalLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: journalLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10942,41 +10759,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.purchaseInvoiceLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12438,49 +12220,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: purchaseInvoice-id
-          in: path
-          description: 'key: id of purchaseInvoice'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoice
-        - name: purchaseInvoiceLine-id
-          in: path
-          description: 'key: id of purchaseInvoiceLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: purchaseInvoiceLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14494,41 +14233,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesCreditMemoLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17184,49 +16888,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesCreditMemos.salesCreditMemoLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesCreditMemo-id
-          in: path
-          description: 'key: id of salesCreditMemo'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemo
-        - name: salesCreditMemoLine-id
-          in: path
-          description: 'key: id of salesCreditMemoLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesCreditMemoLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item':
     get:
       tags:
@@ -18308,41 +17969,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesInvoiceLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21182,49 +20808,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesInvoices.salesInvoiceLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesInvoice-id
-          in: path
-          description: 'key: id of salesInvoice'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoice
-        - name: salesInvoiceLine-id
-          in: path
-          description: 'key: id of salesInvoiceLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesInvoiceLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item':
     get:
       tags:
@@ -22451,41 +22034,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesOrderLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25169,49 +24717,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesOrders.salesOrderLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesOrder-id
-          in: path
-          description: 'key: id of salesOrder'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrder
-        - name: salesOrderLine-id
-          in: path
-          description: 'key: id of salesOrderLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesOrderLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item':
     get:
       tags:
@@ -26285,41 +25790,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesQuoteLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29047,49 +28517,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.account'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - financials.company
-      summary: Update the navigation property account in financials
-      operationId: financials.companies.salesQuotes.salesQuoteLines_UpdateAccount
-      parameters:
-        - name: company-id
-          in: path
-          description: 'key: id of company'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: company
-        - name: salesQuote-id
-          in: path
-          description: 'key: id of salesQuote'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuote
-        - name: salesQuoteLine-id
-          in: path
-          description: 'key: id of salesQuoteLine'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: salesQuoteLine
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.account'
-        required: true
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34344,6 +33771,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.postalAddressType:
@@ -34379,541 +33807,469 @@ components:
     microsoft.graph.companyCollectionResponse:
       title: Collection of company
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.company'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.company'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.accountCollectionResponse:
       title: Collection of account
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.account'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.account'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.agedAccountsPayableCollectionResponse:
       title: Collection of agedAccountsPayable
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.agedAccountsPayable'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.agedAccountsPayable'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.agedAccountsReceivableCollectionResponse:
       title: Collection of agedAccountsReceivable
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.agedAccountsReceivable'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.agedAccountsReceivable'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.companyInformationCollectionResponse:
       title: Collection of companyInformation
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.companyInformation'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.companyInformation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.countryRegionCollectionResponse:
       title: Collection of countryRegion
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.countryRegion'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.countryRegion'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.currencyCollectionResponse:
       title: Collection of currency
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.currency'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.currency'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.customerPaymentJournalCollectionResponse:
       title: Collection of customerPaymentJournal
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.customerPaymentJournal'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customerPaymentJournal'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.customerPaymentCollectionResponse:
       title: Collection of customerPayment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.customerPayment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customerPayment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.pictureCollectionResponse:
       title: Collection of picture
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.picture'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.picture'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.customerCollectionResponse:
       title: Collection of customer
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.customer'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customer'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.dimensionCollectionResponse:
       title: Collection of dimension
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.dimension'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dimension'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.dimensionValueCollectionResponse:
       title: Collection of dimensionValue
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.dimensionValue'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dimensionValue'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.employeeCollectionResponse:
       title: Collection of employee
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.employee'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.employee'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.generalLedgerEntryCollectionResponse:
       title: Collection of generalLedgerEntry
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.generalLedgerEntry'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.generalLedgerEntry'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.itemCategoryCollectionResponse:
       title: Collection of itemCategory
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.itemCategory'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.itemCategory'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.itemCollectionResponse:
       title: Collection of item
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.item'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.item'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.journalLineCollectionResponse:
       title: Collection of journalLine
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.journalLine'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.journalLine'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.journalCollectionResponse:
       title: Collection of journal
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.journal'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.journal'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.paymentMethodCollectionResponse:
       title: Collection of paymentMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.paymentMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.paymentMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.paymentTermCollectionResponse:
       title: Collection of paymentTerm
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.paymentTerm'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.paymentTerm'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.purchaseInvoiceLineCollectionResponse:
       title: Collection of purchaseInvoiceLine
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLine'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLine'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.purchaseInvoiceCollectionResponse:
       title: Collection of purchaseInvoice
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.purchaseInvoice'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.purchaseInvoice'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.salesCreditMemoLineCollectionResponse:
       title: Collection of salesCreditMemoLine
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLine'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLine'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.salesCreditMemoCollectionResponse:
       title: Collection of salesCreditMemo
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.salesCreditMemo'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesCreditMemo'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.salesInvoiceLineCollectionResponse:
       title: Collection of salesInvoiceLine
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.salesInvoiceLine'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesInvoiceLine'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.salesInvoiceCollectionResponse:
       title: Collection of salesInvoice
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.salesInvoice'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesInvoice'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.salesOrderLineCollectionResponse:
       title: Collection of salesOrderLine
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.salesOrderLine'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesOrderLine'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.salesOrderCollectionResponse:
       title: Collection of salesOrder
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.salesOrder'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesOrder'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.salesQuoteLineCollectionResponse:
       title: Collection of salesQuoteLine
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.salesQuoteLine'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesQuoteLine'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.salesQuoteCollectionResponse:
       title: Collection of salesQuote
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.salesQuote'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.salesQuote'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.shipmentMethodCollectionResponse:
       title: Collection of shipmentMethod
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.shipmentMethod'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.shipmentMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.taxAreaCollectionResponse:
       title: Collection of taxArea
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.taxArea'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.taxArea'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.taxGroupCollectionResponse:
       title: Collection of taxGroup
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.taxGroup'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.taxGroup'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unitOfMeasureCollectionResponse:
       title: Collection of unitOfMeasure
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unitOfMeasure'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unitOfMeasure'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.vendorCollectionResponse:
       title: Collection of vendor
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.vendor'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.vendor'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.MainError:
@@ -34935,15 +34291,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ErrorDetails:

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Get deviceEnrollmentConfigurations from deviceManagement
+The list of device enrollment configurations
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDeviceEnrollmentConfiguration -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-Get deviceEnrollmentConfigurations from deviceManagement
+The list of device enrollment configurations
 
 ## EXAMPLES
 

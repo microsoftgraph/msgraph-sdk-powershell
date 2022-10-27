@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveItemListItemDriveItem
 
 ## SYNOPSIS
-Get driveItem from groups
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupDriveItemListItemDriveItem -InputObject <IFilesIdentity> [-ExpandProp
 ```
 
 ## DESCRIPTION
-Get driveItem from groups
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## EXAMPLES
 

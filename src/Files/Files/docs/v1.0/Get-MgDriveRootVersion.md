@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgDriveRootVersion
 
 ## SYNOPSIS
-Get versions from drives
+The list of previous versions of the item.
+For more info, see [getting previous versions][].
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgDriveRootVersion -InputObject <IFilesIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get versions from drives
+The list of previous versions of the item.
+For more info, see [getting previous versions][].
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

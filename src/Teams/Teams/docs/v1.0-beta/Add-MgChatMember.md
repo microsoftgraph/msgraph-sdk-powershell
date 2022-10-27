@@ -8,7 +8,8 @@ schema: 2.0.0
 # Add-MgChatMember
 
 ## SYNOPSIS
-Invoke action add
+Add multiple members in a single request to a team.
+The response provides details about which memberships could and couldn't be created.
 
 ## SYNTAX
 
@@ -39,9 +40,97 @@ Add-MgChatMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-Invoke action add
+Add multiple members in a single request to a team.
+The response provides details about which memberships could and couldn't be created.
 
 ## EXAMPLES
+
+### Example 1: Add members in bulk to a team
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	Values = @(
+		@{
+			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			Roles = @(
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('18a80140-b0fb-4489-b360-2f6efaf225a0')"
+		}
+		@{
+			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('86503198-b81b-43fe-81ee-ad45b8848ac9')"
+		}
+	)
+}
+
+Add-MgTeamMember -TeamId $teamId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgChatMember Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Add members in bulk and encounter partial failure
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	Values = @(
+		@{
+			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			Roles = @(
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('18a80140-b0fb-4489-b360-2f6efaf225a0')"
+		}
+		@{
+			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('86503198-b81b-43fe-81ee-ad45b8848ac9')"
+		}
+	)
+}
+
+Add-MgTeamMember -TeamId $teamId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgChatMember Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Add members in bulk to a team using user principal name
+```powershell
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	Values = @(
+		@{
+			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			Roles = @(
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
+		}
+		@{
+			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			Roles = @(
+				"owner"
+			)
+			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('alex@contoso.com')"
+		}
+	)
+}
+
+Add-MgTeamMember -TeamId $teamId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgChatMember Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -179,7 +268,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths1Abk8N6ChatsChatIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Values <IMicrosoftGraphConversationMember[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The display name of the user.
     - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
     - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
@@ -224,7 +313,7 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
 VALUES <IMicrosoftGraphConversationMember[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the user.
   - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
   - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.

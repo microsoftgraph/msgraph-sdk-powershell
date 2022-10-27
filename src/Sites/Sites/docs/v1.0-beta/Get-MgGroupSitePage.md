@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSitePage
 
 ## SYNOPSIS
-Get pages from groups
+The collection of pages in the SitePages list in this site.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupSitePage -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get pages from groups
+The collection of pages in the SitePages list in this site.
 
 ## EXAMPLES
 

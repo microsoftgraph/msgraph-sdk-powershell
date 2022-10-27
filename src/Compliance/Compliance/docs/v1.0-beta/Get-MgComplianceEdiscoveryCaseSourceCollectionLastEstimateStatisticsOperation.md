@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseSourceCollectionLastEstimateStatisticsOperation
 
 ## SYNOPSIS
-Get lastEstimateStatisticsOperation from compliance
+Get the last estimateStatisticsOperation object associated with a source collection.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgComplianceEdiscoveryCaseSourceCollectionLastEstimateStatisticsOperation
 ```
 
 ## DESCRIPTION
-Get lastEstimateStatisticsOperation from compliance
+Get the last estimateStatisticsOperation object associated with a source collection.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgComplianceEdiscoveryCaseSourceCollectionLastEstimateStatisticsOperation Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseSourceCollectionLastEstimateStatisticsOperation -CaseId $caseId -SourceCollectionId $sourceCollectionId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollectionLastEstimateStatisticsOperation Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

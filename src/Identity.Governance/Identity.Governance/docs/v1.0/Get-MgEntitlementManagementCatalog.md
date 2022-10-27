@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementCatalog
 
 ## SYNOPSIS
-Get catalogs from identityGovernance
+A container for access packages.
 
 ## SYNTAX
 
@@ -50,9 +50,27 @@ Get-MgEntitlementManagementCatalog -DisplayNameEq <String> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get catalogs from identityGovernance
+A container for access packages.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEntitlementManagementCatalog Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId
+```
+
+This example shows how to use the Get-MgEntitlementManagementCatalog Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgEntitlementManagementCatalog Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgEntitlementManagementCatalog
+```
+
+This example shows how to use the Get-MgEntitlementManagementCatalog Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -279,8 +297,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog1
-
 ## NOTES
 
 ALIASES
@@ -329,7 +345,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -350,8 +368,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 ## RELATED LINKS
 

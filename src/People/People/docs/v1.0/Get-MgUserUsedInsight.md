@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserUsedInsight
 
 ## SYNOPSIS
-Get used from users
+Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 
 ## SYNTAX
 
@@ -32,9 +32,29 @@ Get-MgUserUsedInsight -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get used from users
+Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserUsedInsight Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserUsedInsight -UserId $userId -Sort "LastUsed/LastAccessedDateTime desc" 
+```
+
+This example shows how to use the Get-MgUserUsedInsight Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserUsedInsight Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserUsedInsight -UserId $userId
+```
+
+This example shows how to use the Get-MgUserUsedInsight Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

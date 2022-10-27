@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGroupDriveSpecialContent
 
 ## SYNOPSIS
-Update content for the navigation property special in groups
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgGroupDriveSpecialContent -InputObject <IFilesIdentity> -InFile <String> [-
 ```
 
 ## DESCRIPTION
-Update content for the navigation property special in groups
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

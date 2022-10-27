@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDepOnboardingSetting
 
 ## SYNOPSIS
-Get depOnboardingSettings from deviceManagement
+This collections of multiple DEP tokens per-tenant.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDepOnboardingSetting -InputObject <IDeviceManagementEnrolm
 ```
 
 ## DESCRIPTION
-Get depOnboardingSettings from deviceManagement
+This collections of multiple DEP tokens per-tenant.
 
 ## EXAMPLES
 

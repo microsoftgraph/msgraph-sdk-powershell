@@ -8,7 +8,7 @@ schema: 2.0.0
 # Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete
 
 ## SYNOPSIS
-Invoke action undoSoftDelete
+Undo soft deletion of a single message or a message reply in a channel or a chat.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete -InputObject <ITeamsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action undoSoftDelete
+Undo soft deletion of a single message or a message reply in a channel or a chat.
 
 ## EXAMPLES
 

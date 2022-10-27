@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListContentTypeColumnPosition
 
 ## SYNOPSIS
-Get columnPositions from shares
+Column order information in a content type.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgShareListContentTypeColumnPosition -InputObject <IFilesIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get columnPositions from shares
+Column order information in a content type.
 
 ## EXAMPLES
 

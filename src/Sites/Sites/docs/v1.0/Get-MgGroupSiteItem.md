@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupSiteItem
 
 ## SYNOPSIS
-Get items from groups
+Used to address any item contained in this site.
+This collection can't be enumerated.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgGroupSiteItem -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get items from groups
+Used to address any item contained in this site.
+This collection can't be enumerated.
 
 ## EXAMPLES
 

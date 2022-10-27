@@ -8,7 +8,8 @@ schema: 2.0.0
 # Restore-MgUserDriveListItemVersion
 
 ## SYNOPSIS
-Invoke action restoreVersion
+Restore a previous version of a ListItem to be the current version.
+This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
 
 ## SYNTAX
 
@@ -25,9 +26,21 @@ Restore-MgUserDriveListItemVersion -InputObject <IUsersActionsIdentity> [-PassTh
 ```
 
 ## DESCRIPTION
-Invoke action restoreVersion
+Restore a previous version of a ListItem to be the current version.
+This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Sites
+
+Restore-MgSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId
+```
+
+This example shows how to use the Restore-MgUserDriveListItemVersion Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgApplicationConnectorGroup
 
 ## SYNOPSIS
-Get connectorGroup from applications
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgApplicationConnectorGroup -InputObject <IApplicationsIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Get connectorGroup from applications
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ## EXAMPLES
 

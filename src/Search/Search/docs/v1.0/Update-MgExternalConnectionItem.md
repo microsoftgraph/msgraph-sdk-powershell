@@ -47,6 +47,24 @@ Update the navigation property items in external
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgExternalConnectionItem Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Search
+$params = @{
+	Acl = @(
+		@{
+			Type = "everyone"
+			Value = "67a141d8-cf4e-4528-ba07-bed21bfacd2d"
+			AccessType = "grant"
+		}
+	)
+}
+Update-MgExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgExternalConnectionItem Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -Acl
@@ -145,7 +163,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -261,15 +280,15 @@ To create the parameters described below, construct a hash table containing the 
 ACL <IMicrosoftGraphExternalConnectorsAcl1[]>: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
   - `[AccessType <String>]`: accessType
   - `[Type <String>]`: aclType
-  - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+  - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
 
 BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalItem1>: externalItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Acl <IMicrosoftGraphExternalConnectorsAcl1[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
     - `[AccessType <String>]`: accessType
     - `[Type <String>]`: aclType
-    - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+    - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
   - `[Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]`: externalItemContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String>]`: externalItemContentType

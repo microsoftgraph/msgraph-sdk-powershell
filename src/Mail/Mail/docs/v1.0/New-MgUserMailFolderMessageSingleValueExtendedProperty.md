@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgUserMailFolderMessageSingleValueExtendedProperty
 
 ## SYNOPSIS
-The collection of single-value extended properties defined for the message.
-Nullable.
+Create new navigation property to singleValueExtendedProperties for users
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ New-MgUserMailFolderMessageSingleValueExtendedProperty -InputObject <IMailIdenti
 ```
 
 ## DESCRIPTION
-The collection of single-value extended properties defined for the message.
-Nullable.
+Create new navigation property to singleValueExtendedProperties for users
 
 ## EXAMPLES
 
@@ -80,6 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+The unique idenfier for an entity.
 Read-only.
 
 ```yaml
@@ -225,7 +224,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSingleValueLegacyExtendedProperty>: singleValueLegacyExtendedProperty
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Value <String>]`: A property value.
 
 INPUTOBJECT <IMailIdentity>: Identity Parameter

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserSettingContactMergeSuggestion
 
 ## SYNOPSIS
-Update the navigation property contactMergeSuggestions in users
+Update the properties of a contactMergeSuggestions object.
 
 ## SYNTAX
 
@@ -37,9 +37,22 @@ Update-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Update the navigation property contactMergeSuggestions in users
+Update the properties of a contactMergeSuggestions object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgUserSettingContactMergeSuggestion Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+$params = @{
+	IsEnabled = $false
+}
+# A UPN can also be used as -UserId.
+Update-MgUserSettingContactMergeSuggestion -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgUserSettingContactMergeSuggestion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -75,7 +88,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -206,7 +220,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphContactMergeSuggestions>: contactMergeSuggestions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[IsEnabled <Boolean?>]`: true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter

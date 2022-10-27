@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDriveItemVersionContent
 
 ## SYNOPSIS
-Update content for the navigation property versions in drives
+The content stream for this version of the item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgDriveItemVersionContent -InputObject <IFilesIdentity> -InFile <String> [-B
 ```
 
 ## DESCRIPTION
-Update content for the navigation property versions in drives
+The content stream for this version of the item.
 
 ## EXAMPLES
 

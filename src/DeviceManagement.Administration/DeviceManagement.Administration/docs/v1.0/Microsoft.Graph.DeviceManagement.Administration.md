@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: 76ff4ad3-3dcb-46d6-815d-e42a49419e0d
+Module Guid: 97d99958-6bfd-4778-8d73-6142d00f3efd
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,55 +12,55 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.DeviceManagement.Administration Cmdlets
 ### [Get-MgDeviceManagementApplePushNotificationCertificate](Get-MgDeviceManagementApplePushNotificationCertificate.md)
-Get applePushNotificationCertificate from deviceManagement
+Apple push notification certificate.
 
 ### [Get-MgDeviceManagementComplianceManagementPartner](Get-MgDeviceManagementComplianceManagementPartner.md)
-Get complianceManagementPartners from deviceManagement
+The list of Compliance Management Partners configured by the tenant.
 
 ### [Get-MgDeviceManagementExchangeConnector](Get-MgDeviceManagementExchangeConnector.md)
-Get exchangeConnectors from deviceManagement
+The list of Exchange Connectors configured by the tenant.
 
 ### [Get-MgDeviceManagementIoUpdateStatuses](Get-MgDeviceManagementIoUpdateStatuses.md)
-Get iosUpdateStatuses from deviceManagement
+The IOS software update installation statuses for this account.
 
 ### [Get-MgDeviceManagementMobileThreatDefenseConnector](Get-MgDeviceManagementMobileThreatDefenseConnector.md)
-Get mobileThreatDefenseConnectors from deviceManagement
+The list of Mobile threat Defense connectors configured by the tenant.
 
 ### [Get-MgDeviceManagementPartner](Get-MgDeviceManagementPartner.md)
-Get deviceManagementPartners from deviceManagement
+The list of Device Management Partners configured by the tenant.
 
 ### [Get-MgDeviceManagementRemoteAssistancePartner](Get-MgDeviceManagementRemoteAssistancePartner.md)
-Get remoteAssistancePartners from deviceManagement
+The remote assist partners.
 
 ### [Get-MgDeviceManagementResourceOperation](Get-MgDeviceManagementResourceOperation.md)
-Get resourceOperations from deviceManagement
+The Resource Operations.
 
 ### [Get-MgDeviceManagementRoleAssignment](Get-MgDeviceManagementRoleAssignment.md)
-Get roleAssignments from deviceManagement
+The Role Assignments.
 
 ### [Get-MgDeviceManagementRoleDefinition](Get-MgDeviceManagementRoleDefinition.md)
-Get roleDefinitions from deviceManagement
+The Role Definitions.
 
 ### [Get-MgDeviceManagementRoleDefinitionRoleAssignment](Get-MgDeviceManagementRoleDefinitionRoleAssignment.md)
-Get roleAssignments from deviceManagement
+List of Role assignments for this role definition.
 
 ### [Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition](Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition.md)
-Get roleDefinition from deviceManagement
+Role definition this assignment is part of.
 
 ### [Get-MgDeviceManagementTelecomExpenseManagementPartner](Get-MgDeviceManagementTelecomExpenseManagementPartner.md)
-Get telecomExpenseManagementPartners from deviceManagement
+The telecom expense management partners.
 
 ### [Get-MgDeviceManagementTermAndCondition](Get-MgDeviceManagementTermAndCondition.md)
-Get termsAndConditions from deviceManagement
+The terms and conditions associated with device management of the company.
 
 ### [Get-MgDeviceManagementTermAndConditionAcceptanceStatuses](Get-MgDeviceManagementTermAndConditionAcceptanceStatuses.md)
-Get acceptanceStatuses from deviceManagement
+The list of acceptance statuses for this T&C policy.
 
 ### [Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition](Get-MgDeviceManagementTermAndConditionAcceptanceStatusesTermAndCondition.md)
-Get termsAndConditions from deviceManagement
+Navigation link to the terms and conditions that are assigned.
 
 ### [Get-MgDeviceManagementTermAndConditionAssignment](Get-MgDeviceManagementTermAndConditionAssignment.md)
-Get assignments from deviceManagement
+The list of assignments for this T&C policy.
 
 ### [New-MgDeviceManagementComplianceManagementPartner](New-MgDeviceManagementComplianceManagementPartner.md)
 Create new navigation property to complianceManagementPartners for deviceManagement

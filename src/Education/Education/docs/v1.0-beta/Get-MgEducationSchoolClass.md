@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSchoolClass
 
 ## SYNOPSIS
-Get classes from education
+Retrieve a list of classes owned by a school.
 
 ## SYNTAX
 
@@ -19,9 +19,18 @@ Get-MgEducationSchoolClass -EducationSchoolId <String> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get classes from education
+Retrieve a list of classes owned by a school.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEducationSchoolClass Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationSchoolClass -EducationSchoolId $educationSchoolId
+```
+
+This example shows how to use the Get-MgEducationSchoolClass Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -198,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationClass1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationClass
 
 ## NOTES
 

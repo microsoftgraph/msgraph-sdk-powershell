@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgAdministrativeUnitScopedRoleMember
 
 ## SYNOPSIS
-Get scopedRoleMembers from administrativeUnits
+Scoped-role members of this administrative unit.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagem
 ```
 
 ## DESCRIPTION
-Get scopedRoleMembers from administrativeUnits
+Scoped-role members of this administrative unit.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgAdministrativeUnitScopedRoleMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -ScopedRoleMembershipId $scopedRoleMembershipId
+```
+
+This example shows how to use the Get-MgAdministrativeUnitScopedRoleMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgAdministrativeUnitScopedRoleMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId
+```
+
+This example shows how to use the Get-MgAdministrativeUnitScopedRoleMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

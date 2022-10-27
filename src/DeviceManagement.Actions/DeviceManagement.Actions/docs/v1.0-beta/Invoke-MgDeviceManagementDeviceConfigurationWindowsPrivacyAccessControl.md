@@ -199,13 +199,14 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPathsB12D8ODevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphWindowsprivacyaccesscontrolsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[WindowsPrivacyAccessControls <IMicrosoftGraphWindowsPrivacyDataAccessControlItem[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AccessLevel <WindowsPrivacyDataAccessLevel?>]`: Determine the access level to specific Windows privacy data category.
     - `[AppDisplayName <String>]`: The Package Family Name of a Windows app. When set, the access level applies to the specified application.
     - `[AppPackageFamilyName <String>]`: The Package Family Name of a Windows app. When set, the access level applies to the specified application.
     - `[DataCategory <WindowsPrivacyDataCategory?>]`: Windows privacy data category specifier for privacy data access.
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
@@ -257,7 +258,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[ZebraFotaDeploymentId <String>]`: key: id of zebraFotaDeployment
 
 WINDOWSPRIVACYACCESSCONTROLS <IMicrosoftGraphWindowsPrivacyDataAccessControlItem[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AccessLevel <WindowsPrivacyDataAccessLevel?>]`: Determine the access level to specific Windows privacy data category.
   - `[AppDisplayName <String>]`: The Package Family Name of a Windows app. When set, the access level applies to the specified application.
   - `[AppPackageFamilyName <String>]`: The Package Family Name of a Windows app. When set, the access level applies to the specified application.

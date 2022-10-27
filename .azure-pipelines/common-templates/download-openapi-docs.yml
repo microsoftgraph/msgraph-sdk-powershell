@@ -96,7 +96,7 @@ jobs:
             # Calculate meta-module version
             $MetaModule = Find-Module "Microsoft.Graph" -Repository PSGallery
             $MetaModuleVersion = [System.Version]($MetaModule.Version)
-            $NewMetaModuleVersion = "$($MetaModuleVersion.Major).$($MetaModuleVersion.Minor).$($MetaModuleVersion.Build + 1)"
+            $NewMetaModuleVersion = "$($MetaModuleVersion.Major).$($MetaModuleVersion.Minor + 1).0"
             # Bump meta-module minor version
             Write-Host "Bumping Microsoft.Graph to $NewMetaModuleVersion."
             & "$(System.DefaultWorkingDirectory)\tools\SetMetaModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion
@@ -107,7 +107,7 @@ jobs:
               try {
                 $Module = Find-Module "Microsoft.Graph.$_" -Repository PSGallery -ErrorAction Stop
                 $ModuleVersion = [System.Version]($Module.Version)
-                $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor).$($ModuleVersion.Build + 1)"
+                $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor + 1).0"
                 Write-Host "Bumping $_ to $NewModuleVersion."
               } catch {
                 if ($_.Exception.Message -like "No match*") {
@@ -130,7 +130,7 @@ jobs:
           script: |
             git status
             git add .
-            git commit -m 'Weekly OpenApiDocs Download. [run ci]'
+            git commit -m 'Weekly OpenApiDocs Download.'
             git status
             git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyBranch)
             git status

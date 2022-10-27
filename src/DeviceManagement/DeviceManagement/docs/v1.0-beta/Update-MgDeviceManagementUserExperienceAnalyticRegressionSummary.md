@@ -67,7 +67,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -197,26 +198,26 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsRegressionSummary>: The user experience analytics Regression Summary.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ManufacturerRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics Manufacturer regression.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Unit <String>]`: The unit of the user experience analytics metric.
     - `[Value <Double?>]`: The value of the user experience analytics metric.
   - `[ModelRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics model regression.
   - `[OperatingSystemRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics operating system regression.
 
 MANUFACTURERREGRESSION <IMicrosoftGraphUserExperienceAnalyticsMetric[]>: The metric values for the user experience analytics Manufacturer regression.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Unit <String>]`: The unit of the user experience analytics metric.
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 
 MODELREGRESSION <IMicrosoftGraphUserExperienceAnalyticsMetric[]>: The metric values for the user experience analytics model regression.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Unit <String>]`: The unit of the user experience analytics metric.
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 
 OPERATINGSYSTEMREGRESSION <IMicrosoftGraphUserExperienceAnalyticsMetric[]>: The metric values for the user experience analytics operating system regression.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Unit <String>]`: The unit of the user experience analytics metric.
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 

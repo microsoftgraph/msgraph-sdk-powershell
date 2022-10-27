@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamPermissionGrant
 
 ## SYNOPSIS
-Get permissionGrants from teams
+A collection of permissions granted to apps to access the team.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgTeamPermissionGrant -InputObject <ITeamsIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get permissionGrants from teams
+A collection of permissions granted to apps to access the team.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgTeamPermissionGrant Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamPermissionGrant -TeamId $teamId
+```
+
+This example shows how to use the Get-MgTeamPermissionGrant Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

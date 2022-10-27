@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSiteListDrive
 
 ## SYNOPSIS
-Get drive from sites
+Only present on document libraries.
+Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgSiteListDrive -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get drive from sites
+Only present on document libraries.
+Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ## EXAMPLES
 

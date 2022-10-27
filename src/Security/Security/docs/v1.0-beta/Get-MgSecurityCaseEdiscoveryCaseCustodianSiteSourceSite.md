@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSourceSite
 
 ## SYNOPSIS
-Get site from security
+The SharePoint site associated with the siteSource.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSourceSite -InputObject <ISecurityI
 ```
 
 ## DESCRIPTION
-Get site from security
+The SharePoint site associated with the siteSource.
 
 ## EXAMPLES
 

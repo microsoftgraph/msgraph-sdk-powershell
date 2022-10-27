@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses
 
 ## SYNOPSIS
-Get deviceStatuses from deviceAppManagement
+The list of device installation states for this mobile app configuration.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses
 ```
 
 ## DESCRIPTION
-Get deviceStatuses from deviceAppManagement
+The list of device installation states for this mobile app configuration.
 
 ## EXAMPLES
 
@@ -247,7 +247,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1
 
 ## NOTES
 

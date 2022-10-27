@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgUserMailFolderChildFolderMessage
 
 ## SYNOPSIS
-Invoke action copy
+Copy a message to a folder within the user's mailbox.
 
 ## SYNTAX
 
@@ -41,9 +41,25 @@ Copy-MgUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action copy
+Copy a message to a folder within the user's mailbox.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	DestinationId = "destinationId-value"
+}
+
+# A UPN can also be used as -UserId.
+Copy-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+```
+
+This example shows how to use the Copy-MgUserMailFolderChildFolderMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

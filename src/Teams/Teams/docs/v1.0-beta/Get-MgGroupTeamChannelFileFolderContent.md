@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamChannelFileFolderContent
 
 ## SYNOPSIS
-Get content for the navigation property filesFolder from groups
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupTeamChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <
 ```
 
 ## DESCRIPTION
-Get content for the navigation property filesFolder from groups
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

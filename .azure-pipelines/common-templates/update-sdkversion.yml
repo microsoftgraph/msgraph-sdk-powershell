@@ -1,0 +1,17 @@
+steps:
+- task: PowerShell@2
+  displayName: Install Required Modules
+  inputs:
+    targetType: 'inline'
+    pwsh: true
+    script: |
+        $modules = Get-Module -Name Microsoft.Graph -ListAvailable
+        if ($modules.Count -gt 0 -and $modules[0].Version -eq "1.13.0") {
+          echo "Latest version already installed"
+        }else {
+          echo "Installing latest version"
+          Install-Module Microsoft.Graph -Repository PSGallery -Scope AllUsers -Force -AllowClobber
+          Import-Module Microsoft.Graph -Global -Force  
+        } 
+
+- template: ../common-templates/checkout.yml

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserDriveSpecial
 
 ## SYNOPSIS
-Get special from users
+Collection of common folders available in OneDrive.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgUserDriveSpecial -InputObject <IFilesIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get special from users
+Collection of common folders available in OneDrive.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

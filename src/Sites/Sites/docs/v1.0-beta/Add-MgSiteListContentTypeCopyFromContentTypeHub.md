@@ -8,7 +8,10 @@ schema: 2.0.0
 # Add-MgSiteListContentTypeCopyFromContentTypeHub
 
 ## SYNOPSIS
-Invoke action addCopyFromContentTypeHub
+Add or sync a copy of a published content type from the content type hub to a target site or a list.
+This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
+The method allows users to pull content types directly from the content type hub to a site or list.
+For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
 ## SYNTAX
 
@@ -39,9 +42,48 @@ Add-MgSiteListContentTypeCopyFromContentTypeHub -InputObject <ISitesIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action addCopyFromContentTypeHub
+Add or sync a copy of a published content type from the content type hub to a target site or a list.
+This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
+The method allows users to pull content types directly from the content type hub to a site or list.
+For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
 ## EXAMPLES
+
+### Example 1: Using the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	ContentTypeId = "String"
+}
+Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	ContentTypeId = "String"
+}
+Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	ContentTypeId = "0x0101"
+}
+Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

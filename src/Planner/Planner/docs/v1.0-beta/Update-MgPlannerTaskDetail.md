@@ -8,15 +8,15 @@ schema: 2.0.0
 # Update-MgPlannerTaskDetail
 
 ## SYNOPSIS
-Update the navigation property details in planner
+Update the properties of **plannertaskdetails** object.
 
 ## SYNTAX
 
 ### UpdateExpanded1 (Default)
 ```
 Update-MgPlannerTaskDetail -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
- [-Checklist <Hashtable>] [-Description <String>] [-Id <String>] [-PreviewType <String>]
- [-References <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Checklist <Hashtable>] [-Description <String>] [-Id <String>] [-Notes <IMicrosoftGraphItemBody>]
+ [-PreviewType <String>] [-References <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
@@ -34,14 +34,51 @@ Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> -BodyParameter <IMicr
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-Checklist <Hashtable>] [-Description <String>] [-Id <String>] [-PreviewType <String>]
- [-References <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Checklist <Hashtable>] [-Description <String>] [-Id <String>] [-Notes <IMicrosoftGraphItemBody>]
+ [-PreviewType <String>] [-References <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property details in planner
+Update the properties of **plannertaskdetails** object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPlannerTaskDetail Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	PreviewType = "noPreview"
+	References = @{
+		"Http%3A//developer%2Emicrosoft%2Ecom" = @{
+			"@odata.type" = "microsoft.graph.plannerExternalReference"
+			Alias = "Documentation"
+			PreviewPriority = " !"
+			Type = "Other"
+		}
+		"Https%3A//developer%2Emicrosoft%2Ecom/graph/graph-explorer" = @{
+			"@odata.type" = "microsoft.graph.plannerExternalReference"
+			PreviewPriority = "  !!"
+		}
+		"Http%3A//www%2Ebing%2Ecom" = $null
+	}
+	Checklist = @{
+		"95e27074-6c4a-447a-aa24-9d718a0b86fa" = @{
+			"@odata.type" = "microsoft.graph.plannerChecklistItem"
+			Title = "Update task details"
+			IsChecked = $true
+		}
+		"D280ed1a-9f6b-4f9c-a962-fb4d00dc50ff" = @{
+			"@odata.type" = "microsoft.graph.plannerChecklistItem"
+			IsChecked = $true
+		}
+		"A93c93c5-10a6-4167-9551-8bafa09967a7" = $null
+	}
+}
+Update-MgPlannerTaskDetail -PlannerTaskId $plannerTaskId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPlannerTaskDetail Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -107,7 +144,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -134,6 +172,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Notes
+itemBody
+To construct, please use Get-Help -Online and see NOTES section for NOTES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -252,10 +306,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPlannerTaskDetails1>: plannerTaskDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description of the task.
+  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Content <String>]`: The content of the item.
+    - `[ContentType <String>]`: bodyType
   - `[PreviewType <String>]`: plannerPreviewType
   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -269,6 +327,11 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
+
+NOTES <IMicrosoftGraphItemBody>: itemBody
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Content <String>]`: The content of the item.
+  - `[ContentType <String>]`: bodyType
 
 ## RELATED LINKS
 

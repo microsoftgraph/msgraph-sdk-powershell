@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementIntuneBrandingProfileAssignment
 
 ## SYNOPSIS
-Get assignments from deviceManagement
+The list of group assignments for the branding profile
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementIntuneBrandingProfileAssignment -InputObject <IDeviceManag
 ```
 
 ## DESCRIPTION
-Get assignments from deviceManagement
+The list of group assignments for the branding profile
 
 ## EXAMPLES
 
@@ -260,6 +260,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

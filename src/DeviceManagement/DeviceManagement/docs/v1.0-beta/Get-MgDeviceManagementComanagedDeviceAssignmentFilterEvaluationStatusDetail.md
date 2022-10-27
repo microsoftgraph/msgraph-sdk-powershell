@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail
 
 ## SYNOPSIS
-Get assignmentFilterEvaluationStatusDetails from deviceManagement
+Managed device mobile app configuration states for this device.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail
 ```
 
 ## DESCRIPTION
-Get assignmentFilterEvaluationStatusDetails from deviceManagement
+Managed device mobile app configuration states for this device.
 
 ## EXAMPLES
 
@@ -344,6 +344,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

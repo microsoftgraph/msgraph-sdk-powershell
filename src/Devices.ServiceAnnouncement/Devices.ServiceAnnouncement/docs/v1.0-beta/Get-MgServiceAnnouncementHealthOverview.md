@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgServiceAnnouncementHealthOverview
 
 ## SYNOPSIS
-Get healthOverviews from admin
+A collection of service health information for tenant.
+This property is a contained navigation property, it is nullable and readonly.
 
 ## SYNTAX
 
@@ -32,9 +33,46 @@ Get-MgServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncemen
 ```
 
 ## DESCRIPTION
-Get healthOverviews from admin
+A collection of service health information for tenant.
+This property is a contained navigation property, it is nullable and readonly.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId
+```
+
+This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId -ExpandProperty "issues" 
+```
+
+This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+Get-MgServiceAnnouncementHealthOverview
+```
+
+This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgServiceAnnouncementHealthOverview Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+Get-MgServiceAnnouncementHealthOverview -ExpandProperty "issues" 
+```
+
+This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

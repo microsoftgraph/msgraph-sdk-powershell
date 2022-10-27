@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgUserOnlineMeetingAttendeeReport
 
 ## SYNOPSIS
-Update attendeeReport for the navigation property onlineMeetings in users
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgUserOnlineMeetingAttendeeReport -InputObject <ICloudCommunicationsIdentity
 ```
 
 ## DESCRIPTION
-Update attendeeReport for the navigation property onlineMeetings in users
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ## EXAMPLES
 

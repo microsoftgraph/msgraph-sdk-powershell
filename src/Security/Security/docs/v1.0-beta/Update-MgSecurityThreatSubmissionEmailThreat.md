@@ -217,7 +217,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -508,10 +509,10 @@ ADMINREVIEW <IMicrosoftGraphSecuritySubmissionAdminReview>: submissionAdminRevie
 
 ATTACKSIMULATIONINFO <IMicrosoftGraphSecurityAttackSimulationInfo>: attackSimulationInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AttackSimDateTime <DateTime?>]`: Specifies the date time of the attack simulation.
-  - `[AttackSimDurationTime <TimeSpan?>]`: Specifies the duration (in time) for the attack simulation
-  - `[AttackSimId <String>]`: Specifies the activity id for the attack simulation.
-  - `[AttackSimUserId <String>]`: Specifies the user id of the user who got the attack simulation email
+  - `[AttackSimDateTime <DateTime?>]`: The date and time of the attack simulation.
+  - `[AttackSimDurationTime <TimeSpan?>]`: The duration (in time) for the attack simulation.
+  - `[AttackSimId <String>]`: The activity ID for the attack simulation.
+  - `[AttackSimUserId <String>]`: The unique identifier for the user who got the attack simulation email.
 
 BODYPARAMETER <IMicrosoftGraphSecurityEmailThreatSubmission>: emailThreatSubmission
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -541,13 +542,13 @@ BODYPARAMETER <IMicrosoftGraphSecurityEmailThreatSubmission>: emailThreatSubmiss
   - `[Source <String>]`: submissionSource
   - `[Status <String>]`: longRunningOperationStatus
   - `[TenantId <String>]`: Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AttackSimulationInfo <IMicrosoftGraphSecurityAttackSimulationInfo>]`: attackSimulationInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AttackSimDateTime <DateTime?>]`: Specifies the date time of the attack simulation.
-    - `[AttackSimDurationTime <TimeSpan?>]`: Specifies the duration (in time) for the attack simulation
-    - `[AttackSimId <String>]`: Specifies the activity id for the attack simulation.
-    - `[AttackSimUserId <String>]`: Specifies the user id of the user who got the attack simulation email
+    - `[AttackSimDateTime <DateTime?>]`: The date and time of the attack simulation.
+    - `[AttackSimDurationTime <TimeSpan?>]`: The duration (in time) for the attack simulation.
+    - `[AttackSimId <String>]`: The activity ID for the attack simulation.
+    - `[AttackSimUserId <String>]`: The unique identifier for the user who got the attack simulation email.
   - `[InternetMessageId <String>]`: Specifies the internet message id of the email being submitted. This information is present in the email header.
   - `[OriginalCategory <String>]`: submissionCategory
   - `[ReceivedDateTime <DateTime?>]`: Specifies the date and time stamp when the email was received.

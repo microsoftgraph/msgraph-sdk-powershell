@@ -8,7 +8,7 @@ schema: 2.0.0
 # Unpublish-MgSiteListContentType
 
 ## SYNOPSIS
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ## SYNTAX
 
@@ -25,9 +25,20 @@ Unpublish-MgSiteListContentType -InputObject <ISitesIdentity> [-PassThru] [-Conf
 ```
 
 ## DESCRIPTION
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Sites
+
+Unpublish-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
+```
+
+This example shows how to use the Unpublish-MgSiteListContentType Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation
 
 ## SYNOPSIS
-Get lastIndexOperation from security
+Operation entity that represents the latest indexing for the non-custodial data source.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation -InputO
 ```
 
 ## DESCRIPTION
-Get lastIndexOperation from security
+Operation entity that represents the latest indexing for the non-custodial data source.
 
 ## EXAMPLES
 

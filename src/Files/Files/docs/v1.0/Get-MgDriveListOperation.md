@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveListOperation
 
 ## SYNOPSIS
-Get operations from drives
+The collection of long-running operations on the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDriveListOperation -InputObject <IFilesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get operations from drives
+The collection of long-running operations on the list.
 
 ## EXAMPLES
 

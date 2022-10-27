@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListContentTypeBaseType
 
 ## SYNOPSIS
-Get baseTypes from shares
+The collection of content types that are ancestors of this content type.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgShareListContentTypeBaseType -InputObject <IFilesIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get baseTypes from shares
+The collection of content types that are ancestors of this content type.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgOnPremisePublishingProfileConnectorMemberOf
 
 ## SYNOPSIS
-Get memberOf from onPremisesPublishingProfiles
+The connectorGroup that the connector is a member of.
+Read-only.
 
 ## SYNTAX
 
@@ -20,9 +21,19 @@ Get-MgOnPremisePublishingProfileConnectorMemberOf -ConnectorId <String>
 ```
 
 ## DESCRIPTION
-Get memberOf from onPremisesPublishingProfiles
+The connectorGroup that the connector is a member of.
+Read-only.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgOnPremisePublishingProfileConnectorMemberOf Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgOnPremisePublishingProfileConnectorMemberOf -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorId $connectorId
+```
+
+This example shows how to use the Get-MgOnPremisePublishingProfileConnectorMemberOf Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

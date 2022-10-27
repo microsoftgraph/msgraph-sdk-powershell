@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserExtension
 
 ## SYNOPSIS
-Get extensions from users
+The collection of open extensions defined for the user.
+Supports $expand.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgUserExtension -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get extensions from users
+The collection of open extensions defined for the user.
+Supports $expand.
+Nullable.
 
 ## EXAMPLES
 

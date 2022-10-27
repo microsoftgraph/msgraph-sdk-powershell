@@ -8,7 +8,10 @@ schema: 2.0.0
 # Send-MgUserMailFolderMessage
 
 ## SYNOPSIS
-Invoke action send
+Send an existing draft message.
+The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.
+This method saves the message in the **Sent Items** folder.
+Alternatively, send a new message in a single operation.
 
 ## SYNTAX
 
@@ -25,9 +28,24 @@ Send-MgUserMailFolderMessage -InputObject <IUsersActionsIdentity> [-PassThru] [-
 ```
 
 ## DESCRIPTION
-Invoke action send
+Send an existing draft message.
+The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.
+This method saves the message in the **Sent Items** folder.
+Alternatively, send a new message in a single operation.
 
 ## EXAMPLES
+
+### Example 1: Send an existing draft message
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+# A UPN can also be used as -UserId.
+Send-MgUserMessage -UserId $userId -MessageId $messageId
+```
+
+This example shows how to use the Send-MgUserMailFolderMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

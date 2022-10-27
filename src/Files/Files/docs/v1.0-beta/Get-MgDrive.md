@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDrive
 
 ## SYNOPSIS
-Get Drive
+Retrieve the properties and relationships of a Drive resource.
+A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
 ## SYNTAX
 
@@ -31,9 +32,19 @@ Get-MgDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Propert
 ```
 
 ## DESCRIPTION
-Get Drive
+Retrieve the properties and relationships of a Drive resource.
+A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDrive Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Files
+Get-MgDrive -DriveId $driveId
+```
+
+This example shows how to use the Get-MgDrive Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

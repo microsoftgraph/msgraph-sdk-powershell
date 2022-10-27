@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserPerson
 
 ## SYNOPSIS
-Get people from users
+People that are relevant to the user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -29,9 +31,21 @@ Get-MgUserPerson -InputObject <IPeopleIdentity> [-Property <String[]>] [<CommonP
 ```
 
 ## DESCRIPTION
-Get people from users
+People that are relevant to the user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserPerson Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserPerson -UserId $userId
+```
+
+This example shows how to use the Get-MgUserPerson Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

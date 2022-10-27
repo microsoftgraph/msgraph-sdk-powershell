@@ -140,7 +140,8 @@ Accept wildcard characters: False
 
 ### -ContentType
 Write only.
-Content type, such as image/png, image/jpg.
+Content type.
+sicj as image/png, image/jpg.
 
 ```yaml
 Type: System.String
@@ -170,7 +171,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String

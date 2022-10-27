@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtDefaultManagedAppProtection
 
 ## SYNOPSIS
-Get defaultManagedAppProtections from deviceAppManagement
+Default managed app policies.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtDefaultManagedAppProtection -InputObject <IDevicesCorporateMan
 ```
 
 ## DESCRIPTION
-Get defaultManagedAppProtections from deviceAppManagement
+Default managed app policies.
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
 
 ## NOTES
 

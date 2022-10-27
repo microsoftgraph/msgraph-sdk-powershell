@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPlannerPlanDetail
 
 ## SYNOPSIS
-Update the navigation property details in planner
+Update the properties of **plannerplandetails** object.
 
 ## SYNTAX
 
@@ -39,9 +39,28 @@ Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Update the navigation property details in planner
+Update the properties of **plannerplandetails** object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPlannerPlanDetail Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	SharedWith = @{
+		"6463a5ce-2119-4198-9f2a-628761df4a62" = $true
+		"D95e6152-f683-4d78-9ff5-67ad180fea4a" = $false
+	}
+	CategoryDescriptions = @{
+		Category1 = "Indoors"
+		Category3 = $null
+	}
+}
+Update-MgPlannerPlanDetail -PlannerPlanId $plannerPlanId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPlannerPlanDetail Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -93,7 +112,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -223,7 +243,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPlannerPlanDetails>: plannerPlanDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>]`: plannerCategoryDescriptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Category1 <String>]`: The label associated with Category 1

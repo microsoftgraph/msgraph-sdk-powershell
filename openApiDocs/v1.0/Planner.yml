@@ -688,7 +688,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: List tasks
-      description: Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -1861,7 +1861,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of **plannerplandetails** object.
+      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -3314,7 +3314,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: List tasks
-      description: Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -4693,7 +4693,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: List tasks
-      description: Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -5726,7 +5726,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of **plannerplandetails** object.
+      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -8170,7 +8170,7 @@ paths:
       tags:
         - users.plannerUser
       summary: List tasks
-      description: Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -9343,7 +9343,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of **plannerplandetails** object.
+      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -11711,6 +11711,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.plannerPlanContainer:
@@ -11896,46 +11897,40 @@ components:
     microsoft.graph.plannerPlanCollectionResponse:
       title: Collection of plannerPlan
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.plannerBucketCollectionResponse:
       title: Collection of plannerBucket
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.plannerTaskCollectionResponse:
       title: Collection of plannerTask
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.plannerContainerType:
@@ -11978,15 +11973,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ErrorDetails:

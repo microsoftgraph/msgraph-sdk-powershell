@@ -24,6 +24,18 @@ New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
  -InputObject <IDeviceManagementActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### Generate
+```
+New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
+ -MicrosoftTunnelServerLogCollectionResponseId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### GenerateViaIdentity
+```
+New-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponseDownloadUrl
+ -InputObject <IDeviceManagementActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Invoke action createDownloadUrl
 
@@ -37,7 +49,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
-Parameter Sets: CreateViaIdentity
+Parameter Sets: CreateViaIdentity, GenerateViaIdentity
 Aliases:
 
 Required: True
@@ -52,7 +64,7 @@ key: id of microsoftTunnelServerLogCollectionResponse
 
 ```yaml
 Type: System.String
-Parameter Sets: Create
+Parameter Sets: Create, Generate
 Aliases:
 
 Required: True
@@ -114,6 +126,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

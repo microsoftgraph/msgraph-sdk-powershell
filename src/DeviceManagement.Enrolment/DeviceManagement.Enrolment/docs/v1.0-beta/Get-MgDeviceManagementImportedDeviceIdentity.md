@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementImportedDeviceIdentity
 
 ## SYNOPSIS
-Get importedDeviceIdentities from deviceManagement
+The imported device identities.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementImportedDeviceIdentity -InputObject <IDeviceManagementEnro
 ```
 
 ## DESCRIPTION
-Get importedDeviceIdentities from deviceManagement
+The imported device identities.
 
 ## EXAMPLES
 

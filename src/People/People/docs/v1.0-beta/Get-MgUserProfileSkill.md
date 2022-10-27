@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileSkill
 
 ## SYNOPSIS
-Get skills from users
+Represents detailed information about skills associated with a user in various services.
 
 ## SYNTAX
 
@@ -32,9 +32,29 @@ Get-MgUserProfileSkill -InputObject <IPeopleIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get skills from users
+Represents detailed information about skills associated with a user in various services.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserProfileSkill Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileSkill -UserId $userId -SkillProficiencyId $skillProficiencyId
+```
+
+This example shows how to use the Get-MgUserProfileSkill Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserProfileSkill Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileSkill -UserId $userId
+```
+
+This example shows how to use the Get-MgUserProfileSkill Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

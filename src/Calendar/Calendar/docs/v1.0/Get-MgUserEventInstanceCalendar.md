@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserEventInstanceCalendar
 
 ## SYNOPSIS
-Get calendar from users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ## SYNTAX
 
@@ -24,7 +26,9 @@ Get-MgUserEventInstanceCalendar -InputObject <ICalendarIdentity> [-Property <Str
 ```
 
 ## DESCRIPTION
-Get calendar from users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ## EXAMPLES
 

@@ -8,15 +8,16 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointOrganizationSetting
 
 ## SYNOPSIS
-Update the navigation property organizationSettings in deviceManagement
+Update the properties of the cloudPcOrganizationSettings object in a tenant.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDeviceManagementVirtualEndpointOrganizationSetting [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-OSVersion <String>] [-UserAccountType <String>] [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgDeviceManagementVirtualEndpointOrganizationSetting [-AdditionalProperties <Hashtable>]
+ [-EnableMemAutoEnroll] [-Id <String>] [-OSVersion <String>] [-UserAccountType <String>]
+ [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -27,9 +28,27 @@ Update-MgDeviceManagementVirtualEndpointOrganizationSetting
 ```
 
 ## DESCRIPTION
-Update the navigation property organizationSettings in deviceManagement
+Update the properties of the cloudPcOrganizationSettings object in a tenant.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgDeviceManagementVirtualEndpointOrganizationSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+$params = @{
+	"@odata.type" = "#microsoft.graph.cloudPcOrganizationSettings"
+	EnableMEMAutoEnroll = $true
+	OsVersion = "windows11"
+	UserAccountType = "standardUser"
+	WindowsSettings = @{
+		Language = "en-US"
+	}
+}
+Update-MgDeviceManagementVirtualEndpointOrganizationSetting -BodyParameter $params
+```
+
+This example shows how to use the Update-MgDeviceManagementVirtualEndpointOrganizationSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -64,8 +83,25 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -EnableMemAutoEnroll
+Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM).
+The default value is false.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -193,7 +229,8 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcOrganizationSettings>: cloudPcOrganizationSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[EnableMemAutoEnroll <Boolean?>]`: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
   - `[OSVersion <String>]`: cloudPcOperatingSystem
   - `[UserAccountType <String>]`: cloudPcUserAccountType
   - `[WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>]`: cloudPcWindowsSettings

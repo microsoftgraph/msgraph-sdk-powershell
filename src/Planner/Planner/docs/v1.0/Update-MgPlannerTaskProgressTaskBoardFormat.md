@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPlannerTaskProgressTaskBoardFormat
 
 ## SYNOPSIS
-Update the navigation property progressTaskBoardFormat in planner
+Update the properties of **plannerProgressTaskBoardTaskFormat** object.
 
 ## SYNTAX
 
@@ -40,9 +40,21 @@ Update-MgPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property progressTaskBoardFormat in planner
+Update the properties of **plannerProgressTaskBoardTaskFormat** object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPlannerTaskProgressTaskBoardFormat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	OrderHint = "A6673H Ejkl!"
+}
+Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPlannerTaskProgressTaskBoardFormat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -78,7 +90,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -209,7 +222,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat>: plannerProgressTaskBoardTaskFormat
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[OrderHint <String>]`: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter

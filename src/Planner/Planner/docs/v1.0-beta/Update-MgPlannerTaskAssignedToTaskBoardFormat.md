@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPlannerTaskAssignedToTaskBoardFormat
 
 ## SYNOPSIS
-Update the navigation property assignedToTaskBoardFormat in planner
+Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
 
 ## SYNTAX
 
@@ -41,9 +41,23 @@ Update-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property assignedToTaskBoardFormat in planner
+Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	OrderHintsByAssignee = @{
+		"Aaa27244-1db4-476a-a5cb-004607466324" = "8566473P 957764Jk!"
+	}
+}
+Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -79,7 +93,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -225,7 +240,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1>: plannerAssignedToTaskBoardTaskFormat
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[OrderHintsByAssignee <IMicrosoftGraphPlannerOrderHintsByAssignee>]`: plannerOrderHintsByAssignee
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[UnassignedOrderHint <String>]`: Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.

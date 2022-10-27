@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgAppCatalogTeamAppDefinition
 
 ## SYNOPSIS
-Get appDefinitions from appCatalogs
+The details for each version of the app.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgAppCatalogTeamAppDefinition -InputObject <ITeamsIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get appDefinitions from appCatalogs
+The details for each version of the app.
 
 ## EXAMPLES
 

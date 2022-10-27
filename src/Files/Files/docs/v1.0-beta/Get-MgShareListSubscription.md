@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListSubscription
 
 ## SYNOPSIS
-Get subscriptions from shares
+The set of subscriptions on the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgShareListSubscription -InputObject <IFilesIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get subscriptions from shares
+The set of subscriptions on the list.
 
 ## EXAMPLES
 

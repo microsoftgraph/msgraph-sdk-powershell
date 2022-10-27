@@ -8,7 +8,11 @@ schema: 2.0.0
 # Get-MgDirectoryRole
 
 ## SYNOPSIS
-Get directoryRole
+Retrieve the properties of a directoryRole object.
+The role must be activated in tenant for a successful response.
+You can use both the object ID and template ID of the **directoryRole** with this API.
+The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
+For details, see Role template IDs.
 
 ## SYNTAX
 
@@ -31,7 +35,11 @@ Get-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get directoryRole
+Retrieve the properties of a directoryRole object.
+The role must be activated in tenant for a successful response.
+You can use both the object ID and template ID of the **directoryRole** with this API.
+The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
+For details, see Role template IDs.
 
 ## EXAMPLES
 

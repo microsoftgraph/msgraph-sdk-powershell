@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupLifecyclePolicy
 
 ## SYNOPSIS
-Create groupLifecyclePolicy
+Creates a new groupLifecyclePolicy.
 
 ## SYNTAX
 
@@ -26,9 +26,23 @@ New-MgGroupLifecyclePolicy -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> 
 ```
 
 ## DESCRIPTION
-Create groupLifecyclePolicy
+Creates a new groupLifecyclePolicy.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgGroupLifecyclePolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	GroupLifetimeInDays = 100
+	ManagedGroupTypes = "Selected"
+	AlternateNotificationEmails = "admin@contoso.com"
+}
+New-MgGroupLifecyclePolicy -BodyParameter $params
+```
+
+This example shows how to use the New-MgGroupLifecyclePolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -96,7 +110,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -179,7 +194,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphGroupLifecyclePolicy>: groupLifecyclePolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AlternateNotificationEmails <String>]`: List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
   - `[GroupLifetimeInDays <Int32?>]`: Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
   - `[ManagedGroupTypes <String>]`: The group type for which the expiration policy applies. Possible values are All, Selected or None.

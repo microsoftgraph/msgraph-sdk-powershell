@@ -8,7 +8,7 @@ schema: 2.0.0
 # Publish-MgSiteContentType
 
 ## SYNOPSIS
-Invoke action publish
+Publishes a [contentType][] present in the content type hub site.
 
 ## SYNTAX
 
@@ -24,9 +24,18 @@ Publish-MgSiteContentType -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [
 ```
 
 ## DESCRIPTION
-Invoke action publish
+Publishes a [contentType][] present in the content type hub site.
 
 ## EXAMPLES
+
+### Example 1: Using the Publish-MgSiteContentType Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Publish-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
+```
+
+This example shows how to use the Publish-MgSiteContentType Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

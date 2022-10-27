@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtWindowManagedAppProtection
 
 ## SYNOPSIS
-Get windowsManagedAppProtections from deviceAppManagement
+Windows managed app policies.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtWindowManagedAppProtection -InputObject <IDevicesCorporateMana
 ```
 
 ## DESCRIPTION
-Get windowsManagedAppProtections from deviceAppManagement
+Windows managed app policies.
 
 ## EXAMPLES
 

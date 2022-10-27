@@ -8,33 +8,44 @@ schema: 2.0.0
 # Get-MgGroupTransitiveMemberOf
 
 ## SYNOPSIS
-Get transitiveMemberOf from groups
+The groups that a group is a member of, either directly and through nested membership.
+Nullable.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
 Get-MgGroupTransitiveMemberOf -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgGroupTransitiveMemberOf -DirectoryObjectId <String> -GroupId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgGroupTransitiveMemberOf -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get transitiveMemberOf from groups
+The groups that a group is a member of, either directly and through nested membership.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupTransitiveMemberOf Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupTransitiveMemberOf -GroupId $groupId
+```
+
+This example shows how to use the Get-MgGroupTransitiveMemberOf Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -44,6 +55,22 @@ List all pages.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False

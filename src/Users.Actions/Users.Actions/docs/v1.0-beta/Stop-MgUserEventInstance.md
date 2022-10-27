@@ -8,7 +8,11 @@ schema: 2.0.0
 # Stop-MgUserEventInstance
 
 ## SYNOPSIS
-Invoke action cancel
+This action allows the organizer of a meeting to send a cancellation message and cancel the event.
+The action moves the event to the Deleted Items folder.
+The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
+An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
+You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
 
 ## SYNTAX
 
@@ -39,9 +43,29 @@ Stop-MgUserEventInstance -InputObject <IUsersActionsIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Invoke action cancel
+This action allows the organizer of a meeting to send a cancellation message and cancel the event.
+The action moves the event to the Deleted Items folder.
+The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
+An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
+You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	Comment = "Cancelling for this week due to all hands"
+}
+
+# A UPN can also be used as -UserId.
+Stop-MgUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
+```
+
+This example shows how to use the Stop-MgUserEventInstance Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

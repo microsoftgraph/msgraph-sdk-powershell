@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgEducationClassAssignmentResource
 
 ## SYNOPSIS
-Create new navigation property to resources for education
+Create an assignment resource.
+You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
 
 ## SYNTAX
 
@@ -39,9 +40,132 @@ New-MgEducationClassAssignmentResource -InputObject <IEducationIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Create new navigation property to resources for education
+Create an assignment resource.
+You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgEducationClassAssignmentResource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DistributeForStudentWork = $false
+	Resource = @{
+		"@odata.type" = "microsoft.graph.educationExcelResource"
+		DisplayName = "Graph Doc pages.xlsx"
+		FileUrl = "https://graph.microsoft.com/beta/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXoOOmEQNO79QpIMPdOmY3nf/items/01QTY63RIR7PSV4JJSFJHKNPUVUWGPW4O2"
+	}
+}
+New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgEducationClassAssignmentResource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DistributeForStudentWork = $false
+	Resource = @{
+		DisplayName = "article.pdf"
+		"@odata.type" = "#microsoft.graph.educationFileResource"
+	}
+}
+New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgEducationClassAssignmentResource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DistributeForStudentWork = $false
+	Resource = @{
+		DisplayName = "Where the Wonders of Learning Never Cease | Wonderopolis"
+		Link = "https://wonderopolis.org/"
+		ThumbnailPreviewUrl = $null
+		"@odata.type" = "#microsoft.graph.educationLinkResource"
+	}
+}
+New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the New-MgEducationClassAssignmentResource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DistributeForStudentWork = $false
+	Resource = @{
+		"@odata.type" = "microsoft.graph.educationMediaResource"
+		DisplayName = "homework example.PNG"
+		FileUrl = "https://graph.microsoft.com/beta/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXoOOmEQNO79QpIMPdOmY3nf/items/01QTY63RMUWOKAGSJZ6BHINJVKNMOOJABF"
+	}
+}
+New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Using the New-MgEducationClassAssignmentResource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DistributeForStudentWork = $false
+	Resource = @{
+		"@odata.type" = "microsoft.graph.educationPowerPointResource"
+		DisplayName = "state diagram.pptx"
+		FileUrl = "https://graph.microsoft.com/beta/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXoOOmEQNO79QpIMPdOmY3nf/items/01QTY63RN327OXRN6EVFE2Q5FRJZTN5EOJ"
+	}
+}
+New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 6: Using the New-MgEducationClassAssignmentResource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DistributeForStudentWork = $false
+	Resource = @{
+		DisplayName = "Template - My Story"
+		AppId = "6fbeb90c-3d55-4bd5-82c4-bfe824be4300"
+		AppIconWebUrl = "https://statics.teams.cdn.office.net/evergreen-assets/ThirdPartyApps/6fbeb90c-3d55-4bd5-82c4-bfe824be4300_largeImage.png?v=2.0.2"
+		TeamsEmbeddedContentUrl = "https://app.api.edu.buncee.com/player/C7B0866C9B7E485EAE21AE14DBC3FD08?embed=1&render_slide_panel=1"
+		WebUrl = "https://app.edu.buncee.com/buncee/C7B0866C9B7E485EAE21AE14DBC3FD08"
+		"@odata.type" = "#microsoft.graph.educationTeamsAppResource"
+	}
+}
+New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 7: Using the New-MgEducationClassAssignmentResource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+	DistributeForStudentWork = $false
+	Resource = @{
+		"@odata.type" = "microsoft.graph.educationWordResource"
+		DisplayName = "Issues and PR in guthub.docx"
+		FileUrl = "https://graph.microsoft.com/beta/drives/b!DPA6q59Tw0mtgmyXRUmrQRqBZTesG-lMkl1cBmvvMeUEWrOk89nKRpUEr4ZhNYBc/items/016XPCQEELISJB7NVNVBAK7V4UIF6Q27U2"
+	}
+}
+New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the New-MgEducationClassAssignmentResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -123,7 +247,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -224,7 +349,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationAssignmentResource>: educationAssignmentResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DistributeForStudentWork <Boolean?>]`: Indicates whether this resource should be copied to each student submission for modification and submission. Required
   - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -236,10 +361,8 @@ BODYPARAMETER <IMicrosoftGraphEducationAssignmentResource>: educationAssignmentR
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[DisplayName <String>]`: Display name of resource.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment
@@ -265,10 +388,8 @@ RESOURCE <IMicrosoftGraphEducationResource>: educationResource
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[DisplayName <String>]`: Display name of resource.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ## RELATED LINKS
 

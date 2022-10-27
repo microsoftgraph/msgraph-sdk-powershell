@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserInferenceClassification
 
 ## SYNOPSIS
-Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+Update the navigation property inferenceClassification in users
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgUserInferenceClassification -InputObject <IMailIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+Update the navigation property inferenceClassification in users
 
 ## EXAMPLES
 
@@ -77,6 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+The unique idenfier for an entity.
 Read-only.
 
 ```yaml
@@ -210,9 +211,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphInferenceClassification>: inferenceClassification
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Overrides <IMicrosoftGraphInferenceClassificationOverride[]>]`: A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ClassifyAs <String>]`: inferenceClassificationType
     - `[SenderEmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -234,7 +235,7 @@ INPUTOBJECT <IMailIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 OVERRIDES <IMicrosoftGraphInferenceClassificationOverride[]>: A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ClassifyAs <String>]`: inferenceClassificationType
   - `[SenderEmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

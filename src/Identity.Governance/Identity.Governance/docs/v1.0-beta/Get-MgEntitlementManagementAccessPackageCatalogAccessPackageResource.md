@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource
 
 ## SYNOPSIS
-Get accessPackageResources from identityGovernance
+Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
+To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPack
 ```
 
 ## DESCRIPTION
-Get accessPackageResources from identityGovernance
+Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
+To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
 
 ## EXAMPLES
 

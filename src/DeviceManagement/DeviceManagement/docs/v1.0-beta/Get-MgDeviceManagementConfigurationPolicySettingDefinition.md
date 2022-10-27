@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDeviceManagementConfigurationPolicySettingDefinition
 
 ## SYNOPSIS
-Get settingDefinitions from deviceManagement
+List of related Setting Definitions.
+This property is read-only.
 
 ## SYNTAX
 
@@ -34,7 +35,8 @@ Get-MgDeviceManagementConfigurationPolicySettingDefinition -InputObject <IDevice
 ```
 
 ## DESCRIPTION
-Get settingDefinitions from deviceManagement
+List of related Setting Definitions.
+This property is read-only.
 
 ## EXAMPLES
 
@@ -359,6 +361,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

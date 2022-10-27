@@ -249,6 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -439,7 +440,7 @@ To create the parameters described below, construct a hash table containing the 
 
 ACCOUNT <IMicrosoftGraphAccount>: account
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Blocked <Boolean?>]`: 
   - `[Category <String>]`: 
   - `[DisplayName <String>]`: 
@@ -449,10 +450,10 @@ ACCOUNT <IMicrosoftGraphAccount>: account
 
 BODYPARAMETER <IMicrosoftGraphJournalLine>: journalLine
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Account <IMicrosoftGraphAccount>]`: account
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Blocked <Boolean?>]`: 
     - `[Category <String>]`: 
     - `[DisplayName <String>]`: 

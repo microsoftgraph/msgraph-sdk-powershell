@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserTrendingInsight
 
 ## SYNOPSIS
-Get trending from users
+Calculated relationship identifying documents trending around a user.
+Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint.
+Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgUserTrendingInsight -InputObject <IPeopleIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get trending from users
+Calculated relationship identifying documents trending around a user.
+Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint.
+Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 
 ## EXAMPLES
 

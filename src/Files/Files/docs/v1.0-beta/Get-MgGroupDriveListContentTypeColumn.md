@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListContentTypeColumn
 
 ## SYNOPSIS
-Get columns from groups
+The collection of column definitions for this contentType.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupDriveListContentTypeColumn -InputObject <IFilesIdentity> [-ExpandProp
 ```
 
 ## DESCRIPTION
-Get columns from groups
+The collection of column definitions for this contentType.
 
 ## EXAMPLES
 

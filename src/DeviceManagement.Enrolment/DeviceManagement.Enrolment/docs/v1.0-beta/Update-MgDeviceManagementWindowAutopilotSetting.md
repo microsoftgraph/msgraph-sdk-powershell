@@ -64,7 +64,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -191,7 +192,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphWindowsAutopilotSettings>: The windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[LastManualSyncTriggerDateTime <DateTime?>]`: Last data sync date time with DDS service.
   - `[LastSyncDateTime <DateTime?>]`: Last data sync date time with DDS service.
   - `[SyncStatus <WindowsAutopilotSyncStatus?>]`: windowsAutopilotSyncStatus

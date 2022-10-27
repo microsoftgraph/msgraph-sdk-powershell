@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSchemaExtension
 
 ## SYNOPSIS
-Get schemaExtension
+Get the properties of the specified schemaExtension definition.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get schemaExtension
+Get the properties of the specified schemaExtension definition.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSchemaExtension Cmdlet
+```powershell
+Import-Module Microsoft.Graph.SchemaExtensions
+Get-MgSchemaExtension -SchemaExtensionId $schemaExtensionId
+```
+
+This example shows how to use the Get-MgSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSchemaExtension Cmdlet
+```powershell
+Import-Module Microsoft.Graph.SchemaExtensions
+Get-MgSchemaExtension -Filter "id eq 'graphlearn_test'" 
+```
+
+This example shows how to use the Get-MgSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgAdministrativeUnit
 
 ## SYNOPSIS
-Get administrativeUnit
+Retrieve the properties and relationships of an administrativeUnit object.
+Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity> [-E
 ```
 
 ## DESCRIPTION
-Get administrativeUnit
+Retrieve the properties and relationships of an administrativeUnit object.
+Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
 
 ## EXAMPLES
 

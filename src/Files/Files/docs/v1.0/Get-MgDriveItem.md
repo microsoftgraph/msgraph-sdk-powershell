@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgDriveItem
 
 ## SYNOPSIS
-Get items from drives
+All items contained in the drive.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get items from drives
+All items contained in the drive.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

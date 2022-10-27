@@ -8,7 +8,11 @@ schema: 2.0.0
 # Copy-MgTeam
 
 ## SYNOPSIS
-Invoke action clone
+Create a copy of a team.
+This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen.
+\n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation \nreturned by the Location: header to see if it's 'running' or 'succeeded' or 'failed'.
+\nYou should continue to GET until the status is not 'running'.
+\nThe recommended delay between GETs is 5 seconds.
 
 ## SYNTAX
 
@@ -41,9 +45,29 @@ Copy-MgTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-
 ```
 
 ## DESCRIPTION
-Invoke action clone
+Create a copy of a team.
+This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen.
+\n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation \nreturned by the Location: header to see if it's 'running' or 'succeeded' or 'failed'.
+\nYou should continue to GET until the status is not 'running'.
+\nThe recommended delay between GETs is 5 seconds.
 
 ## EXAMPLES
+
+### Example 1: Using the Copy-MgTeam Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	DisplayName = "Library Assist"
+	Description = "Self help community for library"
+	MailNickname = "libassist"
+	PartsToClone = "apps,tabs,settings,channels,members"
+	Visibility = "public"
+}
+Copy-MgTeam -TeamId $teamId -BodyParameter $params
+```
+
+This example shows how to use the Copy-MgTeam Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

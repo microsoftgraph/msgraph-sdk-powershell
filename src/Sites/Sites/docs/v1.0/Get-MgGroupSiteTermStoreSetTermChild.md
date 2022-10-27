@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStoreSetTermChild
 
 ## SYNOPSIS
-Get children from groups
+Children of current term.
 
 ## SYNTAX
 
@@ -52,7 +52,7 @@ Get-MgGroupSiteTermStoreSetTermChild -GroupId <String> -SetId <String> -SiteId <
 ```
 
 ## DESCRIPTION
-Get children from groups
+Children of current term.
 
 ## EXAMPLES
 

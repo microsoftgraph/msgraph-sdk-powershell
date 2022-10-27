@@ -96,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -285,7 +286,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSymantecCodeSigningCertificate>: symantecCodeSigningCertificate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Content <Byte[]>]`: The Windows Symantec Code-Signing Certificate in the raw data format.
   - `[ExpirationDateTime <DateTime?>]`: The Cert Expiration Date.
   - `[Issuer <String>]`: The Issuer value for the cert.

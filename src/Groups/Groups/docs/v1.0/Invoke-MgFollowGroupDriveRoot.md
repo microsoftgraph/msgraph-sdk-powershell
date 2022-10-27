@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgFollowGroupDriveRoot
 
 ## SYNOPSIS
-Invoke action follow
+Follow a driveItem.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Invoke-MgFollowGroupDriveRoot -InputObject <IGroupsIdentity> [-Confirm] [-WhatIf
 ```
 
 ## DESCRIPTION
-Invoke action follow
+Follow a driveItem.
 
 ## EXAMPLES
 

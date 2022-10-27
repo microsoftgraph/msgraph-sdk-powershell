@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementIntuneBrandingProfile
 
 ## SYNOPSIS
-Get intuneBrandingProfiles from deviceManagement
+Intune branding profiles targeted to AAD groups
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementIntuneBrandingProfile -InputObject <IDeviceManagementAdmin
 ```
 
 ## DESCRIPTION
-Get intuneBrandingProfiles from deviceManagement
+Intune branding profiles targeted to AAD groups
 
 ## EXAMPLES
 
@@ -245,6 +245,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: 31aed695-1602-42f3-a52b-daf20ef1be00
+Module Guid: 33618394-4d5f-4977-90dd-744cf9dcf676
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,619 +15,631 @@ Microsoft Graph PowerShell Cmdlets
 Get deviceManagement
 
 ### [Get-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary](Get-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary.md)
-Get advancedThreatProtectionOnboardingStateSummary from deviceManagement
+The summary state of ATP onboarding state for this account.
 
 ### [Get-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState](Get-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState.md)
-Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
+Not yet documented
 
 ### [Get-MgDeviceManagementAndroidForWorkAppConfigurationSchema](Get-MgDeviceManagementAndroidForWorkAppConfigurationSchema.md)
-Get androidForWorkAppConfigurationSchemas from deviceManagement
+Android for Work app configuration schema entities.
 
 ### [Get-MgDeviceManagementAndroidForWorkSetting](Get-MgDeviceManagementAndroidForWorkSetting.md)
-Get androidForWorkSettings from deviceManagement
+The singleton Android for Work settings entity.
 
 ### [Get-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting](Get-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSetting.md)
-Get androidManagedStoreAccountEnterpriseSettings from deviceManagement
+The singleton Android managed store account enterprise settings entity.
 
 ### [Get-MgDeviceManagementAndroidManagedStoreAppConfigurationSchema](Get-MgDeviceManagementAndroidManagedStoreAppConfigurationSchema.md)
-Get androidManagedStoreAppConfigurationSchemas from deviceManagement
+Android Enterprise app configuration schema entities.
 
 ### [Get-MgDeviceManagementAssignmentFilter](Get-MgDeviceManagementAssignmentFilter.md)
-Get assignmentFilters from deviceManagement
+The list of assignment filters
 
 ### [Get-MgDeviceManagementCategory](Get-MgDeviceManagementCategory.md)
-Get categories from deviceManagement
+The available categories
 
 ### [Get-MgDeviceManagementCategorySettingDefinition](Get-MgDeviceManagementCategorySettingDefinition.md)
-Get settingDefinitions from deviceManagement
+The setting definitions this category contains
 
 ### [Get-MgDeviceManagementComanagedDevice](Get-MgDeviceManagementComanagedDevice.md)
-Get comanagedDevices from deviceManagement
+The list of co-managed devices report
 
 ### [Get-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail](Get-MgDeviceManagementComanagedDeviceAssignmentFilterEvaluationStatusDetail.md)
-Get assignmentFilterEvaluationStatusDetails from deviceManagement
+Managed device mobile app configuration states for this device.
 
 ### [Get-MgDeviceManagementComanagedDeviceCategory](Get-MgDeviceManagementComanagedDeviceCategory.md)
-Get deviceCategory from deviceManagement
+Device category
 
 ### [Get-MgDeviceManagementComanagedDeviceCompliancePolicyState](Get-MgDeviceManagementComanagedDeviceCompliancePolicyState.md)
-Get deviceCompliancePolicyStates from deviceManagement
+Device compliance policy states for this device.
 
 ### [Get-MgDeviceManagementComanagedDeviceConfigurationState](Get-MgDeviceManagementComanagedDeviceConfigurationState.md)
-Get deviceConfigurationStates from deviceManagement
+Device configuration states for this device.
 
 ### [Get-MgDeviceManagementComanagedDeviceDetectedApp](Get-MgDeviceManagementComanagedDeviceDetectedApp.md)
-Get detectedApps from deviceManagement
+All applications currently installed on the device
 
 ### [Get-MgDeviceManagementComanagedDeviceLogCollectionRequest](Get-MgDeviceManagementComanagedDeviceLogCollectionRequest.md)
-Get logCollectionRequests from deviceManagement
+List of log collection requests
 
 ### [Get-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState](Get-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState.md)
-Get managedDeviceMobileAppConfigurationStates from deviceManagement
+Managed device mobile app configuration states for this device.
 
 ### [Get-MgDeviceManagementComanagedDeviceSecurityBaselineState](Get-MgDeviceManagementComanagedDeviceSecurityBaselineState.md)
-Get securityBaselineStates from deviceManagement
+Security baseline states for this device.
 
 ### [Get-MgDeviceManagementComanagedDeviceSecurityBaselineStateSettingState](Get-MgDeviceManagementComanagedDeviceSecurityBaselineStateSettingState.md)
-Get settingStates from deviceManagement
+The security baseline state for different settings for a device
 
 ### [Get-MgDeviceManagementComanagedDeviceUser](Get-MgDeviceManagementComanagedDeviceUser.md)
-Get users from deviceManagement
+The primary users associated with the managed device.
 
 ### [Get-MgDeviceManagementComanagedDeviceWindowProtectionState](Get-MgDeviceManagementComanagedDeviceWindowProtectionState.md)
-Get windowsProtectionState from deviceManagement
+The device protection status.
+This property is read-only.
 
 ### [Get-MgDeviceManagementComanagedDeviceWindowProtectionStateDetectedMalwareState](Get-MgDeviceManagementComanagedDeviceWindowProtectionStateDetectedMalwareState.md)
-Get detectedMalwareState from deviceManagement
+Device malware list
 
 ### [Get-MgDeviceManagementCompliancePolicy](Get-MgDeviceManagementCompliancePolicy.md)
-Get compliancePolicies from deviceManagement
+List of all compliance policies
 
 ### [Get-MgDeviceManagementCompliancePolicyAssignment](Get-MgDeviceManagementCompliancePolicyAssignment.md)
-Get assignments from deviceManagement
+Policy assignments
 
 ### [Get-MgDeviceManagementCompliancePolicyScheduledActionForRule](Get-MgDeviceManagementCompliancePolicyScheduledActionForRule.md)
-Get scheduledActionsForRule from deviceManagement
+The list of scheduled action for this rule
 
 ### [Get-MgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](Get-MgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
-Get scheduledActionConfigurations from deviceManagement
+The list of scheduled action configurations for this compliance policy.
+This collection can contain a maximum of 100 elements.
 
 ### [Get-MgDeviceManagementCompliancePolicySetting](Get-MgDeviceManagementCompliancePolicySetting.md)
-Get settings from deviceManagement
+Policy settings
 
 ### [Get-MgDeviceManagementCompliancePolicySettingDefinition](Get-MgDeviceManagementCompliancePolicySettingDefinition.md)
-Get settingDefinitions from deviceManagement
+List of related Setting Definitions.
+This property is read-only.
 
 ### [Get-MgDeviceManagementComplianceSetting](Get-MgDeviceManagementComplianceSetting.md)
-Get complianceSettings from deviceManagement
+List of all ComplianceSettings
 
 ### [Get-MgDeviceManagementConfigurationPolicy](Get-MgDeviceManagementConfigurationPolicy.md)
-Get configurationPolicies from deviceManagement
+List of all Configuration policies
 
 ### [Get-MgDeviceManagementConfigurationPolicyAssignment](Get-MgDeviceManagementConfigurationPolicyAssignment.md)
-Get assignments from deviceManagement
+Policy assignments
 
 ### [Get-MgDeviceManagementConfigurationPolicySetting](Get-MgDeviceManagementConfigurationPolicySetting.md)
-Get settings from deviceManagement
+Policy settings
 
 ### [Get-MgDeviceManagementConfigurationPolicySettingDefinition](Get-MgDeviceManagementConfigurationPolicySettingDefinition.md)
-Get settingDefinitions from deviceManagement
+List of related Setting Definitions.
+This property is read-only.
 
 ### [Get-MgDeviceManagementConfigurationPolicyTemplate](Get-MgDeviceManagementConfigurationPolicyTemplate.md)
-Get configurationPolicyTemplates from deviceManagement
+List of all templates
 
 ### [Get-MgDeviceManagementConfigurationPolicyTemplateSettingDefinition](Get-MgDeviceManagementConfigurationPolicyTemplateSettingDefinition.md)
-Get settingDefinitions from deviceManagement
+List of related Setting Definitions
 
 ### [Get-MgDeviceManagementConfigurationPolicyTemplateSettingTemplate](Get-MgDeviceManagementConfigurationPolicyTemplateSettingTemplate.md)
-Get settingTemplates from deviceManagement
+Setting templates
 
 ### [Get-MgDeviceManagementConfigurationSetting](Get-MgDeviceManagementConfigurationSetting.md)
-Get configurationSettings from deviceManagement
+List of all ConfigurationSettings
 
 ### [Get-MgDeviceManagementDataSharingConsent](Get-MgDeviceManagementDataSharingConsent.md)
-Get dataSharingConsents from deviceManagement
+Data sharing consents.
 
 ### [Get-MgDeviceManagementDerivedCredentials](Get-MgDeviceManagementDerivedCredentials.md)
-Get derivedCredentials from deviceManagement
+Collection of Derived credential settings associated with account.
 
 ### [Get-MgDeviceManagementDetectedApp](Get-MgDeviceManagementDetectedApp.md)
-Get detectedApps from deviceManagement
+The list of detected apps associated with a device.
 
 ### [Get-MgDeviceManagementDetectedAppManagedDevice](Get-MgDeviceManagementDetectedAppManagedDevice.md)
-Get managedDevices from deviceManagement
+The devices that have the discovered application installed
 
 ### [Get-MgDeviceManagementDeviceCategory](Get-MgDeviceManagementDeviceCategory.md)
-Get deviceCategories from deviceManagement
+The list of device categories with the tenant.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicy](Get-MgDeviceManagementDeviceCompliancePolicy.md)
-Get deviceCompliancePolicies from deviceManagement
+The device compliance policies.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyAssignment](Get-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
-Get assignments from deviceManagement
+The collection of assignments for this compliance policy.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary](Get-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary.md)
-Get deviceSettingStateSummaries from deviceManagement
+Compliance Setting State Device Summary
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary.md)
-Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
+The device compliance state summary for this account.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatuses.md)
-Get deviceStatuses from deviceManagement
+List of DeviceComplianceDeviceStatus.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview.md)
-Get deviceStatusOverview from deviceManagement
+Device compliance devices status overview
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule](Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule.md)
-Get scheduledActionsForRule from deviceManagement
+The list of scheduled action for this rule
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
-Get scheduledActionConfigurations from deviceManagement
+The list of scheduled action configurations for this compliance policy.
+Compliance policy must have one and only one block scheduled action.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummary](Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummary.md)
-Get deviceCompliancePolicySettingStateSummaries from deviceManagement
+The summary states of compliance policy settings for this account.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState](Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState.md)
-Get deviceComplianceSettingStates from deviceManagement
+Not yet documented
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyUserStatuses](Get-MgDeviceManagementDeviceCompliancePolicyUserStatuses.md)
-Get userStatuses from deviceManagement
+List of DeviceComplianceUserStatus.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview](Get-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview.md)
-Get userStatusOverview from deviceManagement
+Device compliance users status overview
 
 ### [Get-MgDeviceManagementDeviceConfiguration](Get-MgDeviceManagementDeviceConfiguration.md)
-Get deviceConfigurations from deviceManagement
+The device configurations.
 
 ### [Get-MgDeviceManagementDeviceConfigurationAssignment](Get-MgDeviceManagementDeviceConfigurationAssignment.md)
-Get assignments from deviceManagement
+The list of assignments for the device configuration profile.
 
 ### [Get-MgDeviceManagementDeviceConfigurationConflictSummary](Get-MgDeviceManagementDeviceConfigurationConflictSummary.md)
-Get deviceConfigurationConflictSummary from deviceManagement
+Summary of policies in conflict state for this account.
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary](Get-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary.md)
-Get deviceSettingStateSummaries from deviceManagement
+Device Configuration Setting State Device Summary
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStateSummary](Get-MgDeviceManagementDeviceConfigurationDeviceStateSummary.md)
-Get deviceConfigurationDeviceStateSummaries from deviceManagement
+The device configuration device state summary for this account.
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStatuses](Get-MgDeviceManagementDeviceConfigurationDeviceStatuses.md)
-Get deviceStatuses from deviceManagement
+Device configuration installation status by device.
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStatusOverview](Get-MgDeviceManagementDeviceConfigurationDeviceStatusOverview.md)
-Get deviceStatusOverview from deviceManagement
+Device Configuration devices status overview
 
 ### [Get-MgDeviceManagementDeviceConfigurationGroupAssignment](Get-MgDeviceManagementDeviceConfigurationGroupAssignment.md)
-Get groupAssignments from deviceManagement
+The list of group assignments for the device configuration profile.
 
 ### [Get-MgDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfiguration](Get-MgDeviceManagementDeviceConfigurationGroupAssignmentDeviceConfiguration.md)
-Get deviceConfiguration from deviceManagement
+The navigation link to the Device Configuration being targeted.
 
 ### [Get-MgDeviceManagementDeviceConfigurationUserStateSummary](Get-MgDeviceManagementDeviceConfigurationUserStateSummary.md)
-Get deviceConfigurationUserStateSummaries from deviceManagement
+The device configuration user state summary for this account.
 
 ### [Get-MgDeviceManagementDeviceConfigurationUserStatuses](Get-MgDeviceManagementDeviceConfigurationUserStatuses.md)
-Get userStatuses from deviceManagement
+Device configuration installation status by user.
 
 ### [Get-MgDeviceManagementDeviceConfigurationUserStatusOverview](Get-MgDeviceManagementDeviceConfigurationUserStatusOverview.md)
-Get userStatusOverview from deviceManagement
+Device Configuration users status overview
 
 ### [Get-MgDeviceManagementDeviceHealthScript](Get-MgDeviceManagementDeviceHealthScript.md)
-Get deviceHealthScripts from deviceManagement
+The list of device health scripts associated with the tenant.
 
 ### [Get-MgDeviceManagementDeviceHealthScriptAssignment](Get-MgDeviceManagementDeviceHealthScriptAssignment.md)
-Get assignments from deviceManagement
+The list of group assignments for the device health script
 
 ### [Get-MgDeviceManagementDeviceHealthScriptDeviceRunState](Get-MgDeviceManagementDeviceHealthScriptDeviceRunState.md)
-Get deviceRunStates from deviceManagement
+List of run states for the device health script across all devices
 
 ### [Get-MgDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice](Get-MgDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice.md)
-Get managedDevice from deviceManagement
+The managed device on which the device health script executed
 
 ### [Get-MgDeviceManagementDeviceHealthScriptRunSummary](Get-MgDeviceManagementDeviceHealthScriptRunSummary.md)
-Get runSummary from deviceManagement
+High level run summary for device health script.
 
 ### [Get-MgDeviceManagementDeviceShellScript](Get-MgDeviceManagementDeviceShellScript.md)
-Get deviceShellScripts from deviceManagement
+The list of device shell scripts associated with the tenant.
 
 ### [Get-MgDeviceManagementDeviceShellScriptAssignment](Get-MgDeviceManagementDeviceShellScriptAssignment.md)
-Get assignments from deviceManagement
+The list of group assignments for the device management script.
 
 ### [Get-MgDeviceManagementDeviceShellScriptDeviceRunState](Get-MgDeviceManagementDeviceShellScriptDeviceRunState.md)
-Get deviceRunStates from deviceManagement
+List of run states for this script across all devices.
 
 ### [Get-MgDeviceManagementDeviceShellScriptDeviceRunStateManagedDevice](Get-MgDeviceManagementDeviceShellScriptDeviceRunStateManagedDevice.md)
-Get managedDevice from deviceManagement
+The managed devices that executes the device management script.
 
 ### [Get-MgDeviceManagementDeviceShellScriptGroupAssignment](Get-MgDeviceManagementDeviceShellScriptGroupAssignment.md)
-Get groupAssignments from deviceManagement
+The list of group assignments for the device management script.
 
 ### [Get-MgDeviceManagementDeviceShellScriptRunSummary](Get-MgDeviceManagementDeviceShellScriptRunSummary.md)
-Get runSummary from deviceManagement
+Run summary for device management script.
 
 ### [Get-MgDeviceManagementDeviceShellScriptUserRunState](Get-MgDeviceManagementDeviceShellScriptUserRunState.md)
-Get userRunStates from deviceManagement
+List of run states for this script across all users.
 
 ### [Get-MgDeviceManagementDeviceShellScriptUserRunStateDeviceRunState](Get-MgDeviceManagementDeviceShellScriptUserRunStateDeviceRunState.md)
-Get deviceRunStates from deviceManagement
+List of run states for this script across all devices of specific user.
 
 ### [Get-MgDeviceManagementEmbeddedSimActivationCodePool](Get-MgDeviceManagementEmbeddedSimActivationCodePool.md)
-Get embeddedSIMActivationCodePools from deviceManagement
+The embedded SIM activation code pools created by this account.
 
 ### [Get-MgDeviceManagementEmbeddedSimActivationCodePoolAssignment](Get-MgDeviceManagementEmbeddedSimActivationCodePoolAssignment.md)
-Get assignments from deviceManagement
+Navigational property to a list of targets to which this pool is assigned.
 
 ### [Get-MgDeviceManagementEmbeddedSimActivationCodePoolDeviceState](Get-MgDeviceManagementEmbeddedSimActivationCodePoolDeviceState.md)
-Get deviceStates from deviceManagement
+Navigational property to a list of device states for this pool.
 
 ### [Get-MgDeviceManagementGroupPolicyConfiguration](Get-MgDeviceManagementGroupPolicyConfiguration.md)
-Get groupPolicyConfigurations from deviceManagement
+The group policy configurations created by this account.
 
 ### [Get-MgDeviceManagementGroupPolicyConfigurationAssignment](Get-MgDeviceManagementGroupPolicyConfigurationAssignment.md)
-Get assignments from deviceManagement
+The list of group assignments for the configuration.
 
 ### [Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValue](Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValue.md)
-Get definitionValues from deviceManagement
+The list of enabled or disabled group policy definition values for the configuration.
 
 ### [Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValueDefinition](Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValueDefinition.md)
-Get definition from deviceManagement
+The associated group policy definition with the value.
 
 ### [Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue](Get-MgDeviceManagementGroupPolicyConfigurationDefinitionValuePresentationValue.md)
-Get presentationValues from deviceManagement
+The associated group policy presentation values with the definition value.
 
 ### [Get-MgDeviceManagementIntent](Get-MgDeviceManagementIntent.md)
-Get intents from deviceManagement
+The device management intents
 
 ### [Get-MgDeviceManagementIntentAssignment](Get-MgDeviceManagementIntentAssignment.md)
-Get assignments from deviceManagement
+Collection of assignments
 
 ### [Get-MgDeviceManagementIntentCategory](Get-MgDeviceManagementIntentCategory.md)
-Get categories from deviceManagement
+Collection of setting categories within the intent
 
 ### [Get-MgDeviceManagementIntentCategorySetting](Get-MgDeviceManagementIntentCategorySetting.md)
-Get settings from deviceManagement
+The settings this category contains
 
 ### [Get-MgDeviceManagementIntentDeviceSettingStateSummary](Get-MgDeviceManagementIntentDeviceSettingStateSummary.md)
-Get deviceSettingStateSummaries from deviceManagement
+Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 
 ### [Get-MgDeviceManagementIntentDeviceState](Get-MgDeviceManagementIntentDeviceState.md)
-Get deviceStates from deviceManagement
+Collection of states of all devices that the intent is applied to
 
 ### [Get-MgDeviceManagementIntentDeviceStateSummary](Get-MgDeviceManagementIntentDeviceStateSummary.md)
-Get deviceStateSummary from deviceManagement
+A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
 
 ### [Get-MgDeviceManagementIntentSetting](Get-MgDeviceManagementIntentSetting.md)
-Get settings from deviceManagement
+Collection of all settings to be applied
 
 ### [Get-MgDeviceManagementIntentUserState](Get-MgDeviceManagementIntentUserState.md)
-Get userStates from deviceManagement
+Collection of states of all users that the intent is applied to
 
 ### [Get-MgDeviceManagementIntentUserStateSummary](Get-MgDeviceManagementIntentUserStateSummary.md)
-Get userStateSummary from deviceManagement
+A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 
 ### [Get-MgDeviceManagementMacOSSoftwareUpdateAccountSummary](Get-MgDeviceManagementMacOSSoftwareUpdateAccountSummary.md)
-Get macOSSoftwareUpdateAccountSummaries from deviceManagement
+The MacOS software update account summaries for this account.
 
 ### [Get-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummary](Get-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummary.md)
-Get categorySummaries from deviceManagement
+Summary of the updates by category.
 
 ### [Get-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary](Get-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummaryUpdateStateSummary.md)
-Get updateStateSummaries from deviceManagement
+Summary of the update states.
 
 ### [Get-MgDeviceManagementManagedDevice](Get-MgDeviceManagementManagedDevice.md)
-Get managedDevices from deviceManagement
+The list of managed devices.
 
 ### [Get-MgDeviceManagementManagedDeviceAssignmentFilterEvaluationStatusDetail](Get-MgDeviceManagementManagedDeviceAssignmentFilterEvaluationStatusDetail.md)
-Get assignmentFilterEvaluationStatusDetails from deviceManagement
+Managed device mobile app configuration states for this device.
 
 ### [Get-MgDeviceManagementManagedDeviceCategory](Get-MgDeviceManagementManagedDeviceCategory.md)
-Get deviceCategory from deviceManagement
+Device category
 
 ### [Get-MgDeviceManagementManagedDeviceCompliancePolicyState](Get-MgDeviceManagementManagedDeviceCompliancePolicyState.md)
-Get deviceCompliancePolicyStates from deviceManagement
+Device compliance policy states for this device.
 
 ### [Get-MgDeviceManagementManagedDeviceConfigurationState](Get-MgDeviceManagementManagedDeviceConfigurationState.md)
-Get deviceConfigurationStates from deviceManagement
+Device configuration states for this device.
 
 ### [Get-MgDeviceManagementManagedDeviceDetectedApp](Get-MgDeviceManagementManagedDeviceDetectedApp.md)
-Get detectedApps from deviceManagement
+All applications currently installed on the device
 
 ### [Get-MgDeviceManagementManagedDeviceEncryptionState](Get-MgDeviceManagementManagedDeviceEncryptionState.md)
-Get managedDeviceEncryptionStates from deviceManagement
+Encryption report for devices in this account
 
 ### [Get-MgDeviceManagementManagedDeviceLogCollectionRequest](Get-MgDeviceManagementManagedDeviceLogCollectionRequest.md)
-Get logCollectionRequests from deviceManagement
+List of log collection requests
 
 ### [Get-MgDeviceManagementManagedDeviceMobileAppConfigurationState](Get-MgDeviceManagementManagedDeviceMobileAppConfigurationState.md)
-Get managedDeviceMobileAppConfigurationStates from deviceManagement
+Managed device mobile app configuration states for this device.
 
 ### [Get-MgDeviceManagementManagedDeviceOverview](Get-MgDeviceManagementManagedDeviceOverview.md)
-Get managedDeviceOverview from deviceManagement
+Device overview
 
 ### [Get-MgDeviceManagementManagedDeviceSecurityBaselineState](Get-MgDeviceManagementManagedDeviceSecurityBaselineState.md)
-Get securityBaselineStates from deviceManagement
+Security baseline states for this device.
 
 ### [Get-MgDeviceManagementManagedDeviceSecurityBaselineStateSettingState](Get-MgDeviceManagementManagedDeviceSecurityBaselineStateSettingState.md)
-Get settingStates from deviceManagement
+The security baseline state for different settings for a device
 
 ### [Get-MgDeviceManagementManagedDeviceUser](Get-MgDeviceManagementManagedDeviceUser.md)
-Get users from deviceManagement
+The primary users associated with the managed device.
 
 ### [Get-MgDeviceManagementManagedDeviceWindowProtectionState](Get-MgDeviceManagementManagedDeviceWindowProtectionState.md)
-Get windowsProtectionState from deviceManagement
+The device protection status.
+This property is read-only.
 
 ### [Get-MgDeviceManagementManagedDeviceWindowProtectionStateDetectedMalwareState](Get-MgDeviceManagementManagedDeviceWindowProtectionStateDetectedMalwareState.md)
-Get detectedMalwareState from deviceManagement
+Device malware list
 
 ### [Get-MgDeviceManagementMicrosoftTunnelConfiguration](Get-MgDeviceManagementMicrosoftTunnelConfiguration.md)
-Get microsoftTunnelConfigurations from deviceManagement
+Collection of MicrosoftTunnelConfiguration settings associated with account.
 
 ### [Get-MgDeviceManagementMicrosoftTunnelHealthThreshold](Get-MgDeviceManagementMicrosoftTunnelHealthThreshold.md)
-Get microsoftTunnelHealthThresholds from deviceManagement
+Collection of MicrosoftTunnelHealthThreshold settings associated with account.
 
 ### [Get-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse](Get-MgDeviceManagementMicrosoftTunnelServerLogCollectionResponse.md)
-Get microsoftTunnelServerLogCollectionResponses from deviceManagement
+Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 
 ### [Get-MgDeviceManagementMicrosoftTunnelSite](Get-MgDeviceManagementMicrosoftTunnelSite.md)
-Get microsoftTunnelSites from deviceManagement
+Collection of MicrosoftTunnelSite settings associated with account.
 
 ### [Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration](Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelConfiguration.md)
-Get microsoftTunnelConfiguration from deviceManagement
+The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 
 ### [Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer](Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServer.md)
-Get microsoftTunnelServers from deviceManagement
+A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 
 ### [Get-MgDeviceManagementMobileAppTroubleshootingEvent](Get-MgDeviceManagementMobileAppTroubleshootingEvent.md)
-Get mobileAppTroubleshootingEvents from deviceManagement
+The collection property of MobileAppTroubleshootingEvent.
 
 ### [Get-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest](Get-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest.md)
-Get appLogCollectionRequests from deviceManagement
+The collection property of AppLogUploadRequest.
 
 ### [Get-MgDeviceManagementNotificationMessageTemplate](Get-MgDeviceManagementNotificationMessageTemplate.md)
-Get notificationMessageTemplates from deviceManagement
+The Notification Message Templates.
 
 ### [Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage](Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage.md)
-Get localizedNotificationMessages from deviceManagement
+The list of localized messages for this Notification Message Template.
 
 ### [Get-MgDeviceManagementRemoteActionAudit](Get-MgDeviceManagementRemoteActionAudit.md)
-Get remoteActionAudits from deviceManagement
+The list of device remote action audits with the tenant.
 
 ### [Get-MgDeviceManagementResourceAccessProfile](Get-MgDeviceManagementResourceAccessProfile.md)
-Get resourceAccessProfiles from deviceManagement
+Collection of resource access settings associated with account.
 
 ### [Get-MgDeviceManagementResourceAccessProfileAssignment](Get-MgDeviceManagementResourceAccessProfileAssignment.md)
-Get assignments from deviceManagement
+The list of assignments for the device configuration profile.
 
 ### [Get-MgDeviceManagementReusableSetting](Get-MgDeviceManagementReusableSetting.md)
-Get reusableSettings from deviceManagement
+List of all reusable settings
 
 ### [Get-MgDeviceManagementScript](Get-MgDeviceManagementScript.md)
-Get deviceManagementScripts from deviceManagement
+The list of device management scripts associated with the tenant.
 
 ### [Get-MgDeviceManagementScriptAssignment](Get-MgDeviceManagementScriptAssignment.md)
-Get assignments from deviceManagement
+The list of group assignments for the device management script.
 
 ### [Get-MgDeviceManagementScriptDeviceRunState](Get-MgDeviceManagementScriptDeviceRunState.md)
-Get deviceRunStates from deviceManagement
+List of run states for this script across all devices.
 
 ### [Get-MgDeviceManagementScriptDeviceRunStateManagedDevice](Get-MgDeviceManagementScriptDeviceRunStateManagedDevice.md)
-Get managedDevice from deviceManagement
+The managed devices that executes the device management script.
 
 ### [Get-MgDeviceManagementScriptGroupAssignment](Get-MgDeviceManagementScriptGroupAssignment.md)
-Get groupAssignments from deviceManagement
+The list of group assignments for the device management script.
 
 ### [Get-MgDeviceManagementScriptRunSummary](Get-MgDeviceManagementScriptRunSummary.md)
-Get runSummary from deviceManagement
+Run summary for device management script.
 
 ### [Get-MgDeviceManagementScriptUserRunState](Get-MgDeviceManagementScriptUserRunState.md)
-Get userRunStates from deviceManagement
+List of run states for this script across all users.
 
 ### [Get-MgDeviceManagementScriptUserRunStateDeviceRunState](Get-MgDeviceManagementScriptUserRunStateDeviceRunState.md)
-Get deviceRunStates from deviceManagement
+List of run states for this script across all devices of specific user.
 
 ### [Get-MgDeviceManagementSettingDefinition](Get-MgDeviceManagementSettingDefinition.md)
-Get settingDefinitions from deviceManagement
+The device management intent setting definitions
 
 ### [Get-MgDeviceManagementSoftwareUpdateStatusSummary](Get-MgDeviceManagementSoftwareUpdateStatusSummary.md)
-Get softwareUpdateStatusSummary from deviceManagement
+The software update status summary.
 
 ### [Get-MgDeviceManagementTemplate](Get-MgDeviceManagementTemplate.md)
-Get templates from deviceManagement
+The available templates
 
 ### [Get-MgDeviceManagementTemplateCategory](Get-MgDeviceManagementTemplateCategory.md)
-Get categories from deviceManagement
+Collection of setting categories within the template
 
 ### [Get-MgDeviceManagementTemplateCategoryRecommendedSetting](Get-MgDeviceManagementTemplateCategoryRecommendedSetting.md)
-Get recommendedSettings from deviceManagement
+The settings this category contains
 
 ### [Get-MgDeviceManagementTemplateMigratableTo](Get-MgDeviceManagementTemplateMigratableTo.md)
-Get migratableTo from deviceManagement
+Collection of templates this template can migrate to
 
 ### [Get-MgDeviceManagementTemplateMigratableToCategory](Get-MgDeviceManagementTemplateMigratableToCategory.md)
-Get categories from deviceManagement
+Collection of setting categories within the template
 
 ### [Get-MgDeviceManagementTemplateMigratableToCategoryRecommendedSetting](Get-MgDeviceManagementTemplateMigratableToCategoryRecommendedSetting.md)
-Get recommendedSettings from deviceManagement
+The settings this category contains
 
 ### [Get-MgDeviceManagementTemplateMigratableToSetting](Get-MgDeviceManagementTemplateMigratableToSetting.md)
-Get settings from deviceManagement
+Collection of all settings this template has
 
 ### [Get-MgDeviceManagementTemplateSetting](Get-MgDeviceManagementTemplateSetting.md)
-Get settings from deviceManagement
+Collection of all settings this template has
 
 ### [Get-MgDeviceManagementTroubleshootingEvent](Get-MgDeviceManagementTroubleshootingEvent.md)
-Get troubleshootingEvents from deviceManagement
+The list of troubleshooting events for the tenant.
+
+### [Get-MgDeviceManagementUserExperienceAnalyticAnomaly](Get-MgDeviceManagementUserExperienceAnalyticAnomaly.md)
+The user experience analytics anomaly entity contains anomaly details.
+
+### [Get-MgDeviceManagementUserExperienceAnalyticAnomalyDevice](Get-MgDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
+The user experience analytics anomaly entity contains device details.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance](Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance.md)
-Get userExperienceAnalyticsAppHealthApplicationPerformance from deviceManagement
+User experience analytics appHealth Application Performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersion](Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersion.md)
-Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion from deviceManagement
+User experience analytics appHealth Application Performance by App Version
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDetail](Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDetail.md)
-Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails from deviceManagement
+User experience analytics appHealth Application Performance by App Version details
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDeviceId](Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDeviceId.md)
-Get userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId from deviceManagement
+User experience analytics appHealth Application Performance by App Version Device Id
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOsversion](Get-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByOsversion.md)
-Get userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion from deviceManagement
+User experience analytics appHealth Application Performance by OS Version
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance](Get-MgDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance.md)
-Get userExperienceAnalyticsAppHealthDeviceModelPerformance from deviceManagement
+User experience analytics appHealth Model Performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthDevicePerformance](Get-MgDeviceManagementUserExperienceAnalyticAppHealthDevicePerformance.md)
-Get userExperienceAnalyticsAppHealthDevicePerformance from deviceManagement
+User experience analytics appHealth Device Performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthDevicePerformanceDetail](Get-MgDeviceManagementUserExperienceAnalyticAppHealthDevicePerformanceDetail.md)
-Get userExperienceAnalyticsAppHealthDevicePerformanceDetails from deviceManagement
+User experience analytics device performance details
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance](Get-MgDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance.md)
-Get userExperienceAnalyticsAppHealthOSVersionPerformance from deviceManagement
+User experience analytics appHealth OS version Performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthOverview](Get-MgDeviceManagementUserExperienceAnalyticAppHealthOverview.md)
-Get userExperienceAnalyticsAppHealthOverview from deviceManagement
+User experience analytics appHealth overview
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticAppHealthOverviewMetricValue](Get-MgDeviceManagementUserExperienceAnalyticAppHealthOverviewMetricValue.md)
-Get metricValues from deviceManagement
+The metric values for the user experience analytics category.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBaseline](Get-MgDeviceManagementUserExperienceAnalyticBaseline.md)
-Get userExperienceAnalyticsBaselines from deviceManagement
+User experience analytics baselines
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBaselineAppHealthMetric](Get-MgDeviceManagementUserExperienceAnalyticBaselineAppHealthMetric.md)
-Get appHealthMetrics from deviceManagement
+The user experience analytics app health metrics.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBaselineBatteryHealthMetric](Get-MgDeviceManagementUserExperienceAnalyticBaselineBatteryHealthMetric.md)
-Get batteryHealthMetrics from deviceManagement
+The user experience analytics battery health metrics.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBaselineBestPracticeMetric](Get-MgDeviceManagementUserExperienceAnalyticBaselineBestPracticeMetric.md)
-Get bestPracticesMetrics from deviceManagement
+The user experience analytics best practices metrics.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBaselineDeviceBootPerformanceMetric](Get-MgDeviceManagementUserExperienceAnalyticBaselineDeviceBootPerformanceMetric.md)
-Get deviceBootPerformanceMetrics from deviceManagement
+The user experience analytics device boot performance metrics.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBaselineRebootAnalyticMetric](Get-MgDeviceManagementUserExperienceAnalyticBaselineRebootAnalyticMetric.md)
-Get rebootAnalyticsMetrics from deviceManagement
+The user experience analytics reboot analytics metrics.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBaselineResourcePerformanceMetric](Get-MgDeviceManagementUserExperienceAnalyticBaselineResourcePerformanceMetric.md)
-Get resourcePerformanceMetrics from deviceManagement
+The user experience analytics resource performance metrics.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric](Get-MgDeviceManagementUserExperienceAnalyticBaselineWorkFromAnywhereMetric.md)
-Get workFromAnywhereMetrics from deviceManagement
+The user experience analytics work from anywhere metrics.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact](Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact.md)
-Get userExperienceAnalyticsBatteryHealthAppImpact from deviceManagement
+User Experience Analytics Battery Health App Impact
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail](Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail.md)
-Get userExperienceAnalyticsBatteryHealthCapacityDetails from deviceManagement
+User Experience Analytics Battery Health Capacity Details
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact](Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceAppImpact.md)
-Get userExperienceAnalyticsBatteryHealthDeviceAppImpact from deviceManagement
+User Experience Analytics Battery Health Device App Impact
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance](Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance.md)
-Get userExperienceAnalyticsBatteryHealthDevicePerformance from deviceManagement
+User Experience Analytics Battery Health Device Performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceRuntimeHistory](Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthDeviceRuntimeHistory.md)
-Get userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory from deviceManagement
+User Experience Analytics Battery Health Device Runtime History
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance](Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance.md)
-Get userExperienceAnalyticsBatteryHealthModelPerformance from deviceManagement
+User Experience Analytics Battery Health Model Performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance](Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance.md)
-Get userExperienceAnalyticsBatteryHealthOsPerformance from deviceManagement
+User Experience Analytics Battery Health Os Performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail](Get-MgDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail.md)
-Get userExperienceAnalyticsBatteryHealthRuntimeDetails from deviceManagement
+User Experience Analytics Battery Health Runtime Details
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticCategory](Get-MgDeviceManagementUserExperienceAnalyticCategory.md)
-Get userExperienceAnalyticsCategories from deviceManagement
+User experience analytics categories
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticCategoryMetricValue](Get-MgDeviceManagementUserExperienceAnalyticCategoryMetricValue.md)
-Get metricValues from deviceManagement
+The metric values for the user experience analytics category.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceMetricHistory](Get-MgDeviceManagementUserExperienceAnalyticDeviceMetricHistory.md)
-Get userExperienceAnalyticsDeviceMetricHistory from deviceManagement
+User experience analytics device metric history
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDevicePerformance](Get-MgDeviceManagementUserExperienceAnalyticDevicePerformance.md)
-Get userExperienceAnalyticsDevicePerformance from deviceManagement
+User experience analytics device performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceScope](Get-MgDeviceManagementUserExperienceAnalyticDeviceScope.md)
-Get userExperienceAnalyticsDeviceScope from deviceManagement
+The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceScore](Get-MgDeviceManagementUserExperienceAnalyticDeviceScore.md)
-Get userExperienceAnalyticsDeviceScores from deviceManagement
+User experience analytics device scores
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory](Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupHistory.md)
-Get userExperienceAnalyticsDeviceStartupHistory from deviceManagement
+User experience analytics device Startup History
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess](Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess.md)
-Get userExperienceAnalyticsDeviceStartupProcesses from deviceManagement
+User experience analytics device Startup Processes
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance](Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance.md)
-Get userExperienceAnalyticsDeviceStartupProcessPerformance from deviceManagement
+User experience analytics device Startup Process Performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity](Get-MgDeviceManagementUserExperienceAnalyticDeviceWithoutCloudIdentity.md)
-Get userExperienceAnalyticsDevicesWithoutCloudIdentity from deviceManagement
+User experience analytics devices without cloud identity.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticImpactingProcess](Get-MgDeviceManagementUserExperienceAnalyticImpactingProcess.md)
-Get userExperienceAnalyticsImpactingProcess from deviceManagement
+User experience analytics impacting process
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticMetricHistory](Get-MgDeviceManagementUserExperienceAnalyticMetricHistory.md)
-Get userExperienceAnalyticsMetricHistory from deviceManagement
+User experience analytics metric history
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticModelScore](Get-MgDeviceManagementUserExperienceAnalyticModelScore.md)
-Get userExperienceAnalyticsModelScores from deviceManagement
+User experience analytics model scores
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice](Get-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice.md)
-Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
+User experience analytics devices not Windows Autopilot ready.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticOverview](Get-MgDeviceManagementUserExperienceAnalyticOverview.md)
-Get userExperienceAnalyticsOverview from deviceManagement
+User experience analytics overview
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticRegressionSummary](Get-MgDeviceManagementUserExperienceAnalyticRegressionSummary.md)
-Get userExperienceAnalyticsRegressionSummary from deviceManagement
+User experience analytics regression summary
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression](Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression.md)
-Get manufacturerRegression from deviceManagement
+The metric values for the user experience analytics Manufacturer regression.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression](Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression.md)
-Get modelRegression from deviceManagement
+The metric values for the user experience analytics model regression.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression](Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression.md)
-Get operatingSystemRegression from deviceManagement
+The metric values for the user experience analytics operating system regression.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticRemoteConnection](Get-MgDeviceManagementUserExperienceAnalyticRemoteConnection.md)
-Get userExperienceAnalyticsRemoteConnection from deviceManagement
+User experience analytics remote connection
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticResourcePerformance](Get-MgDeviceManagementUserExperienceAnalyticResourcePerformance.md)
-Get userExperienceAnalyticsResourcePerformance from deviceManagement
+User experience analytics resource performance
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticScoreHistory](Get-MgDeviceManagementUserExperienceAnalyticScoreHistory.md)
-Get userExperienceAnalyticsScoreHistory from deviceManagement
+User experience analytics device Startup Score History
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric](Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereHardwareReadinessMetric.md)
-Get userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric from deviceManagement
+User experience analytics work from anywhere hardware readiness metrics.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetric](Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetric.md)
-Get userExperienceAnalyticsWorkFromAnywhereMetrics from deviceManagement
+User experience analytics work from anywhere metrics.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice](Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice.md)
-Get metricDevices from deviceManagement
+The work from anywhere metric devices.
 
 ### [Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance](Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance.md)
-Get userExperienceAnalyticsWorkFromAnywhereModelPerformance from deviceManagement
+The user experience analytics work from anywhere model performance
 
 ### [Get-MgDeviceManagementWindowInformationProtectionAppLearningSummary](Get-MgDeviceManagementWindowInformationProtectionAppLearningSummary.md)
-Get windowsInformationProtectionAppLearningSummaries from deviceManagement
+The windows information protection app learning summaries.
 
 ### [Get-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary](Get-MgDeviceManagementWindowInformationProtectionNetworkLearningSummary.md)
-Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
+The windows information protection network learning summaries.
 
 ### [Get-MgDeviceManagementWindowMalwareInformation](Get-MgDeviceManagementWindowMalwareInformation.md)
-Get windowsMalwareInformation from deviceManagement
+The list of affected malware in the tenant.
 
 ### [Get-MgDeviceManagementWindowMalwareInformationDeviceMalwareState](Get-MgDeviceManagementWindowMalwareInformationDeviceMalwareState.md)
-Get deviceMalwareStates from deviceManagement
+List of devices affected by current malware with the malware state on each device
 
 ### [New-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState](New-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState.md)
 Create new navigation property to advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
@@ -964,6 +976,12 @@ Create new navigation property to settings for deviceManagement
 
 ### [New-MgDeviceManagementTroubleshootingEvent](New-MgDeviceManagementTroubleshootingEvent.md)
 Create new navigation property to troubleshootingEvents for deviceManagement
+
+### [New-MgDeviceManagementUserExperienceAnalyticAnomaly](New-MgDeviceManagementUserExperienceAnalyticAnomaly.md)
+Create new navigation property to userExperienceAnalyticsAnomaly for deviceManagement
+
+### [New-MgDeviceManagementUserExperienceAnalyticAnomalyDevice](New-MgDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
+Create new navigation property to userExperienceAnalyticsAnomalyDevice for deviceManagement
 
 ### [New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance](New-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance.md)
 Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformance for deviceManagement
@@ -1492,6 +1510,12 @@ Delete navigation property settings for deviceManagement
 
 ### [Remove-MgDeviceManagementTroubleshootingEvent](Remove-MgDeviceManagementTroubleshootingEvent.md)
 Delete navigation property troubleshootingEvents for deviceManagement
+
+### [Remove-MgDeviceManagementUserExperienceAnalyticAnomaly](Remove-MgDeviceManagementUserExperienceAnalyticAnomaly.md)
+Delete navigation property userExperienceAnalyticsAnomaly for deviceManagement
+
+### [Remove-MgDeviceManagementUserExperienceAnalyticAnomalyDevice](Remove-MgDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
+Delete navigation property userExperienceAnalyticsAnomalyDevice for deviceManagement
 
 ### [Remove-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance](Remove-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance.md)
 Delete navigation property userExperienceAnalyticsAppHealthApplicationPerformance for deviceManagement
@@ -2038,6 +2062,12 @@ Update the navigation property settings in deviceManagement
 
 ### [Update-MgDeviceManagementTroubleshootingEvent](Update-MgDeviceManagementTroubleshootingEvent.md)
 Update the navigation property troubleshootingEvents in deviceManagement
+
+### [Update-MgDeviceManagementUserExperienceAnalyticAnomaly](Update-MgDeviceManagementUserExperienceAnalyticAnomaly.md)
+Update the navigation property userExperienceAnalyticsAnomaly in deviceManagement
+
+### [Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice](Update-MgDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
+Update the navigation property userExperienceAnalyticsAnomalyDevice in deviceManagement
 
 ### [Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance](Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance.md)
 Update the navigation property userExperienceAnalyticsAppHealthApplicationPerformance in deviceManagement

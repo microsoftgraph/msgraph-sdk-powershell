@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAppleUserInitiatedEnrollmentProfileAssignment
 
 ## SYNOPSIS
-Get assignments from deviceManagement
+The list of assignments for this profile.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgDeviceManagementAppleUserInitiatedEnrollmentProfileAssignment
 ```
 
 ## DESCRIPTION
-Get assignments from deviceManagement
+The list of assignments for this profile.
 
 ## EXAMPLES
 

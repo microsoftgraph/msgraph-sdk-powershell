@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleAssignment
 
 ## SYNOPSIS
-Get roleAssignments from roleManagement
+Resource to grant access to users or groups.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgRoleManagementEntitlementManagementRoleAssignment -InputObject <IDeviceMan
 ```
 
 ## DESCRIPTION
-Get roleAssignments from roleManagement
+Resource to grant access to users or groups.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgRoleManagementEntitlementManagementRoleAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Enrolment
+Get-MgRoleManagementEntitlementManagementRoleAssignment -Filter "appScopeId eq '/AccessPackageCatalog/4cee616b-fdf9-4890-9d10-955e0ccb12bc'" -ExpandProperty "principal" 
+```
+
+This example shows how to use the Get-MgRoleManagementEntitlementManagementRoleAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

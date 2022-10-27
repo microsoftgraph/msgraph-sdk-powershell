@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgOrganizationSettingProfileCardProperty
 
 ## SYNOPSIS
-Create new navigation property to profileCardProperties for organization
+Create a new profileCardProperty for an organization.
+The new property is identified by its **directoryPropertyName** property.
+For more information on adding properties to the profile card for an organization, see customize the profile card.
 
 ## SYNTAX
 
@@ -39,9 +41,34 @@ New-MgOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryMan
 ```
 
 ## DESCRIPTION
-Create new navigation property to profileCardProperties for organization
+Create a new profileCardProperty for an organization.
+The new property is identified by its **directoryPropertyName** property.
+For more information on adding properties to the profile card for an organization, see customize the profile card.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgOrganizationSettingProfileCardProperty Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	DirectoryPropertyName = "CustomAttribute1"
+	Annotations = @(
+		@{
+			DisplayName = "Cost Center"
+			Localizations = @(
+				@{
+					LanguageTag = "ru-RU"
+					DisplayName = "центр затрат"
+				}
+			)
+		}
+	)
+}
+New-MgOrganizationSettingProfileCardProperty -OrganizationId $organizationId -BodyParameter $params
+```
+
+This example shows how to use the New-MgOrganizationSettingProfileCardProperty Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -111,7 +138,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -217,7 +245,7 @@ ANNOTATIONS <IMicrosoftGraphProfileCardAnnotation[]>: Allows an administrator to
 
 BODYPARAMETER <IMicrosoftGraphProfileCardProperty>: profileCardProperty
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Annotations <IMicrosoftGraphProfileCardAnnotation[]>]`: Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
     - `[DisplayName <String>]`: If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').
     - `[Localizations <IMicrosoftGraphDisplayNameLocalization[]>]`: Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets 'Kostnads Senter' as the attribute label, rather than 'Cost Center.'

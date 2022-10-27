@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgServicePrincipalCreatedObject
 
 ## SYNOPSIS
-Get createdObjects from servicePrincipals
+Directory objects created by this service principal.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +34,20 @@ Get-MgServicePrincipalCreatedObject -InputObject <IApplicationsIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get createdObjects from servicePrincipals
+Directory objects created by this service principal.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgServicePrincipalCreatedObject Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgServicePrincipalCreatedObject -ServicePrincipalId $servicePrincipalId
+```
+
+This example shows how to use the Get-MgServicePrincipalCreatedObject Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

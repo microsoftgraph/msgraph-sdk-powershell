@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgPrintPrinterShare
 
 ## SYNOPSIS
-Get shares from print
+The list of printerShares that are associated with the printer.
+Currently, only one printerShare can be associated with the printer.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgPrintPrinterShare -InputObject <IDevicesCloudPrintIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get shares from print
+The list of printerShares that are associated with the printer.
+Currently, only one printerShare can be associated with the printer.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

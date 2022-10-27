@@ -8,7 +8,8 @@ schema: 2.0.0
 # Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag
 
 ## SYNOPSIS
-Invoke action applyTags
+Apply tags to files in an eDiscovery review set.
+For details, see Tag documents in a review set in eDiscovery.
 
 ## SYNTAX
 
@@ -45,9 +46,26 @@ Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -InputObject <ISecurityIdentit
 ```
 
 ## DESCRIPTION
-Invoke action applyTags
+Apply tags to files in an eDiscovery review set.
+For details, see Tag documents in a review set in eDiscovery.
 
 ## EXAMPLES
+
+### Example 1: Using the Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+$params = @{
+	TagsToAdd = @(
+		@{
+			Id = "d3d99dc704a74801b792b3e1e722aa0d"
+		}
+	)
+}
+Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -EdiscoveryReviewSetQueryId $ediscoveryReviewSetQueryId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -257,7 +275,7 @@ BODYPARAMETER <IPathsA2Ja7OSecurityCasesEdiscoverycasesEdiscoverycaseIdReviewset
     - `[Description <String>]`: 
     - `[DisplayName <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ChildSelectability <String>]`: childSelectability
     - `[ChildTags <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>]`: Returns the tags that are a child of a tag.
     - `[Parent <IMicrosoftGraphSecurityEdiscoveryReviewTag1>]`: ediscoveryReviewTag
@@ -319,7 +337,7 @@ TAGSTOADD <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>: .
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ChildSelectability <String>]`: childSelectability
   - `[ChildTags <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>]`: Returns the tags that are a child of a tag.
   - `[Parent <IMicrosoftGraphSecurityEdiscoveryReviewTag1>]`: ediscoveryReviewTag
@@ -336,7 +354,7 @@ TAGSTOREMOVE <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>: .
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ChildSelectability <String>]`: childSelectability
   - `[ChildTags <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>]`: Returns the tags that are a child of a tag.
   - `[Parent <IMicrosoftGraphSecurityEdiscoveryReviewTag1>]`: ediscoveryReviewTag

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty
 
 ## SYNOPSIS
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -34,7 +36,9 @@ Get-MgGroupEventInstanceExceptionOccurrenceSingleValueExtendedProperty -InputObj
 ```
 
 ## DESCRIPTION
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

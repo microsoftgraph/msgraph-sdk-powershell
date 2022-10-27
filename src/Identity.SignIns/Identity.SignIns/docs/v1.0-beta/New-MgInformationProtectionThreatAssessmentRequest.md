@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgInformationProtectionThreatAssessmentRequest
 
 ## SYNOPSIS
-Create new navigation property to threatAssessmentRequests for informationProtection
+Create a new threat assessment request.
+A threat assessment request can be one of the following types:
 
 ## SYNTAX
 
@@ -28,9 +29,73 @@ New-MgInformationProtectionThreatAssessmentRequest -BodyParameter <IMicrosoftGra
 ```
 
 ## DESCRIPTION
-Create new navigation property to threatAssessmentRequests for informationProtection
+Create a new threat assessment request.
+A threat assessment request can be one of the following types:
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgInformationProtectionThreatAssessmentRequest Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.emailFileAssessmentRequest"
+	RecipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
+	ExpectedAssessment = "block"
+	Category = "malware"
+	ContentData = "UmVjZWl2ZWQ6IGZyb20gTVcyUFIwME1CMDMxNC5uYW1wcmQwMC....."
+}
+New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
+```
+
+This example shows how to use the New-MgInformationProtectionThreatAssessmentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgInformationProtectionThreatAssessmentRequest Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.fileAssessmentRequest"
+	ExpectedAssessment = "block"
+	Category = "malware"
+	FileName = "test.txt"
+	ContentData = "VGhpcyBpcyBhIHRlc3QgZmlsZQ=="
+}
+New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
+```
+
+This example shows how to use the New-MgInformationProtectionThreatAssessmentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgInformationProtectionThreatAssessmentRequest Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.mailAssessmentRequest"
+	RecipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
+	ExpectedAssessment = "block"
+	Category = "spam"
+	MessageUri = "https://graph.microsoft.com/beta/users/c52ce8db-3e4b-4181-93c4-7d6b6bffaf60/messages/AAMkADU3MWUxOTU0LWNlOTEt="
+}
+New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
+```
+
+This example shows how to use the New-MgInformationProtectionThreatAssessmentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the New-MgInformationProtectionThreatAssessmentRequest Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.urlAssessmentRequest"
+	Url = "http://test.com"
+	ExpectedAssessment = "block"
+	Category = "phishing"
+}
+New-MgInformationProtectionThreatAssessmentRequest -BodyParameter $params
+```
+
+This example shows how to use the New-MgInformationProtectionThreatAssessmentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -143,7 +208,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -258,7 +324,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphThreatAssessmentRequest>: threatAssessmentRequest
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Category <String>]`: threatCategory
   - `[ContentType <String>]`: threatAssessmentContentType
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -273,7 +339,7 @@ BODYPARAMETER <IMicrosoftGraphThreatAssessmentRequest>: threatAssessmentRequest
   - `[ExpectedAssessment <String>]`: threatExpectedAssessment
   - `[RequestSource <String>]`: threatAssessmentRequestSource
   - `[Results <IMicrosoftGraphThreatAssessmentResult[]>]`: A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Message <String>]`: The result message for each threat assessment.
     - `[ResultType <String>]`: threatAssessmentResultType
@@ -289,7 +355,7 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
 RESULTS <IMicrosoftGraphThreatAssessmentResult[]>: A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Message <String>]`: The result message for each threat assessment.
   - `[ResultType <String>]`: threatAssessmentResultType

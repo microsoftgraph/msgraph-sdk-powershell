@@ -8,7 +8,8 @@ schema: 2.0.0
 # Publish-MgComplianceEdiscoveryCaseCustodian
 
 ## SYNOPSIS
-Invoke action release
+Release a custodian from a case.
+For details, see Release a custodian from a case.
 
 ## SYNTAX
 
@@ -25,9 +26,19 @@ Publish-MgComplianceEdiscoveryCaseCustodian -InputObject <IComplianceIdentity> [
 ```
 
 ## DESCRIPTION
-Invoke action release
+Release a custodian from a case.
+For details, see Release a custodian from a case.
 
 ## EXAMPLES
+
+### Example 1: Using the Publish-MgComplianceEdiscoveryCaseCustodian Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Publish-MgComplianceEdiscoveryCaseCustodian -CaseId $caseId -CustodianId $custodianId
+```
+
+This example shows how to use the Publish-MgComplianceEdiscoveryCaseCustodian Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

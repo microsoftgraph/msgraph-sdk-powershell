@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyAuthenticationMethodPolicy
 
 ## SYNOPSIS
-Update the navigation property authenticationMethodsPolicy in policies
+Update the properties of an authenticationMethodsPolicy object.
 
 ## SYNTAX
 
@@ -29,9 +29,45 @@ Update-MgPolicyAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphAuthent
 ```
 
 ## DESCRIPTION
-Update the navigation property authenticationMethodsPolicy in policies
+Update the properties of an authenticationMethodsPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPolicyAuthenticationMethodPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.context" = "https://graph.microsoft.com/v1.0/$metadata#authenticationMethodsPolicy"
+	RegistrationEnforcement = @{
+		AuthenticationMethodsRegistrationCampaign = @{
+			SnoozeDurationInDays = 1
+			State = "enabled"
+			ExcludeTargets = @(
+			)
+			IncludeTargets = @(
+				@{
+					Id = "3ee3a9de-0a86-4e12-a287-9769accf1ba2"
+					TargetType = "group"
+					TargetedAuthenticationMethod = "microsoftAuthenticator"
+				}
+			)
+		}
+	}
+	AuthenticationMethodConfigurations = @(
+		@{
+			"@odata.type" = "#microsoft.graph.fido2AuthenticationMethodConfiguration"
+			Id = "Fido2"
+			State = "disabled"
+			IsSelfServiceRegistrationAllowed = $false
+			IsAttestationEnforced = $false
+		}
+	)
+}
+Update-MgPolicyAuthenticationMethodPolicy -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPolicyAuthenticationMethodPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -85,6 +121,7 @@ Accept wildcard characters: False
 
 ### -Description
 A description of the policy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -100,6 +137,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 The name of the policy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -114,7 +152,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -130,6 +169,7 @@ Accept wildcard characters: False
 
 ### -LastModifiedDateTime
 The date and time of the last update to the policy.
+Read-only.
 
 ```yaml
 Type: System.DateTime
@@ -160,6 +200,7 @@ Accept wildcard characters: False
 
 ### -PolicyVersion
 The version of the policy in use.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -256,32 +297,32 @@ To create the parameters described below, construct a hash table containing the 
 
 
 AUTHENTICATIONMETHODCONFIGURATIONS <IMicrosoftGraphAuthenticationMethodConfiguration[]>: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[State <String>]`: authenticationMethodState
 
 BODYPARAMETER <IMicrosoftGraphAuthenticationMethodsPolicy>: authenticationMethodsPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration[]>]`: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[State <String>]`: authenticationMethodState
-  - `[Description <String>]`: A description of the policy.
-  - `[DisplayName <String>]`: The name of the policy.
-  - `[LastModifiedDateTime <DateTime?>]`: The date and time of the last update to the policy.
-  - `[PolicyVersion <String>]`: The version of the policy in use.
+  - `[Description <String>]`: A description of the policy. Read-only.
+  - `[DisplayName <String>]`: The name of the policy. Read-only.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time of the last update to the policy. Read-only.
+  - `[PolicyVersion <String>]`: The version of the policy in use. Read-only.
   - `[ReconfirmationInDays <Int32?>]`: 
   - `[RegistrationEnforcement <IMicrosoftGraphRegistrationEnforcement>]`: registrationEnforcement
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AuthenticationMethodsRegistrationCampaign <IMicrosoftGraphAuthenticationMethodsRegistrationCampaign>]`: authenticationMethodsRegistrationCampaign
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Users and groups of users that are excluded from being prompted to set up the authentication method.
-        - `[Id <String>]`: The object identifier of an Azure AD user or group.
+        - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
         - `[TargetType <String>]`: authenticationMethodTargetType
       - `[IncludeTargets <IMicrosoftGraphAuthenticationMethodsRegistrationCampaignIncludeTarget[]>]`: Users and groups of users that are prompted to set up the authentication method.
-        - `[Id <String>]`: The object identifier of an Azure AD user or group.
+        - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
         - `[TargetType <String>]`: authenticationMethodTargetType
         - `[TargetedAuthenticationMethod <String>]`: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-      - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+      - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
       - `[State <String>]`: advancedConfigState
 
 REGISTRATIONENFORCEMENT <IMicrosoftGraphRegistrationEnforcement>: registrationEnforcement
@@ -289,13 +330,13 @@ REGISTRATIONENFORCEMENT <IMicrosoftGraphRegistrationEnforcement>: registrationEn
   - `[AuthenticationMethodsRegistrationCampaign <IMicrosoftGraphAuthenticationMethodsRegistrationCampaign>]`: authenticationMethodsRegistrationCampaign
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Users and groups of users that are excluded from being prompted to set up the authentication method.
-      - `[Id <String>]`: The object identifier of an Azure AD user or group.
+      - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
       - `[TargetType <String>]`: authenticationMethodTargetType
     - `[IncludeTargets <IMicrosoftGraphAuthenticationMethodsRegistrationCampaignIncludeTarget[]>]`: Users and groups of users that are prompted to set up the authentication method.
-      - `[Id <String>]`: The object identifier of an Azure AD user or group.
+      - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
       - `[TargetType <String>]`: authenticationMethodTargetType
       - `[TargetedAuthenticationMethod <String>]`: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-    - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+    - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
     - `[State <String>]`: advancedConfigState
 
 ## RELATED LINKS

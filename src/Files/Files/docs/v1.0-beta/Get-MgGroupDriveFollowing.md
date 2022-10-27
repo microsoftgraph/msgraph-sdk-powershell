@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupDriveFollowing
 
 ## SYNOPSIS
-Get following from groups
+The list of items the user is following.
+Only in OneDrive for Business.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgGroupDriveFollowing -InputObject <IFilesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get following from groups
+The list of items the user is following.
+Only in OneDrive for Business.
 
 ## EXAMPLES
 

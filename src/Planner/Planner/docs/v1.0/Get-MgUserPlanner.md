@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserPlanner
 
 ## SYNOPSIS
-Get planner from users
+Entry-point to the Planner resource that might exist for a user.
+Read-only.
 
 ## SYNTAX
 
@@ -24,7 +25,8 @@ Get-MgUserPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get planner from users
+Entry-point to the Planner resource that might exist for a user.
+Read-only.
 
 ## EXAMPLES
 

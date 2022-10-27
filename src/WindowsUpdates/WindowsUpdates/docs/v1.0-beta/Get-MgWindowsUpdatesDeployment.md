@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgWindowsUpdatesDeployment
 
 ## SYNOPSIS
-Get deployments from admin
+Deployments created using the deployment service.
+Read-only.
 
 ## SYNTAX
 
@@ -32,9 +33,28 @@ Get-MgWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get deployments from admin
+Deployments created using the deployment service.
+Read-only.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgWindowsUpdatesDeployment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesDeployment -DeploymentId $deploymentId
+```
+
+This example shows how to use the Get-MgWindowsUpdatesDeployment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgWindowsUpdatesDeployment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.WindowsUpdates
+Get-MgWindowsUpdatesDeployment
+```
+
+This example shows how to use the Get-MgWindowsUpdatesDeployment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

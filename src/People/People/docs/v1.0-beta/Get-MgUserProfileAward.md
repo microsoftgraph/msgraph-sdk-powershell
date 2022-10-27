@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileAward
 
 ## SYNOPSIS
-Get awards from users
+Represents the details of awards or honors associated with a person.
 
 ## SYNTAX
 
@@ -32,9 +32,29 @@ Get-MgUserProfileAward -InputObject <IPeopleIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get awards from users
+Represents the details of awards or honors associated with a person.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserProfileAward Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileAward -UserId $userId
+```
+
+This example shows how to use the Get-MgUserProfileAward Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserProfileAward Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileAward -UserId $userId -PersonAwardId $personAwardId
+```
+
+This example shows how to use the Get-MgUserProfileAward Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

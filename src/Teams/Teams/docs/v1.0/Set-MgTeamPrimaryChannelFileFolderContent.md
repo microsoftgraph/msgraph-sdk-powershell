@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgTeamPrimaryChannelFileFolderContent
 
 ## SYNOPSIS
-Update content for the navigation property filesFolder in teams
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgTeamPrimaryChannelFileFolderContent -InputObject <ITeamsIdentity> -InFile 
 ```
 
 ## DESCRIPTION
-Update content for the navigation property filesFolder in teams
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

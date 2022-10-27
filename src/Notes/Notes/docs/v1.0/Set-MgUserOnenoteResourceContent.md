@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserOnenoteResourceContent
 
 ## SYNOPSIS
-Update content for the navigation property resources in users
+The content stream
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgUserOnenoteResourceContent -InputObject <INotesIdentity> -InFile <String> 
 ```
 
 ## DESCRIPTION
-Update content for the navigation property resources in users
+The content stream
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStoreSet
 
 ## SYNOPSIS
-Get sets from groups
+Collection of all sets available in the term store.
+This relationship can only be used to load a specific term set.
 
 ## SYNTAX
 
@@ -44,7 +45,8 @@ Get-MgGroupSiteTermStoreSet -GroupId <String> -SiteId <String> -StoreId <String>
 ```
 
 ## DESCRIPTION
-Get sets from groups
+Collection of all sets available in the term store.
+This relationship can only be used to load a specific term set.
 
 ## EXAMPLES
 

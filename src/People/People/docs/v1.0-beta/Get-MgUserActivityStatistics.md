@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserActivityStatistics
 
 ## SYNOPSIS
-Get activityStatistics from users
+The collection of work activities that a user spent time on during and outside of working hours.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +34,21 @@ Get-MgUserActivityStatistics -InputObject <IPeopleIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get activityStatistics from users
+The collection of work activities that a user spent time on during and outside of working hours.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserActivityStatistics Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserActivityStatistics -UserId $userId
+```
+
+This example shows how to use the Get-MgUserActivityStatistics Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

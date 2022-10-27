@@ -19,8 +19,8 @@ New-MgDeviceManagementComanagementEligibleDevice [-AdditionalProperties <Hashtab
  [-EntitySource <Int32>] [-Id <String>] [-ManagementAgents <ManagementAgentType>]
  [-ManagementState <ManagementState>] [-Manufacturer <String>] [-MdmStatus <String>] [-Model <String>]
  [-OSDescription <String>] [-OSVersion <String>] [-OwnerType <OwnerType>] [-ReferenceId <String>]
- [-SerialNumber <String>] [-Status <String>] [-Upn <String>] [-UserEmail <String>] [-UserId <String>]
- [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SerialNumber <String>] [-Status <ComanagementEligibleType>] [-Upn <String>] [-UserEmail <String>]
+ [-UserId <String>] [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -128,7 +128,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -296,7 +297,7 @@ Accept wildcard characters: False
 comanagementEligibleType
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Support.ComanagementEligibleType
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -420,7 +421,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphComanagementEligibleDevice>: Device Co-Management eligibility state
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ClientRegistrationStatus <DeviceRegistrationState?>]`: Device registration status.
   - `[DeviceName <String>]`: DeviceName
   - `[DeviceType <DeviceType?>]`: Device type.
@@ -435,7 +436,7 @@ BODYPARAMETER <IMicrosoftGraphComanagementEligibleDevice>: Device Co-Management 
   - `[OwnerType <OwnerType?>]`: Owner type of device.
   - `[ReferenceId <String>]`: ReferenceId
   - `[SerialNumber <String>]`: SerialNumber
-  - `[Status <String>]`: comanagementEligibleType
+  - `[Status <ComanagementEligibleType?>]`: comanagementEligibleType
   - `[Upn <String>]`: UPN
   - `[UserEmail <String>]`: UserEmail
   - `[UserId <String>]`: UserId

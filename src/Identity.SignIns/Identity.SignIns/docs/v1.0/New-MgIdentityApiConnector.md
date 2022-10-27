@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityApiConnector
 
 ## SYNOPSIS
-Create new navigation property to apiConnectors for identity
+Create a new identityApiConnector object.
 
 ## SYNTAX
 
@@ -25,9 +25,63 @@ New-MgIdentityApiConnector -BodyParameter <IMicrosoftGraphIdentityApiConnector> 
 ```
 
 ## DESCRIPTION
-Create new navigation property to apiConnectors for identity
+Create a new identityApiConnector object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgIdentityApiConnector Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	DisplayName = "Test API"
+	TargetUrl = "https://someapi.com/api"
+	AuthenticationConfiguration = @{
+		"@odata.type" = "#microsoft.graph.basicAuthentication"
+		Username = "MyUsername"
+		Password = "MyPassword"
+	}
+}
+New-MgIdentityApiConnector -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityApiConnector Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgIdentityApiConnector Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	DisplayName = "Test API"
+	TargetUrl = "https://someotherapi.com/api"
+	AuthenticationConfiguration = @{
+		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
+		Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
+		Password = "CertificatePassword"
+	}
+}
+New-MgIdentityApiConnector -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityApiConnector Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgIdentityApiConnector Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	DisplayName = "Test API"
+	TargetUrl = "https://someotherapi.com/api"
+	AuthenticationConfiguration = @{
+		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
+		Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
+		Password = "CertificatePassword"
+	}
+}
+New-MgIdentityApiConnector -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityApiConnector Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -93,7 +147,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -175,7 +230,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphIdentityApiConnector>: identityApiConnector
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AuthenticationConfiguration <IMicrosoftGraphApiAuthenticationConfigurationBase>]`: apiAuthenticationConfigurationBase
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: The name of the API connector.

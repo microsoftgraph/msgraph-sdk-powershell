@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDriveFollowingContent
 
 ## SYNOPSIS
-Update content for the navigation property following in drives
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgDriveFollowingContent -InputObject <IFilesIdentity> -InFile <String> [-Bod
 ```
 
 ## DESCRIPTION
-Update content for the navigation property following in drives
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

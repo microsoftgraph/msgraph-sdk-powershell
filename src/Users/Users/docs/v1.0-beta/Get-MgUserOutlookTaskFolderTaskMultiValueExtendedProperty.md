@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty
 
 ## SYNOPSIS
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the task.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -34,7 +36,9 @@ Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty -InputObject <IUsersId
 ```
 
 ## DESCRIPTION
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the task.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

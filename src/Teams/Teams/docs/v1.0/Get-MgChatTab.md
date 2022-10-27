@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgChatTab
 
 ## SYNOPSIS
-Get tabs from chats
+A collection of all the tabs in the chat.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +33,37 @@ Get-MgChatTab -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Prope
 ```
 
 ## DESCRIPTION
-Get tabs from chats
+A collection of all the tabs in the chat.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgChatTab Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId -ExpandProperty "teamsApp" 
+```
+
+This example shows how to use the Get-MgChatTab Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgChatTab Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'" 
+```
+
+This example shows how to use the Get-MgChatTab Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgChatTab Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp" 
+```
+
+This example shows how to use the Get-MgChatTab Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

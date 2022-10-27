@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyCrossTenantAccessPolicy
 
 ## SYNOPSIS
-Get crossTenantAccessPolicy from policies
+Read the properties and relationships of a crossTenantAccessPolicy object.
 
 ## SYNTAX
 
@@ -17,9 +17,18 @@ Get-MgPolicyCrossTenantAccessPolicy [-ExpandProperty <String[]>] [-Property <Str
 ```
 
 ## DESCRIPTION
-Get crossTenantAccessPolicy from policies
+Read the properties and relationships of a crossTenantAccessPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPolicyCrossTenantAccessPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyCrossTenantAccessPolicy
+```
+
+This example shows how to use the Get-MgPolicyCrossTenantAccessPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

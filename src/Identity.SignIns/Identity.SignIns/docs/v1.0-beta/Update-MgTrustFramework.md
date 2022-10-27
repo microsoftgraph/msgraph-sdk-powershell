@@ -163,7 +163,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTrustFramework>: trustFramework
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[KeySets <IMicrosoftGraphTrustFrameworkKeySet[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Keys <IMicrosoftGraphTrustFrameworkKey[]>]`: A collection of the keys.
       - `[D <String>]`: RSA Key - private exponent. Field cannot be read back.
       - `[Dp <String>]`: RSA Key - first exponent. Field cannot be read back.
@@ -182,10 +182,10 @@ BODYPARAMETER <IMicrosoftGraphTrustFramework>: trustFramework
       - `[X5C <String[]>]`: The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
       - `[X5T <String>]`: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
   - `[Policies <IMicrosoftGraphTrustFrameworkPolicy[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
 KEYSETS <IMicrosoftGraphTrustFrameworkKeySet[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Keys <IMicrosoftGraphTrustFrameworkKey[]>]`: A collection of the keys.
     - `[D <String>]`: RSA Key - private exponent. Field cannot be read back.
     - `[Dp <String>]`: RSA Key - first exponent. Field cannot be read back.
@@ -205,7 +205,7 @@ KEYSETS <IMicrosoftGraphTrustFrameworkKeySet[]>: .
     - `[X5T <String>]`: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
 
 POLICIES <IMicrosoftGraphTrustFrameworkPolicy[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
 ## RELATED LINKS
 

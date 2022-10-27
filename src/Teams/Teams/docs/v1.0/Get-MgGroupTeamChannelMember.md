@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamChannelMember
 
 ## SYNOPSIS
-Get members from groups
+A collection of membership records associated with the channel.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupTeamChannelMember -InputObject <ITeamsIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get members from groups
+A collection of membership records associated with the channel.
 
 ## EXAMPLES
 

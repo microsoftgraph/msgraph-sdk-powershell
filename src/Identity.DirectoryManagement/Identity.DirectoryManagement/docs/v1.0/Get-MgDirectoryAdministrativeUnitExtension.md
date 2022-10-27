@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDirectoryAdministrativeUnitExtension
 
 ## SYNOPSIS
-Get extensions from directory
+The collection of open extensions defined for this administrative unit.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgDirectoryAdministrativeUnitExtension -InputObject <IIdentityDirectoryManag
 ```
 
 ## DESCRIPTION
-Get extensions from directory
+The collection of open extensions defined for this administrative unit.
+Nullable.
 
 ## EXAMPLES
 

@@ -15,14 +15,17 @@ Invoke function assignedPrincipals
 ### Assigned (Default)
 ```
 Invoke-MgAssignedRoleManagementDeviceManagementRoleDefinitionPrincipal -UnifiedRoleDefinitionId <String>
- [-DirectoryScopeId <String>] [-DirectoryScopeType <String>] [-Transitive] [<CommonParameters>]
+ [-Count] [-DirectoryScopeId <String>] [-DirectoryScopeType <String>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-Transitive]
+ [<CommonParameters>]
 ```
 
 ### AssignedViaIdentity
 ```
 Invoke-MgAssignedRoleManagementDeviceManagementRoleDefinitionPrincipal
- -InputObject <IDeviceManagementEnrolmentIdentity> [-DirectoryScopeId <String>] [-DirectoryScopeType <String>]
- [-Transitive] [<CommonParameters>]
+ -InputObject <IDeviceManagementEnrolmentIdentity> [-Count] [-DirectoryScopeId <String>]
+ [-DirectoryScopeType <String>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [-Transitive] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,8 +35,23 @@ Invoke function assignedPrincipals
 
 ## PARAMETERS
 
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DirectoryScopeId
-Usage: directoryScopeId='{directoryScopeId}'
+Usage: directoryScopeId='@directoryScopeId'
 
 ```yaml
 Type: System.String
@@ -48,7 +66,22 @@ Accept wildcard characters: False
 ```
 
 ### -DirectoryScopeType
-Usage: directoryScopeType='{directoryScopeType}'
+Usage: directoryScopeType='@directoryScopeType'
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
 
 ```yaml
 Type: System.String
@@ -78,8 +111,83 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -Property
+Select properties to be returned
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sort
+Order items by property values
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Transitive
-Usage: transitive={transitive}
+Usage: transitive=@transitive
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

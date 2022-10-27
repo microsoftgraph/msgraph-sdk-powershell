@@ -8,7 +8,7 @@ schema: 2.0.0
 # Unblock-MgUserManagedApp
 
 ## SYNOPSIS
-Invoke action unblockManagedApps
+Unblocks the managed app user from app check-in.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Unblock-MgUserManagedApp -InputObject <IUsersActionsIdentity> [-PassThru] [-Conf
 ```
 
 ## DESCRIPTION
-Invoke action unblockManagedApps
+Unblocks the managed app user from app check-in.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupDrive
 
 ## SYNOPSIS
-Get drives from groups
+The group's drives.
+Read-only.
 
 ## SYNTAX
 
@@ -32,9 +33,19 @@ Get-MgGroupDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Pr
 ```
 
 ## DESCRIPTION
-Get drives from groups
+The group's drives.
+Read-only.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupDrive Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Files
+Get-MgGroupDrive -GroupId $groupId
+```
+
+This example shows how to use the Get-MgGroupDrive Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

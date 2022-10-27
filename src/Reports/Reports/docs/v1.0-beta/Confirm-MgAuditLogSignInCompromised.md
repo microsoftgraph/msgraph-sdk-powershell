@@ -8,7 +8,10 @@ schema: 2.0.0
 # Confirm-MgAuditLogSignInCompromised
 
 ## SYNOPSIS
-Invoke action confirmCompromised
+Allow admins to mark an event in the Azure AD sign in logs as risky.
+Events marked as risky by an admin are immediately flagged as high risk in Azure AD Identity Protection, overriding previous risk states.
+Admins can confirm that events flagged as risky by Azure AD Identity Protection are in fact risky.
+For details about investigating Identity Protection risks, see How to investigate risk.
 
 ## SYNTAX
 
@@ -26,9 +29,28 @@ Confirm-MgAuditLogSignInCompromised
 ```
 
 ## DESCRIPTION
-Invoke action confirmCompromised
+Allow admins to mark an event in the Azure AD sign in logs as risky.
+Events marked as risky by an admin are immediately flagged as high risk in Azure AD Identity Protection, overriding previous risk states.
+Admins can confirm that events flagged as risky by Azure AD Identity Protection are in fact risky.
+For details about investigating Identity Protection risks, see How to investigate risk.
 
 ## EXAMPLES
+
+### Example 1: Using the Confirm-MgAuditLogSignInCompromised Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Reports
+$params = @{
+	RequestIds = @(
+		"f01c6af6-6683-4a37-a945-0a925501eede"
+		"42bf60ac-d0cb-4206-aa5c-101884298f55"
+		"f09c8f14-8d8e-42cf-8a7e-732b0594e79b"
+	)
+}
+Confirm-MgAuditLogSignInCompromised -BodyParameter $params
+```
+
+This example shows how to use the Confirm-MgAuditLogSignInCompromised Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

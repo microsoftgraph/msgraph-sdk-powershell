@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgServicePrincipalDelegatedPermissionClassification
 
 ## SYNOPSIS
-Create new navigation property to delegatedPermissionClassifications for servicePrincipals
+Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
 
 ## SYNTAX
 
@@ -39,9 +39,23 @@ New-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplicati
 ```
 
 ## DESCRIPTION
-Create new navigation property to delegatedPermissionClassifications for servicePrincipals
+Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgServicePrincipalDelegatedPermissionClassification Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	PermissionId = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+	PermissionName = "User.Read"
+	Classification = "low"
+}
+New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -BodyParameter $params
+```
+
+This example shows how to use the New-MgServicePrincipalDelegatedPermissionClassification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -92,7 +106,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -123,7 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionId
-The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
+The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal.
 Required on create.
 Does not support $filter.
 
@@ -140,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionName
-The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
+The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal.
 Does not support $filter.
 
 ```yaml
@@ -225,10 +240,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDelegatedPermissionClassification>: delegatedPermissionClassification
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Classification <String>]`: permissionClassificationType
-  - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
-  - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
+  - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+  - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy

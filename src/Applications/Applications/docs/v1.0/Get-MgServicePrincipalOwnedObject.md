@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgServicePrincipalOwnedObject
 
 ## SYNOPSIS
-Get ownedObjects from servicePrincipals
+Directory objects that are owned by this service principal.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -32,9 +35,21 @@ Get-MgServicePrincipalOwnedObject -InputObject <IApplicationsIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get ownedObjects from servicePrincipals
+Directory objects that are owned by this service principal.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgServicePrincipalOwnedObject Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgServicePrincipalOwnedObject -ServicePrincipalId $servicePrincipalId
+```
+
+This example shows how to use the Get-MgServicePrincipalOwnedObject Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

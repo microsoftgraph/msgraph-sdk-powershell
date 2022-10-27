@@ -8,7 +8,9 @@ schema: 2.0.0
 # Clear-MgCommunicationPresence
 
 ## SYNOPSIS
-Invoke action clearPresence
+Clear a presence session of an application for a user.
+If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`.
+Read more about presence sessions and their time-out and expiration.
 
 ## SYNTAX
 
@@ -39,7 +41,9 @@ Clear-MgCommunicationPresence -InputObject <ICloudCommunicationsIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Invoke action clearPresence
+Clear a presence session of an application for a user.
+If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`.
+Read more about presence sessions and their time-out and expiration.
 
 ## EXAMPLES
 

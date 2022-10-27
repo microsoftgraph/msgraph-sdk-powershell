@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyAccessReviewPolicy
 
 ## SYNOPSIS
-Update the navigation property accessReviewPolicy in policies
+Update the properties of an accessReviewPolicy object.
 
 ## SYNTAX
 
@@ -26,9 +26,21 @@ Update-MgPolicyAccessReviewPolicy -BodyParameter <IMicrosoftGraphAccessReviewPol
 ```
 
 ## DESCRIPTION
-Update the navigation property accessReviewPolicy in policies
+Update the properties of an accessReviewPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPolicyAccessReviewPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	IsGroupOwnerManagementEnabled = $true
+}
+Update-MgPolicyAccessReviewPolicy -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPolicyAccessReviewPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -96,7 +108,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -193,7 +206,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAccessReviewPolicy>: accessReviewPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Description <String>]`: Description for this policy. Read-only.
   - `[DisplayName <String>]`: Display name for this policy. Read-only.
   - `[IsGroupOwnerManagementEnabled <Boolean?>]`: If true, group owners can create and manage access reviews on groups they own.

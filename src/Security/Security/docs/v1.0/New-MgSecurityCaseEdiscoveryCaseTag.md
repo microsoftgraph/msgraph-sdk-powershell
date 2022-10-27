@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityCaseEdiscoveryCaseTag
 
 ## SYNOPSIS
-Create new navigation property to tags for security
+Create a new ediscoveryReviewTag object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgSecurityCaseEdiscoveryCaseTag -InputObject <ISecurityIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Create new navigation property to tags for security
+Create a new ediscoveryReviewTag object.
 
 ## EXAMPLES
 
@@ -173,7 +173,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -300,7 +301,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryReviewTag1>: ediscoveryReviewTag
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ChildSelectability <String>]`: childSelectability
   - `[ChildTags <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>]`: Returns the tags that are a child of a tag.
   - `[Parent <IMicrosoftGraphSecurityEdiscoveryReviewTag1>]`: ediscoveryReviewTag
@@ -317,7 +318,7 @@ CHILDTAGS <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>: Returns the tags that
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ChildSelectability <String>]`: childSelectability
   - `[ChildTags <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>]`: Returns the tags that are a child of a tag.
   - `[Parent <IMicrosoftGraphSecurityEdiscoveryReviewTag1>]`: ediscoveryReviewTag
@@ -388,7 +389,7 @@ PARENT <IMicrosoftGraphSecurityEdiscoveryReviewTag1>: ediscoveryReviewTag
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ChildSelectability <String>]`: childSelectability
   - `[ChildTags <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>]`: Returns the tags that are a child of a tag.
   - `[Parent <IMicrosoftGraphSecurityEdiscoveryReviewTag1>]`: ediscoveryReviewTag

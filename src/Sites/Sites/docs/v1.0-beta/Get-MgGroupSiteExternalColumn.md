@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteExternalColumn
 
 ## SYNOPSIS
-Get externalColumns from groups
+The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupSiteExternalColumn -InputObject <ISitesIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get externalColumns from groups
+The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointOnPremisesConnection
 
 ## SYNOPSIS
-Create new navigation property to onPremisesConnections for deviceManagement
+Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
 
 ## SYNTAX
 
@@ -30,9 +30,31 @@ New-MgDeviceManagementVirtualEndpointOnPremisesConnection
 ```
 
 ## DESCRIPTION
-Create new navigation property to onPremisesConnections for deviceManagement
+Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+$params = @{
+	"@odata.type" = "#microsoft.graph.cloudPcOnPremisesConnection"
+	DisplayName = "test-canary-02"
+	Type = "hybridAzureADJoin"
+	SubscriptionId = "0ac520ee-14c0-480f-b6c9-0a90c585ffff"
+	SubscriptionName = "CPC customer 001 test subscription"
+	AdDomainName = "contoso001.com"
+	AdDomainUsername = "dcadmin"
+	OrganizationalUnit = "OU=Domain Controllers, DC=contoso001, DC=com"
+	ResourceGroupId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c585ad47/resourceGroups/CustomerRG"
+	VirtualNetworkId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c585ad47/resourceGroups/CustomerRG/providers/Microsoft.Network/virtualNetworks/canary01-MyVNET"
+	SubnetId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c585ad47/resourceGroups/CustomerRG/providers/Microsoft.Network/virtualNetworks/canary01-MyVNET/subnets/canary01-Subnet"
+}
+New-MgDeviceManagementVirtualEndpointOnPremisesConnection -BodyParameter $params
+```
+
+This example shows how to use the New-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -178,7 +200,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -391,7 +414,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCloudPcOnPremisesConnection>: cloudPcOnPremisesConnection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AdDomainName <String>]`: The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
   - `[AdDomainPassword <String>]`: The password associated with adDomainUsername.
   - `[AdDomainUsername <String>]`: The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.

@@ -14,13 +14,13 @@ Get paymentMethod from financials
 
 ### Get (Default)
 ```
-Get-MgFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerId <String>
+Get-MgFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerPaymentId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerPaymentId <String>
+Get-MgFinancialCompanyCustomerPaymentMethod -CompanyId <String> -CustomerId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ key: id of customer
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -78,7 +78,7 @@ key: id of customerPayment
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True

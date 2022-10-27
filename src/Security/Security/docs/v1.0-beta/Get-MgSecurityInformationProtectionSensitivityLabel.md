@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityInformationProtectionSensitivityLabel
 
 ## SYNOPSIS
-Get sensitivityLabels from security
+Read the Microsoft Purview Information Protection labels for the user or organization.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityInformationProtectionSensitivityLabel -InputObject <ISecurityIdent
 ```
 
 ## DESCRIPTION
-Get sensitivityLabels from security
+Read the Microsoft Purview Information Protection labels for the user or organization.
 
 ## EXAMPLES
 

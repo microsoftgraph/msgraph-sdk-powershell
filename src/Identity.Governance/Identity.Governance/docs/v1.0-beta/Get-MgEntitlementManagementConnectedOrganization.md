@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementConnectedOrganization
 
 ## SYNOPSIS
-Get connectedOrganizations from identityGovernance
+Represents references to a directory or domain of another organization whose users can request access.
 
 ## SYNTAX
 
@@ -18,19 +18,19 @@ Get-MgEntitlementManagementConnectedOrganization [-ExpandProperty <String[]>] [-
  [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgEntitlementManagementConnectedOrganization -ConnectedOrganizationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgEntitlementManagementConnectedOrganization -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### List
+### List1
 ```
 Get-MgEntitlementManagementConnectedOrganization [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
@@ -50,9 +50,27 @@ Get-MgEntitlementManagementConnectedOrganization -DisplayNameEq <String> [-Expan
 ```
 
 ## DESCRIPTION
-Get connectedOrganizations from identityGovernance
+Represents references to a directory or domain of another organization whose users can request access.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEntitlementManagementConnectedOrganization Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId
+```
+
+This example shows how to use the Get-MgEntitlementManagementConnectedOrganization Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgEntitlementManagementConnectedOrganization Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgEntitlementManagementConnectedOrganization
+```
+
+This example shows how to use the Get-MgEntitlementManagementConnectedOrganization Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -61,7 +79,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, ListAll, ListByDisplayNameContains, ListByDisplayNameEq
+Parameter Sets: List1, ListAll, ListByDisplayNameContains, ListByDisplayNameEq
 Aliases:
 
 Required: False
@@ -76,7 +94,7 @@ key: id of connectedOrganization
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -92,7 +110,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: CV
 
 Required: False
@@ -152,7 +170,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -168,7 +186,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -183,7 +201,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -213,7 +231,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -228,7 +246,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -243,7 +261,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, ListAll, ListByDisplayNameContains, ListByDisplayNameEq
+Parameter Sets: List1, ListAll, ListByDisplayNameContains, ListByDisplayNameEq
 Aliases: OrderBy
 
 Required: False
@@ -258,7 +276,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, ListByDisplayNameContains, ListByDisplayNameEq
+Parameter Sets: List1, ListByDisplayNameContains, ListByDisplayNameEq
 Aliases: Limit
 
 Required: False
@@ -278,6 +296,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 
 ## NOTES
 
@@ -327,7 +347,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -348,8 +370,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 ## RELATED LINKS
 

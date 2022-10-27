@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserManagedDeviceLogCollectionResponse
 
 ## SYNOPSIS
-Get logCollectionRequests from users
+List of log collection requests
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporateMana
 ```
 
 ## DESCRIPTION
-Get logCollectionRequests from users
+List of log collection requests
 
 ## EXAMPLES
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupExtension
 
 ## SYNOPSIS
-Get extensions from groups
+The collection of open extensions defined for the group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgGroupExtension -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get extensions from groups
+The collection of open extensions defined for the group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

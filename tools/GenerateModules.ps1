@@ -85,11 +85,8 @@ if (!$SkipGeneration)
 
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-$ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
-Write-Host -ForegroundColor Green "Auth Module: $($ExistingAuthModule.Name), $($ExistingAuthModule.Version)"
-if (!(Get-Module -Name $ExistingAuthModule.Name -ListAvailable)) {
-    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
-}
+$AuthModuleManifest = Join-Path $ModulesOutputDir "Authentication" "Authentication" "artifacts" "Microsoft.Graph.Authentication.psd1"
+$ExistingAuthModule = Import-Module $AuthModuleManifest -PassThru -ErrorAction SilentlyContinue
 if ($ExistingAuthModule.Version -like '*preview*' ) {
     $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
     Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"

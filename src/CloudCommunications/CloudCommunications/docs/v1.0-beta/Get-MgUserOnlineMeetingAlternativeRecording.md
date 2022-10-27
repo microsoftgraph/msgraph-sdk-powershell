@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserOnlineMeetingAlternativeRecording
 
 ## SYNOPSIS
-Get alternativeRecording for the navigation property onlineMeetings from users
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgUserOnlineMeetingAlternativeRecording -InputObject <ICloudCommunicationsId
 ```
 
 ## DESCRIPTION
-Get alternativeRecording for the navigation property onlineMeetings from users
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ## EXAMPLES
 

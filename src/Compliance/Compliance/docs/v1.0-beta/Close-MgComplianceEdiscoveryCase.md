@@ -8,7 +8,8 @@ schema: 2.0.0
 # Close-MgComplianceEdiscoveryCase
 
 ## SYNOPSIS
-Invoke action close
+Close an eDiscovery case.
+For details, see Close a case.
 
 ## SYNTAX
 
@@ -24,9 +25,19 @@ Close-MgComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-PassThru] 
 ```
 
 ## DESCRIPTION
-Invoke action close
+Close an eDiscovery case.
+For details, see Close a case.
 
 ## EXAMPLES
+
+### Example 1: Using the Close-MgComplianceEdiscoveryCase Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Close-MgComplianceEdiscoveryCase -CaseId $caseId
+```
+
+This example shows how to use the Close-MgComplianceEdiscoveryCase Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

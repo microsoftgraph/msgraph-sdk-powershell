@@ -53,8 +53,7 @@ Accept wildcard characters: False
 ```
 
 ### -Addresses
-Postal addresses for this organizational contact.
-For now a contact can only have one physical address.
+.
 To construct, please use Get-Help -Online and see NOTES section for ADDRESSES properties and create a hash table.
 
 ```yaml
@@ -86,8 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompanyName
-Name of the company that this organizational contact belong to.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+.
 
 ```yaml
 Type: System.String
@@ -118,8 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -Department
-The name for the department in which the contact works.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+.
 
 ```yaml
 Type: System.String
@@ -134,10 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -DirectReports
-The contact's direct reports.
-(The users and contacts that have their manager property set to this contact.) Read-only.
-Nullable.
-Supports $expand.
+.
 To construct, please use Get-Help -Online and see NOTES section for DIRECTREPORTS properties and create a hash table.
 
 ```yaml
@@ -153,38 +147,6 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name for this organizational contact.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GivenName
-First name for this organizational contact.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
 .
 
 ```yaml
@@ -199,9 +161,39 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -GivenName
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+The unique idenfier for an entity.
+Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -JobTitle
-Job title for this organizational contact.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+.
 
 ```yaml
 Type: System.String
@@ -216,8 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -Mail
-The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+.
 
 ```yaml
 Type: System.String
@@ -232,8 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -MailNickname
-Email alias (portion of email address pre-pending the @ symbol) for this organizational contact.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+.
 
 ```yaml
 Type: System.String
@@ -264,10 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberOf
-Groups that this contact is a member of.
-Read-only.
-Nullable.
-Supports $expand.
+.
 To construct, please use Get-Help -Online and see NOTES section for MEMBEROF properties and create a hash table.
 
 ```yaml
@@ -283,10 +270,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnPremisesLastSyncDateTime
-Date and time when this organizational contact was last synchronized from on-premises AD.
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-Supports $filter (eq, ne, not, ge, le, in).
+.
 
 ```yaml
 Type: System.DateTime
@@ -301,8 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnPremisesProvisioningErrors
-List of any synchronization provisioning errors for this organizational contact.
-Supports $filter (eq, not).
+.
 To construct, please use Get-Help -Online and see NOTES section for ONPREMISESPROVISIONINGERRORS properties and create a hash table.
 
 ```yaml
@@ -318,8 +301,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnPremisesSyncEnabled
-true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).
-Supports $filter (eq, ne, not, in, and eq on null values).
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -334,10 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -Phones
-List of phones for this organizational contact.
-Phone types can be mobile, business, and businessFax.
-Only one of each type can ever be present in the collection.
-Supports $filter (eq, ne, not, in).
+.
 To construct, please use Get-Help -Online and see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
@@ -353,9 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyAddresses
-For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'.
-The any operator is required for filter expressions on multi-valued properties.
-Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
+.
 
 ```yaml
 Type: System.String[]
@@ -370,8 +347,7 @@ Accept wildcard characters: False
 ```
 
 ### -Surname
-Last name for this organizational contact.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
+.
 
 ```yaml
 Type: System.String
@@ -452,7 +428,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ADDRESSES <IMicrosoftGraphPhysicalOfficeAddress[]>: Postal addresses for this organizational contact. For now a contact can only have one physical address.
+ADDRESSES <IMicrosoftGraphPhysicalOfficeAddress[]>: .
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[OfficeLocation <String>]`: Office location such as building and office number for an organizational contact.
@@ -463,69 +439,69 @@ ADDRESSES <IMicrosoftGraphPhysicalOfficeAddress[]>: Postal addresses for this or
 BODYPARAMETER <IMicrosoftGraphOrgContact>: orgContact
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: 
-  - `[Addresses <IMicrosoftGraphPhysicalOfficeAddress[]>]`: Postal addresses for this organizational contact. For now a contact can only have one physical address.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Addresses <IMicrosoftGraphPhysicalOfficeAddress[]>]`: 
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[OfficeLocation <String>]`: Office location such as building and office number for an organizational contact.
     - `[PostalCode <String>]`: The postal code.
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.
-  - `[CompanyName <String>]`: Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[Department <String>]`: The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
-    - `[Id <String>]`: 
+  - `[CompanyName <String>]`: 
+  - `[Department <String>]`: 
+  - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[DisplayName <String>]`: Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-  - `[GivenName <String>]`: First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[JobTitle <String>]`: Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[Mail <String>]`: The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[MailNickname <String>]`: Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+  - `[DisplayName <String>]`: 
+  - `[GivenName <String>]`: 
+  - `[JobTitle <String>]`: 
+  - `[Mail <String>]`: 
+  - `[MailNickname <String>]`: 
   - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
-  - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
-  - `[OnPremisesLastSyncDateTime <DateTime?>]`: Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).
-  - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).
+  - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: 
+  - `[OnPremisesLastSyncDateTime <DateTime?>]`: 
+  - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: 
     - `[Category <String>]`: Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
     - `[OccurredDateTime <DateTime?>]`: The date and time at which the error occurred.
     - `[PropertyCausingError <String>]`: Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
     - `[Value <String>]`: Value of the property causing the error.
-  - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).
-  - `[Phones <IMicrosoftGraphPhone[]>]`: List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).
+  - `[OnPremisesSyncEnabled <Boolean?>]`: 
+  - `[Phones <IMicrosoftGraphPhone[]>]`: 
     - `[Language <String>]`: 
     - `[Number <String>]`: The phone number.
     - `[Region <String>]`: 
     - `[Type <String>]`: phoneType
-  - `[ProxyAddresses <String[]>]`: For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
-  - `[Surname <String>]`: Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
+  - `[ProxyAddresses <String[]>]`: 
+  - `[Surname <String>]`: 
   - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: 
 
-DIRECTREPORTS <IMicrosoftGraphDirectoryObject[]>: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
-  - `[Id <String>]`: 
+DIRECTREPORTS <IMicrosoftGraphDirectoryObject[]>: .
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 MANAGER <IMicrosoftGraphDirectoryObject>: directoryObject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
-MEMBEROF <IMicrosoftGraphDirectoryObject[]>: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
-  - `[Id <String>]`: 
+MEMBEROF <IMicrosoftGraphDirectoryObject[]>: .
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
-ONPREMISESPROVISIONINGERRORS <IMicrosoftGraphOnPremisesProvisioningError[]>: List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).
+ONPREMISESPROVISIONINGERRORS <IMicrosoftGraphOnPremisesProvisioningError[]>: .
   - `[Category <String>]`: Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
   - `[OccurredDateTime <DateTime?>]`: The date and time at which the error occurred.
   - `[PropertyCausingError <String>]`: Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
   - `[Value <String>]`: Value of the property causing the error.
 
-PHONES <IMicrosoftGraphPhone[]>: List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).
+PHONES <IMicrosoftGraphPhone[]>: .
   - `[Language <String>]`: 
   - `[Number <String>]`: The phone number.
   - `[Region <String>]`: 
   - `[Type <String>]`: phoneType
 
 TRANSITIVEMEMBEROF <IMicrosoftGraphDirectoryObject[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ## RELATED LINKS

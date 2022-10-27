@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgIdentityContinuouAccessEvaluationPolicy
 
 ## SYNOPSIS
-Update the navigation property continuousAccessEvaluationPolicy in identity
+Update the properties of a continuousAccessEvaluationPolicy object.
 
 ## SYNTAX
 
@@ -27,9 +27,22 @@ Update-MgIdentityContinuouAccessEvaluationPolicy
 ```
 
 ## DESCRIPTION
-Update the navigation property continuousAccessEvaluationPolicy in identity
+Update the properties of a continuousAccessEvaluationPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgIdentityContinuouAccessEvaluationPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	"@odata.type" = "#microsoft.graph.continuousAccessEvaluationPolicy"
+	Migrate = $true
+}
+Update-MgIdentityContinuouAccessEvaluationPolicy -BodyParameter $params
+```
+
+This example shows how to use the Update-MgIdentityContinuouAccessEvaluationPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -114,7 +127,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -244,7 +258,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphContinuousAccessEvaluationPolicy>: continuousAccessEvaluationPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Description <String>]`: Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
   - `[DisplayName <String>]`: The value is always Continuous Access Evaluation. Read-only.
   - `[Groups <String[]>]`: The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.

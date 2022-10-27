@@ -14,19 +14,19 @@ Nullable.
 
 ## SYNTAX
 
-### List (Default)
+### List1 (Default)
 ```
 Get-MgUserMessage -UserId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgUserMessage -MessageId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgUserMessage -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
@@ -38,6 +38,56 @@ Nullable.
 
 ## EXAMPLES
 
+### Example 1: Using the Get-MgUserMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -MessageId $messageId
+```
+
+This example shows how to use the Get-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -MessageId $messageId -Property "internetMessageHeaders" 
+```
+
+This example shows how to use the Get-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgUserMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -MessageId $messageId -Property "subject,body,bodyPreview,uniqueBody" 
+```
+
+This example shows how to use the Get-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgUserMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -MessageId $messageId
+```
+
+This example shows how to use the Get-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Using the Get-MgUserMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -Property "sender,subject" 
+```
+
+This example shows how to use the Get-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -All
@@ -45,7 +95,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -61,7 +111,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: CV
 
 Required: False
@@ -76,7 +126,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -92,7 +142,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -107,7 +157,7 @@ key: id of message
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -122,7 +172,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -152,7 +202,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -167,7 +217,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -182,7 +232,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: OrderBy
 
 Required: False
@@ -197,7 +247,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: Limit
 
 Required: False
@@ -212,7 +262,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True

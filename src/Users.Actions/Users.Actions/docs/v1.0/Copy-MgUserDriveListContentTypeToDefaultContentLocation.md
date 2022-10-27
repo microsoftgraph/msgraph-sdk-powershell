@@ -8,7 +8,8 @@ schema: 2.0.0
 # Copy-MgUserDriveListContentTypeToDefaultContentLocation
 
 ## SYNOPSIS
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ## SYNTAX
 
@@ -42,9 +43,31 @@ Copy-MgUserDriveListContentTypeToDefaultContentLocation -InputObject <IUsersActi
 ```
 
 ## DESCRIPTION
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Sites
+
+$params = @{
+	SourceFile = @{
+		SharepointIds = @{
+			ListId = "e2ecf63b-b0fd-48f7-a54a-d8c15479e3b0"
+			ListItemId = "2"
+		}
+	}
+	DestinationFileName = "newname.txt"
+}
+
+Copy-MgSiteContentTypeToDefaultContentLocation -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+```
+
+This example shows how to use the Copy-MgUserDriveListContentTypeToDefaultContentLocation Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

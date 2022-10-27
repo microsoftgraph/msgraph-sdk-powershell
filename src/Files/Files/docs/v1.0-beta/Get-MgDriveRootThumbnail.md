@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgDriveRootThumbnail
 
 ## SYNOPSIS
-Get thumbnails from drives
+Collection containing [ThumbnailSet][] objects associated with the item.
+For more info, see [getting thumbnails][].
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgDriveRootThumbnail -InputObject <IFilesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get thumbnails from drives
+Collection containing [ThumbnailSet][] objects associated with the item.
+For more info, see [getting thumbnails][].
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

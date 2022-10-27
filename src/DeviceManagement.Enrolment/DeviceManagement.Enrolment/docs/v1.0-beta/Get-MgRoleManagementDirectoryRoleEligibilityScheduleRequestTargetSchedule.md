@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestTargetSchedule
 
 ## SYNOPSIS
-Get targetSchedule from roleManagement
+The schedule for a role eligibility that is referenced through the targetScheduleId property.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +28,8 @@ Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestTargetSchedule
 ```
 
 ## DESCRIPTION
-Get targetSchedule from roleManagement
+The schedule for a role eligibility that is referenced through the targetScheduleId property.
+Supports $expand.
 
 ## EXAMPLES
 

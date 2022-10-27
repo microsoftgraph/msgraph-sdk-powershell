@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListColumnSourceColumn
 
 ## SYNOPSIS
-Get sourceColumn from groups
+The source column for the content type column.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupDriveListColumnSourceColumn -InputObject <IFilesIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Get sourceColumn from groups
+The source column for the content type column.
 
 ## EXAMPLES
 

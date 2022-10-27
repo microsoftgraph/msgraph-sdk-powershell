@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgServicePrincipalTokenIssuancePolicy
 
 ## SYNOPSIS
-Get tokenIssuancePolicies from servicePrincipals
+The tokenIssuancePolicies assigned to this service principal.
+Supports $expand.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgServicePrincipalTokenIssuancePolicy -InputObject <IApplicationsIdentity> [
 ```
 
 ## DESCRIPTION
-Get tokenIssuancePolicies from servicePrincipals
+The tokenIssuancePolicies assigned to this service principal.
+Supports $expand.
 
 ## EXAMPLES
 

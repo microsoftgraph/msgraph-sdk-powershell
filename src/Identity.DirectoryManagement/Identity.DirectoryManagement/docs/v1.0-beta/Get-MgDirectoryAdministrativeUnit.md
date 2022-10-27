@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryAdministrativeUnit
 
 ## SYNOPSIS
-Get administrativeUnits from directory
+Conceptual container for user and group directory objects.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDirectoryAdministrativeUnit -InputObject <IIdentityDirectoryManagementIden
 ```
 
 ## DESCRIPTION
-Get administrativeUnits from directory
+Conceptual container for user and group directory objects.
 
 ## EXAMPLES
 

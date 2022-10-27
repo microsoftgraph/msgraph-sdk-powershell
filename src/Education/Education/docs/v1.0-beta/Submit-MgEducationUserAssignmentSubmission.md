@@ -8,7 +8,11 @@ schema: 2.0.0
 # Submit-MgEducationUserAssignmentSubmission
 
 ## SYNOPSIS
-Invoke action submit
+Indicate that a student is done with the work and is ready to hand in the assignment.
+This method changes the status of the submission from `working` to `submitted`.
+During the submit process, all the resources are copied to the **submittedResources** bucket.
+The teacher will be looking at the submitted resources list for grading.
+A teacher can also submit a student's assignment on their behalf.
 
 ## SYNTAX
 
@@ -25,9 +29,24 @@ Submit-MgEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-C
 ```
 
 ## DESCRIPTION
-Invoke action submit
+Indicate that a student is done with the work and is ready to hand in the assignment.
+This method changes the status of the submission from `working` to `submitted`.
+During the submit process, all the resources are copied to the **submittedResources** bucket.
+The teacher will be looking at the submitted resources list for grading.
+A teacher can also submit a student's assignment on their behalf.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Education
+
+Submit-MgEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+```
+
+This example shows how to use the Submit-MgEducationUserAssignmentSubmission Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

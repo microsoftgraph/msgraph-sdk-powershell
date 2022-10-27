@@ -113,7 +113,10 @@ paths:
     get:
       tags:
         - schemaExtensions.schemaExtension
-      summary: Get entity from schemaExtensions by key
+      summary: Get schemaExtension
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schemaextension-get?view=graph-rest-1.0
       operationId: schemaExtensions.schemaExtension_GetSchemaExtension
       parameters:
         - name: schemaExtension-id
@@ -260,6 +263,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.extensionSchemaProperty:
@@ -279,16 +283,14 @@ components:
     microsoft.graph.schemaExtensionCollectionResponse:
       title: Collection of schemaExtension
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.schemaExtension'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.schemaExtension'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -298,15 +300,6 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.MainError:

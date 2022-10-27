@@ -8,7 +8,7 @@ schema: 2.0.0
 # Find-MgUserManagedDevice
 
 ## SYNOPSIS
-Invoke action locateDevice
+Locate a device
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Find-MgUserManagedDevice -InputObject <IUsersActionsIdentity> [-PassThru] [-Conf
 ```
 
 ## DESCRIPTION
-Invoke action locateDevice
+Locate a device
 
 ## EXAMPLES
 

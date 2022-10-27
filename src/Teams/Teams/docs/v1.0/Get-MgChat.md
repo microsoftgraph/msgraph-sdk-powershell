@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgChat
 
 ## SYNOPSIS
-Get chat
+Retrieve a single chat (without its messages).
+This method supports federation.
+To access a chat, at least one chat member must belong to the tenant the request initiated from.
 
 ## SYNTAX
 
@@ -31,9 +33,47 @@ Get-MgChat -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property
 ```
 
 ## DESCRIPTION
-Get chat
+Retrieve a single chat (without its messages).
+This method supports federation.
+To access a chat, at least one chat member must belong to the tenant the request initiated from.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChat -ChatId $chatId -ExpandProperty "members" 
+```
+
+This example shows how to use the Get-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChat -ChatId $chatId
+```
+
+This example shows how to use the Get-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChat -ChatId $chatId
+```
+
+This example shows how to use the Get-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgChat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChat -Sort "lastMessagePreview/createdDateTime desc" 
+```
+
+This example shows how to use the Get-MgChat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

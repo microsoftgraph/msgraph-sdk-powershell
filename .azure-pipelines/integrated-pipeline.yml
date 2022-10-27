@@ -39,16 +39,20 @@ trigger:
       include:
       - main
       - dev
-      - releases/*
-      - bugfixes/*
       exclude:
+      - WeeklyOpenApiDocsDownload/*
       - DocsGeneration/*
-      - features/2.0
+      - features/*
 
 pr:
   branches:
+    include:
+    - main
+    - dev
     exclude:
+    - WeeklyOpenApiDocsDownload/*
     - DocsGeneration/*
+    - features/*
 
 stages:
 - stage: ComputeVersion

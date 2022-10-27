@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgShareListItemDriveItemContent
 
 ## SYNOPSIS
-Update content for the navigation property driveItem in shares
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Set-MgShareListItemDriveItemContent -InputObject <IFilesIdentity> -InFile <Strin
 ```
 
 ## DESCRIPTION
-Update content for the navigation property driveItem in shares
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

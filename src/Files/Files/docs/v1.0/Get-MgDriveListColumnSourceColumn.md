@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveListColumnSourceColumn
 
 ## SYNOPSIS
-Get sourceColumn from drives
+The source column for the content type column.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDriveListColumnSourceColumn -InputObject <IFilesIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get sourceColumn from drives
+The source column for the content type column.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDepOnboardingSettingDefaultMacOSEnrollmentProfile
 
 ## SYNOPSIS
-Get defaultMacOsEnrollmentProfile from deviceManagement
+Default MacOs Enrollment Profile
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementDepOnboardingSettingDefaultMacOSEnrollmentProfile
 ```
 
 ## DESCRIPTION
-Get defaultMacOsEnrollmentProfile from deviceManagement
+Default MacOs Enrollment Profile
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceAccessReviewPolicy
 
 ## SYNOPSIS
-Get policy from identityGovernance
+Read the properties and relationships of an accessReviewPolicy object.
 
 ## SYNTAX
 
@@ -18,9 +18,18 @@ Get-MgIdentityGovernanceAccessReviewPolicy [-ExpandProperty <String[]>] [-Proper
 ```
 
 ## DESCRIPTION
-Get policy from identityGovernance
+Read the properties and relationships of an accessReviewPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgIdentityGovernanceAccessReviewPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgIdentityGovernanceAccessReviewPolicy
+```
+
+This example shows how to use the Get-MgIdentityGovernanceAccessReviewPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

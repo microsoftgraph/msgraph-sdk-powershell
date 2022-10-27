@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgApplicationFederatedIdentityCredential
 
 ## SYNOPSIS
-Create new navigation property to federatedIdentityCredentials for applications
+Create a new federatedIdentityCredential object for an application.
+By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
+Maximum of 20 objects can be added to an application.
 
 ## SYNTAX
 
@@ -39,9 +41,28 @@ New-MgApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity
 ```
 
 ## DESCRIPTION
-Create new navigation property to federatedIdentityCredentials for applications
+Create a new federatedIdentityCredential object for an application.
+By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
+Maximum of 20 objects can be added to an application.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgApplicationFederatedIdentityCredential Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	Name = "testing02"
+	Issuer = "https://login.microsoftonline.com/3d1e2be9-a10a-4a0c-8380-7ce190f98ed9/v2.0"
+	Subject = "a7d388c3-5e3f-4959-ac7d-786b3383006a"
+	Audiences = @(
+		"api://AzureADTokenExchange"
+	)
+}
+New-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId -BodyParameter $params
+```
+
+This example shows how to use the New-MgApplicationFederatedIdentityCredential Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -129,7 +150,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -272,7 +294,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphFederatedIdentityCredential>: federatedIdentityCredential
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
   - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
   - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.

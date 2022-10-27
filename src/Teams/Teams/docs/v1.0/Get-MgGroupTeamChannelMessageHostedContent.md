@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamChannelMessageHostedContent
 
 ## SYNOPSIS
-Get hostedContents from groups
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgGroupTeamChannelMessageHostedContent -InputObject <ITeamsIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get hostedContents from groups
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## EXAMPLES
 

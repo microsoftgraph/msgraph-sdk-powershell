@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListItemVersion
 
 ## SYNOPSIS
-Get versions from groups
+The list of previous versions of the list item.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupDriveListItemVersion -InputObject <IFilesIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get versions from groups
+The list of previous versions of the list item.
 
 ## EXAMPLES
 

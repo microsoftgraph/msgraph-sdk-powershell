@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgGroupDriveItem
 
 ## SYNOPSIS
-Invoke action restore
+Restore a driveItem that has been deleted and is currently in the recycle bin.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Restore-MgGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a driveItem that has been deleted and is currently in the recycle bin.
 
 ## EXAMPLES
 

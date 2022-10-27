@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSite
 
 ## SYNOPSIS
-Get sites from groups
+The collection of the sub-sites under this site.
 
 ## SYNTAX
 
@@ -21,8 +21,8 @@ Get-MgGroupSite -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>
 
 ### Get1
 ```
-Get-MgGroupSite -GroupId <String> -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgGroupSite -GroupId <String> -SiteId <String> -SiteId1 <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
@@ -32,7 +32,7 @@ Get-MgGroupSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get sites from groups
+The collection of the sub-sites under this site.
 
 ## EXAMPLES
 
@@ -176,6 +176,21 @@ Accept wildcard characters: False
 ```
 
 ### -SiteId
+key: id of site
+
+```yaml
+Type: System.String
+Parameter Sets: Get1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SiteId1
 key: id of site
 
 ```yaml

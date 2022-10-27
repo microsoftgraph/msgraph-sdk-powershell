@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationSynchronizationTemplateSchemaDirectory
 
 ## SYNOPSIS
-Get directories from applications
+Contains the collection of directories and all of their objects.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgApplicationSynchronizationTemplateSchemaDirectory -InputObject <IApplicati
 ```
 
 ## DESCRIPTION
-Get directories from applications
+Contains the collection of directories and all of their objects.
 
 ## EXAMPLES
 

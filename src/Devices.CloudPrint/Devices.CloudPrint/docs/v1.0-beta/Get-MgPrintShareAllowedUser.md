@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintShareAllowedUser
 
 ## SYNOPSIS
-Get allowedUsers from print
+Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 
 ## SYNTAX
 
@@ -19,9 +19,18 @@ Get-MgPrintShareAllowedUser -PrinterShareId <String> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get allowedUsers from print
+Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPrintShareAllowedUser Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintShareAllowedUser -PrinterShareId $printerShareId
+```
+
+This example shows how to use the Get-MgPrintShareAllowedUser Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -198,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser1
 
 ## NOTES
 

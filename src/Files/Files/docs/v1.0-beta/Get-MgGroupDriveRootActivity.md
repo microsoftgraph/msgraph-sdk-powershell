@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveRootActivity
 
 ## SYNOPSIS
-Get activities from groups
+The list of recent activities that took place on this item.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgGroupDriveRootActivity -DriveId <String> -GroupId <String> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get activities from groups
+The list of recent activities that took place on this item.
 
 ## EXAMPLES
 

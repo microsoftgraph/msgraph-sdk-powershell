@@ -195,6 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -522,7 +523,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphItem>: item
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[BaseUnitOfMeasureId <String>]`: 
   - `[Blocked <Boolean?>]`: 
   - `[DisplayName <String>]`: 
@@ -530,7 +531,7 @@ BODYPARAMETER <IMicrosoftGraphItem>: item
   - `[Inventory <Decimal?>]`: 
   - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Code <String>]`: 
     - `[DisplayName <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
@@ -539,7 +540,7 @@ BODYPARAMETER <IMicrosoftGraphItem>: item
   - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Number <String>]`: 
   - `[Picture <IMicrosoftGraphPicture[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Content <Byte[]>]`: 
     - `[ContentType <String>]`: 
     - `[Height <Int32?>]`: 
@@ -591,13 +592,13 @@ INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
 
 ITEMCATEGORY <IMicrosoftGraphItemCategory>: itemCategory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Code <String>]`: 
   - `[DisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
 
 PICTURE <IMicrosoftGraphPicture[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Content <Byte[]>]`: 
   - `[ContentType <String>]`: 
   - `[Height <Int32?>]`: 

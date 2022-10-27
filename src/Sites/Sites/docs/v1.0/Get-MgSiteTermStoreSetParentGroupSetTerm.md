@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteTermStoreSetParentGroupSetTerm
 
 ## SYNOPSIS
-Get terms from sites
+All the terms under the set.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSiteTermStoreSetParentGroupSetTerm -InputObject <ISitesIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get terms from sites
+All the terms under the set.
 
 ## EXAMPLES
 

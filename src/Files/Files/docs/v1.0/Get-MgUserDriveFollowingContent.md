@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveFollowingContent
 
 ## SYNOPSIS
-Get content for the navigation property following from users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserDriveFollowingContent -InputObject <IFilesIdentity> -OutFile <String> 
 ```
 
 ## DESCRIPTION
-Get content for the navigation property following from users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

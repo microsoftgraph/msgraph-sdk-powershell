@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowFeatureUpdateProfileAssignment
 
 ## SYNOPSIS
-Get assignments from deviceManagement
+The list of group assignments of the profile.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceManagementWindowFeatureUpdateProfileAssignment -InputObject <IDevice
 ```
 
 ## DESCRIPTION
-Get assignments from deviceManagement
+The list of group assignments of the profile.
 
 ## EXAMPLES
 

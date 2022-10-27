@@ -8,7 +8,14 @@ schema: 2.0.0
 # Publish-MgEducationMeAssignment
 
 ## SYNOPSIS
-Invoke action publish
+Change the state of an educationAssignment from its original `draft` status to the `published` status.
+You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.
+Only a teacher in the class can make this call.
+When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects.
+When you call this API, educationSubmission objects are created and the assignment appears in the student's list.
+The state of the **assignment** goes back to `draft` if there is any backend failure during publish process.
+To update the properties of a published **assignment**, see update an assignment.
+To update the properties of a published assignment, see update an assignment.
 
 ## SYNTAX
 
@@ -23,9 +30,27 @@ Publish-MgEducationMeAssignment -InputObject <IEducationIdentity> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Invoke action publish
+Change the state of an educationAssignment from its original `draft` status to the `published` status.
+You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.
+Only a teacher in the class can make this call.
+When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects.
+When you call this API, educationSubmission objects are created and the assignment appears in the student's list.
+The state of the **assignment** goes back to `draft` if there is any backend failure during publish process.
+To update the properties of a published **assignment**, see update an assignment.
+To update the properties of a published assignment, see update an assignment.
 
 ## EXAMPLES
+
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Education
+
+Publish-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+```
+
+This example shows how to use the Publish-MgEducationMeAssignment Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

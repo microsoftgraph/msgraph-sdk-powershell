@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPlannerTaskBucketTaskBoardFormat
 
 ## SYNOPSIS
-Update the navigation property bucketTaskBoardFormat in planner
+Update the properties of **plannerBucketTaskBoardTaskFormat** object.
 
 ## SYNTAX
 
@@ -39,9 +39,21 @@ Update-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Update the navigation property bucketTaskBoardFormat in planner
+Update the properties of **plannerBucketTaskBoardTaskFormat** object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPlannerTaskBucketTaskBoardFormat Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	OrderHint = "A6673H Ejkl!"
+}
+Update-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPlannerTaskBucketTaskBoardFormat Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -77,7 +89,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -208,7 +221,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>: plannerBucketTaskBoardTaskFormat
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter

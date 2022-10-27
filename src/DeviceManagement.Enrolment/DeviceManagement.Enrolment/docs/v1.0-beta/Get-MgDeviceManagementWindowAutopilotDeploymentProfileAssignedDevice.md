@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDevice
 
 ## SYNOPSIS
-Get assignedDevices from deviceManagement
+The list of assigned devices for the profile.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDevice
 ```
 
 ## DESCRIPTION
-Get assignedDevices from deviceManagement
+The list of assigned devices for the profile.
 
 ## EXAMPLES
 

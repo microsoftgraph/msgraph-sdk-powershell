@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtMobileAppConfigurationUserStatuses
 
 ## SYNOPSIS
-Get userStatuses from deviceAppManagement
+List of ManagedDeviceMobileAppConfigurationUserStatus.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceAppMgtMobileAppConfigurationUserStatuses -InputObject <IDevicesCorpo
 ```
 
 ## DESCRIPTION
-Get userStatuses from deviceAppManagement
+List of ManagedDeviceMobileAppConfigurationUserStatus.
 
 ## EXAMPLES
 

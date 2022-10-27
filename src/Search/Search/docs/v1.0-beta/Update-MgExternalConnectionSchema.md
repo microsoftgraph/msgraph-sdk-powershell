@@ -8,14 +8,14 @@ schema: 2.0.0
 # Update-MgExternalConnectionSchema
 
 ## SYNOPSIS
-Update the navigation property schema in external
+Update the properties of a schema for an externalConnection.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgExternalConnectionSchema -ExternalConnectionId <String> [-AdditionalProperties <Hashtable>]
- [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>] [-PassThru]
+ [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty1[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,14 +36,49 @@ Update-MgExternalConnectionSchema -InputObject <ISearchIdentity>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgExternalConnectionSchema -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
- [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>] [-PassThru]
+ [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty1[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property schema in external
+Update the properties of a schema for an externalConnection.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgExternalConnectionSchema Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Search
+$params = @{
+	BaseType = "microsoft.graph.externalItem"
+	Properties = @(
+		@{
+			Name = "ticketTitle"
+			Type = "string"
+			IsSearchable = "true"
+			IsRetrievable = "true"
+			Labels = @(
+				"title"
+			)
+		}
+		@{
+			Name = "priority"
+			Type = "string"
+			IsQueryable = "true"
+			IsRetrievable = "true"
+			IsSearchable = "false"
+		}
+		@{
+			Name = "assignee"
+			Type = "string"
+			IsRetrievable = "true"
+		}
+	)
+}
+Update-MgExternalConnectionSchema -ExternalConnectionId $externalConnectionId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgExternalConnectionSchema Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -110,7 +145,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -161,7 +197,7 @@ The minimum number of properties is one, the maximum is 128.
 To construct, please use Get-Help -Online and see NOTES section for PROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsProperty[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsProperty1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -227,9 +263,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphExternalConnectorsSchema>: schema
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[BaseType <String>]`: Must be set to microsoft.graph.externalItem. Required.
-  - `[Properties <IMicrosoftGraphExternalConnectorsProperty[]>]`: The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
+  - `[Properties <IMicrosoftGraphExternalConnectorsProperty1[]>]`: The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
     - `[Aliases <String[]>]`: A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^. Optional.
     - `[IsQueryable <Boolean?>]`: Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
     - `[IsRefinable <Boolean?>]`: Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
@@ -250,7 +286,7 @@ INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[IdentityId <String>]`: key: id of identity
   - `[QnaId <String>]`: key: id of qna
 
-PROPERTIES <IMicrosoftGraphExternalConnectorsProperty[]>: The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
+PROPERTIES <IMicrosoftGraphExternalConnectorsProperty1[]>: The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
   - `[Aliases <String[]>]`: A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^. Optional.
   - `[IsQueryable <Boolean?>]`: Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
   - `[IsRefinable <Boolean?>]`: Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.

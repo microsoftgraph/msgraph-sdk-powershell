@@ -8,42 +8,58 @@ schema: 2.0.0
 # Invoke-MgMarkChatUnreadForUser
 
 ## SYNOPSIS
-Invoke action markChatUnreadForUser
+Mark a chat as unread for a user.
 
 ## SYNTAX
 
-### MarkExpanded (Default)
+### MarkExpanded1 (Default)
 ```
 Invoke-MgMarkChatUnreadForUser -ChatId <String> [-AdditionalProperties <Hashtable>]
- [-LastMessageReadDateTime <DateTime>] [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity>]
+ [-LastMessageReadDateTime <DateTime>] [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity1>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Mark
+### Mark1
 ```
 Invoke-MgMarkChatUnreadForUser -ChatId <String>
  -BodyParameter <IPathsMra0GcChatsChatIdMicrosoftGraphMarkchatunreadforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MarkViaIdentity
+### MarkViaIdentity1
 ```
 Invoke-MgMarkChatUnreadForUser -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsMra0GcChatsChatIdMicrosoftGraphMarkchatunreadforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MarkViaIdentityExpanded
+### MarkViaIdentityExpanded1
 ```
 Invoke-MgMarkChatUnreadForUser -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-LastMessageReadDateTime <DateTime>] [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity>]
+ [-LastMessageReadDateTime <DateTime>] [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity1>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action markChatUnreadForUser
+Mark a chat as unread for a user.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgMarkChatUnreadForUser Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	User = @{
+		Id = "d864e79f-a516-4d0f-9fee-0eeb4d61fdc2"
+	}
+	TenantId = "2a690434-97d9-4eed-83a6-f5f13600199a"
+	LastMessageReadDateTime = [System.DateTime]::Parse("2021-05-27T22:13:01.577Z")
+}
+Invoke-MgMarkChatUnreadForUser -ChatId $chatId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgMarkChatUnreadForUser Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -52,7 +68,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: MarkExpanded, MarkViaIdentityExpanded
+Parameter Sets: MarkExpanded1, MarkViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -68,7 +84,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsMra0GcChatsChatIdMicrosoftGraphMarkchatunreadforuserPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Mark, MarkViaIdentity
+Parameter Sets: Mark1, MarkViaIdentity1
 Aliases:
 
 Required: True
@@ -83,7 +99,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Mark, MarkExpanded
+Parameter Sets: Mark1, MarkExpanded1
 Aliases:
 
 Required: True
@@ -99,7 +115,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: MarkViaIdentity, MarkViaIdentityExpanded
+Parameter Sets: MarkViaIdentity1, MarkViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -114,7 +130,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: MarkExpanded, MarkViaIdentityExpanded
+Parameter Sets: MarkExpanded1, MarkViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -144,7 +160,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: MarkExpanded, MarkViaIdentityExpanded
+Parameter Sets: MarkExpanded1, MarkViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -159,8 +175,8 @@ teamworkUserIdentity
 To construct, please use Get-Help -Online and see NOTES section for USER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity
-Parameter Sets: MarkExpanded, MarkViaIdentityExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity1
+Parameter Sets: MarkExpanded1, MarkViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -227,11 +243,11 @@ BODYPARAMETER <IPathsMra0GcChatsChatIdMicrosoftGraphMarkchatunreadforuserPostReq
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[LastMessageReadDateTime <DateTime?>]`: 
   - `[TenantId <String>]`: 
-  - `[User <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
+  - `[User <IMicrosoftGraphTeamworkUserIdentity1>]`: teamworkUserIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
-    - `[UserIdentityType <String>]`: teamworkUserIdentityType
+    - `[UserIdentityType <String>]`: 
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
@@ -272,11 +288,11 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
-USER <IMicrosoftGraphTeamworkUserIdentity>: teamworkUserIdentity
+USER <IMicrosoftGraphTeamworkUserIdentity1>: teamworkUserIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
-  - `[UserIdentityType <String>]`: teamworkUserIdentityType
+  - `[UserIdentityType <String>]`: 
 
 ## RELATED LINKS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveListItemField
 
 ## SYNOPSIS
-Get fields from drives
+The values of the columns set on this list item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDriveListItemField -InputObject <IFilesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get fields from drives
+The values of the columns set on this list item.
 
 ## EXAMPLES
 
