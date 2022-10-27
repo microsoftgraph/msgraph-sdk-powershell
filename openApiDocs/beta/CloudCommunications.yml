@@ -3204,6 +3204,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.presence'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4638,11 +4641,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -7498,11 +7501,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id

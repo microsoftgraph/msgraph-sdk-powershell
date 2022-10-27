@@ -1410,61 +1410,53 @@ components:
     microsoft.graph.deviceEnrollmentConfigurationCollectionResponse:
       title: Collection of deviceEnrollmentConfiguration
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.enrollmentConfigurationAssignmentCollectionResponse:
       title: Collection of enrollmentConfigurationAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.importedWindowsAutopilotDeviceIdentityCollectionResponse:
       title: Collection of importedWindowsAutopilotDeviceIdentity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsAutopilotDeviceIdentityCollectionResponse:
       title: Collection of windowsAutopilotDeviceIdentity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
@@ -1803,15 +1795,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.appScope:

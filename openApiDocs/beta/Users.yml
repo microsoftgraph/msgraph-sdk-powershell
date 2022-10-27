@@ -2629,33 +2629,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property outlook in users
-      operationId: users_UpdateOutlook
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.outlookUser'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/masterCategories':
     get:
       tags:
@@ -2939,6 +2912,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.outlookTaskFolderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2973,6 +2952,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}':
     get:
@@ -3041,6 +3026,12 @@ paths:
                 outlookTaskFolder-id: $request.path.outlookTaskFolder-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3076,6 +3067,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3110,6 +3107,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties':
     get:
@@ -3185,6 +3188,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3227,6 +3236,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
     get:
@@ -3294,6 +3309,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3337,6 +3358,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3379,6 +3406,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties':
     get:
@@ -3454,6 +3487,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3496,6 +3535,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
     get:
@@ -3563,6 +3608,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3606,6 +3657,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3648,6 +3705,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks':
     get:
@@ -3770,6 +3833,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.outlookTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3812,6 +3881,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}':
     get:
@@ -3909,6 +3984,12 @@ paths:
               operationId: users.user.outlook.taskFolders.outlookTaskFolder.tasks.outlookTask.complete
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3952,6 +4033,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3994,6 +4081,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments':
     get:
@@ -4091,6 +4184,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4145,6 +4244,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/{attachment-id}':
     get:
@@ -4224,6 +4329,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4274,6 +4385,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties':
     get:
@@ -4357,6 +4474,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4407,6 +4530,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
     get:
@@ -4482,6 +4611,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4533,6 +4668,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4583,6 +4724,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties':
     get:
@@ -4666,6 +4813,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4716,6 +4869,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
     get:
@@ -4791,6 +4950,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4842,6 +5007,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4892,6 +5063,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups':
     get:
@@ -4959,6 +5136,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.outlookTaskGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4997,6 +5180,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}':
     get:
@@ -5053,6 +5242,12 @@ paths:
                 outlookTaskGroup-id: $request.path.outlookTaskGroup-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5088,6 +5283,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5122,6 +5323,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders':
     get:
@@ -5199,6 +5406,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.outlookTaskFolderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5241,6 +5454,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}':
     get:
@@ -5321,6 +5540,12 @@ paths:
                 outlookTaskFolder-id: $request.path.outlookTaskFolder-id
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5364,6 +5589,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5406,6 +5637,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties':
     get:
@@ -5489,6 +5726,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5539,6 +5782,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
     get:
@@ -5614,6 +5863,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5665,6 +5920,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5715,6 +5976,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties':
     get:
@@ -5798,6 +6065,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5848,6 +6121,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
     get:
@@ -5923,6 +6202,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5974,6 +6259,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6024,6 +6315,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks':
     get:
@@ -6154,6 +6451,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.outlookTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6204,6 +6507,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}':
     get:
@@ -6312,6 +6621,12 @@ paths:
               operationId: users.user.outlook.taskGroups.outlookTaskGroup.taskFolders.outlookTaskFolder.tasks.outlookTask.complete
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6363,6 +6678,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6413,6 +6734,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments':
     get:
@@ -6518,6 +6845,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6580,6 +6913,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/{attachment-id}':
     get:
@@ -6667,6 +7006,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6725,6 +7070,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties':
     get:
@@ -6816,6 +7167,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6874,6 +7231,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
     get:
@@ -6957,6 +7320,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7016,6 +7385,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7074,6 +7449,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties':
     get:
@@ -7165,6 +7546,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7223,6 +7610,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
     get:
@@ -7306,6 +7699,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7365,6 +7764,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7423,6 +7828,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks':
     get:
@@ -7537,6 +7948,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.outlookTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7575,6 +7992,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}':
     get:
@@ -7660,6 +8083,12 @@ paths:
               operationId: users.user.outlook.tasks.outlookTask.complete
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7695,6 +8124,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7729,6 +8164,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}/attachments':
     get:
@@ -7818,6 +8259,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7864,6 +8311,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}/attachments/{attachment-id}':
     get:
@@ -7935,6 +8388,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7977,6 +8436,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties':
     get:
@@ -8052,6 +8517,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8094,6 +8565,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
     get:
@@ -8161,6 +8638,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8204,6 +8687,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8246,6 +8735,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties':
     get:
@@ -8321,6 +8816,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8363,6 +8864,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
     get:
@@ -8430,6 +8937,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8473,6 +8986,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8515,6 +9034,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-20T00:00:00.0000000+00:00'
+        date: '2020-08-20T00:00:00.0000000+00:00'
+        version: 2020-08/Outlook_Tasks
+        description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/ownedDevices':
     get:
@@ -32885,6 +33410,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod

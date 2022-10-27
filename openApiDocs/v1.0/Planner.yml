@@ -688,7 +688,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: List tasks
-      description: Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -1861,7 +1861,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of **plannerplandetails** object.
+      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -3314,7 +3314,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: List tasks
-      description: Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -4693,7 +4693,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: List tasks
-      description: Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -5726,7 +5726,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of **plannerplandetails** object.
+      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -8170,7 +8170,7 @@ paths:
       tags:
         - users.plannerUser
       summary: List tasks
-      description: Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -9343,7 +9343,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of **plannerplandetails** object.
+      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0

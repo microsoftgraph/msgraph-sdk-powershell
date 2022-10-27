@@ -1136,6 +1136,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -3865,6 +3868,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -4740,6 +4746,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -6123,6 +6132,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -8447,6 +8459,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -11196,6 +11211,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppRelationshipState'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -12486,6 +12504,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileApp'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -12527,6 +12548,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -13377,6 +13401,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.policySet'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -14612,6 +14639,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -14974,6 +15004,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.vppTokenLicenseSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -18240,6 +18273,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -49084,6 +49120,7 @@ components:
         - phoneUser
         - unknownFutureValue
         - emailUser
+        - azureCommunicationServicesUser
       type: string
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod

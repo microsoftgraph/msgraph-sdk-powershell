@@ -12071,16 +12071,14 @@ components:
     microsoft.graph.androidDeviceOwnerEnrollmentProfileCollectionResponse:
       title: Collection of androidDeviceOwnerEnrollmentProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.androidDeviceOwnerEnrollmentProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.androidDeviceOwnerEnrollmentProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -12095,361 +12093,313 @@ components:
     microsoft.graph.androidForWorkEnrollmentProfileCollectionResponse:
       title: Collection of androidForWorkEnrollmentProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.androidForWorkEnrollmentProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.androidForWorkEnrollmentProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.appleUserInitiatedEnrollmentProfileCollectionResponse:
       title: Collection of appleUserInitiatedEnrollmentProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.appleUserInitiatedEnrollmentProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.appleUserInitiatedEnrollmentProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.appleEnrollmentProfileAssignmentCollectionResponse:
       title: Collection of appleEnrollmentProfileAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.appleEnrollmentProfileAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.appleEnrollmentProfileAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementAutopilotEventCollectionResponse:
       title: Collection of deviceManagementAutopilotEvent
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotEvent'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotEvent'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementAutopilotPolicyStatusDetailCollectionResponse:
       title: Collection of deviceManagementAutopilotPolicyStatusDetail
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.depOnboardingSettingCollectionResponse:
       title: Collection of depOnboardingSetting
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.depOnboardingSetting'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.depOnboardingSetting'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.enrollmentProfileCollectionResponse:
       title: Collection of enrollmentProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.enrollmentProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.enrollmentProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.importedAppleDeviceIdentityCollectionResponse:
       title: Collection of importedAppleDeviceIdentity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentity'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceEnrollmentConfigurationCollectionResponse:
       title: Collection of deviceEnrollmentConfiguration
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.enrollmentConfigurationAssignmentCollectionResponse:
       title: Collection of enrollmentConfigurationAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.importedDeviceIdentityCollectionResponse:
       title: Collection of importedDeviceIdentity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentity'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.importedWindowsAutopilotDeviceIdentityCollectionResponse:
       title: Collection of importedWindowsAutopilotDeviceIdentity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse:
       title: Collection of userExperienceAnalyticsNotAutopilotReadyDevice
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsAutopilotDeploymentProfileCollectionResponse:
       title: Collection of windowsAutopilotDeploymentProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsAutopilotDeviceIdentityCollectionResponse:
       title: Collection of windowsAutopilotDeviceIdentity
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsAutopilotDeploymentProfileAssignmentCollectionResponse:
       title: Collection of windowsAutopilotDeploymentProfileAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfileAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeploymentProfileAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsFeatureUpdateProfileCollectionResponse:
       title: Collection of windowsFeatureUpdateProfile
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfile'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.windowsFeatureUpdateProfileAssignmentCollectionResponse:
       title: Collection of windowsFeatureUpdateProfileAssignment
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfileAssignment'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfileAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse:
       title: Collection of unifiedRbacResourceNamespace
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRbacResourceActionCollectionResponse:
       title: Collection of unifiedRbacResourceAction
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleAssignmentMultipleCollectionResponse:
       title: Collection of unifiedRoleAssignmentMultiple
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.appScopeCollectionResponse:
       title: Collection of appScope
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.appScope'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.appScope'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleDefinitionCollectionResponse:
       title: Collection of unifiedRoleDefinition
       type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          additionalProperties:
-            type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.managedDeviceOwnerType:
@@ -12809,15 +12759,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
           additionalProperties:
             type: object
-    BaseCollectionPaginationCountResponse:
-      title: Base collection pagination and count responses
-      type: object
-      properties:
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
