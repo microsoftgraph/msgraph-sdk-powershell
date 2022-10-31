@@ -47,8 +47,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             get
             {
-                var app = string.Format(CultureInfo.InvariantCulture,
-                    "PowerShell/{0} {1}", _psHostVersion, _invocationInfo.MyCommand.Name);
+                var app = string.Empty;
+                if (_psHostVersion != null)
+                    app = string.Format(CultureInfo.InvariantCulture, "PowerShell/{0} {1}", _psHostVersion, _invocationInfo?.MyCommand?.Name);
                 return app;
             }
         }
