@@ -46,7 +46,7 @@ paths:
                 - presences
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -79,8 +79,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.cloudCommunications'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudCommunications'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -163,7 +167,7 @@ paths:
                 - sessions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.callRecords.callRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -184,7 +188,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -244,7 +248,7 @@ paths:
                 - sessions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -280,8 +284,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -393,7 +401,7 @@ paths:
                 - segments
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.callRecords.sessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -423,7 +431,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.callRecords.session'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -489,7 +497,7 @@ paths:
                 - segments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -534,8 +542,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.callRecords.session'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.session'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -658,7 +670,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.callRecords.segmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -696,7 +708,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -768,7 +780,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -815,8 +827,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -980,7 +996,7 @@ paths:
                 - participants
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.callCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1005,7 +1021,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.call'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1082,7 +1098,7 @@ paths:
                 - participants
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1158,8 +1174,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.call'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.call'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1256,7 +1276,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.audioRoutingGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1286,7 +1306,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1346,7 +1366,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1385,8 +1405,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1486,7 +1510,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.contentSharingSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1516,7 +1540,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1573,7 +1597,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1612,8 +1636,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1684,7 +1712,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1777,7 +1805,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1881,7 +1909,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1927,7 +1955,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2004,7 +2032,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2134,7 +2162,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2215,7 +2243,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2259,7 +2287,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2335,7 +2363,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.commsOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2365,7 +2393,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.commsOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2425,7 +2453,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2464,8 +2492,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.commsOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.commsOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2583,7 +2615,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.participantCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2613,7 +2645,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.participant'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2676,7 +2708,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2722,8 +2754,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.participant'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.participant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2802,7 +2838,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2854,7 +2890,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2904,7 +2940,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2950,7 +2986,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3012,7 +3048,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3157,7 +3193,7 @@ paths:
                 - attendanceReports
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.onlineMeetingCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3178,7 +3214,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3251,7 +3287,7 @@ paths:
                 - attendanceReports
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3287,8 +3323,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3391,7 +3431,7 @@ paths:
                 - attendanceRecords
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3421,7 +3461,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3484,7 +3524,7 @@ paths:
                 - attendanceRecords
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3529,8 +3569,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3653,7 +3697,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3691,7 +3735,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3762,7 +3806,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3809,8 +3853,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3876,7 +3924,7 @@ paths:
             type: string
           x-ms-docs-key-type: onlineMeeting
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -3955,7 +4003,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4020,7 +4068,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.presenceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4041,7 +4089,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.presence'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4092,7 +4140,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4132,8 +4180,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.presence'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.presence'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4447,7 +4499,7 @@ paths:
                 - attendanceReports
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.onlineMeetingCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4481,7 +4533,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4562,7 +4614,7 @@ paths:
                 - attendanceReports
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4607,8 +4659,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4727,7 +4783,7 @@ paths:
                 - attendanceRecords
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4765,7 +4821,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4836,7 +4892,7 @@ paths:
                 - attendanceRecords
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4890,8 +4946,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5030,7 +5090,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5076,7 +5136,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5155,7 +5215,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5210,8 +5270,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5293,7 +5357,7 @@ paths:
             type: string
           x-ms-docs-key-type: onlineMeeting
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -5386,7 +5450,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5426,8 +5490,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.presence'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.presence'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

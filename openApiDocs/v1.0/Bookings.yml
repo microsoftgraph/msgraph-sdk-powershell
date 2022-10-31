@@ -41,7 +41,7 @@ paths:
                 - bookingCurrencies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -68,8 +68,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -175,7 +179,7 @@ paths:
                 - staffMembers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingBusinessCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -200,7 +204,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -273,7 +277,7 @@ paths:
                 - staffMembers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -335,8 +339,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -500,7 +508,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -534,7 +542,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -616,7 +624,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -658,8 +666,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -877,7 +889,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -907,7 +919,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -989,7 +1001,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1031,8 +1043,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1178,7 +1194,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingCustomerBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1212,7 +1228,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1270,7 +1286,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1309,8 +1325,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1419,7 +1439,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingCustomQuestionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1453,7 +1473,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1514,7 +1534,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1553,8 +1573,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1630,7 +1654,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1827,7 +1851,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingServiceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1861,7 +1885,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingService'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1940,7 +1964,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1979,8 +2003,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingService'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingService'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2080,7 +2108,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingStaffMemberBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2114,7 +2142,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2172,7 +2200,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2211,8 +2239,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2307,7 +2339,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingCurrencyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2328,7 +2360,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2378,7 +2410,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2409,8 +2441,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

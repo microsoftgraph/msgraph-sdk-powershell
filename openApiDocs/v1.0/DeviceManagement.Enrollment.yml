@@ -43,7 +43,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -65,8 +65,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -159,7 +163,7 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceEnrollmentConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -180,7 +184,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -238,7 +242,7 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -278,8 +282,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -371,7 +379,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.enrollmentConfigurationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -401,7 +409,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -460,7 +468,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -499,8 +507,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -610,7 +622,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.importedWindowsAutopilotDeviceIdentityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -631,7 +643,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -688,7 +700,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -719,8 +731,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -849,7 +865,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsAutopilotDeviceIdentityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -870,7 +886,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -936,7 +952,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -974,8 +990,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1040,7 +1060,7 @@ paths:
                 - entitlementManagement
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -1067,8 +1087,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.roleManagement'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleManagement'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

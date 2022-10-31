@@ -104,7 +104,7 @@ paths:
                 - windowsInformationProtectionNetworkLearningSummaries
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -193,8 +193,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceManagement'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagement'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -269,7 +273,7 @@ paths:
                 - managedDevices
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.detectedAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -290,7 +294,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.detectedApp'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -348,7 +352,7 @@ paths:
                 - managedDevices
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -384,8 +388,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.detectedApp'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.detectedApp'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -641,7 +649,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -759,7 +767,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -846,7 +854,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -867,7 +875,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -919,7 +927,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -950,8 +958,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceCategory'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1061,7 +1073,7 @@ paths:
                 - userStatusOverview
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceCompliancePolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1082,7 +1094,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1151,7 +1163,7 @@ paths:
                 - userStatusOverview
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1215,8 +1227,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1308,7 +1324,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceCompliancePolicyAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1338,7 +1354,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1397,7 +1413,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1436,8 +1452,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1561,7 +1581,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.settingStateDeviceSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1591,7 +1611,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1658,7 +1678,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1697,8 +1717,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1816,7 +1840,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceComplianceDeviceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1846,7 +1870,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1911,7 +1935,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1950,8 +1974,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2037,7 +2065,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2068,8 +2096,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceOverview'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceDeviceOverview'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2163,7 +2195,7 @@ paths:
                 - scheduledActionConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceComplianceScheduledActionForRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2193,7 +2225,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2254,7 +2286,7 @@ paths:
                 - scheduledActionConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2299,8 +2331,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2417,7 +2453,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceComplianceActionItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2455,7 +2491,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2525,7 +2561,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2572,8 +2608,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2693,7 +2733,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceComplianceUserStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2723,7 +2763,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2786,7 +2826,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2825,8 +2865,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2912,7 +2956,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2943,8 +2987,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserOverview'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceUserOverview'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3016,7 +3064,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3038,8 +3086,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyDeviceStateSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyDeviceStateSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3144,7 +3196,7 @@ paths:
                 - deviceComplianceSettingStates
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceCompliancePolicySettingStateSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3165,7 +3217,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3227,7 +3279,7 @@ paths:
                 - deviceComplianceSettingStates
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3263,8 +3315,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingStateSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3386,7 +3442,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceComplianceSettingStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3416,7 +3472,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3485,7 +3541,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3524,8 +3580,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3603,7 +3663,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3625,8 +3685,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStateSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStateSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3726,7 +3790,7 @@ paths:
                 - userStatusOverview
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3747,7 +3811,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3814,7 +3878,7 @@ paths:
                 - userStatusOverview
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3874,8 +3938,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3967,7 +4035,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceConfigurationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3997,7 +4065,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4056,7 +4124,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4095,8 +4163,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4220,7 +4292,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.settingStateDeviceSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4250,7 +4322,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4317,7 +4389,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4356,8 +4428,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4475,7 +4551,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceConfigurationDeviceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4505,7 +4581,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4570,7 +4646,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4609,8 +4685,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4696,7 +4776,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4727,8 +4807,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceOverview'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceOverview'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4832,7 +4916,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceConfigurationUserStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4862,7 +4946,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4925,7 +5009,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4964,8 +5048,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5051,7 +5139,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5082,8 +5170,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserOverview'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserOverview'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5151,7 +5243,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5378,7 +5470,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5399,7 +5491,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDevice'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5510,7 +5602,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5594,8 +5686,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDevice'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDevice'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5668,7 +5764,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5699,8 +5795,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceCategory'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5807,7 +5907,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceCompliancePolicyStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5837,7 +5937,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5901,7 +6001,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5940,8 +6040,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6056,7 +6160,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceConfigurationStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6086,7 +6190,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6150,7 +6254,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6189,8 +6293,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6598,7 +6706,7 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6671,7 +6779,7 @@ paths:
                 - localizedNotificationMessages
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.notificationMessageTemplateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6692,7 +6800,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6748,7 +6856,7 @@ paths:
                 - localizedNotificationMessages
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6786,8 +6894,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6891,7 +7003,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.localizedNotificationMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6921,7 +7033,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6984,7 +7096,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7023,8 +7135,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.localizedNotificationMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7110,7 +7226,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7176,7 +7292,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceManagementTroubleshootingEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7197,7 +7313,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7249,7 +7365,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7280,8 +7396,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7371,7 +7491,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsInformationProtectionAppLearningSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7392,7 +7512,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7445,7 +7565,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7476,8 +7596,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionAppLearningSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7564,7 +7688,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsInformationProtectionNetworkLearningSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7585,7 +7709,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7637,7 +7761,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7668,8 +7792,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionNetworkLearningSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

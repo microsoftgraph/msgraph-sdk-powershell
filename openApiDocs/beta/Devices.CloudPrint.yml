@@ -54,7 +54,7 @@ paths:
                 - taskDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -93,8 +93,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.print'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.print'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -176,7 +180,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -197,7 +201,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printConnector'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -255,7 +259,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -286,8 +290,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printConnector'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -373,7 +381,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -394,7 +402,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -445,7 +453,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -476,8 +484,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -613,7 +625,7 @@ paths:
                 - taskTriggers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -634,7 +646,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printer'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -708,7 +720,7 @@ paths:
                 - taskTriggers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -766,8 +778,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printer'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printer'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -883,7 +899,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -948,7 +964,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -973,7 +989,7 @@ paths:
             type: string
           x-ms-docs-key-type: printer
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1088,7 +1104,7 @@ paths:
                 - printer
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1217,7 +1233,7 @@ paths:
                 - printer
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printerShareCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1294,7 +1310,7 @@ paths:
                 - printer
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1391,7 +1407,7 @@ paths:
                 - definition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printTaskTriggerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1425,7 +1441,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1486,7 +1502,7 @@ paths:
                 - definition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1531,8 +1547,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1623,7 +1643,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1776,7 +1796,7 @@ paths:
                 - printer
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printerShareCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1797,7 +1817,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printerShare'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1866,7 +1886,7 @@ paths:
                 - printer
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1914,8 +1934,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printerShare'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printerShare'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2216,7 +2240,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2406,7 +2430,7 @@ paths:
                 - isArchived desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2871,7 +2895,7 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3121,7 +3145,7 @@ paths:
                 - skills desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3216,7 +3240,7 @@ paths:
                 - taskTriggers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3304,7 +3328,7 @@ paths:
                 - security
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3555,8 +3579,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.reportRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.reportRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3647,7 +3675,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.applicationSignInDetailedSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3668,7 +3696,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3723,7 +3751,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3754,8 +3782,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3820,7 +3852,7 @@ paths:
                 - userRegistrationDetails
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3849,8 +3881,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3879,7 +3915,7 @@ paths:
       summary: Invoke function usersRegisteredByFeature
       operationId: print.reports.authenticationMethods_usersRegisteredGraphBPreFeature
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3910,7 +3946,7 @@ paths:
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3926,7 +3962,7 @@ paths:
       summary: Invoke function usersRegisteredByMethod
       operationId: print.reports.authenticationMethods_usersRegisteredGraphBPreMethod
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3957,7 +3993,7 @@ paths:
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4056,7 +4092,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userRegistrationDetailsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4077,7 +4113,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4139,7 +4175,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4170,8 +4206,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4276,7 +4316,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.credentialUserRegistrationDetailsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4297,7 +4337,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4354,7 +4394,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4385,8 +4425,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4485,7 +4529,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4506,7 +4550,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4560,7 +4604,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4591,8 +4635,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4691,7 +4739,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4712,7 +4760,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4766,7 +4814,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4797,8 +4845,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4893,7 +4945,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4914,7 +4966,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4968,7 +5020,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4999,8 +5051,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5095,7 +5151,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5116,7 +5172,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5170,7 +5226,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5201,8 +5257,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5240,7 +5300,7 @@ paths:
       description: Metadata for the device configuration device activity report
       operationId: print.reports_deviceConfigurationDeviceActivity
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5264,7 +5324,7 @@ paths:
       description: Metadata for the device configuration user activity report
       operationId: print.reports_deviceConfigurationUserActivity
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5293,7 +5353,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5313,8 +5373,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-20T00:00:00.0000000+00:00'
-        date: '2022-05-24T00:00:00.0000000+00:00'
+        removalDate: '2022-08-20T00:00:00.0000000-07:00'
+        date: '2022-05-24T00:00:00.0000000-07:00'
         version: 2022-05/Tasks_And_Plans
         description: 'This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.'
       x-ms-docs-operation-type: function
@@ -5334,7 +5394,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5354,8 +5414,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-20T00:00:00.0000000+00:00'
-        date: '2022-05-24T00:00:00.0000000+00:00'
+        removalDate: '2022-08-20T00:00:00.0000000-07:00'
+        date: '2022-05-24T00:00:00.0000000-07:00'
         version: 2022-05/Tasks_And_Plans
         description: 'This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.'
       x-ms-docs-operation-type: function
@@ -5375,7 +5435,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5395,8 +5455,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-20T00:00:00.0000000+00:00'
-        date: '2022-05-24T00:00:00.0000000+00:00'
+        removalDate: '2022-08-20T00:00:00.0000000-07:00'
+        date: '2022-05-24T00:00:00.0000000-07:00'
         version: 2022-05/Tasks_And_Plans
         description: 'This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.'
       x-ms-docs-operation-type: function
@@ -5460,7 +5520,7 @@ paths:
                 - successPercentage desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5498,7 +5558,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5528,7 +5588,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5558,7 +5618,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5630,7 +5690,7 @@ paths:
                 - successfulActivityCount desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5701,7 +5761,7 @@ paths:
                 - userRegistrationCounts desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5739,7 +5799,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5769,7 +5829,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5801,7 +5861,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5831,7 +5891,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5861,7 +5921,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5891,7 +5951,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5923,7 +5983,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5953,7 +6013,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5983,7 +6043,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6039,7 +6099,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6076,7 +6136,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6106,7 +6166,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6138,7 +6198,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6168,7 +6228,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6198,7 +6258,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6228,7 +6288,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6258,7 +6318,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6288,7 +6348,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6310,7 +6370,7 @@ paths:
       summary: Invoke function getOffice365ActivationCounts
       operationId: print.reports_getOffice365ActivationCounts
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6332,7 +6392,7 @@ paths:
       summary: Invoke function getOffice365ActivationsUserCounts
       operationId: print.reports_getOffice365ActivationsUserCounts
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6354,7 +6414,7 @@ paths:
       summary: Invoke function getOffice365ActivationsUserDetail
       operationId: print.reports_getOffice365ActivationsUserDetail
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6444,7 +6504,7 @@ paths:
                 - yammer desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6586,7 +6646,7 @@ paths:
                 - yammerLicenseAssignDate desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6726,7 +6786,7 @@ paths:
                 - yammerLicenseAssignDate desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6815,7 +6875,7 @@ paths:
                 - yammerMessagesRead desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6942,7 +7002,7 @@ paths:
                 - yammerReadMessageCount desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7067,7 +7127,7 @@ paths:
                 - yammerReadMessageCount desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7150,7 +7210,7 @@ paths:
                 - total desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7233,7 +7293,7 @@ paths:
                 - total desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7316,7 +7376,7 @@ paths:
                 - siteStorageUsedInBytes desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7432,7 +7492,7 @@ paths:
                 - yammerInactive desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7470,7 +7530,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7500,7 +7560,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7532,7 +7592,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7562,7 +7622,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7592,7 +7652,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7624,7 +7684,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7654,7 +7714,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7684,7 +7744,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7714,7 +7774,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7770,7 +7830,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7870,7 +7930,7 @@ paths:
                 - uniqueUserCount desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7908,7 +7968,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7938,7 +7998,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7968,7 +8028,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8000,7 +8060,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8030,7 +8090,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8062,7 +8122,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8092,7 +8152,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8122,7 +8182,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8152,7 +8212,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8182,7 +8242,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8212,7 +8272,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8242,7 +8302,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8272,7 +8332,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8304,7 +8364,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8334,7 +8394,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8364,7 +8424,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8394,7 +8454,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8426,7 +8486,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8456,7 +8516,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8486,7 +8546,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8516,7 +8576,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8546,7 +8606,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8576,7 +8636,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8606,7 +8666,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8636,7 +8696,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8666,7 +8726,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8696,7 +8756,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8726,7 +8786,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8756,7 +8816,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8786,7 +8846,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8816,7 +8876,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8846,7 +8906,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8878,7 +8938,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8908,7 +8968,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8938,7 +8998,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8970,7 +9030,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9000,7 +9060,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9030,7 +9090,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9060,7 +9120,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9090,7 +9150,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9120,7 +9180,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9150,7 +9210,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9180,7 +9240,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9210,7 +9270,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9240,7 +9300,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9272,7 +9332,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9302,7 +9362,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9358,7 +9418,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9395,7 +9455,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9425,7 +9485,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9457,7 +9517,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9487,7 +9547,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9517,7 +9577,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9547,7 +9607,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9579,7 +9639,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9609,7 +9669,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9639,7 +9699,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9671,7 +9731,7 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9701,7 +9761,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9731,7 +9791,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9793,7 +9853,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9856,7 +9916,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9879,7 +9939,7 @@ paths:
       summary: Invoke function managedDeviceEnrollmentFailureDetails
       operationId: print.reports_managedDeviceEnrollmentFailureDetails
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9941,7 +10001,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9965,7 +10025,7 @@ paths:
       description: Metadata for the enrollment failure trends report
       operationId: print.reports_managedDeviceEnrollmentFailureTrends
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9988,7 +10048,7 @@ paths:
       summary: Invoke function managedDeviceEnrollmentTopFailures
       operationId: print.reports_managedDeviceEnrollmentTopFailures
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10020,7 +10080,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10105,7 +10165,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10126,7 +10186,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10180,7 +10240,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10211,8 +10271,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10311,7 +10375,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10332,7 +10396,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10386,7 +10450,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10417,8 +10481,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10513,7 +10581,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10534,7 +10602,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10588,7 +10656,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10619,8 +10687,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10715,7 +10787,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10736,7 +10808,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10790,7 +10862,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10821,8 +10893,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10885,7 +10961,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10914,8 +10990,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10950,7 +11030,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10985,7 +11065,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11020,7 +11100,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11117,7 +11197,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userCredentialUsageDetailsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11138,7 +11218,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11195,7 +11275,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11226,8 +11306,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11313,7 +11397,7 @@ paths:
                 - endpoints
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printServiceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11334,7 +11418,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printService'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11386,7 +11470,7 @@ paths:
                 - endpoints
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11422,8 +11506,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printService'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printService'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11521,7 +11609,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printServiceEndpointCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11551,7 +11639,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printServiceEndpoint'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11611,7 +11699,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11650,8 +11738,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printServiceEndpoint'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printServiceEndpoint'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11787,7 +11879,7 @@ paths:
                 - printer
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printerShareCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11812,7 +11904,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printerShare'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11882,7 +11974,7 @@ paths:
                 - printer
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11930,8 +12022,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printerShare'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printerShare'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12232,7 +12328,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12422,7 +12518,7 @@ paths:
                 - isArchived desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12887,7 +12983,7 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13137,7 +13233,7 @@ paths:
                 - skills desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13232,7 +13328,7 @@ paths:
                 - taskTriggers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13324,7 +13420,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printTaskDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13349,7 +13445,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13402,7 +13498,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13438,8 +13534,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13541,7 +13641,7 @@ paths:
                 - trigger
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.printTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13571,7 +13671,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13635,7 +13735,7 @@ paths:
                 - trigger
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13685,8 +13785,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.printTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13777,7 +13881,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13844,7 +13948,7 @@ paths:
                 - definition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:

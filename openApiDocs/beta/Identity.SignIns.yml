@@ -75,7 +75,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.dataPolicyOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -96,7 +96,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -155,7 +155,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -186,8 +186,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -268,7 +272,7 @@ paths:
                 - continuousAccessEvaluationPolicy
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -311,8 +315,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityContainer'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityContainer'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -379,7 +387,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityApiConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -404,7 +412,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -457,7 +465,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -491,8 +499,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -558,7 +570,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -629,7 +641,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authenticationEventListenerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -650,7 +662,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationEventListener'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -703,7 +715,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -734,8 +746,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationEventListener'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationEventListener'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -842,7 +858,7 @@ paths:
                 - userFlowIdentityProviders
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.b2cIdentityUserFlowCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -867,7 +883,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -930,7 +946,7 @@ paths:
                 - userFlowIdentityProviders
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -978,8 +994,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1083,14 +1103,14 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityProviderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-pageable:
@@ -1140,8 +1160,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -1191,14 +1211,14 @@ paths:
                 - type desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-pageable:
@@ -1228,8 +1248,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -1305,7 +1325,7 @@ paths:
                 - overridesPages
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguageConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1335,7 +1355,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1399,7 +1419,7 @@ paths:
                 - overridesPages
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1449,8 +1469,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1558,7 +1582,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1596,7 +1620,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1662,7 +1686,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1709,8 +1733,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1791,7 +1819,7 @@ paths:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -1915,7 +1943,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1953,7 +1981,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2019,7 +2047,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2066,8 +2094,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2148,7 +2180,7 @@ paths:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -2281,7 +2313,7 @@ paths:
                 - userAttribute
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2315,7 +2347,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2380,7 +2412,7 @@ paths:
                 - userAttribute
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2425,8 +2457,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2517,7 +2553,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2542,7 +2578,7 @@ paths:
             type: string
           x-ms-docs-key-type: b2cIdentityUserFlow
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2649,7 +2685,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2706,7 +2742,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2786,7 +2822,7 @@ paths:
                 - userFlowIdentityProviders
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.b2xIdentityUserFlowCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2811,7 +2847,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2872,7 +2908,7 @@ paths:
                 - userFlowIdentityProviders
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2920,8 +2956,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3025,14 +3065,14 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityProviderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-pageable:
@@ -3091,7 +3131,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3101,8 +3141,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -3178,7 +3218,7 @@ paths:
                 - overridesPages
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguageConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3208,7 +3248,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3272,7 +3312,7 @@ paths:
                 - overridesPages
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3322,8 +3362,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3431,7 +3475,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3469,7 +3513,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3535,7 +3579,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3582,8 +3626,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3664,7 +3712,7 @@ paths:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -3788,7 +3836,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3826,7 +3874,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3892,7 +3940,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3939,8 +3987,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4021,7 +4073,7 @@ paths:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -4154,7 +4206,7 @@ paths:
                 - userAttribute
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4188,7 +4240,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4253,7 +4305,7 @@ paths:
                 - userAttribute
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4298,8 +4350,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4390,7 +4446,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4415,7 +4471,7 @@ paths:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4522,7 +4578,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4608,7 +4664,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4681,7 +4737,7 @@ paths:
                 - templates
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4714,8 +4770,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4800,7 +4860,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authenticationContextClassReferenceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4825,7 +4885,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4878,7 +4938,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4909,8 +4969,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4978,7 +5042,7 @@ paths:
                 - policies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5005,8 +5069,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5088,7 +5156,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authenticationMethodModeDetailCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5109,7 +5177,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5161,7 +5229,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5192,8 +5260,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5297,7 +5369,7 @@ paths:
                 - combinationConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authenticationStrengthPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5318,7 +5390,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5377,7 +5449,7 @@ paths:
                 - combinationConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5417,8 +5489,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5513,7 +5589,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authenticationCombinationConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5547,7 +5623,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5606,7 +5682,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5645,8 +5721,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5718,7 +5798,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5743,7 +5823,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5821,7 +5901,7 @@ paths:
                 - requirementsSatisfied desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5907,7 +5987,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.namedLocationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5932,7 +6012,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.namedLocation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5985,7 +6065,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6016,8 +6096,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.namedLocation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.namedLocation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6125,7 +6209,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conditionalAccessPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6150,7 +6234,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6208,7 +6292,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6239,8 +6323,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6336,7 +6424,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conditionalAccessTemplateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6357,7 +6445,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6411,7 +6499,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6442,8 +6530,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6515,7 +6607,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6541,8 +6633,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.continuousAccessEvaluationPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.continuousAccessEvaluationPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6629,7 +6725,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.customAuthenticationExtensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6650,7 +6746,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6704,7 +6800,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6738,8 +6834,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6785,7 +6885,7 @@ paths:
             type: string
           x-ms-docs-key-type: customAuthenticationExtension
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6815,7 +6915,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6881,7 +6981,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6906,7 +7006,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6957,7 +7057,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6988,8 +7088,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7032,7 +7136,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7121,7 +7225,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7146,7 +7250,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7200,7 +7304,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7231,8 +7335,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7322,14 +7430,14 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityUserFlowCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
+        removalDate: '2022-01-15T00:00:00.0000000-08:00'
+        date: '2021-05-21T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
       x-ms-pageable:
@@ -7353,7 +7461,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7363,8 +7471,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
+        removalDate: '2022-01-15T00:00:00.0000000-08:00'
+        date: '2021-05-21T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
       x-ms-docs-operation-type: operation
@@ -7410,7 +7518,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7420,8 +7528,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
+        removalDate: '2022-01-15T00:00:00.0000000-08:00'
+        date: '2021-05-21T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
       x-ms-docs-operation-type: operation
@@ -7447,14 +7555,18 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
+        removalDate: '2022-01-15T00:00:00.0000000-08:00'
+        date: '2021-05-21T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
       x-ms-docs-operation-type: operation
@@ -7485,8 +7597,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
+        removalDate: '2022-01-15T00:00:00.0000000-08:00'
+        date: '2021-05-21T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
       x-ms-docs-operation-type: operation
@@ -7529,7 +7641,7 @@ paths:
                 - servicePrincipalRiskDetections
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -7560,8 +7672,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProtectionRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProtectionRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7679,7 +7795,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.riskDetectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7700,7 +7816,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskDetection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7770,7 +7886,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7801,8 +7917,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskDetection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskDetection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7915,7 +8035,7 @@ paths:
                 - history
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.riskyServicePrincipalCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7936,7 +8056,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyServicePrincipal'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7997,7 +8117,7 @@ paths:
                 - history
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8033,8 +8153,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyServicePrincipal'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskyServicePrincipal'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8164,7 +8288,7 @@ paths:
                 - history
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.riskyServicePrincipalHistoryItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8194,7 +8318,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyServicePrincipalHistoryItem'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8266,7 +8390,7 @@ paths:
                 - history
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8311,8 +8435,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyServicePrincipalHistoryItem'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskyServicePrincipalHistoryItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8492,7 +8620,7 @@ paths:
                 - history
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.riskyUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8513,7 +8641,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyUser'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8573,7 +8701,7 @@ paths:
                 - history
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8609,8 +8737,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskyUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8737,7 +8869,7 @@ paths:
                 - history
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.riskyUserHistoryItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8767,7 +8899,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8837,7 +8969,7 @@ paths:
                 - history
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8882,8 +9014,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9097,7 +9233,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.servicePrincipalRiskDetectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9118,7 +9254,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalRiskDetection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9188,7 +9324,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9219,8 +9355,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalRiskDetection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.servicePrincipalRiskDetection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9316,14 +9456,14 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.identityProviderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-pageable:
@@ -9347,7 +9487,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProvider'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -9357,8 +9497,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -9410,7 +9550,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -9420,8 +9560,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -9451,14 +9591,18 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProvider'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProvider'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -9493,8 +9637,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -9511,7 +9655,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9532,8 +9676,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15T00:00:00.0000000-07:00'
+        date: '2021-08-24T00:00:00.0000000-07:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: function
@@ -9584,7 +9728,7 @@ paths:
                 - threatAssessmentRequests
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -9627,8 +9771,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.informationProtection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9666,7 +9814,7 @@ paths:
                 - recoveryKeys
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9744,7 +9892,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bitlockerRecoveryKeyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9797,7 +9945,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9859,7 +10007,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.dataLossPreventionPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9880,7 +10028,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9930,7 +10078,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9961,8 +10109,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10016,7 +10168,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10048,7 +10200,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10058,8 +10210,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -10087,7 +10239,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10097,8 +10249,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -10122,7 +10274,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10132,8 +10284,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -10162,7 +10314,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10172,8 +10324,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -10211,7 +10363,7 @@ paths:
                 - labels
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10224,8 +10376,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -10242,14 +10394,18 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -10272,8 +10428,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -10352,14 +10508,14 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.informationProtectionLabelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-pageable:
@@ -10379,7 +10535,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10389,8 +10545,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -10441,7 +10597,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10451,8 +10607,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -10478,14 +10634,18 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -10516,8 +10676,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -10546,7 +10706,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10566,8 +10726,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -10601,7 +10761,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10621,8 +10781,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -10654,7 +10814,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10674,8 +10834,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -10705,7 +10865,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10715,8 +10875,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -10808,7 +10968,7 @@ paths:
                 - sublabels
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sensitivityLabelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10829,7 +10989,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10892,7 +11052,7 @@ paths:
                 - sublabels
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10928,8 +11088,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11055,7 +11219,7 @@ paths:
                 - sublabels
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sensitivityLabelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11085,7 +11249,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11156,7 +11320,7 @@ paths:
                 - sublabels
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11201,8 +11365,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11272,7 +11440,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11304,7 +11472,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11349,7 +11517,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11371,8 +11539,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11471,7 +11643,7 @@ paths:
                 - results
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.threatAssessmentRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11496,7 +11668,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11554,7 +11726,7 @@ paths:
                 - results
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11590,8 +11762,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11689,7 +11865,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.threatAssessmentResultCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11719,7 +11895,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11780,7 +11956,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11819,8 +11995,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11937,7 +12117,7 @@ paths:
                 - invitedUser
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.invitationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11962,7 +12142,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.invitation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -12022,7 +12202,7 @@ paths:
                 - invitedUser
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -12058,8 +12238,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.invitation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.invitation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12341,7 +12525,7 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12686,7 +12870,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.oAuth2PermissionGrantCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12711,7 +12895,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -12771,7 +12955,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -12806,8 +12990,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12900,7 +13088,7 @@ paths:
                 - startTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12991,7 +13179,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.certificateBasedAuthConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13049,7 +13237,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13143,7 +13331,7 @@ paths:
                 - roleManagementPolicyAssignments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -13220,8 +13408,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.policyRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policyRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13264,7 +13456,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13290,8 +13482,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.accessReviewPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13384,7 +13580,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.activityBasedTimeoutPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13409,7 +13605,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13466,7 +13662,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13502,8 +13698,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13575,7 +13775,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13601,8 +13801,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13695,7 +13899,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.appManagementPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13720,7 +13924,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13777,7 +13981,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13813,8 +14017,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13909,7 +14117,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13966,7 +14174,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14014,7 +14222,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14040,8 +14248,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14107,7 +14319,7 @@ paths:
                 - authenticationMethodConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14136,8 +14348,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14213,7 +14429,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authenticationMethodConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14234,7 +14450,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14285,7 +14501,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14316,8 +14532,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14424,7 +14644,7 @@ paths:
                 - combinationConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authenticationStrengthPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14449,7 +14669,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14508,7 +14728,7 @@ paths:
                 - combinationConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14548,8 +14768,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14644,7 +14868,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authenticationCombinationConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14678,7 +14902,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14737,7 +14961,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14776,8 +15000,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14849,7 +15077,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -14874,7 +15102,7 @@ paths:
             type: string
           x-ms-docs-key-type: authenticationStrengthPolicy
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -14952,7 +15180,7 @@ paths:
                 - requirementsSatisfied desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -15067,7 +15295,7 @@ paths:
                 - defaultUserRoleOverrides
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authorizationPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15088,7 +15316,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -15153,7 +15381,7 @@ paths:
                 - defaultUserRoleOverrides
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15189,8 +15417,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15284,7 +15516,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.defaultUserRoleOverrideCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15314,7 +15546,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.defaultUserRoleOverride'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -15373,7 +15605,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15412,8 +15644,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.defaultUserRoleOverride'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.defaultUserRoleOverride'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15490,7 +15726,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15516,8 +15752,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15610,7 +15850,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.claimsMappingPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15635,7 +15875,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -15692,7 +15932,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15728,8 +15968,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15834,7 +16078,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conditionalAccessPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15855,7 +16099,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -15913,7 +16157,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15944,8 +16188,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16020,7 +16268,7 @@ paths:
                 - partners
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16051,8 +16299,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16117,7 +16369,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16146,8 +16398,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16260,7 +16516,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.crossTenantAccessPolicyConfigurationPartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16285,7 +16541,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -16342,7 +16598,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16373,8 +16629,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16446,7 +16706,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16472,8 +16732,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16537,7 +16801,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16579,7 +16843,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16601,8 +16865,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16665,7 +16933,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16691,8 +16959,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalIdentitiesPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalIdentitiesPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16785,7 +17057,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.featureRolloutPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16810,7 +17082,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -16867,7 +17139,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16903,8 +17175,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16996,7 +17272,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17026,7 +17302,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17114,7 +17390,7 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17183,7 +17459,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -17238,7 +17514,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -17367,7 +17643,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.homeRealmDiscoveryPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17392,7 +17668,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17449,7 +17725,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -17485,8 +17761,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17556,7 +17836,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -17582,8 +17862,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17682,7 +17966,7 @@ paths:
                 - includedGroups
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobilityManagementPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17703,7 +17987,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17762,7 +18046,7 @@ paths:
                 - includedGroups
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -17798,8 +18082,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18100,7 +18388,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18290,7 +18578,7 @@ paths:
                 - isArchived desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18397,7 +18685,7 @@ paths:
                 - includedGroups
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobilityManagementPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18418,7 +18706,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -18476,7 +18764,7 @@ paths:
                 - includedGroups
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -18512,8 +18800,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18814,7 +19106,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19004,7 +19296,7 @@ paths:
                 - isArchived desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19101,7 +19393,7 @@ paths:
                 - includes
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.permissionGrantPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19126,7 +19418,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -19183,7 +19475,7 @@ paths:
                 - includes
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -19223,8 +19515,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19343,7 +19639,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.permissionGrantConditionSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19377,7 +19673,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -19444,7 +19740,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -19483,8 +19779,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19611,7 +19911,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.permissionGrantConditionSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19645,7 +19945,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -19712,7 +20012,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -19751,8 +20051,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19869,7 +20173,7 @@ paths:
                 - rules
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleManagementPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19890,7 +20194,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -19951,7 +20255,7 @@ paths:
                 - rules
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -19991,8 +20295,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20087,7 +20395,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleManagementPolicyRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20117,7 +20425,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -20176,7 +20484,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20215,8 +20523,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20319,7 +20631,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleManagementPolicyRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20349,7 +20661,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -20408,7 +20720,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20447,8 +20759,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20554,7 +20870,7 @@ paths:
                 - policy
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleManagementPolicyAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20575,7 +20891,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -20631,7 +20947,7 @@ paths:
                 - policy
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20667,8 +20983,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20750,7 +21070,7 @@ paths:
                 - rules
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20834,7 +21154,7 @@ paths:
                 - includes
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.servicePrincipalCreationPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20855,7 +21175,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -20912,7 +21232,7 @@ paths:
                 - includes
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20952,8 +21272,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21056,7 +21380,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.servicePrincipalCreationConditionSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21086,7 +21410,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationConditionSet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -21148,7 +21472,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21187,8 +21511,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationConditionSet'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationConditionSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21299,7 +21627,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.servicePrincipalCreationConditionSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21329,7 +21657,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationConditionSet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -21391,7 +21719,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21430,8 +21758,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationConditionSet'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationConditionSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21540,7 +21872,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.tokenIssuancePolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21565,7 +21897,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -21622,7 +21954,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21658,8 +21990,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21760,7 +22096,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.tokenLifetimePolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21785,7 +22121,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -21842,7 +22178,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21878,8 +22214,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21944,7 +22284,7 @@ paths:
                 - policies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -21971,8 +22311,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.trustFramework'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.trustFramework'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22033,7 +22377,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.trustFrameworkKeySetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22058,7 +22402,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -22108,7 +22452,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -22150,8 +22494,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22225,7 +22573,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22250,7 +22598,7 @@ paths:
             type: string
           x-ms-docs-key-type: trustFrameworkKeySet
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22292,7 +22640,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22337,7 +22685,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22390,7 +22738,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22453,7 +22801,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.trustFrameworkPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22474,7 +22822,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.trustFrameworkPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -22523,7 +22871,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -22554,8 +22902,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.trustFrameworkPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.trustFrameworkPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22604,7 +22956,7 @@ paths:
             type: string
           x-ms-docs-key-type: trustFrameworkPolicy
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -22704,7 +23056,7 @@ paths:
                 - windowsHelloForBusinessMethods
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -22780,8 +23132,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authentication'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authentication'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22876,7 +23232,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.emailAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22910,7 +23266,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -22969,7 +23325,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -23008,8 +23364,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23130,7 +23490,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.fido2AuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23194,7 +23554,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -23299,7 +23659,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.authenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23329,7 +23689,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -23387,7 +23747,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -23433,8 +23793,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23514,7 +23878,7 @@ paths:
                 - device
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.microsoftAuthenticatorAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23577,7 +23941,7 @@ paths:
                 - device
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -23726,7 +24090,7 @@ paths:
                 - commands
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -23811,8 +24175,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23943,7 +24311,7 @@ paths:
                 - responsepayload
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.commandCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23981,7 +24349,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -24057,7 +24425,7 @@ paths:
                 - responsepayload
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -24111,8 +24479,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.command'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24214,7 +24586,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -24290,7 +24662,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24328,7 +24700,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -24394,7 +24766,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -24441,8 +24813,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24571,7 +24947,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24647,7 +25023,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -24739,7 +25115,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24855,7 +25231,7 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24976,7 +25352,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25052,7 +25428,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -25144,7 +25520,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25220,7 +25596,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -25308,7 +25684,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.usageRightCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25346,7 +25722,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -25415,7 +25791,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -25462,8 +25838,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.usageRight'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25582,7 +25962,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.longRunningOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25612,7 +25992,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -25674,7 +26054,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -25713,8 +26093,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25825,7 +26209,7 @@ paths:
                 - device
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25887,7 +26271,7 @@ paths:
                 - device
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -26035,7 +26419,7 @@ paths:
                 - commands
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -26120,8 +26504,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26252,7 +26640,7 @@ paths:
                 - responsepayload
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.commandCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26290,7 +26678,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -26366,7 +26754,7 @@ paths:
                 - responsepayload
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -26420,8 +26808,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.command'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26523,7 +26915,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -26599,7 +26991,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26637,7 +27029,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -26703,7 +27095,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -26750,8 +27142,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26880,7 +27276,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26956,7 +27352,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -27048,7 +27444,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27164,7 +27560,7 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27285,7 +27681,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27361,7 +27757,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -27453,7 +27849,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27529,7 +27925,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -27617,7 +28013,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.usageRightCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27655,7 +28051,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -27724,7 +28120,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -27771,8 +28167,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.usageRight'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27889,7 +28289,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.passwordAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27919,7 +28319,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -27980,7 +28380,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28060,7 +28460,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.phoneAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -28094,7 +28494,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -28155,7 +28555,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28194,8 +28594,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28298,7 +28702,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.softwareOathAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -28355,7 +28759,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28481,7 +28885,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.temporaryAccessPassAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -28515,7 +28919,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -28580,7 +28984,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28696,7 +29100,7 @@ paths:
                 - device
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsHelloForBusinessAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -28758,7 +29162,7 @@ paths:
                 - device
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28907,7 +29311,7 @@ paths:
                 - commands
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28992,8 +29396,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29124,7 +29532,7 @@ paths:
                 - responsepayload
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.commandCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -29162,7 +29570,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -29238,7 +29646,7 @@ paths:
                 - responsepayload
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -29292,8 +29700,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.command'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29395,7 +29807,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -29471,7 +29883,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -29509,7 +29921,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -29575,7 +29987,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -29622,8 +30034,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29752,7 +30168,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -29828,7 +30244,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -29920,7 +30336,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30036,7 +30452,7 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30157,7 +30573,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30233,7 +30649,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -30325,7 +30741,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30401,7 +30817,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -30489,7 +30905,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.usageRightCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30527,7 +30943,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -30596,7 +31012,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -30643,8 +31059,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.usageRight'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30742,7 +31162,7 @@ paths:
                 - threatAssessmentRequests
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -30806,8 +31226,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.informationProtection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30879,7 +31303,7 @@ paths:
                 - recoveryKeys
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -30967,7 +31391,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bitlockerRecoveryKeyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31028,7 +31452,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -31098,7 +31522,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.dataLossPreventionPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31128,7 +31552,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -31186,7 +31610,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -31225,8 +31649,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.dataLossPreventionPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31306,7 +31734,7 @@ paths:
                 - labels
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -31321,8 +31749,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -31348,14 +31776,18 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -31386,8 +31818,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -31474,14 +31906,14 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.informationProtectionLabelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-pageable:
@@ -31510,7 +31942,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -31520,8 +31952,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -31580,7 +32012,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -31590,8 +32022,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -31625,14 +32057,18 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -31671,8 +32107,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: operation
@@ -31772,7 +32208,7 @@ paths:
                 - sublabels
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sensitivityLabelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31802,7 +32238,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -31873,7 +32309,7 @@ paths:
                 - sublabels
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -31918,8 +32354,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32061,7 +32501,7 @@ paths:
                 - sublabels
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sensitivityLabelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -32099,7 +32539,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -32178,7 +32618,7 @@ paths:
                 - sublabels
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -32232,8 +32672,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32323,7 +32767,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -32354,8 +32798,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32470,7 +32918,7 @@ paths:
                 - results
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.threatAssessmentRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -32504,7 +32952,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -32570,7 +33018,7 @@ paths:
                 - results
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -32615,8 +33063,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32730,7 +33182,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.threatAssessmentResultCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -32768,7 +33220,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -32837,7 +33289,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -32884,8 +33336,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

@@ -49,7 +49,7 @@ paths:
                 - plans
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -85,8 +85,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -202,7 +206,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -232,7 +236,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -302,7 +306,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -357,8 +361,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -477,7 +485,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerBucketCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -515,7 +523,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -586,7 +594,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -640,8 +648,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -839,7 +851,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -885,7 +897,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -989,7 +1001,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1073,8 +1085,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1198,7 +1214,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1257,8 +1273,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1381,7 +1401,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1440,8 +1460,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1568,7 +1592,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1627,8 +1651,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1751,7 +1779,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1810,8 +1838,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1920,7 +1952,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1963,8 +1995,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2146,7 +2182,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2184,7 +2220,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2280,7 +2316,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2352,8 +2388,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2461,7 +2501,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2512,8 +2552,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2620,7 +2664,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2671,8 +2715,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2783,7 +2831,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2834,8 +2882,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2942,7 +2994,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2993,8 +3045,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3080,7 +3136,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -3111,8 +3167,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.planner'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.planner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3181,7 +3241,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerBucketCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3206,7 +3266,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3261,7 +3321,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3297,8 +3357,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3464,7 +3528,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3494,7 +3558,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3582,7 +3646,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3642,8 +3706,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3735,7 +3803,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3778,8 +3846,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3870,7 +3942,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3913,8 +3985,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4009,7 +4085,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4052,8 +4128,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4144,7 +4224,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4187,8 +4267,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4304,7 +4388,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4329,7 +4413,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4391,7 +4475,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4435,8 +4519,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4539,7 +4627,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerBucketCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4569,7 +4657,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4632,7 +4720,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4677,8 +4765,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4860,7 +4952,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4898,7 +4990,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4994,7 +5086,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5066,8 +5158,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5175,7 +5271,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5226,8 +5322,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5334,7 +5434,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5385,8 +5485,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5497,7 +5601,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5548,8 +5652,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5656,7 +5764,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5707,8 +5815,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5801,7 +5913,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5836,8 +5948,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6003,7 +6119,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6033,7 +6149,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6121,7 +6237,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6181,8 +6297,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6274,7 +6394,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6317,8 +6437,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6409,7 +6533,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6452,8 +6576,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6548,7 +6676,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6591,8 +6719,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6683,7 +6815,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6726,8 +6858,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6820,7 +6956,7 @@ paths:
                 - plans
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerRosterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6845,7 +6981,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerRoster'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6899,7 +7035,7 @@ paths:
                 - plans
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6939,8 +7075,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerRoster'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerRoster'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7041,7 +7181,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerRosterMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7075,7 +7215,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerRosterMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7136,7 +7276,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7175,8 +7315,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerRosterMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerRosterMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7300,7 +7444,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7369,7 +7513,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7522,7 +7666,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7547,7 +7691,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7627,7 +7771,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7675,8 +7819,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7752,7 +7900,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7787,8 +7935,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7863,7 +8015,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7898,8 +8050,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7978,7 +8134,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8013,8 +8169,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8089,7 +8249,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8124,8 +8284,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8213,7 +8377,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8273,8 +8437,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8362,7 +8530,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerDeltaCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8392,7 +8560,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerDelta'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8449,7 +8617,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8488,8 +8656,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerDelta'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerDelta'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8613,7 +8785,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8682,7 +8854,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8793,7 +8965,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8823,7 +8995,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8892,7 +9064,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8947,8 +9119,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9067,7 +9243,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerBucketCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9105,7 +9281,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9176,7 +9352,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9230,8 +9406,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9429,7 +9609,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9475,7 +9655,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9579,7 +9759,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9663,8 +9843,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9788,7 +9972,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9847,8 +10031,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9971,7 +10159,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10030,8 +10218,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10158,7 +10350,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10217,8 +10409,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10341,7 +10537,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10400,8 +10596,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10510,7 +10710,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10553,8 +10753,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10736,7 +10940,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10774,7 +10978,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10870,7 +11074,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10942,8 +11146,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11051,7 +11259,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11102,8 +11310,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11210,7 +11422,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11261,8 +11473,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11373,7 +11589,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11424,8 +11640,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11532,7 +11752,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11583,8 +11803,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11716,7 +11940,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11785,7 +12009,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11896,7 +12120,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11965,7 +12189,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12126,7 +12350,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12156,7 +12380,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12244,7 +12468,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12304,8 +12528,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12397,7 +12625,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12440,8 +12668,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12532,7 +12764,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12575,8 +12807,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12671,7 +12907,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12714,8 +12950,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12806,7 +13046,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12849,8 +13089,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

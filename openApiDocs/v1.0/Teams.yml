@@ -71,7 +71,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -96,7 +96,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -150,7 +150,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -186,8 +186,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -302,7 +306,7 @@ paths:
                 - bot
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAppDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -336,7 +340,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -404,7 +408,7 @@ paths:
                 - bot
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -449,8 +453,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -540,7 +548,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -579,8 +587,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkBot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -708,7 +720,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -733,7 +745,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chat'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -806,7 +818,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -876,8 +888,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -973,7 +989,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAppInstallationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1007,7 +1023,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1069,7 +1085,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1121,8 +1137,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1247,7 +1267,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1321,7 +1341,7 @@ paths:
                 - bot
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1383,7 +1403,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1414,8 +1434,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1516,7 +1540,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1550,7 +1574,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1611,7 +1635,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1650,8 +1674,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1723,7 +1751,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1874,7 +1902,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1908,7 +1936,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1991,7 +2019,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2041,8 +2069,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2156,7 +2188,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2194,7 +2226,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2262,7 +2294,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2309,8 +2341,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2493,7 +2529,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2535,7 +2571,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2626,7 +2662,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2686,8 +2722,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2817,7 +2857,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2863,7 +2903,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2939,7 +2979,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2994,8 +3034,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3168,7 +3212,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3305,7 +3349,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3600,7 +3644,7 @@ paths:
                 - message
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.pinnedChatMessageInfoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3634,7 +3678,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3694,7 +3738,7 @@ paths:
                 - message
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3739,8 +3783,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3852,7 +3900,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3945,7 +3993,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsTabCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3979,7 +4027,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4042,7 +4090,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4087,8 +4135,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4180,7 +4232,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4298,7 +4350,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4401,7 +4453,7 @@ paths:
                 - schedule
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4495,8 +4547,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.team'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4622,7 +4678,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4697,7 +4753,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4828,7 +4884,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4862,7 +4918,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.channel'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4938,7 +4994,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5011,8 +5067,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.channel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5155,7 +5215,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5243,7 +5303,7 @@ paths:
             type: string
           x-ms-docs-key-type: channel
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -5369,7 +5429,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5411,7 +5471,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5480,7 +5540,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5527,8 +5587,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5711,7 +5775,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5753,7 +5817,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5844,7 +5908,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5904,8 +5968,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6035,7 +6103,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6081,7 +6149,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6157,7 +6225,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6212,8 +6280,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6412,7 +6484,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6462,7 +6534,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6561,7 +6633,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6631,8 +6703,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6778,7 +6854,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6832,7 +6908,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6916,7 +6992,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6979,8 +7055,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7125,7 +7205,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7163,7 +7243,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7236,7 +7316,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7296,8 +7376,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7430,7 +7514,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7506,7 +7590,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7596,7 +7680,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsTabCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7634,7 +7718,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7705,7 +7789,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7759,8 +7843,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7868,7 +7956,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8017,7 +8105,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8231,7 +8319,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8306,7 +8394,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8407,7 +8495,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAppInstallationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8441,7 +8529,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8503,7 +8591,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8555,8 +8643,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8648,7 +8740,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8722,7 +8814,7 @@ paths:
                 - bot
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8808,7 +8900,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8842,7 +8934,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8903,7 +8995,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8942,8 +9034,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9064,7 +9160,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAsyncOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9094,7 +9190,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9160,7 +9256,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9199,8 +9295,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9281,7 +9381,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9312,8 +9412,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9359,7 +9463,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -9459,7 +9563,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9519,8 +9623,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.channel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9647,7 +9755,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9717,7 +9825,7 @@ paths:
             type: string
           x-ms-docs-key-type: group
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -9827,7 +9935,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9861,7 +9969,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9922,7 +10030,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9961,8 +10069,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10129,7 +10241,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10163,7 +10275,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10246,7 +10358,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10296,8 +10408,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10411,7 +10527,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10449,7 +10565,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10517,7 +10633,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10564,8 +10680,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10748,7 +10868,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10790,7 +10910,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10881,7 +11001,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10941,8 +11061,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11072,7 +11196,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11118,7 +11242,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11194,7 +11318,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11249,8 +11373,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11379,7 +11507,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11409,7 +11537,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11474,7 +11602,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11524,8 +11652,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11642,7 +11774,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11710,7 +11842,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11792,7 +11924,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsTabCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11822,7 +11954,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11885,7 +12017,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11930,8 +12062,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12023,7 +12159,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12110,7 +12246,7 @@ paths:
                 - timesOff
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12180,8 +12316,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schedule'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schedule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12318,7 +12458,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.offerShiftRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12348,7 +12488,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12420,7 +12560,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12459,8 +12599,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12596,7 +12740,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.openShiftChangeRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12630,7 +12774,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12699,7 +12843,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12738,8 +12882,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12857,7 +13005,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.openShiftCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12887,7 +13035,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShift'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12950,7 +13098,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12989,8 +13137,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShift'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13096,7 +13248,7 @@ paths:
                 - userIds
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.schedulingGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13130,7 +13282,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13182,7 +13334,7 @@ paths:
                 - userIds
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13221,8 +13373,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13331,7 +13487,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.shiftCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13365,7 +13521,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.shift'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13418,7 +13574,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13457,8 +13613,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.shift'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shift'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13606,7 +13766,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.swapShiftsChangeRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13640,7 +13800,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13713,7 +13873,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13752,8 +13912,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13859,7 +14023,7 @@ paths:
                 - isActive
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.timeOffReasonCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13893,7 +14057,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13945,7 +14109,7 @@ paths:
                 - isActive
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13984,8 +14148,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14115,7 +14283,7 @@ paths:
                 - timeOffReasonId
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.timeOffRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14145,7 +14313,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14204,7 +14372,7 @@ paths:
                 - timeOffReasonId
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14243,8 +14411,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14350,7 +14522,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.timeOffCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14384,7 +14556,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOff'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14436,7 +14608,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14475,8 +14647,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOff'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14593,7 +14769,7 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamworkTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14627,7 +14803,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTag'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14692,7 +14868,7 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14737,8 +14913,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTag'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14855,7 +15035,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamworkTagMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14897,7 +15077,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14966,7 +15146,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15013,8 +15193,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15101,7 +15285,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15230,7 +15414,7 @@ paths:
                 - schedule
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15255,7 +15439,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.team'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -15347,7 +15531,7 @@ paths:
                 - schedule
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -15441,8 +15625,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.team'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15568,7 +15756,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15643,7 +15831,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15774,7 +15962,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15808,7 +15996,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.channel'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -15884,7 +16072,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15957,8 +16145,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.channel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16101,7 +16293,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16189,7 +16381,7 @@ paths:
             type: string
           x-ms-docs-key-type: channel
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -16315,7 +16507,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16357,7 +16549,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -16426,7 +16618,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16473,8 +16665,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16562,7 +16758,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -16721,7 +16917,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16763,7 +16959,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -16854,7 +17050,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16914,8 +17110,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17045,7 +17245,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17091,7 +17291,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17167,7 +17367,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -17222,8 +17422,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17422,7 +17626,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17472,7 +17676,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17571,7 +17775,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -17641,8 +17845,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17788,7 +17996,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17842,7 +18050,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17926,7 +18134,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -17989,8 +18197,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18179,7 +18391,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -18324,7 +18536,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -18431,7 +18643,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -18474,7 +18686,7 @@ paths:
             type: string
           x-ms-docs-key-type: channel
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -18599,7 +18811,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18637,7 +18849,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -18710,7 +18922,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -18770,8 +18982,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18904,7 +19120,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18980,7 +19196,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -19070,7 +19286,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsTabCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19108,7 +19324,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -19179,7 +19395,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -19233,8 +19449,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19342,7 +19562,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -19469,7 +19689,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -19625,7 +19845,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -19839,7 +20059,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19914,7 +20134,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20015,7 +20235,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAppInstallationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20049,7 +20269,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -20111,7 +20331,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20163,8 +20383,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20289,7 +20513,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20363,7 +20587,7 @@ paths:
                 - bot
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20449,7 +20673,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20483,7 +20707,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -20544,7 +20768,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20583,8 +20807,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20656,7 +20884,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20953,7 +21181,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAsyncOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20983,7 +21211,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -21049,7 +21277,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21088,8 +21316,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21170,7 +21402,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21201,8 +21433,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21248,7 +21484,7 @@ paths:
             type: string
           x-ms-docs-key-type: team
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -21348,7 +21584,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21408,8 +21644,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.channel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21536,7 +21776,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21606,7 +21846,7 @@ paths:
             type: string
           x-ms-docs-key-type: team
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -21716,7 +21956,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21750,7 +21990,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -21811,7 +22051,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21850,8 +22090,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21923,7 +22167,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22074,7 +22318,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22108,7 +22352,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -22191,7 +22435,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -22241,8 +22485,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22356,7 +22604,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22394,7 +22642,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -22462,7 +22710,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -22509,8 +22757,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22693,7 +22945,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22735,7 +22987,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -22826,7 +23078,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -22886,8 +23138,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23017,7 +23273,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23063,7 +23319,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -23139,7 +23395,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -23194,8 +23450,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23368,7 +23628,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23505,7 +23765,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23596,7 +23856,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23631,7 +23891,7 @@ paths:
             type: string
           x-ms-docs-key-type: team
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23740,7 +24000,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23770,7 +24030,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -23835,7 +24095,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -23885,8 +24145,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24003,7 +24267,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24071,7 +24335,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -24153,7 +24417,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsTabCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24183,7 +24447,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -24246,7 +24510,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -24291,8 +24555,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24384,7 +24652,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -24471,7 +24739,7 @@ paths:
                 - timesOff
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -24541,8 +24809,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schedule'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schedule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24728,7 +25000,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.offerShiftRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24758,7 +25030,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -24830,7 +25102,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -24869,8 +25141,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25006,7 +25282,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.openShiftChangeRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25040,7 +25316,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -25109,7 +25385,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -25148,8 +25424,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25267,7 +25547,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.openShiftCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25297,7 +25577,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShift'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -25360,7 +25640,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -25399,8 +25679,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShift'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25506,7 +25790,7 @@ paths:
                 - userIds
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.schedulingGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25540,7 +25824,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -25592,7 +25876,7 @@ paths:
                 - userIds
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -25631,8 +25915,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25741,7 +26029,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.shiftCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25775,7 +26063,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.shift'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -25828,7 +26116,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -25867,8 +26155,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.shift'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shift'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26016,7 +26308,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.swapShiftsChangeRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26050,7 +26342,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -26123,7 +26415,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -26162,8 +26454,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26269,7 +26565,7 @@ paths:
                 - isActive
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.timeOffReasonCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26303,7 +26599,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -26355,7 +26651,7 @@ paths:
                 - isActive
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -26394,8 +26690,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26525,7 +26825,7 @@ paths:
                 - timeOffReasonId
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.timeOffRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26555,7 +26855,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -26614,7 +26914,7 @@ paths:
                 - timeOffReasonId
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -26653,8 +26953,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26760,7 +27064,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.timeOffCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26794,7 +27098,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOff'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -26846,7 +27150,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -26885,8 +27189,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOff'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27003,7 +27311,7 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamworkTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27037,7 +27345,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTag'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -27102,7 +27410,7 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -27147,8 +27455,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTag'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27265,7 +27577,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamworkTagMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27307,7 +27619,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -27376,7 +27688,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -27423,8 +27735,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27511,7 +27827,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -27623,7 +27939,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27680,7 +27996,7 @@ paths:
                 - workforceIntegrations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -27707,8 +28023,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamwork'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamwork'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27837,7 +28157,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.workforceIntegrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27862,7 +28182,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -27920,7 +28240,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -27951,8 +28271,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28080,7 +28404,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -28110,7 +28434,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chat'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -28187,7 +28511,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28267,8 +28591,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chat'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chat'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28380,7 +28708,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAppInstallationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -28422,7 +28750,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -28492,7 +28820,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28554,8 +28882,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28663,7 +28995,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28746,7 +29078,7 @@ paths:
                 - bot
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28817,7 +29149,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -28856,8 +29188,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28974,7 +29310,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -29016,7 +29352,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -29085,7 +29421,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -29132,8 +29468,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29316,7 +29656,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -29358,7 +29698,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -29449,7 +29789,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -29509,8 +29849,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29640,7 +29984,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -29686,7 +30030,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -29762,7 +30106,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -29817,8 +30161,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30017,7 +30365,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30067,7 +30415,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -30166,7 +30514,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -30236,8 +30584,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30383,7 +30735,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30437,7 +30789,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -30521,7 +30873,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -30584,8 +30936,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30719,7 +31075,7 @@ paths:
                 - message
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.pinnedChatMessageInfoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30761,7 +31117,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -30829,7 +31185,7 @@ paths:
                 - message
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -30883,8 +31239,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31012,7 +31372,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -31115,7 +31475,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsTabCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31157,7 +31517,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -31228,7 +31588,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -31282,8 +31642,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31391,7 +31755,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -31538,7 +31902,7 @@ paths:
                 - schedule
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31568,7 +31932,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.team'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -31664,7 +32028,7 @@ paths:
                 - schedule
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -31774,8 +32138,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.team'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31917,7 +32285,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -32000,7 +32368,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -32144,7 +32512,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -32186,7 +32554,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.channel'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -32270,7 +32638,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -32356,8 +32724,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.channel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32516,7 +32888,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -32622,7 +32994,7 @@ paths:
             type: string
           x-ms-docs-key-type: channel
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -32764,7 +33136,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -32814,7 +33186,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -32891,7 +33263,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -32946,8 +33318,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33146,7 +33522,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -33196,7 +33572,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -33295,7 +33671,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -33365,8 +33741,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33512,7 +33892,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -33566,7 +33946,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -33650,7 +34030,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -33713,8 +34093,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33929,7 +34313,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -33987,7 +34371,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -34094,7 +34478,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -34174,8 +34558,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34337,7 +34725,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -34399,7 +34787,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -34491,7 +34879,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -34562,8 +34950,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34724,7 +35116,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -34770,7 +35162,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -34851,7 +35243,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -34921,8 +35313,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35071,7 +35467,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -35155,7 +35551,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -35253,7 +35649,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsTabCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -35299,7 +35695,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -35378,7 +35774,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -35441,8 +35837,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35566,7 +35966,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -35724,7 +36124,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -35973,7 +36373,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.channelCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -36056,7 +36456,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -36170,7 +36570,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAppInstallationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -36212,7 +36612,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -36282,7 +36682,7 @@ paths:
                 - teamsAppDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -36344,8 +36744,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36453,7 +36857,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -36536,7 +36940,7 @@ paths:
                 - bot
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -36631,7 +37035,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -36673,7 +37077,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -36742,7 +37146,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -36789,8 +37193,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36927,7 +37335,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsAsyncOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -36965,7 +37373,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -37039,7 +37447,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -37086,8 +37494,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37184,7 +37596,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -37223,8 +37635,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37286,7 +37702,7 @@ paths:
             type: string
           x-ms-docs-key-type: team
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -37402,7 +37818,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -37475,8 +37891,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.channel'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37619,7 +38039,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -37707,7 +38127,7 @@ paths:
             type: string
           x-ms-docs-key-type: team
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -37833,7 +38253,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -37875,7 +38295,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -37944,7 +38364,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -37991,8 +38411,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conversationMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -38175,7 +38599,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -38217,7 +38641,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -38308,7 +38732,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -38368,8 +38792,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -38499,7 +38927,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -38545,7 +38973,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -38621,7 +39049,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -38676,8 +39104,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -38876,7 +39308,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -38926,7 +39358,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -39025,7 +39457,7 @@ paths:
                 - replies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -39095,8 +39527,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39242,7 +39678,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -39296,7 +39732,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -39380,7 +39816,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -39443,8 +39879,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39589,7 +40029,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sharedWithChannelTeamInfoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -39627,7 +40067,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -39700,7 +40140,7 @@ paths:
                 - allowedMembers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -39760,8 +40200,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39894,7 +40338,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.conversationMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -39970,7 +40414,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -40060,7 +40504,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamsTabCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -40098,7 +40542,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -40169,7 +40613,7 @@ paths:
                 - teamsApp
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -40223,8 +40667,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamsTab'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -40332,7 +40780,7 @@ paths:
                 - appDefinitions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -40428,7 +40876,7 @@ paths:
                 - timesOff
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -40515,8 +40963,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schedule'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schedule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -40669,7 +41121,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.offerShiftRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -40707,7 +41159,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -40787,7 +41239,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -40834,8 +41286,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -40987,7 +41443,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.openShiftChangeRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -41029,7 +41485,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -41106,7 +41562,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -41153,8 +41609,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41288,7 +41748,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.openShiftCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -41326,7 +41786,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShift'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -41397,7 +41857,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -41444,8 +41904,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.openShift'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41567,7 +42031,7 @@ paths:
                 - userIds
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.schedulingGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -41609,7 +42073,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -41669,7 +42133,7 @@ paths:
                 - userIds
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -41716,8 +42180,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41842,7 +42310,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.shiftCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -41884,7 +42352,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.shift'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -41945,7 +42413,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -41992,8 +42460,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.shift'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shift'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42157,7 +42629,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.swapShiftsChangeRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -42199,7 +42671,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -42280,7 +42752,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -42327,8 +42799,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42450,7 +42926,7 @@ paths:
                 - isActive
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.timeOffReasonCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -42492,7 +42968,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -42552,7 +43028,7 @@ paths:
                 - isActive
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -42599,8 +43075,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42746,7 +43226,7 @@ paths:
                 - timeOffReasonId
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.timeOffRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -42784,7 +43264,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -42851,7 +43331,7 @@ paths:
                 - timeOffReasonId
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -42898,8 +43378,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43021,7 +43505,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.timeOffCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -43063,7 +43547,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOff'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -43123,7 +43607,7 @@ paths:
                 - userId
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -43170,8 +43654,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.timeOff'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43304,7 +43792,7 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamworkTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -43346,7 +43834,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTag'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -43419,7 +43907,7 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -43473,8 +43961,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTag'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43607,7 +44099,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.teamworkTagMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -43657,7 +44149,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -43734,7 +44226,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -43789,8 +44281,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43893,7 +44389,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -43946,7 +44442,7 @@ paths:
                 - installedApps
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -43988,8 +44484,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userTeamwork'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44089,7 +44589,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.associatedTeamInfoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -44119,7 +44619,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -44181,7 +44681,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -44226,8 +44726,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44333,7 +44837,7 @@ paths:
                 - chat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userScopeTeamsAppInstallationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -44367,7 +44871,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -44431,7 +44935,7 @@ paths:
                 - chat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -44486,8 +44990,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44597,7 +45105,7 @@ paths:
                 - tabs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:

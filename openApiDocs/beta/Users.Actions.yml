@@ -105,7 +105,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -156,7 +156,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -216,7 +216,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -280,7 +280,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -340,7 +340,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -390,7 +390,7 @@ paths:
             type: string
           x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -441,7 +441,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -501,7 +501,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -565,7 +565,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -625,7 +625,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -675,7 +675,7 @@ paths:
             type: string
           x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -726,7 +726,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -786,7 +786,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -850,7 +850,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -910,7 +910,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -960,7 +960,7 @@ paths:
             type: string
           x-ms-docs-key-type: windowsHelloForBusinessAuthenticationMethod
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1009,7 +1009,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1066,7 +1066,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1131,7 +1131,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2012,7 +2012,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2077,7 +2077,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3278,7 +3278,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3335,7 +3335,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3400,7 +3400,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4281,7 +4281,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4346,7 +4346,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5552,7 +5552,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5630,7 +5630,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5703,7 +5703,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5784,7 +5784,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6905,7 +6905,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6986,7 +6986,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8539,7 +8539,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8612,7 +8612,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8693,7 +8693,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9814,7 +9814,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9895,7 +9895,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11453,7 +11453,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11523,7 +11523,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11588,7 +11588,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11661,7 +11661,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12662,7 +12662,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12735,7 +12735,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -14112,7 +14112,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -14177,7 +14177,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -14250,7 +14250,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -15251,7 +15251,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -15324,7 +15324,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -16706,7 +16706,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -16768,7 +16768,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -16825,7 +16825,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -16890,7 +16890,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -17771,7 +17771,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -17836,7 +17836,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -19080,7 +19080,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -19805,7 +19805,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -19873,7 +19873,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -19945,7 +19945,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20013,7 +20013,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20071,7 +20071,7 @@ paths:
             type: string
           x-ms-docs-key-type: resourceSpecificPermissionGrant
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20127,7 +20127,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20190,7 +20190,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20692,7 +20692,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20756,7 +20756,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20816,7 +20816,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20880,7 +20880,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20940,7 +20940,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -20990,7 +20990,7 @@ paths:
             type: string
           x-ms-docs-key-type: device
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21038,7 +21038,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21093,7 +21093,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21268,7 +21268,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21526,7 +21526,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21606,7 +21606,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21663,7 +21663,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21704,7 +21704,7 @@ paths:
             type: string
           x-ms-docs-key-type: driveItem
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21749,7 +21749,7 @@ paths:
             type: string
           x-ms-docs-key-type: driveItem
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21834,7 +21834,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21917,7 +21917,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -21977,7 +21977,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22142,7 +22142,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22223,7 +22223,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22563,7 +22563,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22612,7 +22612,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22738,7 +22738,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -22930,7 +22930,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23148,7 +23148,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23220,7 +23220,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23269,7 +23269,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23302,7 +23302,7 @@ paths:
             type: string
           x-ms-docs-key-type: drive
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23339,7 +23339,7 @@ paths:
             type: string
           x-ms-docs-key-type: drive
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23416,7 +23416,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23491,7 +23491,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23543,7 +23543,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23684,7 +23684,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23757,7 +23757,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23884,7 +23884,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -23941,7 +23941,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -24006,7 +24006,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -24887,7 +24887,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -24952,7 +24952,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26146,7 +26146,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26187,7 +26187,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26197,8 +26197,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -26235,7 +26235,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26245,8 +26245,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -26279,7 +26279,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26289,8 +26289,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -26328,7 +26328,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26338,8 +26338,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -26377,7 +26377,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26397,8 +26397,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -26441,7 +26441,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26461,8 +26461,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -26503,7 +26503,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26523,8 +26523,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -26563,7 +26563,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26573,8 +26573,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-08-15T00:00:00.0000000+00:00'
-        date: '2021-02-15T00:00:00.0000000+00:00'
+        removalDate: '2022-08-15T00:00:00.0000000-07:00'
+        date: '2021-02-15T00:00:00.0000000-08:00'
         version: 2021-02/Beta_SensitivityLabels
         description: 'This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.'
       x-ms-docs-operation-type: action
@@ -26618,7 +26618,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26659,7 +26659,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26704,7 +26704,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26752,7 +26752,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26807,7 +26807,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26921,7 +26921,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -26986,7 +26986,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27058,7 +27058,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27126,7 +27126,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27194,7 +27194,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27327,7 +27327,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27610,7 +27610,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27667,7 +27667,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27724,7 +27724,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27781,7 +27781,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27845,7 +27845,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27905,7 +27905,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -27965,7 +27965,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -28082,7 +28082,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -28325,7 +28325,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -28374,7 +28374,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -28415,7 +28415,7 @@ paths:
             type: string
           x-ms-docs-key-type: deviceLogCollectionResponse
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -28582,7 +28582,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -28629,7 +28629,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -29260,7 +29260,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -29948,7 +29948,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -29999,7 +29999,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30045,7 +30045,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30082,7 +30082,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -30161,7 +30161,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30250,7 +30250,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30299,7 +30299,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30355,7 +30355,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30407,7 +30407,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30459,7 +30459,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30560,7 +30560,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30759,8 +30759,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-10-15T00:00:00.0000000+00:00'
-        date: '2022-09-05T00:00:00.0000000+00:00'
+        removalDate: '2022-10-15T00:00:00.0000000-07:00'
+        date: '2022-09-05T00:00:00.0000000-07:00'
         version: 2022-09/Identity_And_Access
         description: 'The activateServicePlan API will be deprecated and will stop returning data on Oct-15, 2022'
       x-ms-docs-operation-type: action
@@ -30786,7 +30786,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/assignLicenseRequestBody'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/assignLicenseResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30852,7 +30852,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30904,7 +30904,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -30975,7 +30975,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/findMeetingTimesRequestBody'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/findMeetingTimesResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31002,7 +31002,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/getMailTipsRequestBody'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/getMailTipsResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31044,7 +31044,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -31096,7 +31096,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -31138,7 +31138,7 @@ paths:
             type: string
           x-ms-docs-key-type: user
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/invalidateAllRefreshTokensResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31185,7 +31185,7 @@ paths:
             type: string
           x-ms-docs-key-type: user
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/reprocessLicenseAssignmentResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31210,7 +31210,7 @@ paths:
             type: string
           x-ms-docs-key-type: user
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -31235,7 +31235,7 @@ paths:
             type: string
           x-ms-docs-key-type: user
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/revokeSignInSessionsResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31289,7 +31289,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/translateExchangeIdsRequestBody'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/translateExchangeIdsResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31445,7 +31445,7 @@ paths:
             type: string
           x-ms-docs-key-type: appLogCollectionRequest
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -31507,7 +31507,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -31585,7 +31585,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -31663,7 +31663,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -31746,7 +31746,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -31883,7 +31883,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -31953,7 +31953,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32028,7 +32028,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32129,7 +32129,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32188,7 +32188,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32301,7 +32301,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32371,7 +32371,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32446,7 +32446,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32567,7 +32567,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32629,7 +32629,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32696,7 +32696,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32805,7 +32805,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32862,7 +32862,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32872,8 +32872,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-02-20T00:00:00.0000000+00:00'
-        date: '2020-08-20T00:00:00.0000000+00:00'
+        removalDate: '2023-02-20T00:00:00.0000000-08:00'
+        date: '2020-08-20T00:00:00.0000000-07:00'
         version: 2020-08/Outlook_Tasks
         description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: action
@@ -32909,7 +32909,7 @@ paths:
             type: string
           x-ms-docs-key-type: outlookTask
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -32930,8 +32930,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-02-20T00:00:00.0000000+00:00'
-        date: '2020-08-20T00:00:00.0000000+00:00'
+        removalDate: '2023-02-20T00:00:00.0000000-08:00'
+        date: '2020-08-20T00:00:00.0000000-07:00'
         version: 2020-08/Outlook_Tasks
         description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: action
@@ -32994,7 +32994,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -33004,8 +33004,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-02-20T00:00:00.0000000+00:00'
-        date: '2020-08-20T00:00:00.0000000+00:00'
+        removalDate: '2023-02-20T00:00:00.0000000-08:00'
+        date: '2020-08-20T00:00:00.0000000-07:00'
         version: 2020-08/Outlook_Tasks
         description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: action
@@ -33049,7 +33049,7 @@ paths:
             type: string
           x-ms-docs-key-type: outlookTask
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -33070,8 +33070,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-02-20T00:00:00.0000000+00:00'
-        date: '2020-08-20T00:00:00.0000000+00:00'
+        removalDate: '2023-02-20T00:00:00.0000000-08:00'
+        date: '2020-08-20T00:00:00.0000000-07:00'
         version: 2020-08/Outlook_Tasks
         description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: action
@@ -33118,7 +33118,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -33128,8 +33128,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-02-20T00:00:00.0000000+00:00'
-        date: '2020-08-20T00:00:00.0000000+00:00'
+        removalDate: '2023-02-20T00:00:00.0000000-08:00'
+        date: '2020-08-20T00:00:00.0000000-07:00'
         version: 2020-08/Outlook_Tasks
         description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: action
@@ -33157,7 +33157,7 @@ paths:
             type: string
           x-ms-docs-key-type: outlookTask
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -33178,8 +33178,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-02-20T00:00:00.0000000+00:00'
-        date: '2020-08-20T00:00:00.0000000+00:00'
+        removalDate: '2023-02-20T00:00:00.0000000-08:00'
+        date: '2020-08-20T00:00:00.0000000-07:00'
         version: 2020-08/Outlook_Tasks
         description: 'The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: action
@@ -34524,7 +34524,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -34578,7 +34578,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -34630,7 +34630,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -34680,7 +34680,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -34729,7 +34729,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -34786,7 +34786,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -34796,8 +34796,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-09-30T00:00:00.0000000+00:00'
-        date: '2022-03-31T00:00:00.0000000+00:00'
+        removalDate: '2022-09-30T00:00:00.0000000-07:00'
+        date: '2022-03-31T00:00:00.0000000-07:00'
         version: 2022-03/Tasks
         description: 'The Tasks V2 API is deprecated and will stop returning data on September 30, 2022. Please use the To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/'
       x-ms-docs-operation-type: action
@@ -34899,7 +34899,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -34938,7 +34938,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -34984,7 +34984,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -35016,7 +35016,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:

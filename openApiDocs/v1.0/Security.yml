@@ -48,7 +48,7 @@ paths:
                 - secureScores
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -81,8 +81,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -257,7 +261,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.alertCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -278,7 +282,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.alert'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -366,7 +370,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -397,8 +401,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.alert'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.alert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -438,7 +446,7 @@ paths:
                 - simulations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -465,8 +473,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -571,7 +583,7 @@ paths:
                 - runs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.simulationAutomationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -592,7 +604,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -653,7 +665,7 @@ paths:
                 - runs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -689,8 +701,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -794,7 +810,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.simulationAutomationRunCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -824,7 +840,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -886,7 +902,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -925,8 +941,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1063,7 +1083,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.simulationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1084,7 +1104,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1149,7 +1169,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1180,8 +1200,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1245,7 +1269,7 @@ paths:
                 - ediscoveryCases
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1270,8 +1294,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1388,7 +1416,7 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryCaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1413,7 +1441,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1485,7 +1513,7 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1549,8 +1577,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1674,7 +1706,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryCustodianCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1708,7 +1740,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1782,7 +1814,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1852,8 +1884,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1950,7 +1986,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2208,7 +2244,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.siteSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2250,7 +2286,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2322,7 +2358,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2376,8 +2412,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2526,7 +2566,7 @@ paths:
                 - onenote
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2719,7 +2759,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.unifiedGroupSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2761,7 +2801,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2834,7 +2874,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2888,8 +2928,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3085,7 +3129,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3348,7 +3392,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.userSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3390,7 +3434,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.userSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3463,7 +3507,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3510,8 +3554,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.userSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.userSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3760,7 +3808,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryNoncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3794,7 +3842,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3862,7 +3910,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3920,8 +3968,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4012,7 +4064,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4051,8 +4103,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4146,7 +4202,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4442,7 +4498,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.caseOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4472,7 +4528,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4537,7 +4593,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4576,8 +4632,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4688,7 +4748,7 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4722,7 +4782,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4785,7 +4845,7 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4832,8 +4892,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5009,7 +5073,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewSetQueryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5051,7 +5115,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5124,7 +5188,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5174,8 +5238,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5376,7 +5444,7 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoverySearchCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5410,7 +5478,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5486,7 +5554,7 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5553,8 +5621,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5674,7 +5746,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5716,7 +5788,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5786,7 +5858,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5833,8 +5905,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5940,7 +6016,7 @@ paths:
                 - search
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6042,7 +6118,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6111,7 +6187,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6187,7 +6263,7 @@ paths:
                 - search
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6324,7 +6400,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryNoncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6399,7 +6475,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6468,7 +6544,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6506,8 +6582,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6643,7 +6723,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6677,7 +6757,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6744,7 +6824,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6794,8 +6874,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6919,7 +7003,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6993,7 +7077,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7073,7 +7157,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7156,7 +7240,7 @@ paths:
                 - childSelectability desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7290,7 +7374,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.secureScoreControlProfileCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7311,7 +7395,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7379,7 +7463,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7410,8 +7494,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7525,7 +7613,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.secureScoreCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7546,7 +7634,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScore'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7605,7 +7693,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7636,8 +7724,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScore'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScore'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

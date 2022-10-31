@@ -103,7 +103,7 @@ paths:
                 - windowsProtectionStates
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -190,8 +190,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenant'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -300,7 +304,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.aggregatedPolicyComplianceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -321,7 +325,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyCompliance'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -382,7 +386,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -413,8 +417,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyCompliance'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyCompliance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -534,7 +542,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.auditEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -555,7 +563,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.auditEvent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -618,7 +626,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -649,8 +657,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.auditEvent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.auditEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -749,7 +761,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.cloudPcConnectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -770,7 +782,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcConnection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -825,7 +837,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -856,8 +868,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcConnection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcConnection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -977,7 +993,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.cloudPcDeviceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -998,7 +1014,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcDevice'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1060,7 +1076,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1091,8 +1107,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcDevice'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcDevice'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1236,7 +1256,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.cloudPcOverviewCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1257,7 +1277,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcOverview'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1327,7 +1347,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1358,8 +1378,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcOverview'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.cloudPcOverview'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1455,7 +1479,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.conditionalAccessPolicyCoverageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1476,7 +1500,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.conditionalAccessPolicyCoverage'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1530,7 +1554,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1561,8 +1585,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.conditionalAccessPolicyCoverage'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.conditionalAccessPolicyCoverage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1679,7 +1707,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.credentialUserRegistrationsSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1700,7 +1728,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummary'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1761,7 +1789,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1792,8 +1820,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1916,7 +1948,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1937,7 +1969,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2000,7 +2032,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2031,8 +2063,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2158,7 +2194,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedDeviceComplianceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2179,7 +2215,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceCompliance'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2243,7 +2279,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2274,8 +2310,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceCompliance'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceCompliance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2386,7 +2426,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedDeviceComplianceTrendCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2407,7 +2447,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2466,7 +2506,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2497,8 +2537,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedDeviceComplianceTrend'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2595,7 +2639,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertLogCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2616,7 +2660,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2672,7 +2716,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2708,8 +2752,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2802,7 +2850,7 @@ paths:
                 - emailNotifications
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2898,7 +2946,7 @@ paths:
                 - alertRules
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertRuleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2919,7 +2967,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2976,7 +3024,7 @@ paths:
                 - alertRules
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3012,8 +3060,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3144,7 +3196,7 @@ paths:
                 - ruleDefinition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3217,7 +3269,7 @@ paths:
                 - ruleDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3330,7 +3382,7 @@ paths:
                 - ruleDefinition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3351,7 +3403,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3417,7 +3469,7 @@ paths:
                 - ruleDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3457,8 +3509,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3599,7 +3655,7 @@ paths:
                 - emailNotifications
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3678,7 +3734,7 @@ paths:
                 - emailNotifications
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3756,7 +3812,7 @@ paths:
                 - alertRules
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3873,7 +3929,7 @@ paths:
                 - emailNotifications
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3894,7 +3950,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3966,7 +4022,7 @@ paths:
                 - emailNotifications
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4016,8 +4072,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4122,7 +4182,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantAlertLogCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4185,7 +4245,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4257,7 +4317,7 @@ paths:
                 - ruleDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4359,7 +4419,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantApiNotificationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4425,7 +4485,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4521,7 +4581,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantEmailNotificationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4586,7 +4646,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4677,7 +4737,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantApiNotificationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4698,7 +4758,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4757,7 +4817,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4793,8 +4853,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4887,7 +4951,7 @@ paths:
                 - emailNotifications
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4986,7 +5050,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantEmailNotificationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5007,7 +5071,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5065,7 +5129,7 @@ paths:
                 - alert
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5101,8 +5165,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5195,7 +5263,7 @@ paths:
                 - emailNotifications
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5292,7 +5360,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managedTenantTicketingEndpointCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5313,7 +5381,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5369,7 +5437,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5400,8 +5468,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantTicketingEndpoint'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5503,7 +5575,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementActionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5524,7 +5596,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementAction'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5580,7 +5652,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5614,8 +5686,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementAction'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementAction'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5708,7 +5784,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementActionTenantDeploymentStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5729,7 +5805,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionTenantDeploymentStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5782,7 +5858,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5813,8 +5889,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionTenantDeploymentStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionTenantDeploymentStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5907,7 +5987,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementIntentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5928,7 +6008,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementIntent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5981,7 +6061,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6012,8 +6092,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementIntent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementIntent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6113,7 +6197,7 @@ paths:
                 - managementTemplates
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateCollectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6134,7 +6218,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6191,7 +6275,7 @@ paths:
                 - managementTemplates
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6227,8 +6311,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6362,7 +6450,7 @@ paths:
                 - managementTemplateSteps
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6436,7 +6524,7 @@ paths:
                 - managementTemplateSteps
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6556,7 +6644,7 @@ paths:
                 - managementTemplateSteps
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6577,7 +6665,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6645,7 +6733,7 @@ paths:
                 - managementTemplateSteps
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6685,8 +6773,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6794,7 +6886,7 @@ paths:
                 - managementTemplates
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateCollectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6858,7 +6950,7 @@ paths:
                 - managementTemplates
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6964,7 +7056,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateStepCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7035,7 +7127,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7143,7 +7235,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateStepCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7164,7 +7256,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7228,7 +7320,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7272,8 +7364,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7357,7 +7453,7 @@ paths:
                 - templateStep
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7437,7 +7533,7 @@ paths:
                 - managementTemplateSteps
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7543,7 +7639,7 @@ paths:
                 - templateStep
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateStepVersionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7613,7 +7709,7 @@ paths:
                 - templateStep
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7718,7 +7814,7 @@ paths:
                 - templateStep
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateStepVersionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7739,7 +7835,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7802,7 +7898,7 @@ paths:
                 - templateStep
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7846,8 +7942,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7932,7 +8032,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8035,7 +8135,7 @@ paths:
                 - templateStepVersion
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.managementTemplateStepDeploymentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8065,7 +8165,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8131,7 +8231,7 @@ paths:
                 - templateStepVersion
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8178,8 +8278,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8279,7 +8383,7 @@ paths:
                 - templateStep
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8359,7 +8463,7 @@ paths:
                 - versions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8438,7 +8542,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.myRoleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8459,7 +8563,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.myRole'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8510,7 +8614,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8541,8 +8645,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.myRole'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.myRole'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8641,7 +8749,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.tenantGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8662,7 +8770,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8717,7 +8825,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8748,8 +8856,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8851,7 +8963,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.tenantCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8872,7 +8984,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8928,7 +9040,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8964,8 +9076,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9061,7 +9177,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.tenantCustomizedInformationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9082,7 +9198,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantCustomizedInformation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9136,7 +9252,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9167,8 +9283,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantCustomizedInformation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantCustomizedInformation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9282,7 +9402,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.tenantDetailedInformationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9303,7 +9423,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantDetailedInformation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9363,7 +9483,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9394,8 +9514,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantDetailedInformation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantDetailedInformation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9503,7 +9627,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.tenantTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9528,7 +9652,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9586,7 +9710,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9622,8 +9746,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9755,7 +9883,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.windowsDeviceMalwareStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9776,7 +9904,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsDeviceMalwareState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9842,7 +9970,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9873,8 +10001,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsDeviceMalwareState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsDeviceMalwareState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10033,7 +10165,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedTenants.windowsProtectionStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10054,7 +10186,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsProtectionState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10129,7 +10261,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10160,8 +10292,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsProtectionState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.windowsProtectionState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

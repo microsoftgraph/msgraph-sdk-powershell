@@ -39,7 +39,7 @@ paths:
                 - ediscovery
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -64,8 +64,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.compliance'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.compliance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -103,7 +107,7 @@ paths:
                 - cases
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -128,8 +132,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.ediscoveryroot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.ediscoveryroot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -248,7 +256,7 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.caseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -273,7 +281,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.case'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -347,7 +355,7 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -415,8 +423,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.case'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.case'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -543,7 +555,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.custodianCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -577,7 +589,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.custodian'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -652,7 +664,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -722,8 +734,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.custodian'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.custodian'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -998,7 +1014,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.siteSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1040,7 +1056,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1112,7 +1128,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1166,8 +1182,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1317,7 +1337,7 @@ paths:
                 - onenote
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1510,7 +1530,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.unifiedGroupSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1552,7 +1572,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1625,7 +1645,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1679,8 +1699,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1890,7 +1914,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2159,7 +2183,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.userSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2201,7 +2225,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2274,7 +2298,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2321,8 +2345,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2535,7 +2563,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.legalHoldCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2565,7 +2593,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.legalHold'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2639,7 +2667,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2694,8 +2722,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.legalHold'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.legalHold'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2817,7 +2849,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.siteSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2859,7 +2891,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2931,7 +2963,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2985,8 +3017,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3136,7 +3172,7 @@ paths:
                 - onenote
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3325,7 +3361,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.unifiedGroupSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3363,7 +3399,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3435,7 +3471,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3489,8 +3525,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3700,7 +3740,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3969,7 +4009,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.userSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4011,7 +4051,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4084,7 +4124,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4131,8 +4171,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4315,7 +4359,7 @@ paths:
                 - dataSource
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.noncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4349,7 +4393,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4418,7 +4462,7 @@ paths:
                 - dataSource
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4476,8 +4520,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4568,7 +4616,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4607,8 +4655,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4918,7 +4970,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.caseOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4948,7 +5000,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5013,7 +5065,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5052,8 +5104,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5161,7 +5217,7 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.reviewSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5195,7 +5251,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5258,7 +5314,7 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5307,8 +5363,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSet'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5540,7 +5600,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.reviewSetQueryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5582,7 +5642,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5653,7 +5713,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5703,8 +5763,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5856,7 +5920,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5894,8 +5958,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.caseSettings'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.caseSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6046,7 +6114,7 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.sourceCollectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6080,7 +6148,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.sourceCollection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6156,7 +6224,7 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6225,8 +6293,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.sourceCollection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.sourceCollection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6346,7 +6418,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6384,7 +6456,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6454,7 +6526,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6501,8 +6573,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6611,7 +6687,7 @@ paths:
                 - sourceCollection
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6713,7 +6789,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6782,7 +6858,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6858,7 +6934,7 @@ paths:
                 - sourceCollection
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7034,7 +7110,7 @@ paths:
                 - dataSource
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.noncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7110,7 +7186,7 @@ paths:
                 - dataSource
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7213,7 +7289,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.tagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7247,7 +7323,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7314,7 +7390,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7364,8 +7440,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7492,7 +7572,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.tagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7566,7 +7646,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7646,7 +7726,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7729,7 +7809,7 @@ paths:
                 - lastModifiedDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:

@@ -45,7 +45,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -76,8 +76,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -187,7 +191,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -212,7 +216,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationClass'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -289,7 +293,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -353,8 +357,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationClass'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationClass'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -449,7 +457,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -483,7 +491,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -542,7 +550,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -581,8 +589,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationCategory'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -669,7 +681,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -743,7 +755,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -778,8 +790,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentDefaults'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentDefaults'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -942,7 +958,7 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -976,7 +992,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1063,7 +1079,7 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1127,8 +1143,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1239,7 +1259,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1277,7 +1297,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1384,7 +1404,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1479,7 +1499,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1533,7 +1553,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1570,7 +1590,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1655,7 +1675,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1697,7 +1717,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1765,7 +1785,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1812,8 +1832,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1920,7 +1944,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1959,8 +1983,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2026,7 +2054,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property link
           content:
             application/json:
@@ -2208,7 +2236,7 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2246,7 +2274,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2329,7 +2357,7 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2405,8 +2433,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2488,7 +2520,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2533,7 +2565,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2578,7 +2610,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2623,7 +2655,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2668,7 +2700,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2761,7 +2793,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationOutcomeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2807,7 +2839,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2882,7 +2914,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2937,8 +2969,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3076,7 +3112,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3126,7 +3162,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3201,7 +3237,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3256,8 +3292,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3395,7 +3435,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3441,7 +3481,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3516,7 +3556,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3571,8 +3611,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3739,7 +3783,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3807,7 +3851,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3842,8 +3886,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentSettings'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4007,7 +4055,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4295,7 +4343,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4447,7 +4495,7 @@ paths:
                 - userType desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4590,7 +4638,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSchoolCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4668,7 +4716,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4863,7 +4911,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5015,7 +5063,7 @@ paths:
                 - userType desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5127,7 +5175,7 @@ paths:
                 - term desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5229,7 +5277,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5264,8 +5312,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5412,7 +5464,7 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5433,7 +5485,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5512,7 +5564,7 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5564,8 +5616,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5660,7 +5716,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5690,7 +5746,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5781,7 +5837,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5860,7 +5916,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5906,7 +5962,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5935,7 +5991,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6012,7 +6068,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6046,7 +6102,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6106,7 +6162,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6145,8 +6201,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6237,7 +6297,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6268,8 +6328,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6319,7 +6383,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property link
           content:
             application/json:
@@ -6477,7 +6541,7 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6507,7 +6571,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6582,7 +6646,7 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6647,8 +6711,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6714,7 +6782,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6751,7 +6819,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6788,7 +6856,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6825,7 +6893,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6862,7 +6930,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6947,7 +7015,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationOutcomeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6985,7 +7053,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7052,7 +7120,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7099,8 +7167,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7222,7 +7294,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7264,7 +7336,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7331,7 +7403,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7378,8 +7450,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7501,7 +7577,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7539,7 +7615,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7606,7 +7682,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7653,8 +7729,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7805,7 +7885,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7937,7 +8017,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8014,7 +8094,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8137,7 +8217,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationRubricCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8162,7 +8242,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8221,7 +8301,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8252,8 +8332,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8388,7 +8472,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSchoolCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8458,7 +8542,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8586,7 +8670,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8663,7 +8747,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8906,7 +8990,7 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9113,7 +9197,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSchoolCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9138,7 +9222,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSchool'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9208,7 +9292,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9252,8 +9336,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSchool'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSchool'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9337,7 +9425,7 @@ paths:
                 - extensions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9381,8 +9469,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9500,7 +9592,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9612,7 +9704,7 @@ paths:
                 - term desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9812,7 +9904,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9964,7 +10056,7 @@ paths:
                 - userType desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10080,7 +10172,7 @@ paths:
                 - schoolNumber desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10268,7 +10360,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10293,7 +10385,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationUser'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10386,7 +10478,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10442,8 +10534,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10606,7 +10702,7 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10636,7 +10732,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10723,7 +10819,7 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10787,8 +10883,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10899,7 +10999,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10937,7 +11037,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11044,7 +11144,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11139,7 +11239,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11193,7 +11293,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11230,7 +11330,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11315,7 +11415,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11357,7 +11457,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11425,7 +11525,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11472,8 +11572,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11580,7 +11684,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11619,8 +11723,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11686,7 +11794,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property link
           content:
             application/json:
@@ -11868,7 +11976,7 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11906,7 +12014,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11989,7 +12097,7 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12065,8 +12173,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12148,7 +12260,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12193,7 +12305,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12238,7 +12350,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12283,7 +12395,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12328,7 +12440,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12421,7 +12533,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationOutcomeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12467,7 +12579,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12542,7 +12654,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12597,8 +12709,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12736,7 +12852,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12786,7 +12902,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12861,7 +12977,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12916,8 +13032,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13055,7 +13175,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13101,7 +13221,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13176,7 +13296,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13231,8 +13351,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13399,7 +13523,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -13539,7 +13663,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13624,7 +13748,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13763,7 +13887,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationRubricCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13797,7 +13921,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13864,7 +13988,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13903,8 +14027,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14055,7 +14183,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSchoolCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14133,7 +14261,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14272,7 +14400,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14357,7 +14485,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14616,7 +14744,7 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14950,7 +15078,7 @@ paths:
                 - userType desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
