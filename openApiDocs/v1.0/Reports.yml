@@ -1836,16 +1836,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -1860,16 +1853,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4687,16 +4673,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4749,16 +4728,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4772,16 +4744,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4804,16 +4769,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5754,6 +5712,18 @@ components:
               description: The UPN of the user represented by these statistics.
           additionalProperties:
             type: object
+    microsoft.graph.report:
+      title: report
+      type: object
+      properties:
+        content:
+          type: string
+          description: Not yet documented
+          format: base64url
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Device Configuration profile History reports.
     microsoft.graph.archivedPrintJob:
       title: archivedPrintJob
       type: object

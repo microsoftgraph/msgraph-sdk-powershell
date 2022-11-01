@@ -8933,6 +8933,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.endpointType'
         hidden:
           type: boolean
+          description: Optional. Whether to hide the participant from the roster.
           nullable: true
         identity:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -8942,6 +8943,7 @@ components:
           nullable: true
         removeFromDefaultAudioRoutingGroup:
           type: boolean
+          description: Optional. Whether to remove them from the main mixer.
           nullable: true
         replacesCallId:
           type: string

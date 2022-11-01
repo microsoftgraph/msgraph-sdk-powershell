@@ -6344,28 +6344,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - identity.conditionalAccessRoot
-      summary: Create new navigation property to templates for identity
-      operationId: identity.conditionalAccess_CreateTemplates
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/templates/{conditionalAccessTemplate-id}':
     get:
       tags:
@@ -6417,59 +6395,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - identity.conditionalAccessRoot
-      summary: Update the navigation property templates in identity
-      operationId: identity.conditionalAccess_UpdateTemplates
-      parameters:
-        - name: conditionalAccessTemplate-id
-          in: path
-          description: 'key: id of conditionalAccessTemplate'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: conditionalAccessTemplate
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - identity.conditionalAccessRoot
-      summary: Delete navigation property templates for identity
-      operationId: identity.conditionalAccess_DeleteTemplates
-      parameters:
-        - name: conditionalAccessTemplate-id
-          in: path
-          description: 'key: id of conditionalAccessTemplate'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: conditionalAccessTemplate
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34011,8 +33936,6 @@ components:
       title: dlpEvaluationInput
       type: object
       properties:
-        accessScope:
-          $ref: '#/components/schemas/microsoft.graph.accessScope'
         currentLabel:
           $ref: '#/components/schemas/microsoft.graph.currentLabel'
         discoveredSensitiveTypes:
@@ -37093,12 +37016,6 @@ components:
         - fixedDataVolume
         - removableDataVolume
         - unknownFutureValue
-      type: string
-    microsoft.graph.accessScope:
-      title: accessScope
-      enum:
-        - inOrganization
-        - notInOrganization
       type: string
     microsoft.graph.jobResponseBase:
       allOf:

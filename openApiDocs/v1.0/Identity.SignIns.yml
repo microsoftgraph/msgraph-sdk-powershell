@@ -12264,8 +12264,11 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: Get methods from users
-      description: Represents all authentication methods registered to a user.
+      summary: List methods
+      description: Retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0
       operationId: users.authentication_ListMethods
       parameters:
         - name: user-id
