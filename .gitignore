@@ -45,7 +45,7 @@ Generated\ Files/
 
 # NUnit
 *.VisualState.xml
-TestResult.xml
+*.TestResult.xml
 nunit-*.xml
 Nuget.config
 
