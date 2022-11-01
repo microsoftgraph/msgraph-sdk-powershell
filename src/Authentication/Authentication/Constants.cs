@@ -18,6 +18,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal const string AppSecretCredentialParameterSet = nameof(AppSecretCredentialParameterSet);
         internal const string AccessTokenParameterSet = nameof(AccessTokenParameterSet);
         internal const string IdentityParameterSet = nameof(IdentityParameterSet);
+        internal const string EnvironmentVariableParameterSet = nameof(EnvironmentVariableParameterSet);
         internal static readonly string ContextSettingsPath = Path.Combine(Core.Constants.GraphDirectoryPath, "mg.context.json");
 
         public static class HelpMessages
@@ -35,6 +36,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             public const string UseDeviceCode = "Use device code authentication instead of a browser control.";
             public const string ClientTimeout = "Sets the HTTP client timeout in seconds.";
             public const string Identity = "Login using a Managed Identity.";
+            public const string EnvironmentVariable = "Allows for authentication using environment variables configured on the host machine. See https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/identity/Azure.Identity#environment-variables.";
             public const string ManagedIdentityClientId = "The client id to authenticate for a user assigned managed identity. For more information on user assigned managed identities see: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#how-a-user-assigned-managed-identity-works-with-an-azure-vmId. To use the SystemAssigned identity, leave this field blank.";
         }
     }

@@ -45,11 +45,26 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         return await GetClientSecretCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.ManagedIdentity:
                     return await GetManagedIdentityCredentialAsync(authContext).ConfigureAwait(false);
+                case AuthenticationType.EnvironmentVariable:
+                    return await GetEnvironmentCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.UserProvidedAccessToken:
                     return new UserProvidedTokenCredential();
                 default:
                     throw new NotSupportedException($"{authContext.AuthType} is not supported.");
             }
+        }
+
+        private static async Task<TokenCredential> GetEnvironmentCredentialAsync(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var tokenCredentialOptions = new TokenCredentialOptions
+            {
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext))
+            };
+            var environmentCredential = new EnvironmentCredential(tokenCredentialOptions);
+            return await Task.FromResult(environmentCredential).ConfigureAwait(false);
         }
 
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
@@ -237,6 +252,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             switch (authContext.AuthType)
             {
                 case AuthenticationType.AppOnly:
+                case AuthenticationType.EnvironmentVariable:
                     return new[] { $"{GraphSession.Instance.Environment?.GraphEndpoint ?? Constants.DefaultGraphEndpoint}/.default" };
                 case AuthenticationType.ManagedIdentity:
                     return new[] { GraphSession.Instance.Environment.GraphEndpoint };
