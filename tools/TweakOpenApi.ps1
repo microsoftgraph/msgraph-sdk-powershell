@@ -32,6 +32,13 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
             Write-Debug "$_ -> $operationId".Trim()
             return $operationId
         }
+
+        if ($_.contains("x-ms-navigationProperty: true")) {
+            # Mark navigation properties as readOnly.
+            $navigationPropertyExtension = ($_ -replace "x-ms-navigationProperty", "readOnly")
+            $modified = $true
+            return $navigationPropertyExtension
+        }
         return $_
     }
     if ($modified) { $updatedContent | Out-File $filePath -Force }
