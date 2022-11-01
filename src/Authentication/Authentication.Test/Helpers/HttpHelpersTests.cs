@@ -4,13 +4,15 @@
 namespace Microsoft.Graph.Authentication.Test.Helpers
 {
     using System;
+    using System.Collections.Generic;
+    using System.Management.Automation;
     using System.Net.Http;
+    using System.Threading.Tasks;
     using Microsoft.Graph.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Models;
     using Xunit;
-
     public class HttpHelpersTests
     {
         [Fact]
@@ -184,5 +186,30 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // reset static instance.
             GraphSession.Reset();
         }
+
+        [Fact]
+        public async void GetGraphHttpClientShouldBeThreadSafeAsync()
+        {
+            GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.RequestContext = new RequestContext();
+            var authContext = new AuthContext
+            {
+                AuthType = AuthenticationType.UserProvidedAccessToken,
+                ContextScope = ContextScope.Process,
+                PSHostVersion = new Version("7.2.7")
+            };
+
+            var tasks = new List<Task<HttpClient>>();
+            for (int i = 0; i < 100; i++)
+            {
+                tasks.Add(Task.Factory.StartNew(() => HttpHelpers.GetGraphHttpClient(authContext)));
+            }
+            var exception = await Record.ExceptionAsync(() => Task.WhenAll(tasks));
+            Assert.Null(exception);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
     }
 }

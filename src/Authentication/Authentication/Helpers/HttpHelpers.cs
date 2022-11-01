@@ -11,7 +11,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using System.Security.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Handlers;
     using System.Management.Automation;
-    using System;
     using Microsoft.Graph.PowerShell.Authentication.Core.Interfaces;
 
     /// <summary>
@@ -54,16 +53,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
         }
 
-        public static HttpClient GetGraphHttpClient(InvocationInfo invocationInfo, IAuthContext authContext = null)
-        {
-            authContext = authContext ?? GraphSession.Instance.AuthContext;
-            if (authContext is null) { throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext); }
-            var httpClient = GetGraphHttpClient(authContext);
-            var requestUserAgent = new RequestUserAgent(authContext.PSHostVersion, invocationInfo);
-            ReplaceSDKHeader(httpClient, HttpKnownHeaderNames.UserAgent, requestUserAgent.UserAgent);
-            return httpClient;
-        }
-
         /// <summary>
         /// Creates a pre-configured Microsoft Graph <see cref="HttpClient"/>.
         /// </summary>
@@ -81,6 +70,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
             var newHttpClient = GetGraphHttpClient(authProvider, GraphSession.Instance.RequestContext);
+            var requestUserAgent = new RequestUserAgent(authContext.PSHostVersion, null);
+            ReplaceSDKHeader(newHttpClient, HttpKnownHeaderNames.UserAgent, requestUserAgent.UserAgent);
             GraphSession.Instance.GraphHttpClient = newHttpClient;
             return newHttpClient;
         }
