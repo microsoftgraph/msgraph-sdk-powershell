@@ -2994,7 +2994,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
               description: The list of assignments for this Role Scope Tag.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Role Scope Tag
@@ -3247,19 +3247,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
               description: The metric values for the user experience analytics Manufacturer regression.
-              x-ms-navigationProperty: true
+              readOnly: true
             modelRegression:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
               description: The metric values for the user experience analytics model regression.
-              x-ms-navigationProperty: true
+              readOnly: true
             operatingSystemRegression:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
               description: The metric values for the user experience analytics operating system regression.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: The user experience analytics Regression Summary.

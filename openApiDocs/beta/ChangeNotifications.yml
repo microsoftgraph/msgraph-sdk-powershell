@@ -46,7 +46,7 @@ paths:
                 - resource
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.subscriptionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -71,7 +71,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.subscription'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created entity
           content:
             application/json:
@@ -127,7 +127,7 @@ paths:
                 - resource
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -165,12 +165,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.subscription'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.subscription'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

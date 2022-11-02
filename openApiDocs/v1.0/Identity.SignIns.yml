@@ -75,7 +75,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.dataPolicyOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -96,7 +96,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created entity
           content:
             application/json:
@@ -155,7 +155,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -186,12 +186,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -263,7 +259,7 @@ paths:
                 - conditionalAccess
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -296,12 +292,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityContainer'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identityContainer'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -368,7 +360,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.identityApiConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -393,7 +385,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -446,7 +438,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -480,12 +472,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -551,7 +539,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '200':
           description: Success
           content:
             application/json:
@@ -631,7 +619,7 @@ paths:
                 - userFlowIdentityProviders
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.b2xIdentityUserFlowCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -656,7 +644,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -717,7 +705,7 @@ paths:
                 - userFlowIdentityProviders
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -765,12 +753,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -874,14 +858,14 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.identityProviderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000-07:00'
-        date: '2021-08-24T00:00:00.0000000-07:00'
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-pageable:
@@ -941,7 +925,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -951,8 +935,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000-07:00'
-        date: '2021-08-24T00:00:00.0000000-07:00'
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -1028,7 +1012,7 @@ paths:
                 - overridesPages
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.userFlowLanguageConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1058,7 +1042,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -1122,7 +1106,7 @@ paths:
                 - overridesPages
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1172,12 +1156,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1282,7 +1262,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1320,7 +1300,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -1386,7 +1366,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1433,12 +1413,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1516,7 +1492,7 @@ paths:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
       responses:
-        2XX:
+        '200':
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -1640,7 +1616,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1678,7 +1654,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -1744,7 +1720,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1791,12 +1767,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1877,7 +1849,7 @@ paths:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
       responses:
-        2XX:
+        '200':
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -2010,7 +1982,7 @@ paths:
                 - userAttribute
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2044,7 +2016,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -2109,7 +2081,7 @@ paths:
                 - userAttribute
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2154,12 +2126,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2250,7 +2218,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2275,7 +2243,7 @@ paths:
             type: string
           x-ms-docs-key-type: b2xIdentityUserFlow
       responses:
-        2XX:
+        '200':
           description: Success
           content:
             application/json:
@@ -2382,7 +2350,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2468,7 +2436,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2539,7 +2507,7 @@ paths:
                 - templates
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2570,12 +2538,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2660,7 +2624,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.authenticationContextClassReferenceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2681,7 +2645,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -2734,7 +2698,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2765,12 +2729,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2863,7 +2823,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.namedLocationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2888,7 +2848,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.namedLocation'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -2941,7 +2901,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2972,12 +2932,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.namedLocation'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.namedLocation'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3085,7 +3041,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.conditionalAccessPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3110,7 +3066,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -3168,7 +3124,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -3199,12 +3155,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3300,7 +3252,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.conditionalAccessTemplateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3321,7 +3273,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -3375,7 +3327,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -3406,12 +3358,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3498,7 +3446,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3523,7 +3471,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -3573,7 +3521,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -3604,12 +3552,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3652,7 +3596,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        2XX:
+        '200':
           description: Success
           content:
             application/json:
@@ -3741,7 +3685,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3766,7 +3710,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -3820,7 +3764,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -3851,12 +3795,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3921,7 +3861,7 @@ paths:
                 - riskyUsers
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -3948,12 +3888,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProtectionRoot'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identityProtectionRoot'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4068,7 +4004,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.riskDetectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4089,7 +4025,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskDetection'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -4158,7 +4094,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -4189,12 +4125,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskDetection'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.riskDetection'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4304,7 +4236,7 @@ paths:
                 - history
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.riskyUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4325,7 +4257,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyUser'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -4385,7 +4317,7 @@ paths:
                 - history
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -4421,12 +4353,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyUser'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.riskyUser'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4553,7 +4481,7 @@ paths:
                 - history
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.riskyUserHistoryItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4583,7 +4511,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -4654,7 +4582,7 @@ paths:
                 - history
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -4699,12 +4627,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4870,14 +4794,14 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.identityProviderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000-07:00'
-        date: '2021-08-24T00:00:00.0000000-07:00'
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-pageable:
@@ -4897,7 +4821,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProvider'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created entity
           content:
             application/json:
@@ -4907,8 +4831,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000-07:00'
-        date: '2021-08-24T00:00:00.0000000-07:00'
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -4960,7 +4884,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -4970,8 +4894,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000-07:00'
-        date: '2021-08-24T00:00:00.0000000-07:00'
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -5001,18 +4925,14 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identityProvider'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identityProvider'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000-07:00'
-        date: '2021-08-24T00:00:00.0000000-07:00'
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -5047,8 +4967,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000-07:00'
-        date: '2021-08-24T00:00:00.0000000-07:00'
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -5065,7 +4985,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        2XX:
+        '200':
           description: Success
           content:
             application/json:
@@ -5086,8 +5006,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000-07:00'
-        date: '2021-08-24T00:00:00.0000000-07:00'
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: function
@@ -5130,7 +5050,7 @@ paths:
                 - threatAssessmentRequests
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -5157,12 +5077,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.informationProtection'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5200,7 +5116,7 @@ paths:
                 - recoveryKeys
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -5278,7 +5194,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.bitlockerRecoveryKeyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5331,7 +5247,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -5417,7 +5333,7 @@ paths:
                 - results
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.threatAssessmentRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5442,7 +5358,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -5500,7 +5416,7 @@ paths:
                 - results
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -5536,12 +5452,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5639,7 +5551,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.threatAssessmentResultCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5669,7 +5581,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -5730,7 +5642,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -5769,12 +5681,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5891,7 +5799,7 @@ paths:
                 - invitedUser
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.invitationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5916,7 +5824,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.invitation'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created entity
           content:
             application/json:
@@ -5976,7 +5884,7 @@ paths:
                 - invitedUser
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -6012,12 +5920,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.invitation'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.invitation'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6253,7 +6157,7 @@ paths:
                 - todo
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -6516,7 +6420,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.oAuth2PermissionGrantCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6541,7 +6445,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created entity
           content:
             application/json:
@@ -6599,7 +6503,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -6634,12 +6538,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6726,7 +6626,7 @@ paths:
                 - scope desc
               type: string
       responses:
-        2XX:
+        '200':
           description: Success
           content:
             application/json:
@@ -6817,7 +6717,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.certificateBasedAuthConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6875,7 +6775,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -6948,7 +6848,7 @@ paths:
                 - roleManagementPolicyAssignments
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -7003,12 +6903,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.policyRoot'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.policyRoot'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7083,7 +6979,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.activityBasedTimeoutPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7108,7 +7004,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -7165,7 +7061,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7201,12 +7097,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7278,7 +7170,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7304,12 +7196,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7370,7 +7258,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7396,12 +7284,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7467,7 +7351,7 @@ paths:
                 - authenticationMethodConfigurations
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7496,12 +7380,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7577,7 +7457,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.authenticationMethodConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7598,7 +7478,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -7649,7 +7529,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7680,12 +7560,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7758,7 +7634,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7784,12 +7660,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7882,7 +7754,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.claimsMappingPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7907,7 +7779,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -7964,7 +7836,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8000,12 +7872,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8110,7 +7978,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.conditionalAccessPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8131,7 +7999,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -8189,7 +8057,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8220,12 +8088,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8298,7 +8162,7 @@ paths:
                 - partners
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8329,12 +8193,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8398,7 +8258,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8427,12 +8287,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8542,7 +8398,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.crossTenantAccessPolicyConfigurationPartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8567,7 +8423,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -8623,7 +8479,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8654,12 +8510,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8760,7 +8612,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.featureRolloutPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8785,7 +8637,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -8842,7 +8694,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8878,12 +8730,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8975,7 +8823,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9005,7 +8853,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -9093,7 +8941,7 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9157,7 +9005,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '200':
           description: Success
           content:
             application/json:
@@ -9219,7 +9067,7 @@ paths:
                 type: object
         required: true
       responses:
-        2XX:
+        '200':
           description: Success
           content:
             application/json:
@@ -9362,7 +9210,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.homeRealmDiscoveryPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9387,7 +9235,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -9444,7 +9292,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -9480,12 +9328,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9555,7 +9399,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -9581,12 +9425,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9675,7 +9515,7 @@ paths:
                 - includes
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.permissionGrantPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9700,7 +9540,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -9757,7 +9597,7 @@ paths:
                 - includes
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -9797,12 +9637,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9918,7 +9754,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.permissionGrantConditionSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9952,7 +9788,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -10018,7 +9854,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -10057,12 +9893,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10186,7 +10018,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.permissionGrantConditionSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10220,7 +10052,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -10286,7 +10118,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -10325,12 +10157,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10447,7 +10275,7 @@ paths:
                 - rules
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.unifiedRoleManagementPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10468,7 +10296,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -10529,7 +10357,7 @@ paths:
                 - rules
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -10569,12 +10397,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10666,7 +10490,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.unifiedRoleManagementPolicyRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10696,7 +10520,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -10755,7 +10579,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -10794,12 +10618,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10902,7 +10722,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.unifiedRoleManagementPolicyRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10932,7 +10752,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -10991,7 +10811,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11030,12 +10850,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11141,7 +10957,7 @@ paths:
                 - policy
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.unifiedRoleManagementPolicyAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11162,7 +10978,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -11218,7 +11034,7 @@ paths:
                 - policy
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11254,12 +11070,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11341,7 +11153,7 @@ paths:
                 - rules
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11430,7 +11242,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.tokenIssuancePolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11455,7 +11267,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -11512,7 +11324,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11548,12 +11360,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11654,7 +11462,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.tokenLifetimePolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11679,7 +11487,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -11736,7 +11544,7 @@ paths:
                 - appliesTo
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11772,12 +11580,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11868,7 +11672,7 @@ paths:
                 - windowsHelloForBusinessMethods
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11940,12 +11744,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authentication'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.authentication'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12040,7 +11840,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.emailAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12074,7 +11874,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -12133,7 +11933,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -12172,12 +11972,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12292,7 +12088,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.fido2AuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12322,7 +12118,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -12386,7 +12182,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -12425,12 +12221,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12472,8 +12264,11 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: Get methods from users
-      description: Represents all authentication methods registered to a user.
+      summary: List methods
+      description: Retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0
       operationId: users.authentication_ListMethods
       parameters:
         - name: user-id
@@ -12527,7 +12322,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.authenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12557,7 +12352,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -12615,7 +12410,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -12657,12 +12452,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12742,7 +12533,7 @@ paths:
                 - device
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.microsoftAuthenticatorAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12772,7 +12563,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -12836,7 +12627,7 @@ paths:
                 - device
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -12881,12 +12672,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13003,7 +12790,7 @@ paths:
                 - extensions
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -13078,12 +12865,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.device'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13188,7 +12971,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13226,7 +13009,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -13292,7 +13075,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -13339,12 +13122,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13473,7 +13252,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13549,7 +13328,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -13641,7 +13420,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13757,7 +13536,7 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13878,7 +13657,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13954,7 +13733,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -14046,7 +13825,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14122,7 +13901,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -14205,7 +13984,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.longRunningOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14235,7 +14014,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -14298,7 +14077,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -14337,12 +14116,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14448,7 +14223,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.passwordAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14478,7 +14253,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -14538,7 +14313,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -14577,12 +14352,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14691,7 +14462,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.phoneAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14725,7 +14496,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -14786,7 +14557,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -14830,12 +14601,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14938,7 +14705,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.softwareOathAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14968,7 +14735,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -15027,7 +14794,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -15066,12 +14833,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15192,7 +14955,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.temporaryAccessPassAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15226,7 +14989,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -15291,7 +15054,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -15407,7 +15170,7 @@ paths:
                 - device
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.windowsHelloForBusinessAuthenticationMethodCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15437,7 +15200,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -15500,7 +15263,7 @@ paths:
                 - device
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -15545,12 +15308,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15667,7 +15426,7 @@ paths:
                 - extensions
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -15742,12 +15501,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.device'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15852,7 +15607,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15890,7 +15645,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -15956,7 +15711,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -16003,12 +15758,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16137,7 +15888,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16213,7 +15964,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -16305,7 +16056,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16421,7 +16172,7 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16542,7 +16293,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16618,7 +16369,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -16710,7 +16461,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16786,7 +16537,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -16840,24 +16591,24 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
               description: Represents entry point for API connectors.
-              x-ms-navigationProperty: true
+              readOnly: true
             b2xUserFlows:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
               description: Represents entry point for B2X/self-service sign-up identity userflows.
-              x-ms-navigationProperty: true
+              readOnly: true
             identityProviders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
-              x-ms-navigationProperty: true
+              readOnly: true
             userFlowAttributes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
               description: Represents entry point for identity userflow attributes.
-              x-ms-navigationProperty: true
+              readOnly: true
             conditionalAccess:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
           additionalProperties:
@@ -16893,24 +16644,24 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityProvider'
               description: The identity providers included in the user flow.
-              x-ms-navigationProperty: true
+              readOnly: true
             languages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
               description: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-              x-ms-navigationProperty: true
+              readOnly: true
             userAttributeAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
               description: The user attribute assignments included in the user flow.
-              x-ms-navigationProperty: true
+              readOnly: true
             userFlowIdentityProviders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.identityProvider:
@@ -16955,13 +16706,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
               description: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-              x-ms-navigationProperty: true
+              readOnly: true
             overridesPages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
               description: 'Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.userFlowLanguagePage:
@@ -17041,25 +16792,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
               description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
-              x-ms-navigationProperty: true
+              readOnly: true
             namedLocations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.namedLocation'
               description: Read-only. Nullable. Returns a collection of the specified named locations.
-              x-ms-navigationProperty: true
+              readOnly: true
             policies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
               description: Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
-              x-ms-navigationProperty: true
+              readOnly: true
             templates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
               description: Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.authenticationContextClassReference:
@@ -17178,13 +16929,13 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.riskDetection'
           description: Risk detection in Azure AD Identity Protection and the associated information about the detection.
-          x-ms-navigationProperty: true
+          readOnly: true
         riskyUsers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskyUser'
           description: Users that are flagged as at-risk by Azure AD Identity Protection.
-          x-ms-navigationProperty: true
+          readOnly: true
       additionalProperties:
         type: object
     microsoft.graph.riskDetection:
@@ -17302,7 +17053,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
               description: The activity related to user risk level change
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.riskyUserHistoryItem:
@@ -17335,7 +17086,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.bitlocker:
@@ -17349,7 +17100,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
               description: The recovery keys associated with the bitlocker entity.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.bitlockerRecoveryKey:
@@ -17403,7 +17154,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
               description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.threatAssessmentResult:
@@ -17793,25 +17544,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: Represents the app roles a user has been granted for an application. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             createdObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that were created by the user. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             directReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             licenseDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               description: A collection of this user's license details. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -17819,41 +17570,41 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             oauth2PermissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
-              x-ms-navigationProperty: true
+              readOnly: true
             ownedDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             registeredDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             scopedRoleMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
-              x-ms-navigationProperty: true
+              readOnly: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             calendarGroups:
@@ -17861,37 +17612,37 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarGroup'
               description: The user's calendar groups. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             calendars:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
               description: The user's calendars. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The calendar view for the calendar. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             contactFolders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
               description: The user's contacts folders. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
               description: The user's contacts. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             inferenceClassification:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
             mailFolders:
@@ -17899,13 +17650,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The user's mail folders. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The messages in a mailbox or folder. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             outlook:
               $ref: '#/components/schemas/microsoft.graph.outlookUser'
             people:
@@ -17913,7 +17664,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.person'
               description: People that are relevant to the user. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             drives:
@@ -17921,42 +17672,42 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.drive'
               description: A collection of drives available for this user. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             followedSites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.site'
-              x-ms-navigationProperty: true
+              readOnly: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the user. Read-only. Supports $expand. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             agreementAcceptances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
               description: The user's terms of use acceptance statuses. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             managedDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
               description: The managed devices associated with the user.
-              x-ms-navigationProperty: true
+              readOnly: true
             managedAppRegistrations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
               description: Zero or more managed app registrations that belong to the user.
-              x-ms-navigationProperty: true
+              readOnly: true
             deviceManagementTroubleshootingEvents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
               description: The list of troubleshooting events for this user.
-              x-ms-navigationProperty: true
+              readOnly: true
             planner:
               $ref: '#/components/schemas/microsoft.graph.plannerUser'
             insights:
@@ -17971,18 +17722,18 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              x-ms-navigationProperty: true
+              readOnly: true
             activities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
               description: The user's activities across devices. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             onlineMeetings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-              x-ms-navigationProperty: true
+              readOnly: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
             authentication:
@@ -17991,12 +17742,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
-              x-ms-navigationProperty: true
+              readOnly: true
             joinedTeams:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.team'
-              x-ms-navigationProperty: true
+              readOnly: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
@@ -18057,7 +17808,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
               description: The policy that controls the idle time out for web sessions for applications.
-              x-ms-navigationProperty: true
+              readOnly: true
             authorizationPolicy:
               $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
             claimsMappingPolicies:
@@ -18065,7 +17816,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: 'The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.'
-              x-ms-navigationProperty: true
+              readOnly: true
             crossTenantAccessPolicy:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
             homeRealmDiscoveryPolicies:
@@ -18073,31 +17824,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
               description: The policy to control Azure AD authentication behavior for federated users.
-              x-ms-navigationProperty: true
+              readOnly: true
             permissionGrantPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
               description: The policy that specifies the conditions under which consent can be granted.
-              x-ms-navigationProperty: true
+              readOnly: true
             tokenIssuancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
               description: The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-              x-ms-navigationProperty: true
+              readOnly: true
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
               description: 'The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.'
-              x-ms-navigationProperty: true
+              readOnly: true
             featureRolloutPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
               description: The feature rollout policy associated with a directory object.
-              x-ms-navigationProperty: true
+              readOnly: true
             adminConsentRequestPolicy:
               $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
             conditionalAccessPolicies:
@@ -18105,7 +17856,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
               description: The custom rules that define an access scenario.
-              x-ms-navigationProperty: true
+              readOnly: true
             identitySecurityDefaultsEnforcementPolicy:
               $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
             roleManagementPolicies:
@@ -18113,13 +17864,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
               description: Specifies the various policies associated with scopes and roles.
-              x-ms-navigationProperty: true
+              readOnly: true
             roleManagementPolicyAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
               description: The assignment of a role management policy to a role definition object.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.activityBasedTimeoutPolicy:
@@ -18218,7 +17969,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
               description: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethodConfiguration:
@@ -18282,7 +18033,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationPartner'
               description: Defines partner-specific configurations for external Azure Active Directory organizations.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.crossTenantAccessPolicyConfigurationDefault:
@@ -18356,7 +18107,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:
@@ -18429,13 +18180,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
               description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
-              x-ms-navigationProperty: true
+              readOnly: true
             includes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
               description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.permissionGrantConditionSet:
@@ -18519,13 +18270,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
               description: 'The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.'
-              x-ms-navigationProperty: true
+              readOnly: true
             rules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
               description: The collection of rules like approval rules and expiration rules. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleManagementPolicyRule:
@@ -18586,61 +18337,61 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
               description: The email address registered to a user for authentication.
-              x-ms-navigationProperty: true
+              readOnly: true
             fido2Methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
               description: Represents the FIDO2 security keys registered to a user for authentication.
-              x-ms-navigationProperty: true
+              readOnly: true
             methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
               description: Represents all authentication methods registered to a user.
-              x-ms-navigationProperty: true
+              readOnly: true
             microsoftAuthenticatorMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
               description: The details of the Microsoft Authenticator app registered to a user for authentication.
-              x-ms-navigationProperty: true
+              readOnly: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
               description: Represents the status of a long-running operation.
-              x-ms-navigationProperty: true
+              readOnly: true
             passwordMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
               description: 'Represents the password that''s registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.'
-              x-ms-navigationProperty: true
+              readOnly: true
             phoneMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               description: The phone numbers registered to a user for authentication.
-              x-ms-navigationProperty: true
+              readOnly: true
             softwareOathMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               description: The software OATH TOTP applications registered to a user for authentication.
-              x-ms-navigationProperty: true
+              readOnly: true
             temporaryAccessPassMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               description: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
-              x-ms-navigationProperty: true
+              readOnly: true
             windowsHelloForBusinessMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
               description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.emailAuthenticationMethod:
@@ -18823,31 +18574,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-              x-ms-navigationProperty: true
+              readOnly: true
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-              x-ms-navigationProperty: true
+              readOnly: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the device. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -19801,31 +19552,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
               description: The permissions of the users with whom the calendar is shared.
-              x-ms-navigationProperty: true
+              readOnly: true
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The calendar view for the calendar. Navigation property. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The events in the calendar. Navigation property. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.calendarGroup:
@@ -19853,7 +19604,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
               description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.event:
@@ -19975,7 +19726,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             extensions:
@@ -19983,25 +19734,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the event. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.contactFolder:
@@ -20023,25 +19774,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
               description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
               description: The contacts in the folder. Navigation property. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.contact:
@@ -20175,13 +19926,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the contact. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             singleValueExtendedProperties:
@@ -20189,7 +19940,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.inferenceClassification:
@@ -20203,7 +19954,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
               description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.mailFolder:
@@ -20250,31 +20001,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The collection of child folders in the mailFolder.
-              x-ms-navigationProperty: true
+              readOnly: true
             messageRules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
               description: The collection of rules that apply to the user's Inbox folder.
-              x-ms-navigationProperty: true
+              readOnly: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The collection of messages in the mailFolder.
-              x-ms-navigationProperty: true
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.message:
@@ -20375,25 +20126,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: The fileAttachment and itemAttachment attachments for the message.
-              x-ms-navigationProperty: true
+              readOnly: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the message. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the message. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the message. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.outlookUser:
@@ -20407,7 +20158,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookCategory'
               description: A list of categories defined for the user.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.person:
@@ -20519,19 +20270,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
-              x-ms-navigationProperty: true
+              readOnly: true
             following:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: The list of items the user is following. Only in OneDrive for Business.
-              x-ms-navigationProperty: true
+              readOnly: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: All items contained in the drive. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             list:
               $ref: '#/components/schemas/microsoft.graph.list'
             root:
@@ -20541,7 +20292,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: Collection of common folders available in OneDrive. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.site:
@@ -20569,13 +20320,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions reusable across lists under this site.
-              x-ms-navigationProperty: true
+              readOnly: true
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
               description: The collection of content types defined for this site.
-              x-ms-navigationProperty: true
+              readOnly: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             drives:
@@ -20583,42 +20334,42 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.drive'
               description: The collection of drives (document libraries) under this site.
-              x-ms-navigationProperty: true
+              readOnly: true
             externalColumns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              x-ms-navigationProperty: true
+              readOnly: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseItem'
               description: Used to address any item contained in this site. This collection can't be enumerated.
-              x-ms-navigationProperty: true
+              readOnly: true
             lists:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.list'
               description: The collection of lists under this site.
-              x-ms-navigationProperty: true
+              readOnly: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the site.
-              x-ms-navigationProperty: true
+              readOnly: true
             permissions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The permissions associated with the site. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             sites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.site'
               description: The collection of the sub-sites under this site.
-              x-ms-navigationProperty: true
+              readOnly: true
             termStore:
               $ref: '#/components/schemas/microsoft.graph.termStore.store'
             termStores:
@@ -20626,7 +20377,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.store'
               description: The collection of termStores under this site.
-              x-ms-navigationProperty: true
+              readOnly: true
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
           additionalProperties:
@@ -20941,13 +20692,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
               description: Device compliance policy states for this device.
-              x-ms-navigationProperty: true
+              readOnly: true
             deviceConfigurationStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
               description: Device configuration states for this device.
-              x-ms-navigationProperty: true
+              readOnly: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
             users:
@@ -20955,7 +20706,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: The primary users associated with the managed device.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Devices that are managed or pre-enrolled through Intune
@@ -21019,19 +20770,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
               description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
-              x-ms-navigationProperty: true
+              readOnly: true
             intendedPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
               description: Zero or more policies admin intended for the app as of now.
-              x-ms-navigationProperty: true
+              readOnly: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
               description: Zero or more long running operations triggered on the app registration.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
@@ -21064,13 +20815,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
-              x-ms-navigationProperty: true
+              readOnly: true
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. Returns the plannerPlans shared with the user.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.officeGraphInsights:
@@ -21084,19 +20835,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
               description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
-              x-ms-navigationProperty: true
+              readOnly: true
             trending:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
               description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
-              x-ms-navigationProperty: true
+              readOnly: true
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
               description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.userSettings:
@@ -21124,37 +20875,37 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
               description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
               description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             pages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
               description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             resources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
               description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             sectionGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
               description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.profilePhoto:
@@ -21239,7 +20990,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
               description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.onlineMeeting:
@@ -21331,7 +21082,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
               description: The attendance reports of an online meeting. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -21391,7 +21142,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
               description: A collection of all the apps in the chat. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             lastMessagePreview:
               $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
             members:
@@ -21399,25 +21150,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of all the members in the chat. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             pinnedMessages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
               description: A collection of all the pinned messages in the chat. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             tabs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -21479,13 +21230,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
               description: List of channels either hosted in or shared with the team (incoming channels).
-              x-ms-navigationProperty: true
+              readOnly: true
             channels:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
               description: The collection of channels and messages associated with the team.
-              x-ms-navigationProperty: true
+              readOnly: true
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
             incomingChannels:
@@ -21493,25 +21244,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
               description: List of channels shared with the team.
-              x-ms-navigationProperty: true
+              readOnly: true
             installedApps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
               description: The apps installed in this team.
-              x-ms-navigationProperty: true
+              readOnly: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: Members and owners of the team.
-              x-ms-navigationProperty: true
+              readOnly: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
               description: The async operations that ran or are running on this team.
-              x-ms-navigationProperty: true
+              readOnly: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
@@ -21521,7 +21272,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkTag'
               description: The tags associated with the team.
-              x-ms-navigationProperty: true
+              readOnly: true
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
             schedule:
@@ -21539,13 +21290,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
               description: The list of associatedTeamInfo objects that a user is associated with.
-              x-ms-navigationProperty: true
+              readOnly: true
             installedApps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
               description: The apps installed in the personal scope of this user.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.todo:
@@ -21559,7 +21310,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.certificateAuthority:
@@ -21608,7 +21359,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.accessReviewReviewerScope:
@@ -21791,7 +21542,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.directoryObject'
-          x-ms-navigationProperty: true
+          readOnly: true
       additionalProperties:
         type: object
     microsoft.graph.attestationLevel:
@@ -23514,7 +23265,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             listItem:
               $ref: '#/components/schemas/microsoft.graph.listItem'
             permissions:
@@ -23522,25 +23273,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             subscriptions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
               description: The set of subscriptions on the item. Only supported on the root of a drive.
-              x-ms-navigationProperty: true
+              readOnly: true
             thumbnails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
               description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
               description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.list:
@@ -23564,13 +23315,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of field definitions for this list.
-              x-ms-navigationProperty: true
+              readOnly: true
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
               description: The collection of content types present in this list.
-              x-ms-navigationProperty: true
+              readOnly: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             items:
@@ -23578,19 +23329,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
               description: All items contained in the list.
-              x-ms-navigationProperty: true
+              readOnly: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the list.
-              x-ms-navigationProperty: true
+              readOnly: true
             subscriptions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
               description: The set of subscriptions on the list.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.publicError:
@@ -23651,7 +23402,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
-              x-ms-navigationProperty: true
+              readOnly: true
             lastSevenDays:
               $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
           additionalProperties:
@@ -23817,25 +23568,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
               description: The collection of content types that are ancestors of this content type.
-              x-ms-navigationProperty: true
+              readOnly: true
             columnLinks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnLink'
               description: The collection of columns that are required by this content type.
-              x-ms-navigationProperty: true
+              readOnly: true
             columnPositions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: Column order information in a content type.
-              x-ms-navigationProperty: true
+              readOnly: true
             columns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions for this contentType.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.richLongRunningOperation:
@@ -23929,13 +23680,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.group'
               description: Collection of all groups available in the term store.
-              x-ms-navigationProperty: true
+              readOnly: true
             sets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.set'
               description: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -24685,7 +24436,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
               description: Read-only. Nullable. Collection of buckets in the plan.
-              x-ms-navigationProperty: true
+              readOnly: true
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
@@ -24693,7 +24444,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. Collection of tasks in the plan.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.plannerTask:
@@ -24913,13 +24664,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
               description: The section groups in the notebook. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in the notebook. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.onenoteOperation:
@@ -25040,13 +24791,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
               description: The section groups in the section. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
               description: The sections in the section group. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.onenoteSection:
@@ -25070,7 +24821,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
               description: The collection of pages in the section.  Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             parentNotebook:
               $ref: '#/components/schemas/microsoft.graph.notebook'
             parentSectionGroup:
@@ -25311,7 +25062,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
               description: List of attendance records of an attendance report. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.chatType:
@@ -25507,13 +25258,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
               description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
-              x-ms-navigationProperty: true
+              readOnly: true
             replies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: Replies for a specified message. Supports $expand for channel messages.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.pinnedChatMessageInfo:
@@ -25724,25 +25475,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of membership records associated with the channel.
-              x-ms-navigationProperty: true
+              readOnly: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the channel. A navigation property. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             sharedWithTeams:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
               description: A collection of teams with which a channel is shared.
-              x-ms-navigationProperty: true
+              readOnly: true
             tabs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the channel. A navigation property.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.group:
@@ -25920,7 +25671,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
               description: Represents the app roles a group has been granted for an application. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -25928,55 +25679,55 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-              x-ms-navigationProperty: true
+              readOnly: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
-              x-ms-navigationProperty: true
+              readOnly: true
             membersWithLicenseErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: A list of group members with license errors from this group-based license assignment. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
-              x-ms-navigationProperty: true
+              readOnly: true
             permissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               description: The permission that has been granted for a group to a specific application. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             settings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupSetting'
               description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             transitiveMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The direct and transitive members of a group. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             acceptedSenders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-              x-ms-navigationProperty: true
+              readOnly: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             calendarView:
@@ -25984,31 +25735,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The calendar view for the calendar. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             conversations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversation'
               description: The group's conversations.
-              x-ms-navigationProperty: true
+              readOnly: true
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The group's calendar events.
-              x-ms-navigationProperty: true
+              readOnly: true
             rejectedSenders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-              x-ms-navigationProperty: true
+              readOnly: true
             threads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationThread'
               description: The group's conversation threads. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             drives:
@@ -26016,25 +25767,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.drive'
               description: The group's drives. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             sites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.site'
               description: The list of SharePoint sites in this group. Access the default site with /sites/root.
-              x-ms-navigationProperty: true
+              readOnly: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the group. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             groupLifecyclePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
               description: The collection of lifecycle policies for this group. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             planner:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
@@ -26046,7 +25797,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
               description: The profile photos owned by the group. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -26121,7 +25872,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkTagMember'
               description: Users assigned to the tag.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.teamsTemplate:
@@ -26181,51 +25932,51 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
-              x-ms-navigationProperty: true
+              readOnly: true
             openShiftChangeRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
-              x-ms-navigationProperty: true
+              readOnly: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
-              x-ms-navigationProperty: true
+              readOnly: true
             schedulingGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
               description: The logical grouping of users in the schedule (usually by role).
-              x-ms-navigationProperty: true
+              readOnly: true
             shifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shift'
               description: The shifts in the schedule.
-              x-ms-navigationProperty: true
+              readOnly: true
             swapShiftsChangeRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
-              x-ms-navigationProperty: true
+              readOnly: true
             timeOffReasons:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffReason'
               description: The set of reasons for a time off in the schedule.
-              x-ms-navigationProperty: true
+              readOnly: true
             timeOffRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
-              x-ms-navigationProperty: true
+              readOnly: true
             timesOff:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOff'
               description: The instances of times off in the schedule.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:
@@ -26268,13 +26019,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the task list. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethodsRegistrationCampaign:
@@ -27379,7 +27130,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookComment'
-              x-ms-navigationProperty: true
+              readOnly: true
             functions:
               $ref: '#/components/schemas/microsoft.graph.workbookFunctions'
             names:
@@ -27387,25 +27138,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookNamedItem'
               description: Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookOperation'
               description: 'The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.'
-              x-ms-navigationProperty: true
+              readOnly: true
             tables:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
               description: Represents a collection of tables associated with the workbook. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             worksheets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookWorksheet'
               description: Represents a collection of worksheets associated with the workbook. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.listItem:
@@ -27425,7 +27176,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
               description: Version information for a document set version created by a user.
-              x-ms-navigationProperty: true
+              readOnly: true
             driveItem:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
             fields:
@@ -27435,7 +27186,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.listItemVersion'
               description: The list of previous versions of the list item.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.subscription:
@@ -27632,7 +27383,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemActivity'
               description: Exposes the itemActivities represented in this itemActivityStat resource.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.booleanColumn:
@@ -27945,12 +27696,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-          x-ms-navigationProperty: true
+          readOnly: true
         welcomePageColumns:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-          x-ms-navigationProperty: true
+          readOnly: true
       additionalProperties:
         type: object
     microsoft.graph.documentSetContent:
@@ -28090,7 +27841,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.set'
               description: 'All sets under the group in a term [store].'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.termStore.set:
@@ -28124,7 +27875,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.term'
               description: 'Children terms of set in term [store].'
-              x-ms-navigationProperty: true
+              readOnly: true
             parentGroup:
               $ref: '#/components/schemas/microsoft.graph.termStore.group'
             relations:
@@ -28132,13 +27883,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.relation'
               description: Indicates which terms have been pinned or reused directly under the set.
-              x-ms-navigationProperty: true
+              readOnly: true
             terms:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.term'
               description: All the terms under the set.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.actionState:
@@ -28375,7 +28126,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. The collection of tasks in the bucket.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.plannerPlanDetails:
@@ -28861,7 +28612,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
               description: The details for each version of the app.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.teamsAppDefinition:
@@ -29088,7 +28839,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of team members who have access to the shared channel.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.assignedLabel:
@@ -29193,7 +28944,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationThread'
               description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.conversationThread:
@@ -29238,7 +28989,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.groupLifecyclePolicy:
@@ -29275,7 +29026,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans owned by the group.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.operationError:
@@ -29599,30 +29350,30 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachmentBase'
-              x-ms-navigationProperty: true
+              readOnly: true
             attachmentSessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachmentSession'
-              x-ms-navigationProperty: true
+              readOnly: true
             checklistItems:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checklistItem'
               description: A collection of checklistItems linked to a task.
-              x-ms-navigationProperty: true
+              readOnly: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the task. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             linkedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.excludeTarget:
@@ -29862,7 +29613,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -29962,13 +29713,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTableColumn'
               description: Represents a collection of all the columns in the table. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             rows:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTableRow'
               description: Represents a collection of all the rows in the table. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             sort:
               $ref: '#/components/schemas/microsoft.graph.workbookTableSort'
             worksheet:
@@ -29999,19 +29750,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChart'
               description: Returns collection of charts that are part of the worksheet. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             names:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookNamedItem'
               description: Returns collection of names that are associated with the worksheet. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             pivotTables:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookPivotTable'
               description: Collection of PivotTables that are part of the worksheet.
-              x-ms-navigationProperty: true
+              readOnly: true
             protection:
               $ref: '#/components/schemas/microsoft.graph.workbookWorksheetProtection'
             tables:
@@ -30019,7 +29770,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
               description: Collection of tables that are part of the worksheet. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.documentSetVersion:
@@ -30213,13 +29964,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.term'
               description: Children of current term.
-              x-ms-navigationProperty: true
+              readOnly: true
             relations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termStore.relation'
               description: To indicate which terms are related to the current term as either pinned or reused.
-              x-ms-navigationProperty: true
+              readOnly: true
             set:
               $ref: '#/components/schemas/microsoft.graph.termStore.set'
           additionalProperties:
@@ -30695,13 +30446,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             inReplyTo:
               $ref: '#/components/schemas/microsoft.graph.post'
             multiValueExtendedProperties:
@@ -30709,13 +30460,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.scheduleChangeRequest:
@@ -31085,7 +30836,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChartSeries'
               description: Represents either a single series or collection of series in the chart. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             title:
               $ref: '#/components/schemas/microsoft.graph.workbookChartTitle'
             worksheet:
@@ -31407,7 +31158,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChartPoint'
               description: Represents a collection of all points in the series. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.workbookChartTitle:
