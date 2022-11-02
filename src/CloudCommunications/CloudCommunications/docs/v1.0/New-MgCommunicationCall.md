@@ -783,10 +783,10 @@ BODYPARAMETER <IMicrosoftGraphCall>: call
   - `[State <String>]`: 
   - `[Subject <String>]`: The subject of the conversation.
   - `[Targets <IMicrosoftGraphInvitationParticipantInfo[]>]`: The targets of the call. Required information for creating peer to peer call.
-    - `[Hidden <Boolean?>]`: 
+    - `[Hidden <Boolean?>]`: Optional. Whether to hide the participant from the roster.
     - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[ParticipantId <String>]`: Optional. The ID of the target participant.
-    - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: 
+    - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: Optional. Whether to remove them from the main mixer.
     - `[ReplacesCallId <String>]`: Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
   - `[TenantId <String>]`: 
   - `[ToneInfo <IMicrosoftGraphToneInfo>]`: toneInfo
@@ -906,7 +906,7 @@ SOURCE <IMicrosoftGraphParticipantInfo>: participantInfo
   - `[Region <String>]`: The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
 
 TARGETS <IMicrosoftGraphInvitationParticipantInfo[]>: The targets of the call. Required information for creating peer to peer call.
-  - `[Hidden <Boolean?>]`: 
+  - `[Hidden <Boolean?>]`: Optional. Whether to hide the participant from the roster.
   - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -916,7 +916,7 @@ TARGETS <IMicrosoftGraphInvitationParticipantInfo[]>: The targets of the call. R
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[ParticipantId <String>]`: Optional. The ID of the target participant.
-  - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: 
+  - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: Optional. Whether to remove them from the main mixer.
   - `[ReplacesCallId <String>]`: Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 
 TONEINFO <IMicrosoftGraphToneInfo>: toneInfo

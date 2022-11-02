@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 27d98467-f5d4-48c9-b91d-6411248e8993
+Module Guid: d6ecf80d-99c3-45b9-9514-7133192bea45
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -801,7 +801,8 @@ Invoke function summary
 Invoke function summary
 
 ### [Move-MgEntitlementManagementAccessPackageToCatalog](Move-MgEntitlementManagementAccessPackageToCatalog.md)
-Invoke action moveToCatalog
+In Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
+The resources in the access package must be present in the target catalog.
 
 ### [New-MgAccessReview](New-MgAccessReview.md)
 In the Azure AD access reviews feature, create a new accessReview object.

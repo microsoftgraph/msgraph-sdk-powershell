@@ -4849,17 +4849,44 @@ BODYPARAMETER <IMicrosoftGraphPrint1>: print
       - `[IsRegistered <Boolean?>]`: Indicates whether the user has registered any authentication methods for self-service password reset.
       - `[UserDisplayName <String>]`: Provides the user name of the corresponding user.
       - `[UserPrincipalName <String>]`: Provides the user principal name of the corresponding user.
-    - `[DailyPrintUsageByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]`: 
+    - `[DailyPrintUsage <IMicrosoftGraphPrintUsage[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[BlackAndWhitePageCount <Int64?>]`: 
+      - `[ColorPageCount <Int64?>]`: 
       - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
       - `[CompletedColorJobCount <Int64?>]`: 
+      - `[CompletedJobCount <Int64?>]`: 
+      - `[DoubleSidedSheetCount <Int64?>]`: 
       - `[IncompleteJobCount <Int64?>]`: 
+      - `[MediaSheetCount <Int64?>]`: 
+      - `[PageCount <Int64?>]`: 
+      - `[SingleSidedSheetCount <Int64?>]`: 
+      - `[UsageDate <DateTime?>]`: 
+    - `[DailyPrintUsageByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]`: 
+      - `[BlackAndWhitePageCount <Int64?>]`: 
+      - `[ColorPageCount <Int64?>]`: 
+      - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
+      - `[CompletedColorJobCount <Int64?>]`: 
+      - `[CompletedJobCount <Int64?>]`: 
+      - `[DoubleSidedSheetCount <Int64?>]`: 
+      - `[IncompleteJobCount <Int64?>]`: 
+      - `[MediaSheetCount <Int64?>]`: 
+      - `[PageCount <Int64?>]`: 
+      - `[SingleSidedSheetCount <Int64?>]`: 
       - `[UsageDate <DateTime?>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[PrinterId <String>]`: 
     - `[DailyPrintUsageByUser <IMicrosoftGraphPrintUsageByUser[]>]`: 
+      - `[BlackAndWhitePageCount <Int64?>]`: 
+      - `[ColorPageCount <Int64?>]`: 
       - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
       - `[CompletedColorJobCount <Int64?>]`: 
+      - `[CompletedJobCount <Int64?>]`: 
+      - `[DoubleSidedSheetCount <Int64?>]`: 
       - `[IncompleteJobCount <Int64?>]`: 
+      - `[MediaSheetCount <Int64?>]`: 
+      - `[PageCount <Int64?>]`: 
+      - `[SingleSidedSheetCount <Int64?>]`: 
       - `[UsageDate <DateTime?>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[UserPrincipalName <String>]`: The UPN of the user represented by these statistics.
@@ -14022,17 +14049,44 @@ REPORTS <IMicrosoftGraphReportRoot>: reportRoot
     - `[IsRegistered <Boolean?>]`: Indicates whether the user has registered any authentication methods for self-service password reset.
     - `[UserDisplayName <String>]`: Provides the user name of the corresponding user.
     - `[UserPrincipalName <String>]`: Provides the user principal name of the corresponding user.
-  - `[DailyPrintUsageByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]`: 
+  - `[DailyPrintUsage <IMicrosoftGraphPrintUsage[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[BlackAndWhitePageCount <Int64?>]`: 
+    - `[ColorPageCount <Int64?>]`: 
     - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
     - `[CompletedColorJobCount <Int64?>]`: 
+    - `[CompletedJobCount <Int64?>]`: 
+    - `[DoubleSidedSheetCount <Int64?>]`: 
     - `[IncompleteJobCount <Int64?>]`: 
+    - `[MediaSheetCount <Int64?>]`: 
+    - `[PageCount <Int64?>]`: 
+    - `[SingleSidedSheetCount <Int64?>]`: 
+    - `[UsageDate <DateTime?>]`: 
+  - `[DailyPrintUsageByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]`: 
+    - `[BlackAndWhitePageCount <Int64?>]`: 
+    - `[ColorPageCount <Int64?>]`: 
+    - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
+    - `[CompletedColorJobCount <Int64?>]`: 
+    - `[CompletedJobCount <Int64?>]`: 
+    - `[DoubleSidedSheetCount <Int64?>]`: 
+    - `[IncompleteJobCount <Int64?>]`: 
+    - `[MediaSheetCount <Int64?>]`: 
+    - `[PageCount <Int64?>]`: 
+    - `[SingleSidedSheetCount <Int64?>]`: 
     - `[UsageDate <DateTime?>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[PrinterId <String>]`: 
   - `[DailyPrintUsageByUser <IMicrosoftGraphPrintUsageByUser[]>]`: 
+    - `[BlackAndWhitePageCount <Int64?>]`: 
+    - `[ColorPageCount <Int64?>]`: 
     - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
     - `[CompletedColorJobCount <Int64?>]`: 
+    - `[CompletedJobCount <Int64?>]`: 
+    - `[DoubleSidedSheetCount <Int64?>]`: 
     - `[IncompleteJobCount <Int64?>]`: 
+    - `[MediaSheetCount <Int64?>]`: 
+    - `[PageCount <Int64?>]`: 
+    - `[SingleSidedSheetCount <Int64?>]`: 
     - `[UsageDate <DateTime?>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[UserPrincipalName <String>]`: The UPN of the user represented by these statistics.
