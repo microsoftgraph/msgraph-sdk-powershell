@@ -105,7 +105,7 @@ paths:
                 - historyItems
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.userActivityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -135,7 +135,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -207,7 +207,7 @@ paths:
                 - historyItems
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -252,12 +252,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userActivity'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -387,7 +383,7 @@ paths:
                 - activity
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.activityHistoryItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -425,7 +421,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -500,7 +496,7 @@ paths:
                 - activity
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -554,12 +550,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -676,7 +668,7 @@ paths:
                 - historyItems
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -875,7 +867,7 @@ paths:
                 - commands
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.deviceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -905,7 +897,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -1013,7 +1005,7 @@ paths:
                 - commands
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1098,12 +1090,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.device'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1234,7 +1222,7 @@ paths:
                 - responsepayload
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.commandCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1272,7 +1260,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -1348,7 +1336,7 @@ paths:
                 - responsepayload
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1402,12 +1390,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.command'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1509,7 +1493,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1585,7 +1569,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1623,7 +1607,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -1689,7 +1673,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1736,12 +1720,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1870,7 +1850,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1946,7 +1926,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2038,7 +2018,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2154,7 +2134,7 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2275,7 +2255,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2351,7 +2331,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2443,7 +2423,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2519,7 +2499,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2607,7 +2587,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.usageRightCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2645,7 +2625,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -2714,7 +2694,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2761,12 +2741,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.usageRight'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2863,7 +2839,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.activityHistoryItem:
@@ -3079,43 +3055,43 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
               description: Represents the usage rights a device has been granted.
-              x-ms-navigationProperty: true
+              readOnly: true
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-              x-ms-navigationProperty: true
+              readOnly: true
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-              x-ms-navigationProperty: true
+              readOnly: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-              x-ms-navigationProperty: true
+              readOnly: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the device. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             commands:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
               description: Set of commands sent to this device.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.command:

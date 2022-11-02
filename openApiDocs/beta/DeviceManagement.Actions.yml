@@ -12823,7 +12823,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -12884,13 +12884,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
               description: Policy assignments
-              x-ms-navigationProperty: true
+              readOnly: true
             settings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSetting'
               description: Policy settings
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Device Management Configuration Policy
@@ -13021,7 +13021,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
               description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -13340,7 +13340,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
               description: The list of group assignments for the device configuration profile
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -13416,7 +13416,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentationValue'
               description: The associated group policy presentation values with the definition value.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: The definition value entity stores the value for a single group policy definition.
@@ -13612,25 +13612,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentAssignment'
               description: Collection of assignments
-              x-ms-navigationProperty: true
+              readOnly: true
             categories:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentSettingCategory'
               description: Collection of setting categories within the intent
-              x-ms-navigationProperty: true
+              readOnly: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentDeviceSettingStateSummary'
               description: Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-              x-ms-navigationProperty: true
+              readOnly: true
             deviceStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentDeviceState'
               description: Collection of states of all devices that the intent is applied to
-              x-ms-navigationProperty: true
+              readOnly: true
             deviceStateSummary:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentDeviceStateSummary'
             settings:
@@ -13638,13 +13638,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingInstance'
               description: Collection of all settings to be applied
-              x-ms-navigationProperty: true
+              readOnly: true
             userStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentUserState'
               description: Collection of states of all users that the intent is applied to
-              x-ms-navigationProperty: true
+              readOnly: true
             userStateSummary:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementIntentUserStateSummary'
           additionalProperties:
@@ -13933,7 +13933,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementResourceAccessProfileAssignment'
               description: The list of assignments for the device configuration profile.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Base Profile Type for Resource Access
@@ -13987,7 +13987,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
               description: configuration policies referencing the current reusable setting. This property is read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Graph model for a reusable setting
@@ -14025,7 +14025,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
               description: The list of assignments for this Role Scope Tag.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Role Scope Tag
@@ -14508,7 +14508,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
               description: List of related Setting Definitions. This property is read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Setting instance within policy
@@ -14734,19 +14734,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
               description: The list of assignments for the device configuration profile.
-              x-ms-navigationProperty: true
+              readOnly: true
             deviceSettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
               description: Device Configuration Setting State Device Summary
-              x-ms-navigationProperty: true
+              readOnly: true
             deviceStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStatus'
               description: Device configuration installation status by device.
-              x-ms-navigationProperty: true
+              readOnly: true
             deviceStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceOverview'
             groupAssignments:
@@ -14754,13 +14754,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationGroupAssignment'
               description: The list of group assignments for the device configuration profile.
-              x-ms-navigationProperty: true
+              readOnly: true
             userStatuses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStatus'
               description: Device configuration installation status by user.
-              x-ms-navigationProperty: true
+              readOnly: true
             userStatusOverview:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserOverview'
           additionalProperties:
@@ -15033,7 +15033,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
               description: The group policy presentations associated with the definition.
-              x-ms-navigationProperty: true
+              readOnly: true
             previousVersionDefinition:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
           additionalProperties:
@@ -15115,7 +15115,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingInstance'
               description: The settings this category contains
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Entity representing an intent setting category
@@ -16725,7 +16725,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
               description: The children categories
-              x-ms-navigationProperty: true
+              readOnly: true
             definitionFile:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
             definitions:
@@ -16733,7 +16733,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The immediate GroupPolicyDefinition children of the category
-              x-ms-navigationProperty: true
+              readOnly: true
             parent:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
           additionalProperties:
@@ -16787,7 +16787,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
               description: The group policy definitions associated with the file.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
@@ -16858,7 +16858,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingDefinition'
               description: The setting definitions this category contains
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Entity representing a setting category

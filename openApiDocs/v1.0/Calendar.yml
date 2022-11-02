@@ -53,7 +53,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -148,7 +148,7 @@ paths:
                 - role
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.calendarPermissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -182,7 +182,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -233,7 +233,7 @@ paths:
                 - role
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -272,12 +272,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -506,7 +502,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -613,7 +609,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -751,7 +747,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -793,7 +789,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -864,7 +860,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -970,7 +966,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1071,7 +1067,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1113,7 +1109,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -1179,7 +1175,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1226,12 +1222,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1460,7 +1452,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1559,7 +1551,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1711,7 +1703,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1761,7 +1753,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -1840,7 +1832,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -1962,7 +1954,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2076,7 +2068,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2126,7 +2118,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -2200,7 +2192,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2255,12 +2247,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2392,7 +2380,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2438,7 +2426,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -2513,7 +2501,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2568,12 +2556,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2705,7 +2689,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2751,7 +2735,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -2826,7 +2810,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -2881,12 +2865,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3010,7 +2990,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3048,7 +3028,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -3115,7 +3095,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -3162,12 +3142,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3283,7 +3259,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3321,7 +3297,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -3388,7 +3364,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -3435,12 +3411,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3661,7 +3633,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3695,7 +3667,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -3787,7 +3759,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -3871,12 +3843,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.event'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3998,7 +3966,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4040,7 +4008,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -4111,7 +4079,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -4217,7 +4185,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -4318,7 +4286,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4360,7 +4328,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -4426,7 +4394,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -4473,12 +4441,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4707,7 +4671,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4806,7 +4770,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -4958,7 +4922,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5008,7 +4972,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -5087,7 +5051,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -5209,7 +5173,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -5323,7 +5287,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5373,7 +5337,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -5447,7 +5411,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -5502,12 +5466,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5639,7 +5599,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5685,7 +5645,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -5760,7 +5720,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -5815,12 +5775,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5952,7 +5908,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5998,7 +5954,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -6073,7 +6029,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -6128,12 +6084,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6257,7 +6209,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6295,7 +6247,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -6362,7 +6314,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -6409,12 +6361,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6530,7 +6478,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6568,7 +6516,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -6635,7 +6583,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -6682,12 +6630,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6795,7 +6739,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6825,7 +6769,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -6884,7 +6828,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -6923,12 +6867,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7028,7 +6968,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7058,7 +6998,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -7117,7 +7057,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7156,12 +7096,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7390,7 +7326,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7497,7 +7433,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7635,7 +7571,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7677,7 +7613,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -7748,7 +7684,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7854,7 +7790,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -7955,7 +7891,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7997,7 +7933,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -8063,7 +7999,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8110,12 +8046,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8344,7 +8276,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8443,7 +8375,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8595,7 +8527,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8645,7 +8577,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -8724,7 +8656,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8846,7 +8778,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -8960,7 +8892,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9010,7 +8942,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -9084,7 +9016,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -9139,12 +9071,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9276,7 +9204,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9322,7 +9250,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -9397,7 +9325,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -9452,12 +9380,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9589,7 +9513,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9635,7 +9559,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -9710,7 +9634,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -9765,12 +9689,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9894,7 +9814,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9932,7 +9852,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -9999,7 +9919,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -10046,12 +9966,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10167,7 +10083,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10205,7 +10121,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -10272,7 +10188,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -10319,12 +10235,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10545,7 +10457,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10579,7 +10491,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -10671,7 +10583,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -10755,12 +10667,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.event'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10882,7 +10790,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10924,7 +10832,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -10995,7 +10903,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11101,7 +11009,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11202,7 +11110,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11244,7 +11152,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -11310,7 +11218,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11357,12 +11265,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11591,7 +11495,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11690,7 +11594,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -11842,7 +11746,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11892,7 +11796,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -11971,7 +11875,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -12093,7 +11997,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -12207,7 +12111,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12257,7 +12161,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -12331,7 +12235,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -12386,12 +12290,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12523,7 +12423,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12569,7 +12469,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -12644,7 +12544,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -12699,12 +12599,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12836,7 +12732,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12882,7 +12778,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -12957,7 +12853,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -13012,12 +12908,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13141,7 +13033,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13179,7 +13071,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -13246,7 +13138,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -13293,12 +13185,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13414,7 +13302,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13452,7 +13340,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -13519,7 +13407,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -13566,12 +13454,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13680,7 +13564,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.placeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13701,7 +13585,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.place'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created entity
           content:
             application/json:
@@ -13758,7 +13642,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved entity
           content:
             application/json:
@@ -13793,12 +13677,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.place'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.place'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13878,7 +13758,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -13938,12 +13818,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendar'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.calendar'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14008,7 +13884,7 @@ paths:
                 - role
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.calendarPermissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14042,7 +13918,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -14093,7 +13969,7 @@ paths:
                 - role
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -14132,12 +14008,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14366,7 +14238,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14473,7 +14345,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -14611,7 +14483,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14653,7 +14525,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -14724,7 +14596,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -14830,7 +14702,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -14931,7 +14803,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14973,7 +14845,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -15039,7 +14911,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -15086,12 +14958,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15320,7 +15188,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15419,7 +15287,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -15571,7 +15439,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15621,7 +15489,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -15700,7 +15568,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -15822,7 +15690,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -15936,7 +15804,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15986,7 +15854,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -16060,7 +15928,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -16115,12 +15983,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16252,7 +16116,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16298,7 +16162,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -16373,7 +16237,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -16428,12 +16292,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16565,7 +16425,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16611,7 +16471,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -16686,7 +16546,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -16741,12 +16601,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16870,7 +16726,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16908,7 +16764,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -16975,7 +16831,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -17022,12 +16878,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17143,7 +16995,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17181,7 +17033,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -17248,7 +17100,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -17295,12 +17147,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17521,7 +17369,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17555,7 +17403,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -17647,7 +17495,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -17731,12 +17579,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.event'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17858,7 +17702,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17900,7 +17744,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -17971,7 +17815,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -18077,7 +17921,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -18178,7 +18022,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18220,7 +18064,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -18286,7 +18130,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -18333,12 +18177,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18567,7 +18407,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18666,7 +18506,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -18818,7 +18658,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18868,7 +18708,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -18947,7 +18787,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -19069,7 +18909,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -19183,7 +19023,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19233,7 +19073,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -19307,7 +19147,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -19362,12 +19202,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19499,7 +19335,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19545,7 +19381,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -19620,7 +19456,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -19675,12 +19511,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19812,7 +19644,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19858,7 +19690,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -19933,7 +19765,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -19988,12 +19820,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20117,7 +19945,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20155,7 +19983,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -20222,7 +20050,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -20269,12 +20097,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20390,7 +20214,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20428,7 +20252,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -20495,7 +20319,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -20542,12 +20366,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20655,7 +20475,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20685,7 +20505,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -20744,7 +20564,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -20783,12 +20603,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20888,7 +20704,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20918,7 +20734,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -20977,7 +20793,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -21016,12 +20832,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21118,7 +20930,7 @@ paths:
                 - calendars
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.calendarGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21152,7 +20964,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarGroup'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -21202,7 +21014,7 @@ paths:
                 - calendars
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -21247,12 +21059,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarGroup'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.calendarGroup'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21391,7 +21199,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.calendarCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21433,7 +21241,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendar'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -21505,7 +21313,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -21587,12 +21395,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendar'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.calendar'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21715,7 +21519,7 @@ paths:
                 - role
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.calendarPermissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21765,7 +21569,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -21832,7 +21636,7 @@ paths:
                 - role
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -21887,12 +21691,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22137,7 +21937,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22244,7 +22044,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -22410,7 +22210,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22468,7 +22268,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -22555,7 +22355,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -22693,7 +22493,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -22820,7 +22620,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22878,7 +22678,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -22960,7 +22760,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -23023,12 +22823,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23289,7 +23085,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23404,7 +23200,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -23584,7 +23380,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23650,7 +23446,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -23745,7 +23541,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -23899,7 +23695,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -24039,7 +23835,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24105,7 +23901,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -24195,7 +23991,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -24266,12 +24062,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24435,7 +24227,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24497,7 +24289,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -24588,7 +24380,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -24659,12 +24451,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24828,7 +24616,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24890,7 +24678,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -24981,7 +24769,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -25052,12 +24840,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25213,7 +24997,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25267,7 +25051,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -25350,7 +25134,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -25413,12 +25197,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25566,7 +25346,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -25620,7 +25400,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -25703,7 +25483,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -25766,12 +25546,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26024,7 +25800,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26074,7 +25850,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -26182,7 +25958,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -26294,12 +26070,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.event'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26453,7 +26225,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26511,7 +26283,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -26598,7 +26370,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -26736,7 +26508,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -26863,7 +26635,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -26921,7 +26693,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -27003,7 +26775,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -27066,12 +26838,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27332,7 +27100,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27447,7 +27215,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -27627,7 +27395,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -27693,7 +27461,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -27788,7 +27556,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -27942,7 +27710,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -28082,7 +27850,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -28148,7 +27916,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -28238,7 +28006,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -28309,12 +28077,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28478,7 +28242,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -28540,7 +28304,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -28631,7 +28395,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -28702,12 +28466,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28871,7 +28631,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -28933,7 +28693,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -29024,7 +28784,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -29095,12 +28855,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29256,7 +29012,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -29310,7 +29066,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -29393,7 +29149,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -29456,12 +29212,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29609,7 +29361,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -29663,7 +29415,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -29746,7 +29498,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -29809,12 +29561,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29954,7 +29702,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30000,7 +29748,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -30075,7 +29823,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -30130,12 +29878,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30267,7 +30011,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30313,7 +30057,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -30388,7 +30132,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -30443,12 +30187,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30595,7 +30335,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.calendarCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30629,7 +30369,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendar'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -30693,7 +30433,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -30762,12 +30502,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendar'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.calendar'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30874,7 +30610,7 @@ paths:
                 - role
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.calendarPermissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -30916,7 +30652,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -30975,7 +30711,7 @@ paths:
                 - role
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -31022,12 +30758,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31272,7 +31004,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31387,7 +31119,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -31539,7 +31271,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31589,7 +31321,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -31668,7 +31400,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -31790,7 +31522,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -31904,7 +31636,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -31954,7 +31686,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -32028,7 +31760,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -32083,12 +31815,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32333,7 +32061,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -32440,7 +32168,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -32606,7 +32334,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -32664,7 +32392,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -32751,7 +32479,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -32889,7 +32617,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -33016,7 +32744,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -33074,7 +32802,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -33156,7 +32884,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -33219,12 +32947,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33372,7 +33096,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -33426,7 +33150,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -33509,7 +33233,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -33572,12 +33296,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33725,7 +33445,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -33779,7 +33499,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -33862,7 +33582,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -33925,12 +33645,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34070,7 +33786,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -34116,7 +33832,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -34191,7 +33907,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -34246,12 +33962,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34383,7 +34095,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -34429,7 +34141,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -34504,7 +34216,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -34559,12 +34271,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34801,7 +34509,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -34843,7 +34551,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -34943,7 +34651,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -35041,12 +34749,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.event'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35184,7 +34888,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -35234,7 +34938,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -35313,7 +35017,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -35435,7 +35139,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -35549,7 +35253,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -35599,7 +35303,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -35673,7 +35377,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -35728,12 +35432,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35978,7 +35678,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -36085,7 +35785,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -36251,7 +35951,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -36309,7 +36009,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -36396,7 +36096,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -36534,7 +36234,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -36661,7 +36361,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -36719,7 +36419,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -36801,7 +36501,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -36864,12 +36564,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37017,7 +36713,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -37071,7 +36767,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -37154,7 +36850,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -37217,12 +36913,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37370,7 +37062,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -37424,7 +37116,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -37507,7 +37199,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -37570,12 +37262,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -37715,7 +37403,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -37761,7 +37449,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -37836,7 +37524,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -37891,12 +37579,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -38028,7 +37712,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -38074,7 +37758,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -38149,7 +37833,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -38204,12 +37888,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -38333,7 +38013,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -38371,7 +38051,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -38438,7 +38118,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -38485,12 +38165,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -38606,7 +38282,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -38644,7 +38320,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -38711,7 +38387,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -38758,12 +38434,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39000,7 +38672,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -39107,7 +38779,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -39245,7 +38917,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -39287,7 +38959,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -39358,7 +39030,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -39464,7 +39136,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -39565,7 +39237,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -39607,7 +39279,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -39673,7 +39345,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -39720,12 +39392,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39954,7 +39622,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -40053,7 +39721,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -40205,7 +39873,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -40255,7 +39923,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -40334,7 +40002,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -40456,7 +40124,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -40570,7 +40238,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -40620,7 +40288,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -40694,7 +40362,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -40749,12 +40417,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -40886,7 +40550,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -40932,7 +40596,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -41007,7 +40671,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -41062,12 +40726,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41199,7 +40859,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -41245,7 +40905,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -41320,7 +40980,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -41375,12 +41035,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41504,7 +41160,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -41542,7 +41198,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -41609,7 +41265,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -41656,12 +41312,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41777,7 +41429,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -41815,7 +41467,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -41882,7 +41534,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -41929,12 +41581,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42155,7 +41803,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -42189,7 +41837,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -42281,7 +41929,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -42365,12 +42013,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.event'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.event'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42492,7 +42136,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -42534,7 +42178,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -42605,7 +42249,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -42711,7 +42355,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -42812,7 +42456,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -42854,7 +42498,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -42920,7 +42564,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -42967,12 +42611,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -43201,7 +42841,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.eventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -43300,7 +42940,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -43452,7 +43092,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -43502,7 +43142,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -43581,7 +43221,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -43703,7 +43343,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -43817,7 +43457,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -43867,7 +43507,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -43941,7 +43581,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -43996,12 +43636,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.extension'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44133,7 +43769,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -44179,7 +43815,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -44254,7 +43890,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -44309,12 +43945,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44446,7 +44078,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -44492,7 +44124,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -44567,7 +44199,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -44622,12 +44254,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -44751,7 +44379,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -44789,7 +44417,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -44856,7 +44484,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -44903,12 +44531,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -45024,7 +44648,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -45062,7 +44686,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
+        '201':
           description: Created navigation property.
           content:
             application/json:
@@ -45129,7 +44753,7 @@ paths:
                 - '*'
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
@@ -45176,12 +44800,8 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        2XX:
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -45287,31 +44907,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
               description: The permissions of the users with whom the calendar is shared.
-              x-ms-navigationProperty: true
+              readOnly: true
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The calendar view for the calendar. Navigation property. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: The events in the calendar. Navigation property. Read-only.
-              x-ms-navigationProperty: true
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.calendarPermission:
@@ -45458,7 +45078,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             extensions:
@@ -45466,25 +45086,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the event. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
               description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-              x-ms-navigationProperty: true
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.attachment:
@@ -45595,7 +45215,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
               description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
-              x-ms-navigationProperty: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.entity:
