@@ -35751,8 +35751,6 @@ components:
       title: dlpEvaluationInput
       type: object
       properties:
-        accessScope:
-          $ref: '#/components/schemas/microsoft.graph.accessScope'
         currentLabel:
           $ref: '#/components/schemas/microsoft.graph.currentLabel'
         discoveredSensitiveTypes:
@@ -38349,12 +38347,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.columnDefinition'
           additionalProperties:
             type: object
-    microsoft.graph.accessScope:
-      title: accessScope
-      enum:
-        - inOrganization
-        - notInOrganization
-      type: string
     microsoft.graph.jobResponseBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
