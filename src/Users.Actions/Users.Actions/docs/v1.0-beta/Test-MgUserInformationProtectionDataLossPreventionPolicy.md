@@ -214,7 +214,6 @@ BODYPARAMETER <IPaths1EzienbUsersUserIdInformationprotectionDatalosspreventionpo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[EvaluationInput <IMicrosoftGraphDlpEvaluationInput>]`: dlpEvaluationInput
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AccessScope <String>]`: accessScope
     - `[CurrentLabel <IMicrosoftGraphCurrentLabel>]`: currentLabel
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ApplicationMode <String>]`: applicationMode
@@ -233,7 +232,6 @@ BODYPARAMETER <IPaths1EzienbUsersUserIdInformationprotectionDatalosspreventionpo
 
 EVALUATIONINPUT <IMicrosoftGraphDlpEvaluationInput>: dlpEvaluationInput
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AccessScope <String>]`: accessScope
   - `[CurrentLabel <IMicrosoftGraphCurrentLabel>]`: currentLabel
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ApplicationMode <String>]`: applicationMode

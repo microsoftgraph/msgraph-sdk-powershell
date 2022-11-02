@@ -12,14 +12,14 @@ Create new navigation property to templates for identity
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgIdentityConditionalAccessTemplate [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-Details <IMicrosoftGraphConditionalAccessPolicyDetail>] [-Id <String>] [-Name <String>]
  [-Scenarios <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgIdentityConditionalAccessTemplate -BodyParameter <IMicrosoftGraphConditionalAccessTemplate> [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -53,7 +53,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessTemplate
-Parameter Sets: Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ The user-friendly name of the template.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -84,7 +84,7 @@ To construct, please use Get-Help -Online and see NOTES section for DETAILS prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicyDetail
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -100,7 +100,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -115,7 +115,7 @@ The user-friendly name of the template.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -130,7 +130,7 @@ templateScenarios
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False

@@ -15,9 +15,10 @@ Create new navigation property to resourceActions for roleManagement
 ### CreateExpanded (Default)
 ```
 New-MgRoleManagementDeviceManagementResourceNamespaceResourceAction -UnifiedRbacResourceNamespaceId <String>
- [-ActionVerb <String>] [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
- [-Name <String>] [-ResourceScope <IMicrosoftGraphUnifiedRbacResourceScope>] [-ResourceScopeId <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ActionVerb <String>] [-AdditionalProperties <Hashtable>] [-AuthenticationContextId <String>]
+ [-Description <String>] [-Id <String>] [-IsAuthenticationContextSettable] [-Name <String>]
+ [-ResourceScope <IMicrosoftGraphUnifiedRbacResourceScope>] [-ResourceScopeId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -37,9 +38,9 @@ New-MgRoleManagementDeviceManagementResourceNamespaceResourceAction
 ```
 New-MgRoleManagementDeviceManagementResourceNamespaceResourceAction
  -InputObject <IDeviceManagementEnrolmentIdentity> [-ActionVerb <String>] [-AdditionalProperties <Hashtable>]
- [-Description <String>] [-Id <String>] [-Name <String>]
- [-ResourceScope <IMicrosoftGraphUnifiedRbacResourceScope>] [-ResourceScopeId <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AuthenticationContextId <String>] [-Description <String>] [-Id <String>] [-IsAuthenticationContextSettable]
+ [-Name <String>] [-ResourceScope <IMicrosoftGraphUnifiedRbacResourceScope>] [-ResourceScopeId <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,6 +71,21 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AuthenticationContextId
+.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -141,6 +157,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -IsAuthenticationContextSettable
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -266,7 +297,9 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRbacResourceAction>: unifiedRbacResourceAct
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
+  - `[AuthenticationContextId <String>]`: 
   - `[Description <String>]`: Description for the action. Supports $filter (eq).
+  - `[IsAuthenticationContextSettable <Boolean?>]`: 
   - `[Name <String>]`: Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
   - `[ResourceScope <IMicrosoftGraphUnifiedRbacResourceScope>]`: unifiedRbacResourceScope
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
