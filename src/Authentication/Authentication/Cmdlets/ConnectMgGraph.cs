@@ -65,6 +65,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.ContextScope)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.ContextScope)]
         [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.ContextScope)]
+        [Parameter(ParameterSetName = Constants.EnvironmentVariableParameterSet, Mandatory = false, HelpMessage = HelpMessages.ContextScope)]
         public ContextScope ContextScope { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.Environment)]
@@ -72,6 +73,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.Environment)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.Environment)]
         [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.Environment)]
+        [Parameter(ParameterSetName = Constants.EnvironmentVariableParameterSet, Mandatory = false, HelpMessage = HelpMessages.Environment)]
         [ValidateNotNullOrEmpty]
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
@@ -85,12 +87,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.IdentityParameterSet, Mandatory = false, HelpMessage = HelpMessages.ClientTimeout)]
+        [Parameter(ParameterSetName = Constants.EnvironmentVariableParameterSet, Mandatory = false, HelpMessage = HelpMessages.ClientTimeout)]
         [ValidateNotNullOrEmpty]
         public double ClientTimeout { get; set; }
 
         [Parameter(ParameterSetName = Constants.IdentityParameterSet, Position = 1, Mandatory = false, HelpMessage = HelpMessages.Identity)]
         [Alias("ManagedIdentity", "ManagedServiceIdentity", "MSI")]
         public SwitchParameter Identity { get; set; }
+
+        [Parameter(ParameterSetName = Constants.EnvironmentVariableParameterSet, Mandatory = false, HelpMessage = HelpMessages.EnvironmentVariable)]
+        public SwitchParameter EnvironmentVariable { get; set; }
 
         [Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
         public SwitchParameter Break { get; set; }
@@ -204,6 +210,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.AuthType = AuthenticationType.ManagedIdentity;
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
                             authContext.TokenCredentialType = TokenCredentialType.ManagedIdentity;
+                        }
+                        break;
+                    case Constants.EnvironmentVariableParameterSet:
+                        {
+                            authContext.AuthType = AuthenticationType.EnvironmentVariable;
+                            authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
+                            authContext.TokenCredentialType = TokenCredentialType.EnvironmentVariable;
                         }
                         break;
                     case Constants.AccessTokenParameterSet:

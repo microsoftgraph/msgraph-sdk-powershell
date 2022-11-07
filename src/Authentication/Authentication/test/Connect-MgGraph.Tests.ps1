@@ -18,7 +18,7 @@ Describe 'Connect-MgGraph ParameterSets' {
     }
     it 'Should have three ParameterSets' {
         $ConnectMgGraphCommand | Should -Not -BeNullOrEmpty
-        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 5
+        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 6
     }
     It 'Should have UserParameterSet' {
         $UserParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'UserParameterSet'
@@ -45,6 +45,14 @@ Describe 'Connect-MgGraph ParameterSets' {
         $MandatoryParameters | Should -HaveCount 0
     }
 
+    It 'Should have EnvironmentVariableParameterSet' {
+        $EnvironmentVariableParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'EnvironmentVariableParameterSet'
+        $EnvironmentVariableParameterSet | Should -Not -BeNull
+        @('EnvironmentVariable', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $EnvironmentVariableParameterSet.Parameters.Name
+        $MandatoryParameters = $EnvironmentVariableParameterSet.Parameters | Where-Object IsMandatory
+        $MandatoryParameters | Should -HaveCount 0
+    }
+
     It 'Should Have AccessTokenParameterSet' {
         $AccessTokenParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AccessTokenParameterSet'
         $AccessTokenParameterSet | Should -Not -BeNull
@@ -59,6 +67,20 @@ Describe 'Connect-MgGraph In Delegated Mode' {
     # We'll skip this test until https://github.com/Azure/azure-sdk-for-net/issues/28036 is fixed.
     It 'Should throw exception when invalid tenantId is specified' -skip {
         { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*Tenant 'thisdomaindoesnotexist.com' not found*"
+    }
+}
+
+Describe 'Connect-MgGraph In Environment Variable Mode' {
+    It 'Should throw exception when supported environment variables are not specified' {
+        { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "*EnvironmentCredential authentication unavailable. Environment variables are not fully configured*"
+    }
+    It 'Should attempt to use configured environment variables' {
+        {
+            $Env:AZURE_CLIENT_ID = "Not_Valid"
+            $Env:AZURE_CLIENT_SECRET = "Not_Valid"
+            $Env:AZURE_TENANT_ID = "common"
+            Connect-MgGraph -EnvironmentVariable -ErrorAction Stop
+        } | Should -Throw -ExpectedMessage "*ClientSecretCredential authentication failed: AADSTS700016: Application with identifier 'Not_Valid' was not found in the directory 'Microsoft'.*"
     }
 }
 

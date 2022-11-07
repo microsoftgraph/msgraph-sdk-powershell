@@ -19,7 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
 
         public static class Message
         {
-            public const string MissingAuthContext = "Authentication needed, call Connect-MgGraph.";
+            public const string MissingAuthContext = "Authentication needed. Please call Connect-MgGraph.";
             internal const string InvalidJWT = "Invalid JWT access token.";
             internal const string InvalidScope = "Please retry by specifying a sign-in -Audience or -TenantId to Connect-MgGraph. e.g., Connect-MgGraph -Audience 'organizations' -Scopes 'YOUR_SCOPES' -UseDeviceAuthentication.";
             internal const string NullOrEmptyParameter = "Parameter '{0}' cannot be null or empty.";

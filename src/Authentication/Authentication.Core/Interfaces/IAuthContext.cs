@@ -13,7 +13,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Delegated,
         AppOnly,
         UserProvidedAccessToken,
-        ManagedIdentity
+        ManagedIdentity,
+        EnvironmentVariable
     }
 
     public enum ContextScope
@@ -29,7 +30,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
         ClientCertificate,
         UserProvidedAccessToken,
         ManagedIdentity,
-        ClientSecret
+        ClientSecret,
+        EnvironmentVariable
     }
 
     public interface IAuthContext
