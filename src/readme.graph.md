@@ -714,6 +714,21 @@ directive:
         return $;
       }
 
+# Modify generated JsonObject class.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Cruntime%5CNodes%5CJsonObject.cs/gm))
+      {
+        return $;
+      } else {
+        // Change how JsonObject adds json node to avoid key conflicts.
+        let dictionaryAddRegex = /(items\.Add\(\s*name\s*\,\s*value\s*\)\;)/gm
+        $ = $.replace(dictionaryAddRegex, 'items[name] = value;');
+
+        return $;
+      }
+
 # Serialize all $count parameter to lowercase true or false.
   - from: source-file-csharp
     where: $
