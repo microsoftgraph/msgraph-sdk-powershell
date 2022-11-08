@@ -1649,6 +1649,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+          links:
+            terminate:
+              operationId: deviceManagement.deviceManagementPartners.deviceManagementPartner.terminate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7204,6 +7207,8 @@ paths:
                 - migrationReadiness desc
                 - ouDistinguishedName
                 - ouDistinguishedName desc
+                - roleScopeTagIds
+                - roleScopeTagIds desc
                 - supportedSettingsCount
                 - supportedSettingsCount desc
                 - supportedSettingsPercent
@@ -7232,6 +7237,7 @@ paths:
                 - lastModifiedDateTime
                 - migrationReadiness
                 - ouDistinguishedName
+                - roleScopeTagIds
                 - supportedSettingsCount
                 - supportedSettingsPercent
                 - targetedInActiveDirectory
@@ -7319,6 +7325,7 @@ paths:
                 - lastModifiedDateTime
                 - migrationReadiness
                 - ouDistinguishedName
+                - roleScopeTagIds
                 - supportedSettingsCount
                 - supportedSettingsPercent
                 - targetedInActiveDirectory
@@ -7993,6 +8000,8 @@ paths:
                 - lastModifiedDateTime desc
                 - ouDistinguishedName
                 - ouDistinguishedName desc
+                - roleScopeTagIds
+                - roleScopeTagIds desc
               type: string
         - name: $select
           in: query
@@ -8010,6 +8019,7 @@ paths:
                 - groupPolicyObjectId
                 - lastModifiedDateTime
                 - ouDistinguishedName
+                - roleScopeTagIds
               type: string
         - name: $expand
           in: query
@@ -8086,6 +8096,7 @@ paths:
                 - groupPolicyObjectId
                 - lastModifiedDateTime
                 - ouDistinguishedName
+                - roleScopeTagIds
               type: string
         - name: $expand
           in: query
@@ -8747,6 +8758,8 @@ paths:
                 - sendDeviceOwnershipChangePushNotification desc
                 - showAzureADEnterpriseApps
                 - showAzureADEnterpriseApps desc
+                - showConfigurationManagerApps
+                - showConfigurationManagerApps desc
                 - showDisplayNameNextToLogo
                 - showDisplayNameNextToLogo desc
                 - showLogo
@@ -8795,6 +8808,7 @@ paths:
                 - roleScopeTagIds
                 - sendDeviceOwnershipChangePushNotification
                 - showAzureADEnterpriseApps
+                - showConfigurationManagerApps
                 - showDisplayNameNextToLogo
                 - showLogo
                 - showOfficeWebApps
@@ -8899,6 +8913,7 @@ paths:
                 - roleScopeTagIds
                 - sendDeviceOwnershipChangePushNotification
                 - showAzureADEnterpriseApps
+                - showConfigurationManagerApps
                 - showDisplayNameNextToLogo
                 - showLogo
                 - showOfficeWebApps
@@ -13304,6 +13319,7 @@ paths:
                 - provisioningPolicies
                 - reports
                 - servicePlans
+                - sharedUseServicePlans
                 - snapshots
                 - supportedRegions
                 - userSettings
@@ -13330,6 +13346,7 @@ paths:
                 - provisioningPolicies
                 - reports
                 - servicePlans
+                - sharedUseServicePlans
                 - snapshots
                 - supportedRegions
                 - userSettings
@@ -13364,6 +13381,8 @@ paths:
               operationId: deviceManagement.VirtualEndpoint.GetReports
             servicePlans:
               operationId: deviceManagement.VirtualEndpoint.ListServicePlans
+            sharedUseServicePlans:
+              operationId: deviceManagement.VirtualEndpoint.ListSharedUseServicePlans
             snapshots:
               operationId: deviceManagement.VirtualEndpoint.ListSnapshots
             supportedRegions:
@@ -15101,6 +15120,8 @@ paths:
                 - microsoftManagedDesktop desc
                 - onPremisesConnectionId
                 - onPremisesConnectionId desc
+                - provisioningType
+                - provisioningType desc
                 - windowsSettings
                 - windowsSettings desc
               type: string
@@ -15128,6 +15149,7 @@ paths:
                 - managedBy
                 - microsoftManagedDesktop
                 - onPremisesConnectionId
+                - provisioningType
                 - windowsSettings
                 - assignments
               type: string
@@ -15219,6 +15241,7 @@ paths:
                 - managedBy
                 - microsoftManagedDesktop
                 - onPremisesConnectionId
+                - provisioningType
                 - windowsSettings
                 - assignments
               type: string
@@ -16055,6 +16078,125 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/sharedUseServicePlans:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get sharedUseServicePlans from deviceManagement
+      operationId: deviceManagement.virtualEndpoint_ListSharedUseServicePlans
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - totalCount
+                - totalCount desc
+                - usedCount
+                - usedCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - totalCount
+                - usedCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.cloudPcSharedUseServicePlanCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/sharedUseServicePlans/{cloudPcSharedUseServicePlan-id}':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get sharedUseServicePlans from deviceManagement
+      operationId: deviceManagement.virtualEndpoint_GetSharedUseServicePlans
+      parameters:
+        - name: cloudPcSharedUseServicePlan-id
+          in: path
+          description: 'key: id of cloudPcSharedUseServicePlan'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcSharedUseServicePlan
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - totalCount
+                - usedCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17690,6 +17832,12 @@ components:
               type: string
               description: The distinguished name of the OU.
               nullable: true
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of scope tags for the configuration.
             supportedSettingsCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -17864,6 +18012,12 @@ components:
             ouDistinguishedName:
               type: string
               description: The distinguished name of the OU.
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of scope tags for the configuration.
           additionalProperties:
             type: object
           description: The Group Policy Object file uploaded by admin.
@@ -18028,6 +18182,9 @@ components:
             showAzureADEnterpriseApps:
               type: boolean
               description: Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
+            showConfigurationManagerApps:
+              type: boolean
+              description: Boolean that indicates if Configuration Manager Apps will be shown in Company Portal
             showDisplayNameNextToLogo:
               type: boolean
               description: Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not
@@ -18694,6 +18851,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
               description: Cloud PC service plans.
               readOnly: true
+            sharedUseServicePlans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
+              readOnly: true
             snapshots:
               type: array
               items:
@@ -19116,6 +19278,8 @@ components:
               type: string
               description: 'The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.'
               nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
             windowsSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcWindowsSettings'
             assignments:
@@ -19227,6 +19391,29 @@ components:
               type: integer
               description: The number of vCPUs. Read-only.
               format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcSharedUseServicePlan:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcSharedUseServicePlan
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            totalCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            usedCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcSnapshot:
@@ -19727,6 +19914,7 @@ components:
         - needsOsUpdate
         - ineligible
         - scheduledForEnrollment
+        - unknownFutureValue
       type: string
       x-ms-enum:
         name: comanagementEligibleType
@@ -19735,6 +19923,9 @@ components:
           - value: scheduledForEnrollment
             description: Devices scheduled for Co-Management enrollment
             name: scheduledForEnrollment
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.complianceManagementPartnerAssignment:
       title: complianceManagementPartnerAssignment
       type: object
@@ -21064,6 +21255,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcManagementAssignmentTarget:
       title: cloudPcManagementAssignmentTarget
       type: object
@@ -21745,6 +21943,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcSharedUseServicePlanCollectionResponse:
+      title: Collection of cloudPcSharedUseServicePlan
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -22508,6 +22719,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanCollectionResponse'
+    microsoft.graph.cloudPcSharedUseServicePlanCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlanCollectionResponse'
     microsoft.graph.cloudPcSnapshotCollectionResponse:
       description: Retrieved collection
       content:

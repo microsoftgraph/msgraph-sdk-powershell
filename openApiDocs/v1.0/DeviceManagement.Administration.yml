@@ -95,6 +95,234 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/auditEvents:
+    get:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Get auditEvents from deviceManagement
+      description: The Audit Events
+      operationId: deviceManagement_ListAuditEvents
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activity
+                - activity desc
+                - activityDateTime
+                - activityDateTime desc
+                - activityOperationType
+                - activityOperationType desc
+                - activityResult
+                - activityResult desc
+                - activityType
+                - activityType desc
+                - actor
+                - actor desc
+                - category
+                - category desc
+                - componentName
+                - componentName desc
+                - correlationId
+                - correlationId desc
+                - displayName
+                - displayName desc
+                - resources
+                - resources desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activity
+                - activityDateTime
+                - activityOperationType
+                - activityResult
+                - activityType
+                - actor
+                - category
+                - componentName
+                - correlationId
+                - displayName
+                - resources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.auditEventCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Create new navigation property to auditEvents for deviceManagement
+      operationId: deviceManagement_CreateAuditEvents
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/auditEvents/{auditEvent-id}':
+    get:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Get auditEvents from deviceManagement
+      description: The Audit Events
+      operationId: deviceManagement_GetAuditEvents
+      parameters:
+        - name: auditEvent-id
+          in: path
+          description: 'key: id of auditEvent'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditEvent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activity
+                - activityDateTime
+                - activityOperationType
+                - activityResult
+                - activityType
+                - actor
+                - category
+                - componentName
+                - correlationId
+                - displayName
+                - resources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Update the navigation property auditEvents in deviceManagement
+      operationId: deviceManagement_UpdateAuditEvents
+      parameters:
+        - name: auditEvent-id
+          in: path
+          description: 'key: id of auditEvent'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditEvent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Delete navigation property auditEvents for deviceManagement
+      operationId: deviceManagement_DeleteAuditEvents
+      parameters:
+        - name: auditEvent-id
+          in: path
+          description: 'key: id of auditEvent'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditEvent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /deviceManagement/complianceManagementPartners:
     get:
       tags:
@@ -475,6 +703,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+          links:
+            terminate:
+              operationId: deviceManagement.deviceManagementPartners.deviceManagementPartner.terminate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3378,6 +3609,60 @@ components:
           additionalProperties:
             type: object
           description: Apple push notification certificate.
+    microsoft.graph.auditEvent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: auditEvent
+          type: object
+          properties:
+            activity:
+              type: string
+              description: Friendly name of the activity.
+              nullable: true
+            activityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date time in UTC when the activity was performed.
+              format: date-time
+            activityOperationType:
+              type: string
+              description: The HTTP operation type of the activity.
+              nullable: true
+            activityResult:
+              type: string
+              description: The result of the activity.
+              nullable: true
+            activityType:
+              type: string
+              description: The type of activity that was being performed.
+              nullable: true
+            actor:
+              $ref: '#/components/schemas/microsoft.graph.auditActor'
+            category:
+              type: string
+              description: Audit category.
+              nullable: true
+            componentName:
+              type: string
+              description: Component name.
+              nullable: true
+            correlationId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: The client request Id that is used to correlate activity within the system.
+              format: uuid
+            displayName:
+              type: string
+              description: Event display name.
+              nullable: true
+            resources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.auditResource'
+              description: Resources being modified.
+          additionalProperties:
+            type: object
+          description: A class containing the properties for Audit Event.
     microsoft.graph.complianceManagementPartner:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3842,6 +4127,71 @@ components:
           description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.auditActor:
+      title: auditActor
+      type: object
+      properties:
+        applicationDisplayName:
+          type: string
+          description: Name of the Application.
+          nullable: true
+        applicationId:
+          type: string
+          description: AAD Application Id.
+          nullable: true
+        auditActorType:
+          type: string
+          description: Actor Type.
+          nullable: true
+        ipAddress:
+          type: string
+          description: IPAddress.
+          nullable: true
+        servicePrincipalName:
+          type: string
+          description: Service Principal Name (SPN).
+          nullable: true
+        userId:
+          type: string
+          description: User Id.
+          nullable: true
+        userPermissions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of user permissions when the audit was performed.
+        userPrincipalName:
+          type: string
+          description: User Principal Name (UPN).
+          nullable: true
+      additionalProperties:
+        type: object
+      description: A class containing the properties for Audit Actor.
+    microsoft.graph.auditResource:
+      title: auditResource
+      type: object
+      properties:
+        auditResourceType:
+          type: string
+          description: Audit resource's type.
+          nullable: true
+        displayName:
+          type: string
+          description: Display name.
+          nullable: true
+        modifiedProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.auditProperty'
+          description: List of modified properties.
+        resourceId:
+          type: string
+          description: Audit resource's Id.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: A class containing the properties for Audit Resource.
     microsoft.graph.complianceManagementPartnerAssignment:
       title: complianceManagementPartnerAssignment
       type: object
@@ -4062,6 +4412,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    microsoft.graph.auditEventCollectionResponse:
+      title: Collection of auditEvent
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       title: Collection of complianceManagementPartner
       type: object
@@ -4244,6 +4607,25 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.auditProperty:
+      title: auditProperty
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name.
+          nullable: true
+        newValue:
+          type: string
+          description: New value.
+          nullable: true
+        oldValue:
+          type: string
+          description: Old value.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: A class containing the properties for Audit Property.
     microsoft.graph.resourceAction:
       title: resourceAction
       type: object
@@ -4311,6 +4693,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.auditEventCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.auditEventCollectionResponse'
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       description: Retrieved collection
       content:

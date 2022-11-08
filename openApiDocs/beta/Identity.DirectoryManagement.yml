@@ -5872,6 +5872,7 @@ paths:
                 - deletedItems
                 - federationConfigurations
                 - inboundSharedUserProfiles
+                - onPremisesSynchronization
                 - outboundSharedUserProfiles
                 - sharedEmailDomains
                 - featureRolloutPolicies
@@ -5895,6 +5896,7 @@ paths:
                 - deletedItems
                 - federationConfigurations
                 - inboundSharedUserProfiles
+                - onPremisesSynchronization
                 - outboundSharedUserProfiles
                 - sharedEmailDomains
                 - featureRolloutPolicies
@@ -5923,6 +5925,8 @@ paths:
               operationId: directory.ListFederationConfigurations
             inboundSharedUserProfiles:
               operationId: directory.ListInboundSharedUserProfiles
+            onPremisesSynchronization:
+              operationId: directory.ListOnPremisesSynchronization
             outboundSharedUserProfiles:
               operationId: directory.ListOutboundSharedUserProfiles
             sharedEmailDomains:
@@ -10034,6 +10038,196 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directory/onPremisesSynchronization:
+    get:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Get onPremisesSynchronization from directory
+      operationId: directory_ListOnPremisesSynchronization
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - configuration
+                - configuration desc
+                - features
+                - features desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - features
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.onPremisesDirectorySynchronizationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Create new navigation property to onPremisesSynchronization for directory
+      operationId: directory_CreateOnPremisesSynchronization
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/onPremisesSynchronization/{onPremisesDirectorySynchronization-id}':
+    get:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Get onPremisesSynchronization from directory
+      operationId: directory_GetOnPremisesSynchronization
+      parameters:
+        - name: onPremisesDirectorySynchronization-id
+          in: path
+          description: 'key: id of onPremisesDirectorySynchronization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesDirectorySynchronization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - features
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Update the navigation property onPremisesSynchronization in directory
+      operationId: directory_UpdateOnPremisesSynchronization
+      parameters:
+        - name: onPremisesDirectorySynchronization-id
+          in: path
+          description: 'key: id of onPremisesDirectorySynchronization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesDirectorySynchronization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.onPremisesDirectorySynchronization
+      summary: Delete navigation property onPremisesSynchronization for directory
+      operationId: directory_DeleteOnPremisesSynchronization
+      parameters:
+        - name: onPremisesDirectorySynchronization-id
+          in: path
+          description: 'key: id of onPremisesDirectorySynchronization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesDirectorySynchronization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /directory/outboundSharedUserProfiles:
     get:
       tags:
@@ -15360,6 +15554,8 @@ paths:
                 - countryLetterCode desc
                 - createdDateTime
                 - createdDateTime desc
+                - defaultUsageLocation
+                - defaultUsageLocation desc
                 - directorySizeQuota
                 - directorySizeQuota desc
                 - displayName
@@ -15415,6 +15611,7 @@ paths:
                 - country
                 - countryLetterCode
                 - createdDateTime
+                - defaultUsageLocation
                 - directorySizeQuota
                 - displayName
                 - isMultipleDataLocationsForServicesEnabled
@@ -15522,6 +15719,7 @@ paths:
                 - country
                 - countryLetterCode
                 - createdDateTime
+                - defaultUsageLocation
                 - directorySizeQuota
                 - displayName
                 - isMultipleDataLocationsForServicesEnabled
@@ -19052,31 +19250,31 @@ components:
               description: Postal addresses for this organizational contact. For now a contact can only have one physical address.
             companyName:
               type: string
-              description: 'Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
               nullable: true
             department:
               type: string
-              description: 'The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
               nullable: true
             displayName:
               type: string
-              description: 'Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.'
               nullable: true
             givenName:
               type: string
-              description: 'First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
               nullable: true
             jobTitle:
               type: string
-              description: 'Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
               nullable: true
             mail:
               type: string
-              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
               nullable: true
             mailNickname:
               type: string
-              description: 'Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -19088,10 +19286,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).'
+              description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not for category and propertyCausingError) and eq to count empty collections.'
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq for null values).'
               nullable: true
             phones:
               type: array
@@ -19102,10 +19300,10 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
+              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and eq to count empty collections).'
             surname:
               type: string
-              description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
+              description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)'
               nullable: true
             directReports:
               type: array
@@ -19469,6 +19667,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
               readOnly: true
+            onPremisesSynchronization:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+              readOnly: true
             outboundSharedUserProfiles:
               type: array
               items:
@@ -19652,6 +19855,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesDirectorySynchronization:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesDirectorySynchronization
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationConfiguration'
+            features:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationFeature'
+          additionalProperties:
+            type: object
     microsoft.graph.outboundSharedUserProfile:
       title: outboundSharedUserProfile
       type: object
@@ -20003,6 +20218,10 @@ components:
               type: string
               description: 'Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
+              nullable: true
+            defaultUsageLocation:
+              type: string
+              description: Two-letter ISO 3166 country code indicating the default service usage location of an organization.
               nullable: true
             directorySizeQuota:
               $ref: '#/components/schemas/microsoft.graph.directorySizeQuota'
@@ -20470,6 +20689,87 @@ components:
         - postponed
         - unknownFutureValue
       type: string
+    microsoft.graph.onPremisesDirectorySynchronizationConfiguration:
+      title: onPremisesDirectorySynchronizationConfiguration
+      type: object
+      properties:
+        accidentalDeletionPrevention:
+          $ref: '#/components/schemas/microsoft.graph.onPremisesAccidentalDeletionPrevention'
+        customerRequestedSynchronizationInterval:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          format: duration
+          nullable: true
+        synchronizationInterval:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          format: duration
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.onPremisesDirectorySynchronizationFeature:
+      title: onPremisesDirectorySynchronizationFeature
+      type: object
+      properties:
+        blockCloudObjectTakeoverThroughHardMatchEnabled:
+          type: boolean
+          nullable: true
+        blockSoftMatchEnabled:
+          type: boolean
+          nullable: true
+        bypassDirSyncOverridesEnabled:
+          type: boolean
+          nullable: true
+        cloudPasswordPolicyForPasswordSyncedUsersEnabled:
+          type: boolean
+          nullable: true
+        concurrentCredentialUpdateEnabled:
+          type: boolean
+          nullable: true
+        concurrentOrgIdProvisioningEnabled:
+          type: boolean
+          nullable: true
+        deviceWritebackEnabled:
+          type: boolean
+          nullable: true
+        directoryExtensionsEnabled:
+          type: boolean
+          nullable: true
+        fopeConflictResolutionEnabled:
+          type: boolean
+          nullable: true
+        groupWriteBackEnabled:
+          type: boolean
+          nullable: true
+        passwordSyncEnabled:
+          type: boolean
+          nullable: true
+        passwordWritebackEnabled:
+          type: boolean
+          nullable: true
+        quarantineUponProxyAddressesConflictEnabled:
+          type: boolean
+          nullable: true
+        quarantineUponUpnConflictEnabled:
+          type: boolean
+          nullable: true
+        softMatchOnUpnEnabled:
+          type: boolean
+          nullable: true
+        synchronizeUpnForManagedUsersEnabled:
+          type: boolean
+          nullable: true
+        unifiedGroupWritebackEnabled:
+          type: boolean
+          nullable: true
+        userForcePasswordChangeOnLogonEnabled:
+          type: boolean
+          nullable: true
+        userWritebackEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.actionStep:
       title: actionStep
       type: object
@@ -21208,6 +21508,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesDirectorySynchronizationCollectionResponse:
+      title: Collection of onPremisesDirectorySynchronization
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.outboundSharedUserProfileCollectionResponse:
       title: Collection of outboundSharedUserProfile
       type: object
@@ -21430,6 +21743,20 @@ components:
         - pager
         - radio
       type: string
+    microsoft.graph.onPremisesAccidentalDeletionPrevention:
+      title: onPremisesAccidentalDeletionPrevention
+      type: object
+      properties:
+        alertThreshold:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        synchronizationPreventionType:
+          $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationDeletionPreventionType'
+      additionalProperties:
+        type: object
     microsoft.graph.actionUrl:
       title: actionUrl
       type: object
@@ -21540,6 +21867,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesDirectorySynchronizationDeletionPreventionType:
+      title: onPremisesDirectorySynchronizationDeletionPreventionType
+      enum:
+        - disabled
+        - enabledForCount
+        - enabledForPercentage
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -21669,6 +22004,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfileCollectionResponse'
+    microsoft.graph.onPremisesDirectorySynchronizationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationCollectionResponse'
     microsoft.graph.outboundSharedUserProfileCollectionResponse:
       description: Retrieved collection
       content:

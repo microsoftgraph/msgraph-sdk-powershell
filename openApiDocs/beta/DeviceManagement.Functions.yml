@@ -61,6 +61,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.assignmentFilterSupportedProperty'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -100,6 +103,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.assignmentFilterSupportedProperty'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -157,6 +163,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -190,6 +199,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -230,6 +242,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -326,6 +341,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -424,6 +442,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.powerliftIncidentMetadata'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -586,6 +607,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.retireScheduledManagedDevice'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -657,6 +681,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.iosAvailableUpdateVersion'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -763,6 +790,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingComparison'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -803,6 +833,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -899,6 +932,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -997,6 +1033,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.powerliftIncidentMetadata'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1079,6 +1118,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1119,6 +1161,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.rolePermission'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1127,22 +1172,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  /deviceManagement/microsoft.graph.getOrganizationalMessageTenantConsent():
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getOrganizationalMessageTenantConsent
-      operationId: deviceManagement_getOrganizationalMessageTenantConsent
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.organizationalMessageTenantConsent'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids={ids})':
     get:
       tags:
@@ -1212,6 +1241,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1288,6 +1320,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1349,6 +1384,22 @@ paths:
                     default: false
                 additionalProperties:
                   type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/microsoft.graph.userExperienceAnalyticsSummarizedDeviceScopes():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function userExperienceAnalyticsSummarizedDeviceScopes
+      operationId: deviceManagement_userExperienceAnalyticsSummarizedDeviceScopes
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceScopeSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -1423,6 +1474,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagement.portalNotification'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1472,6 +1526,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1542,6 +1599,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingComparison'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1598,6 +1658,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingComparison'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1739,6 +1802,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDevicePerformance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1747,30 +1813,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy=''{summarizeBy}'')':
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function summarizeDeviceRegressionPerformance
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_summarizeDeviceRegressionPerformance
-      parameters:
-        - name: summarizeBy
-          in: path
-          description: 'Usage: summarizeBy=''{summarizeBy}'''
-          required: true
-          style: simple
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsRegressionSummary'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/deviceManagement/userExperienceAnalyticsRemoteConnection/microsoft.graph.summarizeDeviceRemoteConnection(summarizeBy=''{summarizeBy}'')':
     get:
       tags:
@@ -1867,6 +1909,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsRemoteConnection'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -1971,6 +2016,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsResourcePerformance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2004,6 +2052,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2044,6 +2095,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityEvent'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2101,6 +2155,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.cloudPcSourceDeviceImage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2134,6 +2191,9 @@ paths:
                     items:
                       type: string
                       nullable: true
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2238,6 +2298,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.cloudPcForensicStorageAccount'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2270,6 +2333,9 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.cloudPcSubscription'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
@@ -2941,6 +3007,12 @@ components:
           type: integer
           description: Count of devices that will be eligible for Co-Management after an OS update
           format: int32
+        scheduledForEnrollmentCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of devices scheduled for Co-Management enrollment. Valid values 0 to 9999999
+          format: int32
       additionalProperties:
         type: object
     microsoft.graph.rolePermission:
@@ -2961,16 +3033,6 @@ components:
       additionalProperties:
         type: object
       description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
-    microsoft.graph.organizationalMessageTenantConsent:
-      title: organizationalMessageTenantConsent
-      type: object
-      properties:
-        firstPartyMessageAllowed:
-          type: boolean
-          description: Indicates if first party message is allowed
-      additionalProperties:
-        type: object
-      description: This will allow the admin to see tenant consent info for specific tenant
     microsoft.graph.roleScopeTag:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3011,6 +3073,37 @@ components:
       additionalProperties:
         type: object
       description: The suggestedEnrollmentLimit resource represents the suggested enrollment limit when given an enrollment type.
+    microsoft.graph.userExperienceAnalyticsDeviceScopeSummary:
+      title: userExperienceAnalyticsDeviceScopeSummary
+      type: object
+      properties:
+        completedDeviceScopeIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A collection of the user experience analytics device scope Unique Identifiers that are enabled and finished recalculating the report metric.
+        insufficientDataDeviceScopeIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A collection of user experience analytics device scope Unique Identitfiers that are enabled but there is insufficient data to calculate results.
+        totalDeviceScopes:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The total number of user experience analytics device scopes. Valid values -2147483648 to 2147483647
+          format: int32
+        totalDeviceScopesEnabled:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The total number of user experience analytics device scopes that are enabled. Valid values -2147483648 to 2147483647
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics tenant level information for all the device scope configurations
     microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary:
       title: userExperienceAnalyticsWorkFromAnywhereDevicesSummary
       type: object
@@ -3094,20 +3187,25 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertImpact'
         alertRecordId:
           type: string
+          description: The associated alert record ID.
           nullable: true
         alertRuleId:
           type: string
+          description: The associated alert rule ID.
           nullable: true
         alertRuleName:
           type: string
+          description: The associated alert rule name.
           nullable: true
         alertRuleTemplate:
           $ref: '#/components/schemas/microsoft.graph.deviceManagement.alertRuleTemplate'
         id:
           type: string
+          description: The unique identifier for the portal notification.
           nullable: true
         isPortalNotificationSent:
           type: boolean
+          description: 'If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn''t been sent yet.'
           nullable: true
         severity:
           $ref: '#/components/schemas/microsoft.graph.deviceManagement.ruleSeverityType'
@@ -3236,33 +3334,6 @@ components:
           additionalProperties:
             type: object
           description: The user experience analytics device performance entity contains device boot performance details.
-    microsoft.graph.userExperienceAnalyticsRegressionSummary:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: userExperienceAnalyticsRegressionSummary
-          type: object
-          properties:
-            manufacturerRegression:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-              description: The metric values for the user experience analytics Manufacturer regression.
-              readOnly: true
-            modelRegression:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-              description: The metric values for the user experience analytics model regression.
-              readOnly: true
-            operatingSystemRegression:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-              description: The metric values for the user experience analytics operating system regression.
-              readOnly: true
-          additionalProperties:
-            type: object
-          description: The user experience analytics Regression Summary.
     microsoft.graph.userExperienceAnalyticsRemoteConnection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4005,6 +4076,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number value of the impact.
           format: int32
           nullable: true
       additionalProperties:
@@ -4071,23 +4143,6 @@ components:
           - value: unknownFutureValue
             description: Evolvable enum member
             name: unknownFutureValue
-    microsoft.graph.userExperienceAnalyticsMetric:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: userExperienceAnalyticsMetric
-          type: object
-          properties:
-            unit:
-              type: string
-              description: The unit of the user experience analytics metric.
-              nullable: true
-            value:
-              type: number
-              description: The value of the user experience analytics metric.
-              format: double
-          additionalProperties:
-            type: object
-          description: The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
     microsoft.graph.cloudPcConnectivityEventResult:
       title: cloudPcConnectivityEventResult
       enum:

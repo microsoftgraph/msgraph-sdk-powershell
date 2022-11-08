@@ -1437,6 +1437,8 @@ paths:
               operationId: deviceManagement.reports.getDeviceManagementIntentSettingsReport
             getDeviceNonComplianceReport:
               operationId: deviceManagement.reports.getDeviceNonComplianceReport
+            getEncryptionReportForDevices:
+              operationId: deviceManagement.reports.getEncryptionReportGraphFPreDevices
             getEnrollmentConfigurationPoliciesByDevice:
               operationId: deviceManagement.reports.getEnrollmentConfigurationPoliciesGraphBPreDevice
             getFailedMobileAppsReport:
@@ -1449,6 +1451,8 @@ paths:
               operationId: deviceManagement.reports.getHistoricalReport
             getMalwareSummaryReport:
               operationId: deviceManagement.reports.getMalwareSummaryReport
+            getMobileApplicationManagementAppConfigurationReport:
+              operationId: deviceManagement.reports.getMobileApplicationManagementAppConfigurationReport
             getMobileApplicationManagementAppRegistrationSummaryReport:
               operationId: deviceManagement.reports.getMobileApplicationManagementAppRegistrationSummaryReport
             getNoncompliantDevicesAndSettingsReport:
