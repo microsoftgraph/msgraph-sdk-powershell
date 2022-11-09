@@ -218,6 +218,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementPartners/{deviceManagementPartner-id}/microsoft.graph.terminate':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action terminate
+      operationId: deviceManagement.deviceManagementPartners_terminate
+      parameters:
+        - name: deviceManagementPartner-id
+          in: path
+          description: 'key: id of deviceManagementPartner'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementPartner
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector-id}/microsoft.graph.sync':
     post:
       tags:

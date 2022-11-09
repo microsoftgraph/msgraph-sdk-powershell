@@ -58461,7 +58461,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, and counting empty collections).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, and counting empty collections).'
             assignedPlans:
               type: array
               items:
@@ -58493,7 +58493,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
@@ -58575,7 +58575,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
               description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
@@ -60861,7 +60861,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: The unique identifier of the device used for accepting the agreement.
+              description: The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
               nullable: true
             deviceOSType:
               type: string
@@ -60874,7 +60874,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.'
               format: date-time
               nullable: true
             recordedDateTime:
@@ -60895,7 +60895,7 @@ components:
               nullable: true
             userId:
               type: string
-              description: The identifier of the user who accepted the agreement.
+              description: The identifier of the user who accepted the agreement. Supports $filter (eq).
               nullable: true
             userPrincipalName:
               type: string
@@ -61004,12 +61004,12 @@ components:
               readOnly: true
             freeStorageSpaceInBytes:
               type: integer
-              description: Free Storage in Bytes. This property is read-only.
+              description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -61067,7 +61067,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: Notes on the device created by IT Admin
+              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -61088,7 +61088,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: Total Memory in Bytes. This property is read-only.
+              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             remoteAssistanceSessionErrorDetails:
@@ -61123,7 +61123,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -64668,7 +64668,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             membershipRule:
               type: string

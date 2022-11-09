@@ -5,6 +5,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml"
     },
+    "/deviceManagement/auditEvents/microsoft.graph.getAuditActivityTypes(category='{category}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml"
+    },
+    "/deviceManagement/auditEvents/microsoft.graph.getAuditCategories()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml"
+    },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml"
