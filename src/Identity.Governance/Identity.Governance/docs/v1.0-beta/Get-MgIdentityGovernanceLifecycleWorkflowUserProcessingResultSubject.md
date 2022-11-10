@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject
 
 ## SYNOPSIS
-The unique identifier of the AAD user targeted for the taskProcessingResult.
+The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject
 ```
 
 ## DESCRIPTION
-The unique identifier of the AAD user targeted for the taskProcessingResult.
+The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
 
 ## EXAMPLES
 
