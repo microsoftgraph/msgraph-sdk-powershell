@@ -6,6 +6,55 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
+  '/admin/edge/internetExplorerMode/siteLists/{browserSiteList-id}/microsoft.graph.publish':
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action publish
+      description: Publish the specified browserSiteList for devices to download.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/browsersitelist-publish?view=graph-rest-1.0
+      operationId: admin.edge.internetExplorerMode.siteLists_publish
+      parameters:
+        - name: browserSiteList-id
+          in: path
+          description: 'key: id of browserSiteList'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: browserSiteList
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                revision:
+                  type: string
+                sites:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.browserSite'
+                sharedCookies:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.browserSharedCookie'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.browserSiteList'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /admin/serviceAnnouncement:
     get:
       tags:
@@ -2892,6 +2941,152 @@ paths:
       x-ms-docs-operation-type: action
 components:
   schemas:
+    microsoft.graph.browserSite:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: browserSite
+          type: object
+          properties:
+            allowRedirect:
+              type: boolean
+              description: 'Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.'
+            comment:
+              type: string
+              description: The comment for the site.
+            compatibilityMode:
+              $ref: '#/components/schemas/microsoft.graph.browserSiteCompatibilityMode'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the site was created.
+              format: date-time
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the site was deleted.
+              format: date-time
+              nullable: true
+            history:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.browserSiteHistory'
+              description: The history of modifications applied to the site.
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the site was last modified.
+              format: date-time
+            mergeType:
+              $ref: '#/components/schemas/microsoft.graph.browserSiteMergeType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.browserSiteStatus'
+            targetEnvironment:
+              $ref: '#/components/schemas/microsoft.graph.browserSiteTargetEnvironment'
+            webUrl:
+              type: string
+              description: The URL of the site.
+          additionalProperties:
+            type: object
+          description: Singleton entity which is used to specify IE mode site metadata
+    microsoft.graph.browserSharedCookie:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: browserSharedCookie
+          type: object
+          properties:
+            comment:
+              type: string
+              description: The comment for the shared cookie.
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the shared cookie was created.
+              format: date-time
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the shared cookie was deleted.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the cookie.
+            history:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.browserSharedCookieHistory'
+              description: The history of modifications applied to the cookie.
+            hostOnly:
+              type: boolean
+              description: Controls whether a cookie is a host-only or domain cookie.
+            hostOrDomain:
+              type: string
+              description: The URL of the cookie.
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the cookie was last modified.
+              format: date-time
+            path:
+              type: string
+              description: The path of the cookie.
+            sourceEnvironment:
+              $ref: '#/components/schemas/microsoft.graph.browserSharedCookieSourceEnvironment'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.browserSharedCookieStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.browserSiteList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: browserSiteList
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description of the site list.
+            displayName:
+              type: string
+              description: The name of the site list.
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the site list was last modified.
+              format: date-time
+            publishedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            publishedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the site list was published.
+              format: date-time
+              nullable: true
+            revision:
+              type: string
+              description: The current revision of the site list.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.browserSiteListStatus'
+            sharedCookies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.browserSharedCookie'
+              description: A collection of shared cookies defined for the site list.
+              x-ms-navigationProperty: true
+            sites:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.browserSite'
+              description: A collection of sites defined for the site list.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: A singleton entity which is used to specify IE mode site list metadata
     microsoft.graph.serviceAnnouncement:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3077,6 +3272,282 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.browserSiteCompatibilityMode:
+      title: browserSiteCompatibilityMode
+      enum:
+        - default
+        - internetExplorer8Enterprise
+        - internetExplorer7Enterprise
+        - internetExplorer11
+        - internetExplorer10
+        - internetExplorer9
+        - internetExplorer8
+        - internetExplorer7
+        - internetExplorer5
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: browserSiteCompatibilityMode
+        modelAsString: false
+        values:
+          - value: default
+            description: Loads the site using default compatibility mode.
+            name: default
+          - value: internetExplorer8Enterprise
+            description: Loads the site in internetExplorer8 Enterprise Mode
+            name: internetExplorer8Enterprise
+          - value: internetExplorer7Enterprise
+            description: Loads the site in internetExplorer7 Enterprise Mode
+            name: internetExplorer7Enterprise
+          - value: internetExplorer11
+            description: Loads the site in internetExplorer11
+            name: internetExplorer11
+          - value: internetExplorer10
+            description: Loads the site in internetExplorer10
+            name: internetExplorer10
+          - value: internetExplorer9
+            description: Loads the site in internetExplorer9
+            name: internetExplorer9
+          - value: internetExplorer8
+            description: Loads the site in internetExplorer8
+            name: internetExplorer8
+          - value: internetExplorer7
+            description: Loads the site in internetExplorer7
+            name: internetExplorer7
+          - value: internetExplorer5
+            description: Loads the site in internetExplorer5
+            name: internetExplorer5
+          - value: unknownFutureValue
+            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
+            name: unknownFutureValue
+    microsoft.graph.browserSiteHistory:
+      title: browserSiteHistory
+      type: object
+      properties:
+        allowRedirect:
+          type: boolean
+          description: 'Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.'
+          nullable: true
+        comment:
+          type: string
+          description: The comment for the site.
+        compatibilityMode:
+          $ref: '#/components/schemas/microsoft.graph.browserSiteCompatibilityMode'
+        lastModifiedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        mergeType:
+          $ref: '#/components/schemas/microsoft.graph.browserSiteMergeType'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the site was last published.
+          format: date-time
+        targetEnvironment:
+          $ref: '#/components/schemas/microsoft.graph.browserSiteTargetEnvironment'
+      additionalProperties:
+        type: object
+      description: The history for the site modifications
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.browserSiteMergeType:
+      title: browserSiteMergeType
+      enum:
+        - noMerge
+        - default
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: browserSiteMergeType
+        modelAsString: false
+        values:
+          - value: noMerge
+            description: No merge type
+            name: noMerge
+          - value: default
+            description: Default merge type
+            name: default
+          - value: unknownFutureValue
+            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
+            name: unknownFutureValue
+    microsoft.graph.browserSiteStatus:
+      title: browserSiteStatus
+      enum:
+        - published
+        - pendingAdd
+        - pendingEdit
+        - pendingDelete
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: browserSiteStatus
+        modelAsString: false
+        values:
+          - value: published
+            description: A site that has been published
+            name: published
+          - value: pendingAdd
+            description: A site that has been added pending publish
+            name: pendingAdd
+          - value: pendingEdit
+            description: A site that has been edited pending publish
+            name: pendingEdit
+          - value: pendingDelete
+            description: A site that has been deleted pending publish
+            name: pendingDelete
+          - value: unknownFutureValue
+            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
+            name: unknownFutureValue
+    microsoft.graph.browserSiteTargetEnvironment:
+      title: browserSiteTargetEnvironment
+      enum:
+        - internetExplorerMode
+        - internetExplorer11
+        - microsoftEdge
+        - configurable
+        - none
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: browserSiteTargetEnvironment
+        modelAsString: false
+        values:
+          - value: internetExplorerMode
+            description: Open in Internet Explorer Mode
+            name: internetExplorerMode
+          - value: internetExplorer11
+            description: Open in standalone Internet Explorer 11
+            name: internetExplorer11
+          - value: microsoftEdge
+            description: Open in Microsoft Edge
+            name: microsoftEdge
+          - value: configurable
+            description: Configurable type
+            name: configurable
+          - value: none
+            description: Open in the browser the employee chooses.
+            name: none
+          - value: unknownFutureValue
+            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
+            name: unknownFutureValue
+    microsoft.graph.browserSharedCookieHistory:
+      title: browserSharedCookieHistory
+      type: object
+      properties:
+        comment:
+          type: string
+          description: The comment for the shared cookie.
+          nullable: true
+        displayName:
+          type: string
+          description: The name of the cookie.
+        hostOnly:
+          type: boolean
+          description: Controls whether a cookie is a host-only or domain cookie.
+        hostOrDomain:
+          type: string
+          description: The URL of the cookie.
+          nullable: true
+        lastModifiedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        path:
+          type: string
+          description: The path of the cookie.
+          nullable: true
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the cookie was last published.
+          format: date-time
+        sourceEnvironment:
+          $ref: '#/components/schemas/microsoft.graph.browserSharedCookieSourceEnvironment'
+      additionalProperties:
+        type: object
+    microsoft.graph.browserSharedCookieSourceEnvironment:
+      title: browserSharedCookieSourceEnvironment
+      enum:
+        - microsoftEdge
+        - internetExplorer11
+        - both
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: browserSharedCookieSourceEnvironment
+        modelAsString: false
+        values:
+          - value: microsoftEdge
+            description: Share session cookies from Microsoft Edge to Internet Explorer.
+            name: microsoftEdge
+          - value: internetExplorer11
+            description: Share session cookies from Internet Explorer to Microsoft Edge.
+            name: internetExplorer11
+          - value: both
+            description: Share session cookies to and from Microsoft Edge and Internet Explorer.
+            name: both
+          - value: unknownFutureValue
+            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
+            name: unknownFutureValue
+    microsoft.graph.browserSharedCookieStatus:
+      title: browserSharedCookieStatus
+      enum:
+        - published
+        - pendingAdd
+        - pendingEdit
+        - pendingDelete
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: browserSharedCookieStatus
+        modelAsString: false
+        values:
+          - value: published
+            description: A sharedcookie that has been published
+            name: published
+          - value: pendingAdd
+            description: A sharedcookie that has been added pending publish
+            name: pendingAdd
+          - value: pendingEdit
+            description: A sharedcookie that has been edited pending publish
+            name: pendingEdit
+          - value: pendingDelete
+            description: A sharedcookie that has been deleted pending publish
+            name: pendingDelete
+          - value: unknownFutureValue
+            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
+            name: unknownFutureValue
+    microsoft.graph.browserSiteListStatus:
+      title: browserSiteListStatus
+      enum:
+        - draft
+        - published
+        - pending
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: browserSiteListStatus
+        modelAsString: false
+        values:
+          - value: draft
+            description: A site list that has not yet been published
+            name: draft
+          - value: published
+            description: A site list that has been published with no pending changes.
+            name: published
+          - value: pending
+            description: A site that has pending changes
+            name: pending
+          - value: unknownFutureValue
+            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shoudn''t be necessary.'
+            name: unknownFutureValue
     microsoft.graph.serviceHealthStatus:
       title: serviceHealthStatus
       enum:
@@ -3265,6 +3736,20 @@ components:
             $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
         '@odata.nextLink':
           type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name of the identity. This property is read-only.
+          nullable: true
+        id:
+          type: string
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

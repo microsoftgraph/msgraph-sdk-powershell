@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition
 
 ## SYNOPSIS
-The taskDefinition associated with the related lifecycle workflow task.
+The taskDefinition associated with the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition -InputObject <
 ```
 
 ## DESCRIPTION
-The taskDefinition associated with the related lifecycle workflow task.
+The taskDefinition associated with the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 
 ## EXAMPLES
 

@@ -219,12 +219,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSETS <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 BODYPARAMETER <IPathsH2EvdrAdminWindowsUpdatesUpdatableassetsUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
   - `[CatalogEntryId <String>]`: key: id of catalogEntry

@@ -160,7 +160,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -433,7 +434,7 @@ BODYPARAMETER <IMicrosoftGraphServiceHealthIssue>: serviceHealthIssue
   - `[LastModifiedDateTime <DateTime?>]`: The last modified time of the service event.
   - `[StartDateTime <DateTime?>]`: The start time of the service event.
   - `[Title <String>]`: The title of the service event.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Classification <String>]`: serviceHealthClassificationType
   - `[Feature <String>]`: The feature name of the service issue.
   - `[FeatureGroup <String>]`: The feature group name of the service issue.

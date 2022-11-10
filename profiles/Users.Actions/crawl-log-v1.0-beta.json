@@ -1941,7 +1941,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.endRemoteHelpSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
     "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.enrollNowAction": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.initiateMobileDeviceManagementKeyRecovery": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },

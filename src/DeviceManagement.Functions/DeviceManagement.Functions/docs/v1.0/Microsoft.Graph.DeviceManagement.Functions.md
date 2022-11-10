@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-Module Guid: ab2ba671-f5f5-4fa9-beac-93366d0faeda
+Module Guid: 846c5a7f-adc5-4d94-8ef3-0b99c665c3f3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,6 +13,12 @@ Microsoft Graph PowerShell Cmdlets
 ## Microsoft.Graph.DeviceManagement.Functions Cmdlets
 ### [Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery](Confirm-MgDeviceManagementWindowEnrollmentAutoDiscovery.md)
 Invoke function verifyWindowsEnrollmentAutoDiscovery
+
+### [Get-MgDeviceManagementAuditEventAuditActivityType](Get-MgDeviceManagementAuditEventAuditActivityType.md)
+Invoke function getAuditActivityTypes
+
+### [Get-MgDeviceManagementAuditEventAuditCategory](Get-MgDeviceManagementAuditEventAuditCategory.md)
+Invoke function getAuditCategories
 
 ### [Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue](Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue.md)
 Invoke function getOmaSettingPlainTextValue

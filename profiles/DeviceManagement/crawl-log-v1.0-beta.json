@@ -1401,34 +1401,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
-    "/deviceManagement/userExperienceAnalyticsRegressionSummary": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
-    },
-    "/deviceManagement/userExperienceAnalyticsRegressionSummary/manufacturerRegression": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
-    },
-    "/deviceManagement/userExperienceAnalyticsRegressionSummary/manufacturerRegression/{userExperienceAnalyticsMetric-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
-    },
-    "/deviceManagement/userExperienceAnalyticsRegressionSummary/modelRegression": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
-    },
-    "/deviceManagement/userExperienceAnalyticsRegressionSummary/modelRegression/{userExperienceAnalyticsMetric-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
-    },
-    "/deviceManagement/userExperienceAnalyticsRegressionSummary/operatingSystemRegression": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
-    },
-    "/deviceManagement/userExperienceAnalyticsRegressionSummary/operatingSystemRegression/{userExperienceAnalyticsMetric-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
-    },
     "/deviceManagement/userExperienceAnalyticsRemoteConnection": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"

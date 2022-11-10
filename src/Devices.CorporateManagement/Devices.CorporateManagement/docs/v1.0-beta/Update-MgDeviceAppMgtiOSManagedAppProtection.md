@@ -43,8 +43,9 @@ Update-MgDeviceAppMgtiOSManagedAppProtection -IosManagedAppProtectionId <String>
  [-MaximumRequiredOSVersion <String>] [-MaximumWarningOSVersion <String>] [-MaximumWipeOSVersion <String>]
  [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
- [-MinimumWarningOSVersion <String>] [-MinimumWipeAppVersion <String>] [-MinimumWipeOSVersion <String>]
- [-MinimumWipeSdkVersion <String>] [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
+ [-MinimumWarningOSVersion <String>] [-MinimumWarningSdkVersion <String>] [-MinimumWipeAppVersion <String>]
+ [-MinimumWipeOSVersion <String>] [-MinimumWipeSdkVersion <String>]
+ [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
  [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
  [-NotificationRestriction <ManagedAppNotificationRestriction>] [-OrganizationalCredentialsRequired]
  [-PeriodBeforePinReset <TimeSpan>] [-PeriodOfflineBeforeAccessCheck <TimeSpan>]
@@ -101,8 +102,9 @@ Update-MgDeviceAppMgtiOSManagedAppProtection -InputObject <IDevicesCorporateMana
  [-MaximumRequiredOSVersion <String>] [-MaximumWarningOSVersion <String>] [-MaximumWipeOSVersion <String>]
  [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
- [-MinimumWarningOSVersion <String>] [-MinimumWipeAppVersion <String>] [-MinimumWipeOSVersion <String>]
- [-MinimumWipeSdkVersion <String>] [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
+ [-MinimumWarningOSVersion <String>] [-MinimumWarningSdkVersion <String>] [-MinimumWipeAppVersion <String>]
+ [-MinimumWipeOSVersion <String>] [-MinimumWipeSdkVersion <String>]
+ [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
  [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
  [-NotificationRestriction <ManagedAppNotificationRestriction>] [-OrganizationalCredentialsRequired]
  [-PeriodBeforePinReset <TimeSpan>] [-PeriodOfflineBeforeAccessCheck <TimeSpan>]
@@ -972,6 +974,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MinimumWarningSdkVersion
+Versions less than the specified version will result in warning message on the managed app from accessing company data.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MinimumWipeAppVersion
 Versions less than or equal to the specified version will wipe the managed app and the associated company data.
 
@@ -1499,6 +1516,7 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection1>: Policy used to configur
   - `[FilterOpenInToOnlyManagedApps <Boolean?>]`: Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
   - `[ManagedUniversalLinks <String[]>]`: A list of custom urls that are allowed to invocate a managed app
   - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
+  - `[MinimumWarningSdkVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data.
   - `[MinimumWipeSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
   - `[ProtectInboundDataFromUnknownSources <Boolean?>]`: Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
   - `[ThirdPartyKeyboardsBlocked <Boolean?>]`: Defines if third party keyboards are allowed while accessing a managed app

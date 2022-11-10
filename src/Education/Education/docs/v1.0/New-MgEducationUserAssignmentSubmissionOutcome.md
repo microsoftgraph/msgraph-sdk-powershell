@@ -8,7 +8,10 @@ schema: 2.0.0
 # New-MgEducationUserAssignmentSubmissionOutcome
 
 ## SYNOPSIS
-Create new navigation property to outcomes for education
+Create a new feedback resource for a submission.
+Only a teacher can perform this operation.
+To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
+If the file doesn't exist or isn't in that folder, the `POST` request will fail.
 
 ## SYNTAX
 
@@ -41,7 +44,10 @@ New-MgEducationUserAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to outcomes for education
+Create a new feedback resource for a submission.
+Only a teacher can perform this operation.
+To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
+If the file doesn't exist or isn't in that folder, the `POST` request will fail.
 
 ## EXAMPLES
 
@@ -172,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-Moment in time when the resource was last modified.
+The moment in time when the resource was last modified.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
 
@@ -252,7 +258,7 @@ BODYPARAMETER <IMicrosoftGraphEducationOutcome>: educationOutcome
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
+  - `[LastModifiedDateTime <DateTime?>]`: The moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment

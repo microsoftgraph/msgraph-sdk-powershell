@@ -1011,6 +1011,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement>: Singleton entity that acts a
     - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
     - `[MinimumWarningCompanyPortalVersion <String>]`: Minimum version of the Company portal that must be installed on the device or the user will receive a warning
     - `[MinimumWarningPatchVersion <String>]`: Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
+    - `[MinimumWarningSdkVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)
     - `[MinimumWipeCompanyPortalVersion <String>]`: Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
     - `[MinimumWipePatchVersion <String>]`: Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)
     - `[MinimumWipeSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
@@ -1153,6 +1154,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement>: Singleton entity that acts a
     - `[FilterOpenInToOnlyManagedApps <Boolean?>]`: Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
     - `[ManagedUniversalLinks <String[]>]`: A list of custom urls that are allowed to invocate a managed app
     - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
+    - `[MinimumWarningSdkVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data.
     - `[MinimumWipeSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
     - `[ProtectInboundDataFromUnknownSources <Boolean?>]`: Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
     - `[ThirdPartyKeyboardsBlocked <Boolean?>]`: Defines if third party keyboards are allowed while accessing a managed app
@@ -1477,6 +1479,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement>: Singleton entity that acts a
     - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
     - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[IsAssigned <Boolean?>]`: Indicates if the policy is deployed to any inclusion groups or not.
+    - `[TargetedAppManagementLevels <AppManagementLevel?>]`: Management levels for apps
   - `[VppTokens <IMicrosoftGraphVppToken2[]>]`: List of Vpp tokens for this organization.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AppleId <String>]`: The apple Id associated with the given Apple Volume Purchase Program Token.
@@ -1746,6 +1749,7 @@ DEFAULTMANAGEDAPPPROTECTIONS <IMicrosoftGraphDefaultManagedAppProtection1[]>: De
   - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
   - `[MinimumWarningCompanyPortalVersion <String>]`: Minimum version of the Company portal that must be installed on the device or the user will receive a warning
   - `[MinimumWarningPatchVersion <String>]`: Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
+  - `[MinimumWarningSdkVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)
   - `[MinimumWipeCompanyPortalVersion <String>]`: Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
   - `[MinimumWipePatchVersion <String>]`: Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)
   - `[MinimumWipeSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
@@ -1917,6 +1921,7 @@ IOSMANAGEDAPPPROTECTIONS <IMicrosoftGraphIosManagedAppProtection1[]>: iOS manage
   - `[FilterOpenInToOnlyManagedApps <Boolean?>]`: Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
   - `[ManagedUniversalLinks <String[]>]`: A list of custom urls that are allowed to invocate a managed app
   - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
+  - `[MinimumWarningSdkVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data.
   - `[MinimumWipeSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
   - `[ProtectInboundDataFromUnknownSources <Boolean?>]`: Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
   - `[ThirdPartyKeyboardsBlocked <Boolean?>]`: Defines if third party keyboards are allowed while accessing a managed app
@@ -2322,6 +2327,7 @@ TARGETEDMANAGEDAPPCONFIGURATIONS <IMicrosoftGraphTargetedManagedAppConfiguration
     - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
   - `[IsAssigned <Boolean?>]`: Indicates if the policy is deployed to any inclusion groups or not.
+  - `[TargetedAppManagementLevels <AppManagementLevel?>]`: Management levels for apps
 
 VPPTOKENS <IMicrosoftGraphVppToken2[]>: List of Vpp tokens for this organization.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

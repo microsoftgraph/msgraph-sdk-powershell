@@ -56,7 +56,8 @@ Update-MgDeviceAppMgtDefaultManagedAppProtection -DefaultManagedAppProtectionId 
  [-MinimumRequiredCompanyPortalVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredPatchVersion <String>] [-MinimumRequiredSdkVersion <String>]
  [-MinimumWarningAppVersion <String>] [-MinimumWarningCompanyPortalVersion <String>]
- [-MinimumWarningOSVersion <String>] [-MinimumWarningPatchVersion <String>] [-MinimumWipeAppVersion <String>]
+ [-MinimumWarningOSVersion <String>] [-MinimumWarningPatchVersion <String>]
+ [-MinimumWarningSdkVersion <String>] [-MinimumWipeAppVersion <String>]
  [-MinimumWipeCompanyPortalVersion <String>] [-MinimumWipeOSVersion <String>]
  [-MinimumWipePatchVersion <String>] [-MinimumWipeSdkVersion <String>]
  [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
@@ -134,7 +135,8 @@ Update-MgDeviceAppMgtDefaultManagedAppProtection -InputObject <IDevicesCorporate
  [-MinimumRequiredCompanyPortalVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredPatchVersion <String>] [-MinimumRequiredSdkVersion <String>]
  [-MinimumWarningAppVersion <String>] [-MinimumWarningCompanyPortalVersion <String>]
- [-MinimumWarningOSVersion <String>] [-MinimumWarningPatchVersion <String>] [-MinimumWipeAppVersion <String>]
+ [-MinimumWarningOSVersion <String>] [-MinimumWarningPatchVersion <String>]
+ [-MinimumWarningSdkVersion <String>] [-MinimumWipeAppVersion <String>]
  [-MinimumWipeCompanyPortalVersion <String>] [-MinimumWipeOSVersion <String>]
  [-MinimumWipePatchVersion <String>] [-MinimumWipeSdkVersion <String>]
  [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
@@ -1361,6 +1363,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MinimumWarningSdkVersion
+Versions less than the specified version will result in warning message on the managed app from accessing company data.
+(iOS only)
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MinimumWipeAppVersion
 Versions less than or equal to the specified version will wipe the managed app and the associated company data.
 
@@ -2032,6 +2050,7 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection1>: Policy used to conf
   - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
   - `[MinimumWarningCompanyPortalVersion <String>]`: Minimum version of the Company portal that must be installed on the device or the user will receive a warning
   - `[MinimumWarningPatchVersion <String>]`: Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
+  - `[MinimumWarningSdkVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)
   - `[MinimumWipeCompanyPortalVersion <String>]`: Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
   - `[MinimumWipePatchVersion <String>]`: Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)
   - `[MinimumWipeSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.

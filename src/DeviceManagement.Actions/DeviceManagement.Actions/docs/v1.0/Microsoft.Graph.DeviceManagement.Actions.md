@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: dfe9ce46-b565-4e5a-8eb2-5939ad8cdf34
+Module Guid: ee5571a4-1ad7-4252-b2da-e8d0b1dc6cbb
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -98,6 +98,9 @@ Invoke action windowsDefenderScan
 
 ### [Invoke-MgScheduleDeviceManagementDeviceCompliancePolicyActionForRule](Invoke-MgScheduleDeviceManagementDeviceCompliancePolicyActionForRule.md)
 Invoke action scheduleActionsForRules
+
+### [Invoke-MgTerminateDeviceManagementPartner](Invoke-MgTerminateDeviceManagementPartner.md)
+Invoke action terminate
 
 ### [Invoke-MgUnassignDeviceManagementWindowAutopilotDeviceIdentityUserFromDevice](Invoke-MgUnassignDeviceManagementWindowAutopilotDeviceIdentityUserFromDevice.md)
 Unassigns the user from an Autopilot device.

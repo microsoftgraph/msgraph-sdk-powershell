@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy
 
 ## SYNOPSIS
-The unique identifier of the Azure AD user that created the custom task extension.
+The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy
 ```
 
 ## DESCRIPTION
-The unique identifier of the Azure AD user that created the custom task extension.
+The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
 
 ## EXAMPLES
 

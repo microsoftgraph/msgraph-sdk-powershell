@@ -21,6 +21,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/deviceManagementPartners/{deviceManagementPartner-id}/microsoft.graph.terminate": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector-id}/microsoft.graph.sync": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"

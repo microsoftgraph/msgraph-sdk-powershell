@@ -12,27 +12,27 @@ Invoke action getMemberObjects
 
 ## SYNTAX
 
-### GetExpanded1 (Default)
+### GetExpanded (Default)
 ```
 Get-MgContactMemberObject -OrgContactId <String> [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgContactMemberObject -OrgContactId <String>
  -BodyParameter <IPaths1M18OhpContactsOrgcontactIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgContactMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPaths1M18OhpContactsOrgcontactIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentityExpanded1
+### GetViaIdentityExpanded
 ```
 Get-MgContactMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -65,7 +65,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
+Parameter Sets: GetExpanded, GetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -81,7 +81,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1M18OhpContactsOrgcontactIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Get1, GetViaIdentity1
+Parameter Sets: Get, GetViaIdentity
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentityExpanded1
+Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of orgContact
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, GetExpanded1
+Parameter Sets: Get, GetExpanded
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
+Parameter Sets: GetExpanded, GetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -214,6 +214,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
+  - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
