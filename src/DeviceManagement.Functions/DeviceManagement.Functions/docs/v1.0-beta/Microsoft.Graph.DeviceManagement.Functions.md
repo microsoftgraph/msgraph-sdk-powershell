@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-Module Guid: ab2ba671-f5f5-4fa9-beac-93366d0faeda
+Module Guid: 846c5a7f-adc5-4d94-8ef3-0b99c665c3f3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -116,9 +116,6 @@ Invoke function retrieveRemoteHelpSession
 ### [Get-MgDeviceManagementMonitoringAlertRecordPortalNotification](Get-MgDeviceManagementMonitoringAlertRecordPortalNotification.md)
 Invoke function getPortalNotifications
 
-### [Get-MgDeviceManagementOrganizationalMessageTenantConsent](Get-MgDeviceManagementOrganizationalMessageTenantConsent.md)
-Invoke function getOrganizationalMessageTenantConsent
-
 ### [Get-MgDeviceManagementResourceOperationScopeForUser](Get-MgDeviceManagementResourceOperationScopeForUser.md)
 Invoke function getScopesForUser
 
@@ -174,7 +171,7 @@ Invoke function hasCustomRoleScopeTag
 Download Apple push notification certificate signing request
 
 ### [Invoke-MgExperienceDeviceManagement](Invoke-MgExperienceDeviceManagement.md)
-Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+Invoke function userExperienceAnalyticsSummarizedDeviceScopes
 
 ### [Invoke-MgGraphDeviceManagement](Invoke-MgGraphDeviceManagement.md)
 Invoke function scopedForResource
@@ -184,9 +181,6 @@ Invoke function areGlobalScriptsAvailable
 
 ### [Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice](Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice.md)
 Invoke function summarizeDevicePerformanceDevices
-
-### [Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRegressionSummaryDeviceRegressionPerformance](Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRegressionSummaryDeviceRegressionPerformance.md)
-Invoke function summarizeDeviceRegressionPerformance
 
 ### [Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRemoteConnectionDeviceRemoteConnection](Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRemoteConnectionDeviceRemoteConnection.md)
 Invoke function summarizeDeviceRemoteConnection

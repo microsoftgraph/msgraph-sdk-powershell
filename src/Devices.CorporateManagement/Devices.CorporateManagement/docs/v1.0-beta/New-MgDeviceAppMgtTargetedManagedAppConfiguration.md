@@ -20,7 +20,8 @@ New-MgDeviceAppMgtTargetedManagedAppConfiguration [-AdditionalProperties <Hashta
  [-CustomSettings <IMicrosoftGraphKeyValuePair[]>] [-DeployedAppCount <Int32>]
  [-DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsAssigned] [-LastModifiedDateTime <DateTime>]
- [-RoleScopeTagIds <String[]>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RoleScopeTagIds <String[]>] [-TargetedAppManagementLevels <AppManagementLevel>] [-Version <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -267,6 +268,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TargetedAppManagementLevels
+Management levels for apps
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Support.AppManagementLevel
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Version
 Version of the entity.
 
@@ -388,6 +404,7 @@ BODYPARAMETER <IMicrosoftGraphTargetedManagedAppConfiguration1>: Configuration u
     - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
   - `[IsAssigned <Boolean?>]`: Indicates if the policy is deployed to any inclusion groups or not.
+  - `[TargetedAppManagementLevels <AppManagementLevel?>]`: Management levels for apps
 
 CUSTOMSETTINGS <IMicrosoftGraphKeyValuePair[]>: A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
   - `[Name <String>]`: Name for this key-value pair

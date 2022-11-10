@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 3a11d282-1e18-426a-a1ae-b29f2ab12bc9
+Module Guid: 6e42dc3c-9eae-4ad2-af60-051bffc649d0
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -448,6 +448,9 @@ Unhide a chat for a user.
 
 ### [Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink](Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
+
+### [Invoke-MgInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery.md)
+Perform MDM key recovery and TPM attestation
 
 ### [Invoke-MgInvalidateUserRefreshToken](Invoke-MgInvalidateUserRefreshToken.md)
 Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the **refreshTokensValidFromDateTime** user property to the current date-time.
@@ -1096,6 +1099,9 @@ The action moves the event to the Deleted Items folder.
 The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
 An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
 You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
+
+### [Stop-MgUserManagedDeviceRemoteHelpSession](Stop-MgUserManagedDeviceRemoteHelpSession.md)
+Remote help - End ACS session, Pubsub session and delete Remote help session
 
 ### [Stop-MgUserPendingAccessReviewInstance](Stop-MgUserPendingAccessReviewInstance.md)
 Stop a currently active accessReviewInstance.

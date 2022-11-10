@@ -140,6 +140,7 @@ BODYPARAMETER <IPathsDjtigpDevicemanagementGrouppolicymigrationreportsMicrosoftG
     - `[GroupPolicyObjectId <String>]`: The Group Policy Object GUID from GPO Xml content
     - `[LastModifiedDateTime <DateTime?>]`: The date and time at which the GroupPolicyObjectFile was last modified.
     - `[OuDistinguishedName <String>]`: The distinguished name of the OU.
+    - `[RoleScopeTagIds <String[]>]`: The list of scope tags for the configuration.
 
 GROUPPOLICYOBJECTFILE <IMicrosoftGraphGroupPolicyObjectFile>: The Group Policy Object file uploaded by admin.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -149,6 +150,7 @@ GROUPPOLICYOBJECTFILE <IMicrosoftGraphGroupPolicyObjectFile>: The Group Policy O
   - `[GroupPolicyObjectId <String>]`: The Group Policy Object GUID from GPO Xml content
   - `[LastModifiedDateTime <DateTime?>]`: The date and time at which the GroupPolicyObjectFile was last modified.
   - `[OuDistinguishedName <String>]`: The distinguished name of the OU.
+  - `[RoleScopeTagIds <String[]>]`: The list of scope tags for the configuration.
 
 ## RELATED LINKS
 

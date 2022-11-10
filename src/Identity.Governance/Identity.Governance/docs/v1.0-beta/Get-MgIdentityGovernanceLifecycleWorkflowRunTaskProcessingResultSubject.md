@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject
 
 ## SYNOPSIS
-The unique identifier of the Azure AD user targeted for the task execution.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject
 ```
 
 ## DESCRIPTION
-The unique identifier of the Azure AD user targeted for the task execution.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: 97d99958-6bfd-4778-8d73-6142d00f3efd
+Module Guid: 9625a33a-0f5c-4ff6-ab5e-89cdca1b81b6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -270,6 +270,9 @@ The export jobs created for downloading reports.
 
 ### [Get-MgDeviceManagementVirtualEndpointServicePlan](Get-MgDeviceManagementVirtualEndpointServicePlan.md)
 Cloud PC service plans.
+
+### [Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan](Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
+Get sharedUseServicePlans from deviceManagement
 
 ### [Get-MgDeviceManagementVirtualEndpointSnapshot](Get-MgDeviceManagementVirtualEndpointSnapshot.md)
 Cloud PC snapshots.
