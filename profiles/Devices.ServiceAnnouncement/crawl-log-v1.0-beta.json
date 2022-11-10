@@ -1,6 +1,10 @@
 {
   "resources": [],
   "operations": {
+    "/admin/edge/internetExplorerMode/siteLists/{browserSiteList-id}/microsoft.graph.publish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"
+    },
     "/admin/serviceAnnouncement": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.ServiceAnnouncement.yml"

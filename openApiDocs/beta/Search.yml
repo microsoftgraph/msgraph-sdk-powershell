@@ -3122,6 +3122,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.collapseProperty'
+          description: Contains the ordered collection of fields and limit to collapse results. Optional.
         contentSources:
           type: array
           items:
@@ -3600,10 +3601,12 @@ components:
           type: array
           items:
             type: string
+          description: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
         limit:
           maximum: 32767
           minimum: -32768
           type: integer
+          description: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
           format: int16
       additionalProperties:
         type: object

@@ -137,7 +137,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.endRemoteHelpSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.enrollNowAction": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.initiateMobileDeviceManagementKeyRecovery": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -297,6 +305,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.reorder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/dataSharingConsents/{dataSharingConsent-id}/microsoft.graph.consentToDataSharing": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -418,6 +430,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/deviceHealthScripts/microsoft.graph.enableGlobalScripts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/deviceManagementPartners/{deviceManagementPartner-id}/microsoft.graph.terminate": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -549,7 +565,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.endRemoteHelpSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.enrollNowAction": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.initiateMobileDeviceManagementKeyRecovery": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -713,15 +737,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
-    "/deviceManagement/microsoft.graph.postOrganizationalMessageTenantConsent": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
-    },
     "/deviceManagement/microsoft.graph.sendCustomNotificationToCompanyPortal": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
-    },
-    "/deviceManagement/microsoft.graph.updateOrganizationalMessageTenantConsent": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -905,6 +921,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/reports/microsoft.graph.getEncryptionReportForDevices": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/reports/microsoft.graph.getEnrollmentConfigurationPoliciesByDevice": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -926,6 +946,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/reports/microsoft.graph.getMalwareSummaryReport": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getMobileApplicationManagementAppConfigurationReport": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
@@ -1026,6 +1050,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.createCopy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.reorder": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },

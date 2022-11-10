@@ -1002,6 +1002,41 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.endRemoteHelpSession':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action endRemoteHelpSession
+      description: 'Remote help - End ACS session, Pubsub session and delete Remote help session'
+      operationId: deviceManagement.comanagedDevices_endRemoteHelpSession
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionKey:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.enrollNowAction':
     post:
       tags:
@@ -1009,6 +1044,28 @@ paths:
       summary: Invoke action enrollNowAction
       description: Trigger comanagement enrollment action on ConfigurationManager client
       operationId: deviceManagement.comanagedDevices_enrollNowAction
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.initiateMobileDeviceManagementKeyRecovery':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action initiateMobileDeviceManagementKeyRecovery
+      description: Perform MDM key recovery and TPM attestation
+      operationId: deviceManagement.comanagedDevices_initiateMobileDeviceManagementKeyRecovery
       parameters:
         - name: managedDevice-id
           in: path
@@ -2288,6 +2345,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.reorder':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reorder
+      operationId: deviceManagement.configurationPolicies_reorder
+      parameters:
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: 'key: id of deviceManagementConfigurationPolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                priority:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/dataSharingConsents/{dataSharingConsent-id}/microsoft.graph.consentToDataSharing':
     post:
       tags:
@@ -2805,6 +2898,10 @@ paths:
             schema:
               type: object
               properties:
+                scopedToAllDevices:
+                  type: boolean
+                  default: false
+                  nullable: true
                 state:
                   $ref: '#/components/schemas/microsoft.graph.scheduledRetireState'
                 managedDeviceIds:
@@ -3397,6 +3494,27 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action enableGlobalScripts
       operationId: deviceManagement.deviceHealthScripts_enableGlobalScripts
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementPartners/{deviceManagementPartner-id}/microsoft.graph.terminate':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action terminate
+      operationId: deviceManagement.deviceManagementPartners_terminate
+      parameters:
+        - name: deviceManagementPartner-id
+          in: path
+          description: 'key: id of deviceManagementPartner'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementPartner
       responses:
         '204':
           description: Success
@@ -4583,6 +4701,41 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.endRemoteHelpSession':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action endRemoteHelpSession
+      description: 'Remote help - End ACS session, Pubsub session and delete Remote help session'
+      operationId: deviceManagement.managedDevices_endRemoteHelpSession
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionKey:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.enrollNowAction':
     post:
       tags:
@@ -4590,6 +4743,28 @@ paths:
       summary: Invoke action enrollNowAction
       description: Trigger comanagement enrollment action on ConfigurationManager client
       operationId: deviceManagement.managedDevices_enrollNowAction
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.initiateMobileDeviceManagementKeyRecovery':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action initiateMobileDeviceManagementKeyRecovery
+      description: Perform MDM key recovery and TPM attestation
+      operationId: deviceManagement.managedDevices_initiateMobileDeviceManagementKeyRecovery
       parameters:
         - name: managedDevice-id
           in: path
@@ -5793,35 +5968,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /deviceManagement/microsoft.graph.postOrganizationalMessageTenantConsent:
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action postOrganizationalMessageTenantConsent
-      operationId: deviceManagement_postOrganizationalMessageTenantConsent
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                firstPartyMessageAllowed:
-                  type: boolean
-                  default: false
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.organizationalMessageTenantConsent'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/microsoft.graph.sendCustomNotificationToCompanyPortal:
     post:
       tags:
@@ -5852,35 +5998,6 @@ paths:
       responses:
         '204':
           description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  /deviceManagement/microsoft.graph.updateOrganizationalMessageTenantConsent:
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action updateOrganizationalMessageTenantConsent
-      operationId: deviceManagement_updateOrganizationalMessageTenantConsent
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                firstPartyMessageAllowed:
-                  type: boolean
-                  default: false
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.organizationalMessageTenantConsent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -8589,6 +8706,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getEncryptionReportForDevices:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getEncryptionReportForDevices
+      operationId: deviceManagement.reports_getEncryptionReportGraphFPreDevices
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getEnrollmentConfigurationPoliciesByDevice:
     post:
       tags:
@@ -8949,6 +9138,78 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action getMalwareSummaryReport
       operationId: deviceManagement.reports_getMalwareSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getMobileApplicationManagementAppConfigurationReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getMobileApplicationManagementAppConfigurationReport
+      operationId: deviceManagement.reports_getMobileApplicationManagementAppConfigurationReport
       requestBody:
         description: Action parameters
         content:
@@ -10683,6 +10944,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.reorder':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reorder
+      operationId: deviceManagement.reusablePolicySettings.referencingConfigurationPolicies_reorder
+      parameters:
+        - name: deviceManagementReusablePolicySetting-id
+          in: path
+          description: 'key: id of deviceManagementReusablePolicySetting'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementReusablePolicySetting
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: 'key: id of deviceManagementConfigurationPolicy'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                priority:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -12598,6 +12903,10 @@ components:
         - title: deviceLogCollectionResponse
           type: object
           properties:
+            enrolledByUser:
+              type: string
+              description: The User Principal Name (UPN) of the user that enrolled the device
+              nullable: true
             errorCode:
               type: integer
               description: 'The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18'
@@ -12838,6 +13147,7 @@ components:
         - moveDeviceToOrganizationalUnit
         - activateDeviceEsim
         - collectDiagnostics
+        - initiateMobileDeviceManagementKeyRecovery
       type: string
       x-ms-enum:
         name: managedDeviceRemoteAction
@@ -12861,6 +13171,9 @@ components:
           - value: collectDiagnostics
             description: Name of the collectDiagnostics action.
             name: collectDiagnostics
+          - value: initiateMobileDeviceManagementKeyRecovery
+            description: Name of action to initiate MDM key recovery
+            name: initiateMobileDeviceManagementKeyRecovery
     microsoft.graph.bulkManagedDeviceActionResult:
       title: bulkManagedDeviceActionResult
       type: object
@@ -13547,6 +13860,12 @@ components:
             ouDistinguishedName:
               type: string
               description: The distinguished name of the OU.
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of scope tags for the configuration.
           additionalProperties:
             type: object
           description: The Group Policy Object file uploaded by admin.
@@ -13840,16 +14159,6 @@ components:
       additionalProperties:
         type: object
       description: Represent status details for device and payload and all associated applied filters.
-    microsoft.graph.organizationalMessageTenantConsent:
-      title: organizationalMessageTenantConsent
-      type: object
-      properties:
-        firstPartyMessageAllowed:
-          type: boolean
-          description: Indicates if first party message is allowed
-      additionalProperties:
-        type: object
-      description: This will allow the admin to see tenant consent info for specific tenant
     microsoft.graph.microsoftTunnelServerLogCollectionResponse:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14521,8 +14830,16 @@ components:
     microsoft.graph.deviceManagementPriorityMetaData:
       title: deviceManagementPriorityMetaData
       type: object
+      properties:
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Priority of the policy. Valid values 1 to 500
+          format: int32
       additionalProperties:
         type: object
+      description: Priority metadata of the policy.
     microsoft.graph.deviceManagementConfigurationTechnologies:
       title: deviceManagementConfigurationTechnologies
       enum:
@@ -14535,6 +14852,7 @@ components:
         - exchangeOnline
         - linuxMdm
         - enrollment
+        - endpointPrivilegeManagement
         - unknownFutureValue
       type: string
       description: Describes which technology this setting can be deployed with
@@ -14569,8 +14887,11 @@ components:
           - value: enrollment
             description: Setting can be deployed through device enrollment.
             name: enrollment
+          - value: endpointPrivilegeManagement
+            description: Setting can be deployed using the Endpoint privilege management channel
+            name: endpointPrivilegeManagement
           - value: unknownFutureValue
-            description: Sentinel member for cases where the client cannot handle the new enum values.
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceManagementConfigurationPolicyTemplateReference:
       title: deviceManagementConfigurationPolicyTemplateReference
@@ -15687,8 +16008,11 @@ components:
         - endpointSecurityAttackSurfaceReduction
         - endpointSecurityAccountProtection
         - endpointSecurityApplicationControl
+        - endpointSecurityEndpointPrivilegeManagement
         - enrollmentConfiguration
+        - appQuietTime
         - baseline
+        - unknownFutureValue
       type: string
       description: Describes the TemplateFamily for the Template entity
       x-ms-enum:
@@ -15719,12 +16043,21 @@ components:
           - value: endpointSecurityApplicationControl
             description: Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
             name: endpointSecurityApplicationControl
+          - value: endpointSecurityEndpointPrivilegeManagement
+            description: Template Family for EPM Elevation Rules
+            name: endpointSecurityEndpointPrivilegeManagement
           - value: enrollmentConfiguration
             description: Template Family for EnrollmentConfiguration
             name: enrollmentConfiguration
+          - value: appQuietTime
+            description: Template Family for QuietTimeIndicates Template Family for all the Apps QuietTime policies and templates
+            name: appQuietTime
           - value: baseline
             description: Template Family for Baseline
             name: baseline
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementConfigurationSettingDefinition:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

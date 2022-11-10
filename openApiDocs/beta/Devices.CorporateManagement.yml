@@ -1352,6 +1352,8 @@ paths:
                 - minimumWarningCompanyPortalVersion desc
                 - minimumWarningPatchVersion
                 - minimumWarningPatchVersion desc
+                - minimumWarningSdkVersion
+                - minimumWarningSdkVersion desc
                 - minimumWipeCompanyPortalVersion
                 - minimumWipeCompanyPortalVersion desc
                 - minimumWipePatchVersion
@@ -1480,6 +1482,7 @@ paths:
                 - minimumRequiredSdkVersion
                 - minimumWarningCompanyPortalVersion
                 - minimumWarningPatchVersion
+                - minimumWarningSdkVersion
                 - minimumWipeCompanyPortalVersion
                 - minimumWipePatchVersion
                 - minimumWipeSdkVersion
@@ -1658,6 +1661,7 @@ paths:
                 - minimumRequiredSdkVersion
                 - minimumWarningCompanyPortalVersion
                 - minimumWarningPatchVersion
+                - minimumWarningSdkVersion
                 - minimumWipeCompanyPortalVersion
                 - minimumWipePatchVersion
                 - minimumWipeSdkVersion
@@ -4040,6 +4044,8 @@ paths:
                 - managedUniversalLinks desc
                 - minimumRequiredSdkVersion
                 - minimumRequiredSdkVersion desc
+                - minimumWarningSdkVersion
+                - minimumWarningSdkVersion desc
                 - minimumWipeSdkVersion
                 - minimumWipeSdkVersion desc
                 - protectInboundDataFromUnknownSources
@@ -4126,6 +4132,7 @@ paths:
                 - filterOpenInToOnlyManagedApps
                 - managedUniversalLinks
                 - minimumRequiredSdkVersion
+                - minimumWarningSdkVersion
                 - minimumWipeSdkVersion
                 - protectInboundDataFromUnknownSources
                 - thirdPartyKeyboardsBlocked
@@ -4274,6 +4281,7 @@ paths:
                 - filterOpenInToOnlyManagedApps
                 - managedUniversalLinks
                 - minimumRequiredSdkVersion
+                - minimumWarningSdkVersion
                 - minimumWipeSdkVersion
                 - protectInboundDataFromUnknownSources
                 - thirdPartyKeyboardsBlocked
@@ -13748,6 +13756,8 @@ paths:
                 - deployedAppCount desc
                 - isAssigned
                 - isAssigned desc
+                - targetedAppManagementLevels
+                - targetedAppManagementLevels desc
               type: string
         - name: $select
           in: query
@@ -13770,6 +13780,7 @@ paths:
                 - appGroupType
                 - deployedAppCount
                 - isAssigned
+                - targetedAppManagementLevels
                 - apps
                 - assignments
                 - deploymentSummary
@@ -13857,6 +13868,7 @@ paths:
                 - appGroupType
                 - deployedAppCount
                 - isAssigned
+                - targetedAppManagementLevels
                 - apps
                 - assignments
                 - deploymentSummary
@@ -20028,6 +20040,8 @@ paths:
               operationId: users.user.managedDevices.managedDevice.disableLostMode
             enableLostMode:
               operationId: users.user.managedDevices.managedDevice.enableLostMode
+            endRemoteHelpSession:
+              operationId: users.user.managedDevices.managedDevice.endRemoteHelpSession
             enrollNowAction:
               operationId: users.user.managedDevices.managedDevice.enrollNowAction
             getCloudPcRemoteActionResults:
@@ -20040,6 +20054,8 @@ paths:
               operationId: users.user.managedDevices.managedDevice.getNonCompliantSettings
             getOemWarranty:
               operationId: users.user.managedDevices.managedDevice.getOemWarranty
+            initiateMobileDeviceManagementKeyRecovery:
+              operationId: users.user.managedDevices.managedDevice.initiateMobileDeviceManagementKeyRecovery
             locateDevice:
               operationId: users.user.managedDevices.managedDevice.locateDevice
             logoutSharedAppleDeviceActiveUser:
@@ -21382,6 +21398,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - enrolledByUser
+                - enrolledByUser desc
                 - errorCode
                 - errorCode desc
                 - expirationDateTimeUTC
@@ -21410,6 +21428,7 @@ paths:
             items:
               enum:
                 - id
+                - enrolledByUser
                 - errorCode
                 - expirationDateTimeUTC
                 - initiatedByUserPrincipalName
@@ -21522,6 +21541,7 @@ paths:
             items:
               enum:
                 - id
+                - enrolledByUser
                 - errorCode
                 - expirationDateTimeUTC
                 - initiatedByUserPrincipalName
@@ -24959,6 +24979,10 @@ components:
               type: string
               description: Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
               nullable: true
+            minimumWarningSdkVersion:
+              type: string
+              description: Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)
+              nullable: true
             minimumWipeCompanyPortalVersion:
               type: string
               description: Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
@@ -25359,6 +25383,10 @@ components:
             minimumRequiredSdkVersion:
               type: string
               description: Versions less than the specified version will block the managed app from accessing company data.
+              nullable: true
+            minimumWarningSdkVersion:
+              type: string
+              description: Versions less than the specified version will result in warning message on the managed app from accessing company data.
               nullable: true
             minimumWipeSdkVersion:
               type: string
@@ -26579,6 +26607,8 @@ components:
             isAssigned:
               type: boolean
               description: Indicates if the policy is deployed to any inclusion groups or not.
+            targetedAppManagementLevels:
+              $ref: '#/components/schemas/microsoft.graph.appManagementLevel'
             apps:
               type: array
               items:
@@ -27448,14 +27478,14 @@ components:
               readOnly: true
             freeStorageSpaceInBytes:
               type: integer
-              description: Free Storage in Bytes. This property is read-only.
+              description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
             hardwareInformation:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -27521,7 +27551,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: Notes on the device created by IT Admin
+              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -27544,7 +27574,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: Total Memory in Bytes. This property is read-only.
+              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -27595,7 +27625,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
               readOnly: true
             specificationVersion:
@@ -27615,7 +27645,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -27876,6 +27906,10 @@ components:
         - title: deviceLogCollectionResponse
           type: object
           properties:
+            enrolledByUser:
+              type: string
+              description: The User Principal Name (UPN) of the user that enrolled the device
+              nullable: true
             errorCode:
               type: integer
               description: 'The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18'
@@ -29216,6 +29250,47 @@ components:
           additionalProperties:
             type: object
           description: Configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
+    microsoft.graph.appManagementLevel:
+      title: appManagementLevel
+      enum:
+        - unspecified
+        - unmanaged
+        - mdm
+        - androidEnterprise
+        - androidEnterpriseDedicatedDevicesWithAzureAdSharedMode
+        - androidOpenSourceProjectUserAssociated
+        - androidOpenSourceProjectUserless
+        - unknownFutureValue
+      type: string
+      description: Management levels for apps
+      x-ms-enum:
+        name: appManagementLevel
+        modelAsString: false
+        values:
+          - value: unspecified
+            description: Unspecified
+            name: unspecified
+          - value: unmanaged
+            description: Unmanaged
+            name: unmanaged
+          - value: mdm
+            description: MDM
+            name: mdm
+          - value: androidEnterprise
+            description: Android Enterprise
+            name: androidEnterprise
+          - value: androidEnterpriseDedicatedDevicesWithAzureAdSharedMode
+            description: Android Enterprise dedicated devices with Azure AD Shared mode
+            name: androidEnterpriseDedicatedDevicesWithAzureAdSharedMode
+          - value: androidOpenSourceProjectUserAssociated
+            description: Android Open Source Project (AOSP) devices
+            name: androidOpenSourceProjectUserAssociated
+          - value: androidOpenSourceProjectUserless
+            description: Android Open Source Project (AOSP) userless devices
+            name: androidOpenSourceProjectUserless
+          - value: unknownFutureValue
+            description: Place holder for evolvable enum
+            name: unknownFutureValue
     microsoft.graph.vppTokenSyncStatus:
       title: vppTokenSyncStatus
       enum:
@@ -30845,7 +30920,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).'
             assignedPlans:
               type: array
               items:
@@ -30877,7 +30952,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
@@ -30911,7 +30986,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -30977,7 +31052,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
               description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
@@ -31490,6 +31565,7 @@ components:
         - androidDeviceAdministrator
         - androidWorkProfile
         - androidDedicatedAndFullyManaged
+        - unknownFutureValue
       type: string
       description: 'Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).'
       x-ms-enum:
@@ -31529,6 +31605,9 @@ components:
           - value: androidDedicatedAndFullyManaged
             description: Indicates that the platform of the detected application is Android dedicated and fully managed.
             name: androidDedicatedAndFullyManaged
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -33232,43 +33311,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.appManagementLevel:
-      title: appManagementLevel
-      enum:
-        - unspecified
-        - unmanaged
-        - mdm
-        - androidEnterprise
-        - androidEnterpriseDedicatedDevicesWithAzureAdSharedMode
-        - androidOpenSourceProjectUserAssociated
-        - androidOpenSourceProjectUserless
-      type: string
-      description: Management levels for apps
-      x-ms-enum:
-        name: appManagementLevel
-        modelAsString: false
-        values:
-          - value: unspecified
-            description: Unspecified
-            name: unspecified
-          - value: unmanaged
-            description: Unmanaged
-            name: unmanaged
-          - value: mdm
-            description: MDM
-            name: mdm
-          - value: androidEnterprise
-            description: Android Enterprise
-            name: androidEnterprise
-          - value: androidEnterpriseDedicatedDevicesWithAzureAdSharedMode
-            description: Android Enterprise dedicated devices with Azure AD Shared mode
-            name: androidEnterpriseDedicatedDevicesWithAzureAdSharedMode
-          - value: androidOpenSourceProjectUserAssociated
-            description: Android Open Source Project (AOSP) devices
-            name: androidOpenSourceProjectUserAssociated
-          - value: androidOpenSourceProjectUserless
-            description: Android Open Source Project (AOSP) userless devices
-            name: androidOpenSourceProjectUserless
     microsoft.graph.managedAppDataIngestionLocation:
       title: managedAppDataIngestionLocation
       enum:
@@ -34071,7 +34113,7 @@ components:
       properties:
         assignedByGroup:
           type: string
-          description: 'The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.'
+          description: 'Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.'
           nullable: true
         disabledPlans:
           type: array
@@ -35372,7 +35414,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             membershipRule:
               type: string
@@ -36269,7 +36311,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: The unique identifier of the device used for accepting the agreement.
+              description: The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
               nullable: true
             deviceOSType:
               type: string
@@ -36282,13 +36324,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.'
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq) and eq for null values.'
               format: date-time
               nullable: true
             state:
@@ -36303,7 +36345,7 @@ components:
               nullable: true
             userId:
               type: string
-              description: ID of the user who accepted the agreement.
+              description: ID of the user who accepted the agreement. Supports $filter (eq).
               nullable: true
             userPrincipalName:
               type: string
@@ -42182,6 +42224,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
               description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.'
+            messageHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             onBehalfOf:
@@ -46633,6 +46679,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatMessageHistoryItem:
+      title: chatMessageHistoryItem
+      type: object
+      properties:
+        actions:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageActions'
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        reaction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
       type: object
@@ -46928,13 +46988,11 @@ components:
               nullable: true
             schedulingGroupId:
               type: string
-              description: ID of the scheduling group the shift is part of. Required.
               nullable: true
             sharedShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             userId:
               type: string
-              description: ID of the user assigned to the shift. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -49179,6 +49237,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagIdentity'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageActions:
+      title: chatMessageActions
+      enum:
+        - reactionAdded
+        - reactionRemoved
+        - actionUndefined
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
