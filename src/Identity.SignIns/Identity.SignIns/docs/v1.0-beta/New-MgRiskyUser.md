@@ -288,8 +288,8 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser1>: riskyUser
       - `[Detail <String>]`: 
       - `[EventTypes <String[]>]`: 
       - `[RiskEventTypes <String[]>]`: The type of risk event detected.
-    - `[InitiatedBy <String>]`: The id of actor that does the operation.
-    - `[UserId <String>]`: The id of the user.
+    - `[InitiatedBy <String>]`: The ID of actor that does the operation.
+    - `[UserId <String>]`: The ID of the user.
   - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
   - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
   - `[RiskDetail <String>]`: 
@@ -315,8 +315,8 @@ HISTORY <IMicrosoftGraphRiskyUserHistoryItem1[]>: .
     - `[Detail <String>]`: 
     - `[EventTypes <String[]>]`: 
     - `[RiskEventTypes <String[]>]`: The type of risk event detected.
-  - `[InitiatedBy <String>]`: The id of actor that does the operation.
-  - `[UserId <String>]`: The id of the user.
+  - `[InitiatedBy <String>]`: The ID of actor that does the operation.
+  - `[UserId <String>]`: The ID of the user.
 
 ## RELATED LINKS
 

@@ -8,16 +8,22 @@ schema: 2.0.0
 # Invoke-MgExperienceDeviceManagement
 
 ## SYNOPSIS
-Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+Invoke function userExperienceAnalyticsSummarizedDeviceScopes
 
 ## SYNTAX
 
+### Experience (Default)
+```
+Invoke-MgExperienceDeviceManagement [<CommonParameters>]
+```
+
+### Experience1
 ```
 Invoke-MgExperienceDeviceManagement [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+Invoke function userExperienceAnalyticsSummarizedDeviceScopes
 
 ## EXAMPLES
 
@@ -29,6 +35,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ## OUTPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScopeSummary
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevicesSummary
 

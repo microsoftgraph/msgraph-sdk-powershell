@@ -18,9 +18,9 @@ Update-MgDeviceManagementConfigurationPolicy -DeviceManagementConfigurationPolic
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
  [-CreationSource <String>] [-Description <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>] [-PriorityMetaData <Hashtable>]
- [-RoleScopeTagIds <String[]>] [-SettingCount <Int32>]
- [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
+ [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>]
+ [-PriorityMetaData <IMicrosoftGraphDeviceManagementPriorityMetaData>] [-RoleScopeTagIds <String[]>]
+ [-SettingCount <Int32>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
  [-TemplateReference <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -46,9 +46,9 @@ Update-MgDeviceManagementConfigurationPolicy -InputObject <IDeviceManagementIden
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
  [-CreationSource <String>] [-Description <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>] [-PriorityMetaData <Hashtable>]
- [-RoleScopeTagIds <String[]>] [-SettingCount <Int32>]
- [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
+ [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>]
+ [-PriorityMetaData <IMicrosoftGraphDeviceManagementPriorityMetaData>] [-RoleScopeTagIds <String[]>]
+ [-SettingCount <Int32>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
  [-TemplateReference <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -261,10 +261,11 @@ Accept wildcard characters: False
 ```
 
 ### -PriorityMetaData
-deviceManagementPriorityMetaData
+Priority metadata of the policy.
+To construct, please use Get-Help -Online and see NOTES section for PRIORITYMETADATA properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPriorityMetaData
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -431,8 +432,9 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicy>: Device Manag
   - `[LastModifiedDateTime <DateTime?>]`: Policy last modification date and time
   - `[Name <String>]`: Policy name
   - `[Platforms <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
-  - `[PriorityMetaData <IMicrosoftGraphDeviceManagementPriorityMetaData>]`: deviceManagementPriorityMetaData
+  - `[PriorityMetaData <IMicrosoftGraphDeviceManagementPriorityMetaData>]`: Priority metadata of the policy.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Priority <Int32?>]`: Priority of the policy. Valid values 1 to 500
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[SettingCount <Int32?>]`: Number of settings
   - `[Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]`: Policy settings
@@ -606,6 +608,10 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: key: id of windowsInformationProtectionAppLearningSummary
   - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: key: id of windowsInformationProtectionNetworkLearningSummary
   - `[WindowsMalwareInformationId <String>]`: key: id of windowsMalwareInformation
+
+PRIORITYMETADATA <IMicrosoftGraphDeviceManagementPriorityMetaData>: Priority metadata of the policy.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Priority <Int32?>]`: Priority of the policy. Valid values 1 to 500
 
 SETTINGS <IMicrosoftGraphDeviceManagementConfigurationSetting[]>: Policy settings
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
