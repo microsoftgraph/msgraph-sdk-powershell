@@ -714,6 +714,21 @@ directive:
         return $;
       }
 
+# Modify generated DictionaryExtensions.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Cruntime%5CDictionaryExtensions.cs/gm))
+      {
+        return $;
+      } else {
+        // Replace HashTableToDictionary call.
+        let hashtableRegex = /(HashTableToDictionary<V>\(nested, new System\.Collections\.Generic\.Dictionary<string, V>\(\)\);)/gm
+        $ = $.replace(hashtableRegex, 'try {dictionary[key] = (V)value;} catch {}');
+
+        return $;
+      }
+
 # Modify generated JsonObject class.
   - from: source-file-csharp
     where: $
