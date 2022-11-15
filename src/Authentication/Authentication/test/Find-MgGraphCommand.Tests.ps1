@@ -163,7 +163,7 @@ Describe "Find-MgGraphCommand Command" {
             
             It 'Should find command using actual id in key segments inside parenthesis' {
                 {
-                    $ExpectedResourceUri =  @("/reports/getSharePointActivityUserCounts(period='{period}')", "/reports/getSharePointActivityUserCounts(period='{period}')")
+                    $ExpectedResourceUri = @("/reports/getSharePointActivityUserCounts(period='{period}')", "/reports/getSharePointActivityUserCounts(period='{period}')")
                     $Uri = "/reports/getSharePointActivityUserCounts(period='D3')"
                     $MgCommand = Find-MgGraphCommand -Uri $Uri 
                     $MgCommand | Should -HaveCount 2

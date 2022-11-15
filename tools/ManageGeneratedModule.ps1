@@ -47,7 +47,7 @@ foreach ($Package in $NugetPackagesToRemove) {
 # Add nuget packages from generate modules.
 foreach ($Package in $NugetPackagesToAdd) {
     Write-Debug "Executing: dotnet add $ModuleCsProj package $Package"
-    dotnet add $ModuleCsProj package $Package | Out-Null
+    dotnet add $ModuleCsProj package $Package -s https://api.nuget.org/v3/index.json | Out-Null
     if ($LastExitCode) {
         Write-Error "Failed to execute: dotnet add $ModuleCsProj package $Package"
     }
