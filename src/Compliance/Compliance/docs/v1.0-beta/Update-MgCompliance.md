@@ -301,7 +301,7 @@ BODYPARAMETER <IMicrosoftGraphCompliance1>: compliance
               - `[AppRoleAssignedResources <IMicrosoftGraphServicePrincipal[]>]`: 
                 - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+                - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
                 - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
                   - `[Id <String>]`: 
                   - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
@@ -5021,7 +5021,7 @@ EDISCOVERY <IMicrosoftGraphEdiscoveryEdiscoveryroot>: ediscoveryroot
             - `[AppRoleAssignedResources <IMicrosoftGraphServicePrincipal[]>]`: 
               - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+              - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
               - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
                 - `[Id <String>]`: 
                 - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
