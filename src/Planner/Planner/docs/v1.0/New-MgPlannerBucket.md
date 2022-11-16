@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerBucket
 
 ## SYNOPSIS
-Use this API to create a new **plannerBucket**.
+Create a new plannerBucket object.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ New-MgPlannerBucket -BodyParameter <IMicrosoftGraphPlannerBucket> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Use this API to create a new **plannerBucket**.
+Create a new plannerBucket object.
 
 ## EXAMPLES
 
