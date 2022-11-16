@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: 6c5edb25-e89e-46ab-b758-fc6337dcb4e7
+Module Guid: 29e52b99-5633-4ed3-adad-ba81b2d9cf15
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -109,7 +109,7 @@ Returns the plannerPlans contained by the plannerRosters the user is a member.
 Retrieve a list of **plannertask** objects assigned to a User.
 
 ### [New-MgPlannerBucket](New-MgPlannerBucket.md)
-Use this API to create a new **plannerBucket**.
+Create a new plannerBucket object.
 
 ### [New-MgPlannerPlan](New-MgPlannerPlan.md)
 Create a new **plannerPlan**.
