@@ -103,7 +103,7 @@ The following new features are available as part on the v2 module.
    ```
 
 4. Environment Variable Based Auth Support
-   In v2, we've added environment variable based auth support to `Connect-MgGraph`.
+   In v2, we've added `-EnvironmentVariable` to `Connect-MgGraph` to support environment variable based auth. Client secret takes precedence over certificate. If values for a client secret and certificate are both present, the client secret will be used. See [Azure.Identity Environment Variables](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/identity/Azure.Identity#environment-variables) for more details.
 
    **Proposed Usage**
 
