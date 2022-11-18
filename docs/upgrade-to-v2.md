@@ -48,6 +48,10 @@ Connect-MgGraph
 $Users = Get-MgBetaUser
 ```
 
+### Beta Namespace
+
+Model types in `beta` have moved from `Microsoft.Graph.PowerShell.Models.<Entity>` to `Microsoft.Graph.Beta.PowerShell.Models.<Entity>`. This was done to disambiguate `beta` types from `v1.0` types.
+
 ### Connect-MgGraph -AccessToken
 
 With v2, we've changed type for `-AccessToken` from `String` to `SecureString.`This change was added to harden the module from security vulnerabilities.
