@@ -11,15 +11,17 @@
 
 ## What is Microsoft Graph?
 
-Microsoft Graph is a unified endpoint for accessing data, intelligence, and insights in Microsoft 365. You can find more information at [developer.microsoft.com/graph](https://developer.microsoft.com/graph). You can also get started trying out queries right away against your own account using the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
+Microsoft Graph is a unified endpoint for accessing data, intelligence, and insights in Microsoft 365. You can find more information at [developer.microsoft.com/graph](https://developer.microsoft.com/graph).
 
 ## Why Microsoft Graph PowerShell Module?
 
-Using Microsoft Graph PowerShell Module, PowerShell users can directly consuming Microsoft Graph resources directly from a PowerShell session. The module provides a few shortcuts:
+Microsoft Graph PowerShell module acts as an API wrapper for Microsoft Graph APIs, exposing the entire API set for use in PowerShell. It contains a set of commands that help you manage identities at scale; from automating tasks to managing users in bulk using Azure Active Directory (Azure AD). It will help administer every Azure AD feature that has an API in Microsoft Graph.
 
-- HTTP logic is handled for you so you reduce the amount of boilerplate you need to get started. This includes retries, redirects and many more [handlers](https://github.com/microsoftgraph/msgraph-sdk-design#sdk-features-support).
-- The module handles retrieval and caching of access tokens for you. For interactive scenarios, all you need is a list scopes. For scripted scenarios, all you need is a client id, tenant id and a certificate.
-- The module handles deserialization of JSON responses into PowerShell objects instead of working directly with JSON.
-- An extra layer of error handling and intelligent defaults help you debug your application.
+The module provides the following advantages to PowerShell users:
+
+- HTTP logic is handled for you. This includes retries, redirects, and many more [handlers](https://github.com/microsoftgraph/msgraph-sdk-design#sdk-features-support).
+- The module handles access token acquisition and caching for you. For interactive scenarios, all you need is a list scopes. For scripted scenarios, all you need is a client id, tenant id and a certificate. See [Authentication](./authentication.md).
+- The module handles serialization and deserialization of JSON responses into PowerShell objects.
+- The module adds an extra layer of error handling and rich debug logs to help you debug your scripts.
 - Commands make it easy for you to discover paths through which you can access the rich data stores in Graph.
-- Helpers for Graph functionality, such as pagination and `Invoke-GraphRequest`, simplify accomplishing specific scenarios.
+- Helpers for Microsoft Graph functionality such as pagination , file upload and download, and [Invoke-MgGraphRequest](https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0#using-invoke-mggraphrequest).
