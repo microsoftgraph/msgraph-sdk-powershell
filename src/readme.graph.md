@@ -90,6 +90,8 @@ directive:
     - MicrosoftGraphSecurityEdiscoveryReviewTag
     - MicrosoftGraphSecurityEdiscoverySearch
     - MicrosoftGraphManagedTenantsManagementTemplateStep
+    - MicrosoftGraphPlannerTaskCreation
+    - MicrosoftGraphPlannerTeamsPublicationInfo
   # Set parameter alias
   - where:
       parameter-name: OrderBy
