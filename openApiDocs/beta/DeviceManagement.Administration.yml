@@ -13715,10 +13715,14 @@ paths:
                 - onPremisesConnectionName desc
                 - osVersion
                 - osVersion desc
+                - partnerAgentInstallResults
+                - partnerAgentInstallResults desc
                 - provisioningPolicyId
                 - provisioningPolicyId desc
                 - provisioningPolicyName
                 - provisioningPolicyName desc
+                - provisioningType
+                - provisioningType desc
                 - servicePlanId
                 - servicePlanId desc
                 - servicePlanName
@@ -13758,8 +13762,10 @@ paths:
                 - managedDeviceName
                 - onPremisesConnectionName
                 - osVersion
+                - partnerAgentInstallResults
                 - provisioningPolicyId
                 - provisioningPolicyName
+                - provisioningType
                 - servicePlanId
                 - servicePlanName
                 - servicePlanType
@@ -13851,8 +13857,10 @@ paths:
                 - managedDeviceName
                 - onPremisesConnectionName
                 - osVersion
+                - partnerAgentInstallResults
                 - provisioningPolicyId
                 - provisioningPolicyName
+                - provisioningType
                 - servicePlanId
                 - servicePlanName
                 - servicePlanType
@@ -13889,6 +13897,10 @@ paths:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getCloudPcConnectivityHistory
             getCloudPcLaunchInfo:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getCloudPcLaunchInfo
+            getShiftWorkCloudPcAccessState:
+              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getShiftWorkCloudPcAccessState
+            getSupportedCloudPcRemoteActions:
+              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getSupportedCloudPcRemoteActions
             reboot:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.reboot
             rename:
@@ -13897,6 +13909,8 @@ paths:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.reprovision
             restore:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.restore
+            retryPartnerAgentInstallation:
+              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.retryPartnerAgentInstallation
             troubleshoot:
               operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.troubleshoot
         default:
@@ -16433,6 +16447,8 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
+                - regionGroup
+                - regionGroup desc
                 - regionStatus
                 - regionStatus desc
                 - supportedSolution
@@ -16450,6 +16466,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - regionGroup
                 - regionStatus
                 - supportedSolution
               type: string
@@ -16524,6 +16541,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - regionGroup
                 - regionStatus
                 - supportedSolution
               type: string
@@ -18969,6 +18987,10 @@ components:
               nullable: true
             osVersion:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+            partnerAgentInstallResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -18977,6 +18999,8 @@ components:
               type: string
               description: The provisioning policy that is applied during the provisioning of Cloud PCs.
               nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
             servicePlanId:
               type: string
               description: The service plan ID of the Cloud PC.
@@ -19450,6 +19474,8 @@ components:
             displayName:
               type: string
               description: The name for the supported region. Read-only.
+            regionGroup:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcRegionGroup'
             regionStatus:
               $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegionStatus'
             supportedSolution:
@@ -21019,7 +21045,7 @@ components:
       title: cloudPcDiskEncryptionState
       enum:
         - notAvailable
-        - notEncryped
+        - notEncrypted
         - encryptedUsingPlatformManagedKey
         - encryptedUsingCustomerManagedKey
         - unknownFutureValue
@@ -21075,6 +21101,29 @@ components:
       enum:
         - windows10
         - windows11
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentInstallResult:
+      title: cloudPcPartnerAgentInstallResult
+      type: object
+      properties:
+        installStatus:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
+        isThirdPartyPartner:
+          type: boolean
+          nullable: true
+        partnerAgentName:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
+        retriable:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcServicePlanType:
@@ -21203,6 +21252,7 @@ components:
         - windows365
         - devBox
         - unknownFutureValue
+        - rpaBox
       type: string
     microsoft.graph.cloudPcOnPremisesConnectionType:
       title: cloudPcOnPremisesConnectionType
@@ -21229,6 +21279,8 @@ components:
           type: string
           description: 'The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.'
           nullable: true
+        regionGroup:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcRegionGroup'
         regionName:
           type: string
           description: 'The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.'
@@ -21255,13 +21307,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
       additionalProperties:
         type: object
-    microsoft.graph.cloudPcProvisioningType:
-      title: cloudPcProvisioningType
-      enum:
-        - dedicated
-        - shared
-        - unknownFutureValue
-      type: string
     microsoft.graph.cloudPcManagementAssignmentTarget:
       title: cloudPcManagementAssignmentTarget
       type: object
@@ -21289,6 +21334,31 @@ components:
       enum:
         - ready
         - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcRegionGroup:
+      title: cloudPcRegionGroup
+      enum:
+        - default
+        - australia
+        - canada
+        - usCentral
+        - usEast
+        - usWest
+        - france
+        - germany
+        - europeUnion
+        - unitedKingdom
+        - japan
+        - asia
+        - india
+        - southAmerica
+        - euap
+        - usGovernment
+        - usGovernmentDOD
+        - unknownFutureValue
+        - norway
+        - switzerland
+        - southKorea
       type: string
     microsoft.graph.cloudPcSupportedRegionStatus:
       title: cloudPcSupportedRegionStatus
@@ -22251,6 +22321,23 @@ components:
         - failed
         - notSupported
       type: string
+    microsoft.graph.cloudPcPartnerAgentInstallStatus:
+      title: cloudPcPartnerAgentInstallStatus
+      enum:
+        - installed
+        - installFailed
+        - installing
+        - uninstalling
+        - uninstallFailed
+        - licensed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentName:
+      title: cloudPcPartnerAgentName
+      enum:
+        - citrix
+        - unknownFutureValue
+      type: string
     microsoft.graph.keyValuePair:
       title: keyValuePair
       type: object
@@ -22397,6 +22484,8 @@ components:
         - permissionCheckNoResourceGroupNetworkContributorRole
         - permissionCheckTransientServiceError
         - permissionCheckUnknownError
+        - udpConnectivityCheckStunUrlNotAllowListed
+        - udpConnectivityCheckUnknownError
         - internalServerErrorDeploymentCanceled
         - internalServerErrorAllocateResourceFailed
         - internalServerErrorVMDeploymentTimeout
