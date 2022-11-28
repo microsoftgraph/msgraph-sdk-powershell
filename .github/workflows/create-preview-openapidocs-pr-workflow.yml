@@ -12,8 +12,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  createOpenApiDocsPR:
-    if: github.event_name == 'push' && contains(toJson(github.event.commits), '[run ci]') && !contains(toJson(github.event.commits), 'NO_CI') && !contains(toJson(github.event.commits), '[ci skip]') && !contains(toJson(github.event.commits), '[skip ci]')
+  createPreviewOpenApiDocsPR:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -43,7 +42,7 @@ jobs:
         REVIEWERS: peombwa,ddyett,timayabi2020,mairissi,shemogumbe
         ASSIGNEDTO: peombwa
         LABELS: generated
-        BASE: dev
+        BASE: features/2.0
         HEAD: ${{steps.create_branch.outputs.branch}}
       run: |
         curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1

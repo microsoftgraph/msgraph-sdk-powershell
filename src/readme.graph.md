@@ -102,6 +102,8 @@ directive:
     - microsoft.graph.security.ediscoveryReviewTag
     - microsoft.graph.security.ediscoverySearch
     - microsoft.graph.managedTenants.managementTemplateStep
+    - microsoft.graph.plannerTaskCreation
+    - microsoft.graph.plannerTeamsPublicationInfo
   # Set parameter alias
   - where:
       parameter-name: OrderBy
