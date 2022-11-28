@@ -11562,6 +11562,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.retryPartnerAgentInstallation':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action retryPartnerAgentInstallation
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_retryPartnerAgentInstallation
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot':
     post:
       tags:

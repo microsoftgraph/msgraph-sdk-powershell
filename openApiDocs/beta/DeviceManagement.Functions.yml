@@ -2131,6 +2131,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getShiftWorkCloudPcAccessState()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getShiftWorkCloudPcAccessState
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_getShiftWorkCloudPcAccessState
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftWorkCloudPcAccessState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getSupportedCloudPcRemoteActions()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getSupportedCloudPcRemoteActions
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_getSupportedCloudPcRemoteActions
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionCapability'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages():
     get:
       tags:
@@ -3503,6 +3571,27 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.shiftWorkCloudPcAccessState:
+      title: shiftWorkCloudPcAccessState
+      enum:
+        - unassigned
+        - noLicensesAvailable
+        - activationFailed
+        - active
+        - activating
+        - waitlisted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcRemoteActionCapability:
+      title: cloudPcRemoteActionCapability
+      type: object
+      properties:
+        actionCapability:
+          $ref: '#/components/schemas/microsoft.graph.actionCapability'
+        actionName:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionName'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcSourceDeviceImage:
       title: cloudPcSourceDeviceImage
       type: object
@@ -4158,6 +4247,27 @@ components:
         - userConnection
         - userTroubleshooting
         - deviceHealthCheck
+        - unknownFutureValue
+      type: string
+    microsoft.graph.actionCapability:
+      title: actionCapability
+      enum:
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcRemoteActionName:
+      title: cloudPcRemoteActionName
+      enum:
+        - unknown
+        - restart
+        - rename
+        - resize
+        - restore
+        - reprovision
+        - changeUserAccountType
+        - troubleshoot
+        - placeUnderReview
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.ODataError:

@@ -922,7 +922,7 @@ paths:
       tags:
         - administrativeUnits.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -2287,7 +2287,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -3268,7 +3268,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -4766,7 +4766,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -6842,7 +6842,7 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -8402,7 +8402,7 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -12335,7 +12335,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -13235,7 +13235,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -13822,7 +13822,7 @@ paths:
       tags:
         - directorySettingTemplates.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -15896,6 +15896,8 @@ paths:
                 - customAccountResetCredentialsUrl
                 - customCannotAccessYourAccountText
                 - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
                 - customForgotMyPasswordText
                 - customPrivacyAndCookiesText
                 - customPrivacyAndCookiesUrl
@@ -15905,6 +15907,9 @@ paths:
                 - favicon
                 - faviconRelativeUrl
                 - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
                 - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
@@ -16121,6 +16126,63 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/customCSS':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get customCSS for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update customCSS for the navigation property branding in organization
+      operationId: organization_SetBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/branding/favicon':
     get:
       tags:
@@ -16157,6 +16219,63 @@ paths:
       summary: Update favicon for the navigation property branding in organization
       description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       operationId: organization_SetBrandingFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/headerLogo':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get headerLogo for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update headerLogo for the navigation property branding in organization
+      operationId: organization_SetBrandingHeaderLogo
       parameters:
         - name: organization-id
           in: path
@@ -16234,6 +16353,10 @@ paths:
                 - customCannotAccessYourAccountText desc
                 - customCannotAccessYourAccountUrl
                 - customCannotAccessYourAccountUrl desc
+                - customCSS
+                - customCSS desc
+                - customCSSRelativeUrl
+                - customCSSRelativeUrl desc
                 - customForgotMyPasswordText
                 - customForgotMyPasswordText desc
                 - customPrivacyAndCookiesText
@@ -16252,6 +16375,12 @@ paths:
                 - faviconRelativeUrl desc
                 - headerBackgroundColor
                 - headerBackgroundColor desc
+                - headerLogo
+                - headerLogo desc
+                - headerLogoRelativeUrl
+                - headerLogoRelativeUrl desc
+                - loginPageLayoutConfiguration
+                - loginPageLayoutConfiguration desc
                 - loginPageTextVisibilitySettings
                 - loginPageTextVisibilitySettings desc
                 - signInPageText
@@ -16287,6 +16416,8 @@ paths:
                 - customAccountResetCredentialsUrl
                 - customCannotAccessYourAccountText
                 - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
                 - customForgotMyPasswordText
                 - customPrivacyAndCookiesText
                 - customPrivacyAndCookiesUrl
@@ -16296,6 +16427,9 @@ paths:
                 - favicon
                 - faviconRelativeUrl
                 - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
                 - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
@@ -16404,6 +16538,8 @@ paths:
                 - customAccountResetCredentialsUrl
                 - customCannotAccessYourAccountText
                 - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
                 - customForgotMyPasswordText
                 - customPrivacyAndCookiesText
                 - customPrivacyAndCookiesUrl
@@ -16413,6 +16549,9 @@ paths:
                 - favicon
                 - faviconRelativeUrl
                 - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
                 - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
@@ -16662,6 +16801,79 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/customCSS':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get customCSS for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update customCSS for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/favicon':
     get:
       tags:
@@ -16706,6 +16918,79 @@ paths:
       summary: Update favicon for the navigation property localizations in organization
       description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       operationId: organization.branding_SetLocalizationsFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/headerLogo':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get headerLogo for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: 'key: id of organizationalBrandingLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update headerLogo for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsHeaderLogo
       parameters:
         - name: organization-id
           in: path
@@ -17505,7 +17790,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -20789,10 +21074,10 @@ components:
       enum:
         - usageAndCompliance
         - security
+        - unknownFutureValue
         - productivity
         - health
         - configuration
-        - unknownFutureValue
       type: string
     microsoft.graph.recommendationPriority:
       title: recommendationPriority
@@ -21124,6 +21409,13 @@ components:
               type: string
               description: 'A custom URL to replace the default URL of the self-service password reset (SSPR) ''Can''t access your account?'' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.'
               nullable: true
+            customCSS:
+              type: string
+              format: base64url
+              nullable: true
+            customCSSRelativeUrl:
+              type: string
+              nullable: true
             customForgotMyPasswordText:
               type: string
               description: A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
@@ -21161,6 +21453,15 @@ components:
               type: string
               description: The RGB color to apply to customize the color of the header.
               nullable: true
+            headerLogo:
+              type: string
+              format: base64url
+              nullable: true
+            headerLogoRelativeUrl:
+              type: string
+              nullable: true
+            loginPageLayoutConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.loginPageLayoutConfiguration'
             loginPageTextVisibilitySettings:
               $ref: '#/components/schemas/microsoft.graph.loginPageTextVisibilitySettings'
             signInPageText:
@@ -21802,6 +22103,20 @@ components:
           description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
       additionalProperties:
         type: object
+    microsoft.graph.loginPageLayoutConfiguration:
+      title: loginPageLayoutConfiguration
+      type: object
+      properties:
+        isFooterShown:
+          type: boolean
+          nullable: true
+        isHeaderShown:
+          type: boolean
+          nullable: true
+        layoutTemplateType:
+          $ref: '#/components/schemas/microsoft.graph.layoutTemplateType'
+      additionalProperties:
+        type: object
     microsoft.graph.loginPageTextVisibilitySettings:
       title: loginPageTextVisibilitySettings
       type: object
@@ -21873,6 +22188,13 @@ components:
         - disabled
         - enabledForCount
         - enabledForPercentage
+        - unknownFutureValue
+      type: string
+    microsoft.graph.layoutTemplateType:
+      title: layoutTemplateType
+      enum:
+        - default
+        - verticalSplit
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:

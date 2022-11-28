@@ -22943,7 +22943,6 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
-                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -23020,7 +23019,6 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
-                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -31532,8 +31530,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.presence'
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
-            tasks:
-              $ref: '#/components/schemas/microsoft.graph.tasks'
             chats:
               type: array
               items:
@@ -34383,6 +34379,10 @@ components:
               nullable: true
             osVersion:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+            partnerAgentInstallResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -34391,6 +34391,8 @@ components:
               type: string
               description: The provisioning policy that is applied during the provisioning of Cloud PCs.
               nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
             servicePlanId:
               type: string
               description: The service plan ID of the Cloud PC.
@@ -34468,7 +34470,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordSingleSignOnSettings'
             accountEnabled:
               type: boolean
-              description: 'true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).'
+              description: 'true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).'
               nullable: true
             addIns:
               type: array
@@ -34748,7 +34750,7 @@ components:
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.'
+              description: 'The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.'
               format: uuid
               nullable: true
             principalType:
@@ -37134,26 +37136,6 @@ components:
               readOnly: true
           additionalProperties:
             type: object
-    microsoft.graph.tasks:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: tasks
-          type: object
-          properties:
-            alltasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.baseTask'
-              description: All tasks in the users mailbox.
-              readOnly: true
-            lists:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.baseTaskList'
-              description: The task lists in the users mailbox.
-              readOnly: true
-          additionalProperties:
-            type: object
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -37694,7 +37676,7 @@ components:
       title: cloudPcDiskEncryptionState
       enum:
         - notAvailable
-        - notEncryped
+        - notEncrypted
         - encryptedUsingPlatformManagedKey
         - encryptedUsingCustomerManagedKey
         - unknownFutureValue
@@ -37716,6 +37698,29 @@ components:
       enum:
         - windows10
         - windows11
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentInstallResult:
+      title: cloudPcPartnerAgentInstallResult
+      type: object
+      properties:
+        installStatus:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
+        isThirdPartyPartner:
+          type: boolean
+          nullable: true
+        partnerAgentName:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
+        retriable:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcServicePlanType:
@@ -40315,6 +40320,8 @@ components:
               description: 'Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
             owner:
               type: string
               nullable: true
@@ -41968,99 +41975,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
-    microsoft.graph.baseTask:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: baseTask
-          type: object
-          properties:
-            bodyLastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
-              format: date-time
-            completedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date when the task was finished.
-              format: date-time
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
-              format: date-time
-            displayName:
-              type: string
-              description: The name of the task.
-              nullable: true
-            dueDateTime:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            importance:
-              $ref: '#/components/schemas/microsoft.graph.importance'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
-              format: date-time
-            recurrence:
-              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
-            startDateTime:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.taskStatus_v2'
-            textBody:
-              type: string
-              description: The task body in text format that typically contains information about the task.
-              nullable: true
-            viewpoint:
-              $ref: '#/components/schemas/microsoft.graph.taskViewpoint'
-            checklistItems:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of smaller subtasks linked to the more complex parent task.
-              readOnly: true
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the task .
-              readOnly: true
-            linkedResources:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.linkedResource_v2'
-              description: A collection of resources linked to the task.
-              readOnly: true
-            parentList:
-              $ref: '#/components/schemas/microsoft.graph.baseTaskList'
-          additionalProperties:
-            type: object
-    microsoft.graph.baseTaskList:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: baseTaskList
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The name of the task list.
-              nullable: true
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the task list. Nullable.
-              readOnly: true
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.baseTask'
-              description: The tasks in this task list. Read-only. Nullable.
-              readOnly: true
-          additionalProperties:
-            type: object
     microsoft.graph.chatType:
       title: chatType
       enum:
@@ -42525,6 +42439,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
             moderationSettings:
               $ref: '#/components/schemas/microsoft.graph.channelModerationSettings'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.channelSummary'
             tenantId:
               type: string
               description: The ID of the Azure Active Directory tenant.
@@ -42989,6 +42905,23 @@ components:
         - available
         - availableWithWarning
         - unavailable
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentInstallStatus:
+      title: cloudPcPartnerAgentInstallStatus
+      enum:
+        - installed
+        - installFailed
+        - installing
+        - uninstalling
+        - uninstallFailed
+        - licensed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentName:
+      title: cloudPcPartnerAgentName
+      enum:
+        - citrix
         - unknownFutureValue
       type: string
     microsoft.graph.bitlockerRecoveryKey:
@@ -45536,16 +45469,26 @@ components:
         containerId:
           type: string
           description: The identifier of the resource that contains the plan.
+          nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
         url:
           type: string
           description: The full canonical URL of the container.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.plannerPlanContextCollection:
       title: plannerPlanContextCollection
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanCreation:
+      title: plannerPlanCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
       additionalProperties:
         type: object
     microsoft.graph.plannerBucket:
@@ -45554,6 +45497,8 @@ components:
         - title: plannerBucket
           type: object
           properties:
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
             name:
               type: string
               description: Name of the bucket.
@@ -45601,6 +45546,8 @@ components:
       title: plannerTaskCreation
       type: object
       properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
         teamsPublicationInfo:
           $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
       additionalProperties:
@@ -46430,79 +46377,6 @@ components:
         - weak
         - unknown
       type: string
-    microsoft.graph.taskStatus_v2:
-      title: taskStatus_v2
-      enum:
-        - notStarted
-        - inProgress
-        - completed
-        - unknownFutureValue
-      type: string
-    microsoft.graph.taskViewpoint:
-      title: taskViewpoint
-      type: object
-      properties:
-        categories:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
-        reminderDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-      additionalProperties:
-        type: object
-    microsoft.graph.checklistItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: checklistItem
-          type: object
-          properties:
-            checkedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the checklistItem was finished.
-              format: date-time
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the checklistItem was created.
-              format: date-time
-            displayName:
-              type: string
-              description: Field indicating the title of checklistItem.
-              nullable: true
-            isChecked:
-              type: boolean
-              description: State indicating whether the item is checked off or not.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.linkedResource_v2:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: linkedResource_v2
-          type: object
-          properties:
-            applicationName:
-              type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
-              nullable: true
-            displayName:
-              type: string
-              description: Field indicating the title of the linkedResource.
-              nullable: true
-            externalId:
-              type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
-              nullable: true
-            webUrl:
-              type: string
-              description: Deep link to the linkedResource.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.teamworkUserIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -46824,6 +46698,33 @@ components:
           $ref: '#/components/schemas/microsoft.graph.replyRestriction'
         userNewMessageRestriction:
           $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
+      additionalProperties:
+        type: object
+    microsoft.graph.channelSummary:
+      title: channelSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        hasMembersFromOtherTenants:
+          type: boolean
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.sharedWithChannelTeamInfo:
@@ -47633,6 +47534,16 @@ components:
         - title: printJob
           type: object
           properties:
+            acknowledgedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             configuration:
               $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
             createdBy:
@@ -47644,6 +47555,12 @@ components:
               format: date-time
             displayName:
               type: string
+              nullable: true
+            errorCode:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
               nullable: true
             isFetchable:
               type: boolean
@@ -48754,6 +48671,22 @@ components:
         - roster
         - project
       type: string
+    microsoft.graph.plannerCreationSourceKind:
+      title: plannerCreationSourceKind
+      enum:
+        - none
+        - external
+        - publication
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerBucketCreation:
+      title: plannerBucketCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
+      additionalProperties:
+        type: object
     microsoft.graph.plannerCategoryDescriptions:
       title: plannerCategoryDescriptions
       type: object
@@ -48871,33 +48804,35 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.plannerTeamsPublicationInfo:
-      title: plannerTeamsPublicationInfo
-      type: object
-      properties:
-        lastModifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date and time when this task was last modified by the publication process. Read-only.
-          format: date-time
-          nullable: true
-        publicationId:
-          type: string
-          description: The identifier of the publication. Read-only.
-          nullable: true
-        publishedToPlanId:
-          type: string
-          description: The identifier of the plannerPlan this task was originally placed in. Read-only.
-          nullable: true
-        publishingTeamId:
-          type: string
-          description: The identifier of the team that initiated the publication process. Read-only.
-          nullable: true
-        publishingTeamName:
-          type: string
-          description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
-          nullable: true
-      additionalProperties:
-        type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
+        - title: plannerTeamsPublicationInfo
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when this task was last modified by the publication process. Read-only.
+              format: date-time
+              nullable: true
+            publicationId:
+              type: string
+              description: The identifier of the publication. Read-only.
+              nullable: true
+            publishedToPlanId:
+              type: string
+              description: The identifier of the plannerPlan this task was originally placed in. Read-only.
+              nullable: true
+            publishingTeamId:
+              type: string
+              description: The identifier of the team that initiated the publication process. Read-only.
+              nullable: true
+            publishingTeamName:
+              type: string
+              description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerOrderHintsByAssignee:
       title: plannerOrderHintsByAssignee
       type: object
@@ -49553,6 +49488,33 @@ components:
                 type: string
                 nullable: true
               description: 'Indicates a single value {start} that represents the location in the file where the next upload should begin.'
+          additionalProperties:
+            type: object
+    microsoft.graph.checklistItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: checklistItem
+          type: object
+          properties:
+            checkedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was created.
+              format: date-time
+            displayName:
+              type: string
+              description: Field indicating the title of checklistItem.
+              nullable: true
+            isChecked:
+              type: boolean
+              description: State indicating whether the item is checked off or not.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:
@@ -50733,10 +50695,20 @@ components:
               type: string
               description: The document's name. Read-only.
               nullable: true
+            downloadedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             size:
               type: integer
               description: The document's size in bytes. Read-only.
               format: int64
+            uploadedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.printTask:

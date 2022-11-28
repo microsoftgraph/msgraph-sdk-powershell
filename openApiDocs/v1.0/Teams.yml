@@ -2504,11 +2504,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: chats.messages_CreateReplies
       parameters:
         - name: chat-id
@@ -5722,11 +5722,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: groups.team.channels_CreateMessages
       parameters:
         - name: group-id
@@ -6423,11 +6423,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: groups.team.channels.messages_CreateReplies
       parameters:
         - name: group-id
@@ -10140,11 +10140,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: groups.team.primaryChannel_CreateMessages
       parameters:
         - name: group-id
@@ -10759,11 +10759,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: groups.team.primaryChannel.messages_CreateReplies
       parameters:
         - name: group-id
@@ -16732,11 +16732,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teams.channels_CreateMessages
       parameters:
         - name: team-id
@@ -17433,11 +17433,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: teams.channels.messages_CreateReplies
       parameters:
         - name: team-id
@@ -22085,11 +22085,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teams.primaryChannel_CreateMessages
       parameters:
         - name: team-id
@@ -22704,11 +22704,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: teams.primaryChannel.messages_CreateReplies
       parameters:
         - name: team-id
@@ -30028,11 +30028,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: users.chats.messages_CreateReplies
       parameters:
         - name: user-id
@@ -33157,11 +33157,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_CreateMessages
       parameters:
         - name: user-id
@@ -33940,11 +33940,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: users.joinedTeams.channels.messages_CreateReplies
       parameters:
         - name: user-id
@@ -38186,11 +38186,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_CreateMessages
       parameters:
         - name: user-id
@@ -38887,11 +38887,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel.messages_CreateReplies
       parameters:
         - name: user-id
@@ -47483,7 +47483,7 @@ components:
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.'
+              description: 'The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.'
               format: uuid
               nullable: true
             principalType:
@@ -50057,7 +50057,7 @@ components:
         time:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The date and time when the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
           format: date-time
           nullable: true
       additionalProperties:
@@ -53371,11 +53371,13 @@ components:
         containerId:
           type: string
           description: The identifier of the resource that contains the plan.
+          nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
         url:
           type: string
           description: The full canonical URL of the container.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.plannerBucket:
