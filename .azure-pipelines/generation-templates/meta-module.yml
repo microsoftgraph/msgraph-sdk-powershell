@@ -26,7 +26,19 @@ steps:
       - template: ../common-templates/esrp/codesign.yml
         parameters:
           FolderPath: "$(System.DefaultWorkingDirectory)/src/Graph"
-          Pattern: "Microsoft.Graph.psm1, Microsoft.Graph.*.format.ps1xml, *.ps1"
+          Pattern: "Microsoft.Graph.*.psd1"
+
+      - task: PowerShell@2
+        displayName: "Validate Authenticode Signature"
+        inputs:
+          targetType: "inline"
+          pwsh: true
+          script: |
+            @("v1.0", "beta") | ForEach-Object {
+              $ApiVersion = $_
+              $ModulePsd1 = Join-Path $(System.DefaultWorkingDirectory) "/src/Graph/$ApiVersion/Microsoft.Graph*.psd1" -Resolve
+              ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+            }
 
   - ${{ if eq(parameters.Pack, true) }}:
       - task: PowerShell@2
